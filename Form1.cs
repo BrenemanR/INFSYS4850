@@ -17,12 +17,24 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("MEOW MEOW MEOW MEOW");
+
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-//this is a git test

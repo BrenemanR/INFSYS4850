@@ -16,5 +16,16 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddCustomer addCustomer = new AddCustomer();
+            addCustomer.Show();
+        }
+
+        private void lbl_Customers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

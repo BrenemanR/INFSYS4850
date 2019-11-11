@@ -24,8 +24,8 @@ namespace BalkanCRM
 
         private void btn_ManageCustomers_Click(object sender, EventArgs e)
         {
-            ManageCustomers manageCustomers = new ManageCustomers();
-            manageCustomers.Show();
+            AddCustomer addCustomer = new AddCustomer();
+            addCustomer.Show();
             btn_ManageCustomers.Enabled = false;
             btn_ManageCustomers.Visible = false;
             btn_ManageCustomersAlreadyOpen.Visible = true;
@@ -34,8 +34,11 @@ namespace BalkanCRM
         private void btn_ManageOrders_Click(object sender, EventArgs e)
         //Opens the ManageOrders form when clicked
         {
-            ManageOrders manageOrders = new ManageOrders();
-            manageOrders.Show();
+           // AddCustomer addCustomer = new AddCustomer();
+           // addCustomer.Show();
+
+           ManageOrders manageOrders = new ManageOrders();
+           manageOrders.Show();
 
         }
 

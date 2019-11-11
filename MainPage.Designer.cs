@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp3
+﻿namespace BalkanCRM
 {
     partial class MainPage
     {
@@ -33,6 +33,7 @@
             this.btn_ManageOrders = new System.Windows.Forms.Button();
             this.lb_FrontTitle = new System.Windows.Forms.Label();
             this.lb_CompanyName = new System.Windows.Forms.Label();
+            this.btn_ManageCustomersAlreadyOpen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_ManageCustomers
@@ -54,7 +55,7 @@
             this.btn_ManageCustomers.Text = "Manage Customers";
             this.btn_ManageCustomers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_ManageCustomers.UseVisualStyleBackColor = false;
-            this.btn_ManageCustomers.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ManageCustomers.Click += new System.EventHandler(this.btn_ManageCustomers_Click);
             // 
             // btn_ManageOrders
             // 
@@ -74,7 +75,7 @@
             this.btn_ManageOrders.Text = "Manage Orders";
             this.btn_ManageOrders.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_ManageOrders.UseVisualStyleBackColor = false;
-            this.btn_ManageOrders.Click += new System.EventHandler(this.button2_Click);
+            this.btn_ManageOrders.Click += new System.EventHandler(this.btn_ManageOrders_Click);
             // 
             // lb_FrontTitle
             // 
@@ -95,6 +96,28 @@
             this.lb_CompanyName.TabIndex = 3;
             this.lb_CompanyName.Text = "©DaphAdil Consulting 2019";
             // 
+            // btn_ManageCustomersAlreadyOpen
+            // 
+            this.btn_ManageCustomersAlreadyOpen.AutoSize = true;
+            this.btn_ManageCustomersAlreadyOpen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_ManageCustomersAlreadyOpen.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ManageCustomersAlreadyOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_ManageCustomersAlreadyOpen.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_ManageCustomersAlreadyOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btn_ManageCustomersAlreadyOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_ManageCustomersAlreadyOpen.Font = new System.Drawing.Font("Calibri", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ManageCustomersAlreadyOpen.Image = ((System.Drawing.Image)(resources.GetObject("btn_ManageCustomersAlreadyOpen.Image")));
+            this.btn_ManageCustomersAlreadyOpen.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_ManageCustomersAlreadyOpen.Location = new System.Drawing.Point(45, 97);
+            this.btn_ManageCustomersAlreadyOpen.Name = "btn_ManageCustomersAlreadyOpen";
+            this.btn_ManageCustomersAlreadyOpen.Size = new System.Drawing.Size(306, 306);
+            this.btn_ManageCustomersAlreadyOpen.TabIndex = 4;
+            this.btn_ManageCustomersAlreadyOpen.Text = "Manage Customers";
+            this.btn_ManageCustomersAlreadyOpen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_ManageCustomersAlreadyOpen.UseVisualStyleBackColor = false;
+            this.btn_ManageCustomersAlreadyOpen.Visible = false;
+            this.btn_ManageCustomersAlreadyOpen.Click += new System.EventHandler(this.btn_ManageCustomersAlreadyOpen_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +125,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(761, 458);
+            this.Controls.Add(this.btn_ManageCustomersAlreadyOpen);
             this.Controls.Add(this.lb_CompanyName);
             this.Controls.Add(this.lb_FrontTitle);
             this.Controls.Add(this.btn_ManageOrders);
@@ -120,6 +144,7 @@
         private System.Windows.Forms.Button btn_ManageOrders;
         private System.Windows.Forms.Label lb_FrontTitle;
         private System.Windows.Forms.Label lb_CompanyName;
+        private System.Windows.Forms.Button btn_ManageCustomersAlreadyOpen;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp3
+﻿namespace BalkanCRM
 {
     partial class AddCustomer
     {
@@ -35,7 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.FirstNameBox = new System.Windows.Forms.TextBox();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new WindowsFormsApp3.AppData();
+            this.appData = new BalkanCRM.AppData();
             this.label4 = new System.Windows.Forms.Label();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
+            this.cUSTOMERTableAdapter = new BalkanCRM.AppDataTableAdapters.CUSTOMERTableAdapter();
             this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();

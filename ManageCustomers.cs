@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp3
+namespace BalkanCRM
 {
     public partial class ManageCustomers : Form
     {
@@ -17,13 +17,18 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Add_Customer_Click(object sender, EventArgs e)
         {
             AddCustomer addCustomer = new AddCustomer();
             addCustomer.Show();
         }
 
         private void lbl_Customers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Show_Customer_Click(object sender, EventArgs e)
         {
 
         }

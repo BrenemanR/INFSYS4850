@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp3
+﻿namespace BalkanCRM
 {
     partial class ManageCustomers
     {
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lbl_Customers = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Show_Customer = new System.Windows.Forms.Button();
+            this.btn_Add_Customer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Customers
@@ -44,32 +44,33 @@
             this.lbl_Customers.Text = "Customers";
             this.lbl_Customers.Click += new System.EventHandler(this.lbl_Customers_Click);
             // 
-            // button1
+            // btn_Show_Customer
             // 
-            this.button1.Location = new System.Drawing.Point(448, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(280, 195);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Search Customer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Show_Customer.Location = new System.Drawing.Point(448, 145);
+            this.btn_Show_Customer.Name = "button1";
+            this.btn_Show_Customer.Size = new System.Drawing.Size(280, 195);
+            this.btn_Show_Customer.TabIndex = 2;
+            this.btn_Show_Customer.Text = "Search Customer";
+            this.btn_Show_Customer.UseVisualStyleBackColor = true;
+            this.btn_Show_Customer.Click += new System.EventHandler(this.btn_Show_Customer_Click);
             // 
-            // button2
+            // btn_Add_Customer
             // 
-            this.button2.Location = new System.Drawing.Point(50, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(280, 195);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Add New Customer";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Add_Customer.Location = new System.Drawing.Point(50, 145);
+            this.btn_Add_Customer.Name = "btn_Add_Customer";
+            this.btn_Add_Customer.Size = new System.Drawing.Size(280, 195);
+            this.btn_Add_Customer.TabIndex = 3;
+            this.btn_Add_Customer.Text = "Add New Customer";
+            this.btn_Add_Customer.UseVisualStyleBackColor = true;
+            this.btn_Add_Customer.Click += new System.EventHandler(this.btn_Add_Customer_Click);
             // 
             // ManageCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Add_Customer);
+            this.Controls.Add(this.btn_Show_Customer);
             this.Controls.Add(this.lbl_Customers);
             this.Name = "ManageCustomers";
             this.Text = "Manage Customers";
@@ -81,7 +82,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_Customers;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Show_Customer;
+        private System.Windows.Forms.Button btn_Add_Customer;
     }
 }

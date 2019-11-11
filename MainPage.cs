@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp3
+namespace BalkanCRM
 {
     public partial class MainPage : Form
     {
@@ -22,29 +22,21 @@ namespace WindowsFormsApp3
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_ManageCustomers_Click(object sender, EventArgs e)
         {
             ManageCustomers manageCustomers = new ManageCustomers();
             manageCustomers.Show();
+            btn_ManageCustomers.Enabled = false;
+            btn_ManageCustomers.Visible = false;
+            btn_ManageCustomersAlreadyOpen.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_ManageOrders_Click(object sender, EventArgs e)
         //Opens the ManageOrders form when clicked
         {
             ManageOrders manageOrders = new ManageOrders();
-            /*Commented out this section because it wasn't working. Trying to prevent the
-                form from being opened multiple times.
-
-            bool status = CheckOpened("ManageOrders");
-            if (status == true) {
-                string message = "ManageOrders is already opened.";
-                string title = "Alert";
-                MessageBox.Show(message, title);
-            }
-            else
-            {*/
             manageOrders.Show();
-            //}
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -66,6 +58,11 @@ namespace WindowsFormsApp3
                 }
             }
             return false;
+        }
+
+        private void btn_ManageCustomersAlreadyOpen_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Manage Customers is already open.");
         }
     }
 }

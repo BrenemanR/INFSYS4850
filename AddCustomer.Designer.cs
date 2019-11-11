@@ -34,8 +34,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.FirstNameBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new WindowsFormsApp3.AppData();
             this.label4 = new System.Windows.Forms.Label();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,22 +41,34 @@
             this.label2 = new System.Windows.Forms.Label();
             this.LastNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.SearchBox = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.CompanyLabel = new System.Windows.Forms.Label();
+            this.CompanyBox = new System.Windows.Forms.TextBox();
+            this.StateLabel = new System.Windows.Forms.Label();
+            this.StateBox = new System.Windows.Forms.TextBox();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.CityBox = new System.Windows.Forms.TextBox();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.AddressBox = new System.Windows.Forms.TextBox();
+            this.ZipLabel = new System.Windows.Forms.Label();
+            this.ZipBox = new System.Windows.Forms.TextBox();
+            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new WindowsFormsApp3.AppData();
             this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
@@ -70,7 +80,7 @@
             this.button1.Location = new System.Drawing.Point(17, 133);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 8;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -82,13 +92,13 @@
             this.cUSTIDDataGridViewTextBoxColumn,
             this.cUSTFNAMEDataGridViewTextBoxColumn,
             this.cUSTLNAMEDataGridViewTextBoxColumn,
+            this.cUSTEMAILDataGridViewTextBoxColumn,
+            this.cUSTPHONEDataGridViewTextBoxColumn,
             this.cUSTCOMPANYDataGridViewTextBoxColumn,
             this.cUSTADDRESSDataGridViewTextBoxColumn,
             this.cUSTCITYDataGridViewTextBoxColumn,
             this.cUSTSTATEDataGridViewTextBoxColumn,
-            this.cUSTZIPDataGridViewTextBoxColumn,
-            this.cUSTEMAILDataGridViewTextBoxColumn,
-            this.cUSTPHONEDataGridViewTextBoxColumn});
+            this.cUSTZIPDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 256);
             this.dataGridView1.Name = "dataGridView1";
@@ -98,6 +108,16 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ZipLabel);
+            this.panel1.Controls.Add(this.ZipBox);
+            this.panel1.Controls.Add(this.CompanyLabel);
+            this.panel1.Controls.Add(this.CompanyBox);
+            this.panel1.Controls.Add(this.StateLabel);
+            this.panel1.Controls.Add(this.StateBox);
+            this.panel1.Controls.Add(this.CityLabel);
+            this.panel1.Controls.Add(this.CityBox);
+            this.panel1.Controls.Add(this.AddressLabel);
+            this.panel1.Controls.Add(this.AddressBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.FirstNameBox);
             this.panel1.Controls.Add(this.label4);
@@ -111,7 +131,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 181);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 0;
             // 
             // label5
             // 
@@ -128,17 +148,7 @@
             this.FirstNameBox.Location = new System.Drawing.Point(96, 23);
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(142, 20);
-            this.FirstNameBox.TabIndex = 0;
-            // 
-            // cUSTOMERBindingSource
-            // 
-            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
-            this.cUSTOMERBindingSource.DataSource = this.appData;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.FirstNameBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -200,14 +210,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Search:";
             // 
-            // SearchBox
-            // 
-            this.SearchBox.Location = new System.Drawing.Point(60, 211);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(307, 20);
-            this.SearchBox.TabIndex = 0;
-            this.SearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBox_KeyPress);
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(586, 214);
@@ -238,6 +240,105 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
+            // CompanyLabel
+            // 
+            this.CompanyLabel.AutoSize = true;
+            this.CompanyLabel.Location = new System.Drawing.Point(283, 26);
+            this.CompanyLabel.Name = "CompanyLabel";
+            this.CompanyLabel.Size = new System.Drawing.Size(54, 13);
+            this.CompanyLabel.TabIndex = 17;
+            this.CompanyLabel.Text = "Company:";
+            // 
+            // CompanyBox
+            // 
+            this.CompanyBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
+            this.CompanyBox.Location = new System.Drawing.Point(365, 23);
+            this.CompanyBox.Name = "CompanyBox";
+            this.CompanyBox.Size = new System.Drawing.Size(142, 20);
+            this.CompanyBox.TabIndex = 10;
+            // 
+            // StateLabel
+            // 
+            this.StateLabel.AutoSize = true;
+            this.StateLabel.Location = new System.Drawing.Point(283, 104);
+            this.StateLabel.Name = "StateLabel";
+            this.StateLabel.Size = new System.Drawing.Size(35, 13);
+            this.StateLabel.TabIndex = 16;
+            this.StateLabel.Text = "State:";
+            // 
+            // StateBox
+            // 
+            this.StateBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
+            this.StateBox.Location = new System.Drawing.Point(365, 101);
+            this.StateBox.Name = "StateBox";
+            this.StateBox.Size = new System.Drawing.Size(142, 20);
+            this.StateBox.TabIndex = 13;
+            // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.Location = new System.Drawing.Point(283, 78);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(27, 13);
+            this.CityLabel.TabIndex = 15;
+            this.CityLabel.Text = "City:";
+            // 
+            // CityBox
+            // 
+            this.CityBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
+            this.CityBox.Location = new System.Drawing.Point(365, 75);
+            this.CityBox.Name = "CityBox";
+            this.CityBox.Size = new System.Drawing.Size(142, 20);
+            this.CityBox.TabIndex = 12;
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Location = new System.Drawing.Point(283, 52);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(48, 13);
+            this.AddressLabel.TabIndex = 14;
+            this.AddressLabel.Text = "Address:";
+            // 
+            // AddressBox
+            // 
+            this.AddressBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
+            this.AddressBox.Location = new System.Drawing.Point(365, 49);
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.Size = new System.Drawing.Size(142, 20);
+            this.AddressBox.TabIndex = 11;
+            // 
+            // ZipLabel
+            // 
+            this.ZipLabel.AutoSize = true;
+            this.ZipLabel.Location = new System.Drawing.Point(524, 26);
+            this.ZipLabel.Name = "ZipLabel";
+            this.ZipLabel.Size = new System.Drawing.Size(25, 13);
+            this.ZipLabel.TabIndex = 19;
+            this.ZipLabel.Text = "Zip:";
+            // 
+            // ZipBox
+            // 
+            this.ZipBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
+            this.ZipBox.Location = new System.Drawing.Point(606, 23);
+            this.ZipBox.Name = "ZipBox";
+            this.ZipBox.Size = new System.Drawing.Size(142, 20);
+            this.ZipBox.TabIndex = 18;
+            // 
+            // cUSTOMERBindingSource
+            // 
+            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
+            this.cUSTOMERBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cUSTOMERTableAdapter
+            // 
+            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
+            // 
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(505, 214);
@@ -248,69 +349,74 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // cUSTOMERTableAdapter
+            // SearchBox
             // 
-            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
+            this.SearchBox.Location = new System.Drawing.Point(60, 211);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(307, 20);
+            this.SearchBox.TabIndex = 7;
+            this.SearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBox_KeyPress);
             // 
             // cUSTIDDataGridViewTextBoxColumn
             // 
             this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
             this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "CUST_ID";
             this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
+            this.cUSTIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // cUSTFNAMEDataGridViewTextBoxColumn
             // 
             this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "CUST_FNAME";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
             // 
             // cUSTLNAMEDataGridViewTextBoxColumn
             // 
             this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "CUST_LNAME";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
-            // 
-            // cUSTCOMPANYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "CUST_COMPANY";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
-            // 
-            // cUSTADDRESSDataGridViewTextBoxColumn
-            // 
-            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "CUST_ADDRESS";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
-            // 
-            // cUSTCITYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
-            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "CUST_CITY";
-            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
-            // 
-            // cUSTSTATEDataGridViewTextBoxColumn
-            // 
-            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
-            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "CUST_STATE";
-            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
-            // 
-            // cUSTZIPDataGridViewTextBoxColumn
-            // 
-            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
-            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "CUST_ZIP";
-            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
             // 
             // cUSTEMAILDataGridViewTextBoxColumn
             // 
             this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
-            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "CUST_EMAIL";
+            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
             this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
             // 
             // cUSTPHONEDataGridViewTextBoxColumn
             // 
             this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
-            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "CUST_PHONE";
+            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
             this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
+            // 
+            // cUSTCOMPANYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
+            // 
+            // cUSTADDRESSDataGridViewTextBoxColumn
+            // 
+            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
+            // 
+            // cUSTCITYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
+            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
+            // 
+            // cUSTSTATEDataGridViewTextBoxColumn
+            // 
+            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
+            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
+            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
+            // 
+            // cUSTZIPDataGridViewTextBoxColumn
+            // 
+            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
+            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
+            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
             // 
             // AddCustomer
             // 
@@ -329,7 +435,6 @@
             this.MinimizeBox = false;
             this.Name = "AddCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Customer";
             this.Load += new System.EventHandler(this.AddCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -355,23 +460,33 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox LastNameBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnEdit;
         private AppData appData;
         private System.Windows.Forms.BindingSource cUSTOMERBindingSource;
         private AppDataTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
+        private System.Windows.Forms.Label ZipLabel;
+        private System.Windows.Forms.TextBox ZipBox;
+        private System.Windows.Forms.Label CompanyLabel;
+        private System.Windows.Forms.TextBox CompanyBox;
+        private System.Windows.Forms.Label StateLabel;
+        private System.Windows.Forms.TextBox StateBox;
+        private System.Windows.Forms.Label CityLabel;
+        private System.Windows.Forms.TextBox CityBox;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.TextBox AddressBox;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTFNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTLNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTEMAILDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTPHONEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCOMPANYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTADDRESSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTEMAILDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTPHONEDataGridViewTextBoxColumn;
     }
 }

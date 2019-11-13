@@ -30,7 +30,18 @@ namespace WindowsFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            SearchCustomer searchCustomer = new SearchCustomer();
+            searchCustomer.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManageCustomers_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

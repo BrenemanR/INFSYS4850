@@ -925,7 +925,6 @@ namespace WindowsFormsApp3 {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCUST_ID}, true));
                 this.columnCUST_ID.AutoIncrement = true;
-                this.columnCUST_ID.AutoIncrementSeed = 1;
                 this.columnCUST_ID.AllowDBNull = false;
                 this.columnCUST_ID.Unique = true;
                 this.columnCUST_FNAME.MaxLength = 536870910;

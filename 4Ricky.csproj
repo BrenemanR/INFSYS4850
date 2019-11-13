@@ -80,6 +80,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCustomer.Designer.cs">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,7 +136,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SearchCustomer.resx">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="AppData.xsc">
       <DependentUpon>AppData.xsd</DependentUpon>
     </None>
@@ -193,6 +203,10 @@
     <Content Include="oldbase.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\updated plus.png" />
+    <None Include="Resources\circle+more+plus+icon-1320183136549593898.png" />
+    <None Include="Resources\plus-big-512.png" />
+    <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -45,7 +45,7 @@ namespace WindowsFormsApp3
         {
             if (e.KeyCode == Keys.Delete)
             {
-                if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to delete this record? Record will not be deleted unitl the save button is pressed.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     cUSTOMERBindingSource.RemoveCurrent();
             }
         }
@@ -55,6 +55,8 @@ namespace WindowsFormsApp3
             try
             {
                 panel1.Enabled = true;
+                btnEdit.Enabled = false; //Disables the edit button so the user is unable to edit a record while one is already open.
+                btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while already adding one.
                 FirstNameBox.Focus();
                 this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
                 cUSTOMERBindingSource.MoveLast();
@@ -70,11 +72,14 @@ namespace WindowsFormsApp3
         private void btnEdit_Click(object sender, EventArgs e)
         {
             panel1.Enabled = true;
+            btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while editing a previous one.
             FirstNameBox.Focus();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            btnEdit.Enabled = true; //Reenables the Edit Button After a new record is cancelled.
+            btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
             panel1.Enabled = false;
             cUSTOMERBindingSource.ResetBindings(false);
         }
@@ -84,8 +89,26 @@ namespace WindowsFormsApp3
             try
             {
                     cUSTOMERBindingSource.EndEdit();
+                if (string.IsNullOrEmpty(FirstNameBox.Text))
+                {
+
+                    MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnNew.Enabled = false;
+                    panel1.Enabled = true;
+
+                }
+                else
+                {
                     cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
+                    btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                    btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
                     panel1.Enabled = false;
+                }
+
+                btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                
+
+
             }
 
             catch (Exception ex)
@@ -101,6 +124,40 @@ namespace WindowsFormsApp3
             this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
             cUSTOMERBindingSource.DataSource = this.appData.CUSTOMER;
 
+        }
+
+        private void ZipBox_KeyPress(object sender, KeyPressEventArgs z)
+        {
+            //This is the method that makes it so that only digits can be entered in the Zip Code Field
+            if (!char.IsControl(z.KeyChar) && !char.IsDigit(z.KeyChar) && (z.KeyChar != '.'))
+            {
+                z.Handled = true;
+            }
+
+            if (ZipBox.Text.Length >= 5)
+            {
+                z.Handled = true;
+            }
+
+        }
+
+        private void PhoneNumberBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                // is a digit or backspace - ignore digits if length is alreay 10 - allow backspace
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    if (PhoneNumberBox.Text.Length > 9)
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
         }
     }
 }

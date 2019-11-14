@@ -59,6 +59,11 @@ namespace WindowsFormsApp3
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            //Opens the CreateCustomer form. Currently not being used
+            CreateCustomer createCustomer = new CreateCustomer();
+            createCustomer.Show();
+            //Need to prevents the user from opening the form multiple times.
+              
             try
             {
                 panel1.Enabled = true;

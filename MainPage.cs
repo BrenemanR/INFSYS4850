@@ -17,55 +17,34 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void btn_ManageCustomers_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ManageCustomers manageCustomers = new ManageCustomers();
+            //Opens the Manage Customers form.
+            ManageCustomers manageCustomers = new ManageCustomers(this);
             manageCustomers.Show();
+            
+            //Prevents the user from opening the form multiple times.
+            btn_ManageCustomersOpened.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        //Opens the ManageOrders form when clicked
+        private void btn_ManageOrders_Click(object sender, EventArgs e)
         {
-            ManageOrders manageOrders = new ManageOrders();
-            /*Commented out this section because it wasn't working. Trying to prevent the
-                form from being opened multiple times.
-
-            bool status = CheckOpened("ManageOrders");
-            if (status == true) {
-                string message = "ManageOrders is already opened.";
-                string title = "Alert";
-                MessageBox.Show(message, title);
-            }
-            else
-            {*/
+            //Opens the ManageOrders form.
+            ManageOrders manageOrders = new ManageOrders(this);
             manageOrders.Show();
-            //}
+
+            //Prevents the user from opening the form multiple times.
+            btn_ManageOrdersOpened.Visible = true;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btn_ManageCustomersOpened_Click(object sender, EventArgs e)
         {
-
+            System.Windows.Forms.MessageBox.Show("Manage Customers is already opened.");
         }
 
-        
-        private bool CheckOpened(string name)
-        //Attempt to prevent the form from being opened multiple times. Requires some additional work.
+        private void btn_ManageOrdersOpened_Click(object sender, EventArgs e)
         {
-            FormCollection fc = Application.OpenForms;
-
-            foreach (Form frm in fc)
-            {
-                if (frm.Text == name)
-                {
-                    return true;
-                }
-            }
-            return false;
+            System.Windows.Forms.MessageBox.Show("Manage Orders is already opened.");
         }
     }
 }

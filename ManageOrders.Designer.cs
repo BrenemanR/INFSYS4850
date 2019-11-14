@@ -49,6 +49,7 @@
             this.Controls.Add(this.lbl_WorkOrder);
             this.Name = "ManageOrders";
             this.Text = "Manage Orders";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageOrders_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

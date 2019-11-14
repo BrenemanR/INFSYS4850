@@ -16,5 +16,19 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
+        private MainPage mainPage;
+
+        public ManageOrders(MainPage mainPage)
+        {
+            InitializeComponent();
+            this.mainPage = mainPage;
+        }
+    
+
+        private void ManageOrders_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Allows the user to re-open the form once it's closed.
+            mainPage.Controls["btn_ManageOrdersOpened"].Visible = false;
+        }
     }
 }

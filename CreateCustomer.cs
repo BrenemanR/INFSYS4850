@@ -17,5 +17,9 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
+        private void btnCreateCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

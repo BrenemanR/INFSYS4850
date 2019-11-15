@@ -150,6 +150,7 @@
             this.btnCreateCustomer.TabIndex = 29;
             this.btnCreateCustomer.Text = "Create Customer";
             this.btnCreateCustomer.UseVisualStyleBackColor = false;
+            this.btnCreateCustomer.Click += new System.EventHandler(this.btnCreateCustomer_Click);
             // 
             // CreateCustomer
             // 

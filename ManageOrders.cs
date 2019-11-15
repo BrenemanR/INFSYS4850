@@ -30,5 +30,17 @@ namespace WindowsFormsApp3
             //Allows the user to re-open the form once it's closed.
             mainPage.Controls["btn_ManageOrdersOpened"].Visible = false;
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManageOrders_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'appData1.INVOICE' table. You can move, or remove it, as needed.
+            this.iNVOICETableAdapter.Fill(this.appData1.INVOICE);
+
+        }
     }
 }

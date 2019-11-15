@@ -155,6 +155,7 @@
             this.Controls.Add(this.btn_ManageCustomers);
             this.Name = "MainPage";
             this.Text = "BalkanExpress CRM";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

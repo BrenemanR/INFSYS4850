@@ -46,5 +46,45 @@ namespace WindowsFormsApp3
         {
             System.Windows.Forms.MessageBox.Show("Manage Orders is already opened.");
         }
+
+
+        private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            if (closeApp) //closeApp prevents getting stuck in a close loop.
+            {
+                //Checks to make sure that the user doesn't accidentally close the application.
+                var res = MessageBox.Show(this, "Are you sure that you want to quit?", "Exit",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (res != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+                else
+                {
+                    e.Cancel = true;
+                    timer.Interval = 6000;
+                    timer.Tick += new EventHandler(timer_Tick);
+                    timer.Start();
+                    //Says goodbye to the user.
+                    ExitForm exitForm = new ExitForm();
+                    exitForm.Show();
+                }
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        bool closeApp = true;
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            closeApp = false;
+            Application.Exit();     
+        }
     }
 }

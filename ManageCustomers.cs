@@ -12,6 +12,8 @@ namespace WindowsFormsApp3
 {
     public partial class ManageCustomers : Form
     {
+        bool isSaved = true;
+        
         public ManageCustomers()
         {
             InitializeComponent();
@@ -72,6 +74,7 @@ namespace WindowsFormsApp3
                 FirstNameBox.Focus();
                 this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
                 cUSTOMERBindingSource.MoveLast();
+                isSaved = false;
             }
 
             catch (Exception ex)
@@ -86,6 +89,7 @@ namespace WindowsFormsApp3
             panel1.Enabled = true;
             btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while editing a previous one.
             FirstNameBox.Focus();
+            isSaved = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -115,6 +119,7 @@ namespace WindowsFormsApp3
                     btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                     btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
                     panel1.Enabled = false;
+                    isSaved = true;
                 }
 
                 btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
@@ -177,5 +182,104 @@ namespace WindowsFormsApp3
             //Allows the user to re-open the form once it's closed.
             mainPage.Controls["btn_ManageCustomersOpened"].Visible = false;
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cUSTOMERBindingSource.EndEdit();
+                if (string.IsNullOrEmpty(FirstNameBox.Text))
+                {
+
+                    MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnNew.Enabled = false;
+                    panel1.Enabled = true;
+
+                }
+                else
+                {
+                    cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
+                    btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                    btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
+                    panel1.Enabled = false;
+                    isSaved = true;
+                }
+
+                btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                                
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cUSTOMERBindingSource.ResetBindings(false);
+            }
+
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (isSaved)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit Manage Customers?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //do something
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("There might be unsaved changes. Would you like to save?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //saves then closes the form
+                    try
+                    {
+                        cUSTOMERBindingSource.EndEdit();
+                        if (string.IsNullOrEmpty(FirstNameBox.Text))
+                        {
+
+                            MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            btnNew.Enabled = false;
+                            panel1.Enabled = true;
+
+                        }
+                        else
+                        {
+                            cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
+                            btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                            btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
+                            panel1.Enabled = false;
+                            isSaved = true;
+                            MessageBox.Show("Your data has been saved.");
+                            this.Close();
+                        }
+
+                        btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cUSTOMERBindingSource.ResetBindings(false);
+                    }
+                    
+                    
+                }
+                
+                else if (dialogResult == DialogResult.No)
+                {
+                    //closes the form without saving
+                    this.Close();
+                }
+            }
+            
+            
+        }
+
     }
 }

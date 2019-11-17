@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp3
 {
-    partial class ManageCustomers
+    partial class AddCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -68,20 +68,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -98,6 +94,7 @@
             this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 256);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(776, 182);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
@@ -107,60 +104,70 @@
             this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
             this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "CUST_ID";
             this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
+            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTFNAMEDataGridViewTextBoxColumn
             // 
             this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
             this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTLNAMEDataGridViewTextBoxColumn
             // 
             this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
             this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTEMAILDataGridViewTextBoxColumn
             // 
             this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
             this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
             this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
+            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTPHONEDataGridViewTextBoxColumn
             // 
             this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
             this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
             this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
+            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTCOMPANYDataGridViewTextBoxColumn
             // 
             this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
             this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
             this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTADDRESSDataGridViewTextBoxColumn
             // 
             this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
             this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
             this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTCITYDataGridViewTextBoxColumn
             // 
             this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
             this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
             this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
+            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTSTATEDataGridViewTextBoxColumn
             // 
             this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
             this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
             this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
+            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTZIPDataGridViewTextBoxColumn
             // 
             this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
             this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
             this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
+            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cUSTOMERBindingSource
             // 
@@ -193,7 +200,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.LastNameBox);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(3, 25);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 181);
             this.panel1.TabIndex = 0;
@@ -300,7 +307,6 @@
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(142, 20);
             this.FirstNameBox.TabIndex = 1;
-            this.FirstNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FirstNameBox_KeyPress);
             // 
             // label4
             // 
@@ -353,7 +359,6 @@
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(142, 20);
             this.LastNameBox.TabIndex = 1;
-            this.LastNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastNameBox_KeyPress);
             // 
             // btnCancel
             // 
@@ -416,47 +421,7 @@
             // 
             this.cUSTOMERTableAdapter.ClearBeforeFill = true;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 19;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // ManageCustomers
+            // AddCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -469,22 +434,17 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
             this.MinimizeBox = false;
-            this.Name = "ManageCustomers";
+            this.Name = "AddCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Customers";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManageCustomers_FormClosed);
+            this.Text = "Add Customer";
             this.Load += new System.EventHandler(this.AddCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,6 +478,8 @@
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.TextBox AddressBox;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTFNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTLNAMEDataGridViewTextBoxColumn;
@@ -528,12 +490,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SearchBox;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }

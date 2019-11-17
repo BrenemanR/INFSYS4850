@@ -113,6 +113,27 @@ namespace WindowsFormsApp3
                     panel1.Enabled = true;
 
                 }
+
+                if (EmailBox.Text.Length == 0) //Checks to see if the email address field is blank
+                {
+                    MessageBox.Show(EmailBox.Text, "Email Address cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnNew.Enabled = false;
+                    panel1.Enabled = true;
+
+                }
+                
+                
+                if (!EmailBox.Text.Contains("@")) //Check to see if the email address contains an '@' symbol.
+                {
+                    MessageBox.Show(EmailBox.Text, "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnNew.Enabled = false;
+                    panel1.Enabled = true;
+
+                }
+
+
+
+
                 else
                 {
                     cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
@@ -122,7 +143,7 @@ namespace WindowsFormsApp3
                     isSaved = true;
                 }
 
-                btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                
                 
 
 
@@ -158,25 +179,7 @@ namespace WindowsFormsApp3
 
         }
 
-        private void PhoneNumberBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                // is a digit or backspace - ignore digits if length is alreay 10 - allow backspace
-                if (Char.IsDigit(e.KeyChar))
-                {
-                    if (PhoneNumberBox.Text.Length > 9)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
+        
         private void ManageCustomers_FormClosed(object sender, FormClosedEventArgs e)
         {
             //Allows the user to re-open the form once it's closed.
@@ -281,5 +284,39 @@ namespace WindowsFormsApp3
             
         }
 
+        private void PhoneNumberBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in 10 digits for the phonen number field.
+        {
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                // is a digit or backspace - ignore digits if length is alreay 10 - allow backspace
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    if (PhoneNumberBox.Text.Length > 9)
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void FirstNameBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in Letters for the first name field.
+        {
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != (int)(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void LastNameBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in Letters for the first name field.
+        {
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != (int)(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

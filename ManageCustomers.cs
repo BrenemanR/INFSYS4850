@@ -13,10 +13,11 @@ namespace WindowsFormsApp3
     public partial class ManageCustomers : Form
     {
         bool isSaved = true;
-        
+                
         public ManageCustomers()
         {
             InitializeComponent();
+            
         }
         private MainPage mainPage;
         public ManageCustomers(MainPage mainPage)
@@ -62,19 +63,28 @@ namespace WindowsFormsApp3
         private void btnNew_Click(object sender, EventArgs e)
         {
             //Opens the CreateCustomer form. Currently not being used
-            CreateCustomer createCustomer = new CreateCustomer();
-            createCustomer.Show();
+            //CreateCustomer createCustomer = new CreateCustomer();
+            //createCustomer.Show();
             //Need to prevents the user from opening the form multiple times.
-              
+
+
+            dataGridView1.Enabled = false;
+            btnCancel.Enabled = false;
+            SearchBox.Enabled = false;
+
             try
             {
-                panel1.Enabled = true;
-                btnEdit.Enabled = false; //Disables the edit button so the user is unable to edit a record while one is already open.
-                btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while already adding one.
-                FirstNameBox.Focus();
-                this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
-                cUSTOMERBindingSource.MoveLast();
-                isSaved = false;
+                {
+                    panel1.Enabled = true;
+                    btnEdit.Enabled = false; //Disables the edit button so the user is unable to edit a record while one is already open.
+                    btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while already adding one.
+                    FirstNameBox.Focus();
+                    this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
+                    cUSTOMERBindingSource.RemoveSort(); //Resorts The table so that the new record is properly added.
+                    cUSTOMERBindingSource.MoveLast();
+                    isSaved = false;
+                }
+
             }
 
             catch (Exception ex)
@@ -82,6 +92,7 @@ namespace WindowsFormsApp3
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cUSTOMERBindingSource.ResetBindings(false);
             }
+           
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -97,6 +108,7 @@ namespace WindowsFormsApp3
             btnEdit.Enabled = true; //Reenables the Edit Button After a new record is cancelled.
             btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
             panel1.Enabled = false;
+            dataGridView1.Enabled = true;
             cUSTOMERBindingSource.ResetBindings(false);
         }
 
@@ -131,8 +143,7 @@ namespace WindowsFormsApp3
 
                 }
 
-
-
+                
 
                 else
                 {
@@ -140,9 +151,11 @@ namespace WindowsFormsApp3
                     btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                     btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
                     panel1.Enabled = false;
+                    dataGridView1.Enabled = true;
+                    SearchBox.Enabled = true;
                     isSaved = true;
                 }
-
+                
                 
                 
 

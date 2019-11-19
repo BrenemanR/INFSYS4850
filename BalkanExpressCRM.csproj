@@ -66,23 +66,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateCustomer.Designer.cs">
-      <DependentUpon>CreateCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExitForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExitForm.Designer.cs">
       <DependentUpon>ExitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageCustomers.cs">
+    <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageCustomers.Designer.cs">
-      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="AppData.cs">
       <DependentUpon>AppData.xsd</DependentUpon>
@@ -98,18 +92,6 @@
     <Compile Include="SearchCustomer.Designer.cs">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageOrders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageOrders.Designer.cs">
-      <DependentUpon>ManageOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainPage.Designer.cs">
-      <DependentUpon>MainPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="oldbaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,17 +104,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateCustomer.resx">
-      <DependentUpon>CreateCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ExitForm.resx">
       <DependentUpon>ExitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageCustomers.resx">
-      <DependentUpon>ManageCustomers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageOrders.resx">
-      <DependentUpon>ManageOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>

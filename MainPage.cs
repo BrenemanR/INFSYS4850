@@ -171,9 +171,14 @@ namespace WindowsFormsApp3
 
         private void AddCustomer_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'appData.ORDERSTATUS' table. You can move, or remove it, as needed.
+            this.oRDERSTATUSTableAdapter.Fill(this.appData.ORDERSTATUS);
+            // TODO: This line of code loads data into the 'appData.INVOICE' table. You can move, or remove it, as needed.
+            this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
             // TODO: This line of code loads data into the 'appData.CUSTOMER' table. You can move, or remove it, as needed.
             this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
             cUSTOMERBindingSource.DataSource = this.appData.CUSTOMER;
+
 
         }
 
@@ -374,6 +379,154 @@ namespace WindowsFormsApp3
         {
             tab_Container.Enabled = true;
 
+        }
+
+       
+
+        private void btn_CreateOrder_Click(object sender, EventArgs e)
+        {
+            /*this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
+            cUSTOMERBindingSource.RemoveSort(); //Resorts The table so that the new record is properly added.
+            cUSTOMERBindingSource.MoveLast();
+            isSaved = false;
+            */
+
+
+            this.appData.INVOICE.AddINVOICERow(this.appData.INVOICE.NewINVOICERow());
+            iNVOICEBindingSource.RemoveSort();
+            iNVOICEBindingSource.MoveLast();
+
+            btn_CreateOrder.Enabled = false;
+            combobox_CustomerIDZ.Enabled = true;
+            BookDatePicker.Enabled = true;
+            PickUpDatePicker.Enabled = true;
+            DropOffDatePicker.Enabled = true;
+            combobox_OrderStatus.Enabled = true;
+            checkBox_CopyPickupInformation.Enabled = true;
+            checkBox_CopyDropoffInformation.Enabled = true;
+            txtbox_PickupAddress.Enabled = true;
+            txtbox_PickupCity.Enabled = true;
+            txtbox_PickupState.Enabled = true;
+            txtbox_PickupZip.Enabled = true;
+            txtbox_DeliveryAddress.Enabled = true;
+            txtbox_DeliveryCity.Enabled = true;
+            txtbox_DeliveryState.Enabled = true;
+            txtbox_DeliveryZip.Enabled = true;
+
+            btn_SaveOrder.Enabled = true;
+
+        }
+
+        private void btn_SaveOrder_Click(object sender, EventArgs e)
+        {
+            //this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
+
+            
+            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, combobox_OrderStatus.Text);
+            this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
+            iNVOICETableAdapter.Update(this.appData.INVOICE);
+
+            btn_CreateOrder.Enabled = true;
+
+            combobox_CustomerIDZ.Enabled = false;
+            BookDatePicker.Enabled = false;
+            PickUpDatePicker.Enabled = false;
+            DropOffDatePicker.Enabled = false;
+            combobox_OrderStatus.Enabled = false;
+            checkBox_CopyPickupInformation.Enabled = false;
+            checkBox_CopyDropoffInformation.Enabled = false;
+            txtbox_PickupAddress.Enabled = false;
+            txtbox_PickupCity.Enabled = false;
+            txtbox_PickupState.Enabled = false;
+            txtbox_PickupZip.Enabled = false;
+            txtbox_DeliveryAddress.Enabled = false;
+            txtbox_DeliveryCity.Enabled = false;
+            txtbox_DeliveryState.Enabled = false;
+            txtbox_DeliveryZip.Enabled = false;
+
+            btn_SaveOrder.Enabled = false;
+        }
+
+        
+        private void CopyAddressToPickup_Click(object sender, EventArgs e)
+        {
+            txtbox_PickupAddress.Text = txtbox_Address.Text;
+            txtbox_PickupCity.Text = txtbox_City.Text;
+            txtbox_PickupState.Text = txtbox_State.Text;
+            txtbox_PickupZip.Text = txtbox_Zip.Text;
+        }
+
+        private void tab_CreateOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_PickupCity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_CopyDropOffAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /*
+            txtbox_DeliveryAddress.Text = txtbox_Address.Text;
+            txtbox_DeliveryCity.Text = txtbox_City.Text;
+            txtbox_DeliveryState.Text = txtbox_State.Text;
+            txtbox_DeliveryZip.Text = txtbox_Zip.Text;
+            */
+        }
+
+        private void btn_CopyDropOffAddress_CheckedChanged(object sender, EventArgs e)
+        {
+            /*
+            txtbox_DeliveryAddress.Text = txtbox_Address.Text;
+            txtbox_DeliveryCity.Text = txtbox_City.Text;
+            txtbox_DeliveryState.Text = txtbox_State.Text;
+            txtbox_DeliveryZip.Text = txtbox_Zip.Text;
+            */
+        }
+
+        private void btn_CopyDropOffAddress_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox_CopyDropoffInformation_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_CopyDropoffInformation.Checked)
+            {
+                txtbox_DeliveryAddress.Text = txtbox_Address.Text;
+                txtbox_DeliveryCity.Text = txtbox_City.Text;
+                txtbox_DeliveryState.Text = txtbox_State.Text;
+                txtbox_DeliveryZip.Text = txtbox_Zip.Text;
+            }
+
+            if (checkBox_CopyDropoffInformation.Checked == false)
+            {
+                txtbox_DeliveryAddress.Text = "";
+                txtbox_DeliveryCity.Text = "";
+                txtbox_DeliveryState.Text = "";
+                txtbox_DeliveryZip.Text = "";
+            }
+        }
+
+        private void checkBox_CopyPickupInformation_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_CopyPickupInformation.Checked)
+            {
+                txtbox_PickupAddress.Text = txtbox_Address.Text;
+                txtbox_PickupCity.Text = txtbox_City.Text;
+                txtbox_PickupState.Text = txtbox_State.Text;
+                txtbox_PickupZip.Text = txtbox_Zip.Text;
+            }
+
+            if (checkBox_CopyPickupInformation.Checked == false)
+            {
+                txtbox_PickupAddress.Text = "";
+                txtbox_PickupCity.Text = "";
+                txtbox_PickupState.Text = "";
+                txtbox_PickupZip.Text = "";
+            }
         }
     }
 }

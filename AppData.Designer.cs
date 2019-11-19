@@ -32,6 +32,8 @@ namespace WindowsFormsApp3 {
         
         private ORDERSTATUSDataTable tableORDERSTATUS;
         
+        private global::System.Data.DataRelation relationCUSTOMER_INVOICE;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -266,6 +268,7 @@ namespace WindowsFormsApp3 {
                     this.tableORDERSTATUS.InitVars();
                 }
             }
+            this.relationCUSTOMER_INVOICE = this.Relations["CUSTOMER_INVOICE"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -284,6 +287,10 @@ namespace WindowsFormsApp3 {
             base.Tables.Add(this.tableINVOICE);
             this.tableORDERSTATUS = new ORDERSTATUSDataTable();
             base.Tables.Add(this.tableORDERSTATUS);
+            this.relationCUSTOMER_INVOICE = new global::System.Data.DataRelation("CUSTOMER_INVOICE", new global::System.Data.DataColumn[] {
+                        this.tableCUSTOMER.CUST_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableINVOICE.CUST_IDColumn}, false);
+            this.Relations.Add(this.relationCUSTOMER_INVOICE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1076,11 +1083,9 @@ namespace WindowsFormsApp3 {
             
             private global::System.Data.DataColumn columnDROPOFF_DATE;
             
-            private global::System.Data.DataColumn columnCOMPANY_ID;
-            
             private global::System.Data.DataColumn columnCUST_ID;
             
-            private global::System.Data.DataColumn columnORDERSTATUS_ID;
+            private global::System.Data.DataColumn columnORDER_STATUS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1149,14 +1154,6 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn COMPANY_IDColumn {
-                get {
-                    return this.columnCOMPANY_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn CUST_IDColumn {
                 get {
                     return this.columnCUST_ID;
@@ -1165,9 +1162,9 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ORDERSTATUS_IDColumn {
+            public global::System.Data.DataColumn ORDER_STATUSColumn {
                 get {
-                    return this.columnORDERSTATUS_ID;
+                    return this.columnORDER_STATUS;
                 }
             }
             
@@ -1208,16 +1205,18 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public INVOICERow AddINVOICERow(System.DateTime BOOK_DATE, System.DateTime PICKUP_DATE, System.DateTime DROPOFF_DATE, int COMPANY_ID, int CUST_ID, int ORDERSTATUS_ID) {
+            public INVOICERow AddINVOICERow(System.DateTime BOOK_DATE, System.DateTime PICKUP_DATE, System.DateTime DROPOFF_DATE, CUSTOMERRow parentCUSTOMERRowByCUSTOMER_INVOICE, string ORDER_STATUS) {
                 INVOICERow rowINVOICERow = ((INVOICERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         BOOK_DATE,
                         PICKUP_DATE,
                         DROPOFF_DATE,
-                        COMPANY_ID,
-                        CUST_ID,
-                        ORDERSTATUS_ID};
+                        null,
+                        ORDER_STATUS};
+                if ((parentCUSTOMERRowByCUSTOMER_INVOICE != null)) {
+                    columnValuesArray[4] = parentCUSTOMERRowByCUSTOMER_INVOICE[0];
+                }
                 rowINVOICERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowINVOICERow);
                 return rowINVOICERow;
@@ -1251,9 +1250,8 @@ namespace WindowsFormsApp3 {
                 this.columnBOOK_DATE = base.Columns["BOOK_DATE"];
                 this.columnPICKUP_DATE = base.Columns["PICKUP_DATE"];
                 this.columnDROPOFF_DATE = base.Columns["DROPOFF_DATE"];
-                this.columnCOMPANY_ID = base.Columns["COMPANY_ID"];
                 this.columnCUST_ID = base.Columns["CUST_ID"];
-                this.columnORDERSTATUS_ID = base.Columns["ORDERSTATUS_ID"];
+                this.columnORDER_STATUS = base.Columns["ORDER_STATUS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1267,12 +1265,10 @@ namespace WindowsFormsApp3 {
                 base.Columns.Add(this.columnPICKUP_DATE);
                 this.columnDROPOFF_DATE = new global::System.Data.DataColumn("DROPOFF_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDROPOFF_DATE);
-                this.columnCOMPANY_ID = new global::System.Data.DataColumn("COMPANY_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOMPANY_ID);
                 this.columnCUST_ID = new global::System.Data.DataColumn("CUST_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCUST_ID);
-                this.columnORDERSTATUS_ID = new global::System.Data.DataColumn("ORDERSTATUS_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDERSTATUS_ID);
+                this.columnORDER_STATUS = new global::System.Data.DataColumn("ORDER_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORDER_STATUS);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnINV_ID}, true));
                 this.columnINV_ID.AutoIncrement = true;
@@ -2040,6 +2036,17 @@ namespace WindowsFormsApp3 {
             public void SetCUST_PHONENull() {
                 this[this.tableCUSTOMER.CUST_PHONEColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public INVOICERow[] GetINVOICERows() {
+                if ((this.Table.ChildRelations["CUSTOMER_INVOICE"] == null)) {
+                    return new INVOICERow[0];
+                }
+                else {
+                    return ((INVOICERow[])(base.GetChildRows(this.Table.ChildRelations["CUSTOMER_INVOICE"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2117,22 +2124,6 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int COMPANY_ID {
-                get {
-                    try {
-                        return ((int)(this[this.tableINVOICE.COMPANY_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'COMPANY_ID\' in table \'INVOICE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableINVOICE.COMPANY_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int CUST_ID {
                 get {
                     try {
@@ -2149,17 +2140,28 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ORDERSTATUS_ID {
+            public string ORDER_STATUS {
                 get {
                     try {
-                        return ((int)(this[this.tableINVOICE.ORDERSTATUS_IDColumn]));
+                        return ((string)(this[this.tableINVOICE.ORDER_STATUSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDERSTATUS_ID\' in table \'INVOICE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORDER_STATUS\' in table \'INVOICE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableINVOICE.ORDERSTATUS_IDColumn] = value;
+                    this[this.tableINVOICE.ORDER_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CUSTOMERRow CUSTOMERRow {
+                get {
+                    return ((CUSTOMERRow)(this.GetParentRow(this.Table.ParentRelations["CUSTOMER_INVOICE"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CUSTOMER_INVOICE"]);
                 }
             }
             
@@ -2201,18 +2203,6 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCOMPANY_IDNull() {
-                return this.IsNull(this.tableINVOICE.COMPANY_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCOMPANY_IDNull() {
-                this[this.tableINVOICE.COMPANY_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCUST_IDNull() {
                 return this.IsNull(this.tableINVOICE.CUST_IDColumn);
             }
@@ -2225,14 +2215,14 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsORDERSTATUS_IDNull() {
-                return this.IsNull(this.tableINVOICE.ORDERSTATUS_IDColumn);
+            public bool IsORDER_STATUSNull() {
+                return this.IsNull(this.tableINVOICE.ORDER_STATUSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetORDERSTATUS_IDNull() {
-                this[this.tableINVOICE.ORDERSTATUS_IDColumn] = global::System.Convert.DBNull;
+            public void SetORDER_STATUSNull() {
+                this[this.tableINVOICE.ORDER_STATUSColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3409,13 +3399,12 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             tableMapping.ColumnMappings.Add("BOOK_DATE", "BOOK_DATE");
             tableMapping.ColumnMappings.Add("PICKUP_DATE", "PICKUP_DATE");
             tableMapping.ColumnMappings.Add("DROPOFF_DATE", "DROPOFF_DATE");
-            tableMapping.ColumnMappings.Add("COMPANY_ID", "COMPANY_ID");
             tableMapping.ColumnMappings.Add("CUST_ID", "CUST_ID");
-            tableMapping.ColumnMappings.Add("ORDERSTATUS_ID", "ORDERSTATUS_ID");
+            tableMapping.ColumnMappings.Add("ORDER_STATUS", "ORDER_STATUS");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `INVOICE` WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `COMPANY_ID` IS NULL) OR (`COMPANY_ID` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDERSTATUS_ID` IS NULL) OR (`ORDERSTATUS_ID` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `INVOICE` WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INV_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INV_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_BOOK_DATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Original, true, null));
@@ -3424,33 +3413,29 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_COMPANY_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COMPANY_ID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_COMPANY_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COMPANY_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDERSTATUS_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDERSTATUS_ID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDERSTATUS_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDERSTATUS_ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDER_STATUS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `INVOICE` (`BOOK_DATE`, `PICKUP_DATE`, `DROPOFF_DATE`, `COMPANY_ID`, " +
-                "`CUST_ID`, `ORDERSTATUS_ID`) VALUES (?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `INVOICE` (`BOOK_DATE`, `PICKUP_DATE`, `DROPOFF_DATE`, `CUST_ID`, `OR" +
+                "DER_STATUS`) VALUES (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("COMPANY_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COMPANY_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDERSTATUS_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDERSTATUS_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `INVOICE` SET `BOOK_DATE` = ?, `PICKUP_DATE` = ?, `DROPOFF_DATE` = ?, `COMPANY_ID` = ?, `CUST_ID` = ?, `ORDERSTATUS_ID` = ? WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `COMPANY_ID` IS NULL) OR (`COMPANY_ID` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDERSTATUS_ID` IS NULL) OR (`ORDERSTATUS_ID` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `INVOICE` SET `BOOK_DATE` = ?, `PICKUP_DATE` = ?, `DROPOFF_DATE` = ?, `CUST_ID` = ?, `ORDER_STATUS` = ? WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("COMPANY_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COMPANY_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDERSTATUS_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDERSTATUS_ID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INV_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INV_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_BOOK_DATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Original, false, null));
@@ -3458,12 +3443,10 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_COMPANY_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COMPANY_ID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_COMPANY_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "COMPANY_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDERSTATUS_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDERSTATUS_ID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDERSTATUS_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDERSTATUS_ID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDER_STATUS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3479,8 +3462,8 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT INV_ID, BOOK_DATE, PICKUP_DATE, DROPOFF_DATE, COMPANY_ID, CUST_ID, ORDERST" +
-                "ATUS_ID FROM INVOICE";
+            this._commandCollection[0].CommandText = "SELECT INV_ID, BOOK_DATE, PICKUP_DATE, DROPOFF_DATE, CUST_ID, ORDER_STATUS FROM I" +
+                "NVOICE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3541,7 +3524,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_INV_ID, global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, global::System.Nullable<int> Original_COMPANY_ID, global::System.Nullable<int> Original_CUST_ID, global::System.Nullable<int> Original_ORDERSTATUS_ID) {
+        public virtual int Delete(int Original_INV_ID, global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, global::System.Nullable<int> Original_CUST_ID, string Original_ORDER_STATUS) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_INV_ID));
             if ((Original_BOOK_DATE.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3567,29 +3550,21 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_COMPANY_ID.HasValue == true)) {
+            if ((Original_CUST_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_COMPANY_ID.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_CUST_ID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_CUST_ID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_CUST_ID.Value));
-            }
-            else {
+            if ((Original_ORDER_STATUS == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_ORDERSTATUS_ID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_ORDERSTATUS_ID.Value));
-            }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_ORDER_STATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3611,7 +3586,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> BOOK_DATE, global::System.Nullable<global::System.DateTime> PICKUP_DATE, global::System.Nullable<global::System.DateTime> DROPOFF_DATE, global::System.Nullable<int> COMPANY_ID, global::System.Nullable<int> CUST_ID, global::System.Nullable<int> ORDERSTATUS_ID) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> BOOK_DATE, global::System.Nullable<global::System.DateTime> PICKUP_DATE, global::System.Nullable<global::System.DateTime> DROPOFF_DATE, global::System.Nullable<int> CUST_ID, string ORDER_STATUS) {
             if ((BOOK_DATE.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(BOOK_DATE.Value));
             }
@@ -3630,23 +3605,17 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((COMPANY_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(COMPANY_ID.Value));
+            if ((CUST_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(CUST_ID.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((CUST_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(CUST_ID.Value));
-            }
-            else {
+            if ((ORDER_STATUS == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((ORDERSTATUS_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ORDERSTATUS_ID.Value));
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ORDER_STATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3668,7 +3637,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> BOOK_DATE, global::System.Nullable<global::System.DateTime> PICKUP_DATE, global::System.Nullable<global::System.DateTime> DROPOFF_DATE, global::System.Nullable<int> COMPANY_ID, global::System.Nullable<int> CUST_ID, global::System.Nullable<int> ORDERSTATUS_ID, int Original_INV_ID, global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, global::System.Nullable<int> Original_COMPANY_ID, global::System.Nullable<int> Original_CUST_ID, global::System.Nullable<int> Original_ORDERSTATUS_ID) {
+        public virtual int Update(global::System.Nullable<global::System.DateTime> BOOK_DATE, global::System.Nullable<global::System.DateTime> PICKUP_DATE, global::System.Nullable<global::System.DateTime> DROPOFF_DATE, global::System.Nullable<int> CUST_ID, string ORDER_STATUS, int Original_INV_ID, global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, global::System.Nullable<int> Original_CUST_ID, string Original_ORDER_STATUS) {
             if ((BOOK_DATE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(BOOK_DATE.Value));
             }
@@ -3687,72 +3656,58 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((COMPANY_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(COMPANY_ID.Value));
+            if ((CUST_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(CUST_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((CUST_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(CUST_ID.Value));
-            }
-            else {
+            if ((ORDER_STATUS == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((ORDERSTATUS_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ORDERSTATUS_ID.Value));
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ORDER_STATUS));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_INV_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_INV_ID));
             if ((Original_BOOK_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_BOOK_DATE.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_BOOK_DATE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_PICKUP_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_PICKUP_DATE.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PICKUP_DATE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_DROPOFF_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_DROPOFF_DATE.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_DROPOFF_DATE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_COMPANY_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_COMPANY_ID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_CUST_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_CUST_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_CUST_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Original_ORDERSTATUS_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_ORDERSTATUS_ID.Value));
+            if ((Original_ORDER_STATUS == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ORDER_STATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4245,15 +4200,6 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(AppData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cOMPANYTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._cOMPANYTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._cUSTOMERTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -4263,12 +4209,12 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._iNVOICETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.INVOICE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cOMPANYTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._iNVOICETableAdapter.Update(updatedRows));
+                    result = (result + this._cOMPANYTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4278,6 +4224,15 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._oRDERSTATUSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._iNVOICETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.INVOICE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._iNVOICETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4291,14 +4246,6 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(AppData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cOMPANYTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._cOMPANYTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._cUSTOMERTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -4307,11 +4254,11 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._iNVOICETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.INVOICE.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cOMPANYTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._iNVOICETableAdapter.Update(addedRows));
+                    result = (result + this._cOMPANYTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4320,6 +4267,14 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._oRDERSTATUSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._iNVOICETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.INVOICE.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._iNVOICETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4333,14 +4288,6 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(AppData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._oRDERSTATUSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ORDERSTATUS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._oRDERSTATUSTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._iNVOICETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.INVOICE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4349,11 +4296,11 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cUSTOMERTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._oRDERSTATUSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ORDERSTATUS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cUSTOMERTableAdapter.Update(deletedRows));
+                    result = (result + this._oRDERSTATUSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4362,6 +4309,14 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cOMPANYTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cUSTOMERTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cUSTOMERTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

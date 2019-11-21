@@ -10,9 +10,12 @@
     }
 }
 
-namespace WindowsFormsApp3.AppDataTableAdapters {
-    
-    
+namespace WindowsFormsApp3.AppDataTableAdapters
+{
+    partial class CUSTOMERTableAdapter
+    {
+    }
+
     public partial class INVOICETableAdapter {
     }
 }

@@ -38,6 +38,7 @@
             this.txtbox_DeliveryAddress = new System.Windows.Forms.TextBox();
             this.lbl_DropoffInformatin = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBox_CopyDropoffInformation = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_DeliveryCity = new System.Windows.Forms.Label();
             this.lbl_DeliveryState = new System.Windows.Forms.Label();
@@ -85,10 +86,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.combobox_CustomerIDZ = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBox_CopyPickupInformation = new System.Windows.Forms.CheckBox();
             this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
             this.tab_ManageCustomers = new System.Windows.Forms.TabPage();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_RequiredField = new System.Windows.Forms.Label();
             this.ZipLabel = new System.Windows.Forms.Label();
             this.ZipBox = new System.Windows.Forms.TextBox();
             this.CompanyLabel = new System.Windows.Forms.Label();
@@ -99,30 +102,20 @@
             this.CityBox = new System.Windows.Forms.TextBox();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.AddressBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.FirstNameLabel = new System.Windows.Forms.Label();
             this.FirstNameBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
             this.EmailBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.PhoneLabel = new System.Windows.Forms.Label();
             this.PhoneNumberBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LastNameLabel = new System.Windows.Forms.Label();
             this.LastNameBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.tab_Help = new System.Windows.Forms.TabPage();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -138,8 +131,16 @@
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
-            this.checkBox_CopyDropoffInformation = new System.Windows.Forms.CheckBox();
-            this.checkBox_CopyPickupInformation = new System.Windows.Forms.CheckBox();
+            this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -209,10 +210,10 @@
             tab_CreateOrder.Controls.Add(this.combobox_CustomerIDZ);
             tab_CreateOrder.Controls.Add(this.panel2);
             tab_CreateOrder.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tab_CreateOrder.Location = new System.Drawing.Point(4, 22);
+            tab_CreateOrder.Location = new System.Drawing.Point(4, 28);
             tab_CreateOrder.Name = "tab_CreateOrder";
             tab_CreateOrder.Padding = new System.Windows.Forms.Padding(3);
-            tab_CreateOrder.Size = new System.Drawing.Size(788, 423);
+            tab_CreateOrder.Size = new System.Drawing.Size(1020, 546);
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
             tab_CreateOrder.Click += new System.EventHandler(this.tab_CreateOrder_Click);
@@ -278,6 +279,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(237, 172);
             this.panel3.TabIndex = 58;
+            // 
+            // checkBox_CopyDropoffInformation
+            // 
+            this.checkBox_CopyDropoffInformation.AutoSize = true;
+            this.checkBox_CopyDropoffInformation.Enabled = false;
+            this.checkBox_CopyDropoffInformation.Location = new System.Drawing.Point(33, 29);
+            this.checkBox_CopyDropoffInformation.Name = "checkBox_CopyDropoffInformation";
+            this.checkBox_CopyDropoffInformation.Size = new System.Drawing.Size(137, 19);
+            this.checkBox_CopyDropoffInformation.TabIndex = 59;
+            this.checkBox_CopyDropoffInformation.Text = "Copy Customer Data";
+            this.checkBox_CopyDropoffInformation.UseVisualStyleBackColor = true;
+            this.checkBox_CopyDropoffInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyDropoffInformation_CheckedChanged);
             // 
             // label7
             // 
@@ -699,38 +712,52 @@
             this.panel2.Size = new System.Drawing.Size(237, 172);
             this.panel2.TabIndex = 47;
             // 
+            // checkBox_CopyPickupInformation
+            // 
+            this.checkBox_CopyPickupInformation.AutoSize = true;
+            this.checkBox_CopyPickupInformation.Enabled = false;
+            this.checkBox_CopyPickupInformation.Location = new System.Drawing.Point(9, 30);
+            this.checkBox_CopyPickupInformation.Name = "checkBox_CopyPickupInformation";
+            this.checkBox_CopyPickupInformation.Size = new System.Drawing.Size(137, 19);
+            this.checkBox_CopyPickupInformation.TabIndex = 60;
+            this.checkBox_CopyPickupInformation.Text = "Copy Customer Data";
+            this.checkBox_CopyPickupInformation.UseVisualStyleBackColor = true;
+            this.checkBox_CopyPickupInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyPickupInformation_CheckedChanged);
+            // 
             // cUSTOMERTableAdapter
             // 
             this.cUSTOMERTableAdapter.ClearBeforeFill = true;
             // 
             // tab_ManageCustomers
             // 
+            this.tab_ManageCustomers.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tab_ManageCustomers.Controls.Add(this.SearchBox);
             this.tab_ManageCustomers.Controls.Add(this.panel1);
-            this.tab_ManageCustomers.Controls.Add(this.label1);
             this.tab_ManageCustomers.Controls.Add(this.dataGridView1);
+            this.tab_ManageCustomers.Controls.Add(this.label1);
             this.tab_ManageCustomers.Controls.Add(this.btnEdit);
-            this.tab_ManageCustomers.Controls.Add(this.btnCancel);
             this.tab_ManageCustomers.Controls.Add(this.btnNew);
             this.tab_ManageCustomers.Controls.Add(this.btnSave);
-            this.tab_ManageCustomers.Location = new System.Drawing.Point(4, 22);
+            this.tab_ManageCustomers.Controls.Add(this.btnCancel);
+            this.tab_ManageCustomers.Location = new System.Drawing.Point(4, 28);
             this.tab_ManageCustomers.Name = "tab_ManageCustomers";
             this.tab_ManageCustomers.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_ManageCustomers.Size = new System.Drawing.Size(788, 423);
+            this.tab_ManageCustomers.Size = new System.Drawing.Size(1020, 546);
             this.tab_ManageCustomers.TabIndex = 1;
             this.tab_ManageCustomers.Text = "Manage Customers";
-            this.tab_ManageCustomers.UseVisualStyleBackColor = true;
             // 
             // SearchBox
             // 
-            this.SearchBox.Location = new System.Drawing.Point(60, 201);
+            this.SearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBox.Location = new System.Drawing.Point(346, 7);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(194, 20);
+            this.SearchBox.Size = new System.Drawing.Size(279, 27);
             this.SearchBox.TabIndex = 18;
             this.SearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBox_KeyPress);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbl_RequiredField);
             this.panel1.Controls.Add(this.ZipLabel);
             this.panel1.Controls.Add(this.ZipBox);
             this.panel1.Controls.Add(this.CompanyLabel);
@@ -741,185 +768,206 @@
             this.panel1.Controls.Add(this.CityBox);
             this.panel1.Controls.Add(this.AddressLabel);
             this.panel1.Controls.Add(this.AddressBox);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.FirstNameLabel);
             this.panel1.Controls.Add(this.FirstNameBox);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.EmailLabel);
             this.panel1.Controls.Add(this.EmailBox);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.PhoneLabel);
             this.panel1.Controls.Add(this.PhoneNumberBox);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.LastNameLabel);
             this.panel1.Controls.Add(this.LastNameBox);
             this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(785, 152);
+            this.panel1.Size = new System.Drawing.Size(278, 298);
             this.panel1.TabIndex = 0;
+            // 
+            // lbl_RequiredField
+            // 
+            this.lbl_RequiredField.AutoSize = true;
+            this.lbl_RequiredField.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RequiredField.ForeColor = System.Drawing.Color.Red;
+            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 271);
+            this.lbl_RequiredField.Name = "lbl_RequiredField";
+            this.lbl_RequiredField.Size = new System.Drawing.Size(216, 19);
+            this.lbl_RequiredField.TabIndex = 20;
+            this.lbl_RequiredField.Text = "*Please fill in the required fields";
+            this.lbl_RequiredField.Visible = false;
             // 
             // ZipLabel
             // 
             this.ZipLabel.AutoSize = true;
-            this.ZipLabel.Location = new System.Drawing.Point(524, 26);
+            this.ZipLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZipLabel.Location = new System.Drawing.Point(13, 236);
             this.ZipLabel.Name = "ZipLabel";
-            this.ZipLabel.Size = new System.Drawing.Size(25, 13);
+            this.ZipLabel.Size = new System.Drawing.Size(68, 19);
             this.ZipLabel.TabIndex = 19;
-            this.ZipLabel.Text = "Zip:";
+            this.ZipLabel.Text = "Zip Code";
             // 
             // ZipBox
             // 
             this.ZipBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
-            this.ZipBox.Location = new System.Drawing.Point(606, 23);
+            this.ZipBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZipBox.Location = new System.Drawing.Point(101, 233);
             this.ZipBox.Name = "ZipBox";
-            this.ZipBox.Size = new System.Drawing.Size(142, 20);
+            this.ZipBox.Size = new System.Drawing.Size(163, 27);
             this.ZipBox.TabIndex = 18;
             this.ZipBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZipBox_KeyPress);
             // 
             // CompanyLabel
             // 
             this.CompanyLabel.AutoSize = true;
-            this.CompanyLabel.Location = new System.Drawing.Point(283, 26);
+            this.CompanyLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyLabel.Location = new System.Drawing.Point(13, 124);
             this.CompanyLabel.Name = "CompanyLabel";
-            this.CompanyLabel.Size = new System.Drawing.Size(54, 13);
+            this.CompanyLabel.Size = new System.Drawing.Size(73, 19);
             this.CompanyLabel.TabIndex = 17;
-            this.CompanyLabel.Text = "Company:";
+            this.CompanyLabel.Text = "Company";
             // 
             // CompanyBox
             // 
             this.CompanyBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
-            this.CompanyBox.Location = new System.Drawing.Point(365, 23);
+            this.CompanyBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyBox.Location = new System.Drawing.Point(101, 121);
             this.CompanyBox.Name = "CompanyBox";
-            this.CompanyBox.Size = new System.Drawing.Size(142, 20);
+            this.CompanyBox.Size = new System.Drawing.Size(163, 27);
             this.CompanyBox.TabIndex = 10;
             // 
             // StateLabel
             // 
             this.StateLabel.AutoSize = true;
-            this.StateLabel.Location = new System.Drawing.Point(283, 104);
+            this.StateLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StateLabel.Location = new System.Drawing.Point(13, 208);
             this.StateLabel.Name = "StateLabel";
-            this.StateLabel.Size = new System.Drawing.Size(35, 13);
+            this.StateLabel.Size = new System.Drawing.Size(45, 19);
             this.StateLabel.TabIndex = 16;
-            this.StateLabel.Text = "State:";
+            this.StateLabel.Text = "State";
             // 
             // StateBox
             // 
             this.StateBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
-            this.StateBox.Location = new System.Drawing.Point(365, 101);
+            this.StateBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StateBox.Location = new System.Drawing.Point(101, 205);
             this.StateBox.Name = "StateBox";
-            this.StateBox.Size = new System.Drawing.Size(142, 20);
+            this.StateBox.Size = new System.Drawing.Size(163, 27);
             this.StateBox.TabIndex = 13;
             // 
             // CityLabel
             // 
             this.CityLabel.AutoSize = true;
-            this.CityLabel.Location = new System.Drawing.Point(283, 78);
+            this.CityLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityLabel.Location = new System.Drawing.Point(13, 180);
             this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(27, 13);
+            this.CityLabel.Size = new System.Drawing.Size(35, 19);
             this.CityLabel.TabIndex = 15;
-            this.CityLabel.Text = "City:";
+            this.CityLabel.Text = "City";
             // 
             // CityBox
             // 
             this.CityBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
-            this.CityBox.Location = new System.Drawing.Point(365, 75);
+            this.CityBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityBox.Location = new System.Drawing.Point(101, 177);
             this.CityBox.Name = "CityBox";
-            this.CityBox.Size = new System.Drawing.Size(142, 20);
+            this.CityBox.Size = new System.Drawing.Size(163, 27);
             this.CityBox.TabIndex = 12;
             // 
             // AddressLabel
             // 
             this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(283, 52);
+            this.AddressLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressLabel.Location = new System.Drawing.Point(13, 152);
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(48, 13);
+            this.AddressLabel.Size = new System.Drawing.Size(63, 19);
             this.AddressLabel.TabIndex = 14;
-            this.AddressLabel.Text = "Address:";
+            this.AddressLabel.Text = "Address";
             // 
             // AddressBox
             // 
             this.AddressBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
-            this.AddressBox.Location = new System.Drawing.Point(365, 49);
+            this.AddressBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressBox.Location = new System.Drawing.Point(101, 149);
             this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(142, 20);
+            this.AddressBox.Size = new System.Drawing.Size(163, 27);
             this.AddressBox.TabIndex = 11;
             // 
-            // label5
+            // FirstNameLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "First Name:";
+            this.FirstNameLabel.AutoSize = true;
+            this.FirstNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameLabel.Location = new System.Drawing.Point(13, 12);
+            this.FirstNameLabel.Name = "FirstNameLabel";
+            this.FirstNameLabel.Size = new System.Drawing.Size(82, 19);
+            this.FirstNameLabel.TabIndex = 9;
+            this.FirstNameLabel.Text = "First Name";
             // 
             // FirstNameBox
             // 
             this.FirstNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_FNAME", true));
-            this.FirstNameBox.Location = new System.Drawing.Point(96, 23);
+            this.FirstNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameBox.Location = new System.Drawing.Point(101, 9);
             this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(142, 20);
+            this.FirstNameBox.Size = new System.Drawing.Size(163, 27);
             this.FirstNameBox.TabIndex = 1;
             this.FirstNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FirstNameBox_KeyPress);
             // 
-            // label4
+            // EmailLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Email:";
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLabel.Location = new System.Drawing.Point(13, 96);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(46, 19);
+            this.EmailLabel.TabIndex = 7;
+            this.EmailLabel.Text = "Email";
             // 
             // EmailBox
             // 
             this.EmailBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
-            this.EmailBox.Location = new System.Drawing.Point(96, 101);
+            this.EmailBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailBox.Location = new System.Drawing.Point(101, 93);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(142, 20);
+            this.EmailBox.Size = new System.Drawing.Size(163, 27);
             this.EmailBox.TabIndex = 3;
             // 
-            // label3
+            // PhoneLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Phone Number:";
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneLabel.Location = new System.Drawing.Point(13, 68);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(65, 19);
+            this.PhoneLabel.TabIndex = 5;
+            this.PhoneLabel.Text = "Phone #";
             // 
             // PhoneNumberBox
             // 
             this.PhoneNumberBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
-            this.PhoneNumberBox.Location = new System.Drawing.Point(96, 75);
+            this.PhoneNumberBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneNumberBox.Location = new System.Drawing.Point(101, 65);
             this.PhoneNumberBox.Name = "PhoneNumberBox";
-            this.PhoneNumberBox.Size = new System.Drawing.Size(142, 20);
+            this.PhoneNumberBox.Size = new System.Drawing.Size(163, 27);
             this.PhoneNumberBox.TabIndex = 2;
             this.PhoneNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberBox_KeyPress);
             // 
-            // label2
+            // LastNameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Last Name:";
+            this.LastNameLabel.AutoSize = true;
+            this.LastNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameLabel.Location = new System.Drawing.Point(13, 40);
+            this.LastNameLabel.Name = "LastNameLabel";
+            this.LastNameLabel.Size = new System.Drawing.Size(80, 19);
+            this.LastNameLabel.TabIndex = 3;
+            this.LastNameLabel.Text = "Last Name";
             // 
             // LastNameBox
             // 
             this.LastNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_LNAME", true));
-            this.LastNameBox.Location = new System.Drawing.Point(96, 49);
+            this.LastNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameBox.Location = new System.Drawing.Point(101, 37);
             this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(142, 20);
+            this.LastNameBox.Size = new System.Drawing.Size(163, 27);
             this.LastNameBox.TabIndex = 1;
             this.LastNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastNameBox_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Search:";
             // 
             // dataGridView1
             // 
@@ -940,129 +988,85 @@
             this.cUSTSTATEDataGridViewTextBoxColumn,
             this.cUSTZIPDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 231);
+            this.dataGridView1.Location = new System.Drawing.Point(284, 43);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(767, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(729, 496);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
             // 
-            // cUSTIDDataGridViewTextBoxColumn
+            // label1
             // 
-            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
-            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTFNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTLNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTEMAILDataGridViewTextBoxColumn
-            // 
-            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
-            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
-            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTPHONEDataGridViewTextBoxColumn
-            // 
-            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
-            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
-            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTCOMPANYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTADDRESSDataGridViewTextBoxColumn
-            // 
-            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTCITYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
-            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
-            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTSTATEDataGridViewTextBoxColumn
-            // 
-            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
-            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
-            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
-            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTZIPDataGridViewTextBoxColumn
-            // 
-            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
-            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
-            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
-            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(284, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 19);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Search:";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(536, 187);
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEdit.FlatAppearance.BorderSize = 5;
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(45, 358);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(98, 38);
+            this.btnEdit.Size = new System.Drawing.Size(184, 46);
             this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Text = "Edit Customer";
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(701, 195);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(302, 187);
+            this.btnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNew.FlatAppearance.BorderSize = 5;
+            this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(45, 305);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(94, 38);
+            this.btnNew.Size = new System.Drawing.Size(184, 46);
             this.btnNew.TabIndex = 15;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Text = "Add New Customer";
+            this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(413, 187);
+            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.FlatAppearance.BorderSize = 5;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(45, 410);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(103, 38);
+            this.btnSave.Size = new System.Drawing.Size(184, 46);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatAppearance.BorderSize = 5;
+            this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(45, 462);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(184, 44);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // tab_Help
             // 
-            this.tab_Help.Location = new System.Drawing.Point(4, 22);
+            this.tab_Help.Location = new System.Drawing.Point(4, 28);
             this.tab_Help.Name = "tab_Help";
             this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Help.Size = new System.Drawing.Size(788, 423);
+            this.tab_Help.Size = new System.Drawing.Size(1020, 546);
             this.tab_Help.TabIndex = 4;
             this.tab_Help.Text = "Help";
             this.tab_Help.UseVisualStyleBackColor = true;
@@ -1070,10 +1074,10 @@
             // tab_SearchOrders
             // 
             this.tab_SearchOrders.Controls.Add(this.dataGridView2);
-            this.tab_SearchOrders.Location = new System.Drawing.Point(4, 22);
+            this.tab_SearchOrders.Location = new System.Drawing.Point(4, 28);
             this.tab_SearchOrders.Name = "tab_SearchOrders";
             this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_SearchOrders.Size = new System.Drawing.Size(788, 423);
+            this.tab_SearchOrders.Size = new System.Drawing.Size(1020, 546);
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
             this.tab_SearchOrders.UseVisualStyleBackColor = true;
@@ -1136,10 +1140,10 @@
             this.tab_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Home.BackgroundImage")));
             this.tab_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab_Home.Controls.Add(this.lbl_Home);
-            this.tab_Home.Location = new System.Drawing.Point(4, 22);
+            this.tab_Home.Location = new System.Drawing.Point(4, 28);
             this.tab_Home.Name = "tab_Home";
             this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Home.Size = new System.Drawing.Size(788, 423);
+            this.tab_Home.Size = new System.Drawing.Size(1020, 546);
             this.tab_Home.TabIndex = 0;
             this.tab_Home.Text = "Home";
             this.tab_Home.UseVisualStyleBackColor = true;
@@ -1147,11 +1151,11 @@
             // lbl_Home
             // 
             this.lbl_Home.AutoSize = true;
-            this.lbl_Home.Font = new System.Drawing.Font("Castellar", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Home.Font = new System.Drawing.Font("Castellar", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.White;
-            this.lbl_Home.Location = new System.Drawing.Point(78, 84);
+            this.lbl_Home.Location = new System.Drawing.Point(100, 100);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(641, 44);
+            this.lbl_Home.Size = new System.Drawing.Size(826, 58);
             this.lbl_Home.TabIndex = 21;
             this.lbl_Home.Text = "Welcome to Virtual Adil!";
             // 
@@ -1162,10 +1166,11 @@
             this.tab_Container.Controls.Add(tab_CreateOrder);
             this.tab_Container.Controls.Add(this.tab_SearchOrders);
             this.tab_Container.Controls.Add(this.tab_Help);
+            this.tab_Container.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tab_Container.Location = new System.Drawing.Point(3, 0);
             this.tab_Container.Name = "tab_Container";
             this.tab_Container.SelectedIndex = 0;
-            this.tab_Container.Size = new System.Drawing.Size(796, 449);
+            this.tab_Container.Size = new System.Drawing.Size(1028, 578);
             this.tab_Container.TabIndex = 19;
             // 
             // iNVOICETableAdapter
@@ -1181,35 +1186,101 @@
             // 
             this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
             // 
-            // checkBox_CopyDropoffInformation
+            // cUSTIDDataGridViewTextBoxColumn
             // 
-            this.checkBox_CopyDropoffInformation.AutoSize = true;
-            this.checkBox_CopyDropoffInformation.Enabled = false;
-            this.checkBox_CopyDropoffInformation.Location = new System.Drawing.Point(33, 29);
-            this.checkBox_CopyDropoffInformation.Name = "checkBox_CopyDropoffInformation";
-            this.checkBox_CopyDropoffInformation.Size = new System.Drawing.Size(137, 19);
-            this.checkBox_CopyDropoffInformation.TabIndex = 59;
-            this.checkBox_CopyDropoffInformation.Text = "Copy Customer Data";
-            this.checkBox_CopyDropoffInformation.UseVisualStyleBackColor = true;
-            this.checkBox_CopyDropoffInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyDropoffInformation_CheckedChanged);
+            this.cUSTIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
+            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTIDDataGridViewTextBoxColumn.Width = 90;
             // 
-            // checkBox_CopyPickupInformation
+            // cUSTFNAMEDataGridViewTextBoxColumn
             // 
-            this.checkBox_CopyPickupInformation.AutoSize = true;
-            this.checkBox_CopyPickupInformation.Enabled = false;
-            this.checkBox_CopyPickupInformation.Location = new System.Drawing.Point(9, 30);
-            this.checkBox_CopyPickupInformation.Name = "checkBox_CopyPickupInformation";
-            this.checkBox_CopyPickupInformation.Size = new System.Drawing.Size(137, 19);
-            this.checkBox_CopyPickupInformation.TabIndex = 60;
-            this.checkBox_CopyPickupInformation.Text = "Copy Customer Data";
-            this.checkBox_CopyPickupInformation.UseVisualStyleBackColor = true;
-            this.checkBox_CopyPickupInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyPickupInformation_CheckedChanged);
+            this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // cUSTLNAMEDataGridViewTextBoxColumn
+            // 
+            this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // cUSTEMAILDataGridViewTextBoxColumn
+            // 
+            this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
+            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
+            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // cUSTPHONEDataGridViewTextBoxColumn
+            // 
+            this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
+            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
+            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // cUSTCOMPANYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // cUSTADDRESSDataGridViewTextBoxColumn
+            // 
+            this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // cUSTCITYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
+            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
+            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // cUSTSTATEDataGridViewTextBoxColumn
+            // 
+            this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
+            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
+            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
+            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // cUSTZIPDataGridViewTextBoxColumn
+            // 
+            this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
+            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
+            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
+            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1032, 579);
             this.Controls.Add(this.tab_Container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimizeBox = false;
@@ -1281,26 +1352,16 @@
         private System.Windows.Forms.TextBox CityBox;
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.TextBox AddressBox;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.TextBox FirstNameBox;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.TextBox EmailBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.TextBox PhoneNumberBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.TextBox LastNameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTFNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTLNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTEMAILDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTPHONEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCOMPANYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTADDRESSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnNew;
@@ -1354,5 +1415,16 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox checkBox_CopyDropoffInformation;
         private System.Windows.Forms.CheckBox checkBox_CopyPickupInformation;
+        private System.Windows.Forms.Label lbl_RequiredField;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTFNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTLNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTEMAILDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTPHONEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCOMPANYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTADDRESSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
     }
 }

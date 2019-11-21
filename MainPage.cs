@@ -114,59 +114,131 @@ namespace WindowsFormsApp3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
-            {
+            /*bool dataFilled = false;
+            while (dataFilled == false)
+            {*/
+            
+                try
+                {
                     cUSTOMERBindingSource.EndEdit();
-                if (string.IsNullOrEmpty(FirstNameBox.Text))
-                {
+                    if (string.IsNullOrEmpty(FirstNameBox.Text))
+                    {
+                        //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lbl_RequiredField.Visible = true;
+                        FirstNameLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
 
-                    MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    if (string.IsNullOrEmpty(EmailBox.Text)) //Checks to see if the email address field is blank
+                    {
+                        //MessageBox.Show(EmailBox.Text, "Email Address cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lbl_RequiredField.Visible = true;
+                        EmailLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }          
+                    if (string.IsNullOrEmpty(LastNameBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        LastNameLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
+                    if (string.IsNullOrEmpty(PhoneNumberBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        PhoneLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
+                    if (string.IsNullOrEmpty(CompanyBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        CompanyLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
+                    if (string.IsNullOrEmpty(AddressBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        AddressLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
+                    if (string.IsNullOrEmpty(CityBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        CityLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
+                    if (string.IsNullOrEmpty(StateBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        StateLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
+                    if (string.IsNullOrEmpty(ZipBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        ZipLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                    }
+
+                    else
+                    {
+                        if (!EmailBox.Text.Contains("@")) //Check to see if the email address contains an '@' symbol.
+                        {
+                            MessageBox.Show(EmailBox.Text, "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            EmailLabel.ForeColor = System.Drawing.Color.Red;
+                            lbl_RequiredField.Visible = true;
+                            btnNew.Enabled = false;
+                            panel1.Enabled = true;
+                            FirstNameLabel.ForeColor = System.Drawing.Color.Black;
+                            LastNameLabel.ForeColor = System.Drawing.Color.Black;
+                            PhoneLabel.ForeColor = System.Drawing.Color.Black;
+                            CompanyLabel.ForeColor = System.Drawing.Color.Black;
+                            AddressLabel.ForeColor = System.Drawing.Color.Black;
+                            CityLabel.ForeColor = System.Drawing.Color.Black;
+                            StateLabel.ForeColor = System.Drawing.Color.Black;
+                            ZipLabel.ForeColor = System.Drawing.Color.Black;
+                        }
+                        else
+                        {
+                            cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
+                            lbl_RequiredField.Visible = false;
+                            btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                            btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
+                            panel1.Enabled = false;
+                            dataGridView1.Enabled = true;
+                            SearchBox.Enabled = true;
+                            isSaved = true;
+                            FirstNameLabel.ForeColor = System.Drawing.Color.Black;
+                            LastNameLabel.ForeColor = System.Drawing.Color.Black;
+                            PhoneLabel.ForeColor = System.Drawing.Color.Black;
+                            EmailLabel.ForeColor = System.Drawing.Color.Black;
+                            CompanyLabel.ForeColor = System.Drawing.Color.Black;
+                            AddressLabel.ForeColor = System.Drawing.Color.Black;
+                            CityLabel.ForeColor = System.Drawing.Color.Black;
+                            StateLabel.ForeColor = System.Drawing.Color.Black;
+                            ZipLabel.ForeColor = System.Drawing.Color.Black;
+                            //dataFilled = true;
+                        }
+
+                    }
 
                 }
+            
 
-                if (EmailBox.Text.Length == 0) //Checks to see if the email address field is blank
+                catch (Exception ex)
                 {
-                    MessageBox.Show(EmailBox.Text, "Email Address cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    btnNew.Enabled = false;
-                    panel1.Enabled = true;
-
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cUSTOMERBindingSource.ResetBindings(false);
                 }
-                
-                
-                if (!EmailBox.Text.Contains("@")) //Check to see if the email address contains an '@' symbol.
-                {
-                    MessageBox.Show(EmailBox.Text, "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    btnNew.Enabled = false;
-                    panel1.Enabled = true;
-
-                }
-
-                
-
-                else
-                {
-                    cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
-                    btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
-                    btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                    panel1.Enabled = false;
-                    dataGridView1.Enabled = true;
-                    SearchBox.Enabled = true;
-                    isSaved = true;
-                }
-                
-                
-                
-
-
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cUSTOMERBindingSource.ResetBindings(false);
-            }
+            //} this bracket is for the while statement that's commented out above
         }
 
         private void AddCustomer_Load(object sender, EventArgs e)

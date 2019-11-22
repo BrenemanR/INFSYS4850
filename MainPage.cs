@@ -496,7 +496,7 @@ namespace WindowsFormsApp3
             
             iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, combobox_OrderStatus.Text, 
                 txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
-                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, richTextBox1.Text);
+                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text);
 
             this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
             iNVOICETableAdapter.Update(this.appData.INVOICE);
@@ -520,6 +520,8 @@ namespace WindowsFormsApp3
             txtbox_DeliveryZip.Enabled = false;
 
             btn_SaveOrder.Enabled = false;
+
+            
         }
 
         
@@ -593,7 +595,6 @@ namespace WindowsFormsApp3
                 txtbox_PickupZip.Text = "";
             }
         }
-
-       
     }
+
 }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
-            this.btn_AddRow = new System.Windows.Forms.Button();
             this.lbl_Description = new System.Windows.Forms.Label();
             this.txtboxrch_Description = new System.Windows.Forms.RichTextBox();
             this.txtbox_DeliveryZip = new System.Windows.Forms.TextBox();
@@ -66,7 +65,7 @@
             this.btn_SaveOrder = new System.Windows.Forms.Button();
             this.btn_CreateOrder = new System.Windows.Forms.Button();
             this.lbl_SpecialInstructions = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtboxrch_SpecialInstructions = new System.Windows.Forms.RichTextBox();
             this.txtbox_Invoice = new System.Windows.Forms.TextBox();
             this.txtbox_Company = new System.Windows.Forms.TextBox();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -171,7 +170,6 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
-            tab_CreateOrder.Controls.Add(this.btn_AddRow);
             tab_CreateOrder.Controls.Add(this.lbl_Description);
             tab_CreateOrder.Controls.Add(this.txtboxrch_Description);
             tab_CreateOrder.Controls.Add(this.txtbox_DeliveryZip);
@@ -200,7 +198,7 @@
             tab_CreateOrder.Controls.Add(this.btn_SaveOrder);
             tab_CreateOrder.Controls.Add(this.btn_CreateOrder);
             tab_CreateOrder.Controls.Add(this.lbl_SpecialInstructions);
-            tab_CreateOrder.Controls.Add(this.richTextBox1);
+            tab_CreateOrder.Controls.Add(this.txtboxrch_SpecialInstructions);
             tab_CreateOrder.Controls.Add(this.txtbox_Invoice);
             tab_CreateOrder.Controls.Add(this.txtbox_Company);
             tab_CreateOrder.Controls.Add(this.txtbox_Email);
@@ -229,19 +227,10 @@
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
             // 
-            // btn_AddRow
-            // 
-            this.btn_AddRow.Location = new System.Drawing.Point(892, 112);
-            this.btn_AddRow.Name = "btn_AddRow";
-            this.btn_AddRow.Size = new System.Drawing.Size(75, 23);
-            this.btn_AddRow.TabIndex = 63;
-            this.btn_AddRow.Text = "Add Row";
-            this.btn_AddRow.UseVisualStyleBackColor = true;
-            // 
             // lbl_Description
             // 
             this.lbl_Description.AutoSize = true;
-            this.lbl_Description.Location = new System.Drawing.Point(625, 95);
+            this.lbl_Description.Location = new System.Drawing.Point(754, 93);
             this.lbl_Description.Name = "lbl_Description";
             this.lbl_Description.Size = new System.Drawing.Size(70, 15);
             this.lbl_Description.TabIndex = 62;
@@ -249,9 +238,12 @@
             // 
             // txtboxrch_Description
             // 
-            this.txtboxrch_Description.Location = new System.Drawing.Point(553, 112);
+            this.txtboxrch_Description.AcceptsTab = true;
+            this.txtboxrch_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtboxrch_Description.Location = new System.Drawing.Point(519, 122);
             this.txtboxrch_Description.Name = "txtboxrch_Description";
-            this.txtboxrch_Description.Size = new System.Drawing.Size(220, 83);
+            this.txtboxrch_Description.ShowSelectionMargin = true;
+            this.txtboxrch_Description.Size = new System.Drawing.Size(494, 155);
             this.txtboxrch_Description.TabIndex = 60;
             this.txtboxrch_Description.Text = "";
             // 
@@ -535,19 +527,19 @@
             // lbl_SpecialInstructions
             // 
             this.lbl_SpecialInstructions.AutoSize = true;
-            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(367, 383);
+            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(691, 396);
             this.lbl_SpecialInstructions.Name = "lbl_SpecialInstructions";
             this.lbl_SpecialInstructions.Size = new System.Drawing.Size(119, 15);
             this.lbl_SpecialInstructions.TabIndex = 24;
             this.lbl_SpecialInstructions.Text = "Special Instructions:";
             // 
-            // richTextBox1
+            // txtboxrch_SpecialInstructions
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(492, 322);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(528, 117);
-            this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "";
+            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(485, 422);
+            this.txtboxrch_SpecialInstructions.Name = "txtboxrch_SpecialInstructions";
+            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(528, 117);
+            this.txtboxrch_SpecialInstructions.TabIndex = 23;
+            this.txtboxrch_SpecialInstructions.Text = "";
             // 
             // txtbox_Invoice
             // 
@@ -1419,7 +1411,7 @@
         private System.Windows.Forms.BindingSource cUSTOMERBindingSource;
         private AppDataTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
         private System.Windows.Forms.Label lbl_SpecialInstructions;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtboxrch_SpecialInstructions;
         private System.Windows.Forms.TextBox txtbox_Invoice;
         private System.Windows.Forms.TextBox txtbox_Company;
         private System.Windows.Forms.TextBox txtbox_Email;
@@ -1535,6 +1527,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lbl_Description;
         private System.Windows.Forms.RichTextBox txtboxrch_Description;
-        private System.Windows.Forms.Button btn_AddRow;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -190,9 +190,9 @@ namespace WindowsFormsApp3
 
                     else
                     {
-                        if (!EmailBox.Text.Contains("@")) //Check to see if the email address contains an '@' symbol.
+                        if (!Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
                         {
-                            MessageBox.Show(EmailBox.Text, "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(EmailBox.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             EmailLabel.ForeColor = System.Drawing.Color.Red;
                             lbl_RequiredField.Visible = true;
                             btnNew.Enabled = false;

@@ -118,9 +118,10 @@ namespace WindowsFormsApp3
             /*bool dataFilled = false;
             while (dataFilled == false)
             {*/
-                
+                bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false;
                 try
                 {
+                               
                     cUSTOMERBindingSource.EndEdit();
                     FirstNameLabel.ForeColor = System.Drawing.Color.Black;
                     LastNameLabel.ForeColor = System.Drawing.Color.Black;
@@ -131,15 +132,23 @@ namespace WindowsFormsApp3
                     CityLabel.ForeColor = System.Drawing.Color.Black;
                     StateLabel.ForeColor = System.Drawing.Color.Black;
                     ZipLabel.ForeColor = System.Drawing.Color.Black;
-                if (string.IsNullOrEmpty(FirstNameBox.Text))
+                    if (string.IsNullOrEmpty(FirstNameBox.Text))
                     {
                         //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         lbl_RequiredField.Visible = true;
                         FirstNameLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
+                        noFName = true;
+                    }                              
+                    if (string.IsNullOrEmpty(LastNameBox.Text))
+                    {
+                        lbl_RequiredField.Visible = true;
+                        LastNameLabel.ForeColor = System.Drawing.Color.Red;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                        noLName = true;
                     }
-
                     if (string.IsNullOrEmpty(EmailBox.Text)) //Checks to see if the email address field is blank
                     {
                         //MessageBox.Show(EmailBox.Text, "Email Address cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -147,13 +156,7 @@ namespace WindowsFormsApp3
                         EmailLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
-                    }          
-                    if (string.IsNullOrEmpty(LastNameBox.Text))
-                    {
-                        lbl_RequiredField.Visible = true;
-                        LastNameLabel.ForeColor = System.Drawing.Color.Red;
-                        btnNew.Enabled = false;
-                        panel1.Enabled = true;
+                        noEmail = true;
                     }
                     if (string.IsNullOrEmpty(PhoneNumberBox.Text))
                     {
@@ -161,6 +164,7 @@ namespace WindowsFormsApp3
                         PhoneLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
+                        noPhone = true;
                     }
                     if (string.IsNullOrEmpty(CompanyBox.Text))
                     {
@@ -168,6 +172,7 @@ namespace WindowsFormsApp3
                         CompanyLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
+                        noCompany = true;
                     }
                     if (string.IsNullOrEmpty(AddressBox.Text))
                     {
@@ -175,6 +180,7 @@ namespace WindowsFormsApp3
                         AddressLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
+                        noAddress = true;
                     }
                     if (string.IsNullOrEmpty(CityBox.Text))
                     {
@@ -182,6 +188,7 @@ namespace WindowsFormsApp3
                         CityLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
+                        noCity = true;
                     }
                     if (string.IsNullOrEmpty(StateBox.Text))
                     {
@@ -189,6 +196,7 @@ namespace WindowsFormsApp3
                         StateLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
+                        noState = true;
                     }
                     if (string.IsNullOrEmpty(ZipBox.Text))
                     {
@@ -196,40 +204,38 @@ namespace WindowsFormsApp3
                         ZipLabel.ForeColor = System.Drawing.Color.Red;
                         btnNew.Enabled = false;
                         panel1.Enabled = true;
+                        noZip = true;
+                    }
+                    if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
+                    {
+                        MessageBox.Show(PhoneNumberBox.Text + " is not a valid phone number. Please enter in 9 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        PhoneLabel.ForeColor = System.Drawing.Color.Red;
+                        lbl_RequiredField.Visible = true;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                        noPhone = true;
+
+                    }
+                    if (!Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
+                    {
+                        MessageBox.Show(EmailBox.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        EmailLabel.ForeColor = System.Drawing.Color.Red;
+                        lbl_RequiredField.Visible = true;
+                        btnNew.Enabled = false;
+                        panel1.Enabled = true;
+                        noEmail = true;
                     }
 
-                    else
+                    if (!noFName && !noLName && !noPhone && !noEmail && !noCompany && !noAddress && !noCity && !noState && !noZip)
                     {
-                        if (!Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
-                        {
-                            MessageBox.Show(EmailBox.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            EmailLabel.ForeColor = System.Drawing.Color.Red;
-                            lbl_RequiredField.Visible = true;
-                            btnNew.Enabled = false;
-                            panel1.Enabled = true;
-                            FirstNameLabel.ForeColor = System.Drawing.Color.Black;
-                            LastNameLabel.ForeColor = System.Drawing.Color.Black;
-                            PhoneLabel.ForeColor = System.Drawing.Color.Black;
-                            CompanyLabel.ForeColor = System.Drawing.Color.Black;
-                            AddressLabel.ForeColor = System.Drawing.Color.Black;
-                            CityLabel.ForeColor = System.Drawing.Color.Black;
-                            StateLabel.ForeColor = System.Drawing.Color.Black;
-                            ZipLabel.ForeColor = System.Drawing.Color.Black;
-                        }
-                        else
-                        {
-                            cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
-                            lbl_RequiredField.Visible = false;
-                            btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
-                            btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                            panel1.Enabled = false;
-                            dataGridView1.Enabled = true;
-                            SearchBox.Enabled = true;
-                            isSaved = true;
-                            
-                            //dataFilled = true;
-                        }
-
+                        cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
+                        lbl_RequiredField.Visible = false;
+                        btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                        btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
+                        panel1.Enabled = false;
+                        dataGridView1.Enabled = true;
+                        SearchBox.Enabled = true;
+                        isSaved = true;                     
                     }
 
                 }

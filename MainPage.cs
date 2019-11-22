@@ -117,11 +117,20 @@ namespace WindowsFormsApp3
             /*bool dataFilled = false;
             while (dataFilled == false)
             {*/
-            
+                
                 try
                 {
                     cUSTOMERBindingSource.EndEdit();
-                    if (string.IsNullOrEmpty(FirstNameBox.Text))
+                    FirstNameLabel.ForeColor = System.Drawing.Color.Black;
+                    LastNameLabel.ForeColor = System.Drawing.Color.Black;
+                    PhoneLabel.ForeColor = System.Drawing.Color.Black;
+                    EmailLabel.ForeColor = System.Drawing.Color.Black;
+                    CompanyLabel.ForeColor = System.Drawing.Color.Black;
+                    AddressLabel.ForeColor = System.Drawing.Color.Black;
+                    CityLabel.ForeColor = System.Drawing.Color.Black;
+                    StateLabel.ForeColor = System.Drawing.Color.Black;
+                    ZipLabel.ForeColor = System.Drawing.Color.Black;
+                if (string.IsNullOrEmpty(FirstNameBox.Text))
                     {
                         //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         lbl_RequiredField.Visible = true;
@@ -216,15 +225,7 @@ namespace WindowsFormsApp3
                             dataGridView1.Enabled = true;
                             SearchBox.Enabled = true;
                             isSaved = true;
-                            FirstNameLabel.ForeColor = System.Drawing.Color.Black;
-                            LastNameLabel.ForeColor = System.Drawing.Color.Black;
-                            PhoneLabel.ForeColor = System.Drawing.Color.Black;
-                            EmailLabel.ForeColor = System.Drawing.Color.Black;
-                            CompanyLabel.ForeColor = System.Drawing.Color.Black;
-                            AddressLabel.ForeColor = System.Drawing.Color.Black;
-                            CityLabel.ForeColor = System.Drawing.Color.Black;
-                            StateLabel.ForeColor = System.Drawing.Color.Black;
-                            ZipLabel.ForeColor = System.Drawing.Color.Black;
+                            
                             //dataFilled = true;
                         }
 

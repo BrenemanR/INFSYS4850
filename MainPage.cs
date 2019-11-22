@@ -494,7 +494,10 @@ namespace WindowsFormsApp3
             //this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
 
             
-            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, combobox_OrderStatus.Text);
+            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, combobox_OrderStatus.Text, 
+                txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
+                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, richTextBox1.Text);
+
             this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
             iNVOICETableAdapter.Update(this.appData.INVOICE);
 
@@ -526,16 +529,6 @@ namespace WindowsFormsApp3
             txtbox_PickupCity.Text = txtbox_City.Text;
             txtbox_PickupState.Text = txtbox_State.Text;
             txtbox_PickupZip.Text = txtbox_Zip.Text;
-        }
-
-        private void tab_CreateOrder_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_PickupCity_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_CopyDropOffAddress_KeyPress(object sender, KeyPressEventArgs e)
@@ -600,5 +593,7 @@ namespace WindowsFormsApp3
                 txtbox_PickupZip.Text = "";
             }
         }
+
+       
     }
 }

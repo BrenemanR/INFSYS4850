@@ -32,8 +32,6 @@ namespace WindowsFormsApp3 {
         
         private ORDERSTATUSDataTable tableORDERSTATUS;
         
-        private global::System.Data.DataRelation relationCUSTOMER_INVOICE;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -268,7 +266,6 @@ namespace WindowsFormsApp3 {
                     this.tableORDERSTATUS.InitVars();
                 }
             }
-            this.relationCUSTOMER_INVOICE = this.Relations["CUSTOMER_INVOICE"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -287,10 +284,6 @@ namespace WindowsFormsApp3 {
             base.Tables.Add(this.tableINVOICE);
             this.tableORDERSTATUS = new ORDERSTATUSDataTable();
             base.Tables.Add(this.tableORDERSTATUS);
-            this.relationCUSTOMER_INVOICE = new global::System.Data.DataRelation("CUSTOMER_INVOICE", new global::System.Data.DataColumn[] {
-                        this.tableCUSTOMER.CUST_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableINVOICE.CUST_IDColumn}, false);
-            this.Relations.Add(this.relationCUSTOMER_INVOICE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -932,6 +925,7 @@ namespace WindowsFormsApp3 {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCUST_ID}, true));
                 this.columnCUST_ID.AutoIncrement = true;
+                this.columnCUST_ID.AutoIncrementSeed = 1;
                 this.columnCUST_ID.AllowDBNull = false;
                 this.columnCUST_ID.Unique = true;
                 this.columnCUST_FNAME.MaxLength = 536870910;
@@ -1087,6 +1081,24 @@ namespace WindowsFormsApp3 {
             
             private global::System.Data.DataColumn columnORDER_STATUS;
             
+            private global::System.Data.DataColumn columnPICKUP_ADDRESS;
+            
+            private global::System.Data.DataColumn columnPICKUP_CITY;
+            
+            private global::System.Data.DataColumn columnPICKUP_STATE;
+            
+            private global::System.Data.DataColumn columnPICKUP_ZIP;
+            
+            private global::System.Data.DataColumn columnDELIVERY_ADDRESS;
+            
+            private global::System.Data.DataColumn columnDELIVERY_CITY;
+            
+            private global::System.Data.DataColumn columnDELIVERY_STATE;
+            
+            private global::System.Data.DataColumn columnDELIVERY_ZIP;
+            
+            private global::System.Data.DataColumn columnSPECIAL_INSTRUCTIONS;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public INVOICEDataTable() {
@@ -1170,6 +1182,78 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PICKUP_ADDRESSColumn {
+                get {
+                    return this.columnPICKUP_ADDRESS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PICKUP_CITYColumn {
+                get {
+                    return this.columnPICKUP_CITY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PICKUP_STATEColumn {
+                get {
+                    return this.columnPICKUP_STATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PICKUP_ZIPColumn {
+                get {
+                    return this.columnPICKUP_ZIP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DELIVERY_ADDRESSColumn {
+                get {
+                    return this.columnDELIVERY_ADDRESS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DELIVERY_CITYColumn {
+                get {
+                    return this.columnDELIVERY_CITY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DELIVERY_STATEColumn {
+                get {
+                    return this.columnDELIVERY_STATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DELIVERY_ZIPColumn {
+                get {
+                    return this.columnDELIVERY_ZIP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SPECIAL_INSTRUCTIONSColumn {
+                get {
+                    return this.columnSPECIAL_INSTRUCTIONS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1205,18 +1289,24 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public INVOICERow AddINVOICERow(System.DateTime BOOK_DATE, System.DateTime PICKUP_DATE, System.DateTime DROPOFF_DATE, CUSTOMERRow parentCUSTOMERRowByCUSTOMER_INVOICE, string ORDER_STATUS) {
+            public INVOICERow AddINVOICERow(System.DateTime BOOK_DATE, System.DateTime PICKUP_DATE, System.DateTime DROPOFF_DATE, int CUST_ID, string ORDER_STATUS, string PICKUP_ADDRESS, string PICKUP_CITY, string PICKUP_STATE, string PICKUP_ZIP, string DELIVERY_ADDRESS, string DELIVERY_CITY, string DELIVERY_STATE, string DELIVERY_ZIP, string SPECIAL_INSTRUCTIONS) {
                 INVOICERow rowINVOICERow = ((INVOICERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         BOOK_DATE,
                         PICKUP_DATE,
                         DROPOFF_DATE,
-                        null,
-                        ORDER_STATUS};
-                if ((parentCUSTOMERRowByCUSTOMER_INVOICE != null)) {
-                    columnValuesArray[4] = parentCUSTOMERRowByCUSTOMER_INVOICE[0];
-                }
+                        CUST_ID,
+                        ORDER_STATUS,
+                        PICKUP_ADDRESS,
+                        PICKUP_CITY,
+                        PICKUP_STATE,
+                        PICKUP_ZIP,
+                        DELIVERY_ADDRESS,
+                        DELIVERY_CITY,
+                        DELIVERY_STATE,
+                        DELIVERY_ZIP,
+                        SPECIAL_INSTRUCTIONS};
                 rowINVOICERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowINVOICERow);
                 return rowINVOICERow;
@@ -1252,6 +1342,15 @@ namespace WindowsFormsApp3 {
                 this.columnDROPOFF_DATE = base.Columns["DROPOFF_DATE"];
                 this.columnCUST_ID = base.Columns["CUST_ID"];
                 this.columnORDER_STATUS = base.Columns["ORDER_STATUS"];
+                this.columnPICKUP_ADDRESS = base.Columns["PICKUP_ADDRESS"];
+                this.columnPICKUP_CITY = base.Columns["PICKUP_CITY"];
+                this.columnPICKUP_STATE = base.Columns["PICKUP_STATE"];
+                this.columnPICKUP_ZIP = base.Columns["PICKUP_ZIP"];
+                this.columnDELIVERY_ADDRESS = base.Columns["DELIVERY_ADDRESS"];
+                this.columnDELIVERY_CITY = base.Columns["DELIVERY_CITY"];
+                this.columnDELIVERY_STATE = base.Columns["DELIVERY_STATE"];
+                this.columnDELIVERY_ZIP = base.Columns["DELIVERY_ZIP"];
+                this.columnSPECIAL_INSTRUCTIONS = base.Columns["SPECIAL_INSTRUCTIONS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1269,13 +1368,40 @@ namespace WindowsFormsApp3 {
                 base.Columns.Add(this.columnCUST_ID);
                 this.columnORDER_STATUS = new global::System.Data.DataColumn("ORDER_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORDER_STATUS);
+                this.columnPICKUP_ADDRESS = new global::System.Data.DataColumn("PICKUP_ADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPICKUP_ADDRESS);
+                this.columnPICKUP_CITY = new global::System.Data.DataColumn("PICKUP_CITY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPICKUP_CITY);
+                this.columnPICKUP_STATE = new global::System.Data.DataColumn("PICKUP_STATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPICKUP_STATE);
+                this.columnPICKUP_ZIP = new global::System.Data.DataColumn("PICKUP_ZIP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPICKUP_ZIP);
+                this.columnDELIVERY_ADDRESS = new global::System.Data.DataColumn("DELIVERY_ADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELIVERY_ADDRESS);
+                this.columnDELIVERY_CITY = new global::System.Data.DataColumn("DELIVERY_CITY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELIVERY_CITY);
+                this.columnDELIVERY_STATE = new global::System.Data.DataColumn("DELIVERY_STATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELIVERY_STATE);
+                this.columnDELIVERY_ZIP = new global::System.Data.DataColumn("DELIVERY_ZIP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELIVERY_ZIP);
+                this.columnSPECIAL_INSTRUCTIONS = new global::System.Data.DataColumn("SPECIAL_INSTRUCTIONS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSPECIAL_INSTRUCTIONS);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnINV_ID}, true));
                 this.columnINV_ID.AutoIncrement = true;
-                this.columnINV_ID.AutoIncrementSeed = -1;
-                this.columnINV_ID.AutoIncrementStep = -1;
+                this.columnINV_ID.AutoIncrementSeed = 1;
                 this.columnINV_ID.AllowDBNull = false;
                 this.columnINV_ID.Unique = true;
+                this.columnORDER_STATUS.MaxLength = 255;
+                this.columnPICKUP_ADDRESS.MaxLength = 255;
+                this.columnPICKUP_CITY.MaxLength = 255;
+                this.columnPICKUP_STATE.MaxLength = 255;
+                this.columnPICKUP_ZIP.MaxLength = 255;
+                this.columnDELIVERY_ADDRESS.MaxLength = 255;
+                this.columnDELIVERY_CITY.MaxLength = 255;
+                this.columnDELIVERY_STATE.MaxLength = 255;
+                this.columnDELIVERY_ZIP.MaxLength = 255;
+                this.columnSPECIAL_INSTRUCTIONS.MaxLength = 536870910;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2036,17 +2162,6 @@ namespace WindowsFormsApp3 {
             public void SetCUST_PHONENull() {
                 this[this.tableCUSTOMER.CUST_PHONEColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public INVOICERow[] GetINVOICERows() {
-                if ((this.Table.ChildRelations["CUSTOMER_INVOICE"] == null)) {
-                    return new INVOICERow[0];
-                }
-                else {
-                    return ((INVOICERow[])(base.GetChildRows(this.Table.ChildRelations["CUSTOMER_INVOICE"])));
-                }
-            }
         }
         
         /// <summary>
@@ -2156,12 +2271,145 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CUSTOMERRow CUSTOMERRow {
+            public string PICKUP_ADDRESS {
                 get {
-                    return ((CUSTOMERRow)(this.GetParentRow(this.Table.ParentRelations["CUSTOMER_INVOICE"])));
+                    try {
+                        return ((string)(this[this.tableINVOICE.PICKUP_ADDRESSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PICKUP_ADDRESS\' in table \'INVOICE\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["CUSTOMER_INVOICE"]);
+                    this[this.tableINVOICE.PICKUP_ADDRESSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PICKUP_CITY {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.PICKUP_CITYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PICKUP_CITY\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.PICKUP_CITYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PICKUP_STATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.PICKUP_STATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PICKUP_STATE\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.PICKUP_STATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PICKUP_ZIP {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.PICKUP_ZIPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PICKUP_ZIP\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.PICKUP_ZIPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DELIVERY_ADDRESS {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.DELIVERY_ADDRESSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DELIVERY_ADDRESS\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.DELIVERY_ADDRESSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DELIVERY_CITY {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.DELIVERY_CITYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DELIVERY_CITY\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.DELIVERY_CITYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DELIVERY_STATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.DELIVERY_STATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DELIVERY_STATE\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.DELIVERY_STATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DELIVERY_ZIP {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.DELIVERY_ZIPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DELIVERY_ZIP\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.DELIVERY_ZIPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SPECIAL_INSTRUCTIONS {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.SPECIAL_INSTRUCTIONSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SPECIAL_INSTRUCTIONS\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.SPECIAL_INSTRUCTIONSColumn] = value;
                 }
             }
             
@@ -2223,6 +2471,114 @@ namespace WindowsFormsApp3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetORDER_STATUSNull() {
                 this[this.tableINVOICE.ORDER_STATUSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPICKUP_ADDRESSNull() {
+                return this.IsNull(this.tableINVOICE.PICKUP_ADDRESSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPICKUP_ADDRESSNull() {
+                this[this.tableINVOICE.PICKUP_ADDRESSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPICKUP_CITYNull() {
+                return this.IsNull(this.tableINVOICE.PICKUP_CITYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPICKUP_CITYNull() {
+                this[this.tableINVOICE.PICKUP_CITYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPICKUP_STATENull() {
+                return this.IsNull(this.tableINVOICE.PICKUP_STATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPICKUP_STATENull() {
+                this[this.tableINVOICE.PICKUP_STATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPICKUP_ZIPNull() {
+                return this.IsNull(this.tableINVOICE.PICKUP_ZIPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPICKUP_ZIPNull() {
+                this[this.tableINVOICE.PICKUP_ZIPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDELIVERY_ADDRESSNull() {
+                return this.IsNull(this.tableINVOICE.DELIVERY_ADDRESSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDELIVERY_ADDRESSNull() {
+                this[this.tableINVOICE.DELIVERY_ADDRESSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDELIVERY_CITYNull() {
+                return this.IsNull(this.tableINVOICE.DELIVERY_CITYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDELIVERY_CITYNull() {
+                this[this.tableINVOICE.DELIVERY_CITYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDELIVERY_STATENull() {
+                return this.IsNull(this.tableINVOICE.DELIVERY_STATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDELIVERY_STATENull() {
+                this[this.tableINVOICE.DELIVERY_STATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDELIVERY_ZIPNull() {
+                return this.IsNull(this.tableINVOICE.DELIVERY_ZIPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDELIVERY_ZIPNull() {
+                this[this.tableINVOICE.DELIVERY_ZIPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSPECIAL_INSTRUCTIONSNull() {
+                return this.IsNull(this.tableINVOICE.SPECIAL_INSTRUCTIONSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSPECIAL_INSTRUCTIONSNull() {
+                this[this.tableINVOICE.SPECIAL_INSTRUCTIONSColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3401,10 +3757,19 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             tableMapping.ColumnMappings.Add("DROPOFF_DATE", "DROPOFF_DATE");
             tableMapping.ColumnMappings.Add("CUST_ID", "CUST_ID");
             tableMapping.ColumnMappings.Add("ORDER_STATUS", "ORDER_STATUS");
+            tableMapping.ColumnMappings.Add("PICKUP_ADDRESS", "PICKUP_ADDRESS");
+            tableMapping.ColumnMappings.Add("PICKUP_CITY", "PICKUP_CITY");
+            tableMapping.ColumnMappings.Add("PICKUP_STATE", "PICKUP_STATE");
+            tableMapping.ColumnMappings.Add("PICKUP_ZIP", "PICKUP_ZIP");
+            tableMapping.ColumnMappings.Add("DELIVERY_ADDRESS", "DELIVERY_ADDRESS");
+            tableMapping.ColumnMappings.Add("DELIVERY_CITY", "DELIVERY_CITY");
+            tableMapping.ColumnMappings.Add("DELIVERY_STATE", "DELIVERY_STATE");
+            tableMapping.ColumnMappings.Add("DELIVERY_ZIP", "DELIVERY_ZIP");
+            tableMapping.ColumnMappings.Add("SPECIAL_INSTRUCTIONS", "SPECIAL_INSTRUCTIONS");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `INVOICE` WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `INVOICE` WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)) AND ((? = 1 AND `PICKUP_ADDRESS` IS NULL) OR (`PICKUP_ADDRESS` = ?)) AND ((? = 1 AND `PICKUP_CITY` IS NULL) OR (`PICKUP_CITY` = ?)) AND ((? = 1 AND `PICKUP_STATE` IS NULL) OR (`PICKUP_STATE` = ?)) AND ((? = 1 AND `PICKUP_ZIP` IS NULL) OR (`PICKUP_ZIP` = ?)) AND ((? = 1 AND `DELIVERY_ADDRESS` IS NULL) OR (`DELIVERY_ADDRESS` = ?)) AND ((? = 1 AND `DELIVERY_CITY` IS NULL) OR (`DELIVERY_CITY` = ?)) AND ((? = 1 AND `DELIVERY_STATE` IS NULL) OR (`DELIVERY_STATE` = ?)) AND ((? = 1 AND `DELIVERY_ZIP` IS NULL) OR (`DELIVERY_ZIP` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INV_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INV_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_BOOK_DATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Original, true, null));
@@ -3417,25 +3782,58 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDER_STATUS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_ADDRESS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ADDRESS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ADDRESS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_CITY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_CITY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_CITY", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_STATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_STATE", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_STATE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_ZIP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ZIP", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ZIP", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_ADDRESS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ADDRESS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ADDRESS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_CITY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_CITY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_CITY", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_STATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_STATE", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_STATE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `INVOICE` (`BOOK_DATE`, `PICKUP_DATE`, `DROPOFF_DATE`, `CUST_ID`, `OR" +
-                "DER_STATUS`) VALUES (?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `INVOICE` (`BOOK_DATE`, `PICKUP_DATE`, `DROPOFF_DATE`, `CUST_ID`, `ORDER_STATUS`, `PICKUP_ADDRESS`, `PICKUP_CITY`, `PICKUP_STATE`, `PICKUP_ZIP`, `DELIVERY_ADDRESS`, `DELIVERY_CITY`, `DELIVERY_STATE`, `DELIVERY_ZIP`, `SPECIAL_INSTRUCTIONS`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ADDRESS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_CITY", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_STATE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ZIP", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ADDRESS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_CITY", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_STATE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SPECIAL_INSTRUCTIONS", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIAL_INSTRUCTIONS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `INVOICE` SET `BOOK_DATE` = ?, `PICKUP_DATE` = ?, `DROPOFF_DATE` = ?, `CUST_ID` = ?, `ORDER_STATUS` = ? WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `INVOICE` SET `BOOK_DATE` = ?, `PICKUP_DATE` = ?, `DROPOFF_DATE` = ?, `CUST_ID` = ?, `ORDER_STATUS` = ?, `PICKUP_ADDRESS` = ?, `PICKUP_CITY` = ?, `PICKUP_STATE` = ?, `PICKUP_ZIP` = ?, `DELIVERY_ADDRESS` = ?, `DELIVERY_CITY` = ?, `DELIVERY_STATE` = ?, `DELIVERY_ZIP` = ?, `SPECIAL_INSTRUCTIONS` = ? WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)) AND ((? = 1 AND `PICKUP_ADDRESS` IS NULL) OR (`PICKUP_ADDRESS` = ?)) AND ((? = 1 AND `PICKUP_CITY` IS NULL) OR (`PICKUP_CITY` = ?)) AND ((? = 1 AND `PICKUP_STATE` IS NULL) OR (`PICKUP_STATE` = ?)) AND ((? = 1 AND `PICKUP_ZIP` IS NULL) OR (`PICKUP_ZIP` = ?)) AND ((? = 1 AND `DELIVERY_ADDRESS` IS NULL) OR (`DELIVERY_ADDRESS` = ?)) AND ((? = 1 AND `DELIVERY_CITY` IS NULL) OR (`DELIVERY_CITY` = ?)) AND ((? = 1 AND `DELIVERY_STATE` IS NULL) OR (`DELIVERY_STATE` = ?)) AND ((? = 1 AND `DELIVERY_ZIP` IS NULL) OR (`DELIVERY_ZIP` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DROPOFF_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DROPOFF_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ADDRESS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_CITY", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_STATE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ZIP", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ADDRESS", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_CITY", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_STATE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SPECIAL_INSTRUCTIONS", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIAL_INSTRUCTIONS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INV_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INV_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_BOOK_DATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Original, false, null));
@@ -3447,6 +3845,22 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDER_STATUS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDER_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_STATUS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_ADDRESS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ADDRESS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ADDRESS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_CITY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_CITY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_CITY", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_STATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_STATE", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_STATE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_PICKUP_ZIP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ZIP", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PICKUP_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_ZIP", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_ADDRESS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ADDRESS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ADDRESS", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_CITY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_CITY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_CITY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_CITY", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_STATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_STATE", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_STATE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_STATE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3462,8 +3876,9 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT INV_ID, BOOK_DATE, PICKUP_DATE, DROPOFF_DATE, CUST_ID, ORDER_STATUS FROM I" +
-                "NVOICE";
+            this._commandCollection[0].CommandText = "SELECT INV_ID, BOOK_DATE, PICKUP_DATE, DROPOFF_DATE, CUST_ID, ORDER_STATUS, PICKU" +
+                "P_ADDRESS, PICKUP_CITY, PICKUP_STATE, PICKUP_ZIP, DELIVERY_ADDRESS, DELIVERY_CIT" +
+                "Y, DELIVERY_STATE, DELIVERY_ZIP, SPECIAL_INSTRUCTIONS FROM INVOICE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3524,7 +3939,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_INV_ID, global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, global::System.Nullable<int> Original_CUST_ID, string Original_ORDER_STATUS) {
+        public virtual int Delete(int Original_INV_ID, global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, global::System.Nullable<int> Original_CUST_ID, string Original_ORDER_STATUS, string Original_PICKUP_ADDRESS, string Original_PICKUP_CITY, string Original_PICKUP_STATE, string Original_PICKUP_ZIP, string Original_DELIVERY_ADDRESS, string Original_DELIVERY_CITY, string Original_DELIVERY_STATE, string Original_DELIVERY_ZIP) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_INV_ID));
             if ((Original_BOOK_DATE.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3566,6 +3981,70 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_ORDER_STATUS));
             }
+            if ((Original_PICKUP_ADDRESS == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_PICKUP_ADDRESS));
+            }
+            if ((Original_PICKUP_CITY == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_PICKUP_CITY));
+            }
+            if ((Original_PICKUP_STATE == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_PICKUP_STATE));
+            }
+            if ((Original_PICKUP_ZIP == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_PICKUP_ZIP));
+            }
+            if ((Original_DELIVERY_ADDRESS == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_DELIVERY_ADDRESS));
+            }
+            if ((Original_DELIVERY_CITY == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_DELIVERY_CITY));
+            }
+            if ((Original_DELIVERY_STATE == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_DELIVERY_STATE));
+            }
+            if ((Original_DELIVERY_ZIP == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_DELIVERY_ZIP));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3586,7 +4065,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> BOOK_DATE, global::System.Nullable<global::System.DateTime> PICKUP_DATE, global::System.Nullable<global::System.DateTime> DROPOFF_DATE, global::System.Nullable<int> CUST_ID, string ORDER_STATUS) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> BOOK_DATE, global::System.Nullable<global::System.DateTime> PICKUP_DATE, global::System.Nullable<global::System.DateTime> DROPOFF_DATE, global::System.Nullable<int> CUST_ID, string ORDER_STATUS, string PICKUP_ADDRESS, string PICKUP_CITY, string PICKUP_STATE, string PICKUP_ZIP, string DELIVERY_ADDRESS, string DELIVERY_CITY, string DELIVERY_STATE, string DELIVERY_ZIP, string SPECIAL_INSTRUCTIONS) {
             if ((BOOK_DATE.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(BOOK_DATE.Value));
             }
@@ -3617,6 +4096,60 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ORDER_STATUS));
             }
+            if ((PICKUP_ADDRESS == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PICKUP_ADDRESS));
+            }
+            if ((PICKUP_CITY == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PICKUP_CITY));
+            }
+            if ((PICKUP_STATE == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PICKUP_STATE));
+            }
+            if ((PICKUP_ZIP == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(PICKUP_ZIP));
+            }
+            if ((DELIVERY_ADDRESS == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(DELIVERY_ADDRESS));
+            }
+            if ((DELIVERY_CITY == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(DELIVERY_CITY));
+            }
+            if ((DELIVERY_STATE == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(DELIVERY_STATE));
+            }
+            if ((DELIVERY_ZIP == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(DELIVERY_ZIP));
+            }
+            if ((SPECIAL_INSTRUCTIONS == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(SPECIAL_INSTRUCTIONS));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3637,7 +4170,35 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> BOOK_DATE, global::System.Nullable<global::System.DateTime> PICKUP_DATE, global::System.Nullable<global::System.DateTime> DROPOFF_DATE, global::System.Nullable<int> CUST_ID, string ORDER_STATUS, int Original_INV_ID, global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, global::System.Nullable<int> Original_CUST_ID, string Original_ORDER_STATUS) {
+        public virtual int Update(
+                    global::System.Nullable<global::System.DateTime> BOOK_DATE, 
+                    global::System.Nullable<global::System.DateTime> PICKUP_DATE, 
+                    global::System.Nullable<global::System.DateTime> DROPOFF_DATE, 
+                    global::System.Nullable<int> CUST_ID, 
+                    string ORDER_STATUS, 
+                    string PICKUP_ADDRESS, 
+                    string PICKUP_CITY, 
+                    string PICKUP_STATE, 
+                    string PICKUP_ZIP, 
+                    string DELIVERY_ADDRESS, 
+                    string DELIVERY_CITY, 
+                    string DELIVERY_STATE, 
+                    string DELIVERY_ZIP, 
+                    string SPECIAL_INSTRUCTIONS, 
+                    int Original_INV_ID, 
+                    global::System.Nullable<global::System.DateTime> Original_BOOK_DATE, 
+                    global::System.Nullable<global::System.DateTime> Original_PICKUP_DATE, 
+                    global::System.Nullable<global::System.DateTime> Original_DROPOFF_DATE, 
+                    global::System.Nullable<int> Original_CUST_ID, 
+                    string Original_ORDER_STATUS, 
+                    string Original_PICKUP_ADDRESS, 
+                    string Original_PICKUP_CITY, 
+                    string Original_PICKUP_STATE, 
+                    string Original_PICKUP_ZIP, 
+                    string Original_DELIVERY_ADDRESS, 
+                    string Original_DELIVERY_CITY, 
+                    string Original_DELIVERY_STATE, 
+                    string Original_DELIVERY_ZIP) {
             if ((BOOK_DATE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(BOOK_DATE.Value));
             }
@@ -3668,46 +4229,164 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ORDER_STATUS));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_INV_ID));
-            if ((Original_BOOK_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_BOOK_DATE.Value));
+            if ((PICKUP_ADDRESS == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PICKUP_ADDRESS));
+            }
+            if ((PICKUP_CITY == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PICKUP_CITY));
+            }
+            if ((PICKUP_STATE == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_PICKUP_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_PICKUP_DATE.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PICKUP_STATE));
+            }
+            if ((PICKUP_ZIP == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(PICKUP_ZIP));
+            }
+            if ((DELIVERY_ADDRESS == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_DROPOFF_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_DROPOFF_DATE.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(DELIVERY_ADDRESS));
+            }
+            if ((DELIVERY_CITY == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(DELIVERY_CITY));
+            }
+            if ((DELIVERY_STATE == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_CUST_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_CUST_ID.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(DELIVERY_STATE));
+            }
+            if ((DELIVERY_ZIP == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(DELIVERY_ZIP));
+            }
+            if ((SPECIAL_INSTRUCTIONS == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Original_ORDER_STATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(SPECIAL_INSTRUCTIONS));
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_INV_ID));
+            if ((Original_BOOK_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_BOOK_DATE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ORDER_STATUS));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PICKUP_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_PICKUP_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DROPOFF_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_DROPOFF_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CUST_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_CUST_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ORDER_STATUS == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_ORDER_STATUS));
+            }
+            if ((Original_PICKUP_ADDRESS == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_PICKUP_ADDRESS));
+            }
+            if ((Original_PICKUP_CITY == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_PICKUP_CITY));
+            }
+            if ((Original_PICKUP_STATE == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_PICKUP_STATE));
+            }
+            if ((Original_PICKUP_ZIP == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_PICKUP_ZIP));
+            }
+            if ((Original_DELIVERY_ADDRESS == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_DELIVERY_ADDRESS));
+            }
+            if ((Original_DELIVERY_CITY == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_DELIVERY_CITY));
+            }
+            if ((Original_DELIVERY_STATE == null)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_DELIVERY_STATE));
+            }
+            if ((Original_DELIVERY_ZIP == null)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_DELIVERY_ZIP));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4200,21 +4879,21 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(AppData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cUSTOMERTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._cUSTOMERTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._cOMPANYTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._cOMPANYTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._cUSTOMERTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cUSTOMERTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4246,19 +4925,19 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(AppData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cUSTOMERTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._cUSTOMERTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._cOMPANYTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._cOMPANYTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._cUSTOMERTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cUSTOMERTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4304,19 +4983,19 @@ namespace WindowsFormsApp3.AppDataTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cOMPANYTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._cOMPANYTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._cUSTOMERTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.CUSTOMER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cUSTOMERTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cOMPANYTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.COMPANY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cOMPANYTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

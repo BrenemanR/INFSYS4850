@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.btn_AddRow = new System.Windows.Forms.Button();
+            this.lbl_Description = new System.Windows.Forms.Label();
+            this.txtboxrch_Description = new System.Windows.Forms.RichTextBox();
             this.txtbox_DeliveryZip = new System.Windows.Forms.TextBox();
             this.txtbox_DeliveryState = new System.Windows.Forms.TextBox();
             this.txtbox_DeliveryCity = new System.Windows.Forms.TextBox();
@@ -74,7 +77,6 @@
             this.txtbox_City = new System.Windows.Forms.TextBox();
             this.txtbox_Address = new System.Windows.Forms.TextBox();
             this.lbl_Status = new System.Windows.Forms.Label();
-            this.btn_Invoice = new System.Windows.Forms.Button();
             this.lbl_Invoice = new System.Windows.Forms.Label();
             this.lbl_Company = new System.Windows.Forms.Label();
             this.lbl_Email = new System.Windows.Forms.Label();
@@ -87,7 +89,6 @@
             this.combobox_CustomerIDZ = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox_CopyPickupInformation = new System.Windows.Forms.CheckBox();
-            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
             this.tab_ManageCustomers = new System.Windows.Forms.TabPage();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -111,26 +112,6 @@
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.LastNameBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.tab_Help = new System.Windows.Forms.TabPage();
-            this.tab_SearchOrders = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bOOKDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pICKUPDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dROPOFFDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oRDERSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tab_Home = new System.Windows.Forms.TabPage();
-            this.lbl_Home = new System.Windows.Forms.Label();
-            this.tab_Container = new System.Windows.Forms.TabControl();
-            this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
-            this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,6 +122,35 @@
             this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.tab_Help = new System.Windows.Forms.TabPage();
+            this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_ZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_ZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bOOKDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pICKUPDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dROPOFFDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDERSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tab_Home = new System.Windows.Forms.TabPage();
+            this.lbl_Home = new System.Windows.Forms.Label();
+            this.tab_Container = new System.Windows.Forms.TabControl();
+            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
+            this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
+            this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -161,6 +171,9 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
+            tab_CreateOrder.Controls.Add(this.btn_AddRow);
+            tab_CreateOrder.Controls.Add(this.lbl_Description);
+            tab_CreateOrder.Controls.Add(this.txtboxrch_Description);
             tab_CreateOrder.Controls.Add(this.txtbox_DeliveryZip);
             tab_CreateOrder.Controls.Add(this.txtbox_DeliveryState);
             tab_CreateOrder.Controls.Add(this.txtbox_DeliveryCity);
@@ -197,7 +210,6 @@
             tab_CreateOrder.Controls.Add(this.txtbox_City);
             tab_CreateOrder.Controls.Add(this.txtbox_Address);
             tab_CreateOrder.Controls.Add(this.lbl_Status);
-            tab_CreateOrder.Controls.Add(this.btn_Invoice);
             tab_CreateOrder.Controls.Add(this.lbl_Invoice);
             tab_CreateOrder.Controls.Add(this.lbl_Company);
             tab_CreateOrder.Controls.Add(this.lbl_Email);
@@ -216,7 +228,32 @@
             tab_CreateOrder.Size = new System.Drawing.Size(1020, 546);
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
-            tab_CreateOrder.Click += new System.EventHandler(this.tab_CreateOrder_Click);
+            // 
+            // btn_AddRow
+            // 
+            this.btn_AddRow.Location = new System.Drawing.Point(892, 112);
+            this.btn_AddRow.Name = "btn_AddRow";
+            this.btn_AddRow.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddRow.TabIndex = 63;
+            this.btn_AddRow.Text = "Add Row";
+            this.btn_AddRow.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Description
+            // 
+            this.lbl_Description.AutoSize = true;
+            this.lbl_Description.Location = new System.Drawing.Point(625, 95);
+            this.lbl_Description.Name = "lbl_Description";
+            this.lbl_Description.Size = new System.Drawing.Size(70, 15);
+            this.lbl_Description.TabIndex = 62;
+            this.lbl_Description.Text = "Description";
+            // 
+            // txtboxrch_Description
+            // 
+            this.txtboxrch_Description.Location = new System.Drawing.Point(553, 112);
+            this.txtboxrch_Description.Name = "txtboxrch_Description";
+            this.txtboxrch_Description.Size = new System.Drawing.Size(220, 83);
+            this.txtboxrch_Description.TabIndex = 60;
+            this.txtboxrch_Description.Text = "";
             // 
             // txtbox_DeliveryZip
             // 
@@ -361,7 +398,6 @@
             this.lbl_PickupCity.Size = new System.Drawing.Size(71, 15);
             this.lbl_PickupCity.TabIndex = 42;
             this.lbl_PickupCity.Text = "Pickup City:";
-            this.lbl_PickupCity.Click += new System.EventHandler(this.lbl_PickupCity_Click);
             // 
             // txtbox_PickupCity
             // 
@@ -408,7 +444,7 @@
             "COMPLETE",
             "CANCELLED",
             "DELAYED"});
-            this.combobox_OrderStatus.Location = new System.Drawing.Point(328, 394);
+            this.combobox_OrderStatus.Location = new System.Drawing.Point(108, 393);
             this.combobox_OrderStatus.Name = "combobox_OrderStatus";
             this.combobox_OrderStatus.Size = new System.Drawing.Size(200, 23);
             this.combobox_OrderStatus.TabIndex = 36;
@@ -416,7 +452,7 @@
             // lbl_DeliveryDate
             // 
             this.lbl_DeliveryDate.AutoSize = true;
-            this.lbl_DeliveryDate.Location = new System.Drawing.Point(240, 348);
+            this.lbl_DeliveryDate.Location = new System.Drawing.Point(20, 347);
             this.lbl_DeliveryDate.Name = "lbl_DeliveryDate";
             this.lbl_DeliveryDate.Size = new System.Drawing.Size(83, 15);
             this.lbl_DeliveryDate.TabIndex = 35;
@@ -425,7 +461,7 @@
             // lbl_PickupDate
             // 
             this.lbl_PickupDate.AutoSize = true;
-            this.lbl_PickupDate.Location = new System.Drawing.Point(240, 301);
+            this.lbl_PickupDate.Location = new System.Drawing.Point(20, 300);
             this.lbl_PickupDate.Name = "lbl_PickupDate";
             this.lbl_PickupDate.Size = new System.Drawing.Size(75, 15);
             this.lbl_PickupDate.TabIndex = 34;
@@ -434,7 +470,7 @@
             // lbl_BookDate
             // 
             this.lbl_BookDate.AutoSize = true;
-            this.lbl_BookDate.Location = new System.Drawing.Point(240, 252);
+            this.lbl_BookDate.Location = new System.Drawing.Point(20, 251);
             this.lbl_BookDate.Name = "lbl_BookDate";
             this.lbl_BookDate.Size = new System.Drawing.Size(82, 15);
             this.lbl_BookDate.TabIndex = 33;
@@ -443,7 +479,7 @@
             // DropOffDatePicker
             // 
             this.DropOffDatePicker.Enabled = false;
-            this.DropOffDatePicker.Location = new System.Drawing.Point(328, 342);
+            this.DropOffDatePicker.Location = new System.Drawing.Point(108, 341);
             this.DropOffDatePicker.Name = "DropOffDatePicker";
             this.DropOffDatePicker.Size = new System.Drawing.Size(200, 23);
             this.DropOffDatePicker.TabIndex = 32;
@@ -451,7 +487,7 @@
             // PickUpDatePicker
             // 
             this.PickUpDatePicker.Enabled = false;
-            this.PickUpDatePicker.Location = new System.Drawing.Point(328, 295);
+            this.PickUpDatePicker.Location = new System.Drawing.Point(108, 294);
             this.PickUpDatePicker.Name = "PickUpDatePicker";
             this.PickUpDatePicker.Size = new System.Drawing.Size(200, 23);
             this.PickUpDatePicker.TabIndex = 31;
@@ -460,7 +496,7 @@
             // 
             this.BookDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
             this.BookDatePicker.Enabled = false;
-            this.BookDatePicker.Location = new System.Drawing.Point(328, 249);
+            this.BookDatePicker.Location = new System.Drawing.Point(108, 248);
             this.BookDatePicker.Name = "BookDatePicker";
             this.BookDatePicker.Size = new System.Drawing.Size(200, 23);
             this.BookDatePicker.TabIndex = 30;
@@ -478,7 +514,7 @@
             // btn_SaveOrder
             // 
             this.btn_SaveOrder.Enabled = false;
-            this.btn_SaveOrder.Location = new System.Drawing.Point(549, 339);
+            this.btn_SaveOrder.Location = new System.Drawing.Point(206, 446);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
             this.btn_SaveOrder.Size = new System.Drawing.Size(149, 56);
             this.btn_SaveOrder.TabIndex = 28;
@@ -488,7 +524,7 @@
             // 
             // btn_CreateOrder
             // 
-            this.btn_CreateOrder.Location = new System.Drawing.Point(549, 260);
+            this.btn_CreateOrder.Location = new System.Drawing.Point(19, 446);
             this.btn_CreateOrder.Name = "btn_CreateOrder";
             this.btn_CreateOrder.Size = new System.Drawing.Size(149, 56);
             this.btn_CreateOrder.TabIndex = 26;
@@ -499,7 +535,7 @@
             // lbl_SpecialInstructions
             // 
             this.lbl_SpecialInstructions.AutoSize = true;
-            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(555, 450);
+            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(367, 383);
             this.lbl_SpecialInstructions.Name = "lbl_SpecialInstructions";
             this.lbl_SpecialInstructions.Size = new System.Drawing.Size(119, 15);
             this.lbl_SpecialInstructions.TabIndex = 24;
@@ -507,16 +543,17 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(677, 447);
+            this.richTextBox1.Location = new System.Drawing.Point(492, 322);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(325, 117);
+            this.richTextBox1.Size = new System.Drawing.Size(528, 117);
             this.richTextBox1.TabIndex = 23;
             this.richTextBox1.Text = "";
             // 
             // txtbox_Invoice
             // 
+            this.txtbox_Invoice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_Invoice.Enabled = false;
-            this.txtbox_Invoice.Location = new System.Drawing.Point(618, 228);
+            this.txtbox_Invoice.Location = new System.Drawing.Point(846, 6);
             this.txtbox_Invoice.Name = "txtbox_Invoice";
             this.txtbox_Invoice.Size = new System.Drawing.Size(121, 23);
             this.txtbox_Invoice.TabIndex = 16;
@@ -592,26 +629,16 @@
             // lbl_Status
             // 
             this.lbl_Status.AutoSize = true;
-            this.lbl_Status.Location = new System.Drawing.Point(236, 394);
+            this.lbl_Status.Location = new System.Drawing.Point(16, 393);
             this.lbl_Status.Name = "lbl_Status";
             this.lbl_Status.Size = new System.Drawing.Size(79, 15);
             this.lbl_Status.TabIndex = 20;
             this.lbl_Status.Text = "Order Status:";
             // 
-            // btn_Invoice
-            // 
-            this.btn_Invoice.Location = new System.Drawing.Point(7, 507);
-            this.btn_Invoice.Name = "btn_Invoice";
-            this.btn_Invoice.Size = new System.Drawing.Size(203, 60);
-            this.btn_Invoice.TabIndex = 18;
-            this.btn_Invoice.TabStop = false;
-            this.btn_Invoice.Text = "Create Invoice";
-            this.btn_Invoice.UseVisualStyleBackColor = true;
-            // 
             // lbl_Invoice
             // 
             this.lbl_Invoice.AutoSize = true;
-            this.lbl_Invoice.Location = new System.Drawing.Point(551, 236);
+            this.lbl_Invoice.Location = new System.Drawing.Point(779, 14);
             this.lbl_Invoice.Name = "lbl_Invoice";
             this.lbl_Invoice.Size = new System.Drawing.Size(59, 15);
             this.lbl_Invoice.TabIndex = 17;
@@ -723,10 +750,6 @@
             this.checkBox_CopyPickupInformation.Text = "Copy Customer Data";
             this.checkBox_CopyPickupInformation.UseVisualStyleBackColor = true;
             this.checkBox_CopyPickupInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyPickupInformation_CheckedChanged);
-            // 
-            // cUSTOMERTableAdapter
-            // 
-            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
             // 
             // tab_ManageCustomers
             // 
@@ -995,197 +1018,6 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(284, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 19);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Search:";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEdit.FlatAppearance.BorderSize = 5;
-            this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(45, 358);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(184, 46);
-            this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Edit Customer";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNew.FlatAppearance.BorderSize = 5;
-            this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(45, 305);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(184, 46);
-            this.btnNew.TabIndex = 15;
-            this.btnNew.Text = "Add New Customer";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.FlatAppearance.BorderSize = 5;
-            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(45, 410);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(184, 46);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCancel.FlatAppearance.BorderSize = 5;
-            this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(45, 462);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(184, 44);
-            this.btnCancel.TabIndex = 13;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // tab_Help
-            // 
-            this.tab_Help.Location = new System.Drawing.Point(4, 28);
-            this.tab_Help.Name = "tab_Help";
-            this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Help.Size = new System.Drawing.Size(1020, 546);
-            this.tab_Help.TabIndex = 4;
-            this.tab_Help.Text = "Help";
-            this.tab_Help.UseVisualStyleBackColor = true;
-            // 
-            // tab_SearchOrders
-            // 
-            this.tab_SearchOrders.Controls.Add(this.dataGridView2);
-            this.tab_SearchOrders.Location = new System.Drawing.Point(4, 28);
-            this.tab_SearchOrders.Name = "tab_SearchOrders";
-            this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_SearchOrders.Size = new System.Drawing.Size(1020, 546);
-            this.tab_SearchOrders.TabIndex = 3;
-            this.tab_SearchOrders.Text = "Search Orders";
-            this.tab_SearchOrders.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iNVIDDataGridViewTextBoxColumn,
-            this.bOOKDATEDataGridViewTextBoxColumn,
-            this.pICKUPDATEDataGridViewTextBoxColumn,
-            this.dROPOFFDATEDataGridViewTextBoxColumn,
-            this.cUSTIDDataGridViewTextBoxColumn1,
-            this.oRDERSTATUSDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.iNVOICEBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(18, 28);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(742, 150);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // iNVIDDataGridViewTextBoxColumn
-            // 
-            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
-            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "INV_ID";
-            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
-            // 
-            // bOOKDATEDataGridViewTextBoxColumn
-            // 
-            this.bOOKDATEDataGridViewTextBoxColumn.DataPropertyName = "BOOK_DATE";
-            this.bOOKDATEDataGridViewTextBoxColumn.HeaderText = "BOOK_DATE";
-            this.bOOKDATEDataGridViewTextBoxColumn.Name = "bOOKDATEDataGridViewTextBoxColumn";
-            // 
-            // pICKUPDATEDataGridViewTextBoxColumn
-            // 
-            this.pICKUPDATEDataGridViewTextBoxColumn.DataPropertyName = "PICKUP_DATE";
-            this.pICKUPDATEDataGridViewTextBoxColumn.HeaderText = "PICKUP_DATE";
-            this.pICKUPDATEDataGridViewTextBoxColumn.Name = "pICKUPDATEDataGridViewTextBoxColumn";
-            // 
-            // dROPOFFDATEDataGridViewTextBoxColumn
-            // 
-            this.dROPOFFDATEDataGridViewTextBoxColumn.DataPropertyName = "DROPOFF_DATE";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.HeaderText = "DROPOFF_DATE";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.Name = "dROPOFFDATEDataGridViewTextBoxColumn";
-            // 
-            // cUSTIDDataGridViewTextBoxColumn1
-            // 
-            this.cUSTIDDataGridViewTextBoxColumn1.DataPropertyName = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn1.HeaderText = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn1.Name = "cUSTIDDataGridViewTextBoxColumn1";
-            // 
-            // oRDERSTATUSDataGridViewTextBoxColumn
-            // 
-            this.oRDERSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORDER_STATUS";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.HeaderText = "ORDER_STATUS";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.Name = "oRDERSTATUSDataGridViewTextBoxColumn";
-            // 
-            // tab_Home
-            // 
-            this.tab_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Home.BackgroundImage")));
-            this.tab_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tab_Home.Controls.Add(this.lbl_Home);
-            this.tab_Home.Location = new System.Drawing.Point(4, 28);
-            this.tab_Home.Name = "tab_Home";
-            this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Home.Size = new System.Drawing.Size(1020, 546);
-            this.tab_Home.TabIndex = 0;
-            this.tab_Home.Text = "Home";
-            this.tab_Home.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Home
-            // 
-            this.lbl_Home.AutoSize = true;
-            this.lbl_Home.Font = new System.Drawing.Font("Castellar", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Home.ForeColor = System.Drawing.Color.White;
-            this.lbl_Home.Location = new System.Drawing.Point(100, 100);
-            this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(826, 58);
-            this.lbl_Home.TabIndex = 21;
-            this.lbl_Home.Text = "Welcome to Virtual Adil!";
-            // 
-            // tab_Container
-            // 
-            this.tab_Container.Controls.Add(this.tab_Home);
-            this.tab_Container.Controls.Add(this.tab_ManageCustomers);
-            this.tab_Container.Controls.Add(tab_CreateOrder);
-            this.tab_Container.Controls.Add(this.tab_SearchOrders);
-            this.tab_Container.Controls.Add(this.tab_Help);
-            this.tab_Container.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab_Container.Location = new System.Drawing.Point(3, 0);
-            this.tab_Container.Name = "tab_Container";
-            this.tab_Container.SelectedIndex = 0;
-            this.tab_Container.Size = new System.Drawing.Size(1028, 578);
-            this.tab_Container.TabIndex = 19;
-            // 
-            // iNVOICETableAdapter
-            // 
-            this.iNVOICETableAdapter.ClearBeforeFill = true;
-            // 
-            // oRDERSTATUSBindingSource
-            // 
-            this.oRDERSTATUSBindingSource.DataMember = "ORDERSTATUS";
-            this.oRDERSTATUSBindingSource.DataSource = this.appData;
-            // 
-            // oRDERSTATUSTableAdapter
-            // 
-            this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
-            // 
             // cUSTIDDataGridViewTextBoxColumn
             // 
             this.cUSTIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -1276,6 +1108,274 @@
             this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
             this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(284, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 19);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Search:";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEdit.FlatAppearance.BorderSize = 5;
+            this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(45, 358);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(184, 46);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edit Customer";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNew.FlatAppearance.BorderSize = 5;
+            this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(45, 305);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(184, 46);
+            this.btnNew.TabIndex = 15;
+            this.btnNew.Text = "Add New Customer";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.FlatAppearance.BorderSize = 5;
+            this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(45, 410);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(184, 46);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCancel.FlatAppearance.BorderSize = 5;
+            this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(45, 462);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(184, 44);
+            this.btnCancel.TabIndex = 13;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // tab_Help
+            // 
+            this.tab_Help.Location = new System.Drawing.Point(4, 28);
+            this.tab_Help.Name = "tab_Help";
+            this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Help.Size = new System.Drawing.Size(1020, 546);
+            this.tab_Help.TabIndex = 4;
+            this.tab_Help.Text = "Help";
+            this.tab_Help.UseVisualStyleBackColor = true;
+            // 
+            // tab_SearchOrders
+            // 
+            this.tab_SearchOrders.Controls.Add(this.dataGridView2);
+            this.tab_SearchOrders.Location = new System.Drawing.Point(4, 28);
+            this.tab_SearchOrders.Name = "tab_SearchOrders";
+            this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_SearchOrders.Size = new System.Drawing.Size(1020, 546);
+            this.tab_SearchOrders.TabIndex = 3;
+            this.tab_SearchOrders.Text = "Search Orders";
+            this.tab_SearchOrders.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iNVIDDataGridViewTextBoxColumn,
+            this.PICKUP_ADDRESS,
+            this.PICKUP_CITY,
+            this.PICKUP_STATE,
+            this.PICKUP_ZIP,
+            this.DELIVERY_ADDRESS,
+            this.DELIVERY_CITY,
+            this.DELIVERY_STATE,
+            this.DELIVERY_ZIP,
+            this.bOOKDATEDataGridViewTextBoxColumn,
+            this.pICKUPDATEDataGridViewTextBoxColumn,
+            this.dROPOFFDATEDataGridViewTextBoxColumn,
+            this.cUSTIDDataGridViewTextBoxColumn1,
+            this.oRDERSTATUSDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.iNVOICEBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(9, 389);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(1004, 150);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // iNVIDDataGridViewTextBoxColumn
+            // 
+            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
+            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "INV_ID";
+            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
+            this.iNVIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // PICKUP_ADDRESS
+            // 
+            this.PICKUP_ADDRESS.DataPropertyName = "PICKUP_ADDRESS";
+            this.PICKUP_ADDRESS.HeaderText = "PICKUP_ADDRESS";
+            this.PICKUP_ADDRESS.Name = "PICKUP_ADDRESS";
+            this.PICKUP_ADDRESS.ReadOnly = true;
+            // 
+            // PICKUP_CITY
+            // 
+            this.PICKUP_CITY.DataPropertyName = "PICKUP_CITY";
+            this.PICKUP_CITY.HeaderText = "PICKUP_CITY";
+            this.PICKUP_CITY.Name = "PICKUP_CITY";
+            this.PICKUP_CITY.ReadOnly = true;
+            // 
+            // PICKUP_STATE
+            // 
+            this.PICKUP_STATE.DataPropertyName = "PICKUP_STATE";
+            this.PICKUP_STATE.HeaderText = "PICKUP_STATE";
+            this.PICKUP_STATE.Name = "PICKUP_STATE";
+            this.PICKUP_STATE.ReadOnly = true;
+            // 
+            // PICKUP_ZIP
+            // 
+            this.PICKUP_ZIP.DataPropertyName = "PICKUP_ZIP";
+            this.PICKUP_ZIP.HeaderText = "PICKUP_ZIP";
+            this.PICKUP_ZIP.Name = "PICKUP_ZIP";
+            this.PICKUP_ZIP.ReadOnly = true;
+            // 
+            // DELIVERY_ADDRESS
+            // 
+            this.DELIVERY_ADDRESS.DataPropertyName = "DELIVERY_ADDRESS";
+            this.DELIVERY_ADDRESS.HeaderText = "DELIVERY_ADDRESS";
+            this.DELIVERY_ADDRESS.Name = "DELIVERY_ADDRESS";
+            this.DELIVERY_ADDRESS.ReadOnly = true;
+            // 
+            // DELIVERY_CITY
+            // 
+            this.DELIVERY_CITY.DataPropertyName = "DELIVERY_CITY";
+            this.DELIVERY_CITY.HeaderText = "DELIVERY_CITY";
+            this.DELIVERY_CITY.Name = "DELIVERY_CITY";
+            this.DELIVERY_CITY.ReadOnly = true;
+            // 
+            // DELIVERY_STATE
+            // 
+            this.DELIVERY_STATE.DataPropertyName = "DELIVERY_STATE";
+            this.DELIVERY_STATE.HeaderText = "DELIVERY_STATE";
+            this.DELIVERY_STATE.Name = "DELIVERY_STATE";
+            this.DELIVERY_STATE.ReadOnly = true;
+            // 
+            // DELIVERY_ZIP
+            // 
+            this.DELIVERY_ZIP.DataPropertyName = "DELIVERY_ZIP";
+            this.DELIVERY_ZIP.HeaderText = "DELIVERY_ZIP";
+            this.DELIVERY_ZIP.Name = "DELIVERY_ZIP";
+            this.DELIVERY_ZIP.ReadOnly = true;
+            // 
+            // bOOKDATEDataGridViewTextBoxColumn
+            // 
+            this.bOOKDATEDataGridViewTextBoxColumn.DataPropertyName = "BOOK_DATE";
+            this.bOOKDATEDataGridViewTextBoxColumn.HeaderText = "BOOK_DATE";
+            this.bOOKDATEDataGridViewTextBoxColumn.Name = "bOOKDATEDataGridViewTextBoxColumn";
+            this.bOOKDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pICKUPDATEDataGridViewTextBoxColumn
+            // 
+            this.pICKUPDATEDataGridViewTextBoxColumn.DataPropertyName = "PICKUP_DATE";
+            this.pICKUPDATEDataGridViewTextBoxColumn.HeaderText = "PICKUP_DATE";
+            this.pICKUPDATEDataGridViewTextBoxColumn.Name = "pICKUPDATEDataGridViewTextBoxColumn";
+            this.pICKUPDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dROPOFFDATEDataGridViewTextBoxColumn
+            // 
+            this.dROPOFFDATEDataGridViewTextBoxColumn.DataPropertyName = "DROPOFF_DATE";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.HeaderText = "DROPOFF_DATE";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.Name = "dROPOFFDATEDataGridViewTextBoxColumn";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cUSTIDDataGridViewTextBoxColumn1
+            // 
+            this.cUSTIDDataGridViewTextBoxColumn1.DataPropertyName = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn1.HeaderText = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn1.Name = "cUSTIDDataGridViewTextBoxColumn1";
+            this.cUSTIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // oRDERSTATUSDataGridViewTextBoxColumn
+            // 
+            this.oRDERSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORDER_STATUS";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.HeaderText = "ORDER_STATUS";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.Name = "oRDERSTATUSDataGridViewTextBoxColumn";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tab_Home
+            // 
+            this.tab_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Home.BackgroundImage")));
+            this.tab_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tab_Home.Controls.Add(this.lbl_Home);
+            this.tab_Home.Location = new System.Drawing.Point(4, 28);
+            this.tab_Home.Name = "tab_Home";
+            this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Home.Size = new System.Drawing.Size(1020, 546);
+            this.tab_Home.TabIndex = 0;
+            this.tab_Home.Text = "Home";
+            this.tab_Home.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Home
+            // 
+            this.lbl_Home.AutoSize = true;
+            this.lbl_Home.Font = new System.Drawing.Font("Castellar", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Home.ForeColor = System.Drawing.Color.White;
+            this.lbl_Home.Location = new System.Drawing.Point(100, 100);
+            this.lbl_Home.Name = "lbl_Home";
+            this.lbl_Home.Size = new System.Drawing.Size(826, 58);
+            this.lbl_Home.TabIndex = 21;
+            this.lbl_Home.Text = "Welcome to Virtual Adil!";
+            // 
+            // tab_Container
+            // 
+            this.tab_Container.Controls.Add(this.tab_Home);
+            this.tab_Container.Controls.Add(this.tab_ManageCustomers);
+            this.tab_Container.Controls.Add(tab_CreateOrder);
+            this.tab_Container.Controls.Add(this.tab_SearchOrders);
+            this.tab_Container.Controls.Add(this.tab_Help);
+            this.tab_Container.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab_Container.Location = new System.Drawing.Point(3, 0);
+            this.tab_Container.Name = "tab_Container";
+            this.tab_Container.SelectedIndex = 0;
+            this.tab_Container.Size = new System.Drawing.Size(1028, 578);
+            this.tab_Container.TabIndex = 19;
+            // 
+            // cUSTOMERTableAdapter
+            // 
+            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
+            // 
+            // iNVOICETableAdapter
+            // 
+            this.iNVOICETableAdapter.ClearBeforeFill = true;
+            // 
+            // oRDERSTATUSBindingSource
+            // 
+            this.oRDERSTATUSBindingSource.DataMember = "ORDERSTATUS";
+            this.oRDERSTATUSBindingSource.DataSource = this.appData;
+            // 
+            // oRDERSTATUSTableAdapter
+            // 
+            this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1328,7 +1428,6 @@
         private System.Windows.Forms.TextBox txtbox_State;
         private System.Windows.Forms.TextBox txtbox_City;
         private System.Windows.Forms.TextBox txtbox_Address;
-        private System.Windows.Forms.Button btn_Invoice;
         private System.Windows.Forms.Label lbl_Invoice;
         private System.Windows.Forms.Label lbl_Company;
         private System.Windows.Forms.Label lbl_Email;
@@ -1397,12 +1496,6 @@
         private System.Windows.Forms.Label lbl_PickupAddress;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bOOKDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pICKUPDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dROPOFFDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtbox_DeliveryZip;
         private System.Windows.Forms.Label lbl_DeliveryState;
@@ -1426,5 +1519,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_ADDRESS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_CITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_STATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_ZIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_ADDRESS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_CITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_STATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_ZIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bOOKDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pICKUPDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dROPOFFDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lbl_Description;
+        private System.Windows.Forms.RichTextBox txtboxrch_Description;
+        private System.Windows.Forms.Button btn_AddRow;
     }
 }

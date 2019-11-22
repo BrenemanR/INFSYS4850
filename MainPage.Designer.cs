@@ -230,11 +230,11 @@
             // lbl_Description
             // 
             this.lbl_Description.AutoSize = true;
-            this.lbl_Description.Location = new System.Drawing.Point(754, 93);
+            this.lbl_Description.Location = new System.Drawing.Point(519, 104);
             this.lbl_Description.Name = "lbl_Description";
-            this.lbl_Description.Size = new System.Drawing.Size(70, 15);
+            this.lbl_Description.Size = new System.Drawing.Size(73, 15);
             this.lbl_Description.TabIndex = 62;
-            this.lbl_Description.Text = "Description";
+            this.lbl_Description.Text = "Description:";
             // 
             // txtboxrch_Description
             // 
@@ -243,7 +243,7 @@
             this.txtboxrch_Description.Location = new System.Drawing.Point(519, 122);
             this.txtboxrch_Description.Name = "txtboxrch_Description";
             this.txtboxrch_Description.ShowSelectionMargin = true;
-            this.txtboxrch_Description.Size = new System.Drawing.Size(494, 155);
+            this.txtboxrch_Description.Size = new System.Drawing.Size(579, 155);
             this.txtboxrch_Description.TabIndex = 60;
             this.txtboxrch_Description.Text = "";
             // 
@@ -527,7 +527,7 @@
             // lbl_SpecialInstructions
             // 
             this.lbl_SpecialInstructions.AutoSize = true;
-            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(691, 396);
+            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(516, 333);
             this.lbl_SpecialInstructions.Name = "lbl_SpecialInstructions";
             this.lbl_SpecialInstructions.Size = new System.Drawing.Size(119, 15);
             this.lbl_SpecialInstructions.TabIndex = 24;
@@ -535,9 +535,9 @@
             // 
             // txtboxrch_SpecialInstructions
             // 
-            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(485, 422);
+            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(513, 351);
             this.txtboxrch_SpecialInstructions.Name = "txtboxrch_SpecialInstructions";
-            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(528, 117);
+            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(585, 171);
             this.txtboxrch_SpecialInstructions.TabIndex = 23;
             this.txtboxrch_SpecialInstructions.Text = "";
             // 
@@ -1078,13 +1078,15 @@
             // 
             // tab_Help
             // 
+            this.tab_Help.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_Help.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Help.BackgroundImage")));
+            this.tab_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tab_Help.Location = new System.Drawing.Point(4, 28);
             this.tab_Help.Name = "tab_Help";
             this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Help.Size = new System.Drawing.Size(1020, 546);
+            this.tab_Help.Size = new System.Drawing.Size(1107, 546);
             this.tab_Help.TabIndex = 4;
             this.tab_Help.Text = "Help";
-            this.tab_Help.UseVisualStyleBackColor = true;
             // 
             // tab_SearchOrders
             // 
@@ -1119,10 +1121,10 @@
             this.oRDERSTATUSDataGridViewTextBoxColumn,
             this.cUSTIDDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.iNVOICEBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 389);
+            this.dataGridView2.Location = new System.Drawing.Point(9, 143);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(1095, 150);
+            this.dataGridView2.Size = new System.Drawing.Size(1095, 396);
             this.dataGridView2.TabIndex = 0;
             // 
             // tab_Home
@@ -1133,7 +1135,7 @@
             this.tab_Home.Location = new System.Drawing.Point(4, 28);
             this.tab_Home.Name = "tab_Home";
             this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Home.Size = new System.Drawing.Size(1020, 546);
+            this.tab_Home.Size = new System.Drawing.Size(1107, 546);
             this.tab_Home.TabIndex = 0;
             this.tab_Home.Text = "Home";
             this.tab_Home.UseVisualStyleBackColor = true;
@@ -1143,7 +1145,7 @@
             this.lbl_Home.AutoSize = true;
             this.lbl_Home.Font = new System.Drawing.Font("Castellar", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.White;
-            this.lbl_Home.Location = new System.Drawing.Point(100, 100);
+            this.lbl_Home.Location = new System.Drawing.Point(132, 100);
             this.lbl_Home.Name = "lbl_Home";
             this.lbl_Home.Size = new System.Drawing.Size(826, 58);
             this.lbl_Home.TabIndex = 21;

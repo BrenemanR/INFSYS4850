@@ -32,7 +32,6 @@
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.picBox_Status = new System.Windows.Forms.PictureBox();
-            this.listBox_Status = new System.Windows.Forms.ListBox();
             this.lbl_OrderStatus = new System.Windows.Forms.Label();
             this.lbl_Description = new System.Windows.Forms.Label();
             this.txtboxrch_Description = new System.Windows.Forms.RichTextBox();
@@ -153,6 +152,7 @@
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.txtBox_SearchOrder = new System.Windows.Forms.TextBox();
             this.lbl_SearchOrder = new System.Windows.Forms.Label();
+            this.comboBox_OrderStatus = new System.Windows.Forms.ComboBox();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
@@ -174,8 +174,8 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
+            tab_CreateOrder.Controls.Add(this.comboBox_OrderStatus);
             tab_CreateOrder.Controls.Add(this.picBox_Status);
-            tab_CreateOrder.Controls.Add(this.listBox_Status);
             tab_CreateOrder.Controls.Add(this.lbl_OrderStatus);
             tab_CreateOrder.Controls.Add(this.lbl_Description);
             tab_CreateOrder.Controls.Add(this.txtboxrch_Description);
@@ -219,7 +219,7 @@
             // 
             // picBox_Status
             // 
-            this.picBox_Status.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.picBox_Status.BackColor = System.Drawing.Color.Transparent;
             this.picBox_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBox_Status.Enabled = false;
             this.picBox_Status.Image = global::WindowsFormsApp3.Properties.Resources.pending;
@@ -228,24 +228,6 @@
             this.picBox_Status.Size = new System.Drawing.Size(150, 150);
             this.picBox_Status.TabIndex = 65;
             this.picBox_Status.TabStop = false;
-            // 
-            // listBox_Status
-            // 
-            this.listBox_Status.Enabled = false;
-            this.listBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox_Status.FormattingEnabled = true;
-            this.listBox_Status.ItemHeight = 33;
-            this.listBox_Status.Items.AddRange(new object[] {
-            "Pending Pmt",
-            "In Transit",
-            "Delayed",
-            "Complete",
-            "Cancelled"});
-            this.listBox_Status.Location = new System.Drawing.Point(386, 326);
-            this.listBox_Status.Name = "listBox_Status";
-            this.listBox_Status.Size = new System.Drawing.Size(169, 37);
-            this.listBox_Status.TabIndex = 14;
-            this.listBox_Status.SelectedIndexChanged += new System.EventHandler(this.listBox_Status_SelectedIndexChanged);
             // 
             // lbl_OrderStatus
             // 
@@ -1489,6 +1471,23 @@
             this.lbl_SearchOrder.TabIndex = 19;
             this.lbl_SearchOrder.Text = "Search:";
             // 
+            // comboBox_OrderStatus
+            // 
+            this.comboBox_OrderStatus.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_OrderStatus.FormattingEnabled = true;
+            this.comboBox_OrderStatus.Items.AddRange(new object[] {
+            "Pending Pmt",
+            "In Transit",
+            "Delayed",
+            "Complete",
+            "Cancelled"});
+            this.comboBox_OrderStatus.Location = new System.Drawing.Point(381, 325);
+            this.comboBox_OrderStatus.Name = "comboBox_OrderStatus";
+            this.comboBox_OrderStatus.Size = new System.Drawing.Size(169, 41);
+            this.comboBox_OrderStatus.TabIndex = 66;
+            this.comboBox_OrderStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox_OrderStatus_SelectedIndexChanged);
+            this.comboBox_OrderStatus.Click += new System.EventHandler(this.comboBox_OrderStatus_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1649,9 +1648,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.PictureBox picBox_Status;
-        private System.Windows.Forms.ListBox listBox_Status;
         private System.Windows.Forms.Label lbl_OrderStatus;
         private System.Windows.Forms.TextBox txtBox_SearchOrder;
         private System.Windows.Forms.Label lbl_SearchOrder;
+        private System.Windows.Forms.ComboBox comboBox_OrderStatus;
     }
 }

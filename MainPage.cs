@@ -527,7 +527,7 @@ namespace WindowsFormsApp3
             txtbox_Zip.Enabled = true;
             txtboxrch_Description.Enabled = true;
             txtboxrch_SpecialInstructions.Enabled = true;
-            listBox_Status.Enabled = true;
+            comboBox_OrderStatus.Enabled = true;
             picBox_Status.Enabled = true;
             panel2.Enabled = true;
             panel3.Enabled = true;
@@ -594,7 +594,7 @@ namespace WindowsFormsApp3
             txtbox_DeliveryZip.Enabled = false;
             btn_SaveOrder.Enabled = false;
             picBox_Status.Enabled = false;
-            listBox_Status.Enabled = false;
+            comboBox_OrderStatus.Enabled = false;
             txtboxrch_Description.Enabled = false;
             txtboxrch_SpecialInstructions.Enabled = false;
 
@@ -614,7 +614,7 @@ namespace WindowsFormsApp3
             txtbox_DeliveryCity.Text = null;
             txtbox_DeliveryState.Text = null;
             txtbox_DeliveryZip.Text = null;
-            listBox_Status.Text = null;
+            comboBox_OrderStatus.Text = null;
             txtboxrch_Description.Text = null;
             txtboxrch_SpecialInstructions.Text = null;
 
@@ -694,39 +694,7 @@ namespace WindowsFormsApp3
 
         private void listBox_Status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Image picCancelled = WindowsFormsApp3.Properties.Resources.cancelled;
-            Image picPending = WindowsFormsApp3.Properties.Resources.pending;
-            Image picDelayed = WindowsFormsApp3.Properties.Resources.delayed;
-            Image picInTransit = WindowsFormsApp3.Properties.Resources.in_transit;
-            Image picComplete = WindowsFormsApp3.Properties.Resources.complete;
-
-
-            if (listBox_Status.SelectedIndex == 0) //0 is Pending
-            {
-                picBox_Status.Image = picPending;
-                //listBox_Status_Click(sender, e);
-            }
-            else if (listBox_Status.SelectedIndex == 1) //1 is In Transit
-            {
-                picBox_Status.Image = picInTransit;
-                //listBox_Status_Click(sender, e);
-            }
-            else if (listBox_Status.SelectedIndex == 2) //2 is Delayed
-            {
-                picBox_Status.Image = picDelayed;
-            }
-            else if (listBox_Status.SelectedIndex == 3) //3 is Complete
-            {
-                picBox_Status.Image = picComplete;
-            }
-            else if (listBox_Status.SelectedIndex == 4) //4 is Cancelled
-            {
-                picBox_Status.Image = picCancelled;
-            }
-            else
-            {
-                picBox_Status.Image = null;
-            }
+           
 
 
         }
@@ -734,6 +702,48 @@ namespace WindowsFormsApp3
         private void txtbox_Address_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox_OrderStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_OrderStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Image picCancelled = WindowsFormsApp3.Properties.Resources.cancelled;
+            Image picPending = WindowsFormsApp3.Properties.Resources.pending;
+            Image picDelayed = WindowsFormsApp3.Properties.Resources.delayed;
+            Image picInTransit = WindowsFormsApp3.Properties.Resources.in_transit;
+            Image picComplete = WindowsFormsApp3.Properties.Resources.complete;
+
+
+            if (comboBox_OrderStatus.SelectedIndex == 0) //0 is Pending
+            {
+                picBox_Status.Image = picPending;
+                //listBox_Status_Click(sender, e);
+            }
+            else if (comboBox_OrderStatus.SelectedIndex == 1) //1 is In Transit
+            {
+                picBox_Status.Image = picInTransit;
+                //listBox_Status_Click(sender, e);
+            }
+            else if (comboBox_OrderStatus.SelectedIndex == 2) //2 is Delayed
+            {
+                picBox_Status.Image = picDelayed;
+            }
+            else if (comboBox_OrderStatus.SelectedIndex == 3) //3 is Complete
+            {
+                picBox_Status.Image = picComplete;
+            }
+            else if (comboBox_OrderStatus.SelectedIndex == 4) //4 is Cancelled
+            {
+                picBox_Status.Image = picCancelled;
+            }
+            else
+            {
+                picBox_Status.Image = null;
+            }
         }
     }
 

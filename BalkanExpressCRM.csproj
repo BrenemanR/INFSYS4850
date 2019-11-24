@@ -185,6 +185,11 @@
     <Content Include="oldbase.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\cancelled.png" />
+    <Content Include="Resources\complete.png" />
+    <Content Include="Resources\delayed.png" />
+    <Content Include="Resources\in_transit.png" />
+    <Content Include="Resources\pending.png" />
     <None Include="Resources\updated plus.png" />
     <None Include="Resources\circle+more+plus+icon-1320183136549593898.png" />
     <None Include="Resources\plus-big-512.png" />

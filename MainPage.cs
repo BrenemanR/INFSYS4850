@@ -284,7 +284,7 @@ namespace WindowsFormsApp3
             // TODO: This line of code loads data into the 'appData.CUSTOMER' table. You can move, or remove it, as needed.
             this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
             cUSTOMERBindingSource.DataSource = this.appData.CUSTOMER;
-
+           
 
         }
 
@@ -507,7 +507,7 @@ namespace WindowsFormsApp3
             BookDatePicker.Enabled = true;
             PickUpDatePicker.Enabled = true;
             DropOffDatePicker.Enabled = true;
-            combobox_OrderStatus.Enabled = true;
+            picBox_Status.Enabled = true;
             checkBox_CopyPickupInformation.Enabled = true;
             checkBox_CopyDropoffInformation.Enabled = true;
             txtbox_PickupAddress.Enabled = true;
@@ -518,6 +518,22 @@ namespace WindowsFormsApp3
             txtbox_DeliveryCity.Enabled = true;
             txtbox_DeliveryState.Enabled = true;
             txtbox_DeliveryZip.Enabled = true;
+            txtbox_Company.Enabled = true;
+            txtbox_Phone.Enabled = true;
+            txtbox_Email.Enabled = true;
+            txtbox_Address.Enabled = true;
+            txtbox_City.Enabled = true;
+            txtbox_State.Enabled = true;
+            txtbox_Zip.Enabled = true;
+            txtboxrch_Description.Enabled = true;
+            txtboxrch_SpecialInstructions.Enabled = true;
+            listBox_Status.Enabled = true;
+            picBox_Status.Enabled = true;
+            panel2.Enabled = true;
+            panel3.Enabled = true;
+            checkBox_CopyDropoffInformation.Enabled = true;
+            checkBox_CopyPickupInformation.Enabled = true;
+
 
             btn_SaveOrder.Enabled = true;
 
@@ -528,7 +544,7 @@ namespace WindowsFormsApp3
             //this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
 
             
-            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, combobox_OrderStatus.Text, 
+            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, picBox_Status.Text, 
                 txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
                 txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text);
 
@@ -541,9 +557,18 @@ namespace WindowsFormsApp3
             BookDatePicker.Enabled = false;
             PickUpDatePicker.Enabled = false;
             DropOffDatePicker.Enabled = false;
-            combobox_OrderStatus.Enabled = false;
+            picBox_Status.Enabled = false;
             checkBox_CopyPickupInformation.Enabled = false;
             checkBox_CopyDropoffInformation.Enabled = false;
+            
+            //prevents the user from being able to change data
+            txtbox_Company.Enabled = false;
+            txtbox_Phone.Enabled = false;
+            txtbox_Email.Enabled = false;
+            txtbox_Address.Enabled = false;
+            txtbox_City.Enabled = false;
+            txtbox_State.Enabled = false;
+            txtbox_Zip.Enabled = false;
             txtbox_PickupAddress.Enabled = false;
             txtbox_PickupCity.Enabled = false;
             txtbox_PickupState.Enabled = false;
@@ -552,9 +577,11 @@ namespace WindowsFormsApp3
             txtbox_DeliveryCity.Enabled = false;
             txtbox_DeliveryState.Enabled = false;
             txtbox_DeliveryZip.Enabled = false;
-
             btn_SaveOrder.Enabled = false;
-
+            picBox_Status.Enabled = false;
+            listBox_Status.Enabled = false;
+            txtboxrch_Description.Enabled = false;
+            txtboxrch_SpecialInstructions.Enabled = false;
             
         }
 
@@ -628,6 +655,50 @@ namespace WindowsFormsApp3
                 txtbox_PickupState.Text = "";
                 txtbox_PickupZip.Text = "";
             }
+        }
+
+        private void listBox_Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Image picCancelled = WindowsFormsApp3.Properties.Resources.cancelled;
+            Image picPending = WindowsFormsApp3.Properties.Resources.pending;
+            Image picDelayed = WindowsFormsApp3.Properties.Resources.delayed;
+            Image picInTransit = WindowsFormsApp3.Properties.Resources.in_transit;
+            Image picComplete = WindowsFormsApp3.Properties.Resources.complete;
+
+
+            if (listBox_Status.SelectedIndex == 0) //0 is Pending
+            {
+                picBox_Status.Image = picPending;
+                //listBox_Status_Click(sender, e);
+            }
+            else if (listBox_Status.SelectedIndex == 1) //1 is In Transit
+            {
+                picBox_Status.Image = picInTransit;
+                //listBox_Status_Click(sender, e);
+            }
+            else if (listBox_Status.SelectedIndex == 2) //2 is Delayed
+            {
+                picBox_Status.Image = picDelayed;
+            }
+            else if (listBox_Status.SelectedIndex == 3) //3 is Complete
+            {
+                picBox_Status.Image = picComplete;
+            }
+            else if (listBox_Status.SelectedIndex == 4) //4 is Cancelled
+            {
+                picBox_Status.Image = picCancelled;
+            }
+            else
+            {
+                picBox_Status.Image = null;
+            }
+
+
+        }
+
+        private void txtbox_Address_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

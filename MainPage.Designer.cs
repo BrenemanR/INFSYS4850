@@ -31,29 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.picBox_Status = new System.Windows.Forms.PictureBox();
+            this.listBox_Status = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbl_Description = new System.Windows.Forms.Label();
             this.txtboxrch_Description = new System.Windows.Forms.RichTextBox();
-            this.txtbox_DeliveryZip = new System.Windows.Forms.TextBox();
-            this.txtbox_DeliveryState = new System.Windows.Forms.TextBox();
-            this.txtbox_DeliveryCity = new System.Windows.Forms.TextBox();
-            this.lbl_DeliveryAddress = new System.Windows.Forms.Label();
-            this.txtbox_DeliveryAddress = new System.Windows.Forms.TextBox();
-            this.lbl_DropoffInformatin = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.checkBox_CopyDropoffInformation = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtbox_DeliveryZip = new System.Windows.Forms.TextBox();
             this.lbl_DeliveryCity = new System.Windows.Forms.Label();
+            this.txtbox_DeliveryState = new System.Windows.Forms.TextBox();
             this.lbl_DeliveryState = new System.Windows.Forms.Label();
-            this.lbl_PickupZip = new System.Windows.Forms.Label();
-            this.txtbox_PickupZip = new System.Windows.Forms.TextBox();
-            this.lbl_PickupState = new System.Windows.Forms.Label();
-            this.txtbox_PickupState = new System.Windows.Forms.TextBox();
-            this.lbl_PickupCity = new System.Windows.Forms.Label();
-            this.txtbox_PickupCity = new System.Windows.Forms.TextBox();
-            this.lbl_PickupAddress = new System.Windows.Forms.Label();
-            this.txtbox_PickupAddress = new System.Windows.Forms.TextBox();
-            this.lbl_PickupInfo = new System.Windows.Forms.Label();
-            this.combobox_OrderStatus = new System.Windows.Forms.ComboBox();
+            this.txtbox_DeliveryCity = new System.Windows.Forms.TextBox();
+            this.lbl_DropoffInformatin = new System.Windows.Forms.Label();
+            this.txtbox_DeliveryAddress = new System.Windows.Forms.TextBox();
+            this.lbl_DeliveryAddress = new System.Windows.Forms.Label();
             this.lbl_DeliveryDate = new System.Windows.Forms.Label();
             this.lbl_PickupDate = new System.Windows.Forms.Label();
             this.lbl_BookDate = new System.Windows.Forms.Label();
@@ -75,8 +68,7 @@
             this.txtbox_State = new System.Windows.Forms.TextBox();
             this.txtbox_City = new System.Windows.Forms.TextBox();
             this.txtbox_Address = new System.Windows.Forms.TextBox();
-            this.lbl_Status = new System.Windows.Forms.Label();
-            this.lbl_Invoice = new System.Windows.Forms.Label();
+            this.lbl_Order = new System.Windows.Forms.Label();
             this.lbl_Company = new System.Windows.Forms.Label();
             this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_Phone = new System.Windows.Forms.Label();
@@ -88,6 +80,15 @@
             this.combobox_CustomerIDZ = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox_CopyPickupInformation = new System.Windows.Forms.CheckBox();
+            this.txtbox_PickupAddress = new System.Windows.Forms.TextBox();
+            this.txtbox_PickupCity = new System.Windows.Forms.TextBox();
+            this.txtbox_PickupState = new System.Windows.Forms.TextBox();
+            this.txtbox_PickupZip = new System.Windows.Forms.TextBox();
+            this.lbl_PickupZip = new System.Windows.Forms.Label();
+            this.lbl_PickupState = new System.Windows.Forms.Label();
+            this.lbl_PickupCity = new System.Windows.Forms.Label();
+            this.lbl_PickupAddress = new System.Windows.Forms.Label();
+            this.lbl_PickupInfo = new System.Windows.Forms.Label();
             this.tab_ManageCustomers = new System.Windows.Forms.TabPage();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -111,21 +112,6 @@
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.LastNameBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.tab_Help = new System.Windows.Forms.TabPage();
-            this.tab_SearchOrders = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tab_Home = new System.Windows.Forms.TabPage();
-            this.lbl_Home = new System.Windows.Forms.Label();
-            this.tab_Container = new System.Windows.Forms.TabControl();
-            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
-            this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
-            this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,6 +122,14 @@
             this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.tab_Help = new System.Windows.Forms.TabPage();
+            this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,8 +144,16 @@
             this.dROPOFFDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRDERSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tab_Home = new System.Windows.Forms.TabPage();
+            this.lbl_Home = new System.Windows.Forms.Label();
+            this.tab_Container = new System.Windows.Forms.TabControl();
+            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
+            this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
+            this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
@@ -170,25 +172,12 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
+            tab_CreateOrder.Controls.Add(this.picBox_Status);
+            tab_CreateOrder.Controls.Add(this.listBox_Status);
+            tab_CreateOrder.Controls.Add(this.label2);
             tab_CreateOrder.Controls.Add(this.lbl_Description);
             tab_CreateOrder.Controls.Add(this.txtboxrch_Description);
-            tab_CreateOrder.Controls.Add(this.txtbox_DeliveryZip);
-            tab_CreateOrder.Controls.Add(this.txtbox_DeliveryState);
-            tab_CreateOrder.Controls.Add(this.txtbox_DeliveryCity);
-            tab_CreateOrder.Controls.Add(this.lbl_DeliveryAddress);
-            tab_CreateOrder.Controls.Add(this.txtbox_DeliveryAddress);
-            tab_CreateOrder.Controls.Add(this.lbl_DropoffInformatin);
             tab_CreateOrder.Controls.Add(this.panel3);
-            tab_CreateOrder.Controls.Add(this.lbl_PickupZip);
-            tab_CreateOrder.Controls.Add(this.txtbox_PickupZip);
-            tab_CreateOrder.Controls.Add(this.lbl_PickupState);
-            tab_CreateOrder.Controls.Add(this.txtbox_PickupState);
-            tab_CreateOrder.Controls.Add(this.lbl_PickupCity);
-            tab_CreateOrder.Controls.Add(this.txtbox_PickupCity);
-            tab_CreateOrder.Controls.Add(this.lbl_PickupAddress);
-            tab_CreateOrder.Controls.Add(this.txtbox_PickupAddress);
-            tab_CreateOrder.Controls.Add(this.lbl_PickupInfo);
-            tab_CreateOrder.Controls.Add(this.combobox_OrderStatus);
             tab_CreateOrder.Controls.Add(this.lbl_DeliveryDate);
             tab_CreateOrder.Controls.Add(this.lbl_PickupDate);
             tab_CreateOrder.Controls.Add(this.lbl_BookDate);
@@ -207,8 +196,7 @@
             tab_CreateOrder.Controls.Add(this.txtbox_State);
             tab_CreateOrder.Controls.Add(this.txtbox_City);
             tab_CreateOrder.Controls.Add(this.txtbox_Address);
-            tab_CreateOrder.Controls.Add(this.lbl_Status);
-            tab_CreateOrder.Controls.Add(this.lbl_Invoice);
+            tab_CreateOrder.Controls.Add(this.lbl_Order);
             tab_CreateOrder.Controls.Add(this.lbl_Company);
             tab_CreateOrder.Controls.Add(this.lbl_Email);
             tab_CreateOrder.Controls.Add(this.lbl_Phone);
@@ -227,12 +215,53 @@
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
             // 
+            // picBox_Status
+            // 
+            this.picBox_Status.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.picBox_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picBox_Status.Enabled = false;
+            this.picBox_Status.Image = global::WindowsFormsApp3.Properties.Resources.pending;
+            this.picBox_Status.Location = new System.Drawing.Point(400, 372);
+            this.picBox_Status.Name = "picBox_Status";
+            this.picBox_Status.Size = new System.Drawing.Size(150, 150);
+            this.picBox_Status.TabIndex = 65;
+            this.picBox_Status.TabStop = false;
+            // 
+            // listBox_Status
+            // 
+            this.listBox_Status.Enabled = false;
+            this.listBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_Status.FormattingEnabled = true;
+            this.listBox_Status.ItemHeight = 33;
+            this.listBox_Status.Items.AddRange(new object[] {
+            "Pending",
+            "In Transit",
+            "Delayed",
+            "Complete",
+            "Cancelled"});
+            this.listBox_Status.Location = new System.Drawing.Point(400, 326);
+            this.listBox_Status.Name = "listBox_Status";
+            this.listBox_Status.Size = new System.Drawing.Size(150, 37);
+            this.listBox_Status.TabIndex = 14;
+            this.listBox_Status.SelectedIndexChanged += new System.EventHandler(this.listBox_Status_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(396, 304);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 19);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Booking Date:";
+            // 
             // lbl_Description
             // 
             this.lbl_Description.AutoSize = true;
-            this.lbl_Description.Location = new System.Drawing.Point(519, 104);
+            this.lbl_Description.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Description.Location = new System.Drawing.Point(571, 112);
             this.lbl_Description.Name = "lbl_Description";
-            this.lbl_Description.Size = new System.Drawing.Size(73, 15);
+            this.lbl_Description.Size = new System.Drawing.Size(90, 19);
             this.lbl_Description.TabIndex = 62;
             this.lbl_Description.Text = "Description:";
             // 
@@ -240,83 +269,40 @@
             // 
             this.txtboxrch_Description.AcceptsTab = true;
             this.txtboxrch_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtboxrch_Description.Location = new System.Drawing.Point(519, 122);
+            this.txtboxrch_Description.Enabled = false;
+            this.txtboxrch_Description.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxrch_Description.Location = new System.Drawing.Point(574, 134);
             this.txtboxrch_Description.Name = "txtboxrch_Description";
             this.txtboxrch_Description.ShowSelectionMargin = true;
-            this.txtboxrch_Description.Size = new System.Drawing.Size(579, 155);
-            this.txtboxrch_Description.TabIndex = 60;
+            this.txtboxrch_Description.Size = new System.Drawing.Size(527, 155);
+            this.txtboxrch_Description.TabIndex = 15;
             this.txtboxrch_Description.Text = "";
-            // 
-            // txtbox_DeliveryZip
-            // 
-            this.txtbox_DeliveryZip.Enabled = false;
-            this.txtbox_DeliveryZip.Location = new System.Drawing.Point(380, 206);
-            this.txtbox_DeliveryZip.Name = "txtbox_DeliveryZip";
-            this.txtbox_DeliveryZip.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_DeliveryZip.TabIndex = 56;
-            // 
-            // txtbox_DeliveryState
-            // 
-            this.txtbox_DeliveryState.Enabled = false;
-            this.txtbox_DeliveryState.Location = new System.Drawing.Point(380, 177);
-            this.txtbox_DeliveryState.Name = "txtbox_DeliveryState";
-            this.txtbox_DeliveryState.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_DeliveryState.TabIndex = 54;
-            // 
-            // txtbox_DeliveryCity
-            // 
-            this.txtbox_DeliveryCity.Enabled = false;
-            this.txtbox_DeliveryCity.Location = new System.Drawing.Point(380, 148);
-            this.txtbox_DeliveryCity.Name = "txtbox_DeliveryCity";
-            this.txtbox_DeliveryCity.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_DeliveryCity.TabIndex = 52;
-            // 
-            // lbl_DeliveryAddress
-            // 
-            this.lbl_DeliveryAddress.AutoSize = true;
-            this.lbl_DeliveryAddress.Location = new System.Drawing.Point(280, 122);
-            this.lbl_DeliveryAddress.Name = "lbl_DeliveryAddress";
-            this.lbl_DeliveryAddress.Size = new System.Drawing.Size(99, 15);
-            this.lbl_DeliveryAddress.TabIndex = 51;
-            this.lbl_DeliveryAddress.Text = "Delivery Address";
-            // 
-            // txtbox_DeliveryAddress
-            // 
-            this.txtbox_DeliveryAddress.Enabled = false;
-            this.txtbox_DeliveryAddress.Location = new System.Drawing.Point(380, 119);
-            this.txtbox_DeliveryAddress.Name = "txtbox_DeliveryAddress";
-            this.txtbox_DeliveryAddress.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_DeliveryAddress.TabIndex = 49;
-            // 
-            // lbl_DropoffInformatin
-            // 
-            this.lbl_DropoffInformatin.AutoSize = true;
-            this.lbl_DropoffInformatin.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DropoffInformatin.Location = new System.Drawing.Point(282, 75);
-            this.lbl_DropoffInformatin.Name = "lbl_DropoffInformatin";
-            this.lbl_DropoffInformatin.Size = new System.Drawing.Size(145, 15);
-            this.lbl_DropoffInformatin.TabIndex = 48;
-            this.lbl_DropoffInformatin.Text = "DROPOFF INFORMATION:";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.checkBox_CopyDropoffInformation);
             this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.txtbox_DeliveryZip);
             this.panel3.Controls.Add(this.lbl_DeliveryCity);
+            this.panel3.Controls.Add(this.txtbox_DeliveryState);
             this.panel3.Controls.Add(this.lbl_DeliveryState);
-            this.panel3.Location = new System.Drawing.Point(276, 64);
+            this.panel3.Controls.Add(this.txtbox_DeliveryCity);
+            this.panel3.Controls.Add(this.lbl_DropoffInformatin);
+            this.panel3.Controls.Add(this.txtbox_DeliveryAddress);
+            this.panel3.Controls.Add(this.lbl_DeliveryAddress);
+            this.panel3.Location = new System.Drawing.Point(292, 86);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(237, 172);
+            this.panel3.Size = new System.Drawing.Size(273, 203);
             this.panel3.TabIndex = 58;
             // 
             // checkBox_CopyDropoffInformation
             // 
             this.checkBox_CopyDropoffInformation.AutoSize = true;
             this.checkBox_CopyDropoffInformation.Enabled = false;
-            this.checkBox_CopyDropoffInformation.Location = new System.Drawing.Point(33, 29);
+            this.checkBox_CopyDropoffInformation.Location = new System.Drawing.Point(10, 37);
             this.checkBox_CopyDropoffInformation.Name = "checkBox_CopyDropoffInformation";
             this.checkBox_CopyDropoffInformation.Size = new System.Drawing.Size(137, 19);
-            this.checkBox_CopyDropoffInformation.TabIndex = 59;
+            this.checkBox_CopyDropoffInformation.TabIndex = 9;
             this.checkBox_CopyDropoffInformation.Text = "Copy Customer Data";
             this.checkBox_CopyDropoffInformation.UseVisualStyleBackColor = true;
             this.checkBox_CopyDropoffInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyDropoffInformation_CheckedChanged);
@@ -324,174 +310,146 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 145);
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 164);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 15);
+            this.label7.Size = new System.Drawing.Size(90, 19);
             this.label7.TabIndex = 57;
             this.label7.Text = "Delivery Zip:";
+            // 
+            // txtbox_DeliveryZip
+            // 
+            this.txtbox_DeliveryZip.Enabled = false;
+            this.txtbox_DeliveryZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_DeliveryZip.Location = new System.Drawing.Point(127, 160);
+            this.txtbox_DeliveryZip.Name = "txtbox_DeliveryZip";
+            this.txtbox_DeliveryZip.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryZip.TabIndex = 56;
             // 
             // lbl_DeliveryCity
             // 
             this.lbl_DeliveryCity.AutoSize = true;
-            this.lbl_DeliveryCity.Location = new System.Drawing.Point(6, 87);
+            this.lbl_DeliveryCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DeliveryCity.Location = new System.Drawing.Point(3, 98);
             this.lbl_DeliveryCity.Name = "lbl_DeliveryCity";
-            this.lbl_DeliveryCity.Size = new System.Drawing.Size(79, 15);
+            this.lbl_DeliveryCity.Size = new System.Drawing.Size(95, 19);
             this.lbl_DeliveryCity.TabIndex = 53;
             this.lbl_DeliveryCity.Text = "Delivery City:";
+            // 
+            // txtbox_DeliveryState
+            // 
+            this.txtbox_DeliveryState.Enabled = false;
+            this.txtbox_DeliveryState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_DeliveryState.Location = new System.Drawing.Point(127, 128);
+            this.txtbox_DeliveryState.Name = "txtbox_DeliveryState";
+            this.txtbox_DeliveryState.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryState.TabIndex = 54;
             // 
             // lbl_DeliveryState
             // 
             this.lbl_DeliveryState.AutoSize = true;
-            this.lbl_DeliveryState.Location = new System.Drawing.Point(4, 116);
+            this.lbl_DeliveryState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DeliveryState.Location = new System.Drawing.Point(3, 131);
             this.lbl_DeliveryState.Name = "lbl_DeliveryState";
-            this.lbl_DeliveryState.Size = new System.Drawing.Size(85, 15);
+            this.lbl_DeliveryState.Size = new System.Drawing.Size(103, 19);
             this.lbl_DeliveryState.TabIndex = 55;
             this.lbl_DeliveryState.Text = "Delivery State:";
             // 
-            // lbl_PickupZip
+            // txtbox_DeliveryCity
             // 
-            this.lbl_PickupZip.AutoSize = true;
-            this.lbl_PickupZip.Location = new System.Drawing.Point(9, 209);
-            this.lbl_PickupZip.Name = "lbl_PickupZip";
-            this.lbl_PickupZip.Size = new System.Drawing.Size(67, 15);
-            this.lbl_PickupZip.TabIndex = 46;
-            this.lbl_PickupZip.Text = "Pickup Zip:";
+            this.txtbox_DeliveryCity.Enabled = false;
+            this.txtbox_DeliveryCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_DeliveryCity.Location = new System.Drawing.Point(127, 96);
+            this.txtbox_DeliveryCity.Name = "txtbox_DeliveryCity";
+            this.txtbox_DeliveryCity.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryCity.TabIndex = 52;
             // 
-            // txtbox_PickupZip
+            // lbl_DropoffInformatin
             // 
-            this.txtbox_PickupZip.Enabled = false;
-            this.txtbox_PickupZip.Location = new System.Drawing.Point(107, 206);
-            this.txtbox_PickupZip.Name = "txtbox_PickupZip";
-            this.txtbox_PickupZip.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_PickupZip.TabIndex = 45;
+            this.lbl_DropoffInformatin.AutoSize = true;
+            this.lbl_DropoffInformatin.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DropoffInformatin.Location = new System.Drawing.Point(6, 5);
+            this.lbl_DropoffInformatin.Name = "lbl_DropoffInformatin";
+            this.lbl_DropoffInformatin.Size = new System.Drawing.Size(236, 26);
+            this.lbl_DropoffInformatin.TabIndex = 48;
+            this.lbl_DropoffInformatin.Text = "DROPOFF INFORMATION:";
             // 
-            // lbl_PickupState
+            // txtbox_DeliveryAddress
             // 
-            this.lbl_PickupState.AutoSize = true;
-            this.lbl_PickupState.Location = new System.Drawing.Point(9, 180);
-            this.lbl_PickupState.Name = "lbl_PickupState";
-            this.lbl_PickupState.Size = new System.Drawing.Size(77, 15);
-            this.lbl_PickupState.TabIndex = 44;
-            this.lbl_PickupState.Text = "Pickup State:";
+            this.txtbox_DeliveryAddress.Enabled = false;
+            this.txtbox_DeliveryAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_DeliveryAddress.Location = new System.Drawing.Point(127, 66);
+            this.txtbox_DeliveryAddress.Name = "txtbox_DeliveryAddress";
+            this.txtbox_DeliveryAddress.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryAddress.TabIndex = 49;
             // 
-            // txtbox_PickupState
+            // lbl_DeliveryAddress
             // 
-            this.txtbox_PickupState.Enabled = false;
-            this.txtbox_PickupState.Location = new System.Drawing.Point(107, 177);
-            this.txtbox_PickupState.Name = "txtbox_PickupState";
-            this.txtbox_PickupState.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_PickupState.TabIndex = 43;
-            // 
-            // lbl_PickupCity
-            // 
-            this.lbl_PickupCity.AutoSize = true;
-            this.lbl_PickupCity.Location = new System.Drawing.Point(9, 151);
-            this.lbl_PickupCity.Name = "lbl_PickupCity";
-            this.lbl_PickupCity.Size = new System.Drawing.Size(71, 15);
-            this.lbl_PickupCity.TabIndex = 42;
-            this.lbl_PickupCity.Text = "Pickup City:";
-            // 
-            // txtbox_PickupCity
-            // 
-            this.txtbox_PickupCity.Enabled = false;
-            this.txtbox_PickupCity.Location = new System.Drawing.Point(107, 148);
-            this.txtbox_PickupCity.Name = "txtbox_PickupCity";
-            this.txtbox_PickupCity.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_PickupCity.TabIndex = 41;
-            // 
-            // lbl_PickupAddress
-            // 
-            this.lbl_PickupAddress.AutoSize = true;
-            this.lbl_PickupAddress.Location = new System.Drawing.Point(7, 122);
-            this.lbl_PickupAddress.Name = "lbl_PickupAddress";
-            this.lbl_PickupAddress.Size = new System.Drawing.Size(94, 15);
-            this.lbl_PickupAddress.TabIndex = 40;
-            this.lbl_PickupAddress.Text = "Pickup Address:";
-            // 
-            // txtbox_PickupAddress
-            // 
-            this.txtbox_PickupAddress.Enabled = false;
-            this.txtbox_PickupAddress.Location = new System.Drawing.Point(107, 119);
-            this.txtbox_PickupAddress.Name = "txtbox_PickupAddress";
-            this.txtbox_PickupAddress.Size = new System.Drawing.Size(125, 23);
-            this.txtbox_PickupAddress.TabIndex = 38;
-            // 
-            // lbl_PickupInfo
-            // 
-            this.lbl_PickupInfo.AutoSize = true;
-            this.lbl_PickupInfo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PickupInfo.Location = new System.Drawing.Point(9, 75);
-            this.lbl_PickupInfo.Name = "lbl_PickupInfo";
-            this.lbl_PickupInfo.Size = new System.Drawing.Size(132, 15);
-            this.lbl_PickupInfo.TabIndex = 37;
-            this.lbl_PickupInfo.Text = "PICKUP INFORMATION:";
-            // 
-            // combobox_OrderStatus
-            // 
-            this.combobox_OrderStatus.Enabled = false;
-            this.combobox_OrderStatus.FormattingEnabled = true;
-            this.combobox_OrderStatus.Items.AddRange(new object[] {
-            "PENDING",
-            "IN TRANSIT",
-            "COMPLETE",
-            "CANCELLED",
-            "DELAYED"});
-            this.combobox_OrderStatus.Location = new System.Drawing.Point(108, 393);
-            this.combobox_OrderStatus.Name = "combobox_OrderStatus";
-            this.combobox_OrderStatus.Size = new System.Drawing.Size(200, 23);
-            this.combobox_OrderStatus.TabIndex = 36;
+            this.lbl_DeliveryAddress.AutoSize = true;
+            this.lbl_DeliveryAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DeliveryAddress.Location = new System.Drawing.Point(3, 69);
+            this.lbl_DeliveryAddress.Name = "lbl_DeliveryAddress";
+            this.lbl_DeliveryAddress.Size = new System.Drawing.Size(122, 19);
+            this.lbl_DeliveryAddress.TabIndex = 51;
+            this.lbl_DeliveryAddress.Text = "Delivery Address:";
             // 
             // lbl_DeliveryDate
             // 
             this.lbl_DeliveryDate.AutoSize = true;
-            this.lbl_DeliveryDate.Location = new System.Drawing.Point(20, 347);
+            this.lbl_DeliveryDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DeliveryDate.Location = new System.Drawing.Point(19, 382);
             this.lbl_DeliveryDate.Name = "lbl_DeliveryDate";
-            this.lbl_DeliveryDate.Size = new System.Drawing.Size(83, 15);
+            this.lbl_DeliveryDate.Size = new System.Drawing.Size(101, 19);
             this.lbl_DeliveryDate.TabIndex = 35;
             this.lbl_DeliveryDate.Text = "Delivery Date:";
             // 
             // lbl_PickupDate
             // 
             this.lbl_PickupDate.AutoSize = true;
-            this.lbl_PickupDate.Location = new System.Drawing.Point(20, 300);
+            this.lbl_PickupDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PickupDate.Location = new System.Drawing.Point(20, 344);
             this.lbl_PickupDate.Name = "lbl_PickupDate";
-            this.lbl_PickupDate.Size = new System.Drawing.Size(75, 15);
+            this.lbl_PickupDate.Size = new System.Drawing.Size(90, 19);
             this.lbl_PickupDate.TabIndex = 34;
             this.lbl_PickupDate.Text = "Pickup Date:";
             // 
             // lbl_BookDate
             // 
             this.lbl_BookDate.AutoSize = true;
-            this.lbl_BookDate.Location = new System.Drawing.Point(20, 251);
+            this.lbl_BookDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BookDate.Location = new System.Drawing.Point(20, 304);
             this.lbl_BookDate.Name = "lbl_BookDate";
-            this.lbl_BookDate.Size = new System.Drawing.Size(82, 15);
+            this.lbl_BookDate.Size = new System.Drawing.Size(100, 19);
             this.lbl_BookDate.TabIndex = 33;
             this.lbl_BookDate.Text = "Booking Date:";
             // 
             // DropOffDatePicker
             // 
             this.DropOffDatePicker.Enabled = false;
-            this.DropOffDatePicker.Location = new System.Drawing.Point(108, 341);
+            this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 376);
             this.DropOffDatePicker.Name = "DropOffDatePicker";
-            this.DropOffDatePicker.Size = new System.Drawing.Size(200, 23);
-            this.DropOffDatePicker.TabIndex = 32;
+            this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.DropOffDatePicker.TabIndex = 12;
             // 
             // PickUpDatePicker
             // 
             this.PickUpDatePicker.Enabled = false;
-            this.PickUpDatePicker.Location = new System.Drawing.Point(108, 294);
+            this.PickUpDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
             this.PickUpDatePicker.Name = "PickUpDatePicker";
-            this.PickUpDatePicker.Size = new System.Drawing.Size(200, 23);
-            this.PickUpDatePicker.TabIndex = 31;
+            this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.PickUpDatePicker.TabIndex = 11;
             // 
             // BookDatePicker
             // 
             this.BookDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
             this.BookDatePicker.Enabled = false;
-            this.BookDatePicker.Location = new System.Drawing.Point(108, 248);
+            this.BookDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookDatePicker.Location = new System.Drawing.Point(126, 298);
             this.BookDatePicker.Name = "BookDatePicker";
-            this.BookDatePicker.Size = new System.Drawing.Size(200, 23);
-            this.BookDatePicker.TabIndex = 30;
+            this.BookDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.BookDatePicker.TabIndex = 10;
             // 
             // iNVOICEBindingSource
             // 
@@ -505,21 +463,22 @@
             // 
             // btn_SaveOrder
             // 
-            this.btn_SaveOrder.Enabled = false;
-            this.btn_SaveOrder.Location = new System.Drawing.Point(206, 446);
+            this.btn_SaveOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SaveOrder.Location = new System.Drawing.Point(222, 429);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
-            this.btn_SaveOrder.Size = new System.Drawing.Size(149, 56);
-            this.btn_SaveOrder.TabIndex = 28;
+            this.btn_SaveOrder.Size = new System.Drawing.Size(149, 93);
+            this.btn_SaveOrder.TabIndex = 17;
             this.btn_SaveOrder.Text = "Save Order";
             this.btn_SaveOrder.UseVisualStyleBackColor = true;
             this.btn_SaveOrder.Click += new System.EventHandler(this.btn_SaveOrder_Click);
             // 
             // btn_CreateOrder
             // 
-            this.btn_CreateOrder.Location = new System.Drawing.Point(19, 446);
+            this.btn_CreateOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateOrder.Location = new System.Drawing.Point(35, 429);
             this.btn_CreateOrder.Name = "btn_CreateOrder";
-            this.btn_CreateOrder.Size = new System.Drawing.Size(149, 56);
-            this.btn_CreateOrder.TabIndex = 26;
+            this.btn_CreateOrder.Size = new System.Drawing.Size(149, 93);
+            this.btn_CreateOrder.TabIndex = 18;
             this.btn_CreateOrder.Text = "Create Order";
             this.btn_CreateOrder.UseVisualStyleBackColor = true;
             this.btn_CreateOrder.Click += new System.EventHandler(this.btn_CreateOrder_Click);
@@ -527,37 +486,44 @@
             // lbl_SpecialInstructions
             // 
             this.lbl_SpecialInstructions.AutoSize = true;
-            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(516, 333);
+            this.lbl_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(571, 304);
             this.lbl_SpecialInstructions.Name = "lbl_SpecialInstructions";
-            this.lbl_SpecialInstructions.Size = new System.Drawing.Size(119, 15);
+            this.lbl_SpecialInstructions.Size = new System.Drawing.Size(145, 19);
             this.lbl_SpecialInstructions.TabIndex = 24;
             this.lbl_SpecialInstructions.Text = "Special Instructions:";
             // 
             // txtboxrch_SpecialInstructions
             // 
-            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(513, 351);
+            this.txtboxrch_SpecialInstructions.Enabled = false;
+            this.txtboxrch_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(571, 326);
             this.txtboxrch_SpecialInstructions.Name = "txtboxrch_SpecialInstructions";
-            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(585, 171);
-            this.txtboxrch_SpecialInstructions.TabIndex = 23;
+            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(527, 196);
+            this.txtboxrch_SpecialInstructions.TabIndex = 16;
             this.txtboxrch_SpecialInstructions.Text = "";
             // 
             // txtbox_Invoice
             // 
+            this.txtbox_Invoice.BackColor = System.Drawing.Color.White;
             this.txtbox_Invoice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_Invoice.Enabled = false;
-            this.txtbox_Invoice.Location = new System.Drawing.Point(846, 6);
+            this.txtbox_Invoice.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Invoice.Location = new System.Drawing.Point(921, 28);
             this.txtbox_Invoice.Name = "txtbox_Invoice";
-            this.txtbox_Invoice.Size = new System.Drawing.Size(121, 23);
+            this.txtbox_Invoice.Size = new System.Drawing.Size(121, 86);
             this.txtbox_Invoice.TabIndex = 16;
+            this.txtbox_Invoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtbox_Company
             // 
             this.txtbox_Company.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
             this.txtbox_Company.Enabled = false;
-            this.txtbox_Company.Location = new System.Drawing.Point(276, 6);
+            this.txtbox_Company.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Company.Location = new System.Drawing.Point(297, 6);
             this.txtbox_Company.Name = "txtbox_Company";
-            this.txtbox_Company.Size = new System.Drawing.Size(121, 23);
-            this.txtbox_Company.TabIndex = 14;
+            this.txtbox_Company.Size = new System.Drawing.Size(130, 27);
+            this.txtbox_Company.TabIndex = 1;
             // 
             // cUSTOMERBindingSource
             // 
@@ -568,143 +534,150 @@
             // 
             this.txtbox_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.txtbox_Email.Enabled = false;
-            this.txtbox_Email.Location = new System.Drawing.Point(652, 9);
+            this.txtbox_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Email.Location = new System.Drawing.Point(697, 6);
             this.txtbox_Email.Name = "txtbox_Email";
-            this.txtbox_Email.Size = new System.Drawing.Size(121, 23);
-            this.txtbox_Email.TabIndex = 12;
+            this.txtbox_Email.Size = new System.Drawing.Size(161, 27);
+            this.txtbox_Email.TabIndex = 3;
             // 
             // txtbox_Phone
             // 
             this.txtbox_Phone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
             this.txtbox_Phone.Enabled = false;
-            this.txtbox_Phone.Location = new System.Drawing.Point(461, 6);
+            this.txtbox_Phone.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Phone.Location = new System.Drawing.Point(503, 6);
             this.txtbox_Phone.Name = "txtbox_Phone";
-            this.txtbox_Phone.Size = new System.Drawing.Size(121, 23);
-            this.txtbox_Phone.TabIndex = 10;
+            this.txtbox_Phone.Size = new System.Drawing.Size(124, 27);
+            this.txtbox_Phone.TabIndex = 2;
             // 
             // txtbox_Zip
             // 
             this.txtbox_Zip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.txtbox_Zip.Enabled = false;
-            this.txtbox_Zip.Location = new System.Drawing.Point(652, 35);
+            this.txtbox_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Zip.Location = new System.Drawing.Point(681, 42);
             this.txtbox_Zip.Name = "txtbox_Zip";
-            this.txtbox_Zip.Size = new System.Drawing.Size(121, 23);
-            this.txtbox_Zip.TabIndex = 8;
+            this.txtbox_Zip.Size = new System.Drawing.Size(177, 27);
+            this.txtbox_Zip.TabIndex = 7;
             // 
             // txtbox_State
             // 
             this.txtbox_State.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
             this.txtbox_State.Enabled = false;
-            this.txtbox_State.Location = new System.Drawing.Point(461, 35);
+            this.txtbox_State.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_State.Location = new System.Drawing.Point(491, 42);
             this.txtbox_State.Name = "txtbox_State";
-            this.txtbox_State.Size = new System.Drawing.Size(121, 23);
+            this.txtbox_State.Size = new System.Drawing.Size(136, 27);
             this.txtbox_State.TabIndex = 6;
             // 
             // txtbox_City
             // 
             this.txtbox_City.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
             this.txtbox_City.Enabled = false;
-            this.txtbox_City.Location = new System.Drawing.Point(276, 35);
+            this.txtbox_City.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_City.Location = new System.Drawing.Point(266, 42);
             this.txtbox_City.Name = "txtbox_City";
-            this.txtbox_City.Size = new System.Drawing.Size(121, 23);
-            this.txtbox_City.TabIndex = 4;
+            this.txtbox_City.Size = new System.Drawing.Size(170, 27);
+            this.txtbox_City.TabIndex = 5;
             // 
             // txtbox_Address
             // 
             this.txtbox_Address.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
             this.txtbox_Address.Enabled = false;
-            this.txtbox_Address.Location = new System.Drawing.Point(76, 35);
+            this.txtbox_Address.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Address.Location = new System.Drawing.Point(78, 42);
             this.txtbox_Address.Name = "txtbox_Address";
-            this.txtbox_Address.Size = new System.Drawing.Size(121, 23);
-            this.txtbox_Address.TabIndex = 2;
+            this.txtbox_Address.Size = new System.Drawing.Size(133, 27);
+            this.txtbox_Address.TabIndex = 4;
+            this.txtbox_Address.TextChanged += new System.EventHandler(this.txtbox_Address_TextChanged);
             // 
-            // lbl_Status
+            // lbl_Order
             // 
-            this.lbl_Status.AutoSize = true;
-            this.lbl_Status.Location = new System.Drawing.Point(16, 393);
-            this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(79, 15);
-            this.lbl_Status.TabIndex = 20;
-            this.lbl_Status.Text = "Order Status:";
-            // 
-            // lbl_Invoice
-            // 
-            this.lbl_Invoice.AutoSize = true;
-            this.lbl_Invoice.Location = new System.Drawing.Point(779, 14);
-            this.lbl_Invoice.Name = "lbl_Invoice";
-            this.lbl_Invoice.Size = new System.Drawing.Size(59, 15);
-            this.lbl_Invoice.TabIndex = 17;
-            this.lbl_Invoice.Text = "Invoice #:";
+            this.lbl_Order.AutoSize = true;
+            this.lbl_Order.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Order.Location = new System.Drawing.Point(950, 6);
+            this.lbl_Order.Name = "lbl_Order";
+            this.lbl_Order.Size = new System.Drawing.Size(65, 19);
+            this.lbl_Order.TabIndex = 17;
+            this.lbl_Order.Text = "Order #:";
             // 
             // lbl_Company
             // 
             this.lbl_Company.AutoSize = true;
-            this.lbl_Company.Location = new System.Drawing.Point(209, 9);
+            this.lbl_Company.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Company.Location = new System.Drawing.Point(216, 9);
             this.lbl_Company.Name = "lbl_Company";
-            this.lbl_Company.Size = new System.Drawing.Size(61, 15);
+            this.lbl_Company.Size = new System.Drawing.Size(77, 19);
             this.lbl_Company.TabIndex = 15;
             this.lbl_Company.Text = "Company:";
             // 
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Location = new System.Drawing.Point(601, 12);
+            this.lbl_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Email.Location = new System.Drawing.Point(641, 9);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(41, 15);
+            this.lbl_Email.Size = new System.Drawing.Size(50, 19);
             this.lbl_Email.TabIndex = 13;
             this.lbl_Email.Text = "Email:";
             // 
             // lbl_Phone
             // 
             this.lbl_Phone.AutoSize = true;
-            this.lbl_Phone.Location = new System.Drawing.Point(409, 9);
+            this.lbl_Phone.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phone.Location = new System.Drawing.Point(440, 9);
             this.lbl_Phone.Name = "lbl_Phone";
-            this.lbl_Phone.Size = new System.Drawing.Size(44, 15);
+            this.lbl_Phone.Size = new System.Drawing.Size(57, 19);
             this.lbl_Phone.TabIndex = 11;
             this.lbl_Phone.Text = "Phone:";
             // 
             // lbl_Zip
             // 
             this.lbl_Zip.AutoSize = true;
-            this.lbl_Zip.Location = new System.Drawing.Point(601, 38);
+            this.lbl_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Zip.Location = new System.Drawing.Point(641, 45);
             this.lbl_Zip.Name = "lbl_Zip";
-            this.lbl_Zip.Size = new System.Drawing.Size(27, 15);
+            this.lbl_Zip.Size = new System.Drawing.Size(34, 19);
             this.lbl_Zip.TabIndex = 9;
             this.lbl_Zip.Text = "Zip:";
             // 
             // lbl_State
             // 
             this.lbl_State.AutoSize = true;
-            this.lbl_State.Location = new System.Drawing.Point(409, 38);
+            this.lbl_State.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_State.Location = new System.Drawing.Point(440, 45);
             this.lbl_State.Name = "lbl_State";
-            this.lbl_State.Size = new System.Drawing.Size(37, 15);
+            this.lbl_State.Size = new System.Drawing.Size(49, 19);
             this.lbl_State.TabIndex = 7;
             this.lbl_State.Text = "State:";
             // 
             // lbl_City
             // 
             this.lbl_City.AutoSize = true;
-            this.lbl_City.Location = new System.Drawing.Point(209, 38);
+            this.lbl_City.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_City.Location = new System.Drawing.Point(216, 45);
             this.lbl_City.Name = "lbl_City";
-            this.lbl_City.Size = new System.Drawing.Size(31, 15);
+            this.lbl_City.Size = new System.Drawing.Size(39, 19);
             this.lbl_City.TabIndex = 5;
             this.lbl_City.Text = "City:";
             // 
             // lbl_Address
             // 
             this.lbl_Address.AutoSize = true;
-            this.lbl_Address.Location = new System.Drawing.Point(9, 38);
+            this.lbl_Address.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Address.Location = new System.Drawing.Point(9, 45);
             this.lbl_Address.Name = "lbl_Address";
-            this.lbl_Address.Size = new System.Drawing.Size(54, 15);
+            this.lbl_Address.Size = new System.Drawing.Size(67, 19);
             this.lbl_Address.TabIndex = 3;
             this.lbl_Address.Text = "Address:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(9, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 15);
+            this.label6.Size = new System.Drawing.Size(78, 19);
             this.label6.TabIndex = 1;
             this.label6.Text = "Customer:";
             // 
@@ -716,32 +689,128 @@
             this.combobox_CustomerIDZ.DataSource = this.cUSTOMERBindingSource;
             this.combobox_CustomerIDZ.DisplayMember = "CUST_LNAME";
             this.combobox_CustomerIDZ.Enabled = false;
+            this.combobox_CustomerIDZ.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combobox_CustomerIDZ.FormattingEnabled = true;
-            this.combobox_CustomerIDZ.Location = new System.Drawing.Point(76, 6);
+            this.combobox_CustomerIDZ.Location = new System.Drawing.Point(90, 6);
             this.combobox_CustomerIDZ.Name = "combobox_CustomerIDZ";
-            this.combobox_CustomerIDZ.Size = new System.Drawing.Size(121, 23);
+            this.combobox_CustomerIDZ.Size = new System.Drawing.Size(121, 27);
             this.combobox_CustomerIDZ.TabIndex = 0;
             this.combobox_CustomerIDZ.ValueMember = "CUST_ID";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.checkBox_CopyPickupInformation);
-            this.panel2.Location = new System.Drawing.Point(3, 64);
+            this.panel2.Controls.Add(this.txtbox_PickupAddress);
+            this.panel2.Controls.Add(this.txtbox_PickupCity);
+            this.panel2.Controls.Add(this.txtbox_PickupState);
+            this.panel2.Controls.Add(this.txtbox_PickupZip);
+            this.panel2.Controls.Add(this.lbl_PickupZip);
+            this.panel2.Controls.Add(this.lbl_PickupState);
+            this.panel2.Controls.Add(this.lbl_PickupCity);
+            this.panel2.Controls.Add(this.lbl_PickupAddress);
+            this.panel2.Controls.Add(this.lbl_PickupInfo);
+            this.panel2.Location = new System.Drawing.Point(13, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(237, 172);
+            this.panel2.Size = new System.Drawing.Size(273, 203);
             this.panel2.TabIndex = 47;
             // 
             // checkBox_CopyPickupInformation
             // 
             this.checkBox_CopyPickupInformation.AutoSize = true;
             this.checkBox_CopyPickupInformation.Enabled = false;
-            this.checkBox_CopyPickupInformation.Location = new System.Drawing.Point(9, 30);
+            this.checkBox_CopyPickupInformation.Location = new System.Drawing.Point(10, 37);
             this.checkBox_CopyPickupInformation.Name = "checkBox_CopyPickupInformation";
             this.checkBox_CopyPickupInformation.Size = new System.Drawing.Size(137, 19);
-            this.checkBox_CopyPickupInformation.TabIndex = 60;
+            this.checkBox_CopyPickupInformation.TabIndex = 8;
             this.checkBox_CopyPickupInformation.Text = "Copy Customer Data";
             this.checkBox_CopyPickupInformation.UseVisualStyleBackColor = true;
             this.checkBox_CopyPickupInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyPickupInformation_CheckedChanged);
+            // 
+            // txtbox_PickupAddress
+            // 
+            this.txtbox_PickupAddress.Enabled = false;
+            this.txtbox_PickupAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_PickupAddress.Location = new System.Drawing.Point(117, 61);
+            this.txtbox_PickupAddress.Name = "txtbox_PickupAddress";
+            this.txtbox_PickupAddress.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupAddress.TabIndex = 38;
+            // 
+            // txtbox_PickupCity
+            // 
+            this.txtbox_PickupCity.Enabled = false;
+            this.txtbox_PickupCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_PickupCity.Location = new System.Drawing.Point(117, 94);
+            this.txtbox_PickupCity.Name = "txtbox_PickupCity";
+            this.txtbox_PickupCity.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupCity.TabIndex = 41;
+            // 
+            // txtbox_PickupState
+            // 
+            this.txtbox_PickupState.Enabled = false;
+            this.txtbox_PickupState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_PickupState.Location = new System.Drawing.Point(117, 128);
+            this.txtbox_PickupState.Name = "txtbox_PickupState";
+            this.txtbox_PickupState.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupState.TabIndex = 43;
+            // 
+            // txtbox_PickupZip
+            // 
+            this.txtbox_PickupZip.Enabled = false;
+            this.txtbox_PickupZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_PickupZip.Location = new System.Drawing.Point(117, 161);
+            this.txtbox_PickupZip.Name = "txtbox_PickupZip";
+            this.txtbox_PickupZip.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupZip.TabIndex = 45;
+            // 
+            // lbl_PickupZip
+            // 
+            this.lbl_PickupZip.AutoSize = true;
+            this.lbl_PickupZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PickupZip.Location = new System.Drawing.Point(9, 164);
+            this.lbl_PickupZip.Name = "lbl_PickupZip";
+            this.lbl_PickupZip.Size = new System.Drawing.Size(79, 19);
+            this.lbl_PickupZip.TabIndex = 46;
+            this.lbl_PickupZip.Text = "Pickup Zip:";
+            // 
+            // lbl_PickupState
+            // 
+            this.lbl_PickupState.AutoSize = true;
+            this.lbl_PickupState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PickupState.Location = new System.Drawing.Point(9, 130);
+            this.lbl_PickupState.Name = "lbl_PickupState";
+            this.lbl_PickupState.Size = new System.Drawing.Size(92, 19);
+            this.lbl_PickupState.TabIndex = 44;
+            this.lbl_PickupState.Text = "Pickup State:";
+            // 
+            // lbl_PickupCity
+            // 
+            this.lbl_PickupCity.AutoSize = true;
+            this.lbl_PickupCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PickupCity.Location = new System.Drawing.Point(9, 98);
+            this.lbl_PickupCity.Name = "lbl_PickupCity";
+            this.lbl_PickupCity.Size = new System.Drawing.Size(84, 19);
+            this.lbl_PickupCity.TabIndex = 42;
+            this.lbl_PickupCity.Text = "Pickup City:";
+            // 
+            // lbl_PickupAddress
+            // 
+            this.lbl_PickupAddress.AutoSize = true;
+            this.lbl_PickupAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PickupAddress.Location = new System.Drawing.Point(7, 64);
+            this.lbl_PickupAddress.Name = "lbl_PickupAddress";
+            this.lbl_PickupAddress.Size = new System.Drawing.Size(111, 19);
+            this.lbl_PickupAddress.TabIndex = 40;
+            this.lbl_PickupAddress.Text = "Pickup Address:";
+            // 
+            // lbl_PickupInfo
+            // 
+            this.lbl_PickupInfo.AutoSize = true;
+            this.lbl_PickupInfo.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PickupInfo.Location = new System.Drawing.Point(6, 5);
+            this.lbl_PickupInfo.Name = "lbl_PickupInfo";
+            this.lbl_PickupInfo.Size = new System.Drawing.Size(216, 26);
+            this.lbl_PickupInfo.TabIndex = 37;
+            this.lbl_PickupInfo.Text = "PICKUP INFORMATION:";
             // 
             // tab_ManageCustomers
             // 
@@ -1010,6 +1079,96 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
             // 
+            // cUSTIDDataGridViewTextBoxColumn
+            // 
+            this.cUSTIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
+            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTIDDataGridViewTextBoxColumn.Width = 48;
+            // 
+            // cUSTFNAMEDataGridViewTextBoxColumn
+            // 
+            this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // cUSTLNAMEDataGridViewTextBoxColumn
+            // 
+            this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // cUSTEMAILDataGridViewTextBoxColumn
+            // 
+            this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
+            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
+            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // cUSTPHONEDataGridViewTextBoxColumn
+            // 
+            this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
+            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
+            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // cUSTCOMPANYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // cUSTADDRESSDataGridViewTextBoxColumn
+            // 
+            this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // cUSTCITYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
+            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
+            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // cUSTSTATEDataGridViewTextBoxColumn
+            // 
+            this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
+            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
+            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
+            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // cUSTZIPDataGridViewTextBoxColumn
+            // 
+            this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
+            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
+            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
+            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -1127,151 +1286,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(1095, 396);
             this.dataGridView2.TabIndex = 0;
             // 
-            // tab_Home
-            // 
-            this.tab_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Home.BackgroundImage")));
-            this.tab_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tab_Home.Controls.Add(this.lbl_Home);
-            this.tab_Home.Location = new System.Drawing.Point(4, 28);
-            this.tab_Home.Name = "tab_Home";
-            this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Home.Size = new System.Drawing.Size(1107, 546);
-            this.tab_Home.TabIndex = 0;
-            this.tab_Home.Text = "Home";
-            this.tab_Home.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Home
-            // 
-            this.lbl_Home.AutoSize = true;
-            this.lbl_Home.Font = new System.Drawing.Font("Castellar", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Home.ForeColor = System.Drawing.Color.White;
-            this.lbl_Home.Location = new System.Drawing.Point(132, 100);
-            this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(826, 58);
-            this.lbl_Home.TabIndex = 21;
-            this.lbl_Home.Text = "Welcome to Virtual Adil!";
-            // 
-            // tab_Container
-            // 
-            this.tab_Container.Controls.Add(this.tab_Home);
-            this.tab_Container.Controls.Add(this.tab_ManageCustomers);
-            this.tab_Container.Controls.Add(tab_CreateOrder);
-            this.tab_Container.Controls.Add(this.tab_SearchOrders);
-            this.tab_Container.Controls.Add(this.tab_Help);
-            this.tab_Container.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab_Container.Location = new System.Drawing.Point(3, 0);
-            this.tab_Container.Name = "tab_Container";
-            this.tab_Container.SelectedIndex = 0;
-            this.tab_Container.Size = new System.Drawing.Size(1115, 578);
-            this.tab_Container.TabIndex = 19;
-            // 
-            // cUSTOMERTableAdapter
-            // 
-            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
-            // 
-            // iNVOICETableAdapter
-            // 
-            this.iNVOICETableAdapter.ClearBeforeFill = true;
-            // 
-            // oRDERSTATUSBindingSource
-            // 
-            this.oRDERSTATUSBindingSource.DataMember = "ORDERSTATUS";
-            this.oRDERSTATUSBindingSource.DataSource = this.appData;
-            // 
-            // oRDERSTATUSTableAdapter
-            // 
-            this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
-            // 
-            // cUSTIDDataGridViewTextBoxColumn
-            // 
-            this.cUSTIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
-            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTIDDataGridViewTextBoxColumn.Width = 48;
-            // 
-            // cUSTFNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // cUSTLNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // cUSTEMAILDataGridViewTextBoxColumn
-            // 
-            this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
-            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
-            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // cUSTPHONEDataGridViewTextBoxColumn
-            // 
-            this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
-            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
-            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // cUSTCOMPANYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // cUSTADDRESSDataGridViewTextBoxColumn
-            // 
-            this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // cUSTCITYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
-            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
-            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // cUSTSTATEDataGridViewTextBoxColumn
-            // 
-            this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
-            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
-            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
-            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // cUSTZIPDataGridViewTextBoxColumn
-            // 
-            this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
-            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
-            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
-            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
-            // 
             // iNVIDDataGridViewTextBoxColumn
             // 
             this.iNVIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -1288,7 +1302,7 @@
             this.PICKUP_ADDRESS.HeaderText = "Pickup Address";
             this.PICKUP_ADDRESS.Name = "PICKUP_ADDRESS";
             this.PICKUP_ADDRESS.ReadOnly = true;
-            this.PICKUP_ADDRESS.Width = 132;
+            this.PICKUP_ADDRESS.Width = 121;
             // 
             // PICKUP_CITY
             // 
@@ -1297,7 +1311,7 @@
             this.PICKUP_CITY.HeaderText = "Pickup City";
             this.PICKUP_CITY.Name = "PICKUP_CITY";
             this.PICKUP_CITY.ReadOnly = true;
-            this.PICKUP_CITY.Width = 105;
+            this.PICKUP_CITY.Width = 96;
             // 
             // PICKUP_STATE
             // 
@@ -1306,7 +1320,7 @@
             this.PICKUP_STATE.HeaderText = "Pickup State";
             this.PICKUP_STATE.Name = "PICKUP_STATE";
             this.PICKUP_STATE.ReadOnly = true;
-            this.PICKUP_STATE.Width = 113;
+            this.PICKUP_STATE.Width = 104;
             // 
             // PICKUP_ZIP
             // 
@@ -1315,7 +1329,7 @@
             this.PICKUP_ZIP.HeaderText = "Pickup Zip Code";
             this.PICKUP_ZIP.Name = "PICKUP_ZIP";
             this.PICKUP_ZIP.ReadOnly = true;
-            this.PICKUP_ZIP.Width = 137;
+            this.PICKUP_ZIP.Width = 96;
             // 
             // DELIVERY_ADDRESS
             // 
@@ -1398,6 +1412,61 @@
             this.cUSTIDDataGridViewTextBoxColumn1.ReadOnly = true;
             this.cUSTIDDataGridViewTextBoxColumn1.Width = 96;
             // 
+            // tab_Home
+            // 
+            this.tab_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Home.BackgroundImage")));
+            this.tab_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tab_Home.Controls.Add(this.lbl_Home);
+            this.tab_Home.Location = new System.Drawing.Point(4, 28);
+            this.tab_Home.Name = "tab_Home";
+            this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Home.Size = new System.Drawing.Size(1107, 546);
+            this.tab_Home.TabIndex = 0;
+            this.tab_Home.Text = "Home";
+            this.tab_Home.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Home
+            // 
+            this.lbl_Home.AutoSize = true;
+            this.lbl_Home.Font = new System.Drawing.Font("Castellar", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Home.ForeColor = System.Drawing.Color.White;
+            this.lbl_Home.Location = new System.Drawing.Point(132, 100);
+            this.lbl_Home.Name = "lbl_Home";
+            this.lbl_Home.Size = new System.Drawing.Size(826, 58);
+            this.lbl_Home.TabIndex = 21;
+            this.lbl_Home.Text = "Welcome to Virtual Adil!";
+            // 
+            // tab_Container
+            // 
+            this.tab_Container.Controls.Add(this.tab_Home);
+            this.tab_Container.Controls.Add(this.tab_ManageCustomers);
+            this.tab_Container.Controls.Add(tab_CreateOrder);
+            this.tab_Container.Controls.Add(this.tab_SearchOrders);
+            this.tab_Container.Controls.Add(this.tab_Help);
+            this.tab_Container.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab_Container.Location = new System.Drawing.Point(3, 0);
+            this.tab_Container.Name = "tab_Container";
+            this.tab_Container.SelectedIndex = 0;
+            this.tab_Container.Size = new System.Drawing.Size(1115, 578);
+            this.tab_Container.TabIndex = 19;
+            // 
+            // cUSTOMERTableAdapter
+            // 
+            this.cUSTOMERTableAdapter.ClearBeforeFill = true;
+            // 
+            // iNVOICETableAdapter
+            // 
+            this.iNVOICETableAdapter.ClearBeforeFill = true;
+            // 
+            // oRDERSTATUSBindingSource
+            // 
+            this.oRDERSTATUSBindingSource.DataMember = "ORDERSTATUS";
+            this.oRDERSTATUSBindingSource.DataSource = this.appData;
+            // 
+            // oRDERSTATUSTableAdapter
+            // 
+            this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1414,6 +1483,7 @@
             this.Load += new System.EventHandler(this.AddCustomer_Load);
             tab_CreateOrder.ResumeLayout(false);
             tab_CreateOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).EndInit();
@@ -1450,7 +1520,7 @@
         private System.Windows.Forms.TextBox txtbox_State;
         private System.Windows.Forms.TextBox txtbox_City;
         private System.Windows.Forms.TextBox txtbox_Address;
-        private System.Windows.Forms.Label lbl_Invoice;
+        private System.Windows.Forms.Label lbl_Order;
         private System.Windows.Forms.Label lbl_Company;
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_Phone;
@@ -1505,8 +1575,6 @@
         private System.Windows.Forms.Label lbl_BookDate;
         private System.Windows.Forms.Label lbl_DeliveryDate;
         private System.Windows.Forms.Label lbl_PickupDate;
-        private System.Windows.Forms.Label lbl_Status;
-        private System.Windows.Forms.ComboBox combobox_OrderStatus;
         private System.Windows.Forms.TextBox txtbox_PickupAddress;
         private System.Windows.Forms.Label lbl_PickupInfo;
         private System.Windows.Forms.Label lbl_PickupZip;
@@ -1557,5 +1625,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dROPOFFDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.PictureBox picBox_Status;
+        private System.Windows.Forms.ListBox listBox_Status;
+        private System.Windows.Forms.Label label2;
     }
 }

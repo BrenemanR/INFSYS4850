@@ -151,6 +151,8 @@
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
+            this.txtBox_SearchOrder = new System.Windows.Forms.TextBox();
+            this.lbl_SearchOrder = new System.Windows.Forms.Label();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
@@ -1249,6 +1251,8 @@
             // 
             // tab_SearchOrders
             // 
+            this.tab_SearchOrders.Controls.Add(this.txtBox_SearchOrder);
+            this.tab_SearchOrders.Controls.Add(this.lbl_SearchOrder);
             this.tab_SearchOrders.Controls.Add(this.dataGridView2);
             this.tab_SearchOrders.Location = new System.Drawing.Point(4, 28);
             this.tab_SearchOrders.Name = "tab_SearchOrders";
@@ -1280,10 +1284,10 @@
             this.oRDERSTATUSDataGridViewTextBoxColumn,
             this.cUSTIDDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.iNVOICEBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 143);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 59);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(1095, 396);
+            this.dataGridView2.Size = new System.Drawing.Size(1101, 480);
             this.dataGridView2.TabIndex = 0;
             // 
             // iNVIDDataGridViewTextBoxColumn
@@ -1467,6 +1471,24 @@
             // 
             this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
             // 
+            // txtBox_SearchOrder
+            // 
+            this.txtBox_SearchOrder.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_SearchOrder.Location = new System.Drawing.Point(70, 16);
+            this.txtBox_SearchOrder.Name = "txtBox_SearchOrder";
+            this.txtBox_SearchOrder.Size = new System.Drawing.Size(317, 27);
+            this.txtBox_SearchOrder.TabIndex = 20;
+            // 
+            // lbl_SearchOrder
+            // 
+            this.lbl_SearchOrder.AutoSize = true;
+            this.lbl_SearchOrder.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SearchOrder.Location = new System.Drawing.Point(8, 19);
+            this.lbl_SearchOrder.Name = "lbl_SearchOrder";
+            this.lbl_SearchOrder.Size = new System.Drawing.Size(56, 19);
+            this.lbl_SearchOrder.TabIndex = 19;
+            this.lbl_SearchOrder.Text = "Search:";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1497,6 +1519,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tab_SearchOrders.ResumeLayout(false);
+            this.tab_SearchOrders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tab_Home.ResumeLayout(false);
             this.tab_Home.PerformLayout();
@@ -1628,5 +1651,7 @@
         private System.Windows.Forms.PictureBox picBox_Status;
         private System.Windows.Forms.ListBox listBox_Status;
         private System.Windows.Forms.Label lbl_OrderStatus;
+        private System.Windows.Forms.TextBox txtBox_SearchOrder;
+        private System.Windows.Forms.Label lbl_SearchOrder;
     }
 }

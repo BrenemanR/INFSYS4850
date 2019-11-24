@@ -542,11 +542,24 @@ namespace WindowsFormsApp3
         private void btn_SaveOrder_Click(object sender, EventArgs e)
         {
             //this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
+            if (BookDatePicker.Value > PickUpDatePicker.Value)
+            {
+                string message = "Pickup Date cannot before Book Date.";
+                string title = "Invalid Dates";
+                MessageBox.Show(message, title);
+            }
+            if (PickUpDatePicker.Value > DropOffDatePicker.Value)
+            {
+                string message = "Dropoff Date cannot before Pickup Date.";
+                string title = "Invalid Dates";
+                MessageBox.Show(message, title);
+            }
 
-            
+
+
             iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, picBox_Status.Text, 
-                txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
-                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text);
+            txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
+            txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text);
 
             this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
             iNVOICETableAdapter.Update(this.appData.INVOICE);
@@ -561,6 +574,8 @@ namespace WindowsFormsApp3
             checkBox_CopyPickupInformation.Enabled = false;
             checkBox_CopyDropoffInformation.Enabled = false;
             
+
+
             //prevents the user from being able to change data
             txtbox_Company.Enabled = false;
             txtbox_Phone.Enabled = false;
@@ -582,7 +597,27 @@ namespace WindowsFormsApp3
             listBox_Status.Enabled = false;
             txtboxrch_Description.Enabled = false;
             txtboxrch_SpecialInstructions.Enabled = false;
-            
+
+            //Clears out all of the text boxes once saved.
+            txtbox_Company.Text = null;
+            txtbox_Phone.Text = null;
+            txtbox_Email.Text = null;
+            txtbox_Address.Text = null;
+            txtbox_City.Text = null;
+            txtbox_State.Text = null;
+            txtbox_Zip.Text = null;
+            txtbox_PickupAddress.Text = null;
+            txtbox_PickupCity.Text = null;
+            txtbox_PickupState.Text = null;
+            txtbox_PickupZip.Text = null;
+            txtbox_DeliveryAddress.Text = null;
+            txtbox_DeliveryCity.Text = null;
+            txtbox_DeliveryState.Text = null;
+            txtbox_DeliveryZip.Text = null;
+            listBox_Status.Text = null;
+            txtboxrch_Description.Text = null;
+            txtboxrch_SpecialInstructions.Text = null;
+
         }
 
         

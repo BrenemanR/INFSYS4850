@@ -185,6 +185,13 @@
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.comboBox_Status = new System.Windows.Forms.ComboBox();
+            this.txtBox_InvoiceNumber = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.radButt_Yes = new System.Windows.Forms.RadioButton();
+            this.radButt_No = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_Vehicle = new System.Windows.Forms.Label();
+            this.comboBox_Vehicle = new System.Windows.Forms.ComboBox();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
@@ -206,6 +213,10 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
+            tab_CreateOrder.Controls.Add(this.comboBox_Vehicle);
+            tab_CreateOrder.Controls.Add(this.lbl_Vehicle);
+            tab_CreateOrder.Controls.Add(this.txtBox_InvoiceNumber);
+            tab_CreateOrder.Controls.Add(this.label2);
             tab_CreateOrder.Controls.Add(this.comboBox_Status);
             tab_CreateOrder.Controls.Add(this.picBox_Status);
             tab_CreateOrder.Controls.Add(this.lbl_OrderStatus);
@@ -275,7 +286,7 @@
             // 
             this.lbl_Description.AutoSize = true;
             this.lbl_Description.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Description.Location = new System.Drawing.Point(571, 112);
+            this.lbl_Description.Location = new System.Drawing.Point(570, 101);
             this.lbl_Description.Name = "lbl_Description";
             this.lbl_Description.Size = new System.Drawing.Size(90, 19);
             this.lbl_Description.TabIndex = 62;
@@ -287,10 +298,10 @@
             this.txtboxrch_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtboxrch_Description.Enabled = false;
             this.txtboxrch_Description.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxrch_Description.Location = new System.Drawing.Point(574, 134);
+            this.txtboxrch_Description.Location = new System.Drawing.Point(571, 123);
             this.txtboxrch_Description.Name = "txtboxrch_Description";
             this.txtboxrch_Description.ShowSelectionMargin = true;
-            this.txtboxrch_Description.Size = new System.Drawing.Size(527, 155);
+            this.txtboxrch_Description.Size = new System.Drawing.Size(527, 166);
             this.txtboxrch_Description.TabIndex = 15;
             this.txtboxrch_Description.Text = "";
             // 
@@ -413,7 +424,7 @@
             // 
             this.lbl_DeliveryDate.AutoSize = true;
             this.lbl_DeliveryDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DeliveryDate.Location = new System.Drawing.Point(19, 382);
+            this.lbl_DeliveryDate.Location = new System.Drawing.Point(19, 383);
             this.lbl_DeliveryDate.Name = "lbl_DeliveryDate";
             this.lbl_DeliveryDate.Size = new System.Drawing.Size(101, 19);
             this.lbl_DeliveryDate.TabIndex = 35;
@@ -443,7 +454,7 @@
             // 
             this.DropOffDatePicker.Enabled = false;
             this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 376);
+            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 377);
             this.DropOffDatePicker.Name = "DropOffDatePicker";
             this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
             this.DropOffDatePicker.TabIndex = 12;
@@ -503,7 +514,7 @@
             // 
             this.lbl_SpecialInstructions.AutoSize = true;
             this.lbl_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(571, 304);
+            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(570, 306);
             this.lbl_SpecialInstructions.Name = "lbl_SpecialInstructions";
             this.lbl_SpecialInstructions.Size = new System.Drawing.Size(145, 19);
             this.lbl_SpecialInstructions.TabIndex = 24;
@@ -513,9 +524,9 @@
             // 
             this.txtboxrch_SpecialInstructions.Enabled = false;
             this.txtboxrch_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(571, 326);
+            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(571, 328);
             this.txtboxrch_SpecialInstructions.Name = "txtboxrch_SpecialInstructions";
-            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(527, 196);
+            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(527, 194);
             this.txtboxrch_SpecialInstructions.TabIndex = 16;
             this.txtboxrch_SpecialInstructions.Text = "";
             // 
@@ -524,10 +535,10 @@
             this.txtbox_Invoice.BackColor = System.Drawing.Color.White;
             this.txtbox_Invoice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_Invoice.Enabled = false;
-            this.txtbox_Invoice.Font = new System.Drawing.Font("Calibri", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_Invoice.Location = new System.Drawing.Point(921, 28);
+            this.txtbox_Invoice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_Invoice.Location = new System.Drawing.Point(951, 42);
             this.txtbox_Invoice.Name = "txtbox_Invoice";
-            this.txtbox_Invoice.Size = new System.Drawing.Size(121, 86);
+            this.txtbox_Invoice.Size = new System.Drawing.Size(140, 27);
             this.txtbox_Invoice.TabIndex = 16;
             this.txtbox_Invoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -611,7 +622,7 @@
             // 
             this.lbl_Order.AutoSize = true;
             this.lbl_Order.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Order.Location = new System.Drawing.Point(950, 6);
+            this.lbl_Order.Location = new System.Drawing.Point(871, 45);
             this.lbl_Order.Name = "lbl_Order";
             this.lbl_Order.Size = new System.Drawing.Size(65, 19);
             this.lbl_Order.TabIndex = 17;
@@ -857,6 +868,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.radButt_No);
+            this.panel1.Controls.Add(this.radButt_Yes);
             this.panel1.Controls.Add(this.lbl_RequiredField);
             this.panel1.Controls.Add(this.ZipLabel);
             this.panel1.Controls.Add(this.ZipBox);
@@ -879,7 +893,7 @@
             this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 298);
+            this.panel1.Size = new System.Drawing.Size(278, 328);
             this.panel1.TabIndex = 0;
             // 
             // lbl_RequiredField
@@ -887,7 +901,7 @@
             this.lbl_RequiredField.AutoSize = true;
             this.lbl_RequiredField.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RequiredField.ForeColor = System.Drawing.Color.Red;
-            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 271);
+            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 296);
             this.lbl_RequiredField.Name = "lbl_RequiredField";
             this.lbl_RequiredField.Size = new System.Drawing.Size(216, 19);
             this.lbl_RequiredField.TabIndex = 20;
@@ -1201,7 +1215,7 @@
             this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEdit.FlatAppearance.BorderSize = 5;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(45, 358);
+            this.btnEdit.Location = new System.Drawing.Point(45, 388);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(184, 46);
             this.btnEdit.TabIndex = 16;
@@ -1215,7 +1229,7 @@
             this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnNew.FlatAppearance.BorderSize = 5;
             this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(45, 305);
+            this.btnNew.Location = new System.Drawing.Point(45, 335);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(184, 46);
             this.btnNew.TabIndex = 15;
@@ -1229,7 +1243,7 @@
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSave.FlatAppearance.BorderSize = 5;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(45, 410);
+            this.btnSave.Location = new System.Drawing.Point(45, 440);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(184, 46);
             this.btnSave.TabIndex = 14;
@@ -1243,7 +1257,7 @@
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.FlatAppearance.BorderSize = 5;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(45, 462);
+            this.btnCancel.Location = new System.Drawing.Point(45, 492);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 44);
             this.btnCancel.TabIndex = 13;
@@ -1841,6 +1855,83 @@
             this.comboBox_Status.TabIndex = 13;
             this.comboBox_Status.SelectedIndexChanged += new System.EventHandler(this.comboBox_Status_SelectedIndexChanged);
             // 
+            // txtBox_InvoiceNumber
+            // 
+            this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
+            this.txtBox_InvoiceNumber.Enabled = false;
+            this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(951, 6);
+            this.txtBox_InvoiceNumber.Name = "txtBox_InvoiceNumber";
+            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(140, 27);
+            this.txtBox_InvoiceNumber.TabIndex = 66;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(871, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "Invoice #:";
+            // 
+            // radButt_Yes
+            // 
+            this.radButt_Yes.AutoSize = true;
+            this.radButt_Yes.Location = new System.Drawing.Point(138, 267);
+            this.radButt_Yes.Name = "radButt_Yes";
+            this.radButt_Yes.Size = new System.Drawing.Size(49, 23);
+            this.radButt_Yes.TabIndex = 22;
+            this.radButt_Yes.Text = "Yes";
+            this.radButt_Yes.UseVisualStyleBackColor = true;
+            this.radButt_Yes.CheckedChanged += new System.EventHandler(this.radButt_Yes_CheckedChanged);
+            // 
+            // radButt_No
+            // 
+            this.radButt_No.AutoSize = true;
+            this.radButt_No.Location = new System.Drawing.Point(202, 267);
+            this.radButt_No.Name = "radButt_No";
+            this.radButt_No.Size = new System.Drawing.Size(45, 23);
+            this.radButt_No.TabIndex = 23;
+            this.radButt_No.Text = "No";
+            this.radButt_No.UseVisualStyleBackColor = true;
+            this.radButt_No.CheckedChanged += new System.EventHandler(this.radButt_No_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(13, 268);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 19);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Is this a Broker?";
+            // 
+            // lbl_Vehicle
+            // 
+            this.lbl_Vehicle.AutoSize = true;
+            this.lbl_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Vehicle.Location = new System.Drawing.Point(814, 86);
+            this.lbl_Vehicle.Name = "lbl_Vehicle";
+            this.lbl_Vehicle.Size = new System.Drawing.Size(98, 19);
+            this.lbl_Vehicle.TabIndex = 69;
+            this.lbl_Vehicle.Text = "Vehicle Used:";
+            // 
+            // comboBox_Vehicle
+            // 
+            this.comboBox_Vehicle.Enabled = false;
+            this.comboBox_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Vehicle.FormattingEnabled = true;
+            this.comboBox_Vehicle.Items.AddRange(new object[] {
+            "Vehicle 1",
+            "Vehicle 2",
+            "Vehicle 3"});
+            this.comboBox_Vehicle.Location = new System.Drawing.Point(918, 83);
+            this.comboBox_Vehicle.Name = "comboBox_Vehicle";
+            this.comboBox_Vehicle.Size = new System.Drawing.Size(173, 27);
+            this.comboBox_Vehicle.TabIndex = 70;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2037,5 +2128,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_PickUpDateEdit;
         private System.Windows.Forms.DateTimePicker dateTimePicker_BookingDateEdit;
         private System.Windows.Forms.ComboBox comboBox_Status;
+        private System.Windows.Forms.TextBox txtBox_InvoiceNumber;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RadioButton radButt_No;
+        private System.Windows.Forms.RadioButton radButt_Yes;
+        private System.Windows.Forms.ComboBox comboBox_Vehicle;
+        private System.Windows.Forms.Label lbl_Vehicle;
     }
 }

@@ -990,6 +990,8 @@ namespace WindowsFormsApp3 {
             
             private global::System.Data.DataColumn columnCOMPANY_ID;
             
+            private global::System.Data.DataColumn columnINVOICE;
+            
             private global::System.Data.DataColumn columnCUST_ID;
             
             private global::System.Data.DataColumn columnORDERSTATUS_ID;
@@ -1069,6 +1071,14 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn INVOICEColumn {
+                get {
+                    return this.columnINVOICE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn CUST_IDColumn {
                 get {
                     return this.columnCUST_ID;
@@ -1120,7 +1130,7 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public INVOICERow AddINVOICERow(System.DateTime BOOK_DATE, System.DateTime PICKUP_DATE, System.DateTime DROPOFF_DATE, int COMPANY_ID, int CUST_ID, int ORDERSTATUS_ID) {
+            public INVOICERow AddINVOICERow(System.DateTime BOOK_DATE, System.DateTime PICKUP_DATE, System.DateTime DROPOFF_DATE, int COMPANY_ID, string INVOICE, int CUST_ID, int ORDERSTATUS_ID) {
                 INVOICERow rowINVOICERow = ((INVOICERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1128,6 +1138,7 @@ namespace WindowsFormsApp3 {
                         PICKUP_DATE,
                         DROPOFF_DATE,
                         COMPANY_ID,
+                        INVOICE,
                         CUST_ID,
                         ORDERSTATUS_ID};
                 rowINVOICERow.ItemArray = columnValuesArray;
@@ -1164,6 +1175,7 @@ namespace WindowsFormsApp3 {
                 this.columnPICKUP_DATE = base.Columns["PICKUP_DATE"];
                 this.columnDROPOFF_DATE = base.Columns["DROPOFF_DATE"];
                 this.columnCOMPANY_ID = base.Columns["COMPANY_ID"];
+                this.columnINVOICE = base.Columns["INVOICE"];
                 this.columnCUST_ID = base.Columns["CUST_ID"];
                 this.columnORDERSTATUS_ID = base.Columns["ORDERSTATUS_ID"];
             }
@@ -1181,6 +1193,8 @@ namespace WindowsFormsApp3 {
                 base.Columns.Add(this.columnDROPOFF_DATE);
                 this.columnCOMPANY_ID = new global::System.Data.DataColumn("COMPANY_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCOMPANY_ID);
+                this.columnINVOICE = new global::System.Data.DataColumn("INVOICE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINVOICE);
                 this.columnCUST_ID = new global::System.Data.DataColumn("CUST_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCUST_ID);
                 this.columnORDERSTATUS_ID = new global::System.Data.DataColumn("ORDERSTATUS_ID", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1877,6 +1891,22 @@ namespace WindowsFormsApp3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string INVOICE {
+                get {
+                    try {
+                        return ((string)(this[this.tableINVOICE.INVOICEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'INVOICE\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINVOICE.INVOICEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int CUST_ID {
                 get {
                     try {
@@ -1953,6 +1983,18 @@ namespace WindowsFormsApp3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCOMPANY_IDNull() {
                 this[this.tableINVOICE.COMPANY_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsINVOICENull() {
+                return this.IsNull(this.tableINVOICE.INVOICEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetINVOICENull() {
+                this[this.tableINVOICE.INVOICEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

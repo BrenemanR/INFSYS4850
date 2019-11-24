@@ -86,6 +86,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="oldbaseDataSet.cs">
+      <DependentUpon>oldbaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SearchCustomer.cs">
       <SubType>Form</SubType>
     </Compile>

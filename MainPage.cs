@@ -73,7 +73,7 @@ namespace WindowsFormsApp3
             btnCancel.Enabled = true;
             SearchBox.Enabled = false;
             btnSave.Enabled = true;
-
+            radButt_No.Checked = true;
             try
             {
                 {
@@ -790,6 +790,16 @@ namespace WindowsFormsApp3
             {
                 picBox_Status.Image = null;
             }
+        }
+
+        private void radButt_Yes_CheckedChanged(object sender, EventArgs e)
+        {
+            //radButt_No.Checked = false;
+        }
+
+        private void radButt_No_CheckedChanged(object sender, EventArgs e)
+        {
+            //radButt_Yes.Checked = false;
         }
     }
 

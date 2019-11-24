@@ -567,6 +567,7 @@ namespace WindowsFormsApp3
             checkBox_CopyPickupInformation.Checked = false; //dechecks the pickup check box.
             checkBox_CopyDropoffInformation.Checked = false; //dechecks the dropoff check box.
 
+            /*
             combobox_CustomerIDZ.Text = ""; //Blanks the customer selection dropdown menu.
             txtbox_Company.Text = "";
             txtbox_Phone.Text = "";
@@ -575,6 +576,7 @@ namespace WindowsFormsApp3
             txtbox_City.Text = "";
             txtbox_State.Text = "";
             txtbox_Zip.Text = "";
+            */
             
             BookDatePicker.Text = "";
             PickUpDatePicker.Text = "";

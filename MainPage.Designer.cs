@@ -33,7 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.picBox_Status = new System.Windows.Forms.PictureBox();
             this.listBox_Status = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_OrderStatus = new System.Windows.Forms.Label();
             this.lbl_Description = new System.Windows.Forms.Label();
             this.txtboxrch_Description = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -174,7 +174,7 @@
             tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
             tab_CreateOrder.Controls.Add(this.picBox_Status);
             tab_CreateOrder.Controls.Add(this.listBox_Status);
-            tab_CreateOrder.Controls.Add(this.label2);
+            tab_CreateOrder.Controls.Add(this.lbl_OrderStatus);
             tab_CreateOrder.Controls.Add(this.lbl_Description);
             tab_CreateOrder.Controls.Add(this.txtboxrch_Description);
             tab_CreateOrder.Controls.Add(this.panel3);
@@ -221,7 +221,7 @@
             this.picBox_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBox_Status.Enabled = false;
             this.picBox_Status.Image = global::WindowsFormsApp3.Properties.Resources.pending;
-            this.picBox_Status.Location = new System.Drawing.Point(400, 372);
+            this.picBox_Status.Location = new System.Drawing.Point(392, 372);
             this.picBox_Status.Name = "picBox_Status";
             this.picBox_Status.Size = new System.Drawing.Size(150, 150);
             this.picBox_Status.TabIndex = 65;
@@ -234,26 +234,26 @@
             this.listBox_Status.FormattingEnabled = true;
             this.listBox_Status.ItemHeight = 33;
             this.listBox_Status.Items.AddRange(new object[] {
-            "Pending",
+            "Pending Pmt",
             "In Transit",
             "Delayed",
             "Complete",
             "Cancelled"});
-            this.listBox_Status.Location = new System.Drawing.Point(400, 326);
+            this.listBox_Status.Location = new System.Drawing.Point(386, 326);
             this.listBox_Status.Name = "listBox_Status";
-            this.listBox_Status.Size = new System.Drawing.Size(150, 37);
+            this.listBox_Status.Size = new System.Drawing.Size(169, 37);
             this.listBox_Status.TabIndex = 14;
             this.listBox_Status.SelectedIndexChanged += new System.EventHandler(this.listBox_Status_SelectedIndexChanged);
             // 
-            // label2
+            // lbl_OrderStatus
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(396, 304);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 19);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "Booking Date:";
+            this.lbl_OrderStatus.AutoSize = true;
+            this.lbl_OrderStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_OrderStatus.Location = new System.Drawing.Point(382, 304);
+            this.lbl_OrderStatus.Name = "lbl_OrderStatus";
+            this.lbl_OrderStatus.Size = new System.Drawing.Size(100, 19);
+            this.lbl_OrderStatus.TabIndex = 63;
+            this.lbl_OrderStatus.Text = "Order Status:";
             // 
             // lbl_Description
             // 
@@ -1627,6 +1627,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.PictureBox picBox_Status;
         private System.Windows.Forms.ListBox listBox_Status;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_OrderStatus;
     }
 }

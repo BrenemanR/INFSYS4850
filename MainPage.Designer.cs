@@ -32,7 +32,6 @@
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.picBox_Status = new System.Windows.Forms.PictureBox();
-            this.listBox_Status = new System.Windows.Forms.ListBox();
             this.lbl_OrderStatus = new System.Windows.Forms.Label();
             this.lbl_Description = new System.Windows.Forms.Label();
             this.txtboxrch_Description = new System.Windows.Forms.RichTextBox();
@@ -129,6 +128,38 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.tab_Help = new System.Windows.Forms.TabPage();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.dateTimePicker_DeliveryDateEdit = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_PickUpDateEdit = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_BookingDateEdit = new System.Windows.Forms.DateTimePicker();
+            this.lbl_SpecialInstructionsEdit = new System.Windows.Forms.Label();
+            this.txtboxrch_SpecailInstructionsEdit = new System.Windows.Forms.RichTextBox();
+            this.lbl_DescriptionEdit = new System.Windows.Forms.Label();
+            this.txtboxrch_DescriptionEdit = new System.Windows.Forms.RichTextBox();
+            this.txtbox_DeliveryZipEdit = new System.Windows.Forms.TextBox();
+            this.lbl_DeliveryZipEdit = new System.Windows.Forms.Label();
+            this.txtbox_DeliveryStateEdit = new System.Windows.Forms.TextBox();
+            this.lbl_DeliveryStateEdit = new System.Windows.Forms.Label();
+            this.txtbox_DeliveryCityEdit = new System.Windows.Forms.TextBox();
+            this.lbl_DeliveryCityEdit = new System.Windows.Forms.Label();
+            this.txtbox_DeliveryAddressEdit = new System.Windows.Forms.TextBox();
+            this.lbl_DeliveryAddressEdit = new System.Windows.Forms.Label();
+            this.txtbox_PickUpZipEdit = new System.Windows.Forms.TextBox();
+            this.lbl_PickUpZipEdit = new System.Windows.Forms.Label();
+            this.txtbox_PickupStateEdit = new System.Windows.Forms.TextBox();
+            this.lbl_PickUpStateEdit = new System.Windows.Forms.Label();
+            this.txtbox_PickupCityEdit = new System.Windows.Forms.TextBox();
+            this.lbl_PickUpCityEdit = new System.Windows.Forms.Label();
+            this.txtbox_PickupAddressEdit = new System.Windows.Forms.TextBox();
+            this.lbl_PickupAddressEdit = new System.Windows.Forms.Label();
+            this.txtbox_OrderStatusEdit = new System.Windows.Forms.TextBox();
+            this.lbl_OrderStatusEdit = new System.Windows.Forms.Label();
+            this.txtboxCustomerIdEdit = new System.Windows.Forms.TextBox();
+            this.lbl_CustomerIdEdit = new System.Windows.Forms.Label();
+            this.lbl_DeliveryDateEdit = new System.Windows.Forms.Label();
+            this.lbl_BookingDateEdit = new System.Windows.Forms.Label();
+            this.lbl_PickupDateEdit = new System.Windows.Forms.Label();
+            this.txtbox_InvoiceIdEdit = new System.Windows.Forms.TextBox();
+            this.lbl_InvoiceIdEdit = new System.Windows.Forms.Label();
             this.lbl_OrderSearch = new System.Windows.Forms.Label();
             this.OrderSearchBox = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -153,38 +184,7 @@
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
-            this.lbl_InvoiceIdEdit = new System.Windows.Forms.Label();
-            this.txtbox_InvoiceIdEdit = new System.Windows.Forms.TextBox();
-            this.lbl_PickupDateEdit = new System.Windows.Forms.Label();
-            this.lbl_BookingDateEdit = new System.Windows.Forms.Label();
-            this.lbl_DeliveryDateEdit = new System.Windows.Forms.Label();
-            this.txtboxCustomerIdEdit = new System.Windows.Forms.TextBox();
-            this.lbl_CustomerIdEdit = new System.Windows.Forms.Label();
-            this.txtbox_OrderStatusEdit = new System.Windows.Forms.TextBox();
-            this.lbl_OrderStatusEdit = new System.Windows.Forms.Label();
-            this.txtbox_PickupAddressEdit = new System.Windows.Forms.TextBox();
-            this.lbl_PickupAddressEdit = new System.Windows.Forms.Label();
-            this.txtbox_PickupCityEdit = new System.Windows.Forms.TextBox();
-            this.lbl_PickUpCityEdit = new System.Windows.Forms.Label();
-            this.txtbox_PickupStateEdit = new System.Windows.Forms.TextBox();
-            this.lbl_PickUpStateEdit = new System.Windows.Forms.Label();
-            this.txtbox_PickUpZipEdit = new System.Windows.Forms.TextBox();
-            this.lbl_PickUpZipEdit = new System.Windows.Forms.Label();
-            this.txtbox_DeliveryAddressEdit = new System.Windows.Forms.TextBox();
-            this.lbl_DeliveryAddressEdit = new System.Windows.Forms.Label();
-            this.txtbox_DeliveryCityEdit = new System.Windows.Forms.TextBox();
-            this.lbl_DeliveryCityEdit = new System.Windows.Forms.Label();
-            this.txtbox_DeliveryStateEdit = new System.Windows.Forms.TextBox();
-            this.lbl_DeliveryStateEdit = new System.Windows.Forms.Label();
-            this.txtbox_DeliveryZipEdit = new System.Windows.Forms.TextBox();
-            this.lbl_DeliveryZipEdit = new System.Windows.Forms.Label();
-            this.txtboxrch_DescriptionEdit = new System.Windows.Forms.RichTextBox();
-            this.lbl_DescriptionEdit = new System.Windows.Forms.Label();
-            this.lbl_SpecialInstructionsEdit = new System.Windows.Forms.Label();
-            this.txtboxrch_SpecailInstructionsEdit = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker_BookingDateEdit = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_PickUpDateEdit = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_DeliveryDateEdit = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_Status = new System.Windows.Forms.ComboBox();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
@@ -206,8 +206,8 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
+            tab_CreateOrder.Controls.Add(this.comboBox_Status);
             tab_CreateOrder.Controls.Add(this.picBox_Status);
-            tab_CreateOrder.Controls.Add(this.listBox_Status);
             tab_CreateOrder.Controls.Add(this.lbl_OrderStatus);
             tab_CreateOrder.Controls.Add(this.lbl_Description);
             tab_CreateOrder.Controls.Add(this.txtboxrch_Description);
@@ -260,24 +260,6 @@
             this.picBox_Status.Size = new System.Drawing.Size(150, 150);
             this.picBox_Status.TabIndex = 65;
             this.picBox_Status.TabStop = false;
-            // 
-            // listBox_Status
-            // 
-            this.listBox_Status.Enabled = false;
-            this.listBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox_Status.FormattingEnabled = true;
-            this.listBox_Status.ItemHeight = 33;
-            this.listBox_Status.Items.AddRange(new object[] {
-            "Pending Pmt",
-            "In Transit",
-            "Delayed",
-            "Complete",
-            "Cancelled"});
-            this.listBox_Status.Location = new System.Drawing.Point(386, 326);
-            this.listBox_Status.Name = "listBox_Status";
-            this.listBox_Status.Size = new System.Drawing.Size(169, 37);
-            this.listBox_Status.TabIndex = 14;
-            this.listBox_Status.SelectedIndexChanged += new System.EventHandler(this.listBox_Status_SelectedIndexChanged);
             // 
             // lbl_OrderStatus
             // 
@@ -1326,6 +1308,296 @@
             this.tab_SearchOrders.Text = "Search Orders";
             this.tab_SearchOrders.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker_DeliveryDateEdit
+            // 
+            this.dateTimePicker_DeliveryDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DROPOFF_DATE", true));
+            this.dateTimePicker_DeliveryDateEdit.Enabled = false;
+            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(368, 131);
+            this.dateTimePicker_DeliveryDateEdit.Name = "dateTimePicker_DeliveryDateEdit";
+            this.dateTimePicker_DeliveryDateEdit.Size = new System.Drawing.Size(221, 27);
+            this.dateTimePicker_DeliveryDateEdit.TabIndex = 37;
+            // 
+            // dateTimePicker_PickUpDateEdit
+            // 
+            this.dateTimePicker_PickUpDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_DATE", true));
+            this.dateTimePicker_PickUpDateEdit.Enabled = false;
+            this.dateTimePicker_PickUpDateEdit.Location = new System.Drawing.Point(368, 98);
+            this.dateTimePicker_PickUpDateEdit.Name = "dateTimePicker_PickUpDateEdit";
+            this.dateTimePicker_PickUpDateEdit.Size = new System.Drawing.Size(221, 27);
+            this.dateTimePicker_PickUpDateEdit.TabIndex = 36;
+            // 
+            // dateTimePicker_BookingDateEdit
+            // 
+            this.dateTimePicker_BookingDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
+            this.dateTimePicker_BookingDateEdit.Enabled = false;
+            this.dateTimePicker_BookingDateEdit.Location = new System.Drawing.Point(368, 65);
+            this.dateTimePicker_BookingDateEdit.Name = "dateTimePicker_BookingDateEdit";
+            this.dateTimePicker_BookingDateEdit.Size = new System.Drawing.Size(221, 27);
+            this.dateTimePicker_BookingDateEdit.TabIndex = 35;
+            // 
+            // lbl_SpecialInstructionsEdit
+            // 
+            this.lbl_SpecialInstructionsEdit.AutoSize = true;
+            this.lbl_SpecialInstructionsEdit.Location = new System.Drawing.Point(704, 296);
+            this.lbl_SpecialInstructionsEdit.Name = "lbl_SpecialInstructionsEdit";
+            this.lbl_SpecialInstructionsEdit.Size = new System.Drawing.Size(139, 19);
+            this.lbl_SpecialInstructionsEdit.TabIndex = 34;
+            this.lbl_SpecialInstructionsEdit.Text = "Special Instructions:";
+            // 
+            // txtboxrch_SpecailInstructionsEdit
+            // 
+            this.txtboxrch_SpecailInstructionsEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "SPECIAL_INSTRUCTIONS", true));
+            this.txtboxrch_SpecailInstructionsEdit.Enabled = false;
+            this.txtboxrch_SpecailInstructionsEdit.Location = new System.Drawing.Point(849, 257);
+            this.txtboxrch_SpecailInstructionsEdit.Name = "txtboxrch_SpecailInstructionsEdit";
+            this.txtboxrch_SpecailInstructionsEdit.Size = new System.Drawing.Size(238, 96);
+            this.txtboxrch_SpecailInstructionsEdit.TabIndex = 33;
+            this.txtboxrch_SpecailInstructionsEdit.Text = "";
+            // 
+            // lbl_DescriptionEdit
+            // 
+            this.lbl_DescriptionEdit.AutoSize = true;
+            this.lbl_DescriptionEdit.Location = new System.Drawing.Point(351, 296);
+            this.lbl_DescriptionEdit.Name = "lbl_DescriptionEdit";
+            this.lbl_DescriptionEdit.Size = new System.Drawing.Size(87, 19);
+            this.lbl_DescriptionEdit.TabIndex = 32;
+            this.lbl_DescriptionEdit.Text = "Description:";
+            // 
+            // txtboxrch_DescriptionEdit
+            // 
+            this.txtboxrch_DescriptionEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DESCRIPTION", true));
+            this.txtboxrch_DescriptionEdit.Enabled = false;
+            this.txtboxrch_DescriptionEdit.Location = new System.Drawing.Point(444, 257);
+            this.txtboxrch_DescriptionEdit.Name = "txtboxrch_DescriptionEdit";
+            this.txtboxrch_DescriptionEdit.Size = new System.Drawing.Size(238, 96);
+            this.txtboxrch_DescriptionEdit.TabIndex = 31;
+            this.txtboxrch_DescriptionEdit.Text = "";
+            // 
+            // txtbox_DeliveryZipEdit
+            // 
+            this.txtbox_DeliveryZipEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_ZIP", true));
+            this.txtbox_DeliveryZipEdit.Enabled = false;
+            this.txtbox_DeliveryZipEdit.Location = new System.Drawing.Point(939, 134);
+            this.txtbox_DeliveryZipEdit.Name = "txtbox_DeliveryZipEdit";
+            this.txtbox_DeliveryZipEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryZipEdit.TabIndex = 30;
+            // 
+            // lbl_DeliveryZipEdit
+            // 
+            this.lbl_DeliveryZipEdit.AutoSize = true;
+            this.lbl_DeliveryZipEdit.Location = new System.Drawing.Point(826, 137);
+            this.lbl_DeliveryZipEdit.Name = "lbl_DeliveryZipEdit";
+            this.lbl_DeliveryZipEdit.Size = new System.Drawing.Size(90, 19);
+            this.lbl_DeliveryZipEdit.TabIndex = 29;
+            this.lbl_DeliveryZipEdit.Text = "Delivery Zip:";
+            // 
+            // txtbox_DeliveryStateEdit
+            // 
+            this.txtbox_DeliveryStateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_STATE", true));
+            this.txtbox_DeliveryStateEdit.Enabled = false;
+            this.txtbox_DeliveryStateEdit.Location = new System.Drawing.Point(939, 101);
+            this.txtbox_DeliveryStateEdit.Name = "txtbox_DeliveryStateEdit";
+            this.txtbox_DeliveryStateEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryStateEdit.TabIndex = 28;
+            // 
+            // lbl_DeliveryStateEdit
+            // 
+            this.lbl_DeliveryStateEdit.AutoSize = true;
+            this.lbl_DeliveryStateEdit.Location = new System.Drawing.Point(826, 104);
+            this.lbl_DeliveryStateEdit.Name = "lbl_DeliveryStateEdit";
+            this.lbl_DeliveryStateEdit.Size = new System.Drawing.Size(107, 19);
+            this.lbl_DeliveryStateEdit.TabIndex = 27;
+            this.lbl_DeliveryStateEdit.Text = "Delivery State: ";
+            // 
+            // txtbox_DeliveryCityEdit
+            // 
+            this.txtbox_DeliveryCityEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_CITY", true));
+            this.txtbox_DeliveryCityEdit.Enabled = false;
+            this.txtbox_DeliveryCityEdit.Location = new System.Drawing.Point(939, 68);
+            this.txtbox_DeliveryCityEdit.Name = "txtbox_DeliveryCityEdit";
+            this.txtbox_DeliveryCityEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryCityEdit.TabIndex = 26;
+            // 
+            // lbl_DeliveryCityEdit
+            // 
+            this.lbl_DeliveryCityEdit.AutoSize = true;
+            this.lbl_DeliveryCityEdit.Location = new System.Drawing.Point(834, 68);
+            this.lbl_DeliveryCityEdit.Name = "lbl_DeliveryCityEdit";
+            this.lbl_DeliveryCityEdit.Size = new System.Drawing.Size(99, 19);
+            this.lbl_DeliveryCityEdit.TabIndex = 25;
+            this.lbl_DeliveryCityEdit.Text = "Delivery City: ";
+            // 
+            // txtbox_DeliveryAddressEdit
+            // 
+            this.txtbox_DeliveryAddressEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_ADDRESS", true));
+            this.txtbox_DeliveryAddressEdit.Enabled = false;
+            this.txtbox_DeliveryAddressEdit.Location = new System.Drawing.Point(939, 35);
+            this.txtbox_DeliveryAddressEdit.Name = "txtbox_DeliveryAddressEdit";
+            this.txtbox_DeliveryAddressEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryAddressEdit.TabIndex = 24;
+            // 
+            // lbl_DeliveryAddressEdit
+            // 
+            this.lbl_DeliveryAddressEdit.AutoSize = true;
+            this.lbl_DeliveryAddressEdit.Location = new System.Drawing.Point(811, 38);
+            this.lbl_DeliveryAddressEdit.Name = "lbl_DeliveryAddressEdit";
+            this.lbl_DeliveryAddressEdit.Size = new System.Drawing.Size(122, 19);
+            this.lbl_DeliveryAddressEdit.TabIndex = 23;
+            this.lbl_DeliveryAddressEdit.Text = "Delivery Address:";
+            // 
+            // txtbox_PickUpZipEdit
+            // 
+            this.txtbox_PickUpZipEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_ZIP", true));
+            this.txtbox_PickUpZipEdit.Enabled = false;
+            this.txtbox_PickUpZipEdit.Location = new System.Drawing.Point(685, 134);
+            this.txtbox_PickUpZipEdit.Name = "txtbox_PickUpZipEdit";
+            this.txtbox_PickUpZipEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickUpZipEdit.TabIndex = 22;
+            // 
+            // lbl_PickUpZipEdit
+            // 
+            this.lbl_PickUpZipEdit.AutoSize = true;
+            this.lbl_PickUpZipEdit.Location = new System.Drawing.Point(600, 137);
+            this.lbl_PickUpZipEdit.Name = "lbl_PickUpZipEdit";
+            this.lbl_PickUpZipEdit.Size = new System.Drawing.Size(79, 19);
+            this.lbl_PickUpZipEdit.TabIndex = 21;
+            this.lbl_PickUpZipEdit.Text = "Pickup Zip:";
+            // 
+            // txtbox_PickupStateEdit
+            // 
+            this.txtbox_PickupStateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_STATE", true));
+            this.txtbox_PickupStateEdit.Enabled = false;
+            this.txtbox_PickupStateEdit.Location = new System.Drawing.Point(685, 101);
+            this.txtbox_PickupStateEdit.Name = "txtbox_PickupStateEdit";
+            this.txtbox_PickupStateEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickupStateEdit.TabIndex = 20;
+            // 
+            // lbl_PickUpStateEdit
+            // 
+            this.lbl_PickUpStateEdit.AutoSize = true;
+            this.lbl_PickUpStateEdit.Location = new System.Drawing.Point(587, 104);
+            this.lbl_PickUpStateEdit.Name = "lbl_PickUpStateEdit";
+            this.lbl_PickUpStateEdit.Size = new System.Drawing.Size(92, 19);
+            this.lbl_PickUpStateEdit.TabIndex = 19;
+            this.lbl_PickUpStateEdit.Text = "Pickup State:";
+            // 
+            // txtbox_PickupCityEdit
+            // 
+            this.txtbox_PickupCityEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_CITY", true));
+            this.txtbox_PickupCityEdit.Enabled = false;
+            this.txtbox_PickupCityEdit.Location = new System.Drawing.Point(685, 65);
+            this.txtbox_PickupCityEdit.Name = "txtbox_PickupCityEdit";
+            this.txtbox_PickupCityEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickupCityEdit.TabIndex = 18;
+            // 
+            // lbl_PickUpCityEdit
+            // 
+            this.lbl_PickUpCityEdit.AutoSize = true;
+            this.lbl_PickUpCityEdit.Location = new System.Drawing.Point(595, 68);
+            this.lbl_PickUpCityEdit.Name = "lbl_PickUpCityEdit";
+            this.lbl_PickUpCityEdit.Size = new System.Drawing.Size(84, 19);
+            this.lbl_PickUpCityEdit.TabIndex = 17;
+            this.lbl_PickUpCityEdit.Text = "Pickup City:";
+            // 
+            // txtbox_PickupAddressEdit
+            // 
+            this.txtbox_PickupAddressEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_ADDRESS", true));
+            this.txtbox_PickupAddressEdit.Enabled = false;
+            this.txtbox_PickupAddressEdit.Location = new System.Drawing.Point(685, 32);
+            this.txtbox_PickupAddressEdit.Name = "txtbox_PickupAddressEdit";
+            this.txtbox_PickupAddressEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickupAddressEdit.TabIndex = 16;
+            // 
+            // lbl_PickupAddressEdit
+            // 
+            this.lbl_PickupAddressEdit.AutoSize = true;
+            this.lbl_PickupAddressEdit.Location = new System.Drawing.Point(568, 35);
+            this.lbl_PickupAddressEdit.Name = "lbl_PickupAddressEdit";
+            this.lbl_PickupAddressEdit.Size = new System.Drawing.Size(111, 19);
+            this.lbl_PickupAddressEdit.TabIndex = 15;
+            this.lbl_PickupAddressEdit.Text = "Pickup Address:";
+            // 
+            // txtbox_OrderStatusEdit
+            // 
+            this.txtbox_OrderStatusEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_STATUS", true));
+            this.txtbox_OrderStatusEdit.Enabled = false;
+            this.txtbox_OrderStatusEdit.Location = new System.Drawing.Point(368, 195);
+            this.txtbox_OrderStatusEdit.Name = "txtbox_OrderStatusEdit";
+            this.txtbox_OrderStatusEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_OrderStatusEdit.TabIndex = 14;
+            // 
+            // lbl_OrderStatusEdit
+            // 
+            this.lbl_OrderStatusEdit.AutoSize = true;
+            this.lbl_OrderStatusEdit.Location = new System.Drawing.Point(261, 198);
+            this.lbl_OrderStatusEdit.Name = "lbl_OrderStatusEdit";
+            this.lbl_OrderStatusEdit.Size = new System.Drawing.Size(94, 19);
+            this.lbl_OrderStatusEdit.TabIndex = 13;
+            this.lbl_OrderStatusEdit.Text = "Order Status:";
+            // 
+            // txtboxCustomerIdEdit
+            // 
+            this.txtboxCustomerIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "CUST_ID", true));
+            this.txtboxCustomerIdEdit.Enabled = false;
+            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(368, 162);
+            this.txtboxCustomerIdEdit.Name = "txtboxCustomerIdEdit";
+            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtboxCustomerIdEdit.TabIndex = 12;
+            // 
+            // lbl_CustomerIdEdit
+            // 
+            this.lbl_CustomerIdEdit.AutoSize = true;
+            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(261, 165);
+            this.lbl_CustomerIdEdit.Name = "lbl_CustomerIdEdit";
+            this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(93, 19);
+            this.lbl_CustomerIdEdit.TabIndex = 11;
+            this.lbl_CustomerIdEdit.Text = "Customer ID:";
+            // 
+            // lbl_DeliveryDateEdit
+            // 
+            this.lbl_DeliveryDateEdit.AutoSize = true;
+            this.lbl_DeliveryDateEdit.Location = new System.Drawing.Point(261, 132);
+            this.lbl_DeliveryDateEdit.Name = "lbl_DeliveryDateEdit";
+            this.lbl_DeliveryDateEdit.Size = new System.Drawing.Size(101, 19);
+            this.lbl_DeliveryDateEdit.TabIndex = 9;
+            this.lbl_DeliveryDateEdit.Text = "Delivery Date:";
+            // 
+            // lbl_BookingDateEdit
+            // 
+            this.lbl_BookingDateEdit.AutoSize = true;
+            this.lbl_BookingDateEdit.Location = new System.Drawing.Point(262, 66);
+            this.lbl_BookingDateEdit.Name = "lbl_BookingDateEdit";
+            this.lbl_BookingDateEdit.Size = new System.Drawing.Size(100, 19);
+            this.lbl_BookingDateEdit.TabIndex = 7;
+            this.lbl_BookingDateEdit.Text = "Booking Date:";
+            // 
+            // lbl_PickupDateEdit
+            // 
+            this.lbl_PickupDateEdit.AutoSize = true;
+            this.lbl_PickupDateEdit.Location = new System.Drawing.Point(272, 99);
+            this.lbl_PickupDateEdit.Name = "lbl_PickupDateEdit";
+            this.lbl_PickupDateEdit.Size = new System.Drawing.Size(90, 19);
+            this.lbl_PickupDateEdit.TabIndex = 5;
+            this.lbl_PickupDateEdit.Text = "Pickup Date:";
+            // 
+            // txtbox_InvoiceIdEdit
+            // 
+            this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
+            this.txtbox_InvoiceIdEdit.Enabled = false;
+            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(368, 30);
+            this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
+            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_InvoiceIdEdit.TabIndex = 4;
+            // 
+            // lbl_InvoiceIdEdit
+            // 
+            this.lbl_InvoiceIdEdit.AutoSize = true;
+            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(291, 33);
+            this.lbl_InvoiceIdEdit.Name = "lbl_InvoiceIdEdit";
+            this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(71, 19);
+            this.lbl_InvoiceIdEdit.TabIndex = 3;
+            this.lbl_InvoiceIdEdit.Text = "Invoice #:";
+            // 
             // lbl_OrderSearch
             // 
             this.lbl_OrderSearch.AutoSize = true;
@@ -1552,295 +1824,22 @@
             // 
             this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
             // 
-            // lbl_InvoiceIdEdit
+            // comboBox_Status
             // 
-            this.lbl_InvoiceIdEdit.AutoSize = true;
-            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(291, 33);
-            this.lbl_InvoiceIdEdit.Name = "lbl_InvoiceIdEdit";
-            this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(71, 19);
-            this.lbl_InvoiceIdEdit.TabIndex = 3;
-            this.lbl_InvoiceIdEdit.Text = "Invoice #:";
-            // 
-            // txtbox_InvoiceIdEdit
-            // 
-            this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
-            this.txtbox_InvoiceIdEdit.Enabled = false;
-            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(368, 30);
-            this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
-            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_InvoiceIdEdit.TabIndex = 4;
-            // 
-            // lbl_PickupDateEdit
-            // 
-            this.lbl_PickupDateEdit.AutoSize = true;
-            this.lbl_PickupDateEdit.Location = new System.Drawing.Point(272, 99);
-            this.lbl_PickupDateEdit.Name = "lbl_PickupDateEdit";
-            this.lbl_PickupDateEdit.Size = new System.Drawing.Size(90, 19);
-            this.lbl_PickupDateEdit.TabIndex = 5;
-            this.lbl_PickupDateEdit.Text = "Pickup Date:";
-            // 
-            // lbl_BookingDateEdit
-            // 
-            this.lbl_BookingDateEdit.AutoSize = true;
-            this.lbl_BookingDateEdit.Location = new System.Drawing.Point(262, 66);
-            this.lbl_BookingDateEdit.Name = "lbl_BookingDateEdit";
-            this.lbl_BookingDateEdit.Size = new System.Drawing.Size(100, 19);
-            this.lbl_BookingDateEdit.TabIndex = 7;
-            this.lbl_BookingDateEdit.Text = "Booking Date:";
-            // 
-            // lbl_DeliveryDateEdit
-            // 
-            this.lbl_DeliveryDateEdit.AutoSize = true;
-            this.lbl_DeliveryDateEdit.Location = new System.Drawing.Point(261, 132);
-            this.lbl_DeliveryDateEdit.Name = "lbl_DeliveryDateEdit";
-            this.lbl_DeliveryDateEdit.Size = new System.Drawing.Size(101, 19);
-            this.lbl_DeliveryDateEdit.TabIndex = 9;
-            this.lbl_DeliveryDateEdit.Text = "Delivery Date:";
-            // 
-            // txtboxCustomerIdEdit
-            // 
-            this.txtboxCustomerIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "CUST_ID", true));
-            this.txtboxCustomerIdEdit.Enabled = false;
-            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(368, 162);
-            this.txtboxCustomerIdEdit.Name = "txtboxCustomerIdEdit";
-            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtboxCustomerIdEdit.TabIndex = 12;
-            // 
-            // lbl_CustomerIdEdit
-            // 
-            this.lbl_CustomerIdEdit.AutoSize = true;
-            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(261, 165);
-            this.lbl_CustomerIdEdit.Name = "lbl_CustomerIdEdit";
-            this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(93, 19);
-            this.lbl_CustomerIdEdit.TabIndex = 11;
-            this.lbl_CustomerIdEdit.Text = "Customer ID:";
-            // 
-            // txtbox_OrderStatusEdit
-            // 
-            this.txtbox_OrderStatusEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_STATUS", true));
-            this.txtbox_OrderStatusEdit.Enabled = false;
-            this.txtbox_OrderStatusEdit.Location = new System.Drawing.Point(368, 195);
-            this.txtbox_OrderStatusEdit.Name = "txtbox_OrderStatusEdit";
-            this.txtbox_OrderStatusEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_OrderStatusEdit.TabIndex = 14;
-            // 
-            // lbl_OrderStatusEdit
-            // 
-            this.lbl_OrderStatusEdit.AutoSize = true;
-            this.lbl_OrderStatusEdit.Location = new System.Drawing.Point(261, 198);
-            this.lbl_OrderStatusEdit.Name = "lbl_OrderStatusEdit";
-            this.lbl_OrderStatusEdit.Size = new System.Drawing.Size(94, 19);
-            this.lbl_OrderStatusEdit.TabIndex = 13;
-            this.lbl_OrderStatusEdit.Text = "Order Status:";
-            // 
-            // txtbox_PickupAddressEdit
-            // 
-            this.txtbox_PickupAddressEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_ADDRESS", true));
-            this.txtbox_PickupAddressEdit.Enabled = false;
-            this.txtbox_PickupAddressEdit.Location = new System.Drawing.Point(685, 32);
-            this.txtbox_PickupAddressEdit.Name = "txtbox_PickupAddressEdit";
-            this.txtbox_PickupAddressEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_PickupAddressEdit.TabIndex = 16;
-            // 
-            // lbl_PickupAddressEdit
-            // 
-            this.lbl_PickupAddressEdit.AutoSize = true;
-            this.lbl_PickupAddressEdit.Location = new System.Drawing.Point(568, 35);
-            this.lbl_PickupAddressEdit.Name = "lbl_PickupAddressEdit";
-            this.lbl_PickupAddressEdit.Size = new System.Drawing.Size(111, 19);
-            this.lbl_PickupAddressEdit.TabIndex = 15;
-            this.lbl_PickupAddressEdit.Text = "Pickup Address:";
-            // 
-            // txtbox_PickupCityEdit
-            // 
-            this.txtbox_PickupCityEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_CITY", true));
-            this.txtbox_PickupCityEdit.Enabled = false;
-            this.txtbox_PickupCityEdit.Location = new System.Drawing.Point(685, 65);
-            this.txtbox_PickupCityEdit.Name = "txtbox_PickupCityEdit";
-            this.txtbox_PickupCityEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_PickupCityEdit.TabIndex = 18;
-            // 
-            // lbl_PickUpCityEdit
-            // 
-            this.lbl_PickUpCityEdit.AutoSize = true;
-            this.lbl_PickUpCityEdit.Location = new System.Drawing.Point(595, 68);
-            this.lbl_PickUpCityEdit.Name = "lbl_PickUpCityEdit";
-            this.lbl_PickUpCityEdit.Size = new System.Drawing.Size(84, 19);
-            this.lbl_PickUpCityEdit.TabIndex = 17;
-            this.lbl_PickUpCityEdit.Text = "Pickup City:";
-            // 
-            // txtbox_PickupStateEdit
-            // 
-            this.txtbox_PickupStateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_STATE", true));
-            this.txtbox_PickupStateEdit.Enabled = false;
-            this.txtbox_PickupStateEdit.Location = new System.Drawing.Point(685, 101);
-            this.txtbox_PickupStateEdit.Name = "txtbox_PickupStateEdit";
-            this.txtbox_PickupStateEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_PickupStateEdit.TabIndex = 20;
-            // 
-            // lbl_PickUpStateEdit
-            // 
-            this.lbl_PickUpStateEdit.AutoSize = true;
-            this.lbl_PickUpStateEdit.Location = new System.Drawing.Point(587, 104);
-            this.lbl_PickUpStateEdit.Name = "lbl_PickUpStateEdit";
-            this.lbl_PickUpStateEdit.Size = new System.Drawing.Size(92, 19);
-            this.lbl_PickUpStateEdit.TabIndex = 19;
-            this.lbl_PickUpStateEdit.Text = "Pickup State:";
-            // 
-            // txtbox_PickUpZipEdit
-            // 
-            this.txtbox_PickUpZipEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_ZIP", true));
-            this.txtbox_PickUpZipEdit.Enabled = false;
-            this.txtbox_PickUpZipEdit.Location = new System.Drawing.Point(685, 134);
-            this.txtbox_PickUpZipEdit.Name = "txtbox_PickUpZipEdit";
-            this.txtbox_PickUpZipEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_PickUpZipEdit.TabIndex = 22;
-            // 
-            // lbl_PickUpZipEdit
-            // 
-            this.lbl_PickUpZipEdit.AutoSize = true;
-            this.lbl_PickUpZipEdit.Location = new System.Drawing.Point(600, 137);
-            this.lbl_PickUpZipEdit.Name = "lbl_PickUpZipEdit";
-            this.lbl_PickUpZipEdit.Size = new System.Drawing.Size(79, 19);
-            this.lbl_PickUpZipEdit.TabIndex = 21;
-            this.lbl_PickUpZipEdit.Text = "Pickup Zip:";
-            // 
-            // txtbox_DeliveryAddressEdit
-            // 
-            this.txtbox_DeliveryAddressEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_ADDRESS", true));
-            this.txtbox_DeliveryAddressEdit.Enabled = false;
-            this.txtbox_DeliveryAddressEdit.Location = new System.Drawing.Point(939, 35);
-            this.txtbox_DeliveryAddressEdit.Name = "txtbox_DeliveryAddressEdit";
-            this.txtbox_DeliveryAddressEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_DeliveryAddressEdit.TabIndex = 24;
-            // 
-            // lbl_DeliveryAddressEdit
-            // 
-            this.lbl_DeliveryAddressEdit.AutoSize = true;
-            this.lbl_DeliveryAddressEdit.Location = new System.Drawing.Point(811, 38);
-            this.lbl_DeliveryAddressEdit.Name = "lbl_DeliveryAddressEdit";
-            this.lbl_DeliveryAddressEdit.Size = new System.Drawing.Size(122, 19);
-            this.lbl_DeliveryAddressEdit.TabIndex = 23;
-            this.lbl_DeliveryAddressEdit.Text = "Delivery Address:";
-            // 
-            // txtbox_DeliveryCityEdit
-            // 
-            this.txtbox_DeliveryCityEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_CITY", true));
-            this.txtbox_DeliveryCityEdit.Enabled = false;
-            this.txtbox_DeliveryCityEdit.Location = new System.Drawing.Point(939, 68);
-            this.txtbox_DeliveryCityEdit.Name = "txtbox_DeliveryCityEdit";
-            this.txtbox_DeliveryCityEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_DeliveryCityEdit.TabIndex = 26;
-            // 
-            // lbl_DeliveryCityEdit
-            // 
-            this.lbl_DeliveryCityEdit.AutoSize = true;
-            this.lbl_DeliveryCityEdit.Location = new System.Drawing.Point(834, 68);
-            this.lbl_DeliveryCityEdit.Name = "lbl_DeliveryCityEdit";
-            this.lbl_DeliveryCityEdit.Size = new System.Drawing.Size(99, 19);
-            this.lbl_DeliveryCityEdit.TabIndex = 25;
-            this.lbl_DeliveryCityEdit.Text = "Delivery City: ";
-            // 
-            // txtbox_DeliveryStateEdit
-            // 
-            this.txtbox_DeliveryStateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_STATE", true));
-            this.txtbox_DeliveryStateEdit.Enabled = false;
-            this.txtbox_DeliveryStateEdit.Location = new System.Drawing.Point(939, 101);
-            this.txtbox_DeliveryStateEdit.Name = "txtbox_DeliveryStateEdit";
-            this.txtbox_DeliveryStateEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_DeliveryStateEdit.TabIndex = 28;
-            // 
-            // lbl_DeliveryStateEdit
-            // 
-            this.lbl_DeliveryStateEdit.AutoSize = true;
-            this.lbl_DeliveryStateEdit.Location = new System.Drawing.Point(826, 104);
-            this.lbl_DeliveryStateEdit.Name = "lbl_DeliveryStateEdit";
-            this.lbl_DeliveryStateEdit.Size = new System.Drawing.Size(107, 19);
-            this.lbl_DeliveryStateEdit.TabIndex = 27;
-            this.lbl_DeliveryStateEdit.Text = "Delivery State: ";
-            // 
-            // txtbox_DeliveryZipEdit
-            // 
-            this.txtbox_DeliveryZipEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_ZIP", true));
-            this.txtbox_DeliveryZipEdit.Enabled = false;
-            this.txtbox_DeliveryZipEdit.Location = new System.Drawing.Point(939, 134);
-            this.txtbox_DeliveryZipEdit.Name = "txtbox_DeliveryZipEdit";
-            this.txtbox_DeliveryZipEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_DeliveryZipEdit.TabIndex = 30;
-            // 
-            // lbl_DeliveryZipEdit
-            // 
-            this.lbl_DeliveryZipEdit.AutoSize = true;
-            this.lbl_DeliveryZipEdit.Location = new System.Drawing.Point(826, 137);
-            this.lbl_DeliveryZipEdit.Name = "lbl_DeliveryZipEdit";
-            this.lbl_DeliveryZipEdit.Size = new System.Drawing.Size(90, 19);
-            this.lbl_DeliveryZipEdit.TabIndex = 29;
-            this.lbl_DeliveryZipEdit.Text = "Delivery Zip:";
-            // 
-            // txtboxrch_DescriptionEdit
-            // 
-            this.txtboxrch_DescriptionEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DESCRIPTION", true));
-            this.txtboxrch_DescriptionEdit.Enabled = false;
-            this.txtboxrch_DescriptionEdit.Location = new System.Drawing.Point(444, 257);
-            this.txtboxrch_DescriptionEdit.Name = "txtboxrch_DescriptionEdit";
-            this.txtboxrch_DescriptionEdit.Size = new System.Drawing.Size(238, 96);
-            this.txtboxrch_DescriptionEdit.TabIndex = 31;
-            this.txtboxrch_DescriptionEdit.Text = "";
-            // 
-            // lbl_DescriptionEdit
-            // 
-            this.lbl_DescriptionEdit.AutoSize = true;
-            this.lbl_DescriptionEdit.Location = new System.Drawing.Point(351, 296);
-            this.lbl_DescriptionEdit.Name = "lbl_DescriptionEdit";
-            this.lbl_DescriptionEdit.Size = new System.Drawing.Size(87, 19);
-            this.lbl_DescriptionEdit.TabIndex = 32;
-            this.lbl_DescriptionEdit.Text = "Description:";
-            // 
-            // lbl_SpecialInstructionsEdit
-            // 
-            this.lbl_SpecialInstructionsEdit.AutoSize = true;
-            this.lbl_SpecialInstructionsEdit.Location = new System.Drawing.Point(704, 296);
-            this.lbl_SpecialInstructionsEdit.Name = "lbl_SpecialInstructionsEdit";
-            this.lbl_SpecialInstructionsEdit.Size = new System.Drawing.Size(139, 19);
-            this.lbl_SpecialInstructionsEdit.TabIndex = 34;
-            this.lbl_SpecialInstructionsEdit.Text = "Special Instructions:";
-            // 
-            // txtboxrch_SpecailInstructionsEdit
-            // 
-            this.txtboxrch_SpecailInstructionsEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "SPECIAL_INSTRUCTIONS", true));
-            this.txtboxrch_SpecailInstructionsEdit.Enabled = false;
-            this.txtboxrch_SpecailInstructionsEdit.Location = new System.Drawing.Point(849, 257);
-            this.txtboxrch_SpecailInstructionsEdit.Name = "txtboxrch_SpecailInstructionsEdit";
-            this.txtboxrch_SpecailInstructionsEdit.Size = new System.Drawing.Size(238, 96);
-            this.txtboxrch_SpecailInstructionsEdit.TabIndex = 33;
-            this.txtboxrch_SpecailInstructionsEdit.Text = "";
-            // 
-            // dateTimePicker_BookingDateEdit
-            // 
-            this.dateTimePicker_BookingDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
-            this.dateTimePicker_BookingDateEdit.Enabled = false;
-            this.dateTimePicker_BookingDateEdit.Location = new System.Drawing.Point(368, 65);
-            this.dateTimePicker_BookingDateEdit.Name = "dateTimePicker_BookingDateEdit";
-            this.dateTimePicker_BookingDateEdit.Size = new System.Drawing.Size(221, 27);
-            this.dateTimePicker_BookingDateEdit.TabIndex = 35;
-            // 
-            // dateTimePicker_PickUpDateEdit
-            // 
-            this.dateTimePicker_PickUpDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_DATE", true));
-            this.dateTimePicker_PickUpDateEdit.Enabled = false;
-            this.dateTimePicker_PickUpDateEdit.Location = new System.Drawing.Point(368, 98);
-            this.dateTimePicker_PickUpDateEdit.Name = "dateTimePicker_PickUpDateEdit";
-            this.dateTimePicker_PickUpDateEdit.Size = new System.Drawing.Size(221, 27);
-            this.dateTimePicker_PickUpDateEdit.TabIndex = 36;
-            // 
-            // dateTimePicker_DeliveryDateEdit
-            // 
-            this.dateTimePicker_DeliveryDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DROPOFF_DATE", true));
-            this.dateTimePicker_DeliveryDateEdit.Enabled = false;
-            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(368, 131);
-            this.dateTimePicker_DeliveryDateEdit.Name = "dateTimePicker_DeliveryDateEdit";
-            this.dateTimePicker_DeliveryDateEdit.Size = new System.Drawing.Size(221, 27);
-            this.dateTimePicker_DeliveryDateEdit.TabIndex = 37;
+            this.comboBox_Status.Enabled = false;
+            this.comboBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Status.FormattingEnabled = true;
+            this.comboBox_Status.Items.AddRange(new object[] {
+            "Pending",
+            "In Transit",
+            "Delayed",
+            "Complete",
+            "Cancelled"});
+            this.comboBox_Status.Location = new System.Drawing.Point(386, 326);
+            this.comboBox_Status.Name = "comboBox_Status";
+            this.comboBox_Status.Size = new System.Drawing.Size(169, 41);
+            this.comboBox_Status.TabIndex = 13;
+            this.comboBox_Status.SelectedIndexChanged += new System.EventHandler(this.comboBox_Status_SelectedIndexChanged);
             // 
             // MainPage
             // 
@@ -2002,7 +2001,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.PictureBox picBox_Status;
-        private System.Windows.Forms.ListBox listBox_Status;
         private System.Windows.Forms.Label lbl_OrderStatus;
         private System.Windows.Forms.Label lbl_OrderSearch;
         private System.Windows.Forms.TextBox OrderSearchBox;
@@ -2038,5 +2036,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_DeliveryDateEdit;
         private System.Windows.Forms.DateTimePicker dateTimePicker_PickUpDateEdit;
         private System.Windows.Forms.DateTimePicker dateTimePicker_BookingDateEdit;
+        private System.Windows.Forms.ComboBox comboBox_Status;
     }
 }

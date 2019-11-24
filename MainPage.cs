@@ -527,7 +527,7 @@ namespace WindowsFormsApp3
             txtbox_Zip.Enabled = true;
             txtboxrch_Description.Enabled = true;
             txtboxrch_SpecialInstructions.Enabled = true;
-            listBox_Status.Enabled = true;
+            comboBox_Status.Enabled = true;
             picBox_Status.Enabled = true;
             panel2.Enabled = true;
             panel3.Enabled = true;
@@ -544,7 +544,7 @@ namespace WindowsFormsApp3
             //this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
 
             
-            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, listBox_Status.Text, 
+            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, comboBox_Status.Text, 
                 txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
                 txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text);
 
@@ -612,7 +612,7 @@ namespace WindowsFormsApp3
             txtbox_DeliveryZip.Enabled = false;
             btn_SaveOrder.Enabled = false;
             picBox_Status.Enabled = false;
-            listBox_Status.Enabled = false;
+            comboBox_Status.Enabled = false;
             txtboxrch_Description.Enabled = false;
             txtboxrch_SpecialInstructions.Enabled = false;
             
@@ -692,39 +692,7 @@ namespace WindowsFormsApp3
 
         private void listBox_Status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Image picCancelled = WindowsFormsApp3.Properties.Resources.cancelled;
-            Image picPending = WindowsFormsApp3.Properties.Resources.pending;
-            Image picDelayed = WindowsFormsApp3.Properties.Resources.delayed;
-            Image picInTransit = WindowsFormsApp3.Properties.Resources.in_transit;
-            Image picComplete = WindowsFormsApp3.Properties.Resources.complete;
-
-
-            if (listBox_Status.SelectedIndex == 0) //0 is Pending
-            {
-                picBox_Status.Image = picPending;
-                //listBox_Status_Click(sender, e);
-            }
-            else if (listBox_Status.SelectedIndex == 1) //1 is In Transit
-            {
-                picBox_Status.Image = picInTransit;
-                //listBox_Status_Click(sender, e);
-            }
-            else if (listBox_Status.SelectedIndex == 2) //2 is Delayed
-            {
-                picBox_Status.Image = picDelayed;
-            }
-            else if (listBox_Status.SelectedIndex == 3) //3 is Complete
-            {
-                picBox_Status.Image = picComplete;
-            }
-            else if (listBox_Status.SelectedIndex == 4) //4 is Cancelled
-            {
-                picBox_Status.Image = picCancelled;
-            }
-            else
-            {
-                picBox_Status.Image = null;
-            }
+           
 
 
         }
@@ -784,6 +752,43 @@ namespace WindowsFormsApp3
                                 select r;
                     iNVOICEBindingSource.DataSource = query.ToList();
                 }
+            }
+        }
+
+        private void comboBox_Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Image picCancelled = WindowsFormsApp3.Properties.Resources.cancelled;
+            Image picPending = WindowsFormsApp3.Properties.Resources.pending;
+            Image picDelayed = WindowsFormsApp3.Properties.Resources.delayed;
+            Image picInTransit = WindowsFormsApp3.Properties.Resources.in_transit;
+            Image picComplete = WindowsFormsApp3.Properties.Resources.complete;
+
+
+            if (comboBox_Status.SelectedIndex == 0) //0 is Pending
+            {
+                picBox_Status.Image = picPending;
+                //listBox_Status_Click(sender, e);
+            }
+            else if (comboBox_Status.SelectedIndex == 1) //1 is In Transit
+            {
+                picBox_Status.Image = picInTransit;
+                //listBox_Status_Click(sender, e);
+            }
+            else if (comboBox_Status.SelectedIndex == 2) //2 is Delayed
+            {
+                picBox_Status.Image = picDelayed;
+            }
+            else if (comboBox_Status.SelectedIndex == 3) //3 is Complete
+            {
+                picBox_Status.Image = picComplete;
+            }
+            else if (comboBox_Status.SelectedIndex == 4) //4 is Cancelled
+            {
+                picBox_Status.Image = picCancelled;
+            }
+            else
+            {
+                picBox_Status.Image = null;
             }
         }
     }

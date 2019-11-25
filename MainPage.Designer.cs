@@ -31,6 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.comboBox_Vehicle = new System.Windows.Forms.ComboBox();
+            this.lbl_Vehicle = new System.Windows.Forms.Label();
+            this.txtBox_InvoiceNumber = new System.Windows.Forms.TextBox();
+            this.iNVOICEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new WindowsFormsApp3.AppData();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox_Status = new System.Windows.Forms.ComboBox();
             this.picBox_Status = new System.Windows.Forms.PictureBox();
             this.lbl_OrderStatus = new System.Windows.Forms.Label();
             this.lbl_Description = new System.Windows.Forms.Label();
@@ -52,8 +59,6 @@
             this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
             this.PickUpDatePicker = new System.Windows.Forms.DateTimePicker();
             this.BookDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.iNVOICEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new WindowsFormsApp3.AppData();
             this.btn_SaveOrder = new System.Windows.Forms.Button();
             this.btn_CreateOrder = new System.Windows.Forms.Button();
             this.lbl_SpecialInstructions = new System.Windows.Forms.Label();
@@ -91,6 +96,9 @@
             this.tab_ManageCustomers = new System.Windows.Forms.TabPage();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.radButt_No = new System.Windows.Forms.RadioButton();
+            this.radButt_Yes = new System.Windows.Forms.RadioButton();
             this.lbl_RequiredField = new System.Windows.Forms.Label();
             this.ZipLabel = new System.Windows.Forms.Label();
             this.ZipBox = new System.Windows.Forms.TextBox();
@@ -151,7 +159,6 @@
             this.lbl_PickUpCityEdit = new System.Windows.Forms.Label();
             this.txtbox_PickupAddressEdit = new System.Windows.Forms.TextBox();
             this.lbl_PickupAddressEdit = new System.Windows.Forms.Label();
-            this.txtbox_OrderStatusEdit = new System.Windows.Forms.TextBox();
             this.lbl_OrderStatusEdit = new System.Windows.Forms.Label();
             this.txtboxCustomerIdEdit = new System.Windows.Forms.TextBox();
             this.lbl_CustomerIdEdit = new System.Windows.Forms.Label();
@@ -161,7 +168,7 @@
             this.txtbox_InvoiceIdEdit = new System.Windows.Forms.TextBox();
             this.lbl_InvoiceIdEdit = new System.Windows.Forms.Label();
             this.lbl_OrderSearch = new System.Windows.Forms.Label();
-            this.OrderSearchBox = new System.Windows.Forms.TextBox();
+            this.txtbox_OrderSearchBox = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -184,20 +191,17 @@
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
-            this.comboBox_Status = new System.Windows.Forms.ComboBox();
-            this.txtBox_InvoiceNumber = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radButt_Yes = new System.Windows.Forms.RadioButton();
-            this.radButt_No = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_Vehicle = new System.Windows.Forms.Label();
-            this.comboBox_Vehicle = new System.Windows.Forms.ComboBox();
+            this.btn_EditOrder = new System.Windows.Forms.Button();
+            this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
+            this.combobox_OrderStatusEdit = new System.Windows.Forms.ComboBox();
+            this.lbl_OrderNumberEdit = new System.Windows.Forms.Label();
+            this.txtbox_OrderNumberEdit = new System.Windows.Forms.TextBox();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.tab_ManageCustomers.SuspendLayout();
@@ -260,12 +264,82 @@
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
             // 
+            // comboBox_Vehicle
+            // 
+            this.comboBox_Vehicle.Enabled = false;
+            this.comboBox_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Vehicle.FormattingEnabled = true;
+            this.comboBox_Vehicle.Items.AddRange(new object[] {
+            "Vehicle 1",
+            "Vehicle 2",
+            "Vehicle 3"});
+            this.comboBox_Vehicle.Location = new System.Drawing.Point(918, 83);
+            this.comboBox_Vehicle.Name = "comboBox_Vehicle";
+            this.comboBox_Vehicle.Size = new System.Drawing.Size(173, 27);
+            this.comboBox_Vehicle.TabIndex = 70;
+            // 
+            // lbl_Vehicle
+            // 
+            this.lbl_Vehicle.AutoSize = true;
+            this.lbl_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Vehicle.Location = new System.Drawing.Point(814, 86);
+            this.lbl_Vehicle.Name = "lbl_Vehicle";
+            this.lbl_Vehicle.Size = new System.Drawing.Size(98, 19);
+            this.lbl_Vehicle.TabIndex = 69;
+            this.lbl_Vehicle.Text = "Vehicle Used:";
+            // 
+            // txtBox_InvoiceNumber
+            // 
+            this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
+            this.txtBox_InvoiceNumber.Enabled = false;
+            this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(951, 6);
+            this.txtBox_InvoiceNumber.Name = "txtBox_InvoiceNumber";
+            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(140, 27);
+            this.txtBox_InvoiceNumber.TabIndex = 66;
+            // 
+            // iNVOICEBindingSource
+            // 
+            this.iNVOICEBindingSource.DataMember = "INVOICE";
+            this.iNVOICEBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(871, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "Invoice #:";
+            // 
+            // comboBox_Status
+            // 
+            this.comboBox_Status.Enabled = false;
+            this.comboBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Status.FormattingEnabled = true;
+            this.comboBox_Status.Items.AddRange(new object[] {
+            "Pending",
+            "In Transit",
+            "Delayed",
+            "Complete",
+            "Cancelled"});
+            this.comboBox_Status.Location = new System.Drawing.Point(386, 326);
+            this.comboBox_Status.Name = "comboBox_Status";
+            this.comboBox_Status.Size = new System.Drawing.Size(169, 41);
+            this.comboBox_Status.TabIndex = 13;
+            this.comboBox_Status.SelectedIndexChanged += new System.EventHandler(this.comboBox_Status_SelectedIndexChanged);
+            // 
             // picBox_Status
             // 
-            this.picBox_Status.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.picBox_Status.BackColor = System.Drawing.SystemColors.Window;
             this.picBox_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBox_Status.Enabled = false;
-            this.picBox_Status.Image = global::WindowsFormsApp3.Properties.Resources.pending;
             this.picBox_Status.Location = new System.Drawing.Point(392, 372);
             this.picBox_Status.Name = "picBox_Status";
             this.picBox_Status.Size = new System.Drawing.Size(150, 150);
@@ -454,42 +528,44 @@
             // 
             this.DropOffDatePicker.Enabled = false;
             this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropOffDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DropOffDatePicker.Location = new System.Drawing.Point(126, 377);
+            this.DropOffDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.DropOffDatePicker.Name = "DropOffDatePicker";
             this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
             this.DropOffDatePicker.TabIndex = 12;
+            this.DropOffDatePicker.Value = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             // 
             // PickUpDatePicker
             // 
             this.PickUpDatePicker.Enabled = false;
             this.PickUpDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PickUpDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
+            this.PickUpDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.PickUpDatePicker.Name = "PickUpDatePicker";
             this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
             this.PickUpDatePicker.TabIndex = 11;
+            this.PickUpDatePicker.Value = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             // 
             // BookDatePicker
             // 
             this.BookDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
             this.BookDatePicker.Enabled = false;
             this.BookDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BookDatePicker.Location = new System.Drawing.Point(126, 298);
+            this.BookDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.BookDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.BookDatePicker.Name = "BookDatePicker";
             this.BookDatePicker.Size = new System.Drawing.Size(238, 27);
             this.BookDatePicker.TabIndex = 10;
             // 
-            // iNVOICEBindingSource
-            // 
-            this.iNVOICEBindingSource.DataMember = "INVOICE";
-            this.iNVOICEBindingSource.DataSource = this.appData;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btn_SaveOrder
             // 
+            this.btn_SaveOrder.Enabled = false;
             this.btn_SaveOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveOrder.Location = new System.Drawing.Point(222, 429);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
@@ -896,6 +972,39 @@
             this.panel1.Size = new System.Drawing.Size(278, 328);
             this.panel1.TabIndex = 0;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(13, 268);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 19);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Is this a Broker?";
+            // 
+            // radButt_No
+            // 
+            this.radButt_No.AutoSize = true;
+            this.radButt_No.Location = new System.Drawing.Point(202, 267);
+            this.radButt_No.Name = "radButt_No";
+            this.radButt_No.Size = new System.Drawing.Size(45, 23);
+            this.radButt_No.TabIndex = 23;
+            this.radButt_No.Text = "No";
+            this.radButt_No.UseVisualStyleBackColor = true;
+            this.radButt_No.CheckedChanged += new System.EventHandler(this.radButt_No_CheckedChanged);
+            // 
+            // radButt_Yes
+            // 
+            this.radButt_Yes.AutoSize = true;
+            this.radButt_Yes.Location = new System.Drawing.Point(138, 267);
+            this.radButt_Yes.Name = "radButt_Yes";
+            this.radButt_Yes.Size = new System.Drawing.Size(49, 23);
+            this.radButt_Yes.TabIndex = 22;
+            this.radButt_Yes.Text = "Yes";
+            this.radButt_Yes.UseVisualStyleBackColor = true;
+            this.radButt_Yes.CheckedChanged += new System.EventHandler(this.radButt_Yes_CheckedChanged);
+            // 
             // lbl_RequiredField
             // 
             this.lbl_RequiredField.AutoSize = true;
@@ -1279,6 +1388,11 @@
             // 
             // tab_SearchOrders
             // 
+            this.tab_SearchOrders.Controls.Add(this.txtbox_OrderNumberEdit);
+            this.tab_SearchOrders.Controls.Add(this.lbl_OrderNumberEdit);
+            this.tab_SearchOrders.Controls.Add(this.combobox_OrderStatusEdit);
+            this.tab_SearchOrders.Controls.Add(this.btn_SaveOrderEdit);
+            this.tab_SearchOrders.Controls.Add(this.btn_EditOrder);
             this.tab_SearchOrders.Controls.Add(this.dateTimePicker_DeliveryDateEdit);
             this.tab_SearchOrders.Controls.Add(this.dateTimePicker_PickUpDateEdit);
             this.tab_SearchOrders.Controls.Add(this.dateTimePicker_BookingDateEdit);
@@ -1302,7 +1416,6 @@
             this.tab_SearchOrders.Controls.Add(this.lbl_PickUpCityEdit);
             this.tab_SearchOrders.Controls.Add(this.txtbox_PickupAddressEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_PickupAddressEdit);
-            this.tab_SearchOrders.Controls.Add(this.txtbox_OrderStatusEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_OrderStatusEdit);
             this.tab_SearchOrders.Controls.Add(this.txtboxCustomerIdEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_CustomerIdEdit);
@@ -1312,7 +1425,7 @@
             this.tab_SearchOrders.Controls.Add(this.txtbox_InvoiceIdEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_InvoiceIdEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_OrderSearch);
-            this.tab_SearchOrders.Controls.Add(this.OrderSearchBox);
+            this.tab_SearchOrders.Controls.Add(this.txtbox_OrderSearchBox);
             this.tab_SearchOrders.Controls.Add(this.dataGridView2);
             this.tab_SearchOrders.Location = new System.Drawing.Point(4, 28);
             this.tab_SearchOrders.Name = "tab_SearchOrders";
@@ -1326,7 +1439,10 @@
             // 
             this.dateTimePicker_DeliveryDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DROPOFF_DATE", true));
             this.dateTimePicker_DeliveryDateEdit.Enabled = false;
+            this.dateTimePicker_DeliveryDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(368, 131);
+            this.dateTimePicker_DeliveryDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_DeliveryDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_DeliveryDateEdit.Name = "dateTimePicker_DeliveryDateEdit";
             this.dateTimePicker_DeliveryDateEdit.Size = new System.Drawing.Size(221, 27);
             this.dateTimePicker_DeliveryDateEdit.TabIndex = 37;
@@ -1335,7 +1451,10 @@
             // 
             this.dateTimePicker_PickUpDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_DATE", true));
             this.dateTimePicker_PickUpDateEdit.Enabled = false;
+            this.dateTimePicker_PickUpDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_PickUpDateEdit.Location = new System.Drawing.Point(368, 98);
+            this.dateTimePicker_PickUpDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_PickUpDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_PickUpDateEdit.Name = "dateTimePicker_PickUpDateEdit";
             this.dateTimePicker_PickUpDateEdit.Size = new System.Drawing.Size(221, 27);
             this.dateTimePicker_PickUpDateEdit.TabIndex = 36;
@@ -1344,7 +1463,10 @@
             // 
             this.dateTimePicker_BookingDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
             this.dateTimePicker_BookingDateEdit.Enabled = false;
+            this.dateTimePicker_BookingDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_BookingDateEdit.Location = new System.Drawing.Point(368, 65);
+            this.dateTimePicker_BookingDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_BookingDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_BookingDateEdit.Name = "dateTimePicker_BookingDateEdit";
             this.dateTimePicker_BookingDateEdit.Size = new System.Drawing.Size(221, 27);
             this.dateTimePicker_BookingDateEdit.TabIndex = 35;
@@ -1531,15 +1653,6 @@
             this.lbl_PickupAddressEdit.TabIndex = 15;
             this.lbl_PickupAddressEdit.Text = "Pickup Address:";
             // 
-            // txtbox_OrderStatusEdit
-            // 
-            this.txtbox_OrderStatusEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_STATUS", true));
-            this.txtbox_OrderStatusEdit.Enabled = false;
-            this.txtbox_OrderStatusEdit.Location = new System.Drawing.Point(368, 195);
-            this.txtbox_OrderStatusEdit.Name = "txtbox_OrderStatusEdit";
-            this.txtbox_OrderStatusEdit.Size = new System.Drawing.Size(100, 27);
-            this.txtbox_OrderStatusEdit.TabIndex = 14;
-            // 
             // lbl_OrderStatusEdit
             // 
             this.lbl_OrderStatusEdit.AutoSize = true;
@@ -1598,7 +1711,7 @@
             // 
             this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_InvoiceIdEdit.Enabled = false;
-            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(368, 30);
+            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(913, 196);
             this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
             this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(100, 27);
             this.txtbox_InvoiceIdEdit.TabIndex = 4;
@@ -1606,7 +1719,7 @@
             // lbl_InvoiceIdEdit
             // 
             this.lbl_InvoiceIdEdit.AutoSize = true;
-            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(291, 33);
+            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(836, 199);
             this.lbl_InvoiceIdEdit.Name = "lbl_InvoiceIdEdit";
             this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(71, 19);
             this.lbl_InvoiceIdEdit.TabIndex = 3;
@@ -1621,13 +1734,13 @@
             this.lbl_OrderSearch.TabIndex = 2;
             this.lbl_OrderSearch.Text = "Search:";
             // 
-            // OrderSearchBox
+            // txtbox_OrderSearchBox
             // 
-            this.OrderSearchBox.Location = new System.Drawing.Point(92, 30);
-            this.OrderSearchBox.Name = "OrderSearchBox";
-            this.OrderSearchBox.Size = new System.Drawing.Size(183, 27);
-            this.OrderSearchBox.TabIndex = 1;
-            this.OrderSearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OrderSearchBox_KeyPress);
+            this.txtbox_OrderSearchBox.Location = new System.Drawing.Point(92, 30);
+            this.txtbox_OrderSearchBox.Name = "txtbox_OrderSearchBox";
+            this.txtbox_OrderSearchBox.Size = new System.Drawing.Size(183, 27);
+            this.txtbox_OrderSearchBox.TabIndex = 1;
+            this.txtbox_OrderSearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OrderSearchBox_KeyPress);
             // 
             // dataGridView2
             // 
@@ -1838,99 +1951,57 @@
             // 
             this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox_Status
+            // btn_EditOrder
             // 
-            this.comboBox_Status.Enabled = false;
-            this.comboBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Status.FormattingEnabled = true;
-            this.comboBox_Status.Items.AddRange(new object[] {
+            this.btn_EditOrder.Location = new System.Drawing.Point(45, 275);
+            this.btn_EditOrder.Name = "btn_EditOrder";
+            this.btn_EditOrder.Size = new System.Drawing.Size(147, 61);
+            this.btn_EditOrder.TabIndex = 38;
+            this.btn_EditOrder.Text = "Edit Order";
+            this.btn_EditOrder.UseVisualStyleBackColor = true;
+            this.btn_EditOrder.Click += new System.EventHandler(this.btn_EditOrder_Click);
+            // 
+            // btn_SaveOrderEdit
+            // 
+            this.btn_SaveOrderEdit.Enabled = false;
+            this.btn_SaveOrderEdit.Location = new System.Drawing.Point(198, 275);
+            this.btn_SaveOrderEdit.Name = "btn_SaveOrderEdit";
+            this.btn_SaveOrderEdit.Size = new System.Drawing.Size(147, 61);
+            this.btn_SaveOrderEdit.TabIndex = 39;
+            this.btn_SaveOrderEdit.Text = "Save Order";
+            this.btn_SaveOrderEdit.UseVisualStyleBackColor = true;
+            this.btn_SaveOrderEdit.Click += new System.EventHandler(this.btn_SaveOrderEdit_Click);
+            // 
+            // combobox_OrderStatusEdit
+            // 
+            this.combobox_OrderStatusEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_STATUS", true));
+            this.combobox_OrderStatusEdit.FormattingEnabled = true;
+            this.combobox_OrderStatusEdit.Items.AddRange(new object[] {
             "Pending",
             "In Transit",
             "Delayed",
             "Complete",
             "Cancelled"});
-            this.comboBox_Status.Location = new System.Drawing.Point(386, 326);
-            this.comboBox_Status.Name = "comboBox_Status";
-            this.comboBox_Status.Size = new System.Drawing.Size(169, 41);
-            this.comboBox_Status.TabIndex = 13;
-            this.comboBox_Status.SelectedIndexChanged += new System.EventHandler(this.comboBox_Status_SelectedIndexChanged);
+            this.combobox_OrderStatusEdit.Location = new System.Drawing.Point(368, 195);
+            this.combobox_OrderStatusEdit.Name = "combobox_OrderStatusEdit";
+            this.combobox_OrderStatusEdit.Size = new System.Drawing.Size(121, 27);
+            this.combobox_OrderStatusEdit.TabIndex = 40;
             // 
-            // txtBox_InvoiceNumber
+            // lbl_OrderNumberEdit
             // 
-            this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
-            this.txtBox_InvoiceNumber.Enabled = false;
-            this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(951, 6);
-            this.txtBox_InvoiceNumber.Name = "txtBox_InvoiceNumber";
-            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(140, 27);
-            this.txtBox_InvoiceNumber.TabIndex = 66;
+            this.lbl_OrderNumberEdit.AutoSize = true;
+            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(553, 195);
+            this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
+            this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(62, 19);
+            this.lbl_OrderNumberEdit.TabIndex = 41;
+            this.lbl_OrderNumberEdit.Text = "Order #:";
             // 
-            // label2
+            // txtbox_OrderNumberEdit
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(871, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "Invoice #:";
-            // 
-            // radButt_Yes
-            // 
-            this.radButt_Yes.AutoSize = true;
-            this.radButt_Yes.Location = new System.Drawing.Point(138, 267);
-            this.radButt_Yes.Name = "radButt_Yes";
-            this.radButt_Yes.Size = new System.Drawing.Size(49, 23);
-            this.radButt_Yes.TabIndex = 22;
-            this.radButt_Yes.Text = "Yes";
-            this.radButt_Yes.UseVisualStyleBackColor = true;
-            this.radButt_Yes.CheckedChanged += new System.EventHandler(this.radButt_Yes_CheckedChanged);
-            // 
-            // radButt_No
-            // 
-            this.radButt_No.AutoSize = true;
-            this.radButt_No.Location = new System.Drawing.Point(202, 267);
-            this.radButt_No.Name = "radButt_No";
-            this.radButt_No.Size = new System.Drawing.Size(45, 23);
-            this.radButt_No.TabIndex = 23;
-            this.radButt_No.Text = "No";
-            this.radButt_No.UseVisualStyleBackColor = true;
-            this.radButt_No.CheckedChanged += new System.EventHandler(this.radButt_No_CheckedChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 268);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 19);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Is this a Broker?";
-            // 
-            // lbl_Vehicle
-            // 
-            this.lbl_Vehicle.AutoSize = true;
-            this.lbl_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Vehicle.Location = new System.Drawing.Point(814, 86);
-            this.lbl_Vehicle.Name = "lbl_Vehicle";
-            this.lbl_Vehicle.Size = new System.Drawing.Size(98, 19);
-            this.lbl_Vehicle.TabIndex = 69;
-            this.lbl_Vehicle.Text = "Vehicle Used:";
-            // 
-            // comboBox_Vehicle
-            // 
-            this.comboBox_Vehicle.Enabled = false;
-            this.comboBox_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Vehicle.FormattingEnabled = true;
-            this.comboBox_Vehicle.Items.AddRange(new object[] {
-            "Vehicle 1",
-            "Vehicle 2",
-            "Vehicle 3"});
-            this.comboBox_Vehicle.Location = new System.Drawing.Point(918, 83);
-            this.comboBox_Vehicle.Name = "comboBox_Vehicle";
-            this.comboBox_Vehicle.Size = new System.Drawing.Size(173, 27);
-            this.comboBox_Vehicle.TabIndex = 70;
+            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(631, 196);
+            this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
+            this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(154, 27);
+            this.txtbox_OrderNumberEdit.TabIndex = 42;
             // 
             // MainPage
             // 
@@ -1948,11 +2019,11 @@
             this.Load += new System.EventHandler(this.AddCustomer_Load);
             tab_CreateOrder.ResumeLayout(false);
             tab_CreateOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -2094,7 +2165,7 @@
         private System.Windows.Forms.PictureBox picBox_Status;
         private System.Windows.Forms.Label lbl_OrderStatus;
         private System.Windows.Forms.Label lbl_OrderSearch;
-        private System.Windows.Forms.TextBox OrderSearchBox;
+        private System.Windows.Forms.TextBox txtbox_OrderSearchBox;
         private System.Windows.Forms.TextBox txtbox_InvoiceIdEdit;
         private System.Windows.Forms.Label lbl_InvoiceIdEdit;
         private System.Windows.Forms.Label lbl_DeliveryDateEdit;
@@ -2102,7 +2173,6 @@
         private System.Windows.Forms.Label lbl_PickupDateEdit;
         private System.Windows.Forms.TextBox txtboxCustomerIdEdit;
         private System.Windows.Forms.Label lbl_CustomerIdEdit;
-        private System.Windows.Forms.TextBox txtbox_OrderStatusEdit;
         private System.Windows.Forms.Label lbl_OrderStatusEdit;
         private System.Windows.Forms.TextBox txtbox_PickupAddressEdit;
         private System.Windows.Forms.Label lbl_PickupAddressEdit;
@@ -2135,5 +2205,10 @@
         private System.Windows.Forms.RadioButton radButt_Yes;
         private System.Windows.Forms.ComboBox comboBox_Vehicle;
         private System.Windows.Forms.Label lbl_Vehicle;
+        private System.Windows.Forms.ComboBox combobox_OrderStatusEdit;
+        private System.Windows.Forms.Button btn_SaveOrderEdit;
+        private System.Windows.Forms.Button btn_EditOrder;
+        private System.Windows.Forms.TextBox txtbox_OrderNumberEdit;
+        private System.Windows.Forms.Label lbl_OrderNumberEdit;
     }
 }

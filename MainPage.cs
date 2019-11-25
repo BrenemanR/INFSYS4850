@@ -502,9 +502,10 @@ namespace WindowsFormsApp3
             iNVOICEBindingSource.RemoveSort();
             iNVOICEBindingSource.MoveLast();
 
+            btn_SaveOrder.Enabled = true;
             btn_CreateOrder.Enabled = false;
             combobox_CustomerIDZ.Enabled = true;
-            BookDatePicker.Enabled = true;
+            BookDatePicker.Enabled = false;
             PickUpDatePicker.Enabled = true;
             DropOffDatePicker.Enabled = true;
             picBox_Status.Enabled = true;
@@ -577,10 +578,10 @@ namespace WindowsFormsApp3
             txtbox_State.Text = "";
             txtbox_Zip.Text = "";
             */
-            
-            BookDatePicker.Text = "";
-            PickUpDatePicker.Text = "";
-            DropOffDatePicker.Text = "";
+
+            BookDatePicker.Value = DateTime.Today;
+            PickUpDatePicker.Value = DateTime.Today;
+            DropOffDatePicker.Value = DateTime.Today;
 
             txtbox_PickupAddress.Text = "";
             txtbox_PickupCity.Text = "";
@@ -591,6 +592,9 @@ namespace WindowsFormsApp3
             txtbox_DeliveryCity.Text = "";
             txtbox_DeliveryState.Text = "";
             txtbox_DeliveryZip.Text = "";
+
+            comboBox_Status.Text = "";
+            picBox_Status.Image = null;
 
 
 
@@ -615,7 +619,10 @@ namespace WindowsFormsApp3
             comboBox_Status.Enabled = false;
             txtboxrch_Description.Enabled = false;
             txtboxrch_SpecialInstructions.Enabled = false;
-            
+            btn_SaveOrder.Enabled = false;
+
+            txtbox_Invoice.Text = "";
+
         }
 
         
@@ -704,32 +711,10 @@ namespace WindowsFormsApp3
 
         private void OrderSearchBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*
-             if (e.KeyChar == (char)13)
-            {
-                if (string.IsNullOrEmpty(SearchBox.Text))
-                {
-                    this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
-                    cUSTOMERBindingSource.DataSource = this.appData.CUSTOMER;
-                    //dataGridView1.DataSource = cUSTOMERBindingSource;
-                }
-                else
-                {
-                    //Add the other search fields once we know everything is working.
-                    var query = from o in this.appData.CUSTOMER
-                                where o.CUST_FNAME.Contains(SearchBox.Text) || o.CUST_LNAME.Contains(SearchBox.Text) || o.CUST_PHONE == SearchBox.Text || o.CUST_EMAIL == SearchBox.Text || o.CUST_ADDRESS.Contains(SearchBox.Text)
-                                || o.CUST_CITY.Contains(SearchBox.Text) || o.CUST_COMPANY.Contains(SearchBox.Text) || o.CUST_STATE.Contains(SearchBox.Text) || o.CUST_ZIP.Equals(SearchBox.Text)
-                                select o;
-                    cUSTOMERBindingSource.DataSource = query.ToList();
-                    //dataGridView1.DataSource = query.ToList();
-                }
-
-            } 
-            */
-
+            
             if (e.KeyChar == (char)13)
             {
-                if (string.IsNullOrEmpty(OrderSearchBox.Text))
+                if (string.IsNullOrEmpty(txtbox_OrderSearchBox.Text))
                 {
                     this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
                     iNVOICEBindingSource.DataSource = this.appData.INVOICE;
@@ -739,16 +724,16 @@ namespace WindowsFormsApp3
                 else
                 {
                     var query = from r in this.appData.INVOICE
-                                where r.INV_ID.Equals(OrderSearchBox.Text) ||
-                                r.BOOK_DATE.Equals(OrderSearchBox.Text) ||
-                                r.PICKUP_DATE.Equals(OrderSearchBox.Text) ||
-                                r.DROPOFF_DATE.Equals(OrderSearchBox.Text) ||
-                                r.CUST_ID.Equals(OrderSearchBox.Text) ||
-                                r.ORDER_STATUS.Contains(OrderSearchBox.Text) ||
-                                r.PICKUP_ADDRESS.Contains(OrderSearchBox.Text) || r.PICKUP_CITY.Contains(OrderSearchBox.Text) || r.PICKUP_STATE.Contains(OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(SearchBox.Text) ||
-                                r.DELIVERY_ADDRESS.Contains(OrderSearchBox.Text) || r.DELIVERY_CITY.Contains(OrderSearchBox.Text) || r.DELIVERY_STATE.Contains(OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(SearchBox.Text) ||
-                                r.SPECIAL_INSTRUCTIONS.Equals(OrderSearchBox.Text) || 
-                                r.DESCRIPTION.Equals(OrderSearchBox.Text)
+                                where r.INV_ID.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.BOOK_DATE.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.PICKUP_DATE.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.DROPOFF_DATE.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.CUST_ID.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.ORDER_STATUS.Contains(txtbox_OrderSearchBox.Text) ||
+                                r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_CITY.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(SearchBox.Text) ||
+                                r.DELIVERY_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(SearchBox.Text) ||
+                                r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text) || 
+                                r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text)
                                 select r;
                     iNVOICEBindingSource.DataSource = query.ToList();
                 }
@@ -800,6 +785,53 @@ namespace WindowsFormsApp3
         private void radButt_No_CheckedChanged(object sender, EventArgs e)
         {
             //radButt_Yes.Checked = false;
+        }
+
+        private void btn_EditOrder_Click(object sender, EventArgs e)
+        {
+            txtbox_InvoiceIdEdit.Enabled = false;
+            dateTimePicker_BookingDateEdit.Enabled = false;
+            dateTimePicker_PickUpDateEdit.Enabled = true;
+            dateTimePicker_DeliveryDateEdit.Enabled = true;
+            combobox_OrderStatusEdit.Enabled = true;
+            txtbox_PickupAddressEdit.Enabled = true;
+            txtbox_PickupCityEdit.Enabled = true;
+            txtbox_PickupStateEdit.Enabled = true;
+            txtbox_PickUpZipEdit.Enabled = true;
+            txtbox_DeliveryAddressEdit.Enabled = true;
+            txtbox_DeliveryCityEdit.Enabled = true;
+            txtbox_DeliveryStateEdit.Enabled = true;
+            txtbox_DeliveryZipEdit.Enabled = true;
+            txtboxrch_DescriptionEdit.Enabled = true;
+            txtboxrch_SpecailInstructionsEdit.Enabled = true;
+
+            txtbox_OrderSearchBox.Enabled = false;
+            btn_SaveOrderEdit.Enabled = true;
+            btn_EditOrder.Enabled = false;
+        }
+
+        private void btn_SaveOrderEdit_Click(object sender, EventArgs e)
+        {
+            iNVOICEBindingSource.EndEdit();
+            iNVOICETableAdapter.Update(this.appData.INVOICE);
+
+            dateTimePicker_BookingDateEdit.Enabled = false;
+            dateTimePicker_PickUpDateEdit.Enabled = false;
+            dateTimePicker_DeliveryDateEdit.Enabled = false;
+            combobox_OrderStatusEdit.Enabled = false;
+            txtbox_PickupAddressEdit.Enabled = false;
+            txtbox_PickupCityEdit.Enabled = false;
+            txtbox_PickupStateEdit.Enabled = false;
+            txtbox_PickUpZipEdit.Enabled = false;
+            txtbox_DeliveryAddressEdit.Enabled = false;
+            txtbox_DeliveryCityEdit.Enabled = false;
+            txtbox_DeliveryStateEdit.Enabled = false;
+            txtbox_DeliveryZipEdit.Enabled = false;
+            txtboxrch_DescriptionEdit.Enabled = false;
+            txtboxrch_SpecailInstructionsEdit.Enabled = false;
+            txtbox_OrderSearchBox.Enabled = true;
+            btn_SaveOrderEdit.Enabled = false;
+            btn_EditOrder.Enabled = true;
         }
     }
 

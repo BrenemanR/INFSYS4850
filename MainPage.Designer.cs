@@ -216,7 +216,7 @@
             // 
             // tab_CreateOrder
             // 
-            tab_CreateOrder.BackColor = System.Drawing.SystemColors.Control;
+            tab_CreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             tab_CreateOrder.Controls.Add(this.comboBox_Vehicle);
             tab_CreateOrder.Controls.Add(this.lbl_Vehicle);
             tab_CreateOrder.Controls.Add(this.txtBox_InvoiceNumber);
@@ -257,6 +257,7 @@
             tab_CreateOrder.Controls.Add(this.combobox_CustomerIDZ);
             tab_CreateOrder.Controls.Add(this.panel2);
             tab_CreateOrder.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tab_CreateOrder.ForeColor = System.Drawing.SystemColors.ControlLight;
             tab_CreateOrder.Location = new System.Drawing.Point(4, 28);
             tab_CreateOrder.Name = "tab_CreateOrder";
             tab_CreateOrder.Padding = new System.Windows.Forms.Padding(3);
@@ -266,6 +267,7 @@
             // 
             // comboBox_Vehicle
             // 
+            this.comboBox_Vehicle.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.comboBox_Vehicle.Enabled = false;
             this.comboBox_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Vehicle.FormattingEnabled = true;
@@ -290,6 +292,7 @@
             // 
             // txtBox_InvoiceNumber
             // 
+            this.txtBox_InvoiceNumber.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtBox_InvoiceNumber.Enabled = false;
             this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,6 +323,7 @@
             // 
             // comboBox_Status
             // 
+            this.comboBox_Status.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.comboBox_Status.Enabled = false;
             this.comboBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Status.FormattingEnabled = true;
@@ -337,7 +341,7 @@
             // 
             // picBox_Status
             // 
-            this.picBox_Status.BackColor = System.Drawing.SystemColors.Window;
+            this.picBox_Status.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.picBox_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBox_Status.Enabled = false;
             this.picBox_Status.Location = new System.Drawing.Point(392, 372);
@@ -369,6 +373,7 @@
             // txtboxrch_Description
             // 
             this.txtboxrch_Description.AcceptsTab = true;
+            this.txtboxrch_Description.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtboxrch_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtboxrch_Description.Enabled = false;
             this.txtboxrch_Description.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -420,6 +425,7 @@
             // 
             // txtbox_DeliveryZip
             // 
+            this.txtbox_DeliveryZip.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_DeliveryZip.Enabled = false;
             this.txtbox_DeliveryZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryZip.Location = new System.Drawing.Point(127, 160);
@@ -439,6 +445,7 @@
             // 
             // txtbox_DeliveryState
             // 
+            this.txtbox_DeliveryState.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_DeliveryState.Enabled = false;
             this.txtbox_DeliveryState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryState.Location = new System.Drawing.Point(127, 128);
@@ -458,6 +465,7 @@
             // 
             // txtbox_DeliveryCity
             // 
+            this.txtbox_DeliveryCity.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_DeliveryCity.Enabled = false;
             this.txtbox_DeliveryCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryCity.Location = new System.Drawing.Point(127, 96);
@@ -477,6 +485,7 @@
             // 
             // txtbox_DeliveryAddress
             // 
+            this.txtbox_DeliveryAddress.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_DeliveryAddress.Enabled = false;
             this.txtbox_DeliveryAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryAddress.Location = new System.Drawing.Point(127, 66);
@@ -598,6 +607,7 @@
             // 
             // txtboxrch_SpecialInstructions
             // 
+            this.txtboxrch_SpecialInstructions.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtboxrch_SpecialInstructions.Enabled = false;
             this.txtboxrch_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(571, 328);
@@ -608,7 +618,7 @@
             // 
             // txtbox_Invoice
             // 
-            this.txtbox_Invoice.BackColor = System.Drawing.Color.White;
+            this.txtbox_Invoice.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_Invoice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_Invoice.Enabled = false;
             this.txtbox_Invoice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -620,6 +630,7 @@
             // 
             // txtbox_Company
             // 
+            this.txtbox_Company.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_Company.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
             this.txtbox_Company.Enabled = false;
             this.txtbox_Company.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -635,6 +646,7 @@
             // 
             // txtbox_Email
             // 
+            this.txtbox_Email.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.txtbox_Email.Enabled = false;
             this.txtbox_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -645,6 +657,7 @@
             // 
             // txtbox_Phone
             // 
+            this.txtbox_Phone.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_Phone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
             this.txtbox_Phone.Enabled = false;
             this.txtbox_Phone.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -655,6 +668,7 @@
             // 
             // txtbox_Zip
             // 
+            this.txtbox_Zip.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_Zip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.txtbox_Zip.Enabled = false;
             this.txtbox_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -665,6 +679,7 @@
             // 
             // txtbox_State
             // 
+            this.txtbox_State.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_State.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
             this.txtbox_State.Enabled = false;
             this.txtbox_State.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -675,6 +690,7 @@
             // 
             // txtbox_City
             // 
+            this.txtbox_City.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_City.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
             this.txtbox_City.Enabled = false;
             this.txtbox_City.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -685,6 +701,7 @@
             // 
             // txtbox_Address
             // 
+            this.txtbox_Address.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_Address.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
             this.txtbox_Address.Enabled = false;
             this.txtbox_Address.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -788,6 +805,7 @@
             // 
             this.combobox_CustomerIDZ.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combobox_CustomerIDZ.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combobox_CustomerIDZ.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.combobox_CustomerIDZ.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cUSTOMERBindingSource, "CUST_ID", true));
             this.combobox_CustomerIDZ.DataSource = this.cUSTOMERBindingSource;
             this.combobox_CustomerIDZ.DisplayMember = "CUST_LNAME";
@@ -831,6 +849,7 @@
             // 
             // txtbox_PickupAddress
             // 
+            this.txtbox_PickupAddress.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_PickupAddress.Enabled = false;
             this.txtbox_PickupAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupAddress.Location = new System.Drawing.Point(117, 61);
@@ -840,6 +859,7 @@
             // 
             // txtbox_PickupCity
             // 
+            this.txtbox_PickupCity.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_PickupCity.Enabled = false;
             this.txtbox_PickupCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupCity.Location = new System.Drawing.Point(117, 94);
@@ -849,6 +869,7 @@
             // 
             // txtbox_PickupState
             // 
+            this.txtbox_PickupState.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_PickupState.Enabled = false;
             this.txtbox_PickupState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupState.Location = new System.Drawing.Point(117, 128);
@@ -858,6 +879,7 @@
             // 
             // txtbox_PickupZip
             // 
+            this.txtbox_PickupZip.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.txtbox_PickupZip.Enabled = false;
             this.txtbox_PickupZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupZip.Location = new System.Drawing.Point(117, 161);
@@ -1221,6 +1243,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cUSTIDDataGridViewTextBoxColumn,

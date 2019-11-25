@@ -73,7 +73,7 @@ namespace WindowsFormsApp3
             btnCancel.Enabled = true;
             SearchBox.Enabled = false;
             btnSave.Enabled = true;
-            radButt_No.Checked = true;
+            //radButt_No.Checked = true;
             try
             {
                 {
@@ -241,6 +241,8 @@ namespace WindowsFormsApp3
 
                 if (!noFName && !noLName && !noPhone && !noEmail && !noCompany && !noAddress && !noCity && !noState && !noZip)
                 {
+
+                   
                     cUSTOMERBindingSource.EndEdit();
                     cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
                     lbl_RequiredField.Visible = false;
@@ -252,6 +254,7 @@ namespace WindowsFormsApp3
                     isSaved = true;
                     btnSave.Enabled = false;
                     btnCancel.Enabled = false;
+                    
                         
                     //Turns all of the text back to black after a successful submission.
                     FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
@@ -534,6 +537,8 @@ namespace WindowsFormsApp3
             panel3.Enabled = true;
             checkBox_CopyDropoffInformation.Enabled = true;
             checkBox_CopyPickupInformation.Enabled = true;
+            txtbox_OrderNum.Enabled = true;
+            comboBox_Vehicle.Enabled = true;
 
 
             btn_SaveOrder.Enabled = true;
@@ -547,8 +552,9 @@ namespace WindowsFormsApp3
             
             iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, comboBox_Status.Text, 
                 txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
-                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text);
+                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text, txtbox_OrderNum.Text, comboBox_Vehicle.Text);
 
+           
             this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
             iNVOICETableAdapter.Update(this.appData.INVOICE);
 
@@ -620,8 +626,11 @@ namespace WindowsFormsApp3
             txtboxrch_Description.Enabled = false;
             txtboxrch_SpecialInstructions.Enabled = false;
             btn_SaveOrder.Enabled = false;
+            txtbox_OrderNum.Enabled = false;
+            comboBox_Vehicle.Enabled = false;
 
-            txtbox_Invoice.Text = "";
+            txtbox_OrderNum.Text = "";
+            comboBox_Vehicle.Text = "";
 
         }
 

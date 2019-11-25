@@ -999,7 +999,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
             this.label3.Location = new System.Drawing.Point(13, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 19);
@@ -1048,7 +1048,7 @@
             // 
             this.ZipLabel.AutoSize = true;
             this.ZipLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZipLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.ZipLabel.ForeColor = System.Drawing.Color.LightGray;
             this.ZipLabel.Location = new System.Drawing.Point(13, 236);
             this.ZipLabel.Name = "ZipLabel";
             this.ZipLabel.Size = new System.Drawing.Size(68, 19);
@@ -1070,7 +1070,7 @@
             // 
             this.CompanyLabel.AutoSize = true;
             this.CompanyLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompanyLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
             this.CompanyLabel.Location = new System.Drawing.Point(13, 124);
             this.CompanyLabel.Name = "CompanyLabel";
             this.CompanyLabel.Size = new System.Drawing.Size(73, 19);
@@ -1091,7 +1091,7 @@
             // 
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StateLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.StateLabel.ForeColor = System.Drawing.Color.LightGray;
             this.StateLabel.Location = new System.Drawing.Point(13, 208);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(45, 19);
@@ -1112,7 +1112,7 @@
             // 
             this.CityLabel.AutoSize = true;
             this.CityLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CityLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.CityLabel.ForeColor = System.Drawing.Color.LightGray;
             this.CityLabel.Location = new System.Drawing.Point(13, 180);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(35, 19);
@@ -1133,7 +1133,7 @@
             // 
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddressLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.AddressLabel.ForeColor = System.Drawing.Color.LightGray;
             this.AddressLabel.Location = new System.Drawing.Point(13, 152);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(63, 19);
@@ -1154,7 +1154,7 @@
             // 
             this.FirstNameLabel.AutoSize = true;
             this.FirstNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
             this.FirstNameLabel.Location = new System.Drawing.Point(13, 12);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(82, 19);
@@ -1176,7 +1176,7 @@
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.EmailLabel.ForeColor = System.Drawing.Color.LightGray;
             this.EmailLabel.Location = new System.Drawing.Point(13, 96);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(46, 19);
@@ -1197,7 +1197,7 @@
             // 
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
             this.PhoneLabel.Location = new System.Drawing.Point(13, 68);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(65, 19);
@@ -1219,7 +1219,7 @@
             // 
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
             this.LastNameLabel.Location = new System.Drawing.Point(13, 40);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(80, 19);
@@ -1371,7 +1371,7 @@
             this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEdit.FlatAppearance.BorderSize = 5;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Location = new System.Drawing.Point(45, 388);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(184, 46);
@@ -1386,7 +1386,7 @@
             this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnNew.FlatAppearance.BorderSize = 5;
             this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Location = new System.Drawing.Point(45, 335);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(184, 46);
@@ -1401,7 +1401,7 @@
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSave.FlatAppearance.BorderSize = 5;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(45, 440);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(184, 46);
@@ -1416,7 +1416,7 @@
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.FlatAppearance.BorderSize = 5;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(45, 492);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 44);

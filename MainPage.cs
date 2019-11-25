@@ -120,15 +120,15 @@ namespace WindowsFormsApp3
             cUSTOMERBindingSource.CancelEdit();
 
             //Resets all of the text to black in case the user originally entered in mistakes.
-            FirstNameLabel.ForeColor = System.Drawing.Color.Black;
-            LastNameLabel.ForeColor = System.Drawing.Color.Black;
-            PhoneLabel.ForeColor = System.Drawing.Color.Black;
-            EmailLabel.ForeColor = System.Drawing.Color.Black;
-            CompanyLabel.ForeColor = System.Drawing.Color.Black;
-            AddressLabel.ForeColor = System.Drawing.Color.Black;
-            CityLabel.ForeColor = System.Drawing.Color.Black;
-            StateLabel.ForeColor = System.Drawing.Color.Black;
-            ZipLabel.ForeColor = System.Drawing.Color.Black;
+            FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
+            LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
+            PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
+            EmailLabel.ForeColor = System.Drawing.Color.LightGray;
+            CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
+            AddressLabel.ForeColor = System.Drawing.Color.LightGray;
+            CityLabel.ForeColor = System.Drawing.Color.LightGray;
+            StateLabel.ForeColor = System.Drawing.Color.LightGray;
+            ZipLabel.ForeColor = System.Drawing.Color.LightGray;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -136,15 +136,15 @@ namespace WindowsFormsApp3
             bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false;
             try
             {
-                FirstNameLabel.ForeColor = System.Drawing.Color.Black;
-                LastNameLabel.ForeColor = System.Drawing.Color.Black;
-                PhoneLabel.ForeColor = System.Drawing.Color.Black;
-                EmailLabel.ForeColor = System.Drawing.Color.Black;
-                CompanyLabel.ForeColor = System.Drawing.Color.Black;
-                AddressLabel.ForeColor = System.Drawing.Color.Black;
-                CityLabel.ForeColor = System.Drawing.Color.Black;
-                StateLabel.ForeColor = System.Drawing.Color.Black;
-                ZipLabel.ForeColor = System.Drawing.Color.Black;
+                FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
+                EmailLabel.ForeColor = System.Drawing.Color.LightGray;
+                CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
+                AddressLabel.ForeColor = System.Drawing.Color.LightGray;
+                CityLabel.ForeColor = System.Drawing.Color.LightGray;
+                StateLabel.ForeColor = System.Drawing.Color.LightGray;
+                ZipLabel.ForeColor = System.Drawing.Color.LightGray;
                 if (string.IsNullOrEmpty(FirstNameBox.Text))
                 {
                     //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -254,15 +254,15 @@ namespace WindowsFormsApp3
                     btnCancel.Enabled = false;
                         
                     //Turns all of the text back to black after a successful submission.
-                    FirstNameLabel.ForeColor = System.Drawing.Color.Black;
-                    LastNameLabel.ForeColor = System.Drawing.Color.Black;
-                    PhoneLabel.ForeColor = System.Drawing.Color.Black;
-                    EmailLabel.ForeColor = System.Drawing.Color.Black;
-                    CompanyLabel.ForeColor = System.Drawing.Color.Black;
-                    AddressLabel.ForeColor = System.Drawing.Color.Black;
-                    CityLabel.ForeColor = System.Drawing.Color.Black;
-                    StateLabel.ForeColor = System.Drawing.Color.Black;
-                    ZipLabel.ForeColor = System.Drawing.Color.Black;
+                    FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                    LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                    PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
+                    EmailLabel.ForeColor = System.Drawing.Color.LightGray;
+                    CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
+                    AddressLabel.ForeColor = System.Drawing.Color.LightGray;
+                    CityLabel.ForeColor = System.Drawing.Color.LightGray;
+                    StateLabel.ForeColor = System.Drawing.Color.LightGray;
+                    ZipLabel.ForeColor = System.Drawing.Color.LightGray;
                 }
 
             }

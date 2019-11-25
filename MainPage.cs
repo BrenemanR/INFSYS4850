@@ -34,6 +34,7 @@ namespace WindowsFormsApp3
             {
                 if (string.IsNullOrEmpty(SearchBox.Text))
                 {
+                    
                     this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
                     cUSTOMERBindingSource.DataSource = this.appData.CUSTOMER;
                     //dataGridView1.DataSource = cUSTOMERBindingSource;
@@ -43,7 +44,8 @@ namespace WindowsFormsApp3
                     //Add the other search fields once we know everything is working.
                     var query = from o in this.appData.CUSTOMER
                                 where o.CUST_FNAME.Contains(SearchBox.Text) || o.CUST_LNAME.Contains(SearchBox.Text) || o.CUST_PHONE == SearchBox.Text || o.CUST_EMAIL == SearchBox.Text || o.CUST_ADDRESS.Contains(SearchBox.Text)
-                                || o.CUST_CITY.Contains(SearchBox.Text) || o.CUST_COMPANY.Contains(SearchBox.Text) || o.CUST_STATE.Contains(SearchBox.Text) || o.CUST_ZIP.Equals(SearchBox.Text)
+                                || o.CUST_CITY.Contains(SearchBox.Text) || o.CUST_COMPANY.Contains(SearchBox.Text) || o.CUST_STATE.Contains(SearchBox.Text) || o.CUST_ZIP.Equals(SearchBox.Text) ||
+                                o.BROKER.Equals(SearchBox.Text)
                                 select o;
                     cUSTOMERBindingSource.DataSource = query.ToList();
                     //dataGridView1.DataSource = query.ToList();
@@ -52,14 +54,14 @@ namespace WindowsFormsApp3
             }
         }
 
-            private void dataGridView_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Delete)
+            /*private void dataGridView_KeyDown(object sender, KeyEventArgs e)
             {
-                if (MessageBox.Show("Are you sure you want to delete this record? Record will not be deleted unitl the save button is pressed.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    cUSTOMERBindingSource.RemoveCurrent();
-            }
-        }
+                if (e.KeyCode == Keys.Delete)
+                {
+                    if (MessageBox.Show("Are you sure you want to delete this record? Record will not be deleted unitl the save button is pressed.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        cUSTOMERBindingSource.RemoveCurrent();
+                }
+            }*/
 
         private void btnNew_Click(object sender, EventArgs e)
         {
@@ -73,6 +75,7 @@ namespace WindowsFormsApp3
             btnCancel.Enabled = true;
             SearchBox.Enabled = false;
             btnSave.Enabled = true;
+            
             //radButt_No.Checked = true;
             try
             {
@@ -84,7 +87,10 @@ namespace WindowsFormsApp3
                     this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
                     cUSTOMERBindingSource.RemoveSort(); //Resorts The table so that the new record is properly added.
                     cUSTOMERBindingSource.MoveLast();
+                    comboBox_Broker.SelectedItem = "NO";
+                    //comboBox_Broker.SelectedIndex = 1;
                     isSaved = false;
+                    
                 }
 
             }
@@ -93,6 +99,7 @@ namespace WindowsFormsApp3
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cUSTOMERBindingSource.ResetBindings(false);
+                
             }
            
         }
@@ -245,6 +252,9 @@ namespace WindowsFormsApp3
                    
                     cUSTOMERBindingSource.EndEdit();
                     cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
+
+                    
+                    
                     lbl_RequiredField.Visible = false;
                     btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                     btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
@@ -266,6 +276,7 @@ namespace WindowsFormsApp3
                     CityLabel.ForeColor = System.Drawing.Color.LightGray;
                     StateLabel.ForeColor = System.Drawing.Color.LightGray;
                     ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+                    
                 }
 
             }
@@ -287,6 +298,7 @@ namespace WindowsFormsApp3
             // TODO: This line of code loads data into the 'appData.CUSTOMER' table. You can move, or remove it, as needed.
             this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
             cUSTOMERBindingSource.DataSource = this.appData.CUSTOMER;
+
            
 
         }
@@ -738,11 +750,13 @@ namespace WindowsFormsApp3
                                 r.PICKUP_DATE.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.DROPOFF_DATE.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.CUST_ID.Equals(txtbox_OrderSearchBox.Text) ||
-                                r.ORDER_STATUS.Contains(txtbox_OrderSearchBox.Text) ||
-                                r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_CITY.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(SearchBox.Text) ||
-                                r.DELIVERY_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(SearchBox.Text) ||
-                                r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text) || 
-                                r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text)
+                                r.ORDER_STATUS.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_CITY.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.DELIVERY_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.VEHICLE.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.ORDER_NUM.Equals(txtbox_OrderSearchBox.Text)
                                 select r;
                     iNVOICEBindingSource.DataSource = query.ToList();
                 }
@@ -803,6 +817,8 @@ namespace WindowsFormsApp3
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
             combobox_OrderStatusEdit.Enabled = true;
+            txtbox_OrderNumberEdit.Enabled = true;
+            comboBox_VehicleEdit.Enabled = true;
             txtbox_PickupAddressEdit.Enabled = true;
             txtbox_PickupCityEdit.Enabled = true;
             txtbox_PickupStateEdit.Enabled = true;
@@ -828,6 +844,7 @@ namespace WindowsFormsApp3
             dateTimePicker_PickUpDateEdit.Enabled = false;
             dateTimePicker_DeliveryDateEdit.Enabled = false;
             combobox_OrderStatusEdit.Enabled = false;
+            txtbox_OrderNumberEdit.Enabled = false;
             txtbox_PickupAddressEdit.Enabled = false;
             txtbox_PickupCityEdit.Enabled = false;
             txtbox_PickupStateEdit.Enabled = false;
@@ -838,8 +855,9 @@ namespace WindowsFormsApp3
             txtbox_DeliveryZipEdit.Enabled = false;
             txtboxrch_DescriptionEdit.Enabled = false;
             txtboxrch_SpecailInstructionsEdit.Enabled = false;
-            txtbox_OrderSearchBox.Enabled = true;
             btn_SaveOrderEdit.Enabled = false;
+            comboBox_VehicleEdit.Enabled = false;
+            txtbox_OrderSearchBox.Enabled = true;
             btn_EditOrder.Enabled = true;
         }
     }

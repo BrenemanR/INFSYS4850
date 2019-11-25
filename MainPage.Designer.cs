@@ -118,6 +118,17 @@
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.LastNameBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BROKER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
@@ -125,6 +136,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.tab_Help = new System.Windows.Forms.TabPage();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.comboBox_VehicleEdit = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtbox_OrderNumberEdit = new System.Windows.Forms.TextBox();
             this.lbl_OrderNumberEdit = new System.Windows.Forms.Label();
             this.combobox_OrderStatusEdit = new System.Windows.Forms.ComboBox();
@@ -165,6 +178,8 @@
             this.txtbox_OrderSearchBox = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ORDER_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -185,17 +200,6 @@
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
-            this.cUSTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BROKER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -298,10 +302,11 @@
             this.txtBox_InvoiceNumber.Enabled = false;
             this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_InvoiceNumber.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(951, 6);
+            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(951, 9);
             this.txtBox_InvoiceNumber.Name = "txtBox_InvoiceNumber";
             this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(140, 27);
             this.txtBox_InvoiceNumber.TabIndex = 66;
+            this.txtBox_InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // iNVOICEBindingSource
             // 
@@ -627,7 +632,7 @@
             // txtbox_OrderNum
             // 
             this.txtbox_OrderNum.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtbox_OrderNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
+            this.txtbox_OrderNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNum.Enabled = false;
             this.txtbox_OrderNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_OrderNum.ForeColor = System.Drawing.SystemColors.Window;
@@ -1017,7 +1022,7 @@
             // 
             // comboBox_Broker
             // 
-            this.comboBox_Broker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "BROKER", true));
+            this.comboBox_Broker.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.cUSTOMERBindingSource, "BROKER", true));
             this.comboBox_Broker.FormattingEnabled = true;
             this.comboBox_Broker.Items.AddRange(new object[] {
             "YES",
@@ -1269,7 +1274,103 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(820, 496);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
+            // 
+            // cUSTIDDataGridViewTextBoxColumn
+            // 
+            this.cUSTIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
+            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
+            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTIDDataGridViewTextBoxColumn.Width = 48;
+            // 
+            // BROKER
+            // 
+            this.BROKER.DataPropertyName = "BROKER";
+            this.BROKER.HeaderText = "BROKER";
+            this.BROKER.Name = "BROKER";
+            this.BROKER.ReadOnly = true;
+            // 
+            // cUSTFNAMEDataGridViewTextBoxColumn
+            // 
+            this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // cUSTLNAMEDataGridViewTextBoxColumn
+            // 
+            this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // cUSTEMAILDataGridViewTextBoxColumn
+            // 
+            this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
+            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
+            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // cUSTPHONEDataGridViewTextBoxColumn
+            // 
+            this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
+            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
+            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // cUSTCOMPANYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // cUSTADDRESSDataGridViewTextBoxColumn
+            // 
+            this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // cUSTCITYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
+            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
+            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // cUSTSTATEDataGridViewTextBoxColumn
+            // 
+            this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
+            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
+            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
+            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // cUSTZIPDataGridViewTextBoxColumn
+            // 
+            this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
+            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
+            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
+            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
             // 
             // label1
             // 
@@ -1356,6 +1457,8 @@
             // 
             // tab_SearchOrders
             // 
+            this.tab_SearchOrders.Controls.Add(this.comboBox_VehicleEdit);
+            this.tab_SearchOrders.Controls.Add(this.label4);
             this.tab_SearchOrders.Controls.Add(this.txtbox_OrderNumberEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_OrderNumberEdit);
             this.tab_SearchOrders.Controls.Add(this.combobox_OrderStatusEdit);
@@ -1403,9 +1506,38 @@
             this.tab_SearchOrders.Text = "Search Orders";
             this.tab_SearchOrders.UseVisualStyleBackColor = true;
             // 
+            // comboBox_VehicleEdit
+            // 
+            this.comboBox_VehicleEdit.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.comboBox_VehicleEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "VEHICLE", true));
+            this.comboBox_VehicleEdit.Enabled = false;
+            this.comboBox_VehicleEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_VehicleEdit.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox_VehicleEdit.FormattingEnabled = true;
+            this.comboBox_VehicleEdit.Items.AddRange(new object[] {
+            "Vehicle 1",
+            "Vehicle 2",
+            "Vehicle 3"});
+            this.comboBox_VehicleEdit.Location = new System.Drawing.Point(172, 221);
+            this.comboBox_VehicleEdit.Name = "comboBox_VehicleEdit";
+            this.comboBox_VehicleEdit.Size = new System.Drawing.Size(173, 27);
+            this.comboBox_VehicleEdit.TabIndex = 72;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(68, 224);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.TabIndex = 71;
+            this.label4.Text = "Vehicle Used:";
+            // 
             // txtbox_OrderNumberEdit
             // 
-            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(631, 196);
+            this.txtbox_OrderNumberEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
+            this.txtbox_OrderNumberEdit.Enabled = false;
+            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(859, 221);
             this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
             this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(154, 27);
             this.txtbox_OrderNumberEdit.TabIndex = 42;
@@ -1413,7 +1545,7 @@
             // lbl_OrderNumberEdit
             // 
             this.lbl_OrderNumberEdit.AutoSize = true;
-            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(553, 195);
+            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(781, 220);
             this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
             this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(62, 19);
             this.lbl_OrderNumberEdit.TabIndex = 41;
@@ -1422,6 +1554,7 @@
             // combobox_OrderStatusEdit
             // 
             this.combobox_OrderStatusEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_STATUS", true));
+            this.combobox_OrderStatusEdit.Enabled = false;
             this.combobox_OrderStatusEdit.FormattingEnabled = true;
             this.combobox_OrderStatusEdit.Items.AddRange(new object[] {
             "Pending",
@@ -1731,15 +1864,15 @@
             // 
             this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_InvoiceIdEdit.Enabled = false;
-            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(913, 196);
+            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(859, 196);
             this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
-            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(154, 27);
             this.txtbox_InvoiceIdEdit.TabIndex = 4;
             // 
             // lbl_InvoiceIdEdit
             // 
             this.lbl_InvoiceIdEdit.AutoSize = true;
-            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(836, 199);
+            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(781, 196);
             this.lbl_InvoiceIdEdit.Name = "lbl_InvoiceIdEdit";
             this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(71, 19);
             this.lbl_InvoiceIdEdit.TabIndex = 3;
@@ -1770,6 +1903,8 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iNVIDDataGridViewTextBoxColumn,
+            this.VEHICLE,
+            this.ORDER_NUM,
             this.PICKUP_ADDRESS,
             this.PICKUP_CITY,
             this.PICKUP_STATE,
@@ -1798,6 +1933,20 @@
             this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
             this.iNVIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.iNVIDDataGridViewTextBoxColumn.Width = 48;
+            // 
+            // VEHICLE
+            // 
+            this.VEHICLE.DataPropertyName = "VEHICLE";
+            this.VEHICLE.HeaderText = "VEHICLE";
+            this.VEHICLE.Name = "VEHICLE";
+            this.VEHICLE.ReadOnly = true;
+            // 
+            // ORDER_NUM
+            // 
+            this.ORDER_NUM.DataPropertyName = "ORDER_NUM";
+            this.ORDER_NUM.HeaderText = "ORDER_NUM";
+            this.ORDER_NUM.Name = "ORDER_NUM";
+            this.ORDER_NUM.ReadOnly = true;
             // 
             // PICKUP_ADDRESS
             // 
@@ -1971,103 +2120,6 @@
             // 
             this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
             // 
-            // cUSTIDDataGridViewTextBoxColumn
-            // 
-            this.cUSTIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
-            this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
-            this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTIDDataGridViewTextBoxColumn.Width = 48;
-            // 
-            // BROKER
-            // 
-            this.BROKER.DataPropertyName = "BROKER";
-            this.BROKER.HeaderText = "BROKER";
-            this.BROKER.Name = "BROKER";
-            this.BROKER.ReadOnly = true;
-            // 
-            // cUSTFNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // cUSTLNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // cUSTEMAILDataGridViewTextBoxColumn
-            // 
-            this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
-            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
-            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // cUSTPHONEDataGridViewTextBoxColumn
-            // 
-            this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
-            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
-            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // cUSTCOMPANYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // cUSTADDRESSDataGridViewTextBoxColumn
-            // 
-            this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // cUSTCITYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
-            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
-            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // cUSTSTATEDataGridViewTextBoxColumn
-            // 
-            this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
-            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
-            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
-            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // cUSTZIPDataGridViewTextBoxColumn
-            // 
-            this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
-            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
-            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
-            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2203,20 +2255,6 @@
         private System.Windows.Forms.Label lbl_RequiredField;
         private System.Windows.Forms.Label lbl_Description;
         private System.Windows.Forms.RichTextBox txtboxrch_Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_ADDRESS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_CITY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_STATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_ZIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_ADDRESS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_CITY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_STATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_ZIP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bOOKDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pICKUPDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dROPOFFDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.PictureBox picBox_Status;
         private System.Windows.Forms.Label lbl_OrderStatus;
         private System.Windows.Forms.Label lbl_OrderSearch;
@@ -2275,5 +2313,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_NUM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_ADDRESS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_CITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_STATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_ZIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_ADDRESS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_CITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_STATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELIVERY_ZIP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bOOKDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pICKUPDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dROPOFFDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ComboBox comboBox_VehicleEdit;
+        private System.Windows.Forms.Label label4;
     }
 }

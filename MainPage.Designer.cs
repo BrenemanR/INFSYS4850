@@ -977,7 +977,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
             this.label3.Location = new System.Drawing.Point(13, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 19);
@@ -987,9 +987,11 @@
             // radButt_No
             // 
             this.radButt_No.AutoSize = true;
+            this.radButt_No.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radButt_No.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.radButt_No.Location = new System.Drawing.Point(202, 267);
             this.radButt_No.Name = "radButt_No";
-            this.radButt_No.Size = new System.Drawing.Size(45, 23);
+            this.radButt_No.Size = new System.Drawing.Size(47, 23);
             this.radButt_No.TabIndex = 23;
             this.radButt_No.Text = "No";
             this.radButt_No.UseVisualStyleBackColor = true;
@@ -998,9 +1000,11 @@
             // radButt_Yes
             // 
             this.radButt_Yes.AutoSize = true;
+            this.radButt_Yes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radButt_Yes.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.radButt_Yes.Location = new System.Drawing.Point(138, 267);
             this.radButt_Yes.Name = "radButt_Yes";
-            this.radButt_Yes.Size = new System.Drawing.Size(49, 23);
+            this.radButt_Yes.Size = new System.Drawing.Size(48, 23);
             this.radButt_Yes.TabIndex = 22;
             this.radButt_Yes.Text = "Yes";
             this.radButt_Yes.UseVisualStyleBackColor = true;
@@ -1340,10 +1344,11 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEdit.FlatAppearance.BorderSize = 5;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnEdit.Location = new System.Drawing.Point(45, 388);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(184, 46);
@@ -1354,10 +1359,11 @@
             // 
             // btnNew
             // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNew.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnNew.FlatAppearance.BorderSize = 5;
             this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnNew.Location = new System.Drawing.Point(45, 335);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(184, 46);
@@ -1368,10 +1374,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSave.FlatAppearance.BorderSize = 5;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnSave.Location = new System.Drawing.Point(45, 440);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(184, 46);
@@ -1382,10 +1389,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCancel.FlatAppearance.BorderSize = 5;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnCancel.Location = new System.Drawing.Point(45, 492);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 44);

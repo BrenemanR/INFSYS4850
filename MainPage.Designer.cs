@@ -136,6 +136,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.tab_Help = new System.Windows.Forms.TabPage();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.txtbox_OrderNumberEdit = new System.Windows.Forms.TextBox();
+            this.lbl_OrderNumberEdit = new System.Windows.Forms.Label();
+            this.combobox_OrderStatusEdit = new System.Windows.Forms.ComboBox();
+            this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
+            this.btn_EditOrder = new System.Windows.Forms.Button();
             this.dateTimePicker_DeliveryDateEdit = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_PickUpDateEdit = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_BookingDateEdit = new System.Windows.Forms.DateTimePicker();
@@ -191,11 +196,6 @@
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
-            this.btn_EditOrder = new System.Windows.Forms.Button();
-            this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
-            this.combobox_OrderStatusEdit = new System.Windows.Forms.ComboBox();
-            this.lbl_OrderNumberEdit = new System.Windows.Forms.Label();
-            this.txtbox_OrderNumberEdit = new System.Windows.Forms.TextBox();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -917,7 +917,7 @@
             // 
             // tab_ManageCustomers
             // 
-            this.tab_ManageCustomers.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tab_ManageCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tab_ManageCustomers.Controls.Add(this.SearchBox);
             this.tab_ManageCustomers.Controls.Add(this.panel1);
             this.tab_ManageCustomers.Controls.Add(this.dataGridView1);
@@ -935,6 +935,7 @@
             // 
             // SearchBox
             // 
+            this.SearchBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.SearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBox.Location = new System.Drawing.Point(346, 7);
             this.SearchBox.Name = "SearchBox";
@@ -1021,6 +1022,7 @@
             // 
             this.ZipLabel.AutoSize = true;
             this.ZipLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZipLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.ZipLabel.Location = new System.Drawing.Point(13, 236);
             this.ZipLabel.Name = "ZipLabel";
             this.ZipLabel.Size = new System.Drawing.Size(68, 19);
@@ -1029,6 +1031,7 @@
             // 
             // ZipBox
             // 
+            this.ZipBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ZipBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.ZipBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZipBox.Location = new System.Drawing.Point(101, 233);
@@ -1041,6 +1044,7 @@
             // 
             this.CompanyLabel.AutoSize = true;
             this.CompanyLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.CompanyLabel.Location = new System.Drawing.Point(13, 124);
             this.CompanyLabel.Name = "CompanyLabel";
             this.CompanyLabel.Size = new System.Drawing.Size(73, 19);
@@ -1049,6 +1053,7 @@
             // 
             // CompanyBox
             // 
+            this.CompanyBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.CompanyBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
             this.CompanyBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyBox.Location = new System.Drawing.Point(101, 121);
@@ -1060,6 +1065,7 @@
             // 
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StateLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.StateLabel.Location = new System.Drawing.Point(13, 208);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(45, 19);
@@ -1068,6 +1074,7 @@
             // 
             // StateBox
             // 
+            this.StateBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.StateBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
             this.StateBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StateBox.Location = new System.Drawing.Point(101, 205);
@@ -1079,6 +1086,7 @@
             // 
             this.CityLabel.AutoSize = true;
             this.CityLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.CityLabel.Location = new System.Drawing.Point(13, 180);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(35, 19);
@@ -1087,6 +1095,7 @@
             // 
             // CityBox
             // 
+            this.CityBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.CityBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
             this.CityBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityBox.Location = new System.Drawing.Point(101, 177);
@@ -1098,6 +1107,7 @@
             // 
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.AddressLabel.Location = new System.Drawing.Point(13, 152);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(63, 19);
@@ -1106,6 +1116,7 @@
             // 
             // AddressBox
             // 
+            this.AddressBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.AddressBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
             this.AddressBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressBox.Location = new System.Drawing.Point(101, 149);
@@ -1117,6 +1128,7 @@
             // 
             this.FirstNameLabel.AutoSize = true;
             this.FirstNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FirstNameLabel.Location = new System.Drawing.Point(13, 12);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(82, 19);
@@ -1125,6 +1137,7 @@
             // 
             // FirstNameBox
             // 
+            this.FirstNameBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FirstNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_FNAME", true));
             this.FirstNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstNameBox.Location = new System.Drawing.Point(101, 9);
@@ -1137,6 +1150,7 @@
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.EmailLabel.Location = new System.Drawing.Point(13, 96);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(46, 19);
@@ -1145,6 +1159,7 @@
             // 
             // EmailBox
             // 
+            this.EmailBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.EmailBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.EmailBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailBox.Location = new System.Drawing.Point(101, 93);
@@ -1156,6 +1171,7 @@
             // 
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.PhoneLabel.Location = new System.Drawing.Point(13, 68);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(65, 19);
@@ -1164,6 +1180,7 @@
             // 
             // PhoneNumberBox
             // 
+            this.PhoneNumberBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.PhoneNumberBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
             this.PhoneNumberBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneNumberBox.Location = new System.Drawing.Point(101, 65);
@@ -1176,6 +1193,7 @@
             // 
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.LastNameLabel.Location = new System.Drawing.Point(13, 40);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(80, 19);
@@ -1184,6 +1202,7 @@
             // 
             // LastNameBox
             // 
+            this.LastNameBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.LastNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_LNAME", true));
             this.LastNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastNameBox.Location = new System.Drawing.Point(101, 37);
@@ -1311,10 +1330,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(284, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 19);
+            this.label1.Size = new System.Drawing.Size(59, 19);
             this.label1.TabIndex = 17;
             this.label1.Text = "Search:";
             // 
@@ -1434,6 +1454,58 @@
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
             this.tab_SearchOrders.UseVisualStyleBackColor = true;
+            // 
+            // txtbox_OrderNumberEdit
+            // 
+            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(631, 196);
+            this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
+            this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(154, 27);
+            this.txtbox_OrderNumberEdit.TabIndex = 42;
+            // 
+            // lbl_OrderNumberEdit
+            // 
+            this.lbl_OrderNumberEdit.AutoSize = true;
+            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(553, 195);
+            this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
+            this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(62, 19);
+            this.lbl_OrderNumberEdit.TabIndex = 41;
+            this.lbl_OrderNumberEdit.Text = "Order #:";
+            // 
+            // combobox_OrderStatusEdit
+            // 
+            this.combobox_OrderStatusEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_STATUS", true));
+            this.combobox_OrderStatusEdit.FormattingEnabled = true;
+            this.combobox_OrderStatusEdit.Items.AddRange(new object[] {
+            "Pending",
+            "In Transit",
+            "Delayed",
+            "Complete",
+            "Cancelled"});
+            this.combobox_OrderStatusEdit.Location = new System.Drawing.Point(368, 195);
+            this.combobox_OrderStatusEdit.Name = "combobox_OrderStatusEdit";
+            this.combobox_OrderStatusEdit.Size = new System.Drawing.Size(121, 27);
+            this.combobox_OrderStatusEdit.TabIndex = 40;
+            // 
+            // btn_SaveOrderEdit
+            // 
+            this.btn_SaveOrderEdit.Enabled = false;
+            this.btn_SaveOrderEdit.Location = new System.Drawing.Point(198, 275);
+            this.btn_SaveOrderEdit.Name = "btn_SaveOrderEdit";
+            this.btn_SaveOrderEdit.Size = new System.Drawing.Size(147, 61);
+            this.btn_SaveOrderEdit.TabIndex = 39;
+            this.btn_SaveOrderEdit.Text = "Save Order";
+            this.btn_SaveOrderEdit.UseVisualStyleBackColor = true;
+            this.btn_SaveOrderEdit.Click += new System.EventHandler(this.btn_SaveOrderEdit_Click);
+            // 
+            // btn_EditOrder
+            // 
+            this.btn_EditOrder.Location = new System.Drawing.Point(45, 275);
+            this.btn_EditOrder.Name = "btn_EditOrder";
+            this.btn_EditOrder.Size = new System.Drawing.Size(147, 61);
+            this.btn_EditOrder.TabIndex = 38;
+            this.btn_EditOrder.Text = "Edit Order";
+            this.btn_EditOrder.UseVisualStyleBackColor = true;
+            this.btn_EditOrder.Click += new System.EventHandler(this.btn_EditOrder_Click);
             // 
             // dateTimePicker_DeliveryDateEdit
             // 
@@ -1912,11 +1984,11 @@
             // lbl_Home
             // 
             this.lbl_Home.AutoSize = true;
-            this.lbl_Home.Font = new System.Drawing.Font("Castellar", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.White;
             this.lbl_Home.Location = new System.Drawing.Point(132, 100);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(826, 58);
+            this.lbl_Home.Size = new System.Drawing.Size(554, 55);
             this.lbl_Home.TabIndex = 21;
             this.lbl_Home.Text = "Welcome to Virtual Adil!";
             // 
@@ -1950,58 +2022,6 @@
             // oRDERSTATUSTableAdapter
             // 
             this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_EditOrder
-            // 
-            this.btn_EditOrder.Location = new System.Drawing.Point(45, 275);
-            this.btn_EditOrder.Name = "btn_EditOrder";
-            this.btn_EditOrder.Size = new System.Drawing.Size(147, 61);
-            this.btn_EditOrder.TabIndex = 38;
-            this.btn_EditOrder.Text = "Edit Order";
-            this.btn_EditOrder.UseVisualStyleBackColor = true;
-            this.btn_EditOrder.Click += new System.EventHandler(this.btn_EditOrder_Click);
-            // 
-            // btn_SaveOrderEdit
-            // 
-            this.btn_SaveOrderEdit.Enabled = false;
-            this.btn_SaveOrderEdit.Location = new System.Drawing.Point(198, 275);
-            this.btn_SaveOrderEdit.Name = "btn_SaveOrderEdit";
-            this.btn_SaveOrderEdit.Size = new System.Drawing.Size(147, 61);
-            this.btn_SaveOrderEdit.TabIndex = 39;
-            this.btn_SaveOrderEdit.Text = "Save Order";
-            this.btn_SaveOrderEdit.UseVisualStyleBackColor = true;
-            this.btn_SaveOrderEdit.Click += new System.EventHandler(this.btn_SaveOrderEdit_Click);
-            // 
-            // combobox_OrderStatusEdit
-            // 
-            this.combobox_OrderStatusEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_STATUS", true));
-            this.combobox_OrderStatusEdit.FormattingEnabled = true;
-            this.combobox_OrderStatusEdit.Items.AddRange(new object[] {
-            "Pending",
-            "In Transit",
-            "Delayed",
-            "Complete",
-            "Cancelled"});
-            this.combobox_OrderStatusEdit.Location = new System.Drawing.Point(368, 195);
-            this.combobox_OrderStatusEdit.Name = "combobox_OrderStatusEdit";
-            this.combobox_OrderStatusEdit.Size = new System.Drawing.Size(121, 27);
-            this.combobox_OrderStatusEdit.TabIndex = 40;
-            // 
-            // lbl_OrderNumberEdit
-            // 
-            this.lbl_OrderNumberEdit.AutoSize = true;
-            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(553, 195);
-            this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
-            this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(62, 19);
-            this.lbl_OrderNumberEdit.TabIndex = 41;
-            this.lbl_OrderNumberEdit.Text = "Order #:";
-            // 
-            // txtbox_OrderNumberEdit
-            // 
-            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(631, 196);
-            this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
-            this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(154, 27);
-            this.txtbox_OrderNumberEdit.TabIndex = 42;
             // 
             // MainPage
             // 

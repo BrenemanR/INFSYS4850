@@ -1047,7 +1047,7 @@
             // 
             this.lbl_RequiredField.AutoSize = true;
             this.lbl_RequiredField.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RequiredField.ForeColor = System.Drawing.Color.Red;
+            this.lbl_RequiredField.ForeColor = System.Drawing.Color.LightCoral;
             this.lbl_RequiredField.Location = new System.Drawing.Point(13, 296);
             this.lbl_RequiredField.Name = "lbl_RequiredField";
             this.lbl_RequiredField.Size = new System.Drawing.Size(216, 19);

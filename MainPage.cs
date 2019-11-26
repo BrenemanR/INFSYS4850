@@ -170,7 +170,7 @@ namespace WindowsFormsApp3
                 {
                     //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lbl_RequiredField.Visible = true;
-                    FirstNameLabel.ForeColor = System.Drawing.Color.Red;
+                    FirstNameLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noFName = true;
@@ -178,7 +178,7 @@ namespace WindowsFormsApp3
                 if (string.IsNullOrEmpty(LastNameBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    LastNameLabel.ForeColor = System.Drawing.Color.Red;
+                    LastNameLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noLName = true;
@@ -187,7 +187,7 @@ namespace WindowsFormsApp3
                 {
                     //MessageBox.Show(EmailBox.Text, "Email Address cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lbl_RequiredField.Visible = true;
-                    EmailLabel.ForeColor = System.Drawing.Color.Red;
+                    EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noEmail = true;
@@ -195,7 +195,7 @@ namespace WindowsFormsApp3
                 if (string.IsNullOrEmpty(PhoneNumberBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    PhoneLabel.ForeColor = System.Drawing.Color.Red;
+                    PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noPhone = true;
@@ -203,7 +203,7 @@ namespace WindowsFormsApp3
                 if (string.IsNullOrEmpty(CompanyBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    CompanyLabel.ForeColor = System.Drawing.Color.Red;
+                    CompanyLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noCompany = true;
@@ -211,7 +211,7 @@ namespace WindowsFormsApp3
                 if (string.IsNullOrEmpty(AddressBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    AddressLabel.ForeColor = System.Drawing.Color.Red;
+                    AddressLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noAddress = true;
@@ -219,7 +219,7 @@ namespace WindowsFormsApp3
                 if (string.IsNullOrEmpty(CityBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    CityLabel.ForeColor = System.Drawing.Color.Red;
+                    CityLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noCity = true;
@@ -227,7 +227,7 @@ namespace WindowsFormsApp3
                 if (string.IsNullOrEmpty(StateBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    StateLabel.ForeColor = System.Drawing.Color.Red;
+                    StateLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noState = true;
@@ -235,7 +235,7 @@ namespace WindowsFormsApp3
                 if (string.IsNullOrEmpty(ZipBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    ZipLabel.ForeColor = System.Drawing.Color.Red;
+                    ZipLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
                     noZip = true;
@@ -243,7 +243,7 @@ namespace WindowsFormsApp3
                 if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
                 {
                     MessageBox.Show(PhoneNumberBox.Text + " is not a valid phone number. Please enter in 9 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    PhoneLabel.ForeColor = System.Drawing.Color.Red;
+                    PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;
@@ -253,7 +253,7 @@ namespace WindowsFormsApp3
                 if (!Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
                 {
                     MessageBox.Show(EmailBox.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    EmailLabel.ForeColor = System.Drawing.Color.Red;
+                    EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
                     btnNew.Enabled = false;
                     panel1.Enabled = true;

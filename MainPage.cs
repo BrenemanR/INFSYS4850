@@ -43,9 +43,23 @@ namespace WindowsFormsApp3
                 {
                     //Add the other search fields once we know everything is working.
                     var query = from o in this.appData.CUSTOMER
-                                where o.CUST_FNAME.Contains(SearchBox.Text) || o.CUST_LNAME.Contains(SearchBox.Text) || o.CUST_PHONE == SearchBox.Text || o.CUST_EMAIL == SearchBox.Text || o.CUST_ADDRESS.Contains(SearchBox.Text)
-                                || o.CUST_CITY.Contains(SearchBox.Text) || o.CUST_COMPANY.Contains(SearchBox.Text) || o.CUST_STATE.Contains(SearchBox.Text) || o.CUST_ZIP.Equals(SearchBox.Text) ||
-                                o.BROKER.Equals(SearchBox.Text)
+                                where 
+                                o.CUST_FNAME.Equals(SearchBox.Text, StringComparison.OrdinalIgnoreCase) || 
+                                o.CUST_FNAME.Contains(SearchBox.Text) || 
+                                o.CUST_LNAME.Equals(SearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                o.CUST_LNAME.Contains(SearchBox.Text) || 
+                                o.CUST_PHONE == SearchBox.Text ||
+                                o.CUST_EMAIL == SearchBox.Text || 
+                                o.CUST_ADDRESS.Equals(SearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                o.CUST_ADDRESS.Contains(SearchBox.Text) ||
+                                o.CUST_CITY.Equals(SearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                o.CUST_CITY.Contains(SearchBox.Text) ||
+                                o.CUST_COMPANY.Equals(SearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                o.CUST_COMPANY.Contains(SearchBox.Text) || 
+                                o.CUST_STATE.Equals(SearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                o.CUST_STATE.Contains(SearchBox.Text) || 
+                                o.CUST_ZIP.Equals(SearchBox.Text) ||
+                                o.BROKER.Equals(SearchBox.Text) 
                                 select o;
                     cUSTOMERBindingSource.DataSource = query.ToList();
                     //dataGridView1.DataSource = query.ToList();
@@ -745,17 +759,31 @@ namespace WindowsFormsApp3
                 else
                 {
                     var query = from r in this.appData.INVOICE
-                                where r.INV_ID.Equals(txtbox_OrderSearchBox.Text) ||
+                                where 
+                                r.INV_ID.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.BOOK_DATE.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_DATE.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.DROPOFF_DATE.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.CUST_ID.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.ORDER_STATUS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.ORDER_STATUS.Equals(txtbox_OrderSearchBox.Text) ||
-                                r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_CITY.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
-                                r.DELIVERY_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) || r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) || r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.PICKUP_ADDRESS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.PICKUP_CITY.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.PICKUP_CITY.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.PICKUP_STATE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.PICKUP_STATE.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.DELIVERY_ADDRESS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.DELIVERY_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.DELIVERY_CITY.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.DELIVERY_STATE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text) ||
-                                r.VEHICLE.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.VEHICLE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.ORDER_NUM.Equals(txtbox_OrderSearchBox.Text)
                                 select r;
                     iNVOICEBindingSource.DataSource = query.ToList();

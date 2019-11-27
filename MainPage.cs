@@ -8,17 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
-//tony made a comment
+
 namespace WindowsFormsApp3
 {
     public partial class MainPage : Form
@@ -247,7 +237,7 @@ namespace WindowsFormsApp3
                 }
                 if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
                 {
-                    MessageBox.Show(PhoneNumberBox.Text + " is not a valid phone number. Please enter in 9 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(PhoneNumberBox.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
                     btnNew.Enabled = false;

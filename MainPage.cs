@@ -596,7 +596,7 @@ namespace WindowsFormsApp3
 
         private void btn_SaveOrder_Click(object sender, EventArgs e)
         {
-            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false;
+            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false;
 
             /*if (string.IsNullOrEmpty(FirstNameBox.Text))
             {
@@ -606,78 +606,173 @@ namespace WindowsFormsApp3
                 btnNew.Enabled = false;
                 panel1.Enabled = true;
                 noFName = true;
+            }
+            lbl_Company.ForeColor = System.Drawing.Color.LightCoral;
             }*/
+
+            lbl_Address.ForeColor = System.Drawing.Color.LightGray;
+            lbl_City.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Phone.ForeColor = System.Drawing.Color.LightGray;
+            lbl_State.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Email.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Zip.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Order.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupAddress.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupCity.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupState.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupZip.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryAddress.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryCity.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryState.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryZip.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Vehicle.ForeColor = System.Drawing.Color.LightGray;
+            lbl_BookDate.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupDate.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightGray;
+            lbl_OrderStatus.ForeColor = System.Drawing.Color.LightGray;
+
+
             if (string.IsNullOrEmpty(txtbox_Company.Text))
             {
                 noComp = true;
+                lbl_Company.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Address.Text))
             {
                 noAddress = true;
+                lbl_Address.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
+
             }
             if (string.IsNullOrEmpty(txtbox_City.Text))
             {
                 noCity = true;
+                lbl_City.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Phone.Text))
             {
                 noPhone = true;
+                lbl_Phone.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_State.Text))
             {
                 noState = true;
+                lbl_State.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Email.Text))
             {
                 noEmail = true;
+                lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Zip.Text))
             {
                 noZip = true;
+                lbl_Zip.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_OrderNum.Text))
             {
                 noOrder = true;
+                lbl_Order.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupAddress.Text))
             {
                 noPickAdd = true;
+                lbl_PickupAddress.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupCity.Text))
             {
                 noPickCity = true;
+                lbl_PickupCity.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupState.Text))
             {
                 noPickState = true;
+                lbl_PickupState.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupZip.Text))
             {
                 noPickZip = true;
+                lbl_PickupZip.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryAddress.Text))
             {
                 noDelAdd = true;
+                lbl_DeliveryAddress.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryCity.Text))
             {
                 noDelCity = true;
+                lbl_DeliveryCity.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryState.Text))
             {
                 noDelState = true;
+                lbl_DeliveryState.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryZip.Text))
             {
                 noDelZip = true;
+                lbl_DeliveryZip.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(comboBox_Vehicle.Text))
             {
                 noVehicle = true;
+                lbl_Vehicle.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
+            }
+            
+            //date validation
+            if (BookDatePicker.Value > PickUpDatePicker.Value)
+            {
+                noPickDate = true;
+                lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
+            }
+            if (PickUpDatePicker.Value > DropOffDatePicker.Value)
+            {
+                noDropDate = true;
+                lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
+            }
+            if (string.IsNullOrEmpty(comboBox_Status.Text))
+            {
+                noStatus = true;
+                lbl_OrderStatus.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
+            }
+            if (!noPhone && !Regex.IsMatch(txtbox_Phone.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
+            {
+                MessageBox.Show(txtbox_Phone.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbl_Phone.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
+                noPhone = true;
+            }
+            if (!noEmail && !Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
+            {
+                MessageBox.Show(txtbox_Email.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
+                btn_CreateOrder.Enabled = false;
+                noEmail = true;
             }
 
-
-            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle)
+            //successfull entry to the database
+            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noPickAdd && !noDropDate)
             {
                 //adds to the database
                 iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
@@ -740,7 +835,19 @@ namespace WindowsFormsApp3
             }
             else
             {
-                MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
+                if (noPickDate)
+                {
+                    MessageBox.Show("The pickup date cannot be before the booking date.", "Invalid Date Entry");
+                }
+                if (noDropDate)
+                {
+                    MessageBox.Show("The delivery date cannot be before the pickup date.", "Invalid Date Entry");
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
+                }
+                
             }
         }
 
@@ -975,15 +1082,23 @@ namespace WindowsFormsApp3
             btn_EditOrder.Enabled = true;
         }
 
-        private void txtboxrch_Description_TextChanged(object sender, EventArgs e)
+        private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void txtboxrch_SpecialInstructions_TextChanged(object sender, EventArgs e)
-        {
-
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                // is a digit or backspace - ignore digits if length is alreay 10 - allow backspace
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    if (PhoneNumberBox.Text.Length > 9)
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
         }
     }
-
 }

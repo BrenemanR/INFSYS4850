@@ -327,7 +327,9 @@ namespace WindowsFormsApp3
 
                    
                     cUSTOMERBindingSource.EndEdit();
-                    cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
+                    cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
+                                                StateBox.Text, EmailBox.Text, PhoneNumberBox.Text, ZipBox.Text, comboBox_Broker.Text);
+                    //cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
 
                     
                     

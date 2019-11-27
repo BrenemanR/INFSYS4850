@@ -89,7 +89,17 @@ namespace WindowsFormsApp3
             try
             {
                 {
-                    panel1.Enabled = true;
+                    //panel1.Enabled = true;
+                    FirstNameBox.ReadOnly = false;
+                    LastNameBox.ReadOnly = false;
+                    EmailBox.ReadOnly = false;
+                    PhoneNumberBox.ReadOnly = false;
+                    CompanyBox.ReadOnly = false;
+                    AddressBox.ReadOnly = false;
+                    CityBox.ReadOnly = false;
+                    StateBox.ReadOnly = false;
+                    ZipBox.ReadOnly = false;
+
                     btnEdit.Enabled = false; //Disables the edit button so the user is unable to edit a record while one is already open.
                     btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while already adding one.
                     FirstNameBox.Focus();
@@ -115,7 +125,16 @@ namespace WindowsFormsApp3
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            panel1.Enabled = true;
+            //panel1.Enabled = true;
+            FirstNameBox.ReadOnly = false;
+            LastNameBox.ReadOnly = false;
+            EmailBox.ReadOnly = false;
+            PhoneNumberBox.ReadOnly = false;
+            CompanyBox.ReadOnly = false;
+            AddressBox.ReadOnly = false;
+            CityBox.ReadOnly = false;
+            StateBox.ReadOnly = false;
+            ZipBox.ReadOnly = false;
             btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while editing a previous one.
             btnEdit.Enabled = true;
             btnCancel.Enabled = true;
@@ -133,7 +152,16 @@ namespace WindowsFormsApp3
                 btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
                 btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
                 btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
-                panel1.Enabled = false;
+                //panel1.Enabled = false;
+                FirstNameBox.ReadOnly = true;
+                LastNameBox.ReadOnly = true;
+                EmailBox.ReadOnly = true;
+                PhoneNumberBox.ReadOnly = true;
+                CompanyBox.ReadOnly = true;
+                AddressBox.ReadOnly = true;
+                CityBox.ReadOnly = true;
+                StateBox.ReadOnly = true;
+                ZipBox.ReadOnly = true;
                 dataGridView1.Enabled = true;
                 //cUSTOMERBindingSource.RemoveCurrent();
                 cUSTOMERBindingSource.CancelEdit();
@@ -155,7 +183,17 @@ namespace WindowsFormsApp3
                 btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
                 btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
                 btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
-                panel1.Enabled = false;
+                //panel1.Enabled = false;
+                FirstNameBox.ReadOnly = true;
+                LastNameBox.ReadOnly = true;
+                EmailBox.ReadOnly = true;
+                PhoneNumberBox.ReadOnly = true;
+                CompanyBox.ReadOnly = true;
+                AddressBox.ReadOnly = true;
+                CityBox.ReadOnly = true;
+                StateBox.ReadOnly = true;
+                ZipBox.ReadOnly = true;
+
                 dataGridView1.Enabled = true;
 
                 cUSTOMERBindingSource.CancelEdit();
@@ -189,13 +227,15 @@ namespace WindowsFormsApp3
                 CityLabel.ForeColor = System.Drawing.Color.LightGray;
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+                
+                
                 if (string.IsNullOrEmpty(FirstNameBox.Text))
                 {
                     //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lbl_RequiredField.Visible = true;
                     FirstNameLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noFName = true;
                 }                              
                 if (string.IsNullOrEmpty(LastNameBox.Text))
@@ -203,7 +243,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     LastNameLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noLName = true;
                 }
                 if (string.IsNullOrEmpty(EmailBox.Text)) //Checks to see if the email address field is blank
@@ -212,7 +252,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noEmail = true;
                 }
                 if (string.IsNullOrEmpty(PhoneNumberBox.Text))
@@ -220,7 +260,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noPhone = true;
                 }
                 if (string.IsNullOrEmpty(CompanyBox.Text))
@@ -228,7 +268,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     CompanyLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noCompany = true;
                 }
                 if (string.IsNullOrEmpty(AddressBox.Text))
@@ -236,7 +276,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     AddressLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noAddress = true;
                 }
                 if (string.IsNullOrEmpty(CityBox.Text))
@@ -244,7 +284,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     CityLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noCity = true;
                 }
                 if (string.IsNullOrEmpty(StateBox.Text))
@@ -252,7 +292,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     StateLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noState = true;
                 }
                 if (string.IsNullOrEmpty(ZipBox.Text))
@@ -260,7 +300,7 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     ZipLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noZip = true;
                 }
                 if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
@@ -269,7 +309,7 @@ namespace WindowsFormsApp3
                     PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
                     noPhone = true;
 
                 }
@@ -279,7 +319,6 @@ namespace WindowsFormsApp3
                     EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
                     noEmail = true;
                 }
 
@@ -295,7 +334,16 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = false;
                     btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                     btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                    panel1.Enabled = false;
+                    //panel1.Enabled = false;
+                    FirstNameBox.ReadOnly = true;
+                    LastNameBox.ReadOnly = true;
+                    EmailBox.ReadOnly = true;
+                    PhoneNumberBox.ReadOnly = true;
+                    CompanyBox.ReadOnly = true;
+                    AddressBox.ReadOnly = true;
+                    CityBox.ReadOnly = true;
+                    StateBox.ReadOnly = true;
+                    ZipBox.ReadOnly = true;
                     dataGridView1.Enabled = true;
                     SearchBox.Enabled = true;
                     isSaved = true;
@@ -372,7 +420,7 @@ namespace WindowsFormsApp3
 
                     MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     btnNew.Enabled = false;
-                    panel1.Enabled = true;
+                    
 
                 }
                 else
@@ -380,7 +428,16 @@ namespace WindowsFormsApp3
                     cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
                     btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                     btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                    panel1.Enabled = false;
+                    //panel1.Enabled = false;
+                    FirstNameBox.ReadOnly = true;
+                    LastNameBox.ReadOnly = true;
+                    EmailBox.ReadOnly = true;
+                    PhoneNumberBox.ReadOnly = true;
+                    CompanyBox.ReadOnly = true;
+                    AddressBox.ReadOnly = true;
+                    CityBox.ReadOnly = true;
+                    StateBox.ReadOnly = true;
+                    ZipBox.ReadOnly = true;
                     isSaved = true;
                 }
 
@@ -425,7 +482,7 @@ namespace WindowsFormsApp3
 
                             MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             btnNew.Enabled = false;
-                            panel1.Enabled = true;
+                            
 
                         }
                         else
@@ -433,7 +490,16 @@ namespace WindowsFormsApp3
                             cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
                             btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                             btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                            panel1.Enabled = false;
+                            //panel1.Enabled = false;
+                            FirstNameBox.ReadOnly = true;
+                            LastNameBox.ReadOnly = true;
+                            EmailBox.ReadOnly = true;
+                            PhoneNumberBox.ReadOnly = true;
+                            CompanyBox.ReadOnly = true;
+                            AddressBox.ReadOnly = true;
+                            CityBox.ReadOnly = true;
+                            StateBox.ReadOnly = true;
+                            ZipBox.ReadOnly = true;
                             isSaved = true;
                             MessageBox.Show("Your data has been saved.");
                             this.Close();
@@ -563,30 +629,30 @@ namespace WindowsFormsApp3
             picBox_Status.Enabled = true;
             checkBox_CopyPickupInformation.Enabled = true;
             checkBox_CopyDropoffInformation.Enabled = true;
-            txtbox_PickupAddress.Enabled = true;
-            txtbox_PickupCity.Enabled = true;
-            txtbox_PickupState.Enabled = true;
-            txtbox_PickupZip.Enabled = true;
-            txtbox_DeliveryAddress.Enabled = true;
-            txtbox_DeliveryCity.Enabled = true;
-            txtbox_DeliveryState.Enabled = true;
-            txtbox_DeliveryZip.Enabled = true;
-            txtbox_Company.Enabled = true;
-            txtbox_Phone.Enabled = true;
-            txtbox_Email.Enabled = true;
-            txtbox_Address.Enabled = true;
-            txtbox_City.Enabled = true;
-            txtbox_State.Enabled = true;
-            txtbox_Zip.Enabled = true;
-            txtboxrch_Description.Enabled = true;
-            txtboxrch_SpecialInstructions.Enabled = true;
+            txtbox_PickupAddress.ReadOnly = true;
+            txtbox_PickupCity.ReadOnly = true;
+            txtbox_PickupState.ReadOnly = true;
+            txtbox_PickupZip.ReadOnly = true;
+            txtbox_DeliveryAddress.ReadOnly = true;
+            txtbox_DeliveryCity.ReadOnly = true;
+            txtbox_DeliveryState.ReadOnly = true;
+            txtbox_DeliveryZip.ReadOnly = true;
+            txtbox_Company.ReadOnly = true;
+            txtbox_Phone.ReadOnly = true;
+            txtbox_Email.ReadOnly = true;
+            txtbox_Address.ReadOnly = true;
+            txtbox_City.ReadOnly = true;
+            txtbox_State.ReadOnly = true;
+            txtbox_Zip.ReadOnly = true;
+            txtboxrch_Description.ReadOnly = true;
+            txtboxrch_SpecialInstructions.ReadOnly = true;
             comboBox_Status.Enabled = true;
             picBox_Status.Enabled = true;
             panel2.Enabled = true;
             panel3.Enabled = true;
             checkBox_CopyDropoffInformation.Enabled = true;
             checkBox_CopyPickupInformation.Enabled = true;
-            txtbox_OrderNum.Enabled = true;
+            txtbox_OrderNum.ReadOnly = true;
             comboBox_Vehicle.Enabled = true;
 
 
@@ -597,18 +663,6 @@ namespace WindowsFormsApp3
         private void btn_SaveOrder_Click(object sender, EventArgs e)
         {
             bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false;
-
-            /*if (string.IsNullOrEmpty(FirstNameBox.Text))
-            {
-                //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lbl_RequiredField.Visible = true;
-                FirstNameLabel.ForeColor = System.Drawing.Color.LightCoral;
-                btnNew.Enabled = false;
-                panel1.Enabled = true;
-                noFName = true;
-            }
-            lbl_Company.ForeColor = System.Drawing.Color.LightCoral;
-            }*/
 
             lbl_Address.ForeColor = System.Drawing.Color.LightGray;
             lbl_City.ForeColor = System.Drawing.Color.LightGray;
@@ -763,7 +817,7 @@ namespace WindowsFormsApp3
                 btn_CreateOrder.Enabled = false;
                 noPhone = true;
             }
-            if (!noEmail && !Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
+            if (!noEmail && !Regex.IsMatch(txtbox_Email.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
             {
                 MessageBox.Show(txtbox_Email.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
@@ -772,7 +826,7 @@ namespace WindowsFormsApp3
             }
 
             //successfull entry to the database
-            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noPickAdd && !noDropDate)
+            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle &&!noStatus && !noPickAdd && !noDropDate)
             {
                 //adds to the database
                 iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
@@ -807,28 +861,28 @@ namespace WindowsFormsApp3
                 txtbox_DeliveryZip.Text = "";
                 comboBox_Status.Text = "";
                 picBox_Status.Image = null;
-                txtbox_Company.Enabled = false;
-                txtbox_Phone.Enabled = false;
-                txtbox_Email.Enabled = false;
-                txtbox_Address.Enabled = false;
-                txtbox_City.Enabled = false;
-                txtbox_State.Enabled = false;
-                txtbox_Zip.Enabled = false;
-                txtbox_PickupAddress.Enabled = false;
-                txtbox_PickupCity.Enabled = false;
-                txtbox_PickupState.Enabled = false;
-                txtbox_PickupZip.Enabled = false;
-                txtbox_DeliveryAddress.Enabled = false;
-                txtbox_DeliveryCity.Enabled = false;
-                txtbox_DeliveryState.Enabled = false;
-                txtbox_DeliveryZip.Enabled = false;
+                txtbox_Company.ReadOnly = false;
+                txtbox_Phone.ReadOnly = false;
+                txtbox_Email.ReadOnly = false;
+                txtbox_Address.ReadOnly = false;
+                txtbox_City.ReadOnly = false;
+                txtbox_State.ReadOnly = false;
+                txtbox_Zip.ReadOnly = false;
+                txtbox_PickupAddress.ReadOnly = false;
+                txtbox_PickupCity.ReadOnly = false;
+                txtbox_PickupState.ReadOnly = false;
+                txtbox_PickupZip.ReadOnly = false;
+                txtbox_DeliveryAddress.ReadOnly = false;
+                txtbox_DeliveryCity.ReadOnly = false;
+                txtbox_DeliveryState.ReadOnly = false;
+                txtbox_DeliveryZip.ReadOnly = false;
                 btn_SaveOrder.Enabled = false;
                 picBox_Status.Enabled = false;
                 comboBox_Status.Enabled = false;
-                txtboxrch_Description.Enabled = false;
-                txtboxrch_SpecialInstructions.Enabled = false;
+                txtboxrch_Description.ReadOnly = false;
+                txtboxrch_SpecialInstructions.ReadOnly = false;
                 btn_SaveOrder.Enabled = false;
-                txtbox_OrderNum.Enabled = false;
+                txtbox_OrderNum.ReadOnly = false;
                 comboBox_Vehicle.Enabled = false;
                 txtbox_OrderNum.Text = "";
                 comboBox_Vehicle.Text = "";
@@ -923,18 +977,6 @@ namespace WindowsFormsApp3
             }
         }
 
-        private void listBox_Status_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-
-
-        }
-
-        private void txtbox_Address_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void OrderSearchBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             
@@ -1019,37 +1061,27 @@ namespace WindowsFormsApp3
             }
         }
 
-        private void radButt_Yes_CheckedChanged(object sender, EventArgs e)
-        {
-            //radButt_No.Checked = false;
-        }
-
-        private void radButt_No_CheckedChanged(object sender, EventArgs e)
-        {
-            //radButt_Yes.Checked = false;
-        }
-
         private void btn_EditOrder_Click(object sender, EventArgs e)
         {
-            txtbox_InvoiceIdEdit.Enabled = false;
+            txtbox_InvoiceIdEdit.ReadOnly = false;
             dateTimePicker_BookingDateEdit.Enabled = false;
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
             combobox_OrderStatusEdit.Enabled = true;
             txtbox_OrderNumberEdit.Enabled = true;
             comboBox_VehicleEdit.Enabled = true;
-            txtbox_PickupAddressEdit.Enabled = true;
-            txtbox_PickupCityEdit.Enabled = true;
-            txtbox_PickupStateEdit.Enabled = true;
-            txtbox_PickUpZipEdit.Enabled = true;
-            txtbox_DeliveryAddressEdit.Enabled = true;
-            txtbox_DeliveryCityEdit.Enabled = true;
-            txtbox_DeliveryStateEdit.Enabled = true;
-            txtbox_DeliveryZipEdit.Enabled = true;
-            txtboxrch_DescriptionEdit.Enabled = true;
-            txtboxrch_SpecailInstructionsEdit.Enabled = true;
+            txtbox_PickupAddressEdit.ReadOnly = true;
+            txtbox_PickupCityEdit.ReadOnly = true;
+            txtbox_PickupStateEdit.ReadOnly = true;
+            txtbox_PickUpZipEdit.ReadOnly = true;
+            txtbox_DeliveryAddressEdit.ReadOnly = true;
+            txtbox_DeliveryCityEdit.ReadOnly = true;
+            txtbox_DeliveryStateEdit.ReadOnly = true;
+            txtbox_DeliveryZipEdit.ReadOnly = true;
+            txtboxrch_DescriptionEdit.ReadOnly = true;
+            txtboxrch_SpecailInstructionsEdit.ReadOnly = true;
 
-            txtbox_OrderSearchBox.Enabled = false;
+            txtbox_OrderSearchBox.ReadOnly = false;
             btn_SaveOrderEdit.Enabled = true;
             btn_EditOrder.Enabled = false;
         }
@@ -1059,29 +1091,28 @@ namespace WindowsFormsApp3
             iNVOICEBindingSource.EndEdit();
             iNVOICETableAdapter.Update(this.appData.INVOICE);
             
-
-
             dateTimePicker_BookingDateEdit.Enabled = false;
             dateTimePicker_PickUpDateEdit.Enabled = false;
             dateTimePicker_DeliveryDateEdit.Enabled = false;
             combobox_OrderStatusEdit.Enabled = false;
-            txtbox_OrderNumberEdit.Enabled = false;
-            txtbox_PickupAddressEdit.Enabled = false;
-            txtbox_PickupCityEdit.Enabled = false;
-            txtbox_PickupStateEdit.Enabled = false;
-            txtbox_PickUpZipEdit.Enabled = false;
-            txtbox_DeliveryAddressEdit.Enabled = false;
-            txtbox_DeliveryCityEdit.Enabled = false;
-            txtbox_DeliveryStateEdit.Enabled = false;
-            txtbox_DeliveryZipEdit.Enabled = false;
-            txtboxrch_DescriptionEdit.Enabled = false;
-            txtboxrch_SpecailInstructionsEdit.Enabled = false;
+            txtbox_OrderNumberEdit.ReadOnly = false;
+            txtbox_PickupAddressEdit.ReadOnly = false;
+            txtbox_PickupCityEdit.ReadOnly = false;
+            txtbox_PickupStateEdit.ReadOnly = false;
+            txtbox_PickUpZipEdit.ReadOnly = false;
+            txtbox_DeliveryAddressEdit.ReadOnly = false;
+            txtbox_DeliveryCityEdit.ReadOnly = false;
+            txtbox_DeliveryStateEdit.ReadOnly = false;
+            txtbox_DeliveryZipEdit.ReadOnly = false;
+            txtboxrch_DescriptionEdit.ReadOnly = false;
+            txtboxrch_SpecailInstructionsEdit.ReadOnly = false;
             btn_SaveOrderEdit.Enabled = false;
             comboBox_VehicleEdit.Enabled = false;
             txtbox_OrderSearchBox.Enabled = true;
             btn_EditOrder.Enabled = true;
         }
 
+        //HELP
         private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))

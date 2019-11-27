@@ -984,7 +984,9 @@
             // SearchBox
             // 
             this.SearchBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBox.ForeColor = System.Drawing.SystemColors.Window;
             this.SearchBox.Location = new System.Drawing.Point(346, 7);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(279, 27);
@@ -1069,8 +1071,10 @@
             // ZipBox
             // 
             this.ZipBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ZipBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ZipBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.ZipBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZipBox.ForeColor = System.Drawing.SystemColors.Window;
             this.ZipBox.Location = new System.Drawing.Point(101, 233);
             this.ZipBox.Name = "ZipBox";
             this.ZipBox.Size = new System.Drawing.Size(163, 27);
@@ -1091,8 +1095,10 @@
             // CompanyBox
             // 
             this.CompanyBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CompanyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CompanyBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
             this.CompanyBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompanyBox.ForeColor = System.Drawing.SystemColors.Window;
             this.CompanyBox.Location = new System.Drawing.Point(101, 121);
             this.CompanyBox.Name = "CompanyBox";
             this.CompanyBox.Size = new System.Drawing.Size(163, 27);
@@ -1112,8 +1118,10 @@
             // StateBox
             // 
             this.StateBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.StateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StateBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
             this.StateBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StateBox.ForeColor = System.Drawing.SystemColors.Window;
             this.StateBox.Location = new System.Drawing.Point(101, 205);
             this.StateBox.Name = "StateBox";
             this.StateBox.Size = new System.Drawing.Size(163, 27);
@@ -1133,8 +1141,10 @@
             // CityBox
             // 
             this.CityBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CityBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CityBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
             this.CityBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityBox.ForeColor = System.Drawing.SystemColors.Window;
             this.CityBox.Location = new System.Drawing.Point(101, 177);
             this.CityBox.Name = "CityBox";
             this.CityBox.Size = new System.Drawing.Size(163, 27);
@@ -1154,8 +1164,10 @@
             // AddressBox
             // 
             this.AddressBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AddressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AddressBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
             this.AddressBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressBox.ForeColor = System.Drawing.SystemColors.Window;
             this.AddressBox.Location = new System.Drawing.Point(101, 149);
             this.AddressBox.Name = "AddressBox";
             this.AddressBox.Size = new System.Drawing.Size(163, 27);
@@ -1175,8 +1187,10 @@
             // FirstNameBox
             // 
             this.FirstNameBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.FirstNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FirstNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_FNAME", true));
             this.FirstNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameBox.ForeColor = System.Drawing.SystemColors.Window;
             this.FirstNameBox.Location = new System.Drawing.Point(101, 9);
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(163, 27);
@@ -1197,8 +1211,10 @@
             // EmailBox
             // 
             this.EmailBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.EmailBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EmailBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.EmailBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailBox.ForeColor = System.Drawing.SystemColors.Window;
             this.EmailBox.Location = new System.Drawing.Point(101, 93);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(163, 27);
@@ -1218,8 +1234,10 @@
             // PhoneNumberBox
             // 
             this.PhoneNumberBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.PhoneNumberBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PhoneNumberBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
             this.PhoneNumberBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneNumberBox.ForeColor = System.Drawing.SystemColors.Window;
             this.PhoneNumberBox.Location = new System.Drawing.Point(101, 65);
             this.PhoneNumberBox.Name = "PhoneNumberBox";
             this.PhoneNumberBox.Size = new System.Drawing.Size(163, 27);
@@ -1240,8 +1258,10 @@
             // LastNameBox
             // 
             this.LastNameBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LastNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LastNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_LNAME", true));
             this.LastNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameBox.ForeColor = System.Drawing.SystemColors.Window;
             this.LastNameBox.Location = new System.Drawing.Point(101, 37);
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(163, 27);
@@ -1423,7 +1443,7 @@
             this.btnSave.Location = new System.Drawing.Point(45, 440);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(184, 46);
-            this.btnSave.TabIndex = 14;
+            this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -1438,7 +1458,7 @@
             this.btnCancel.Location = new System.Drawing.Point(45, 492);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 44);
-            this.btnCancel.TabIndex = 13;
+            this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -2083,7 +2103,7 @@
             this.lbl_Home.AutoSize = true;
             this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.White;
-            this.lbl_Home.Location = new System.Drawing.Point(132, 100);
+            this.lbl_Home.Location = new System.Drawing.Point(301, 111);
             this.lbl_Home.Name = "lbl_Home";
             this.lbl_Home.Size = new System.Drawing.Size(554, 55);
             this.lbl_Home.TabIndex = 21;

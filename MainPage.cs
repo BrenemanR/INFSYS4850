@@ -79,11 +79,6 @@ namespace WindowsFormsApp3
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            //Opens the CreateCustomer form. Currently not being used
-            //CreateCustomer createCustomer = new CreateCustomer();
-            //createCustomer.Show();
-            //Need to prevents the user from opening the form multiple times.
-
 
             dataGridView1.Enabled = false;
             btnCancel.Enabled = true;
@@ -280,7 +275,7 @@ namespace WindowsFormsApp3
                     btnCancel.Enabled = false;
                     
                         
-                    //Turns all of the text back to black after a successful submission.
+                    //Turns all of the text back to LightGray after a successful submission.
                     FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
                     LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
                     PhoneLabel.ForeColor = System.Drawing.Color.LightGray;

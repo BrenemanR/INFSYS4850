@@ -273,6 +273,7 @@
             // 
             this.comboBox_Vehicle.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.comboBox_Vehicle.Enabled = false;
+            this.comboBox_Vehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Vehicle.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox_Vehicle.FormattingEnabled = true;
@@ -298,6 +299,7 @@
             // txtBox_InvoiceNumber
             // 
             this.txtBox_InvoiceNumber.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBox_InvoiceNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtBox_InvoiceNumber.Enabled = false;
             this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -332,6 +334,7 @@
             // 
             this.comboBox_Status.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.comboBox_Status.Enabled = false;
+            this.comboBox_Status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Status.FormattingEnabled = true;
             this.comboBox_Status.Items.AddRange(new object[] {
@@ -434,6 +437,7 @@
             // txtbox_DeliveryZip
             // 
             this.txtbox_DeliveryZip.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryZip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryZip.Enabled = false;
             this.txtbox_DeliveryZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryZip.ForeColor = System.Drawing.SystemColors.Window;
@@ -455,6 +459,7 @@
             // txtbox_DeliveryState
             // 
             this.txtbox_DeliveryState.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryState.Enabled = false;
             this.txtbox_DeliveryState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryState.ForeColor = System.Drawing.SystemColors.Window;
@@ -476,6 +481,7 @@
             // txtbox_DeliveryCity
             // 
             this.txtbox_DeliveryCity.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryCity.Enabled = false;
             this.txtbox_DeliveryCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryCity.ForeColor = System.Drawing.SystemColors.Window;
@@ -497,6 +503,7 @@
             // txtbox_DeliveryAddress
             // 
             this.txtbox_DeliveryAddress.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryAddress.Enabled = false;
             this.txtbox_DeliveryAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryAddress.ForeColor = System.Drawing.SystemColors.Window;
@@ -588,6 +595,7 @@
             // 
             this.btn_SaveOrder.Enabled = false;
             this.btn_SaveOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SaveOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_SaveOrder.Location = new System.Drawing.Point(222, 429);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
             this.btn_SaveOrder.Size = new System.Drawing.Size(149, 93);
@@ -599,6 +607,7 @@
             // btn_CreateOrder
             // 
             this.btn_CreateOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_CreateOrder.Location = new System.Drawing.Point(35, 429);
             this.btn_CreateOrder.Name = "btn_CreateOrder";
             this.btn_CreateOrder.Size = new System.Drawing.Size(149, 93);
@@ -620,6 +629,7 @@
             // txtboxrch_SpecialInstructions
             // 
             this.txtboxrch_SpecialInstructions.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtboxrch_SpecialInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtboxrch_SpecialInstructions.Enabled = false;
             this.txtboxrch_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxrch_SpecialInstructions.ForeColor = System.Drawing.SystemColors.Window;
@@ -632,6 +642,7 @@
             // txtbox_OrderNum
             // 
             this.txtbox_OrderNum.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_OrderNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_OrderNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNum.Enabled = false;
             this.txtbox_OrderNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -645,6 +656,7 @@
             // txtbox_Company
             // 
             this.txtbox_Company.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Company.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Company.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
             this.txtbox_Company.Enabled = false;
             this.txtbox_Company.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -662,6 +674,7 @@
             // txtbox_Email
             // 
             this.txtbox_Email.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.txtbox_Email.Enabled = false;
             this.txtbox_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -674,6 +687,7 @@
             // txtbox_Phone
             // 
             this.txtbox_Phone.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Phone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
             this.txtbox_Phone.Enabled = false;
             this.txtbox_Phone.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -686,6 +700,7 @@
             // txtbox_Zip
             // 
             this.txtbox_Zip.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Zip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Zip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.txtbox_Zip.Enabled = false;
             this.txtbox_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -698,6 +713,7 @@
             // txtbox_State
             // 
             this.txtbox_State.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_State.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
             this.txtbox_State.Enabled = false;
             this.txtbox_State.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -710,6 +726,7 @@
             // txtbox_City
             // 
             this.txtbox_City.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_City.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_City.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
             this.txtbox_City.Enabled = false;
             this.txtbox_City.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -722,6 +739,7 @@
             // txtbox_Address
             // 
             this.txtbox_Address.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Address.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
             this.txtbox_Address.Enabled = false;
             this.txtbox_Address.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -831,6 +849,7 @@
             this.combobox_CustomerIDZ.DataSource = this.cUSTOMERBindingSource;
             this.combobox_CustomerIDZ.DisplayMember = "CUST_LNAME";
             this.combobox_CustomerIDZ.Enabled = false;
+            this.combobox_CustomerIDZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combobox_CustomerIDZ.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combobox_CustomerIDZ.ForeColor = System.Drawing.SystemColors.Window;
             this.combobox_CustomerIDZ.FormattingEnabled = true;
@@ -872,6 +891,7 @@
             // txtbox_PickupAddress
             // 
             this.txtbox_PickupAddress.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupAddress.Enabled = false;
             this.txtbox_PickupAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupAddress.ForeColor = System.Drawing.SystemColors.Window;
@@ -883,6 +903,7 @@
             // txtbox_PickupCity
             // 
             this.txtbox_PickupCity.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupCity.Enabled = false;
             this.txtbox_PickupCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupCity.ForeColor = System.Drawing.SystemColors.Window;
@@ -894,6 +915,7 @@
             // txtbox_PickupState
             // 
             this.txtbox_PickupState.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupState.Enabled = false;
             this.txtbox_PickupState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupState.ForeColor = System.Drawing.SystemColors.Window;
@@ -905,6 +927,7 @@
             // txtbox_PickupZip
             // 
             this.txtbox_PickupZip.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupZip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupZip.Enabled = false;
             this.txtbox_PickupZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupZip.ForeColor = System.Drawing.SystemColors.Window;
@@ -1406,8 +1429,9 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEdit.FlatAppearance.BorderSize = 5;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEdit.FlatAppearance.BorderSize = 2;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Location = new System.Drawing.Point(45, 388);
@@ -1421,8 +1445,9 @@
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnNew.FlatAppearance.BorderSize = 5;
+            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNew.FlatAppearance.BorderSize = 2;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Location = new System.Drawing.Point(45, 335);
@@ -1436,8 +1461,9 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.FlatAppearance.BorderSize = 5;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatAppearance.BorderSize = 2;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(45, 440);
@@ -1451,8 +1477,9 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCancel.FlatAppearance.BorderSize = 5;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancel.FlatAppearance.BorderSize = 2;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(45, 492);
@@ -2101,11 +2128,11 @@
             // lbl_Home
             // 
             this.lbl_Home.AutoSize = true;
-            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.White;
-            this.lbl_Home.Location = new System.Drawing.Point(301, 111);
+            this.lbl_Home.Location = new System.Drawing.Point(194, 104);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(554, 55);
+            this.lbl_Home.Size = new System.Drawing.Size(735, 73);
             this.lbl_Home.TabIndex = 21;
             this.lbl_Home.Text = "Welcome to Virtual Adil!";
             // 

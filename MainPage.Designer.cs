@@ -997,6 +997,7 @@
             this.tab_ManageCustomers.Controls.Add(this.btnNew);
             this.tab_ManageCustomers.Controls.Add(this.btnSave);
             this.tab_ManageCustomers.Controls.Add(this.btnCancel);
+            this.tab_ManageCustomers.ForeColor = System.Drawing.Color.LightGray;
             this.tab_ManageCustomers.Location = new System.Drawing.Point(4, 28);
             this.tab_ManageCustomers.Name = "tab_ManageCustomers";
             this.tab_ManageCustomers.Padding = new System.Windows.Forms.Padding(3);
@@ -1040,6 +1041,7 @@
             this.panel1.Controls.Add(this.LastNameLabel);
             this.panel1.Controls.Add(this.LastNameBox);
             this.panel1.Enabled = false;
+            this.panel1.ForeColor = System.Drawing.Color.LightGray;
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(278, 328);
@@ -1461,6 +1463,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSave.Enabled = false;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSave.FlatAppearance.BorderSize = 2;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1477,6 +1480,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCancel.Enabled = false;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCancel.FlatAppearance.BorderSize = 2;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

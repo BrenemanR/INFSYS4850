@@ -262,10 +262,11 @@
             tab_CreateOrder.Controls.Add(this.panel2);
             tab_CreateOrder.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tab_CreateOrder.ForeColor = System.Drawing.SystemColors.ControlLight;
-            tab_CreateOrder.Location = new System.Drawing.Point(4, 28);
+            tab_CreateOrder.Location = new System.Drawing.Point(4, 38);
+            tab_CreateOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             tab_CreateOrder.Name = "tab_CreateOrder";
-            tab_CreateOrder.Padding = new System.Windows.Forms.Padding(3);
-            tab_CreateOrder.Size = new System.Drawing.Size(1107, 546);
+            tab_CreateOrder.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            tab_CreateOrder.Size = new System.Drawing.Size(1664, 847);
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
             // 
@@ -281,32 +282,35 @@
             "Vehicle 1",
             "Vehicle 2",
             "Vehicle 3"});
-            this.comboBox_Vehicle.Location = new System.Drawing.Point(918, 83);
+            this.comboBox_Vehicle.Location = new System.Drawing.Point(1377, 128);
+            this.comboBox_Vehicle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Vehicle.Name = "comboBox_Vehicle";
-            this.comboBox_Vehicle.Size = new System.Drawing.Size(173, 27);
+            this.comboBox_Vehicle.Size = new System.Drawing.Size(258, 37);
             this.comboBox_Vehicle.TabIndex = 70;
             // 
             // lbl_Vehicle
             // 
             this.lbl_Vehicle.AutoSize = true;
             this.lbl_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Vehicle.Location = new System.Drawing.Point(814, 86);
+            this.lbl_Vehicle.Location = new System.Drawing.Point(1221, 132);
+            this.lbl_Vehicle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Vehicle.Name = "lbl_Vehicle";
-            this.lbl_Vehicle.Size = new System.Drawing.Size(98, 19);
+            this.lbl_Vehicle.Size = new System.Drawing.Size(148, 29);
             this.lbl_Vehicle.TabIndex = 69;
             this.lbl_Vehicle.Text = "Vehicle Used:";
             // 
             // txtBox_InvoiceNumber
             // 
-            this.txtBox_InvoiceNumber.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBox_InvoiceNumber.BackColor = System.Drawing.Color.DimGray;
             this.txtBox_InvoiceNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtBox_InvoiceNumber.Enabled = false;
             this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_InvoiceNumber.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(951, 9);
+            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(1426, 14);
+            this.txtBox_InvoiceNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_InvoiceNumber.Name = "txtBox_InvoiceNumber";
-            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(140, 27);
+            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(209, 37);
             this.txtBox_InvoiceNumber.TabIndex = 66;
             this.txtBox_InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -324,15 +328,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(871, 9);
+            this.label2.Location = new System.Drawing.Point(1306, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Size = new System.Drawing.Size(108, 29);
             this.label2.TabIndex = 67;
             this.label2.Text = "Invoice #:";
             // 
             // comboBox_Status
             // 
-            this.comboBox_Status.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.comboBox_Status.BackColor = System.Drawing.Color.DimGray;
             this.comboBox_Status.Enabled = false;
             this.comboBox_Status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_Status.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,9 +348,10 @@
             "Delayed",
             "Complete",
             "Cancelled"});
-            this.comboBox_Status.Location = new System.Drawing.Point(386, 326);
+            this.comboBox_Status.Location = new System.Drawing.Point(579, 502);
+            this.comboBox_Status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Status.Name = "comboBox_Status";
-            this.comboBox_Status.Size = new System.Drawing.Size(169, 41);
+            this.comboBox_Status.Size = new System.Drawing.Size(252, 58);
             this.comboBox_Status.TabIndex = 13;
             this.comboBox_Status.SelectedIndexChanged += new System.EventHandler(this.comboBox_Status_SelectedIndexChanged);
             // 
@@ -354,9 +360,10 @@
             this.picBox_Status.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.picBox_Status.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBox_Status.Enabled = false;
-            this.picBox_Status.Location = new System.Drawing.Point(392, 372);
+            this.picBox_Status.Location = new System.Drawing.Point(588, 572);
+            this.picBox_Status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.picBox_Status.Name = "picBox_Status";
-            this.picBox_Status.Size = new System.Drawing.Size(150, 150);
+            this.picBox_Status.Size = new System.Drawing.Size(223, 229);
             this.picBox_Status.TabIndex = 65;
             this.picBox_Status.TabStop = false;
             // 
@@ -364,9 +371,10 @@
             // 
             this.lbl_OrderStatus.AutoSize = true;
             this.lbl_OrderStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_OrderStatus.Location = new System.Drawing.Point(382, 304);
+            this.lbl_OrderStatus.Location = new System.Drawing.Point(573, 468);
+            this.lbl_OrderStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_OrderStatus.Name = "lbl_OrderStatus";
-            this.lbl_OrderStatus.Size = new System.Drawing.Size(100, 19);
+            this.lbl_OrderStatus.Size = new System.Drawing.Size(146, 29);
             this.lbl_OrderStatus.TabIndex = 63;
             this.lbl_OrderStatus.Text = "Order Status:";
             // 
@@ -374,26 +382,29 @@
             // 
             this.lbl_Description.AutoSize = true;
             this.lbl_Description.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Description.Location = new System.Drawing.Point(570, 101);
+            this.lbl_Description.Location = new System.Drawing.Point(855, 155);
+            this.lbl_Description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Description.Name = "lbl_Description";
-            this.lbl_Description.Size = new System.Drawing.Size(90, 19);
+            this.lbl_Description.Size = new System.Drawing.Size(135, 29);
             this.lbl_Description.TabIndex = 62;
             this.lbl_Description.Text = "Description:";
             // 
             // txtboxrch_Description
             // 
             this.txtboxrch_Description.AcceptsTab = true;
-            this.txtboxrch_Description.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtboxrch_Description.BackColor = System.Drawing.Color.DimGray;
             this.txtboxrch_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtboxrch_Description.Enabled = false;
             this.txtboxrch_Description.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxrch_Description.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtboxrch_Description.Location = new System.Drawing.Point(571, 123);
+            this.txtboxrch_Description.Location = new System.Drawing.Point(856, 189);
+            this.txtboxrch_Description.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxrch_Description.Name = "txtboxrch_Description";
             this.txtboxrch_Description.ShowSelectionMargin = true;
-            this.txtboxrch_Description.Size = new System.Drawing.Size(527, 166);
+            this.txtboxrch_Description.Size = new System.Drawing.Size(788, 253);
             this.txtboxrch_Description.TabIndex = 15;
             this.txtboxrch_Description.Text = "";
+            this.txtboxrch_Description.TextChanged += new System.EventHandler(this.txtboxrch_Description_TextChanged);
             // 
             // panel3
             // 
@@ -407,18 +418,20 @@
             this.panel3.Controls.Add(this.lbl_DropoffInformatin);
             this.panel3.Controls.Add(this.txtbox_DeliveryAddress);
             this.panel3.Controls.Add(this.lbl_DeliveryAddress);
-            this.panel3.Location = new System.Drawing.Point(292, 86);
+            this.panel3.Location = new System.Drawing.Point(438, 132);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(273, 203);
+            this.panel3.Size = new System.Drawing.Size(410, 312);
             this.panel3.TabIndex = 58;
             // 
             // checkBox_CopyDropoffInformation
             // 
             this.checkBox_CopyDropoffInformation.AutoSize = true;
             this.checkBox_CopyDropoffInformation.Enabled = false;
-            this.checkBox_CopyDropoffInformation.Location = new System.Drawing.Point(10, 37);
+            this.checkBox_CopyDropoffInformation.Location = new System.Drawing.Point(15, 57);
+            this.checkBox_CopyDropoffInformation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBox_CopyDropoffInformation.Name = "checkBox_CopyDropoffInformation";
-            this.checkBox_CopyDropoffInformation.Size = new System.Drawing.Size(137, 19);
+            this.checkBox_CopyDropoffInformation.Size = new System.Drawing.Size(208, 28);
             this.checkBox_CopyDropoffInformation.TabIndex = 9;
             this.checkBox_CopyDropoffInformation.Text = "Copy Customer Data";
             this.checkBox_CopyDropoffInformation.UseVisualStyleBackColor = true;
@@ -428,97 +441,106 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 164);
+            this.label7.Location = new System.Drawing.Point(4, 252);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 19);
+            this.label7.Size = new System.Drawing.Size(135, 29);
             this.label7.TabIndex = 57;
             this.label7.Text = "Delivery Zip:";
             // 
             // txtbox_DeliveryZip
             // 
-            this.txtbox_DeliveryZip.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryZip.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_DeliveryZip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryZip.Enabled = false;
             this.txtbox_DeliveryZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryZip.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_DeliveryZip.Location = new System.Drawing.Point(127, 160);
+            this.txtbox_DeliveryZip.Location = new System.Drawing.Point(190, 246);
+            this.txtbox_DeliveryZip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryZip.Name = "txtbox_DeliveryZip";
-            this.txtbox_DeliveryZip.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryZip.Size = new System.Drawing.Size(196, 37);
             this.txtbox_DeliveryZip.TabIndex = 56;
             // 
             // lbl_DeliveryCity
             // 
             this.lbl_DeliveryCity.AutoSize = true;
             this.lbl_DeliveryCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DeliveryCity.Location = new System.Drawing.Point(3, 98);
+            this.lbl_DeliveryCity.Location = new System.Drawing.Point(4, 151);
+            this.lbl_DeliveryCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryCity.Name = "lbl_DeliveryCity";
-            this.lbl_DeliveryCity.Size = new System.Drawing.Size(95, 19);
+            this.lbl_DeliveryCity.Size = new System.Drawing.Size(143, 29);
             this.lbl_DeliveryCity.TabIndex = 53;
             this.lbl_DeliveryCity.Text = "Delivery City:";
             // 
             // txtbox_DeliveryState
             // 
-            this.txtbox_DeliveryState.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryState.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_DeliveryState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryState.Enabled = false;
             this.txtbox_DeliveryState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryState.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_DeliveryState.Location = new System.Drawing.Point(127, 128);
+            this.txtbox_DeliveryState.Location = new System.Drawing.Point(190, 197);
+            this.txtbox_DeliveryState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryState.Name = "txtbox_DeliveryState";
-            this.txtbox_DeliveryState.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryState.Size = new System.Drawing.Size(196, 37);
             this.txtbox_DeliveryState.TabIndex = 54;
             // 
             // lbl_DeliveryState
             // 
             this.lbl_DeliveryState.AutoSize = true;
             this.lbl_DeliveryState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DeliveryState.Location = new System.Drawing.Point(3, 131);
+            this.lbl_DeliveryState.Location = new System.Drawing.Point(4, 202);
+            this.lbl_DeliveryState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryState.Name = "lbl_DeliveryState";
-            this.lbl_DeliveryState.Size = new System.Drawing.Size(103, 19);
+            this.lbl_DeliveryState.Size = new System.Drawing.Size(156, 29);
             this.lbl_DeliveryState.TabIndex = 55;
             this.lbl_DeliveryState.Text = "Delivery State:";
             // 
             // txtbox_DeliveryCity
             // 
-            this.txtbox_DeliveryCity.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryCity.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_DeliveryCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryCity.Enabled = false;
             this.txtbox_DeliveryCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryCity.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_DeliveryCity.Location = new System.Drawing.Point(127, 96);
+            this.txtbox_DeliveryCity.Location = new System.Drawing.Point(190, 148);
+            this.txtbox_DeliveryCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryCity.Name = "txtbox_DeliveryCity";
-            this.txtbox_DeliveryCity.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryCity.Size = new System.Drawing.Size(196, 37);
             this.txtbox_DeliveryCity.TabIndex = 52;
             // 
             // lbl_DropoffInformatin
             // 
             this.lbl_DropoffInformatin.AutoSize = true;
             this.lbl_DropoffInformatin.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DropoffInformatin.Location = new System.Drawing.Point(6, 5);
+            this.lbl_DropoffInformatin.Location = new System.Drawing.Point(9, 8);
+            this.lbl_DropoffInformatin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DropoffInformatin.Name = "lbl_DropoffInformatin";
-            this.lbl_DropoffInformatin.Size = new System.Drawing.Size(236, 26);
+            this.lbl_DropoffInformatin.Size = new System.Drawing.Size(360, 39);
             this.lbl_DropoffInformatin.TabIndex = 48;
             this.lbl_DropoffInformatin.Text = "DROPOFF INFORMATION:";
             // 
             // txtbox_DeliveryAddress
             // 
-            this.txtbox_DeliveryAddress.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_DeliveryAddress.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_DeliveryAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_DeliveryAddress.Enabled = false;
             this.txtbox_DeliveryAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_DeliveryAddress.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_DeliveryAddress.Location = new System.Drawing.Point(127, 66);
+            this.txtbox_DeliveryAddress.Location = new System.Drawing.Point(190, 102);
+            this.txtbox_DeliveryAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryAddress.Name = "txtbox_DeliveryAddress";
-            this.txtbox_DeliveryAddress.Size = new System.Drawing.Size(131, 27);
+            this.txtbox_DeliveryAddress.Size = new System.Drawing.Size(196, 37);
             this.txtbox_DeliveryAddress.TabIndex = 49;
             // 
             // lbl_DeliveryAddress
             // 
             this.lbl_DeliveryAddress.AutoSize = true;
             this.lbl_DeliveryAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DeliveryAddress.Location = new System.Drawing.Point(3, 69);
+            this.lbl_DeliveryAddress.Location = new System.Drawing.Point(4, 106);
+            this.lbl_DeliveryAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryAddress.Name = "lbl_DeliveryAddress";
-            this.lbl_DeliveryAddress.Size = new System.Drawing.Size(122, 19);
+            this.lbl_DeliveryAddress.Size = new System.Drawing.Size(183, 29);
             this.lbl_DeliveryAddress.TabIndex = 51;
             this.lbl_DeliveryAddress.Text = "Delivery Address:";
             // 
@@ -526,9 +548,10 @@
             // 
             this.lbl_DeliveryDate.AutoSize = true;
             this.lbl_DeliveryDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DeliveryDate.Location = new System.Drawing.Point(19, 383);
+            this.lbl_DeliveryDate.Location = new System.Drawing.Point(28, 589);
+            this.lbl_DeliveryDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryDate.Name = "lbl_DeliveryDate";
-            this.lbl_DeliveryDate.Size = new System.Drawing.Size(101, 19);
+            this.lbl_DeliveryDate.Size = new System.Drawing.Size(152, 29);
             this.lbl_DeliveryDate.TabIndex = 35;
             this.lbl_DeliveryDate.Text = "Delivery Date:";
             // 
@@ -536,9 +559,10 @@
             // 
             this.lbl_PickupDate.AutoSize = true;
             this.lbl_PickupDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PickupDate.Location = new System.Drawing.Point(20, 344);
+            this.lbl_PickupDate.Location = new System.Drawing.Point(30, 529);
+            this.lbl_PickupDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupDate.Name = "lbl_PickupDate";
-            this.lbl_PickupDate.Size = new System.Drawing.Size(90, 19);
+            this.lbl_PickupDate.Size = new System.Drawing.Size(136, 29);
             this.lbl_PickupDate.TabIndex = 34;
             this.lbl_PickupDate.Text = "Pickup Date:";
             // 
@@ -546,9 +570,10 @@
             // 
             this.lbl_BookDate.AutoSize = true;
             this.lbl_BookDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_BookDate.Location = new System.Drawing.Point(20, 304);
+            this.lbl_BookDate.Location = new System.Drawing.Point(30, 468);
+            this.lbl_BookDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_BookDate.Name = "lbl_BookDate";
-            this.lbl_BookDate.Size = new System.Drawing.Size(100, 19);
+            this.lbl_BookDate.Size = new System.Drawing.Size(151, 29);
             this.lbl_BookDate.TabIndex = 33;
             this.lbl_BookDate.Text = "Booking Date:";
             // 
@@ -557,11 +582,12 @@
             this.DropOffDatePicker.Enabled = false;
             this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DropOffDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 377);
+            this.DropOffDatePicker.Location = new System.Drawing.Point(189, 580);
+            this.DropOffDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DropOffDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.DropOffDatePicker.Name = "DropOffDatePicker";
-            this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.DropOffDatePicker.Size = new System.Drawing.Size(355, 37);
             this.DropOffDatePicker.TabIndex = 12;
             this.DropOffDatePicker.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
             // 
@@ -570,11 +596,12 @@
             this.PickUpDatePicker.Enabled = false;
             this.PickUpDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PickUpDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
+            this.PickUpDatePicker.Location = new System.Drawing.Point(189, 520);
+            this.PickUpDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PickUpDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.PickUpDatePicker.Name = "PickUpDatePicker";
-            this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.PickUpDatePicker.Size = new System.Drawing.Size(355, 37);
             this.PickUpDatePicker.TabIndex = 11;
             this.PickUpDatePicker.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
             // 
@@ -584,11 +611,12 @@
             this.BookDatePicker.Enabled = false;
             this.BookDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BookDatePicker.Location = new System.Drawing.Point(126, 298);
+            this.BookDatePicker.Location = new System.Drawing.Point(189, 458);
+            this.BookDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BookDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.BookDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.BookDatePicker.Name = "BookDatePicker";
-            this.BookDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.BookDatePicker.Size = new System.Drawing.Size(355, 37);
             this.BookDatePicker.TabIndex = 10;
             // 
             // btn_SaveOrder
@@ -596,9 +624,10 @@
             this.btn_SaveOrder.Enabled = false;
             this.btn_SaveOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_SaveOrder.Location = new System.Drawing.Point(222, 429);
+            this.btn_SaveOrder.Location = new System.Drawing.Point(333, 660);
+            this.btn_SaveOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
-            this.btn_SaveOrder.Size = new System.Drawing.Size(149, 93);
+            this.btn_SaveOrder.Size = new System.Drawing.Size(224, 143);
             this.btn_SaveOrder.TabIndex = 17;
             this.btn_SaveOrder.Text = "Save Order";
             this.btn_SaveOrder.UseVisualStyleBackColor = true;
@@ -608,9 +637,10 @@
             // 
             this.btn_CreateOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_CreateOrder.Location = new System.Drawing.Point(35, 429);
+            this.btn_CreateOrder.Location = new System.Drawing.Point(52, 660);
+            this.btn_CreateOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_CreateOrder.Name = "btn_CreateOrder";
-            this.btn_CreateOrder.Size = new System.Drawing.Size(149, 93);
+            this.btn_CreateOrder.Size = new System.Drawing.Size(224, 143);
             this.btn_CreateOrder.TabIndex = 18;
             this.btn_CreateOrder.Text = "Create Order";
             this.btn_CreateOrder.UseVisualStyleBackColor = true;
@@ -620,50 +650,55 @@
             // 
             this.lbl_SpecialInstructions.AutoSize = true;
             this.lbl_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(570, 306);
+            this.lbl_SpecialInstructions.Location = new System.Drawing.Point(855, 471);
+            this.lbl_SpecialInstructions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_SpecialInstructions.Name = "lbl_SpecialInstructions";
-            this.lbl_SpecialInstructions.Size = new System.Drawing.Size(145, 19);
+            this.lbl_SpecialInstructions.Size = new System.Drawing.Size(214, 29);
             this.lbl_SpecialInstructions.TabIndex = 24;
             this.lbl_SpecialInstructions.Text = "Special Instructions:";
             // 
             // txtboxrch_SpecialInstructions
             // 
-            this.txtboxrch_SpecialInstructions.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtboxrch_SpecialInstructions.BackColor = System.Drawing.Color.DimGray;
             this.txtboxrch_SpecialInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtboxrch_SpecialInstructions.Enabled = false;
             this.txtboxrch_SpecialInstructions.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxrch_SpecialInstructions.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(571, 328);
+            this.txtboxrch_SpecialInstructions.Location = new System.Drawing.Point(856, 505);
+            this.txtboxrch_SpecialInstructions.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxrch_SpecialInstructions.Name = "txtboxrch_SpecialInstructions";
-            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(527, 194);
+            this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(788, 296);
             this.txtboxrch_SpecialInstructions.TabIndex = 16;
             this.txtboxrch_SpecialInstructions.Text = "";
+            this.txtboxrch_SpecialInstructions.TextChanged += new System.EventHandler(this.txtboxrch_SpecialInstructions_TextChanged);
             // 
             // txtbox_OrderNum
             // 
-            this.txtbox_OrderNum.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_OrderNum.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_OrderNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_OrderNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNum.Enabled = false;
             this.txtbox_OrderNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_OrderNum.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_OrderNum.Location = new System.Drawing.Point(951, 42);
+            this.txtbox_OrderNum.Location = new System.Drawing.Point(1426, 65);
+            this.txtbox_OrderNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_OrderNum.Name = "txtbox_OrderNum";
-            this.txtbox_OrderNum.Size = new System.Drawing.Size(140, 27);
+            this.txtbox_OrderNum.Size = new System.Drawing.Size(209, 37);
             this.txtbox_OrderNum.TabIndex = 16;
             this.txtbox_OrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtbox_Company
             // 
-            this.txtbox_Company.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Company.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_Company.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Company.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
             this.txtbox_Company.Enabled = false;
             this.txtbox_Company.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Company.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_Company.Location = new System.Drawing.Point(297, 6);
+            this.txtbox_Company.Location = new System.Drawing.Point(446, 9);
+            this.txtbox_Company.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_Company.Name = "txtbox_Company";
-            this.txtbox_Company.Size = new System.Drawing.Size(130, 27);
+            this.txtbox_Company.Size = new System.Drawing.Size(194, 37);
             this.txtbox_Company.TabIndex = 1;
             // 
             // cUSTOMERBindingSource
@@ -673,80 +708,86 @@
             // 
             // txtbox_Email
             // 
-            this.txtbox_Email.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Email.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_Email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.txtbox_Email.Enabled = false;
             this.txtbox_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Email.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_Email.Location = new System.Drawing.Point(697, 6);
+            this.txtbox_Email.Location = new System.Drawing.Point(1046, 9);
+            this.txtbox_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_Email.Name = "txtbox_Email";
-            this.txtbox_Email.Size = new System.Drawing.Size(161, 27);
+            this.txtbox_Email.Size = new System.Drawing.Size(240, 37);
             this.txtbox_Email.TabIndex = 3;
             // 
             // txtbox_Phone
             // 
-            this.txtbox_Phone.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Phone.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_Phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Phone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
             this.txtbox_Phone.Enabled = false;
             this.txtbox_Phone.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Phone.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_Phone.Location = new System.Drawing.Point(503, 6);
+            this.txtbox_Phone.Location = new System.Drawing.Point(754, 9);
+            this.txtbox_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_Phone.Name = "txtbox_Phone";
-            this.txtbox_Phone.Size = new System.Drawing.Size(124, 27);
+            this.txtbox_Phone.Size = new System.Drawing.Size(185, 37);
             this.txtbox_Phone.TabIndex = 2;
             // 
             // txtbox_Zip
             // 
-            this.txtbox_Zip.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Zip.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_Zip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Zip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.txtbox_Zip.Enabled = false;
             this.txtbox_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Zip.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_Zip.Location = new System.Drawing.Point(681, 42);
+            this.txtbox_Zip.Location = new System.Drawing.Point(1022, 65);
+            this.txtbox_Zip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_Zip.Name = "txtbox_Zip";
-            this.txtbox_Zip.Size = new System.Drawing.Size(177, 27);
+            this.txtbox_Zip.Size = new System.Drawing.Size(264, 37);
             this.txtbox_Zip.TabIndex = 7;
             // 
             // txtbox_State
             // 
-            this.txtbox_State.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_State.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_State.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
             this.txtbox_State.Enabled = false;
             this.txtbox_State.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_State.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_State.Location = new System.Drawing.Point(491, 42);
+            this.txtbox_State.Location = new System.Drawing.Point(736, 65);
+            this.txtbox_State.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_State.Name = "txtbox_State";
-            this.txtbox_State.Size = new System.Drawing.Size(136, 27);
+            this.txtbox_State.Size = new System.Drawing.Size(203, 37);
             this.txtbox_State.TabIndex = 6;
             // 
             // txtbox_City
             // 
-            this.txtbox_City.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_City.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_City.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_City.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
             this.txtbox_City.Enabled = false;
             this.txtbox_City.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_City.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_City.Location = new System.Drawing.Point(266, 42);
+            this.txtbox_City.Location = new System.Drawing.Point(399, 65);
+            this.txtbox_City.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_City.Name = "txtbox_City";
-            this.txtbox_City.Size = new System.Drawing.Size(170, 27);
+            this.txtbox_City.Size = new System.Drawing.Size(254, 37);
             this.txtbox_City.TabIndex = 5;
             // 
             // txtbox_Address
             // 
-            this.txtbox_Address.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_Address.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_Address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_Address.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
             this.txtbox_Address.Enabled = false;
             this.txtbox_Address.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Address.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_Address.Location = new System.Drawing.Point(78, 42);
+            this.txtbox_Address.Location = new System.Drawing.Point(117, 65);
+            this.txtbox_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_Address.Name = "txtbox_Address";
-            this.txtbox_Address.Size = new System.Drawing.Size(133, 27);
+            this.txtbox_Address.Size = new System.Drawing.Size(198, 37);
             this.txtbox_Address.TabIndex = 4;
             this.txtbox_Address.TextChanged += new System.EventHandler(this.txtbox_Address_TextChanged);
             // 
@@ -754,9 +795,10 @@
             // 
             this.lbl_Order.AutoSize = true;
             this.lbl_Order.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Order.Location = new System.Drawing.Point(871, 45);
+            this.lbl_Order.Location = new System.Drawing.Point(1306, 69);
+            this.lbl_Order.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Order.Name = "lbl_Order";
-            this.lbl_Order.Size = new System.Drawing.Size(65, 19);
+            this.lbl_Order.Size = new System.Drawing.Size(96, 29);
             this.lbl_Order.TabIndex = 17;
             this.lbl_Order.Text = "Order #:";
             // 
@@ -764,9 +806,10 @@
             // 
             this.lbl_Company.AutoSize = true;
             this.lbl_Company.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Company.Location = new System.Drawing.Point(216, 9);
+            this.lbl_Company.Location = new System.Drawing.Point(324, 14);
+            this.lbl_Company.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Company.Name = "lbl_Company";
-            this.lbl_Company.Size = new System.Drawing.Size(77, 19);
+            this.lbl_Company.Size = new System.Drawing.Size(115, 29);
             this.lbl_Company.TabIndex = 15;
             this.lbl_Company.Text = "Company:";
             // 
@@ -774,9 +817,10 @@
             // 
             this.lbl_Email.AutoSize = true;
             this.lbl_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Email.Location = new System.Drawing.Point(641, 9);
+            this.lbl_Email.Location = new System.Drawing.Point(962, 14);
+            this.lbl_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(50, 19);
+            this.lbl_Email.Size = new System.Drawing.Size(76, 29);
             this.lbl_Email.TabIndex = 13;
             this.lbl_Email.Text = "Email:";
             // 
@@ -784,9 +828,10 @@
             // 
             this.lbl_Phone.AutoSize = true;
             this.lbl_Phone.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Phone.Location = new System.Drawing.Point(440, 9);
+            this.lbl_Phone.Location = new System.Drawing.Point(660, 14);
+            this.lbl_Phone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Phone.Name = "lbl_Phone";
-            this.lbl_Phone.Size = new System.Drawing.Size(57, 19);
+            this.lbl_Phone.Size = new System.Drawing.Size(84, 29);
             this.lbl_Phone.TabIndex = 11;
             this.lbl_Phone.Text = "Phone:";
             // 
@@ -794,9 +839,10 @@
             // 
             this.lbl_Zip.AutoSize = true;
             this.lbl_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Zip.Location = new System.Drawing.Point(641, 45);
+            this.lbl_Zip.Location = new System.Drawing.Point(962, 69);
+            this.lbl_Zip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Zip.Name = "lbl_Zip";
-            this.lbl_Zip.Size = new System.Drawing.Size(34, 19);
+            this.lbl_Zip.Size = new System.Drawing.Size(50, 29);
             this.lbl_Zip.TabIndex = 9;
             this.lbl_Zip.Text = "Zip:";
             // 
@@ -804,9 +850,10 @@
             // 
             this.lbl_State.AutoSize = true;
             this.lbl_State.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_State.Location = new System.Drawing.Point(440, 45);
+            this.lbl_State.Location = new System.Drawing.Point(660, 69);
+            this.lbl_State.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_State.Name = "lbl_State";
-            this.lbl_State.Size = new System.Drawing.Size(49, 19);
+            this.lbl_State.Size = new System.Drawing.Size(71, 29);
             this.lbl_State.TabIndex = 7;
             this.lbl_State.Text = "State:";
             // 
@@ -814,9 +861,10 @@
             // 
             this.lbl_City.AutoSize = true;
             this.lbl_City.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_City.Location = new System.Drawing.Point(216, 45);
+            this.lbl_City.Location = new System.Drawing.Point(324, 69);
+            this.lbl_City.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_City.Name = "lbl_City";
-            this.lbl_City.Size = new System.Drawing.Size(39, 19);
+            this.lbl_City.Size = new System.Drawing.Size(58, 29);
             this.lbl_City.TabIndex = 5;
             this.lbl_City.Text = "City:";
             // 
@@ -824,9 +872,10 @@
             // 
             this.lbl_Address.AutoSize = true;
             this.lbl_Address.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Address.Location = new System.Drawing.Point(9, 45);
+            this.lbl_Address.Location = new System.Drawing.Point(14, 69);
+            this.lbl_Address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Address.Name = "lbl_Address";
-            this.lbl_Address.Size = new System.Drawing.Size(67, 19);
+            this.lbl_Address.Size = new System.Drawing.Size(102, 29);
             this.lbl_Address.TabIndex = 3;
             this.lbl_Address.Text = "Address:";
             // 
@@ -834,9 +883,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 9);
+            this.label6.Location = new System.Drawing.Point(14, 14);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 19);
+            this.label6.Size = new System.Drawing.Size(118, 29);
             this.label6.TabIndex = 1;
             this.label6.Text = "Customer:";
             // 
@@ -844,7 +894,7 @@
             // 
             this.combobox_CustomerIDZ.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combobox_CustomerIDZ.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.combobox_CustomerIDZ.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.combobox_CustomerIDZ.BackColor = System.Drawing.Color.DimGray;
             this.combobox_CustomerIDZ.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cUSTOMERBindingSource, "CUST_ID", true));
             this.combobox_CustomerIDZ.DataSource = this.cUSTOMERBindingSource;
             this.combobox_CustomerIDZ.DisplayMember = "CUST_LNAME";
@@ -853,9 +903,10 @@
             this.combobox_CustomerIDZ.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combobox_CustomerIDZ.ForeColor = System.Drawing.SystemColors.Window;
             this.combobox_CustomerIDZ.FormattingEnabled = true;
-            this.combobox_CustomerIDZ.Location = new System.Drawing.Point(90, 6);
+            this.combobox_CustomerIDZ.Location = new System.Drawing.Point(135, 9);
+            this.combobox_CustomerIDZ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.combobox_CustomerIDZ.Name = "combobox_CustomerIDZ";
-            this.combobox_CustomerIDZ.Size = new System.Drawing.Size(121, 27);
+            this.combobox_CustomerIDZ.Size = new System.Drawing.Size(180, 37);
             this.combobox_CustomerIDZ.TabIndex = 0;
             this.combobox_CustomerIDZ.ValueMember = "CUST_ID";
             // 
@@ -871,18 +922,20 @@
             this.panel2.Controls.Add(this.lbl_PickupCity);
             this.panel2.Controls.Add(this.lbl_PickupAddress);
             this.panel2.Controls.Add(this.lbl_PickupInfo);
-            this.panel2.Location = new System.Drawing.Point(13, 86);
+            this.panel2.Location = new System.Drawing.Point(20, 132);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(273, 203);
+            this.panel2.Size = new System.Drawing.Size(410, 312);
             this.panel2.TabIndex = 47;
             // 
             // checkBox_CopyPickupInformation
             // 
             this.checkBox_CopyPickupInformation.AutoSize = true;
             this.checkBox_CopyPickupInformation.Enabled = false;
-            this.checkBox_CopyPickupInformation.Location = new System.Drawing.Point(10, 37);
+            this.checkBox_CopyPickupInformation.Location = new System.Drawing.Point(15, 57);
+            this.checkBox_CopyPickupInformation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBox_CopyPickupInformation.Name = "checkBox_CopyPickupInformation";
-            this.checkBox_CopyPickupInformation.Size = new System.Drawing.Size(137, 19);
+            this.checkBox_CopyPickupInformation.Size = new System.Drawing.Size(208, 28);
             this.checkBox_CopyPickupInformation.TabIndex = 8;
             this.checkBox_CopyPickupInformation.Text = "Copy Customer Data";
             this.checkBox_CopyPickupInformation.UseVisualStyleBackColor = true;
@@ -890,59 +943,64 @@
             // 
             // txtbox_PickupAddress
             // 
-            this.txtbox_PickupAddress.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupAddress.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_PickupAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupAddress.Enabled = false;
             this.txtbox_PickupAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupAddress.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_PickupAddress.Location = new System.Drawing.Point(117, 61);
+            this.txtbox_PickupAddress.Location = new System.Drawing.Point(176, 94);
+            this.txtbox_PickupAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickupAddress.Name = "txtbox_PickupAddress";
-            this.txtbox_PickupAddress.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupAddress.Size = new System.Drawing.Size(210, 37);
             this.txtbox_PickupAddress.TabIndex = 38;
             // 
             // txtbox_PickupCity
             // 
-            this.txtbox_PickupCity.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupCity.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_PickupCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupCity.Enabled = false;
             this.txtbox_PickupCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupCity.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_PickupCity.Location = new System.Drawing.Point(117, 94);
+            this.txtbox_PickupCity.Location = new System.Drawing.Point(176, 145);
+            this.txtbox_PickupCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickupCity.Name = "txtbox_PickupCity";
-            this.txtbox_PickupCity.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupCity.Size = new System.Drawing.Size(210, 37);
             this.txtbox_PickupCity.TabIndex = 41;
             // 
             // txtbox_PickupState
             // 
-            this.txtbox_PickupState.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupState.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_PickupState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupState.Enabled = false;
             this.txtbox_PickupState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupState.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_PickupState.Location = new System.Drawing.Point(117, 128);
+            this.txtbox_PickupState.Location = new System.Drawing.Point(176, 197);
+            this.txtbox_PickupState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickupState.Name = "txtbox_PickupState";
-            this.txtbox_PickupState.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupState.Size = new System.Drawing.Size(210, 37);
             this.txtbox_PickupState.TabIndex = 43;
             // 
             // txtbox_PickupZip
             // 
-            this.txtbox_PickupZip.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtbox_PickupZip.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_PickupZip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupZip.Enabled = false;
             this.txtbox_PickupZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_PickupZip.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_PickupZip.Location = new System.Drawing.Point(117, 161);
+            this.txtbox_PickupZip.Location = new System.Drawing.Point(176, 248);
+            this.txtbox_PickupZip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickupZip.Name = "txtbox_PickupZip";
-            this.txtbox_PickupZip.Size = new System.Drawing.Size(141, 27);
+            this.txtbox_PickupZip.Size = new System.Drawing.Size(210, 37);
             this.txtbox_PickupZip.TabIndex = 45;
             // 
             // lbl_PickupZip
             // 
             this.lbl_PickupZip.AutoSize = true;
             this.lbl_PickupZip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PickupZip.Location = new System.Drawing.Point(9, 164);
+            this.lbl_PickupZip.Location = new System.Drawing.Point(14, 252);
+            this.lbl_PickupZip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupZip.Name = "lbl_PickupZip";
-            this.lbl_PickupZip.Size = new System.Drawing.Size(79, 19);
+            this.lbl_PickupZip.Size = new System.Drawing.Size(119, 29);
             this.lbl_PickupZip.TabIndex = 46;
             this.lbl_PickupZip.Text = "Pickup Zip:";
             // 
@@ -950,9 +1008,10 @@
             // 
             this.lbl_PickupState.AutoSize = true;
             this.lbl_PickupState.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PickupState.Location = new System.Drawing.Point(9, 130);
+            this.lbl_PickupState.Location = new System.Drawing.Point(14, 200);
+            this.lbl_PickupState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupState.Name = "lbl_PickupState";
-            this.lbl_PickupState.Size = new System.Drawing.Size(92, 19);
+            this.lbl_PickupState.Size = new System.Drawing.Size(140, 29);
             this.lbl_PickupState.TabIndex = 44;
             this.lbl_PickupState.Text = "Pickup State:";
             // 
@@ -960,9 +1019,10 @@
             // 
             this.lbl_PickupCity.AutoSize = true;
             this.lbl_PickupCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PickupCity.Location = new System.Drawing.Point(9, 98);
+            this.lbl_PickupCity.Location = new System.Drawing.Point(14, 151);
+            this.lbl_PickupCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupCity.Name = "lbl_PickupCity";
-            this.lbl_PickupCity.Size = new System.Drawing.Size(84, 19);
+            this.lbl_PickupCity.Size = new System.Drawing.Size(127, 29);
             this.lbl_PickupCity.TabIndex = 42;
             this.lbl_PickupCity.Text = "Pickup City:";
             // 
@@ -970,9 +1030,10 @@
             // 
             this.lbl_PickupAddress.AutoSize = true;
             this.lbl_PickupAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PickupAddress.Location = new System.Drawing.Point(7, 64);
+            this.lbl_PickupAddress.Location = new System.Drawing.Point(10, 98);
+            this.lbl_PickupAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupAddress.Name = "lbl_PickupAddress";
-            this.lbl_PickupAddress.Size = new System.Drawing.Size(111, 19);
+            this.lbl_PickupAddress.Size = new System.Drawing.Size(167, 29);
             this.lbl_PickupAddress.TabIndex = 40;
             this.lbl_PickupAddress.Text = "Pickup Address:";
             // 
@@ -980,9 +1041,10 @@
             // 
             this.lbl_PickupInfo.AutoSize = true;
             this.lbl_PickupInfo.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PickupInfo.Location = new System.Drawing.Point(6, 5);
+            this.lbl_PickupInfo.Location = new System.Drawing.Point(9, 8);
+            this.lbl_PickupInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupInfo.Name = "lbl_PickupInfo";
-            this.lbl_PickupInfo.Size = new System.Drawing.Size(216, 26);
+            this.lbl_PickupInfo.Size = new System.Drawing.Size(330, 39);
             this.lbl_PickupInfo.TabIndex = 37;
             this.lbl_PickupInfo.Text = "PICKUP INFORMATION:";
             // 
@@ -998,10 +1060,11 @@
             this.tab_ManageCustomers.Controls.Add(this.btnSave);
             this.tab_ManageCustomers.Controls.Add(this.btnCancel);
             this.tab_ManageCustomers.ForeColor = System.Drawing.Color.LightGray;
-            this.tab_ManageCustomers.Location = new System.Drawing.Point(4, 28);
+            this.tab_ManageCustomers.Location = new System.Drawing.Point(4, 38);
+            this.tab_ManageCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tab_ManageCustomers.Name = "tab_ManageCustomers";
-            this.tab_ManageCustomers.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_ManageCustomers.Size = new System.Drawing.Size(1107, 546);
+            this.tab_ManageCustomers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tab_ManageCustomers.Size = new System.Drawing.Size(1664, 847);
             this.tab_ManageCustomers.TabIndex = 1;
             this.tab_ManageCustomers.Text = "Manage Customers";
             // 
@@ -1011,9 +1074,10 @@
             this.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.SearchBox.Location = new System.Drawing.Point(346, 7);
+            this.SearchBox.Location = new System.Drawing.Point(519, 11);
+            this.SearchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(279, 27);
+            this.SearchBox.Size = new System.Drawing.Size(418, 37);
             this.SearchBox.TabIndex = 18;
             this.SearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBox_KeyPress);
             // 
@@ -1042,9 +1106,10 @@
             this.panel1.Controls.Add(this.LastNameBox);
             this.panel1.Enabled = false;
             this.panel1.ForeColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Location = new System.Drawing.Point(0, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 328);
+            this.panel1.Size = new System.Drawing.Size(417, 505);
             this.panel1.TabIndex = 0;
             // 
             // comboBox_Broker
@@ -1054,9 +1119,10 @@
             this.comboBox_Broker.Items.AddRange(new object[] {
             "YES",
             "NO"});
-            this.comboBox_Broker.Location = new System.Drawing.Point(137, 268);
+            this.comboBox_Broker.Location = new System.Drawing.Point(206, 412);
+            this.comboBox_Broker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_Broker.Name = "comboBox_Broker";
-            this.comboBox_Broker.Size = new System.Drawing.Size(121, 27);
+            this.comboBox_Broker.Size = new System.Drawing.Size(180, 37);
             this.comboBox_Broker.TabIndex = 25;
             // 
             // label3
@@ -1064,9 +1130,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(13, 268);
+            this.label3.Location = new System.Drawing.Point(20, 412);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 19);
+            this.label3.Size = new System.Drawing.Size(171, 29);
             this.label3.TabIndex = 24;
             this.label3.Text = "Is this a Broker?";
             // 
@@ -1075,9 +1142,10 @@
             this.lbl_RequiredField.AutoSize = true;
             this.lbl_RequiredField.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RequiredField.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 296);
+            this.lbl_RequiredField.Location = new System.Drawing.Point(20, 455);
+            this.lbl_RequiredField.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_RequiredField.Name = "lbl_RequiredField";
-            this.lbl_RequiredField.Size = new System.Drawing.Size(216, 19);
+            this.lbl_RequiredField.Size = new System.Drawing.Size(316, 29);
             this.lbl_RequiredField.TabIndex = 20;
             this.lbl_RequiredField.Text = "*Please fill in the required fields";
             this.lbl_RequiredField.Visible = false;
@@ -1087,9 +1155,10 @@
             this.ZipLabel.AutoSize = true;
             this.ZipLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZipLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.ZipLabel.Location = new System.Drawing.Point(13, 236);
+            this.ZipLabel.Location = new System.Drawing.Point(20, 363);
+            this.ZipLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ZipLabel.Name = "ZipLabel";
-            this.ZipLabel.Size = new System.Drawing.Size(68, 19);
+            this.ZipLabel.Size = new System.Drawing.Size(99, 29);
             this.ZipLabel.TabIndex = 19;
             this.ZipLabel.Text = "Zip Code";
             // 
@@ -1100,9 +1169,10 @@
             this.ZipBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.ZipBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZipBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.ZipBox.Location = new System.Drawing.Point(101, 233);
+            this.ZipBox.Location = new System.Drawing.Point(152, 358);
+            this.ZipBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ZipBox.Name = "ZipBox";
-            this.ZipBox.Size = new System.Drawing.Size(163, 27);
+            this.ZipBox.Size = new System.Drawing.Size(244, 37);
             this.ZipBox.TabIndex = 18;
             this.ZipBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ZipBox_KeyPress);
             // 
@@ -1111,9 +1181,10 @@
             this.CompanyLabel.AutoSize = true;
             this.CompanyLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.CompanyLabel.Location = new System.Drawing.Point(13, 124);
+            this.CompanyLabel.Location = new System.Drawing.Point(20, 191);
+            this.CompanyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CompanyLabel.Name = "CompanyLabel";
-            this.CompanyLabel.Size = new System.Drawing.Size(73, 19);
+            this.CompanyLabel.Size = new System.Drawing.Size(108, 29);
             this.CompanyLabel.TabIndex = 17;
             this.CompanyLabel.Text = "Company";
             // 
@@ -1124,9 +1195,10 @@
             this.CompanyBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_COMPANY", true));
             this.CompanyBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompanyBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.CompanyBox.Location = new System.Drawing.Point(101, 121);
+            this.CompanyBox.Location = new System.Drawing.Point(152, 186);
+            this.CompanyBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CompanyBox.Name = "CompanyBox";
-            this.CompanyBox.Size = new System.Drawing.Size(163, 27);
+            this.CompanyBox.Size = new System.Drawing.Size(244, 37);
             this.CompanyBox.TabIndex = 10;
             // 
             // StateLabel
@@ -1134,9 +1206,10 @@
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StateLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.StateLabel.Location = new System.Drawing.Point(13, 208);
+            this.StateLabel.Location = new System.Drawing.Point(20, 320);
+            this.StateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StateLabel.Name = "StateLabel";
-            this.StateLabel.Size = new System.Drawing.Size(45, 19);
+            this.StateLabel.Size = new System.Drawing.Size(64, 29);
             this.StateLabel.TabIndex = 16;
             this.StateLabel.Text = "State";
             // 
@@ -1147,9 +1220,10 @@
             this.StateBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_STATE", true));
             this.StateBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StateBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.StateBox.Location = new System.Drawing.Point(101, 205);
+            this.StateBox.Location = new System.Drawing.Point(152, 315);
+            this.StateBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StateBox.Name = "StateBox";
-            this.StateBox.Size = new System.Drawing.Size(163, 27);
+            this.StateBox.Size = new System.Drawing.Size(244, 37);
             this.StateBox.TabIndex = 13;
             // 
             // CityLabel
@@ -1157,9 +1231,10 @@
             this.CityLabel.AutoSize = true;
             this.CityLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.CityLabel.Location = new System.Drawing.Point(13, 180);
+            this.CityLabel.Location = new System.Drawing.Point(20, 277);
+            this.CityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(35, 19);
+            this.CityLabel.Size = new System.Drawing.Size(51, 29);
             this.CityLabel.TabIndex = 15;
             this.CityLabel.Text = "City";
             // 
@@ -1170,9 +1245,10 @@
             this.CityBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_CITY", true));
             this.CityBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CityBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.CityBox.Location = new System.Drawing.Point(101, 177);
+            this.CityBox.Location = new System.Drawing.Point(152, 272);
+            this.CityBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CityBox.Name = "CityBox";
-            this.CityBox.Size = new System.Drawing.Size(163, 27);
+            this.CityBox.Size = new System.Drawing.Size(244, 37);
             this.CityBox.TabIndex = 12;
             // 
             // AddressLabel
@@ -1180,9 +1256,10 @@
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.AddressLabel.Location = new System.Drawing.Point(13, 152);
+            this.AddressLabel.Location = new System.Drawing.Point(20, 234);
+            this.AddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(63, 19);
+            this.AddressLabel.Size = new System.Drawing.Size(95, 29);
             this.AddressLabel.TabIndex = 14;
             this.AddressLabel.Text = "Address";
             // 
@@ -1193,9 +1270,10 @@
             this.AddressBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ADDRESS", true));
             this.AddressBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.AddressBox.Location = new System.Drawing.Point(101, 149);
+            this.AddressBox.Location = new System.Drawing.Point(152, 229);
+            this.AddressBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(163, 27);
+            this.AddressBox.Size = new System.Drawing.Size(244, 37);
             this.AddressBox.TabIndex = 11;
             // 
             // FirstNameLabel
@@ -1203,9 +1281,10 @@
             this.FirstNameLabel.AutoSize = true;
             this.FirstNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.FirstNameLabel.Location = new System.Drawing.Point(13, 12);
+            this.FirstNameLabel.Location = new System.Drawing.Point(20, 18);
+            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(82, 19);
+            this.FirstNameLabel.Size = new System.Drawing.Size(122, 29);
             this.FirstNameLabel.TabIndex = 9;
             this.FirstNameLabel.Text = "First Name";
             // 
@@ -1216,9 +1295,10 @@
             this.FirstNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_FNAME", true));
             this.FirstNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstNameBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.FirstNameBox.Location = new System.Drawing.Point(101, 9);
+            this.FirstNameBox.Location = new System.Drawing.Point(152, 14);
+            this.FirstNameBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(163, 27);
+            this.FirstNameBox.Size = new System.Drawing.Size(244, 37);
             this.FirstNameBox.TabIndex = 1;
             this.FirstNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FirstNameBox_KeyPress);
             // 
@@ -1227,9 +1307,10 @@
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.EmailLabel.Location = new System.Drawing.Point(13, 96);
+            this.EmailLabel.Location = new System.Drawing.Point(20, 148);
+            this.EmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(46, 19);
+            this.EmailLabel.Size = new System.Drawing.Size(69, 29);
             this.EmailLabel.TabIndex = 7;
             this.EmailLabel.Text = "Email";
             // 
@@ -1240,9 +1321,10 @@
             this.EmailBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.EmailBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.EmailBox.Location = new System.Drawing.Point(101, 93);
+            this.EmailBox.Location = new System.Drawing.Point(152, 143);
+            this.EmailBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(163, 27);
+            this.EmailBox.Size = new System.Drawing.Size(244, 37);
             this.EmailBox.TabIndex = 3;
             // 
             // PhoneLabel
@@ -1250,9 +1332,10 @@
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.PhoneLabel.Location = new System.Drawing.Point(13, 68);
+            this.PhoneLabel.Location = new System.Drawing.Point(20, 105);
+            this.PhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(65, 19);
+            this.PhoneLabel.Size = new System.Drawing.Size(94, 29);
             this.PhoneLabel.TabIndex = 5;
             this.PhoneLabel.Text = "Phone #";
             // 
@@ -1263,9 +1346,10 @@
             this.PhoneNumberBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_PHONE", true));
             this.PhoneNumberBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PhoneNumberBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.PhoneNumberBox.Location = new System.Drawing.Point(101, 65);
+            this.PhoneNumberBox.Location = new System.Drawing.Point(152, 100);
+            this.PhoneNumberBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PhoneNumberBox.Name = "PhoneNumberBox";
-            this.PhoneNumberBox.Size = new System.Drawing.Size(163, 27);
+            this.PhoneNumberBox.Size = new System.Drawing.Size(244, 37);
             this.PhoneNumberBox.TabIndex = 2;
             this.PhoneNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberBox_KeyPress);
             // 
@@ -1274,9 +1358,10 @@
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.LastNameLabel.Location = new System.Drawing.Point(13, 40);
+            this.LastNameLabel.Location = new System.Drawing.Point(20, 62);
+            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(80, 19);
+            this.LastNameLabel.Size = new System.Drawing.Size(118, 29);
             this.LastNameLabel.TabIndex = 3;
             this.LastNameLabel.Text = "Last Name";
             // 
@@ -1287,9 +1372,10 @@
             this.LastNameBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_LNAME", true));
             this.LastNameBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastNameBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.LastNameBox.Location = new System.Drawing.Point(101, 37);
+            this.LastNameBox.Location = new System.Drawing.Point(152, 57);
+            this.LastNameBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(163, 27);
+            this.LastNameBox.Size = new System.Drawing.Size(244, 37);
             this.LastNameBox.TabIndex = 1;
             this.LastNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LastNameBox_KeyPress);
             // 
@@ -1314,10 +1400,12 @@
             this.cUSTSTATEDataGridViewTextBoxColumn,
             this.cUSTZIPDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(284, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(426, 66);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(820, 496);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(1230, 763);
             this.dataGridView1.TabIndex = 3;
             // 
             // cUSTIDDataGridViewTextBoxColumn
@@ -1325,106 +1413,118 @@
             this.cUSTIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTIDDataGridViewTextBoxColumn.DataPropertyName = "CUST_ID";
             this.cUSTIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.cUSTIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTIDDataGridViewTextBoxColumn.Name = "cUSTIDDataGridViewTextBoxColumn";
             this.cUSTIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTIDDataGridViewTextBoxColumn.Width = 48;
+            this.cUSTIDDataGridViewTextBoxColumn.Width = 70;
             // 
             // BROKER
             // 
             this.BROKER.DataPropertyName = "BROKER";
             this.BROKER.HeaderText = "BROKER";
+            this.BROKER.MinimumWidth = 8;
             this.BROKER.Name = "BROKER";
             this.BROKER.ReadOnly = true;
+            this.BROKER.Width = 150;
             // 
             // cUSTFNAMEDataGridViewTextBoxColumn
             // 
             this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
             this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
             this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 155;
             // 
             // cUSTLNAMEDataGridViewTextBoxColumn
             // 
             this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
             this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
             this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 152;
             // 
             // cUSTEMAILDataGridViewTextBoxColumn
             // 
             this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
             this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.cUSTEMAILDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
             this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
+            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 104;
             // 
             // cUSTPHONEDataGridViewTextBoxColumn
             // 
             this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
             this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.cUSTPHONEDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
             this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
+            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 112;
             // 
             // cUSTCOMPANYDataGridViewTextBoxColumn
             // 
             this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
             this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
             this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 143;
             // 
             // cUSTADDRESSDataGridViewTextBoxColumn
             // 
             this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
             this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
             this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 127;
             // 
             // cUSTCITYDataGridViewTextBoxColumn
             // 
             this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
             this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cUSTCITYDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
             this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
+            this.cUSTCITYDataGridViewTextBoxColumn.Width = 87;
             // 
             // cUSTSTATEDataGridViewTextBoxColumn
             // 
             this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
             this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
+            this.cUSTSTATEDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
             this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
             // 
             // cUSTZIPDataGridViewTextBoxColumn
             // 
             this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
             this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
+            this.cUSTZIPDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
             this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
+            this.cUSTZIPDataGridViewTextBoxColumn.Width = 79;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(284, 10);
+            this.label1.Location = new System.Drawing.Point(426, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 19);
+            this.label1.Size = new System.Drawing.Size(87, 29);
             this.label1.TabIndex = 17;
             this.label1.Text = "Search:";
             // 
@@ -1436,9 +1536,10 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(45, 388);
+            this.btnEdit.Location = new System.Drawing.Point(68, 597);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(184, 46);
+            this.btnEdit.Size = new System.Drawing.Size(276, 71);
             this.btnEdit.TabIndex = 16;
             this.btnEdit.Text = "Edit Customer";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -1452,9 +1553,10 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.Location = new System.Drawing.Point(45, 335);
+            this.btnNew.Location = new System.Drawing.Point(68, 515);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(184, 46);
+            this.btnNew.Size = new System.Drawing.Size(276, 71);
             this.btnNew.TabIndex = 15;
             this.btnNew.Text = "Add New Customer";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -1469,9 +1571,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(45, 440);
+            this.btnSave.Location = new System.Drawing.Point(68, 677);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(184, 46);
+            this.btnSave.Size = new System.Drawing.Size(276, 71);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -1486,9 +1589,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(45, 492);
+            this.btnCancel.Location = new System.Drawing.Point(68, 757);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(184, 44);
+            this.btnCancel.Size = new System.Drawing.Size(276, 68);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -1499,15 +1603,17 @@
             this.tab_Help.BackColor = System.Drawing.SystemColors.Control;
             this.tab_Help.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Help.BackgroundImage")));
             this.tab_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tab_Help.Location = new System.Drawing.Point(4, 28);
+            this.tab_Help.Location = new System.Drawing.Point(4, 38);
+            this.tab_Help.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tab_Help.Name = "tab_Help";
-            this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Help.Size = new System.Drawing.Size(1107, 546);
+            this.tab_Help.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tab_Help.Size = new System.Drawing.Size(1664, 847);
             this.tab_Help.TabIndex = 4;
             this.tab_Help.Text = "Help";
             // 
             // tab_SearchOrders
             // 
+            this.tab_SearchOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tab_SearchOrders.Controls.Add(this.comboBox_VehicleEdit);
             this.tab_SearchOrders.Controls.Add(this.label4);
             this.tab_SearchOrders.Controls.Add(this.txtbox_OrderNumberEdit);
@@ -1549,13 +1655,13 @@
             this.tab_SearchOrders.Controls.Add(this.lbl_OrderSearch);
             this.tab_SearchOrders.Controls.Add(this.txtbox_OrderSearchBox);
             this.tab_SearchOrders.Controls.Add(this.dataGridView2);
-            this.tab_SearchOrders.Location = new System.Drawing.Point(4, 28);
+            this.tab_SearchOrders.Location = new System.Drawing.Point(4, 38);
+            this.tab_SearchOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tab_SearchOrders.Name = "tab_SearchOrders";
-            this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_SearchOrders.Size = new System.Drawing.Size(1107, 546);
+            this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tab_SearchOrders.Size = new System.Drawing.Size(1664, 847);
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
-            this.tab_SearchOrders.UseVisualStyleBackColor = true;
             // 
             // comboBox_VehicleEdit
             // 
@@ -1569,18 +1675,20 @@
             "Vehicle 1",
             "Vehicle 2",
             "Vehicle 3"});
-            this.comboBox_VehicleEdit.Location = new System.Drawing.Point(172, 221);
+            this.comboBox_VehicleEdit.Location = new System.Drawing.Point(258, 340);
+            this.comboBox_VehicleEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_VehicleEdit.Name = "comboBox_VehicleEdit";
-            this.comboBox_VehicleEdit.Size = new System.Drawing.Size(173, 27);
+            this.comboBox_VehicleEdit.Size = new System.Drawing.Size(258, 37);
             this.comboBox_VehicleEdit.TabIndex = 72;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(68, 224);
+            this.label4.Location = new System.Drawing.Point(102, 345);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.Size = new System.Drawing.Size(148, 29);
             this.label4.TabIndex = 71;
             this.label4.Text = "Vehicle Used:";
             // 
@@ -1588,17 +1696,19 @@
             // 
             this.txtbox_OrderNumberEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNumberEdit.Enabled = false;
-            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(859, 221);
+            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(1288, 340);
+            this.txtbox_OrderNumberEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
-            this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(154, 27);
+            this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(229, 37);
             this.txtbox_OrderNumberEdit.TabIndex = 42;
             // 
             // lbl_OrderNumberEdit
             // 
             this.lbl_OrderNumberEdit.AutoSize = true;
-            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(781, 220);
+            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(1172, 338);
+            this.lbl_OrderNumberEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
-            this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(62, 19);
+            this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(93, 29);
             this.lbl_OrderNumberEdit.TabIndex = 41;
             this.lbl_OrderNumberEdit.Text = "Order #:";
             // 
@@ -1613,17 +1723,19 @@
             "Delayed",
             "Complete",
             "Cancelled"});
-            this.combobox_OrderStatusEdit.Location = new System.Drawing.Point(124, 193);
+            this.combobox_OrderStatusEdit.Location = new System.Drawing.Point(186, 297);
+            this.combobox_OrderStatusEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.combobox_OrderStatusEdit.Name = "combobox_OrderStatusEdit";
-            this.combobox_OrderStatusEdit.Size = new System.Drawing.Size(121, 27);
+            this.combobox_OrderStatusEdit.Size = new System.Drawing.Size(180, 37);
             this.combobox_OrderStatusEdit.TabIndex = 40;
             // 
             // btn_SaveOrderEdit
             // 
             this.btn_SaveOrderEdit.Enabled = false;
-            this.btn_SaveOrderEdit.Location = new System.Drawing.Point(198, 275);
+            this.btn_SaveOrderEdit.Location = new System.Drawing.Point(297, 423);
+            this.btn_SaveOrderEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_SaveOrderEdit.Name = "btn_SaveOrderEdit";
-            this.btn_SaveOrderEdit.Size = new System.Drawing.Size(147, 61);
+            this.btn_SaveOrderEdit.Size = new System.Drawing.Size(220, 94);
             this.btn_SaveOrderEdit.TabIndex = 39;
             this.btn_SaveOrderEdit.Text = "Save Order";
             this.btn_SaveOrderEdit.UseVisualStyleBackColor = true;
@@ -1631,9 +1743,10 @@
             // 
             // btn_EditOrder
             // 
-            this.btn_EditOrder.Location = new System.Drawing.Point(45, 275);
+            this.btn_EditOrder.Location = new System.Drawing.Point(68, 423);
+            this.btn_EditOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_EditOrder.Name = "btn_EditOrder";
-            this.btn_EditOrder.Size = new System.Drawing.Size(147, 61);
+            this.btn_EditOrder.Size = new System.Drawing.Size(220, 94);
             this.btn_EditOrder.TabIndex = 38;
             this.btn_EditOrder.Text = "Edit Order";
             this.btn_EditOrder.UseVisualStyleBackColor = true;
@@ -1644,11 +1757,12 @@
             this.dateTimePicker_DeliveryDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DROPOFF_DATE", true));
             this.dateTimePicker_DeliveryDateEdit.Enabled = false;
             this.dateTimePicker_DeliveryDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(124, 129);
+            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(186, 198);
+            this.dateTimePicker_DeliveryDateEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker_DeliveryDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_DeliveryDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_DeliveryDateEdit.Name = "dateTimePicker_DeliveryDateEdit";
-            this.dateTimePicker_DeliveryDateEdit.Size = new System.Drawing.Size(221, 27);
+            this.dateTimePicker_DeliveryDateEdit.Size = new System.Drawing.Size(330, 37);
             this.dateTimePicker_DeliveryDateEdit.TabIndex = 37;
             // 
             // dateTimePicker_PickUpDateEdit
@@ -1656,11 +1770,12 @@
             this.dateTimePicker_PickUpDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_DATE", true));
             this.dateTimePicker_PickUpDateEdit.Enabled = false;
             this.dateTimePicker_PickUpDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_PickUpDateEdit.Location = new System.Drawing.Point(124, 96);
+            this.dateTimePicker_PickUpDateEdit.Location = new System.Drawing.Point(186, 148);
+            this.dateTimePicker_PickUpDateEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker_PickUpDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_PickUpDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_PickUpDateEdit.Name = "dateTimePicker_PickUpDateEdit";
-            this.dateTimePicker_PickUpDateEdit.Size = new System.Drawing.Size(221, 27);
+            this.dateTimePicker_PickUpDateEdit.Size = new System.Drawing.Size(330, 37);
             this.dateTimePicker_PickUpDateEdit.TabIndex = 36;
             // 
             // dateTimePicker_BookingDateEdit
@@ -1668,19 +1783,21 @@
             this.dateTimePicker_BookingDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
             this.dateTimePicker_BookingDateEdit.Enabled = false;
             this.dateTimePicker_BookingDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_BookingDateEdit.Location = new System.Drawing.Point(124, 63);
+            this.dateTimePicker_BookingDateEdit.Location = new System.Drawing.Point(186, 97);
+            this.dateTimePicker_BookingDateEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker_BookingDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_BookingDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_BookingDateEdit.Name = "dateTimePicker_BookingDateEdit";
-            this.dateTimePicker_BookingDateEdit.Size = new System.Drawing.Size(221, 27);
+            this.dateTimePicker_BookingDateEdit.Size = new System.Drawing.Size(330, 37);
             this.dateTimePicker_BookingDateEdit.TabIndex = 35;
             // 
             // lbl_SpecialInstructionsEdit
             // 
             this.lbl_SpecialInstructionsEdit.AutoSize = true;
-            this.lbl_SpecialInstructionsEdit.Location = new System.Drawing.Point(704, 296);
+            this.lbl_SpecialInstructionsEdit.Location = new System.Drawing.Point(1056, 455);
+            this.lbl_SpecialInstructionsEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_SpecialInstructionsEdit.Name = "lbl_SpecialInstructionsEdit";
-            this.lbl_SpecialInstructionsEdit.Size = new System.Drawing.Size(139, 19);
+            this.lbl_SpecialInstructionsEdit.Size = new System.Drawing.Size(209, 29);
             this.lbl_SpecialInstructionsEdit.TabIndex = 34;
             this.lbl_SpecialInstructionsEdit.Text = "Special Instructions:";
             // 
@@ -1688,18 +1805,20 @@
             // 
             this.txtboxrch_SpecailInstructionsEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "SPECIAL_INSTRUCTIONS", true));
             this.txtboxrch_SpecailInstructionsEdit.Enabled = false;
-            this.txtboxrch_SpecailInstructionsEdit.Location = new System.Drawing.Point(849, 257);
+            this.txtboxrch_SpecailInstructionsEdit.Location = new System.Drawing.Point(1274, 395);
+            this.txtboxrch_SpecailInstructionsEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxrch_SpecailInstructionsEdit.Name = "txtboxrch_SpecailInstructionsEdit";
-            this.txtboxrch_SpecailInstructionsEdit.Size = new System.Drawing.Size(238, 96);
+            this.txtboxrch_SpecailInstructionsEdit.Size = new System.Drawing.Size(355, 146);
             this.txtboxrch_SpecailInstructionsEdit.TabIndex = 33;
             this.txtboxrch_SpecailInstructionsEdit.Text = "";
             // 
             // lbl_DescriptionEdit
             // 
             this.lbl_DescriptionEdit.AutoSize = true;
-            this.lbl_DescriptionEdit.Location = new System.Drawing.Point(351, 296);
+            this.lbl_DescriptionEdit.Location = new System.Drawing.Point(526, 455);
+            this.lbl_DescriptionEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DescriptionEdit.Name = "lbl_DescriptionEdit";
-            this.lbl_DescriptionEdit.Size = new System.Drawing.Size(87, 19);
+            this.lbl_DescriptionEdit.Size = new System.Drawing.Size(131, 29);
             this.lbl_DescriptionEdit.TabIndex = 32;
             this.lbl_DescriptionEdit.Text = "Description:";
             // 
@@ -1707,9 +1826,10 @@
             // 
             this.txtboxrch_DescriptionEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DESCRIPTION", true));
             this.txtboxrch_DescriptionEdit.Enabled = false;
-            this.txtboxrch_DescriptionEdit.Location = new System.Drawing.Point(444, 257);
+            this.txtboxrch_DescriptionEdit.Location = new System.Drawing.Point(666, 395);
+            this.txtboxrch_DescriptionEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxrch_DescriptionEdit.Name = "txtboxrch_DescriptionEdit";
-            this.txtboxrch_DescriptionEdit.Size = new System.Drawing.Size(238, 96);
+            this.txtboxrch_DescriptionEdit.Size = new System.Drawing.Size(355, 146);
             this.txtboxrch_DescriptionEdit.TabIndex = 31;
             this.txtboxrch_DescriptionEdit.Text = "";
             // 
@@ -1717,17 +1837,19 @@
             // 
             this.txtbox_DeliveryZipEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_ZIP", true));
             this.txtbox_DeliveryZipEdit.Enabled = false;
-            this.txtbox_DeliveryZipEdit.Location = new System.Drawing.Point(717, 160);
+            this.txtbox_DeliveryZipEdit.Location = new System.Drawing.Point(1076, 246);
+            this.txtbox_DeliveryZipEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryZipEdit.Name = "txtbox_DeliveryZipEdit";
-            this.txtbox_DeliveryZipEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryZipEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_DeliveryZipEdit.TabIndex = 30;
             // 
             // lbl_DeliveryZipEdit
             // 
             this.lbl_DeliveryZipEdit.AutoSize = true;
-            this.lbl_DeliveryZipEdit.Location = new System.Drawing.Point(604, 163);
+            this.lbl_DeliveryZipEdit.Location = new System.Drawing.Point(906, 251);
+            this.lbl_DeliveryZipEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryZipEdit.Name = "lbl_DeliveryZipEdit";
-            this.lbl_DeliveryZipEdit.Size = new System.Drawing.Size(90, 19);
+            this.lbl_DeliveryZipEdit.Size = new System.Drawing.Size(135, 29);
             this.lbl_DeliveryZipEdit.TabIndex = 29;
             this.lbl_DeliveryZipEdit.Text = "Delivery Zip:";
             // 
@@ -1735,17 +1857,19 @@
             // 
             this.txtbox_DeliveryStateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_STATE", true));
             this.txtbox_DeliveryStateEdit.Enabled = false;
-            this.txtbox_DeliveryStateEdit.Location = new System.Drawing.Point(717, 127);
+            this.txtbox_DeliveryStateEdit.Location = new System.Drawing.Point(1076, 195);
+            this.txtbox_DeliveryStateEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryStateEdit.Name = "txtbox_DeliveryStateEdit";
-            this.txtbox_DeliveryStateEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryStateEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_DeliveryStateEdit.TabIndex = 28;
             // 
             // lbl_DeliveryStateEdit
             // 
             this.lbl_DeliveryStateEdit.AutoSize = true;
-            this.lbl_DeliveryStateEdit.Location = new System.Drawing.Point(604, 130);
+            this.lbl_DeliveryStateEdit.Location = new System.Drawing.Point(906, 200);
+            this.lbl_DeliveryStateEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryStateEdit.Name = "lbl_DeliveryStateEdit";
-            this.lbl_DeliveryStateEdit.Size = new System.Drawing.Size(107, 19);
+            this.lbl_DeliveryStateEdit.Size = new System.Drawing.Size(161, 29);
             this.lbl_DeliveryStateEdit.TabIndex = 27;
             this.lbl_DeliveryStateEdit.Text = "Delivery State: ";
             // 
@@ -1753,17 +1877,19 @@
             // 
             this.txtbox_DeliveryCityEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_CITY", true));
             this.txtbox_DeliveryCityEdit.Enabled = false;
-            this.txtbox_DeliveryCityEdit.Location = new System.Drawing.Point(717, 94);
+            this.txtbox_DeliveryCityEdit.Location = new System.Drawing.Point(1076, 145);
+            this.txtbox_DeliveryCityEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryCityEdit.Name = "txtbox_DeliveryCityEdit";
-            this.txtbox_DeliveryCityEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryCityEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_DeliveryCityEdit.TabIndex = 26;
             // 
             // lbl_DeliveryCityEdit
             // 
             this.lbl_DeliveryCityEdit.AutoSize = true;
-            this.lbl_DeliveryCityEdit.Location = new System.Drawing.Point(612, 94);
+            this.lbl_DeliveryCityEdit.Location = new System.Drawing.Point(918, 145);
+            this.lbl_DeliveryCityEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryCityEdit.Name = "lbl_DeliveryCityEdit";
-            this.lbl_DeliveryCityEdit.Size = new System.Drawing.Size(99, 19);
+            this.lbl_DeliveryCityEdit.Size = new System.Drawing.Size(148, 29);
             this.lbl_DeliveryCityEdit.TabIndex = 25;
             this.lbl_DeliveryCityEdit.Text = "Delivery City: ";
             // 
@@ -1771,17 +1897,19 @@
             // 
             this.txtbox_DeliveryAddressEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DELIVERY_ADDRESS", true));
             this.txtbox_DeliveryAddressEdit.Enabled = false;
-            this.txtbox_DeliveryAddressEdit.Location = new System.Drawing.Point(717, 61);
+            this.txtbox_DeliveryAddressEdit.Location = new System.Drawing.Point(1076, 94);
+            this.txtbox_DeliveryAddressEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_DeliveryAddressEdit.Name = "txtbox_DeliveryAddressEdit";
-            this.txtbox_DeliveryAddressEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_DeliveryAddressEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_DeliveryAddressEdit.TabIndex = 24;
             // 
             // lbl_DeliveryAddressEdit
             // 
             this.lbl_DeliveryAddressEdit.AutoSize = true;
-            this.lbl_DeliveryAddressEdit.Location = new System.Drawing.Point(589, 64);
+            this.lbl_DeliveryAddressEdit.Location = new System.Drawing.Point(884, 98);
+            this.lbl_DeliveryAddressEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryAddressEdit.Name = "lbl_DeliveryAddressEdit";
-            this.lbl_DeliveryAddressEdit.Size = new System.Drawing.Size(122, 19);
+            this.lbl_DeliveryAddressEdit.Size = new System.Drawing.Size(183, 29);
             this.lbl_DeliveryAddressEdit.TabIndex = 23;
             this.lbl_DeliveryAddressEdit.Text = "Delivery Address:";
             // 
@@ -1789,17 +1917,19 @@
             // 
             this.txtbox_PickUpZipEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_ZIP", true));
             this.txtbox_PickUpZipEdit.Enabled = false;
-            this.txtbox_PickUpZipEdit.Location = new System.Drawing.Point(483, 163);
+            this.txtbox_PickUpZipEdit.Location = new System.Drawing.Point(724, 251);
+            this.txtbox_PickUpZipEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickUpZipEdit.Name = "txtbox_PickUpZipEdit";
-            this.txtbox_PickUpZipEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickUpZipEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_PickUpZipEdit.TabIndex = 22;
             // 
             // lbl_PickUpZipEdit
             // 
             this.lbl_PickUpZipEdit.AutoSize = true;
-            this.lbl_PickUpZipEdit.Location = new System.Drawing.Point(398, 166);
+            this.lbl_PickUpZipEdit.Location = new System.Drawing.Point(597, 255);
+            this.lbl_PickUpZipEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickUpZipEdit.Name = "lbl_PickUpZipEdit";
-            this.lbl_PickUpZipEdit.Size = new System.Drawing.Size(79, 19);
+            this.lbl_PickUpZipEdit.Size = new System.Drawing.Size(119, 29);
             this.lbl_PickUpZipEdit.TabIndex = 21;
             this.lbl_PickUpZipEdit.Text = "Pickup Zip:";
             // 
@@ -1807,17 +1937,19 @@
             // 
             this.txtbox_PickupStateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_STATE", true));
             this.txtbox_PickupStateEdit.Enabled = false;
-            this.txtbox_PickupStateEdit.Location = new System.Drawing.Point(483, 130);
+            this.txtbox_PickupStateEdit.Location = new System.Drawing.Point(724, 200);
+            this.txtbox_PickupStateEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickupStateEdit.Name = "txtbox_PickupStateEdit";
-            this.txtbox_PickupStateEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickupStateEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_PickupStateEdit.TabIndex = 20;
             // 
             // lbl_PickUpStateEdit
             // 
             this.lbl_PickUpStateEdit.AutoSize = true;
-            this.lbl_PickUpStateEdit.Location = new System.Drawing.Point(385, 133);
+            this.lbl_PickUpStateEdit.Location = new System.Drawing.Point(578, 205);
+            this.lbl_PickUpStateEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickUpStateEdit.Name = "lbl_PickUpStateEdit";
-            this.lbl_PickUpStateEdit.Size = new System.Drawing.Size(92, 19);
+            this.lbl_PickUpStateEdit.Size = new System.Drawing.Size(140, 29);
             this.lbl_PickUpStateEdit.TabIndex = 19;
             this.lbl_PickUpStateEdit.Text = "Pickup State:";
             // 
@@ -1825,17 +1957,19 @@
             // 
             this.txtbox_PickupCityEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_CITY", true));
             this.txtbox_PickupCityEdit.Enabled = false;
-            this.txtbox_PickupCityEdit.Location = new System.Drawing.Point(483, 94);
+            this.txtbox_PickupCityEdit.Location = new System.Drawing.Point(724, 145);
+            this.txtbox_PickupCityEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickupCityEdit.Name = "txtbox_PickupCityEdit";
-            this.txtbox_PickupCityEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickupCityEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_PickupCityEdit.TabIndex = 18;
             // 
             // lbl_PickUpCityEdit
             // 
             this.lbl_PickUpCityEdit.AutoSize = true;
-            this.lbl_PickUpCityEdit.Location = new System.Drawing.Point(393, 97);
+            this.lbl_PickUpCityEdit.Location = new System.Drawing.Point(590, 149);
+            this.lbl_PickUpCityEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickUpCityEdit.Name = "lbl_PickUpCityEdit";
-            this.lbl_PickUpCityEdit.Size = new System.Drawing.Size(84, 19);
+            this.lbl_PickUpCityEdit.Size = new System.Drawing.Size(127, 29);
             this.lbl_PickUpCityEdit.TabIndex = 17;
             this.lbl_PickUpCityEdit.Text = "Pickup City:";
             // 
@@ -1843,26 +1977,29 @@
             // 
             this.txtbox_PickupAddressEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_ADDRESS", true));
             this.txtbox_PickupAddressEdit.Enabled = false;
-            this.txtbox_PickupAddressEdit.Location = new System.Drawing.Point(483, 61);
+            this.txtbox_PickupAddressEdit.Location = new System.Drawing.Point(724, 94);
+            this.txtbox_PickupAddressEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_PickupAddressEdit.Name = "txtbox_PickupAddressEdit";
-            this.txtbox_PickupAddressEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtbox_PickupAddressEdit.Size = new System.Drawing.Size(148, 37);
             this.txtbox_PickupAddressEdit.TabIndex = 16;
             // 
             // lbl_PickupAddressEdit
             // 
             this.lbl_PickupAddressEdit.AutoSize = true;
-            this.lbl_PickupAddressEdit.Location = new System.Drawing.Point(366, 64);
+            this.lbl_PickupAddressEdit.Location = new System.Drawing.Point(549, 98);
+            this.lbl_PickupAddressEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupAddressEdit.Name = "lbl_PickupAddressEdit";
-            this.lbl_PickupAddressEdit.Size = new System.Drawing.Size(111, 19);
+            this.lbl_PickupAddressEdit.Size = new System.Drawing.Size(167, 29);
             this.lbl_PickupAddressEdit.TabIndex = 15;
             this.lbl_PickupAddressEdit.Text = "Pickup Address:";
             // 
             // lbl_OrderStatusEdit
             // 
             this.lbl_OrderStatusEdit.AutoSize = true;
-            this.lbl_OrderStatusEdit.Location = new System.Drawing.Point(17, 196);
+            this.lbl_OrderStatusEdit.Location = new System.Drawing.Point(26, 302);
+            this.lbl_OrderStatusEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_OrderStatusEdit.Name = "lbl_OrderStatusEdit";
-            this.lbl_OrderStatusEdit.Size = new System.Drawing.Size(94, 19);
+            this.lbl_OrderStatusEdit.Size = new System.Drawing.Size(142, 29);
             this.lbl_OrderStatusEdit.TabIndex = 13;
             this.lbl_OrderStatusEdit.Text = "Order Status:";
             // 
@@ -1870,44 +2007,49 @@
             // 
             this.txtboxCustomerIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "CUST_ID", true));
             this.txtboxCustomerIdEdit.Enabled = false;
-            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(124, 160);
+            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(186, 246);
+            this.txtboxCustomerIdEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtboxCustomerIdEdit.Name = "txtboxCustomerIdEdit";
-            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(100, 27);
+            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(148, 37);
             this.txtboxCustomerIdEdit.TabIndex = 12;
             // 
             // lbl_CustomerIdEdit
             // 
             this.lbl_CustomerIdEdit.AutoSize = true;
-            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(17, 163);
+            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(26, 251);
+            this.lbl_CustomerIdEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_CustomerIdEdit.Name = "lbl_CustomerIdEdit";
-            this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(93, 19);
+            this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(140, 29);
             this.lbl_CustomerIdEdit.TabIndex = 11;
             this.lbl_CustomerIdEdit.Text = "Customer ID:";
             // 
             // lbl_DeliveryDateEdit
             // 
             this.lbl_DeliveryDateEdit.AutoSize = true;
-            this.lbl_DeliveryDateEdit.Location = new System.Drawing.Point(17, 130);
+            this.lbl_DeliveryDateEdit.Location = new System.Drawing.Point(26, 200);
+            this.lbl_DeliveryDateEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_DeliveryDateEdit.Name = "lbl_DeliveryDateEdit";
-            this.lbl_DeliveryDateEdit.Size = new System.Drawing.Size(101, 19);
+            this.lbl_DeliveryDateEdit.Size = new System.Drawing.Size(152, 29);
             this.lbl_DeliveryDateEdit.TabIndex = 9;
             this.lbl_DeliveryDateEdit.Text = "Delivery Date:";
             // 
             // lbl_BookingDateEdit
             // 
             this.lbl_BookingDateEdit.AutoSize = true;
-            this.lbl_BookingDateEdit.Location = new System.Drawing.Point(18, 64);
+            this.lbl_BookingDateEdit.Location = new System.Drawing.Point(27, 98);
+            this.lbl_BookingDateEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_BookingDateEdit.Name = "lbl_BookingDateEdit";
-            this.lbl_BookingDateEdit.Size = new System.Drawing.Size(100, 19);
+            this.lbl_BookingDateEdit.Size = new System.Drawing.Size(151, 29);
             this.lbl_BookingDateEdit.TabIndex = 7;
             this.lbl_BookingDateEdit.Text = "Booking Date:";
             // 
             // lbl_PickupDateEdit
             // 
             this.lbl_PickupDateEdit.AutoSize = true;
-            this.lbl_PickupDateEdit.Location = new System.Drawing.Point(28, 97);
+            this.lbl_PickupDateEdit.Location = new System.Drawing.Point(42, 149);
+            this.lbl_PickupDateEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PickupDateEdit.Name = "lbl_PickupDateEdit";
-            this.lbl_PickupDateEdit.Size = new System.Drawing.Size(90, 19);
+            this.lbl_PickupDateEdit.Size = new System.Drawing.Size(136, 29);
             this.lbl_PickupDateEdit.TabIndex = 5;
             this.lbl_PickupDateEdit.Text = "Pickup Date:";
             // 
@@ -1915,34 +2057,38 @@
             // 
             this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_InvoiceIdEdit.Enabled = false;
-            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(859, 196);
+            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(1288, 302);
+            this.txtbox_InvoiceIdEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
-            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(154, 27);
+            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(229, 37);
             this.txtbox_InvoiceIdEdit.TabIndex = 4;
             // 
             // lbl_InvoiceIdEdit
             // 
             this.lbl_InvoiceIdEdit.AutoSize = true;
-            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(781, 196);
+            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(1172, 302);
+            this.lbl_InvoiceIdEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_InvoiceIdEdit.Name = "lbl_InvoiceIdEdit";
-            this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(71, 19);
+            this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(107, 29);
             this.lbl_InvoiceIdEdit.TabIndex = 3;
             this.lbl_InvoiceIdEdit.Text = "Invoice #:";
             // 
             // lbl_OrderSearch
             // 
             this.lbl_OrderSearch.AutoSize = true;
-            this.lbl_OrderSearch.Location = new System.Drawing.Point(62, 33);
+            this.lbl_OrderSearch.Location = new System.Drawing.Point(93, 51);
+            this.lbl_OrderSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_OrderSearch.Name = "lbl_OrderSearch";
-            this.lbl_OrderSearch.Size = new System.Drawing.Size(56, 19);
+            this.lbl_OrderSearch.Size = new System.Drawing.Size(85, 29);
             this.lbl_OrderSearch.TabIndex = 2;
             this.lbl_OrderSearch.Text = "Search:";
             // 
             // txtbox_OrderSearchBox
             // 
-            this.txtbox_OrderSearchBox.Location = new System.Drawing.Point(124, 30);
+            this.txtbox_OrderSearchBox.Location = new System.Drawing.Point(186, 46);
+            this.txtbox_OrderSearchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_OrderSearchBox.Name = "txtbox_OrderSearchBox";
-            this.txtbox_OrderSearchBox.Size = new System.Drawing.Size(183, 27);
+            this.txtbox_OrderSearchBox.Size = new System.Drawing.Size(272, 37);
             this.txtbox_OrderSearchBox.TabIndex = 1;
             this.txtbox_OrderSearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OrderSearchBox_KeyPress);
             // 
@@ -1970,10 +2116,12 @@
             this.oRDERSTATUSDataGridViewTextBoxColumn,
             this.cUSTIDDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.iNVOICEBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 375);
+            this.dataGridView2.Location = new System.Drawing.Point(14, 577);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(1095, 164);
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.Size = new System.Drawing.Size(1642, 252);
             this.dataGridView2.TabIndex = 0;
             // 
             // iNVIDDataGridViewTextBoxColumn
@@ -1981,150 +2129,169 @@
             this.iNVIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
             this.iNVIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iNVIDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
             this.iNVIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iNVIDDataGridViewTextBoxColumn.Width = 48;
+            this.iNVIDDataGridViewTextBoxColumn.Width = 70;
             // 
             // VEHICLE
             // 
             this.VEHICLE.DataPropertyName = "VEHICLE";
             this.VEHICLE.HeaderText = "VEHICLE";
+            this.VEHICLE.MinimumWidth = 8;
             this.VEHICLE.Name = "VEHICLE";
             this.VEHICLE.ReadOnly = true;
+            this.VEHICLE.Width = 150;
             // 
             // ORDER_NUM
             // 
             this.ORDER_NUM.DataPropertyName = "ORDER_NUM";
             this.ORDER_NUM.HeaderText = "ORDER_NUM";
+            this.ORDER_NUM.MinimumWidth = 8;
             this.ORDER_NUM.Name = "ORDER_NUM";
             this.ORDER_NUM.ReadOnly = true;
+            this.ORDER_NUM.Width = 150;
             // 
             // PICKUP_ADDRESS
             // 
             this.PICKUP_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PICKUP_ADDRESS.DataPropertyName = "PICKUP_ADDRESS";
             this.PICKUP_ADDRESS.HeaderText = "Pickup Address";
+            this.PICKUP_ADDRESS.MinimumWidth = 8;
             this.PICKUP_ADDRESS.Name = "PICKUP_ADDRESS";
             this.PICKUP_ADDRESS.ReadOnly = true;
-            this.PICKUP_ADDRESS.Width = 121;
+            this.PICKUP_ADDRESS.Width = 180;
             // 
             // PICKUP_CITY
             // 
             this.PICKUP_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PICKUP_CITY.DataPropertyName = "PICKUP_CITY";
             this.PICKUP_CITY.HeaderText = "Pickup City";
+            this.PICKUP_CITY.MinimumWidth = 8;
             this.PICKUP_CITY.Name = "PICKUP_CITY";
             this.PICKUP_CITY.ReadOnly = true;
-            this.PICKUP_CITY.Width = 96;
+            this.PICKUP_CITY.Width = 144;
             // 
             // PICKUP_STATE
             // 
             this.PICKUP_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PICKUP_STATE.DataPropertyName = "PICKUP_STATE";
             this.PICKUP_STATE.HeaderText = "Pickup State";
+            this.PICKUP_STATE.MinimumWidth = 8;
             this.PICKUP_STATE.Name = "PICKUP_STATE";
             this.PICKUP_STATE.ReadOnly = true;
-            this.PICKUP_STATE.Width = 104;
+            this.PICKUP_STATE.Width = 156;
             // 
             // PICKUP_ZIP
             // 
             this.PICKUP_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PICKUP_ZIP.DataPropertyName = "PICKUP_ZIP";
             this.PICKUP_ZIP.HeaderText = "Pickup Zip Code";
+            this.PICKUP_ZIP.MinimumWidth = 8;
             this.PICKUP_ZIP.Name = "PICKUP_ZIP";
             this.PICKUP_ZIP.ReadOnly = true;
-            this.PICKUP_ZIP.Width = 96;
+            this.PICKUP_ZIP.Width = 142;
             // 
             // DELIVERY_ADDRESS
             // 
             this.DELIVERY_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DELIVERY_ADDRESS.DataPropertyName = "DELIVERY_ADDRESS";
             this.DELIVERY_ADDRESS.HeaderText = "Delivery Address";
+            this.DELIVERY_ADDRESS.MinimumWidth = 8;
             this.DELIVERY_ADDRESS.Name = "DELIVERY_ADDRESS";
             this.DELIVERY_ADDRESS.ReadOnly = true;
-            this.DELIVERY_ADDRESS.Width = 131;
+            this.DELIVERY_ADDRESS.Width = 195;
             // 
             // DELIVERY_CITY
             // 
             this.DELIVERY_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DELIVERY_CITY.DataPropertyName = "DELIVERY_CITY";
             this.DELIVERY_CITY.HeaderText = "Delivery City";
+            this.DELIVERY_CITY.MinimumWidth = 8;
             this.DELIVERY_CITY.Name = "DELIVERY_CITY";
             this.DELIVERY_CITY.ReadOnly = true;
-            this.DELIVERY_CITY.Width = 106;
+            this.DELIVERY_CITY.Width = 159;
             // 
             // DELIVERY_STATE
             // 
             this.DELIVERY_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DELIVERY_STATE.DataPropertyName = "DELIVERY_STATE";
             this.DELIVERY_STATE.HeaderText = "Delivery State";
+            this.DELIVERY_STATE.MinimumWidth = 8;
             this.DELIVERY_STATE.Name = "DELIVERY_STATE";
             this.DELIVERY_STATE.ReadOnly = true;
-            this.DELIVERY_STATE.Width = 114;
+            this.DELIVERY_STATE.Width = 170;
             // 
             // DELIVERY_ZIP
             // 
             this.DELIVERY_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DELIVERY_ZIP.DataPropertyName = "DELIVERY_ZIP";
             this.DELIVERY_ZIP.HeaderText = "Delivery Zip";
+            this.DELIVERY_ZIP.MinimumWidth = 8;
             this.DELIVERY_ZIP.Name = "DELIVERY_ZIP";
             this.DELIVERY_ZIP.ReadOnly = true;
-            this.DELIVERY_ZIP.Width = 102;
+            this.DELIVERY_ZIP.Width = 152;
             // 
             // bOOKDATEDataGridViewTextBoxColumn
             // 
             this.bOOKDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.bOOKDATEDataGridViewTextBoxColumn.DataPropertyName = "BOOK_DATE";
             this.bOOKDATEDataGridViewTextBoxColumn.HeaderText = "Book Date";
+            this.bOOKDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.bOOKDATEDataGridViewTextBoxColumn.Name = "bOOKDATEDataGridViewTextBoxColumn";
             this.bOOKDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bOOKDATEDataGridViewTextBoxColumn.Width = 93;
+            this.bOOKDATEDataGridViewTextBoxColumn.Width = 139;
             // 
             // pICKUPDATEDataGridViewTextBoxColumn
             // 
             this.pICKUPDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.pICKUPDATEDataGridViewTextBoxColumn.DataPropertyName = "PICKUP_DATE";
             this.pICKUPDATEDataGridViewTextBoxColumn.HeaderText = "Pickup Date";
+            this.pICKUPDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.pICKUPDATEDataGridViewTextBoxColumn.Name = "pICKUPDATEDataGridViewTextBoxColumn";
             this.pICKUPDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pICKUPDATEDataGridViewTextBoxColumn.Width = 102;
+            this.pICKUPDATEDataGridViewTextBoxColumn.Width = 152;
             // 
             // dROPOFFDATEDataGridViewTextBoxColumn
             // 
             this.dROPOFFDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dROPOFFDATEDataGridViewTextBoxColumn.DataPropertyName = "DROPOFF_DATE";
             this.dROPOFFDATEDataGridViewTextBoxColumn.HeaderText = "Dropoff Date";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dROPOFFDATEDataGridViewTextBoxColumn.Name = "dROPOFFDATEDataGridViewTextBoxColumn";
             this.dROPOFFDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dROPOFFDATEDataGridViewTextBoxColumn.Width = 107;
+            this.dROPOFFDATEDataGridViewTextBoxColumn.Width = 162;
             // 
             // oRDERSTATUSDataGridViewTextBoxColumn
             // 
             this.oRDERSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.oRDERSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORDER_STATUS";
             this.oRDERSTATUSDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.oRDERSTATUSDataGridViewTextBoxColumn.Name = "oRDERSTATUSDataGridViewTextBoxColumn";
             this.oRDERSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oRDERSTATUSDataGridViewTextBoxColumn.Width = 74;
+            this.oRDERSTATUSDataGridViewTextBoxColumn.Width = 110;
             // 
             // cUSTIDDataGridViewTextBoxColumn1
             // 
             this.cUSTIDDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.cUSTIDDataGridViewTextBoxColumn1.DataPropertyName = "CUST_ID";
             this.cUSTIDDataGridViewTextBoxColumn1.HeaderText = "Customer";
+            this.cUSTIDDataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.cUSTIDDataGridViewTextBoxColumn1.Name = "cUSTIDDataGridViewTextBoxColumn1";
             this.cUSTIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.cUSTIDDataGridViewTextBoxColumn1.Width = 96;
+            this.cUSTIDDataGridViewTextBoxColumn1.Width = 144;
             // 
             // tab_Home
             // 
             this.tab_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Home.BackgroundImage")));
             this.tab_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab_Home.Controls.Add(this.lbl_Home);
-            this.tab_Home.Location = new System.Drawing.Point(4, 28);
+            this.tab_Home.Location = new System.Drawing.Point(4, 38);
+            this.tab_Home.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tab_Home.Name = "tab_Home";
-            this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Home.Size = new System.Drawing.Size(1107, 546);
+            this.tab_Home.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tab_Home.Size = new System.Drawing.Size(1664, 847);
             this.tab_Home.TabIndex = 0;
             this.tab_Home.Text = "Home";
             this.tab_Home.UseVisualStyleBackColor = true;
@@ -2134,9 +2301,10 @@
             this.lbl_Home.AutoSize = true;
             this.lbl_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Home.ForeColor = System.Drawing.Color.White;
-            this.lbl_Home.Location = new System.Drawing.Point(194, 104);
+            this.lbl_Home.Location = new System.Drawing.Point(291, 160);
+            this.lbl_Home.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(735, 73);
+            this.lbl_Home.Size = new System.Drawing.Size(1083, 108);
             this.lbl_Home.TabIndex = 21;
             this.lbl_Home.Text = "Welcome to Virtual Adil!";
             // 
@@ -2148,10 +2316,11 @@
             this.tab_Container.Controls.Add(this.tab_SearchOrders);
             this.tab_Container.Controls.Add(this.tab_Help);
             this.tab_Container.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab_Container.Location = new System.Drawing.Point(3, 0);
+            this.tab_Container.Location = new System.Drawing.Point(4, 0);
+            this.tab_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tab_Container.Name = "tab_Container";
             this.tab_Container.SelectedIndex = 0;
-            this.tab_Container.Size = new System.Drawing.Size(1115, 578);
+            this.tab_Container.Size = new System.Drawing.Size(1672, 889);
             this.tab_Container.TabIndex = 19;
             // 
             // cUSTOMERTableAdapter
@@ -2173,11 +2342,12 @@
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 579);
+            this.ClientSize = new System.Drawing.Size(1676, 891);
             this.Controls.Add(this.tab_Container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimizeBox = false;
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

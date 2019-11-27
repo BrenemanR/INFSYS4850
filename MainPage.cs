@@ -883,6 +883,16 @@ namespace WindowsFormsApp3
             txtbox_OrderSearchBox.Enabled = true;
             btn_EditOrder.Enabled = true;
         }
+
+        private void txtboxrch_Description_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtboxrch_SpecialInstructions_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

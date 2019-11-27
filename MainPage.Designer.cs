@@ -200,6 +200,7 @@
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
+            this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -216,6 +217,7 @@
             this.tab_Home.SuspendLayout();
             this.tab_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_CreateOrder
@@ -264,7 +266,7 @@
             tab_CreateOrder.ForeColor = System.Drawing.SystemColors.ControlLight;
             tab_CreateOrder.Location = new System.Drawing.Point(4, 28);
             tab_CreateOrder.Name = "tab_CreateOrder";
-            tab_CreateOrder.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            tab_CreateOrder.Padding = new System.Windows.Forms.Padding(3);
             tab_CreateOrder.Size = new System.Drawing.Size(1107, 546);
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
@@ -1002,7 +1004,7 @@
             this.tab_ManageCustomers.ForeColor = System.Drawing.Color.LightGray;
             this.tab_ManageCustomers.Location = new System.Drawing.Point(4, 28);
             this.tab_ManageCustomers.Name = "tab_ManageCustomers";
-            this.tab_ManageCustomers.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_ManageCustomers.Padding = new System.Windows.Forms.Padding(3);
             this.tab_ManageCustomers.Size = new System.Drawing.Size(1107, 546);
             this.tab_ManageCustomers.TabIndex = 1;
             this.tab_ManageCustomers.Text = "Manage Customers";
@@ -1516,7 +1518,7 @@
             this.tab_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tab_Help.Location = new System.Drawing.Point(4, 28);
             this.tab_Help.Name = "tab_Help";
-            this.tab_Help.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Help.Size = new System.Drawing.Size(1107, 546);
             this.tab_Help.TabIndex = 4;
             this.tab_Help.Text = "Help";
@@ -1567,7 +1569,7 @@
             this.tab_SearchOrders.Controls.Add(this.dataGridView2);
             this.tab_SearchOrders.Location = new System.Drawing.Point(4, 28);
             this.tab_SearchOrders.Name = "tab_SearchOrders";
-            this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(3);
             this.tab_SearchOrders.Size = new System.Drawing.Size(1107, 546);
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
@@ -1606,6 +1608,7 @@
             this.txtbox_OrderNumberEdit.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_OrderNumberEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_OrderNumberEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
+            this.txtbox_OrderNumberEdit.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNumberEdit.Enabled = false;
             this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(859, 221);
             this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
@@ -2226,7 +2229,7 @@
             this.tab_Home.Controls.Add(this.lbl_Home);
             this.tab_Home.Location = new System.Drawing.Point(4, 28);
             this.tab_Home.Name = "tab_Home";
-            this.tab_Home.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tab_Home.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Home.Size = new System.Drawing.Size(1107, 546);
             this.tab_Home.TabIndex = 0;
             this.tab_Home.Text = "Home";
@@ -2274,6 +2277,11 @@
             // 
             this.oRDERSTATUSTableAdapter.ClearBeforeFill = true;
             // 
+            // iNVOICEBindingSource1
+            // 
+            this.iNVOICEBindingSource1.DataMember = "INVOICE";
+            this.iNVOICEBindingSource1.DataSource = this.appData;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2311,6 +2319,7 @@
             this.tab_Home.PerformLayout();
             this.tab_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2486,5 +2495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.ComboBox comboBox_VehicleEdit;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.BindingSource iNVOICEBindingSource1;
     }
 }

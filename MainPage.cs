@@ -117,7 +117,7 @@ namespace WindowsFormsApp3
         {
             panel1.Enabled = true;
             btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while editing a previous one.
-            btnEdit.Enabled = false;
+            btnEdit.Enabled = true;
             btnCancel.Enabled = true;
             btnSave.Enabled = true;
             dataGridView1.Enabled = false;
@@ -127,24 +127,52 @@ namespace WindowsFormsApp3
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            btnEdit.Enabled = true; //Reenables the Edit Button After a new record is cancelled.
-            btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
-            btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
-            btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
-            panel1.Enabled = false;
-            dataGridView1.Enabled = true;
-            cUSTOMERBindingSource.CancelEdit();
+            if (btnEdit.Enabled == true)
+            {
+                btnEdit.Enabled = true; //Reenables the Edit Button After a new record is cancelled.
+                btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
+                btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
+                btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
+                panel1.Enabled = false;
+                dataGridView1.Enabled = true;
+                //cUSTOMERBindingSource.RemoveCurrent();
+                cUSTOMERBindingSource.CancelEdit();
 
-            //Resets all of the text to black in case the user originally entered in mistakes.
-            FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
-            LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
-            PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
-            EmailLabel.ForeColor = System.Drawing.Color.LightGray;
-            CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
-            AddressLabel.ForeColor = System.Drawing.Color.LightGray;
-            CityLabel.ForeColor = System.Drawing.Color.LightGray;
-            StateLabel.ForeColor = System.Drawing.Color.LightGray;
-            ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+                //Resets all of the text to black in case the user originally entered in mistakes.
+                FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
+                EmailLabel.ForeColor = System.Drawing.Color.LightGray;
+                CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
+                AddressLabel.ForeColor = System.Drawing.Color.LightGray;
+                CityLabel.ForeColor = System.Drawing.Color.LightGray;
+                StateLabel.ForeColor = System.Drawing.Color.LightGray;
+                ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+            }
+            if (btnEdit.Enabled == false)
+            {
+                btnEdit.Enabled = false; //Reenables the Edit Button After a new record is cancelled.
+                btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
+                btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
+                btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
+                panel1.Enabled = false;
+                dataGridView1.Enabled = true;
+
+                cUSTOMERBindingSource.CancelEdit();
+                cUSTOMERBindingSource.RemoveCurrent();
+
+
+                //Resets all of the text to black in case the user originally entered in mistakes.
+                FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
+                EmailLabel.ForeColor = System.Drawing.Color.LightGray;
+                CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
+                AddressLabel.ForeColor = System.Drawing.Color.LightGray;
+                CityLabel.ForeColor = System.Drawing.Color.LightGray;
+                StateLabel.ForeColor = System.Drawing.Color.LightGray;
+                ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -862,6 +890,8 @@ namespace WindowsFormsApp3
         {
             iNVOICEBindingSource.EndEdit();
             iNVOICETableAdapter.Update(this.appData.INVOICE);
+            
+
 
             dateTimePicker_BookingDateEdit.Enabled = false;
             dateTimePicker_PickUpDateEdit.Enabled = false;

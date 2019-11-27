@@ -328,11 +328,10 @@ namespace WindowsFormsApp3
                    
                     cUSTOMERBindingSource.EndEdit();
                     cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
-                                                StateBox.Text, EmailBox.Text, PhoneNumberBox.Text, ZipBox.Text, comboBox_Broker.Text);
+                                                StateBox.Text, EmailBox.Text, PhoneNumberBox.Text, ZipBox.Text, comboBox_Broker.Text,
+                                                txtbox_FLNAME.Text);
                     //cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
 
-                    
-                    
                     lbl_RequiredField.Visible = false;
                     btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                     btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
@@ -549,10 +548,13 @@ namespace WindowsFormsApp3
 
         private void FirstNameBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in Letters for the first name field.
         {
+           
             if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != (int)(Keys.Back)))
             {
                 e.Handled = true;
             }
+
+            
         }
 
         private void LastNameBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in Letters for the first name field.
@@ -1132,6 +1134,16 @@ namespace WindowsFormsApp3
                     }
                 }
             }
+        }
+
+        private void FirstNameBox_TextChanged(object sender, EventArgs e)
+        {
+            txtbox_FLNAME.Text = FirstNameBox.Text + " " + LastNameBox.Text;
+        }
+
+        private void LastNameBox_TextChanged(object sender, EventArgs e)
+        {
+            txtbox_FLNAME.Text = FirstNameBox.Text + " " + LastNameBox.Text;
         }
     }
 }

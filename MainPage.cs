@@ -596,94 +596,155 @@ namespace WindowsFormsApp3
 
         private void btn_SaveOrder_Click(object sender, EventArgs e)
         {
-            //this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
+            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false;
 
-            
-            iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex+1, comboBox_Status.Text, 
-                txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text, 
-                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text,txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text, txtbox_OrderNum.Text, comboBox_Vehicle.Text);
+            /*if (string.IsNullOrEmpty(FirstNameBox.Text))
+            {
+                //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbl_RequiredField.Visible = true;
+                FirstNameLabel.ForeColor = System.Drawing.Color.LightCoral;
+                btnNew.Enabled = false;
+                panel1.Enabled = true;
+                noFName = true;
+            }*/
+            if (string.IsNullOrEmpty(txtbox_Company.Text))
+            {
+                noComp = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_Address.Text))
+            {
+                noAddress = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_City.Text))
+            {
+                noCity = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_Phone.Text))
+            {
+                noPhone = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_State.Text))
+            {
+                noState = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_Email.Text))
+            {
+                noEmail = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_Zip.Text))
+            {
+                noZip = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_OrderNum.Text))
+            {
+                noOrder = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_PickupAddress.Text))
+            {
+                noPickAdd = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_PickupCity.Text))
+            {
+                noPickCity = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_PickupState.Text))
+            {
+                noPickState = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_PickupZip.Text))
+            {
+                noPickZip = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryAddress.Text))
+            {
+                noDelAdd = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryCity.Text))
+            {
+                noDelCity = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryState.Text))
+            {
+                noDelState = true;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryZip.Text))
+            {
+                noDelZip = true;
+            }
+            if (string.IsNullOrEmpty(comboBox_Vehicle.Text))
+            {
+                noVehicle = true;
+            }
 
-           
-            this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
-            iNVOICETableAdapter.Update(this.appData.INVOICE);
 
-            btn_CreateOrder.Enabled = true;
+            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle)
+            {
+                //adds to the database
+                iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
+                txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text,
+                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text, txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text, txtbox_OrderNum.Text, comboBox_Vehicle.Text);
+                this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
+                iNVOICETableAdapter.Update(this.appData.INVOICE);
 
-            combobox_CustomerIDZ.Enabled = false;
-            BookDatePicker.Enabled = false;
-            PickUpDatePicker.Enabled = false;
-            DropOffDatePicker.Enabled = false;
-            picBox_Status.Enabled = false;
-            checkBox_CopyPickupInformation.Enabled = false;
-            checkBox_CopyDropoffInformation.Enabled = false;
-
-            txtboxrch_Description.Text = ""; //Wipes the data from the Description text box after a save.
-            txtboxrch_SpecialInstructions.Text = ""; //Wipes the data from the Description text box after a save.
-
-            checkBox_CopyPickupInformation.Checked = false; //dechecks the pickup check box.
-            checkBox_CopyDropoffInformation.Checked = false; //dechecks the dropoff check box.
-
-            /*
-            combobox_CustomerIDZ.Text = ""; //Blanks the customer selection dropdown menu.
-            txtbox_Company.Text = "";
-            txtbox_Phone.Text = "";
-            txtbox_Email.Text = "";
-            txtbox_Address.Text = "";
-            txtbox_City.Text = "";
-            txtbox_State.Text = "";
-            txtbox_Zip.Text = "";
-            */
-
-            BookDatePicker.Value = DateTime.Today;
-            PickUpDatePicker.Value = DateTime.Today;
-            DropOffDatePicker.Value = DateTime.Today;
-
-            txtbox_PickupAddress.Text = "";
-            txtbox_PickupCity.Text = "";
-            txtbox_PickupState.Text = "";
-            txtbox_PickupZip.Text = "";
-
-            txtbox_DeliveryAddress.Text = "";
-            txtbox_DeliveryCity.Text = "";
-            txtbox_DeliveryState.Text = "";
-            txtbox_DeliveryZip.Text = "";
-
-            comboBox_Status.Text = "";
-            picBox_Status.Image = null;
-
-
-
-            //prevents the user from being able to change data
-            txtbox_Company.Enabled = false;
-            txtbox_Phone.Enabled = false;
-            txtbox_Email.Enabled = false;
-            txtbox_Address.Enabled = false;
-            txtbox_City.Enabled = false;
-            txtbox_State.Enabled = false;
-            txtbox_Zip.Enabled = false;
-            txtbox_PickupAddress.Enabled = false;
-            txtbox_PickupCity.Enabled = false;
-            txtbox_PickupState.Enabled = false;
-            txtbox_PickupZip.Enabled = false;
-            txtbox_DeliveryAddress.Enabled = false;
-            txtbox_DeliveryCity.Enabled = false;
-            txtbox_DeliveryState.Enabled = false;
-            txtbox_DeliveryZip.Enabled = false;
-            btn_SaveOrder.Enabled = false;
-            picBox_Status.Enabled = false;
-            comboBox_Status.Enabled = false;
-            txtboxrch_Description.Enabled = false;
-            txtboxrch_SpecialInstructions.Enabled = false;
-            btn_SaveOrder.Enabled = false;
-            txtbox_OrderNum.Enabled = false;
-            comboBox_Vehicle.Enabled = false;
-
-            txtbox_OrderNum.Text = "";
-            comboBox_Vehicle.Text = "";
-
+                //default values after order is saved and prevents the user from changing data
+                btn_CreateOrder.Enabled = true;
+                combobox_CustomerIDZ.Enabled = false;
+                BookDatePicker.Enabled = false;
+                PickUpDatePicker.Enabled = false;
+                DropOffDatePicker.Enabled = false;
+                picBox_Status.Enabled = false;
+                checkBox_CopyPickupInformation.Enabled = false;
+                checkBox_CopyDropoffInformation.Enabled = false;
+                txtboxrch_Description.Text = ""; //Wipes the data from the Description text box after a save.
+                txtboxrch_SpecialInstructions.Text = ""; //Wipes the data from the Description text box after a save.
+                checkBox_CopyPickupInformation.Checked = false; //dechecks the pickup check box.
+                checkBox_CopyDropoffInformation.Checked = false; //dechecks the dropoff check box.
+                BookDatePicker.Value = DateTime.Today;
+                PickUpDatePicker.Value = DateTime.Today;
+                DropOffDatePicker.Value = DateTime.Today;
+                txtbox_PickupAddress.Text = "";
+                txtbox_PickupCity.Text = "";
+                txtbox_PickupState.Text = "";
+                txtbox_PickupZip.Text = "";
+                txtbox_DeliveryAddress.Text = "";
+                txtbox_DeliveryCity.Text = "";
+                txtbox_DeliveryState.Text = "";
+                txtbox_DeliveryZip.Text = "";
+                comboBox_Status.Text = "";
+                picBox_Status.Image = null;
+                txtbox_Company.Enabled = false;
+                txtbox_Phone.Enabled = false;
+                txtbox_Email.Enabled = false;
+                txtbox_Address.Enabled = false;
+                txtbox_City.Enabled = false;
+                txtbox_State.Enabled = false;
+                txtbox_Zip.Enabled = false;
+                txtbox_PickupAddress.Enabled = false;
+                txtbox_PickupCity.Enabled = false;
+                txtbox_PickupState.Enabled = false;
+                txtbox_PickupZip.Enabled = false;
+                txtbox_DeliveryAddress.Enabled = false;
+                txtbox_DeliveryCity.Enabled = false;
+                txtbox_DeliveryState.Enabled = false;
+                txtbox_DeliveryZip.Enabled = false;
+                btn_SaveOrder.Enabled = false;
+                picBox_Status.Enabled = false;
+                comboBox_Status.Enabled = false;
+                txtboxrch_Description.Enabled = false;
+                txtboxrch_SpecialInstructions.Enabled = false;
+                btn_SaveOrder.Enabled = false;
+                txtbox_OrderNum.Enabled = false;
+                comboBox_Vehicle.Enabled = false;
+                txtbox_OrderNum.Text = "";
+                comboBox_Vehicle.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
+            }
         }
 
-        
+
         private void CopyAddressToPickup_Click(object sender, EventArgs e)
         {
             txtbox_PickupAddress.Text = txtbox_Address.Text;

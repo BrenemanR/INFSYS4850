@@ -656,7 +656,7 @@ namespace WindowsFormsApp3
             panel3.Enabled = true;
             checkBox_CopyDropoffInformation.Enabled = true;
             checkBox_CopyPickupInformation.Enabled = true;
-            txtbox_OrderNum.ReadOnly = true;
+           txtbox_OrderNum.ReadOnly = false;
             comboBox_Vehicle.Enabled = true;
 
 

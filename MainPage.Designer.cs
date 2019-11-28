@@ -993,9 +993,9 @@
             // tab_ManageCustomers
             // 
             this.tab_ManageCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tab_ManageCustomers.Controls.Add(this.dataGridView1);
             this.tab_ManageCustomers.Controls.Add(this.SearchBox);
             this.tab_ManageCustomers.Controls.Add(this.panel1);
-            this.tab_ManageCustomers.Controls.Add(this.dataGridView1);
             this.tab_ManageCustomers.Controls.Add(this.label1);
             this.tab_ManageCustomers.Controls.Add(this.btnEdit);
             this.tab_ManageCustomers.Controls.Add(this.btnNew);
@@ -1015,8 +1015,9 @@
             this.txtbox_FLNAME.BackColor = System.Drawing.SystemColors.GrayText;
             this.txtbox_FLNAME.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbox_FLNAME.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "FLNAME", true));
+            this.txtbox_FLNAME.Enabled = false;
             this.txtbox_FLNAME.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtbox_FLNAME.Location = new System.Drawing.Point(639, 297);
+            this.txtbox_FLNAME.Location = new System.Drawing.Point(617, 276);
             this.txtbox_FLNAME.Name = "txtbox_FLNAME";
             this.txtbox_FLNAME.Size = new System.Drawing.Size(100, 20);
             this.txtbox_FLNAME.TabIndex = 19;
@@ -1341,7 +1342,7 @@
             this.cUSTSTATEDataGridViewTextBoxColumn,
             this.cUSTZIPDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(284, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(288, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;

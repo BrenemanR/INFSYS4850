@@ -1071,13 +1071,13 @@ namespace WindowsFormsApp3
             dateTimePicker_BookingDateEdit.Enabled = false;
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
-            combobox_OrderStatusEdit.Enabled = true;
+            comboBox_OrderStatusEdit.Enabled = true;
             txtbox_OrderNumberEdit.Enabled = false;
             comboBox_VehicleEdit.Enabled = true;
             txtbox_PickupAddressEdit.ReadOnly = false;
             txtbox_PickupCityEdit.ReadOnly = false;
             txtbox_PickupStateEdit.ReadOnly = false;
-            txtbox_PickUpZipEdit.ReadOnly = false;
+            txtbox_PickupZipEdit.ReadOnly = false;
             txtbox_DeliveryAddressEdit.ReadOnly = false;
             txtbox_DeliveryCityEdit.ReadOnly = false;
             txtbox_DeliveryStateEdit.ReadOnly = false;
@@ -1094,16 +1094,31 @@ namespace WindowsFormsApp3
         {
             iNVOICEBindingSource.EndEdit();
             iNVOICETableAdapter.Update(this.appData.INVOICE);
-            
+
+            //Changes labels back to White
+            lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupStateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryAddressEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryCityEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryStateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+
             dateTimePicker_BookingDateEdit.Enabled = true;
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
-            combobox_OrderStatusEdit.Enabled = true;
+            comboBox_OrderStatusEdit.Enabled = true;
             txtbox_OrderNumberEdit.ReadOnly = true;
             txtbox_PickupAddressEdit.ReadOnly = true;
             txtbox_PickupCityEdit.ReadOnly = true;
             txtbox_PickupStateEdit.ReadOnly = true;
-            txtbox_PickUpZipEdit.ReadOnly = true;
+            txtbox_PickupZipEdit.ReadOnly = true;
             txtbox_DeliveryAddressEdit.ReadOnly = true;
             txtbox_DeliveryCityEdit.ReadOnly = true;
             txtbox_DeliveryStateEdit.ReadOnly = true;
@@ -1116,6 +1131,103 @@ namespace WindowsFormsApp3
             btn_EditOrder.Visible = true;
             txtboxrch_SpecialInstructions.ReadOnly = true;
             txtboxrch_Description.ReadOnly = true;
+
+            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false;
+
+            if (string.IsNullOrEmpty(txtbox_PickupAddressEdit.Text))
+            {
+                noAddress = true;
+                lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_PickupCityEdit.Text))
+            {
+                noCity = true;
+                lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_PickupStateEdit.Text))
+            {
+                noState = true;
+                lbl_PickupStateEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_PickupZipEdit.Text))
+            {
+                noZip = true;
+                lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryAddressEdit.Text))
+            {
+                noDelAdd = true;
+                lbl_DeliveryAddressEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryCityEdit.Text))
+            {
+                noDelCity = true;
+                lbl_DeliveryCityEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryStateEdit.Text))
+            {
+                noPickState = true;
+                lbl_DeliveryStateEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_DeliveryZipEdit.Text))
+            {
+                noPickZip = true;
+                lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(comboBox_OrderStatusEdit.Text))
+            {
+                noStatus = true;
+                lbl_Order.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(comboBox_VehicleEdit.Text))
+            {
+                noOrder = true;
+                lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            //date validation
+            if (dateTimePicker_BookingDateEdit.Value > dateTimePicker_PickUpDateEdit.Value)
+            {
+                noPickDate = true;
+                lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (dateTimePicker_PickUpDateEdit.Value > dateTimePicker_DeliveryDateEdit.Value)
+            {
+                noDropDate = true;
+                lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+
+
+            //successfull entry to the database
+            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickAdd && !noDropDate)
+            {
+                //adds to the database
+                iNVOICETableAdapter.Insert(dateTimePicker_BookingDateEdit.Value, dateTimePicker_PickUpDateEdit.Value, dateTimePicker_DeliveryDateEdit.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_OrderStatusEdit.Text,
+                txtbox_PickupAddressEdit.Text, txtbox_PickupCityEdit.Text, txtbox_PickupStateEdit.Text, txtbox_PickupZipEdit.Text,
+                txtbox_DeliveryAddressEdit.Text, txtbox_DeliveryCityEdit.Text, txtbox_DeliveryStateEdit.Text, txtbox_DeliveryZipEdit.Text, txtboxrch_SpecialInstructionsEdit.Text, txtboxrch_DescriptionEdit.Text, txtbox_OrderNumberEdit.Text, comboBox_VehicleEdit.Text);
+                this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
+                iNVOICETableAdapter.Update(this.appData.INVOICE);
+
+                //default values after order is saved and prevents the user from changing data
+               
+            }
+            else
+            {
+                if (noPickDate)
+                {
+                    MessageBox.Show("The pickup date cannot be before the booking date.", "Invalid Date Entry");
+                }
+                if (noDropDate)
+                {
+                    MessageBox.Show("The delivery date cannot be before the pickup date.", "Invalid Date Entry");
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
+                }
+
+            }
+
         }
 
         //HELP

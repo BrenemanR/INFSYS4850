@@ -1086,8 +1086,8 @@ namespace WindowsFormsApp3
             txtboxrch_SpecialInstructions.ReadOnly = true;
 
             txtbox_OrderSearchBox.ReadOnly = false;
-            btn_SaveOrderEdit.Enabled = true;
-            btn_EditOrder.Enabled = false;
+            btn_SaveOrderEdit.Visible = true;
+            btn_EditOrder.Visible = false;
         }
 
         private void btn_SaveOrderEdit_Click(object sender, EventArgs e)
@@ -1110,10 +1110,10 @@ namespace WindowsFormsApp3
             txtbox_DeliveryZipEdit.ReadOnly = false;
             txtboxrch_Description.ReadOnly = false;
             txtboxrch_SpecialInstructions.ReadOnly = false;
-            btn_SaveOrderEdit.Enabled = false;
+            btn_SaveOrderEdit.Visible = false;
             comboBox_VehicleEdit.Enabled = false;
             txtbox_OrderSearchBox.Enabled = true;
-            btn_EditOrder.Enabled = true;
+            btn_EditOrder.Visible = true;
         }
 
         //HELP

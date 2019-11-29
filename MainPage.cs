@@ -1072,18 +1072,18 @@ namespace WindowsFormsApp3
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
             combobox_OrderStatusEdit.Enabled = true;
-            txtbox_OrderNumberEdit.Enabled = true;
+            txtbox_OrderNumberEdit.Enabled = false;
             comboBox_VehicleEdit.Enabled = true;
-            txtbox_PickupAddressEdit.ReadOnly = true;
-            txtbox_PickupCityEdit.ReadOnly = true;
-            txtbox_PickupStateEdit.ReadOnly = true;
-            txtbox_PickUpZipEdit.ReadOnly = true;
-            txtbox_DeliveryAddressEdit.ReadOnly = true;
-            txtbox_DeliveryCityEdit.ReadOnly = true;
-            txtbox_DeliveryStateEdit.ReadOnly = true;
-            txtbox_DeliveryZipEdit.ReadOnly = true;
-            txtboxrch_Description.ReadOnly = true;
-            txtboxrch_SpecialInstructions.ReadOnly = true;
+            txtbox_PickupAddressEdit.ReadOnly = false;
+            txtbox_PickupCityEdit.ReadOnly = false;
+            txtbox_PickupStateEdit.ReadOnly = false;
+            txtbox_PickUpZipEdit.ReadOnly = false;
+            txtbox_DeliveryAddressEdit.ReadOnly = false;
+            txtbox_DeliveryCityEdit.ReadOnly = false;
+            txtbox_DeliveryStateEdit.ReadOnly = false;
+            txtbox_DeliveryZipEdit.ReadOnly = false;
+            txtboxrch_DescriptionEdit.ReadOnly = false;
+            txtboxrch_SpecialInstructionsEdit.ReadOnly = false;
 
             txtbox_OrderSearchBox.ReadOnly = false;
             btn_SaveOrderEdit.Visible = true;
@@ -1095,25 +1095,27 @@ namespace WindowsFormsApp3
             iNVOICEBindingSource.EndEdit();
             iNVOICETableAdapter.Update(this.appData.INVOICE);
             
-            dateTimePicker_BookingDateEdit.Enabled = false;
-            dateTimePicker_PickUpDateEdit.Enabled = false;
-            dateTimePicker_DeliveryDateEdit.Enabled = false;
-            combobox_OrderStatusEdit.Enabled = false;
-            txtbox_OrderNumberEdit.ReadOnly = false;
-            txtbox_PickupAddressEdit.ReadOnly = false;
-            txtbox_PickupCityEdit.ReadOnly = false;
-            txtbox_PickupStateEdit.ReadOnly = false;
-            txtbox_PickUpZipEdit.ReadOnly = false;
-            txtbox_DeliveryAddressEdit.ReadOnly = false;
-            txtbox_DeliveryCityEdit.ReadOnly = false;
-            txtbox_DeliveryStateEdit.ReadOnly = false;
-            txtbox_DeliveryZipEdit.ReadOnly = false;
-            txtboxrch_Description.ReadOnly = false;
-            txtboxrch_SpecialInstructions.ReadOnly = false;
+            dateTimePicker_BookingDateEdit.Enabled = true;
+            dateTimePicker_PickUpDateEdit.Enabled = true;
+            dateTimePicker_DeliveryDateEdit.Enabled = true;
+            combobox_OrderStatusEdit.Enabled = true;
+            txtbox_OrderNumberEdit.ReadOnly = true;
+            txtbox_PickupAddressEdit.ReadOnly = true;
+            txtbox_PickupCityEdit.ReadOnly = true;
+            txtbox_PickupStateEdit.ReadOnly = true;
+            txtbox_PickUpZipEdit.ReadOnly = true;
+            txtbox_DeliveryAddressEdit.ReadOnly = true;
+            txtbox_DeliveryCityEdit.ReadOnly = true;
+            txtbox_DeliveryStateEdit.ReadOnly = true;
+            txtbox_DeliveryZipEdit.ReadOnly = true;
+            txtboxrch_DescriptionEdit.ReadOnly = true;
+            txtboxrch_SpecialInstructionsEdit.ReadOnly = true;
             btn_SaveOrderEdit.Visible = false;
             comboBox_VehicleEdit.Enabled = false;
             txtbox_OrderSearchBox.Enabled = true;
             btn_EditOrder.Visible = true;
+            txtboxrch_SpecialInstructions.ReadOnly = true;
+            txtboxrch_Description.ReadOnly = true;
         }
 
         //HELP

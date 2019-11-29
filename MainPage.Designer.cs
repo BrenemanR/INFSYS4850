@@ -147,7 +147,7 @@
             this.dateTimePicker_PickUpDateEdit = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_BookingDateEdit = new System.Windows.Forms.DateTimePicker();
             this.lbl_SpecialInstructionsEdit = new System.Windows.Forms.Label();
-            this.txtboxrch_SpecailInstructionsEdit = new System.Windows.Forms.RichTextBox();
+            this.txtboxrch_SpecialInstructionsEdit = new System.Windows.Forms.RichTextBox();
             this.lbl_DescriptionEdit = new System.Windows.Forms.Label();
             this.txtboxrch_DescriptionEdit = new System.Windows.Forms.RichTextBox();
             this.txtbox_DeliveryZipEdit = new System.Windows.Forms.TextBox();
@@ -1549,7 +1549,7 @@
             this.tab_SearchOrders.Controls.Add(this.dateTimePicker_PickUpDateEdit);
             this.tab_SearchOrders.Controls.Add(this.dateTimePicker_BookingDateEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_SpecialInstructionsEdit);
-            this.tab_SearchOrders.Controls.Add(this.txtboxrch_SpecailInstructionsEdit);
+            this.tab_SearchOrders.Controls.Add(this.txtboxrch_SpecialInstructionsEdit);
             this.tab_SearchOrders.Controls.Add(this.lbl_DescriptionEdit);
             this.tab_SearchOrders.Controls.Add(this.txtboxrch_DescriptionEdit);
             this.tab_SearchOrders.Controls.Add(this.txtbox_DeliveryZipEdit);
@@ -1732,17 +1732,17 @@
             this.lbl_SpecialInstructionsEdit.TabIndex = 34;
             this.lbl_SpecialInstructionsEdit.Text = "Special Instructions:";
             // 
-            // txtboxrch_SpecailInstructionsEdit
+            // txtboxrch_SpecialInstructionsEdit
             // 
-            this.txtboxrch_SpecailInstructionsEdit.BackColor = System.Drawing.Color.DimGray;
-            this.txtboxrch_SpecailInstructionsEdit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtboxrch_SpecailInstructionsEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "SPECIAL_INSTRUCTIONS", true));
-            this.txtboxrch_SpecailInstructionsEdit.Enabled = false;
-            this.txtboxrch_SpecailInstructionsEdit.Location = new System.Drawing.Point(261, 174);
-            this.txtboxrch_SpecailInstructionsEdit.Name = "txtboxrch_SpecailInstructionsEdit";
-            this.txtboxrch_SpecailInstructionsEdit.Size = new System.Drawing.Size(235, 74);
-            this.txtboxrch_SpecailInstructionsEdit.TabIndex = 33;
-            this.txtboxrch_SpecailInstructionsEdit.Text = "";
+            this.txtboxrch_SpecialInstructionsEdit.BackColor = System.Drawing.Color.DimGray;
+            this.txtboxrch_SpecialInstructionsEdit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxrch_SpecialInstructionsEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "SPECIAL_INSTRUCTIONS", true));
+            this.txtboxrch_SpecialInstructionsEdit.Enabled = false;
+            this.txtboxrch_SpecialInstructionsEdit.Location = new System.Drawing.Point(261, 174);
+            this.txtboxrch_SpecialInstructionsEdit.Name = "txtboxrch_SpecialInstructionsEdit";
+            this.txtboxrch_SpecialInstructionsEdit.Size = new System.Drawing.Size(235, 74);
+            this.txtboxrch_SpecialInstructionsEdit.TabIndex = 33;
+            this.txtboxrch_SpecialInstructionsEdit.Text = "";
             // 
             // lbl_DescriptionEdit
             // 
@@ -2044,7 +2044,7 @@
             // 
             // txtbox_OrderSearchBox
             // 
-            this.txtbox_OrderSearchBox.BackColor = System.Drawing.Color.Silver;
+            this.txtbox_OrderSearchBox.BackColor = System.Drawing.Color.Gainsboro;
             this.txtbox_OrderSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_OrderSearchBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_OrderSearchBox.Location = new System.Drawing.Point(14, 35);
@@ -2484,7 +2484,7 @@
         private System.Windows.Forms.TextBox txtbox_DeliveryStateEdit;
         private System.Windows.Forms.Label lbl_DeliveryStateEdit;
         private System.Windows.Forms.Label lbl_SpecialInstructionsEdit;
-        private System.Windows.Forms.RichTextBox txtboxrch_SpecailInstructionsEdit;
+        private System.Windows.Forms.RichTextBox txtboxrch_SpecialInstructionsEdit;
         private System.Windows.Forms.Label lbl_DescriptionEdit;
         private System.Windows.Forms.RichTextBox txtboxrch_DescriptionEdit;
         private System.Windows.Forms.DateTimePicker dateTimePicker_DeliveryDateEdit;

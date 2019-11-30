@@ -1069,13 +1069,14 @@ namespace WindowsFormsApp3
 
         private void btn_EditOrder_Click(object sender, EventArgs e)
         {
-            txtbox_InvoiceIdEdit.ReadOnly = false;
-            dateTimePicker_BookingDateEdit.Enabled = false;
+            txtbox_InvoiceIdEdit.ReadOnly = true;
+            dateTimePicker_BookingDateEdit.Enabled = true;
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
             comboBox_OrderStatusEdit.Enabled = true;
             txtbox_OrderNumberEdit.Enabled = true;
             comboBox_VehicleEdit.Enabled = true;
+            txtbox_OrderNumberEdit.ReadOnly = false;
             txtbox_PickupAddressEdit.ReadOnly = false;
             txtbox_PickupCityEdit.ReadOnly = false;
             txtbox_PickupStateEdit.ReadOnly = false;
@@ -1112,11 +1113,11 @@ namespace WindowsFormsApp3
             lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
 
-            dateTimePicker_BookingDateEdit.Enabled = true;
-            dateTimePicker_PickUpDateEdit.Enabled = true;
-            dateTimePicker_DeliveryDateEdit.Enabled = true;
-            comboBox_OrderStatusEdit.Enabled = true;
-            txtbox_OrderNumberEdit.ReadOnly = false;
+            dateTimePicker_BookingDateEdit.Enabled = false;
+            dateTimePicker_PickUpDateEdit.Enabled = false;
+            dateTimePicker_DeliveryDateEdit.Enabled = false;
+            comboBox_OrderStatusEdit.Enabled = false;
+            txtbox_OrderNumberEdit.ReadOnly = true;
             txtbox_PickupAddressEdit.ReadOnly = true;
             txtbox_PickupCityEdit.ReadOnly = true;
             txtbox_PickupStateEdit.ReadOnly = true;
@@ -1133,6 +1134,7 @@ namespace WindowsFormsApp3
             btn_EditOrder.Visible = true;
             txtboxrch_SpecialInstructions.ReadOnly = true;
             txtboxrch_Description.ReadOnly = true;
+            
 
             bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false;
 

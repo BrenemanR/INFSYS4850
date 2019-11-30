@@ -1092,8 +1092,8 @@ namespace WindowsFormsApp3
 
         private void btn_SaveOrderEdit_Click(object sender, EventArgs e)
         {
-            iNVOICEBindingSource.EndEdit();
-            iNVOICETableAdapter.Update(this.appData.INVOICE);
+            //iNVOICEBindingSource.EndEdit();
+            //iNVOICETableAdapter.Update(this.appData.INVOICE);
 
             //Changes labels back to White
             lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightGray;
@@ -1202,14 +1202,17 @@ namespace WindowsFormsApp3
             if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickAdd && !noDropDate)
             {
                 //adds to the database
-                iNVOICETableAdapter.Insert(dateTimePicker_BookingDateEdit.Value, dateTimePicker_PickUpDateEdit.Value, dateTimePicker_DeliveryDateEdit.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_OrderStatusEdit.Text,
-                txtbox_PickupAddressEdit.Text, txtbox_PickupCityEdit.Text, txtbox_PickupStateEdit.Text, txtbox_PickupZipEdit.Text,
-                txtbox_DeliveryAddressEdit.Text, txtbox_DeliveryCityEdit.Text, txtbox_DeliveryStateEdit.Text, txtbox_DeliveryZipEdit.Text, txtboxrch_SpecialInstructionsEdit.Text, txtboxrch_DescriptionEdit.Text, txtbox_OrderNumberEdit.Text, comboBox_VehicleEdit.Text);
-                this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
+                /* iNVOICETableAdapter.Insert(dateTimePicker_BookingDateEdit.Value, dateTimePicker_PickUpDateEdit.Value, dateTimePicker_DeliveryDateEdit.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_OrderStatusEdit.Text,
+                 txtbox_PickupAddressEdit.Text, txtbox_PickupCityEdit.Text, txtbox_PickupStateEdit.Text, txtbox_PickupZipEdit.Text,
+                 txtbox_DeliveryAddressEdit.Text, txtbox_DeliveryCityEdit.Text, txtbox_DeliveryStateEdit.Text, txtbox_DeliveryZipEdit.Text, txtboxrch_SpecialInstructionsEdit.Text, txtboxrch_DescriptionEdit.Text, txtbox_OrderNumberEdit.Text, comboBox_VehicleEdit.Text);
+                 */
+                iNVOICEBindingSource.EndEdit();        
                 iNVOICETableAdapter.Update(this.appData.INVOICE);
+             
+                //this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
 
                 //default values after order is saved and prevents the user from changing data
-               
+
             }
             else
             {

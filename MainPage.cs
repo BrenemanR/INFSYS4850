@@ -658,6 +658,7 @@ namespace WindowsFormsApp3
             checkBox_CopyPickupInformation.Enabled = true;
            txtbox_OrderNum.ReadOnly = false;
             comboBox_Vehicle.Enabled = true;
+            txtbox_OrderNum.Text = "";
 
 
             btn_SaveOrder.Enabled = true;
@@ -864,6 +865,8 @@ namespace WindowsFormsApp3
                 txtbox_DeliveryState.Text = "";
                 txtbox_DeliveryZip.Text = "";
                 comboBox_Status.Text = "";
+                //txtbox_OrderNum.Text = "";
+                comboBox_Vehicle.Text = "";
                 picBox_Status.Image = null;
                 txtbox_Company.ReadOnly = true;
                 txtbox_Phone.ReadOnly = true;
@@ -888,8 +891,7 @@ namespace WindowsFormsApp3
                 btn_SaveOrder.Enabled = false;
                 txtbox_OrderNum.ReadOnly = true;
                 comboBox_Vehicle.Enabled = false;
-                txtbox_OrderNum.Text = "";
-                comboBox_Vehicle.Text = "";
+                
             }
             else
             {
@@ -1072,7 +1074,7 @@ namespace WindowsFormsApp3
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
             comboBox_OrderStatusEdit.Enabled = true;
-            txtbox_OrderNumberEdit.Enabled = false;
+            txtbox_OrderNumberEdit.Enabled = true;
             comboBox_VehicleEdit.Enabled = true;
             txtbox_PickupAddressEdit.ReadOnly = false;
             txtbox_PickupCityEdit.ReadOnly = false;
@@ -1114,7 +1116,7 @@ namespace WindowsFormsApp3
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
             comboBox_OrderStatusEdit.Enabled = true;
-            txtbox_OrderNumberEdit.ReadOnly = true;
+            txtbox_OrderNumberEdit.ReadOnly = false;
             txtbox_PickupAddressEdit.ReadOnly = true;
             txtbox_PickupCityEdit.ReadOnly = true;
             txtbox_PickupStateEdit.ReadOnly = true;
@@ -1206,8 +1208,9 @@ namespace WindowsFormsApp3
                  txtbox_PickupAddressEdit.Text, txtbox_PickupCityEdit.Text, txtbox_PickupStateEdit.Text, txtbox_PickupZipEdit.Text,
                  txtbox_DeliveryAddressEdit.Text, txtbox_DeliveryCityEdit.Text, txtbox_DeliveryStateEdit.Text, txtbox_DeliveryZipEdit.Text, txtboxrch_SpecialInstructionsEdit.Text, txtboxrch_DescriptionEdit.Text, txtbox_OrderNumberEdit.Text, comboBox_VehicleEdit.Text);
                  */
+                
                 iNVOICEBindingSource.EndEdit();        
-                iNVOICETableAdapter.Update(this.appData.INVOICE);
+                iNVOICETableAdapter.Update(appData.INVOICE);
              
                 //this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
 

@@ -1686,7 +1686,6 @@
             this.txtbox_OrderNumberEdit.ForeColor = System.Drawing.SystemColors.Window;
             this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(90, 80);
             this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
-            this.txtbox_OrderNumberEdit.ReadOnly = true;
             this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(153, 27);
             this.txtbox_OrderNumberEdit.TabIndex = 42;
             // 

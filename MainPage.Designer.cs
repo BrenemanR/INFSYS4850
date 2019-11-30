@@ -136,13 +136,16 @@
             this.txtbox_FLNAME = new System.Windows.Forms.TextBox();
             this.tab_Help = new System.Windows.Forms.TabPage();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
+            this.btn_EditOrder = new System.Windows.Forms.Button();
+            this.lbl_OrderSearch = new System.Windows.Forms.Label();
+            this.txtbox_OrderSearchBox = new System.Windows.Forms.TextBox();
             this.comboBox_VehicleEdit = new System.Windows.Forms.ComboBox();
             this.lbl_VehicleEdit = new System.Windows.Forms.Label();
             this.txtbox_OrderNumberEdit = new System.Windows.Forms.TextBox();
             this.lbl_OrderNumberEdit = new System.Windows.Forms.Label();
             this.comboBox_OrderStatusEdit = new System.Windows.Forms.ComboBox();
-            this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
-            this.btn_EditOrder = new System.Windows.Forms.Button();
             this.dateTimePicker_DeliveryDateEdit = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_PickUpDateEdit = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_BookingDateEdit = new System.Windows.Forms.DateTimePicker();
@@ -174,8 +177,6 @@
             this.lbl_PickupDateEdit = new System.Windows.Forms.Label();
             this.txtbox_InvoiceIdEdit = new System.Windows.Forms.TextBox();
             this.lbl_InvoiceIdEdit = new System.Windows.Forms.Label();
-            this.lbl_OrderSearch = new System.Windows.Forms.Label();
-            this.txtbox_OrderSearchBox = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEHICLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,7 +202,6 @@
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -214,12 +214,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tab_SearchOrders.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tab_Home.SuspendLayout();
             this.tab_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_CreateOrder
@@ -564,11 +564,11 @@
             this.DropOffDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DropOffDatePicker.Location = new System.Drawing.Point(126, 377);
             this.DropOffDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
-            this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
+            this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
             this.DropOffDatePicker.Name = "DropOffDatePicker";
             this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
             this.DropOffDatePicker.TabIndex = 12;
-            this.DropOffDatePicker.Value = new System.DateTime(2019, 11, 27, 15, 49, 41, 0);
+            this.DropOffDatePicker.Value = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
             // 
             // PickUpDatePicker
             // 
@@ -577,11 +577,11 @@
             this.PickUpDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
             this.PickUpDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
-            this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
+            this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
             this.PickUpDatePicker.Name = "PickUpDatePicker";
             this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
             this.PickUpDatePicker.TabIndex = 11;
-            this.PickUpDatePicker.Value = new System.DateTime(2019, 11, 27, 15, 49, 36, 0);
+            this.PickUpDatePicker.Value = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
             // 
             // BookDatePicker
             // 
@@ -1584,6 +1584,71 @@
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkGray;
+            this.panel4.Controls.Add(this.btn_SaveOrderEdit);
+            this.panel4.Controls.Add(this.btn_EditOrder);
+            this.panel4.Controls.Add(this.lbl_OrderSearch);
+            this.panel4.Controls.Add(this.txtbox_OrderSearchBox);
+            this.panel4.Location = new System.Drawing.Point(517, 174);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(581, 74);
+            this.panel4.TabIndex = 73;
+            // 
+            // btn_SaveOrderEdit
+            // 
+            this.btn_SaveOrderEdit.BackColor = System.Drawing.Color.Gray;
+            this.btn_SaveOrderEdit.FlatAppearance.BorderSize = 0;
+            this.btn_SaveOrderEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_SaveOrderEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SaveOrderEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_SaveOrderEdit.Location = new System.Drawing.Point(441, 12);
+            this.btn_SaveOrderEdit.Name = "btn_SaveOrderEdit";
+            this.btn_SaveOrderEdit.Size = new System.Drawing.Size(110, 47);
+            this.btn_SaveOrderEdit.TabIndex = 39;
+            this.btn_SaveOrderEdit.Text = "Save Order";
+            this.btn_SaveOrderEdit.UseVisualStyleBackColor = false;
+            this.btn_SaveOrderEdit.Visible = false;
+            this.btn_SaveOrderEdit.Click += new System.EventHandler(this.btn_SaveOrderEdit_Click);
+            // 
+            // btn_EditOrder
+            // 
+            this.btn_EditOrder.BackColor = System.Drawing.Color.Gray;
+            this.btn_EditOrder.FlatAppearance.BorderSize = 0;
+            this.btn_EditOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_EditOrder.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditOrder.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_EditOrder.Location = new System.Drawing.Point(441, 12);
+            this.btn_EditOrder.Name = "btn_EditOrder";
+            this.btn_EditOrder.Size = new System.Drawing.Size(110, 47);
+            this.btn_EditOrder.TabIndex = 38;
+            this.btn_EditOrder.Text = "Edit Order";
+            this.btn_EditOrder.UseVisualStyleBackColor = false;
+            this.btn_EditOrder.Click += new System.EventHandler(this.btn_EditOrder_Click);
+            // 
+            // lbl_OrderSearch
+            // 
+            this.lbl_OrderSearch.AutoSize = true;
+            this.lbl_OrderSearch.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_OrderSearch.ForeColor = System.Drawing.Color.Black;
+            this.lbl_OrderSearch.Location = new System.Drawing.Point(9, 4);
+            this.lbl_OrderSearch.Name = "lbl_OrderSearch";
+            this.lbl_OrderSearch.Size = new System.Drawing.Size(133, 26);
+            this.lbl_OrderSearch.TabIndex = 2;
+            this.lbl_OrderSearch.Text = "Search Orders";
+            // 
+            // txtbox_OrderSearchBox
+            // 
+            this.txtbox_OrderSearchBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtbox_OrderSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbox_OrderSearchBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_OrderSearchBox.Location = new System.Drawing.Point(14, 35);
+            this.txtbox_OrderSearchBox.Name = "txtbox_OrderSearchBox";
+            this.txtbox_OrderSearchBox.Size = new System.Drawing.Size(387, 33);
+            this.txtbox_OrderSearchBox.TabIndex = 1;
+            this.txtbox_OrderSearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OrderSearchBox_KeyPress);
+            // 
             // comboBox_VehicleEdit
             // 
             this.comboBox_VehicleEdit.BackColor = System.Drawing.SystemColors.WindowFrame;
@@ -1617,7 +1682,6 @@
             // 
             this.txtbox_OrderNumberEdit.BackColor = System.Drawing.Color.DimGray;
             this.txtbox_OrderNumberEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbox_OrderNumberEdit.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNumberEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNumberEdit.ForeColor = System.Drawing.SystemColors.Window;
             this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(90, 80);
@@ -1655,37 +1719,6 @@
             this.comboBox_OrderStatusEdit.Name = "comboBox_OrderStatusEdit";
             this.comboBox_OrderStatusEdit.Size = new System.Drawing.Size(132, 27);
             this.comboBox_OrderStatusEdit.TabIndex = 40;
-            // 
-            // btn_SaveOrderEdit
-            // 
-            this.btn_SaveOrderEdit.BackColor = System.Drawing.Color.Gray;
-            this.btn_SaveOrderEdit.FlatAppearance.BorderSize = 0;
-            this.btn_SaveOrderEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_SaveOrderEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SaveOrderEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_SaveOrderEdit.Location = new System.Drawing.Point(441, 12);
-            this.btn_SaveOrderEdit.Name = "btn_SaveOrderEdit";
-            this.btn_SaveOrderEdit.Size = new System.Drawing.Size(110, 47);
-            this.btn_SaveOrderEdit.TabIndex = 39;
-            this.btn_SaveOrderEdit.Text = "Save Order";
-            this.btn_SaveOrderEdit.UseVisualStyleBackColor = false;
-            this.btn_SaveOrderEdit.Visible = false;
-            this.btn_SaveOrderEdit.Click += new System.EventHandler(this.btn_SaveOrderEdit_Click);
-            // 
-            // btn_EditOrder
-            // 
-            this.btn_EditOrder.BackColor = System.Drawing.Color.Gray;
-            this.btn_EditOrder.FlatAppearance.BorderSize = 0;
-            this.btn_EditOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_EditOrder.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EditOrder.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_EditOrder.Location = new System.Drawing.Point(441, 12);
-            this.btn_EditOrder.Name = "btn_EditOrder";
-            this.btn_EditOrder.Size = new System.Drawing.Size(110, 47);
-            this.btn_EditOrder.TabIndex = 38;
-            this.btn_EditOrder.Text = "Edit Order";
-            this.btn_EditOrder.UseVisualStyleBackColor = false;
-            this.btn_EditOrder.Click += new System.EventHandler(this.btn_EditOrder_Click);
             // 
             // dateTimePicker_DeliveryDateEdit
             // 
@@ -2045,28 +2078,6 @@
             this.lbl_InvoiceIdEdit.TabIndex = 3;
             this.lbl_InvoiceIdEdit.Text = "Invoice #:";
             // 
-            // lbl_OrderSearch
-            // 
-            this.lbl_OrderSearch.AutoSize = true;
-            this.lbl_OrderSearch.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_OrderSearch.ForeColor = System.Drawing.Color.Black;
-            this.lbl_OrderSearch.Location = new System.Drawing.Point(9, 4);
-            this.lbl_OrderSearch.Name = "lbl_OrderSearch";
-            this.lbl_OrderSearch.Size = new System.Drawing.Size(133, 26);
-            this.lbl_OrderSearch.TabIndex = 2;
-            this.lbl_OrderSearch.Text = "Search Orders";
-            // 
-            // txtbox_OrderSearchBox
-            // 
-            this.txtbox_OrderSearchBox.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtbox_OrderSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbox_OrderSearchBox.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_OrderSearchBox.Location = new System.Drawing.Point(14, 35);
-            this.txtbox_OrderSearchBox.Name = "txtbox_OrderSearchBox";
-            this.txtbox_OrderSearchBox.Size = new System.Drawing.Size(387, 33);
-            this.txtbox_OrderSearchBox.TabIndex = 1;
-            this.txtbox_OrderSearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OrderSearchBox_KeyPress);
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -2318,18 +2329,6 @@
             this.iNVOICEBindingSource1.DataMember = "INVOICE";
             this.iNVOICEBindingSource1.DataSource = this.appData;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DarkGray;
-            this.panel4.Controls.Add(this.btn_SaveOrderEdit);
-            this.panel4.Controls.Add(this.btn_EditOrder);
-            this.panel4.Controls.Add(this.lbl_OrderSearch);
-            this.panel4.Controls.Add(this.txtbox_OrderSearchBox);
-            this.panel4.Location = new System.Drawing.Point(517, 174);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(581, 74);
-            this.panel4.TabIndex = 73;
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2362,14 +2361,14 @@
             this.panel1.PerformLayout();
             this.tab_SearchOrders.ResumeLayout(false);
             this.tab_SearchOrders.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tab_Home.ResumeLayout(false);
             this.tab_Home.PerformLayout();
             this.tab_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

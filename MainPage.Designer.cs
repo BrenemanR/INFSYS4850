@@ -855,6 +855,7 @@
             this.combobox_CustomerIDZ.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cUSTOMERBindingSource, "CUST_ID", true));
             this.combobox_CustomerIDZ.DataSource = this.cUSTOMERBindingSource;
             this.combobox_CustomerIDZ.DisplayMember = "FLNAME";
+            this.combobox_CustomerIDZ.Enabled = false;
             this.combobox_CustomerIDZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combobox_CustomerIDZ.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combobox_CustomerIDZ.ForeColor = System.Drawing.SystemColors.Window;

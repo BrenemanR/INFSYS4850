@@ -659,6 +659,7 @@ namespace WindowsFormsApp3
            txtbox_OrderNum.ReadOnly = false;
             comboBox_Vehicle.Enabled = true;
             btn_CancelOrder.Enabled = true;
+            combobox_CustomerIDZ.Enabled = true;
             txtbox_OrderNum.Text = "";
 
 
@@ -893,7 +894,8 @@ namespace WindowsFormsApp3
                 btn_SaveOrder.Enabled = false;
                 txtbox_OrderNum.ReadOnly = true;
                 comboBox_Vehicle.Enabled = false;
-                
+                combobox_CustomerIDZ.Enabled = false;
+
             }
             else
             {
@@ -1322,6 +1324,7 @@ namespace WindowsFormsApp3
             btn_SaveOrder.Enabled = false;
             txtbox_OrderNum.ReadOnly = true;
             comboBox_Vehicle.Enabled = false;
+            combobox_CustomerIDZ.Enabled = false;
 
             iNVOICEBindingSource.CancelEdit();
             iNVOICEBindingSource.RemoveCurrent();

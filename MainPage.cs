@@ -658,6 +658,7 @@ namespace WindowsFormsApp3
             checkBox_CopyPickupInformation.Enabled = true;
            txtbox_OrderNum.ReadOnly = false;
             comboBox_Vehicle.Enabled = true;
+            btn_CancelOrder.Enabled = true;
             txtbox_OrderNum.Text = "";
 
 
@@ -853,6 +854,7 @@ namespace WindowsFormsApp3
                 txtboxrch_SpecialInstructions.Text = ""; //Wipes the data from the Description text box after a save.
                 checkBox_CopyPickupInformation.Checked = false; //dechecks the pickup check box.
                 checkBox_CopyDropoffInformation.Checked = false; //dechecks the dropoff check box.
+                btn_CancelOrder.Enabled = false;
                 BookDatePicker.Value = DateTime.Today;
                 PickUpDatePicker.Value = DateTime.Today;
                 DropOffDatePicker.Value = DateTime.Today;
@@ -1266,6 +1268,66 @@ namespace WindowsFormsApp3
         private void LastNameBox_TextChanged(object sender, EventArgs e)
         {
             txtbox_FLNAME.Text = FirstNameBox.Text + " " + LastNameBox.Text;
+        }
+
+        private void btn_CancelOrder_Click(object sender, EventArgs e)
+        {
+            combobox_CustomerIDZ.Enabled = false;
+            BookDatePicker.Enabled = false;
+            PickUpDatePicker.Enabled = false;
+            DropOffDatePicker.Enabled = false;
+            picBox_Status.Enabled = false;
+            checkBox_CopyPickupInformation.Enabled = false;
+            checkBox_CopyDropoffInformation.Enabled = false;
+            txtboxrch_Description.Text = ""; //Wipes the data from the Description text box after a save.
+            txtboxrch_SpecialInstructions.Text = ""; //Wipes the data from the Description text box after a save.
+            checkBox_CopyPickupInformation.Checked = false; //dechecks the pickup check box.
+            checkBox_CopyDropoffInformation.Checked = false; //dechecks the dropoff check box.
+            BookDatePicker.Value = DateTime.Today;
+            PickUpDatePicker.Value = DateTime.Today;
+            DropOffDatePicker.Value = DateTime.Today;
+            txtbox_PickupAddress.Text = "";
+            txtbox_PickupCity.Text = "";
+            txtbox_PickupState.Text = "";
+            txtbox_PickupZip.Text = "";
+            txtbox_DeliveryAddress.Text = "";
+            txtbox_DeliveryCity.Text = "";
+            txtbox_DeliveryState.Text = "";
+            txtbox_DeliveryZip.Text = "";
+            comboBox_Status.Text = "";
+            txtbox_OrderNum.Text = "";
+            comboBox_Vehicle.Text = "";
+            txtBox_InvoiceNumber.Text = "";
+            picBox_Status.Image = null;
+            txtbox_Company.ReadOnly = true;
+            txtbox_Phone.ReadOnly = true;
+            txtbox_Email.ReadOnly = true;
+            txtbox_Address.ReadOnly = true;
+            txtbox_City.ReadOnly = true;
+            txtbox_State.ReadOnly = true;
+            txtbox_Zip.ReadOnly = true;
+            txtbox_PickupAddress.ReadOnly = true;
+            txtbox_PickupCity.ReadOnly = true;
+            txtbox_PickupState.ReadOnly = true;
+            txtbox_PickupZip.ReadOnly = true;
+            txtbox_DeliveryAddress.ReadOnly = true;
+            txtbox_DeliveryCity.ReadOnly = true;
+            txtbox_DeliveryState.ReadOnly = true;
+            txtbox_DeliveryZip.ReadOnly = true;
+            btn_SaveOrder.Enabled = false;
+            picBox_Status.Enabled = false;
+            comboBox_Status.Enabled = false;
+            txtboxrch_Description.ReadOnly = true;
+            txtboxrch_SpecialInstructions.ReadOnly = true;
+            btn_SaveOrder.Enabled = false;
+            txtbox_OrderNum.ReadOnly = true;
+            comboBox_Vehicle.Enabled = false;
+
+            iNVOICEBindingSource.CancelEdit();
+            iNVOICEBindingSource.RemoveCurrent();
+
+            btn_CancelOrder.Enabled = false;
+            btn_CreateOrder.Enabled = true;
         }
     }
 }

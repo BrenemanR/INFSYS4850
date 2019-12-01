@@ -202,6 +202,7 @@
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_CancelOrder = new System.Windows.Forms.Button();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -225,6 +226,7 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            tab_CreateOrder.Controls.Add(this.btn_CancelOrder);
             tab_CreateOrder.Controls.Add(this.comboBox_Vehicle);
             tab_CreateOrder.Controls.Add(this.lbl_Vehicle);
             tab_CreateOrder.Controls.Add(this.txtBox_InvoiceNumber);
@@ -601,7 +603,7 @@
             this.btn_SaveOrder.Enabled = false;
             this.btn_SaveOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_SaveOrder.Location = new System.Drawing.Point(222, 429);
+            this.btn_SaveOrder.Location = new System.Drawing.Point(158, 429);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
             this.btn_SaveOrder.Size = new System.Drawing.Size(149, 93);
             this.btn_SaveOrder.TabIndex = 17;
@@ -613,7 +615,7 @@
             // 
             this.btn_CreateOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_CreateOrder.Location = new System.Drawing.Point(35, 429);
+            this.btn_CreateOrder.Location = new System.Drawing.Point(3, 429);
             this.btn_CreateOrder.Name = "btn_CreateOrder";
             this.btn_CreateOrder.Size = new System.Drawing.Size(149, 93);
             this.btn_CreateOrder.TabIndex = 18;
@@ -2329,6 +2331,19 @@
             this.iNVOICEBindingSource1.DataMember = "INVOICE";
             this.iNVOICEBindingSource1.DataSource = this.appData;
             // 
+            // btn_CancelOrder
+            // 
+            this.btn_CancelOrder.Enabled = false;
+            this.btn_CancelOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_CancelOrder.Location = new System.Drawing.Point(313, 429);
+            this.btn_CancelOrder.Name = "btn_CancelOrder";
+            this.btn_CancelOrder.Size = new System.Drawing.Size(72, 93);
+            this.btn_CancelOrder.TabIndex = 71;
+            this.btn_CancelOrder.Text = "Cancel";
+            this.btn_CancelOrder.UseVisualStyleBackColor = true;
+            this.btn_CancelOrder.Click += new System.EventHandler(this.btn_CancelOrder_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2546,5 +2561,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BROKER;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btn_CancelOrder;
     }
 }

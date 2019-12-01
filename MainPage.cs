@@ -663,6 +663,9 @@ namespace WindowsFormsApp3
             btn_CancelOrder.Enabled = true;
             combobox_CustomerIDZ.Enabled = true;
             txtbox_OrderNum.Text = "";
+            BookDatePicker.Value = DateTime.Today;
+            PickUpDatePicker.Value = DateTime.Today;
+            DropOffDatePicker.Value = DateTime.Today;
 
 
             btn_SaveOrder.Enabled = true;

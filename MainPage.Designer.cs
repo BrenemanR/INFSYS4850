@@ -58,8 +58,6 @@
             this.lbl_DeliveryDate = new System.Windows.Forms.Label();
             this.lbl_PickupDate = new System.Windows.Forms.Label();
             this.lbl_BookDate = new System.Windows.Forms.Label();
-            this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.PickUpDatePicker = new System.Windows.Forms.DateTimePicker();
             this.BookDatePicker = new System.Windows.Forms.DateTimePicker();
             this.btn_SaveOrder = new System.Windows.Forms.Button();
             this.btn_CreateOrder = new System.Windows.Forms.Button();
@@ -219,6 +217,8 @@
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
             this.tab_Help = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.PickUpDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).BeginInit();
@@ -246,6 +246,8 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            tab_CreateOrder.Controls.Add(this.DropOffDatePicker);
+            tab_CreateOrder.Controls.Add(this.PickUpDatePicker);
             tab_CreateOrder.Controls.Add(this.btn_CancelOrder);
             tab_CreateOrder.Controls.Add(this.comboBox_Vehicle);
             tab_CreateOrder.Controls.Add(this.lbl_Vehicle);
@@ -260,8 +262,6 @@
             tab_CreateOrder.Controls.Add(this.lbl_DeliveryDate);
             tab_CreateOrder.Controls.Add(this.lbl_PickupDate);
             tab_CreateOrder.Controls.Add(this.lbl_BookDate);
-            tab_CreateOrder.Controls.Add(this.DropOffDatePicker);
-            tab_CreateOrder.Controls.Add(this.PickUpDatePicker);
             tab_CreateOrder.Controls.Add(this.BookDatePicker);
             tab_CreateOrder.Controls.Add(this.btn_SaveOrder);
             tab_CreateOrder.Controls.Add(this.btn_CreateOrder);
@@ -596,32 +596,6 @@
             this.lbl_BookDate.TabIndex = 33;
             this.lbl_BookDate.Text = "Booking Date:";
             // 
-            // DropOffDatePicker
-            // 
-            this.DropOffDatePicker.Enabled = false;
-            this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropOffDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 377);
-            this.DropOffDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
-            this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
-            this.DropOffDatePicker.Name = "DropOffDatePicker";
-            this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
-            this.DropOffDatePicker.TabIndex = 12;
-            this.DropOffDatePicker.Value = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
-            // 
-            // PickUpDatePicker
-            // 
-            this.PickUpDatePicker.Enabled = false;
-            this.PickUpDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickUpDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
-            this.PickUpDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
-            this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
-            this.PickUpDatePicker.Name = "PickUpDatePicker";
-            this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
-            this.PickUpDatePicker.TabIndex = 11;
-            this.PickUpDatePicker.Value = new System.DateTime(2019, 11, 30, 0, 0, 0, 0);
-            // 
             // BookDatePicker
             // 
             this.BookDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
@@ -634,6 +608,7 @@
             this.BookDatePicker.Name = "BookDatePicker";
             this.BookDatePicker.Size = new System.Drawing.Size(238, 27);
             this.BookDatePicker.TabIndex = 10;
+            this.BookDatePicker.Value = new System.DateTime(2019, 12, 1, 13, 38, 24, 0);
             // 
             // btn_SaveOrder
             // 
@@ -2531,6 +2506,32 @@
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("http://google.com", System.UriKind.Absolute);
             // 
+            // PickUpDatePicker
+            // 
+            this.PickUpDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
+            this.PickUpDatePicker.Enabled = false;
+            this.PickUpDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PickUpDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
+            this.PickUpDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
+            this.PickUpDatePicker.Name = "PickUpDatePicker";
+            this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.PickUpDatePicker.TabIndex = 72;
+            // 
+            // DropOffDatePicker
+            // 
+            this.DropOffDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
+            this.DropOffDatePicker.Enabled = false;
+            this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropOffDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 375);
+            this.DropOffDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
+            this.DropOffDatePicker.Name = "DropOffDatePicker";
+            this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.DropOffDatePicker.TabIndex = 73;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2639,8 +2640,6 @@
         private System.Windows.Forms.Button btn_CreateOrder;
         private System.Windows.Forms.BindingSource iNVOICEBindingSource;
         private AppDataTableAdapters.INVOICETableAdapter iNVOICETableAdapter;
-        private System.Windows.Forms.DateTimePicker DropOffDatePicker;
-        private System.Windows.Forms.DateTimePicker PickUpDatePicker;
         private System.Windows.Forms.DateTimePicker BookDatePicker;
         private System.Windows.Forms.BindingSource oRDERSTATUSBindingSource;
         private AppDataTableAdapters.ORDERSTATUSTableAdapter oRDERSTATUSTableAdapter;
@@ -2770,5 +2769,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENOTESDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tab_Help;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.DateTimePicker DropOffDatePicker;
+        private System.Windows.Forms.DateTimePicker PickUpDatePicker;
     }
 }

@@ -1362,6 +1362,8 @@ namespace WindowsFormsApp3
             btn_EditVehicle.Enabled = true;
             btn_CancelVehicle.Enabled = false;
             dataGridViewVehicle.Enabled = true;
+            txtbox_VehicleName.ReadOnly = true;
+            txtboxrch_VehicleNotes.ReadOnly = true;
         }
         private void btn_EditVehicle_Click(object sender, EventArgs e)
         {
@@ -1382,8 +1384,10 @@ namespace WindowsFormsApp3
             {
                 btn_EditVehicle.Enabled = true;
                 btn_AddVehicle.Enabled = true;
-                txtboxrch_VehicleNotes.ReadOnly = false;
-                txtbox_VehicleName.ReadOnly = false;
+                btn_CancelVehicle.Enabled = false;
+                btn_SaveVehicle.Enabled = false;
+                txtboxrch_VehicleNotes.ReadOnly = true;
+                txtbox_VehicleName.ReadOnly = true;
                 vEHICLEBindingSource.CancelEdit();
 
                 dataGridViewVehicle.Enabled = true;
@@ -1395,6 +1399,7 @@ namespace WindowsFormsApp3
                 btn_EditVehicle.Enabled = true;
                 btn_AddVehicle.Enabled = true;
                 btn_CancelVehicle.Enabled = false;
+                btn_SaveVehicle.Enabled = false;
 
                 txtboxrch_VehicleNotes.ReadOnly = true;
                 txtbox_VehicleName.ReadOnly = true;

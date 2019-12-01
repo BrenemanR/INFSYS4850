@@ -2417,8 +2417,7 @@ namespace WindowsFormsApp3
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnVEHICLE_ID}, true));
                 this.columnVEHICLE_ID.AutoIncrement = true;
-                this.columnVEHICLE_ID.AutoIncrementSeed = -1;
-                this.columnVEHICLE_ID.AutoIncrementStep = -1;
+                this.columnVEHICLE_ID.AutoIncrementSeed = 1;
                 this.columnVEHICLE_ID.AllowDBNull = false;
                 this.columnVEHICLE_ID.Unique = true;
                 this.columnVEHICLE_NAME.MaxLength = 255;

@@ -377,6 +377,8 @@ namespace WindowsFormsApp3
 
         private void AddCustomer_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'appData.VEHICLE' table. You can move, or remove it, as needed.
+            this.vEHICLETableAdapter.Fill(this.appData.VEHICLE);
             // TODO: This line of code loads data into the 'appData.ORDERSTATUS' table. You can move, or remove it, as needed.
             this.oRDERSTATUSTableAdapter.Fill(this.appData.ORDERSTATUS);
             // TODO: This line of code loads data into the 'appData.INVOICE' table. You can move, or remove it, as needed.
@@ -1332,5 +1334,115 @@ namespace WindowsFormsApp3
             btn_CancelOrder.Enabled = false;
             btn_CreateOrder.Enabled = true;
         }
+
+        private void btn_AddVehicle_Click(object sender, EventArgs e)
+        {
+            btn_AddVehicle.Enabled = false;
+            btn_EditVehicle.Enabled = false;
+            btn_SaveVehicle.Enabled = true;
+            btn_CancelVehicle.Enabled = true;
+            this.appData.VEHICLE.AddVEHICLERow(this.appData.VEHICLE.NewVEHICLERow());
+            vEHICLEBindingSource.RemoveSort();
+            vEHICLEBindingSource.MoveLast();
+            dataGridViewVehicle.Enabled = false;
+
+            txtbox_VehicleName.ReadOnly = false;
+            txtboxrch_VehicleNotes.ReadOnly = false;
+            txtbox_VehicleName.Focus();
+                 
+        }
+
+        private void btn_SaveVehicle_Click(object sender, EventArgs e)
+        {
+            vEHICLEBindingSource.EndEdit();
+            vEHICLETableAdapter.Insert(txtbox_VehicleName.Text, txtboxrch_VehicleNotes.Text);
+
+            btn_AddVehicle.Enabled = true;
+            btn_SaveVehicle.Enabled = false;
+            btn_EditVehicle.Enabled = true;
+            btn_CancelVehicle.Enabled = false;
+            dataGridViewVehicle.Enabled = true;
+        }
+        private void btn_EditVehicle_Click(object sender, EventArgs e)
+        {
+            btn_EditVehicle.Enabled = true;
+            btn_AddVehicle.Enabled = false;
+            btn_CancelVehicle.Enabled = true;
+            btn_SaveVehicle.Enabled = true;
+            dataGridViewVehicle.Enabled = false;
+            txtbox_VehicleName.ReadOnly = false;
+            txtboxrch_VehicleNotes.ReadOnly = false;
+
+            txtbox_VehicleName.Focus();
+        }
+
+        private void btn_CancelVehicle_Click(object sender, EventArgs e)
+        {
+            if (btn_EditVehicle.Enabled == true)
+            {
+                btn_EditVehicle.Enabled = true;
+                btn_AddVehicle.Enabled = true;
+                txtboxrch_VehicleNotes.ReadOnly = false;
+                txtbox_VehicleName.ReadOnly = false;
+                vEHICLEBindingSource.CancelEdit();
+
+                dataGridViewVehicle.Enabled = true;
+
+            }
+
+            if (btn_EditVehicle.Enabled == false)
+            {
+                btn_EditVehicle.Enabled = true;
+                btn_AddVehicle.Enabled = true;
+                btn_CancelVehicle.Enabled = false;
+
+                txtboxrch_VehicleNotes.ReadOnly = true;
+                txtbox_VehicleName.ReadOnly = true;
+
+                vEHICLEBindingSource.CancelEdit();
+                vEHICLEBindingSource.RemoveCurrent();
+
+                dataGridViewVehicle.Enabled = true;
+            }
+            /*
+            
+            if (btnEdit.Enabled == false)
+            {
+                btnEdit.Enabled = false; //Reenables the Edit Button After a new record is cancelled.
+                btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
+                btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
+                btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
+                //panel1.Enabled = false;
+                FirstNameBox.ReadOnly = true;
+                LastNameBox.ReadOnly = true;
+                EmailBox.ReadOnly = true;
+                PhoneNumberBox.ReadOnly = true;
+                CompanyBox.ReadOnly = true;
+                AddressBox.ReadOnly = true;
+                CityBox.ReadOnly = true;
+                StateBox.ReadOnly = true;
+                ZipBox.ReadOnly = true;
+
+                dataGridView1.Enabled = true;
+
+                cUSTOMERBindingSource.CancelEdit();
+                cUSTOMERBindingSource.RemoveCurrent();
+
+
+                //Resets all of the text to black in case the user originally entered in mistakes.
+                FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
+                EmailLabel.ForeColor = System.Drawing.Color.LightGray;
+                CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
+                AddressLabel.ForeColor = System.Drawing.Color.LightGray;
+                CityLabel.ForeColor = System.Drawing.Color.LightGray;
+                StateLabel.ForeColor = System.Drawing.Color.LightGray;
+                ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+            }
+             */
+        }
+
+        
     }
 }

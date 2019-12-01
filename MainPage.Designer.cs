@@ -31,13 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.iNVOICEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new WindowsFormsApp3.AppData();
+            this.PickUpDatePicker = new System.Windows.Forms.DateTimePicker();
             this.btn_CancelOrder = new System.Windows.Forms.Button();
             this.comboBox_Vehicle = new System.Windows.Forms.ComboBox();
             this.vEHICLEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new WindowsFormsApp3.AppData();
             this.lbl_Vehicle = new System.Windows.Forms.Label();
             this.txtBox_InvoiceNumber = new System.Windows.Forms.TextBox();
-            this.iNVOICEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_Invoice = new System.Windows.Forms.Label();
             this.comboBox_Status = new System.Windows.Forms.ComboBox();
             this.picBox_Status = new System.Windows.Forms.PictureBox();
@@ -209,21 +211,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtboxrch_VehicleNotes = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tab_Help = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
             this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.tab_Help = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.PickUpDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
@@ -238,9 +238,9 @@
             this.tab_Container.SuspendLayout();
             this.VehicleManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicle)).BeginInit();
+            this.tab_Help.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).BeginInit();
-            this.tab_Help.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_CreateOrder
@@ -295,6 +295,42 @@
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
             // 
+            // DropOffDatePicker
+            // 
+            this.DropOffDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
+            this.DropOffDatePicker.Enabled = false;
+            this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DropOffDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 375);
+            this.DropOffDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
+            this.DropOffDatePicker.Name = "DropOffDatePicker";
+            this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.DropOffDatePicker.TabIndex = 73;
+            // 
+            // iNVOICEBindingSource
+            // 
+            this.iNVOICEBindingSource.DataMember = "INVOICE";
+            this.iNVOICEBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // PickUpDatePicker
+            // 
+            this.PickUpDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
+            this.PickUpDatePicker.Enabled = false;
+            this.PickUpDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PickUpDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
+            this.PickUpDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
+            this.PickUpDatePicker.Name = "PickUpDatePicker";
+            this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
+            this.PickUpDatePicker.TabIndex = 72;
+            // 
             // btn_CancelOrder
             // 
             this.btn_CancelOrder.Enabled = false;
@@ -329,11 +365,6 @@
             this.vEHICLEBindingSource.DataMember = "VEHICLE";
             this.vEHICLEBindingSource.DataSource = this.appData;
             // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lbl_Vehicle
             // 
             this.lbl_Vehicle.AutoSize = true;
@@ -357,11 +388,6 @@
             this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(140, 27);
             this.txtBox_InvoiceNumber.TabIndex = 66;
             this.txtBox_InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // iNVOICEBindingSource
-            // 
-            this.iNVOICEBindingSource.DataMember = "INVOICE";
-            this.iNVOICEBindingSource.DataSource = this.appData;
             // 
             // lbl_Invoice
             // 
@@ -2458,6 +2484,28 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Vehicle Notes:";
             // 
+            // tab_Help
+            // 
+            this.tab_Help.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tab_Help.Controls.Add(this.webBrowser1);
+            this.tab_Help.Location = new System.Drawing.Point(4, 28);
+            this.tab_Help.Name = "tab_Help";
+            this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Help.Size = new System.Drawing.Size(1107, 546);
+            this.tab_Help.TabIndex = 4;
+            this.tab_Help.Text = "Help";
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1101, 540);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Url = new System.Uri("http://google.com", System.UriKind.Absolute);
+            // 
             // cUSTOMERTableAdapter
             // 
             this.cUSTOMERTableAdapter.ClearBeforeFill = true;
@@ -2484,54 +2532,6 @@
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
-            // tab_Help
-            // 
-            this.tab_Help.BackColor = System.Drawing.SystemColors.Control;
-            this.tab_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tab_Help.Controls.Add(this.webBrowser1);
-            this.tab_Help.Location = new System.Drawing.Point(4, 28);
-            this.tab_Help.Name = "tab_Help";
-            this.tab_Help.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Help.Size = new System.Drawing.Size(1107, 546);
-            this.tab_Help.TabIndex = 4;
-            this.tab_Help.Text = "Help";
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1101, 540);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("http://google.com", System.UriKind.Absolute);
-            // 
-            // PickUpDatePicker
-            // 
-            this.PickUpDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
-            this.PickUpDatePicker.Enabled = false;
-            this.PickUpDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickUpDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.PickUpDatePicker.Location = new System.Drawing.Point(126, 338);
-            this.PickUpDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
-            this.PickUpDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
-            this.PickUpDatePicker.Name = "PickUpDatePicker";
-            this.PickUpDatePicker.Size = new System.Drawing.Size(238, 27);
-            this.PickUpDatePicker.TabIndex = 72;
-            // 
-            // DropOffDatePicker
-            // 
-            this.DropOffDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "BOOK_DATE", true));
-            this.DropOffDatePicker.Enabled = false;
-            this.DropOffDatePicker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropOffDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DropOffDatePicker.Location = new System.Drawing.Point(126, 375);
-            this.DropOffDatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
-            this.DropOffDatePicker.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
-            this.DropOffDatePicker.Name = "DropOffDatePicker";
-            this.DropOffDatePicker.Size = new System.Drawing.Size(238, 27);
-            this.DropOffDatePicker.TabIndex = 73;
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2549,9 +2549,9 @@
             this.Load += new System.EventHandler(this.AddCustomer_Load);
             tab_CreateOrder.ResumeLayout(false);
             tab_CreateOrder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -2574,9 +2574,9 @@
             this.VehicleManager.ResumeLayout(false);
             this.VehicleManager.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicle)).EndInit();
+            this.tab_Help.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).EndInit();
-            this.tab_Help.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

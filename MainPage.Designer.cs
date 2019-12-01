@@ -202,9 +202,6 @@
             this.VehicleManager = new System.Windows.Forms.TabPage();
             this.btn_EditVehicle = new System.Windows.Forms.Button();
             this.dataGridViewVehicle = new System.Windows.Forms.DataGridView();
-            this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLENOTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_CancelVehicle = new System.Windows.Forms.Button();
             this.btn_AddVehicle = new System.Windows.Forms.Button();
             this.txtbox_VehicleName = new System.Windows.Forms.TextBox();
@@ -218,6 +215,9 @@
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
+            this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLENOTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).BeginInit();
@@ -2336,8 +2336,8 @@
             this.tab_Container.Controls.Add(this.tab_ManageCustomers);
             this.tab_Container.Controls.Add(tab_CreateOrder);
             this.tab_Container.Controls.Add(this.tab_SearchOrders);
-            this.tab_Container.Controls.Add(this.tab_Help);
             this.tab_Container.Controls.Add(this.VehicleManager);
+            this.tab_Container.Controls.Add(this.tab_Help);
             this.tab_Container.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tab_Container.Location = new System.Drawing.Point(3, 0);
             this.tab_Container.Name = "tab_Container";
@@ -2347,6 +2347,7 @@
             // 
             // VehicleManager
             // 
+            this.VehicleManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.VehicleManager.Controls.Add(this.btn_EditVehicle);
             this.VehicleManager.Controls.Add(this.dataGridViewVehicle);
             this.VehicleManager.Controls.Add(this.btn_CancelVehicle);
@@ -2362,7 +2363,6 @@
             this.VehicleManager.Size = new System.Drawing.Size(1107, 546);
             this.VehicleManager.TabIndex = 6;
             this.VehicleManager.Text = "Vehicle Manager";
-            this.VehicleManager.UseVisualStyleBackColor = true;
             // 
             // btn_EditVehicle
             // 
@@ -2393,33 +2393,6 @@
             this.dataGridViewVehicle.Size = new System.Drawing.Size(385, 150);
             this.dataGridViewVehicle.TabIndex = 7;
             // 
-            // vEHICLEIDDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLEIDDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.HeaderText = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.Name = "vEHICLEIDDataGridViewTextBoxColumn";
-            this.vEHICLEIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEIDDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // vEHICLENAMEDataGridViewTextBoxColumn
-            // 
-            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
-            // 
-            // vEHICLENOTESDataGridViewTextBoxColumn
-            // 
-            this.vEHICLENOTESDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENOTESDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NOTES";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NOTES";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.Name = "vEHICLENOTESDataGridViewTextBoxColumn";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENOTESDataGridViewTextBoxColumn.Width = 141;
-            // 
             // btn_CancelVehicle
             // 
             this.btn_CancelVehicle.Enabled = false;
@@ -2444,7 +2417,7 @@
             // txtbox_VehicleName
             // 
             this.txtbox_VehicleName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vEHICLEBindingSource, "VEHICLE_NAME", true));
-            this.txtbox_VehicleName.Location = new System.Drawing.Point(119, 42);
+            this.txtbox_VehicleName.Location = new System.Drawing.Point(126, 42);
             this.txtbox_VehicleName.Name = "txtbox_VehicleName";
             this.txtbox_VehicleName.ReadOnly = true;
             this.txtbox_VehicleName.Size = new System.Drawing.Size(189, 27);
@@ -2464,9 +2437,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
             this.label4.Location = new System.Drawing.Point(15, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 19);
+            this.label4.Size = new System.Drawing.Size(105, 19);
             this.label4.TabIndex = 2;
             this.label4.Text = "Vehicle Name:";
             // 
@@ -2483,9 +2458,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(11, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 19);
+            this.label2.Size = new System.Drawing.Size(105, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Vehicle Notes:";
             // 
@@ -2514,6 +2491,35 @@
             // vEHICLETableAdapter
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
+            // 
+            // vEHICLEIDDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLEIDDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_ID";
+            this.vEHICLEIDDataGridViewTextBoxColumn.HeaderText = "VEHICLE_ID";
+            this.vEHICLEIDDataGridViewTextBoxColumn.Name = "vEHICLEIDDataGridViewTextBoxColumn";
+            this.vEHICLEIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEIDDataGridViewTextBoxColumn.Visible = false;
+            this.vEHICLEIDDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // vEHICLENAMEDataGridViewTextBoxColumn
+            // 
+            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
+            // 
+            // vEHICLENOTESDataGridViewTextBoxColumn
+            // 
+            this.vEHICLENOTESDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NOTES";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NOTES";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Name = "vEHICLENOTESDataGridViewTextBoxColumn";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Visible = false;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Width = 141;
             // 
             // MainPage
             // 
@@ -2748,9 +2754,9 @@
         private System.Windows.Forms.DataGridView dataGridViewVehicle;
         private System.Windows.Forms.BindingSource vEHICLEBindingSource;
         private AppDataTableAdapters.VEHICLETableAdapter vEHICLETableAdapter;
+        private System.Windows.Forms.Button btn_EditVehicle;
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENOTESDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btn_EditVehicle;
     }
 }

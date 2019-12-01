@@ -1352,6 +1352,7 @@ namespace WindowsFormsApp3
             txtbox_VehicleName.ReadOnly = false;
             txtboxrch_VehicleNotes.ReadOnly = false;
             txtbox_VehicleName.Focus();
+            panel_VehicleTab.Visible = true;
                  
         }
 
@@ -1367,6 +1368,7 @@ namespace WindowsFormsApp3
             dataGridViewVehicle.Enabled = true;
             txtbox_VehicleName.ReadOnly = true;
             txtboxrch_VehicleNotes.ReadOnly = true;
+            panel_VehicleTab.Visible = false;
         }
         private void btn_EditVehicle_Click(object sender, EventArgs e)
         {
@@ -1379,6 +1381,7 @@ namespace WindowsFormsApp3
             txtboxrch_VehicleNotes.ReadOnly = false;
 
             txtbox_VehicleName.Focus();
+            panel_VehicleTab.Visible = true;
         }
 
         private void btn_CancelVehicle_Click(object sender, EventArgs e)
@@ -1394,6 +1397,7 @@ namespace WindowsFormsApp3
                 vEHICLEBindingSource.CancelEdit();
 
                 dataGridViewVehicle.Enabled = true;
+                panel_VehicleTab.Visible = false;
 
             }
 

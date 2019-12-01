@@ -219,6 +219,7 @@
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
+            this.panel_VehicleTab = new System.Windows.Forms.Panel();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -241,6 +242,7 @@
             this.tab_Help.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).BeginInit();
+            this.panel_VehicleTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_CreateOrder
@@ -336,9 +338,9 @@
             this.btn_CancelOrder.Enabled = false;
             this.btn_CancelOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_CancelOrder.Location = new System.Drawing.Point(313, 429);
+            this.btn_CancelOrder.Location = new System.Drawing.Point(126, 488);
             this.btn_CancelOrder.Name = "btn_CancelOrder";
-            this.btn_CancelOrder.Size = new System.Drawing.Size(72, 93);
+            this.btn_CancelOrder.Size = new System.Drawing.Size(137, 40);
             this.btn_CancelOrder.TabIndex = 71;
             this.btn_CancelOrder.Text = "Cancel";
             this.btn_CancelOrder.UseVisualStyleBackColor = true;
@@ -641,9 +643,9 @@
             this.btn_SaveOrder.Enabled = false;
             this.btn_SaveOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_SaveOrder.Location = new System.Drawing.Point(158, 429);
+            this.btn_SaveOrder.Location = new System.Drawing.Point(198, 423);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
-            this.btn_SaveOrder.Size = new System.Drawing.Size(149, 93);
+            this.btn_SaveOrder.Size = new System.Drawing.Size(137, 59);
             this.btn_SaveOrder.TabIndex = 17;
             this.btn_SaveOrder.Text = "Save Order";
             this.btn_SaveOrder.UseVisualStyleBackColor = true;
@@ -653,9 +655,9 @@
             // 
             this.btn_CreateOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_CreateOrder.Location = new System.Drawing.Point(3, 429);
+            this.btn_CreateOrder.Location = new System.Drawing.Point(55, 423);
             this.btn_CreateOrder.Name = "btn_CreateOrder";
-            this.btn_CreateOrder.Size = new System.Drawing.Size(149, 93);
+            this.btn_CreateOrder.Size = new System.Drawing.Size(137, 59);
             this.btn_CreateOrder.TabIndex = 18;
             this.btn_CreateOrder.Text = "Create Order";
             this.btn_CreateOrder.UseVisualStyleBackColor = true;
@@ -2339,15 +2341,12 @@
             // VehicleManager
             // 
             this.VehicleManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.VehicleManager.Controls.Add(this.panel_VehicleTab);
             this.VehicleManager.Controls.Add(this.btn_EditVehicle);
             this.VehicleManager.Controls.Add(this.dataGridViewVehicle);
             this.VehicleManager.Controls.Add(this.btn_CancelVehicle);
             this.VehicleManager.Controls.Add(this.btn_AddVehicle);
-            this.VehicleManager.Controls.Add(this.txtbox_VehicleName);
             this.VehicleManager.Controls.Add(this.btn_SaveVehicle);
-            this.VehicleManager.Controls.Add(this.label4);
-            this.VehicleManager.Controls.Add(this.txtboxrch_VehicleNotes);
-            this.VehicleManager.Controls.Add(this.label2);
             this.VehicleManager.Location = new System.Drawing.Point(4, 28);
             this.VehicleManager.Name = "VehicleManager";
             this.VehicleManager.Padding = new System.Windows.Forms.Padding(3);
@@ -2358,9 +2357,10 @@
             // btn_EditVehicle
             // 
             this.btn_EditVehicle.Enabled = false;
-            this.btn_EditVehicle.Location = new System.Drawing.Point(509, 350);
+            this.btn_EditVehicle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditVehicle.Location = new System.Drawing.Point(517, 16);
             this.btn_EditVehicle.Name = "btn_EditVehicle";
-            this.btn_EditVehicle.Size = new System.Drawing.Size(160, 71);
+            this.btn_EditVehicle.Size = new System.Drawing.Size(160, 46);
             this.btn_EditVehicle.TabIndex = 8;
             this.btn_EditVehicle.Text = "Edit";
             this.btn_EditVehicle.UseVisualStyleBackColor = true;
@@ -2378,10 +2378,10 @@
             this.vEHICLENAMEDataGridViewTextBoxColumn,
             this.vEHICLENOTESDataGridViewTextBoxColumn});
             this.dataGridViewVehicle.DataSource = this.vEHICLEBindingSource;
-            this.dataGridViewVehicle.Location = new System.Drawing.Point(523, 106);
+            this.dataGridViewVehicle.Location = new System.Drawing.Point(19, 79);
             this.dataGridViewVehicle.Name = "dataGridViewVehicle";
             this.dataGridViewVehicle.ReadOnly = true;
-            this.dataGridViewVehicle.Size = new System.Drawing.Size(385, 150);
+            this.dataGridViewVehicle.Size = new System.Drawing.Size(658, 253);
             this.dataGridViewVehicle.TabIndex = 7;
             // 
             // vEHICLEIDDataGridViewTextBoxColumn
@@ -2414,9 +2414,10 @@
             // btn_CancelVehicle
             // 
             this.btn_CancelVehicle.Enabled = false;
-            this.btn_CancelVehicle.Location = new System.Drawing.Point(343, 350);
+            this.btn_CancelVehicle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelVehicle.Location = new System.Drawing.Point(351, 16);
             this.btn_CancelVehicle.Name = "btn_CancelVehicle";
-            this.btn_CancelVehicle.Size = new System.Drawing.Size(160, 71);
+            this.btn_CancelVehicle.Size = new System.Drawing.Size(160, 46);
             this.btn_CancelVehicle.TabIndex = 6;
             this.btn_CancelVehicle.Text = "Cancel";
             this.btn_CancelVehicle.UseVisualStyleBackColor = true;
@@ -2424,9 +2425,10 @@
             // 
             // btn_AddVehicle
             // 
-            this.btn_AddVehicle.Location = new System.Drawing.Point(11, 350);
+            this.btn_AddVehicle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddVehicle.Location = new System.Drawing.Point(19, 16);
             this.btn_AddVehicle.Name = "btn_AddVehicle";
-            this.btn_AddVehicle.Size = new System.Drawing.Size(160, 71);
+            this.btn_AddVehicle.Size = new System.Drawing.Size(160, 46);
             this.btn_AddVehicle.TabIndex = 5;
             this.btn_AddVehicle.Text = "Add Vehicle";
             this.btn_AddVehicle.UseVisualStyleBackColor = true;
@@ -2435,18 +2437,19 @@
             // txtbox_VehicleName
             // 
             this.txtbox_VehicleName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vEHICLEBindingSource, "VEHICLE_NAME", true));
-            this.txtbox_VehicleName.Location = new System.Drawing.Point(126, 42);
+            this.txtbox_VehicleName.Location = new System.Drawing.Point(14, 34);
             this.txtbox_VehicleName.Name = "txtbox_VehicleName";
             this.txtbox_VehicleName.ReadOnly = true;
-            this.txtbox_VehicleName.Size = new System.Drawing.Size(189, 27);
+            this.txtbox_VehicleName.Size = new System.Drawing.Size(373, 27);
             this.txtbox_VehicleName.TabIndex = 1;
             // 
             // btn_SaveVehicle
             // 
             this.btn_SaveVehicle.Enabled = false;
-            this.btn_SaveVehicle.Location = new System.Drawing.Point(177, 350);
+            this.btn_SaveVehicle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SaveVehicle.Location = new System.Drawing.Point(185, 16);
             this.btn_SaveVehicle.Name = "btn_SaveVehicle";
-            this.btn_SaveVehicle.Size = new System.Drawing.Size(160, 71);
+            this.btn_SaveVehicle.Size = new System.Drawing.Size(160, 46);
             this.btn_SaveVehicle.TabIndex = 3;
             this.btn_SaveVehicle.Text = "Save";
             this.btn_SaveVehicle.UseVisualStyleBackColor = true;
@@ -2455,32 +2458,32 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(15, 45);
+            this.label4.Location = new System.Drawing.Point(9, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 19);
+            this.label4.Size = new System.Drawing.Size(138, 26);
             this.label4.TabIndex = 2;
             this.label4.Text = "Vehicle Name:";
             // 
             // txtboxrch_VehicleNotes
             // 
             this.txtboxrch_VehicleNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vEHICLEBindingSource, "VEHICLE_NOTES", true));
-            this.txtboxrch_VehicleNotes.Location = new System.Drawing.Point(119, 106);
+            this.txtboxrch_VehicleNotes.Location = new System.Drawing.Point(14, 119);
             this.txtboxrch_VehicleNotes.Name = "txtboxrch_VehicleNotes";
             this.txtboxrch_VehicleNotes.ReadOnly = true;
-            this.txtboxrch_VehicleNotes.Size = new System.Drawing.Size(256, 96);
+            this.txtboxrch_VehicleNotes.Size = new System.Drawing.Size(373, 202);
             this.txtboxrch_VehicleNotes.TabIndex = 2;
             this.txtboxrch_VehicleNotes.Text = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(11, 140);
+            this.label2.Location = new System.Drawing.Point(10, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 19);
+            this.label2.Size = new System.Drawing.Size(137, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Vehicle Notes:";
             // 
@@ -2532,6 +2535,18 @@
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
+            // panel_VehicleTab
+            // 
+            this.panel_VehicleTab.Controls.Add(this.label4);
+            this.panel_VehicleTab.Controls.Add(this.label2);
+            this.panel_VehicleTab.Controls.Add(this.txtbox_VehicleName);
+            this.panel_VehicleTab.Controls.Add(this.txtboxrch_VehicleNotes);
+            this.panel_VehicleTab.Location = new System.Drawing.Point(697, 11);
+            this.panel_VehicleTab.Name = "panel_VehicleTab";
+            this.panel_VehicleTab.Size = new System.Drawing.Size(401, 337);
+            this.panel_VehicleTab.TabIndex = 9;
+            this.panel_VehicleTab.Visible = false;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2572,11 +2587,12 @@
             this.tab_Home.PerformLayout();
             this.tab_Container.ResumeLayout(false);
             this.VehicleManager.ResumeLayout(false);
-            this.VehicleManager.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicle)).EndInit();
             this.tab_Help.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.oRDERSTATUSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource1)).EndInit();
+            this.panel_VehicleTab.ResumeLayout(false);
+            this.panel_VehicleTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2771,5 +2787,6 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.DateTimePicker DropOffDatePicker;
         private System.Windows.Forms.DateTimePicker PickUpDatePicker;
+        private System.Windows.Forms.Panel panel_VehicleTab;
     }
 }

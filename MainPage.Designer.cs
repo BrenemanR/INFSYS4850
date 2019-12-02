@@ -137,6 +137,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtbox_FLNAME = new System.Windows.Forms.TextBox();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_CUSTFLNAMEBOX = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
             this.btn_EditOrder = new System.Windows.Forms.Button();
@@ -179,33 +181,6 @@
             this.txtbox_InvoiceIdEdit = new System.Windows.Forms.TextBox();
             this.lbl_InvoiceIdEdit = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tab_Home = new System.Windows.Forms.TabPage();
-            this.lbl_Home = new System.Windows.Forms.Label();
-            this.tab_Container = new System.Windows.Forms.TabControl();
-            this.VehicleManager = new System.Windows.Forms.TabPage();
-            this.panel_VehicleTab = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtbox_VehicleName = new System.Windows.Forms.TextBox();
-            this.txtboxrch_VehicleNotes = new System.Windows.Forms.RichTextBox();
-            this.btn_EditVehicle = new System.Windows.Forms.Button();
-            this.dataGridViewVehicle = new System.Windows.Forms.DataGridView();
-            this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLENOTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_CancelVehicle = new System.Windows.Forms.Button();
-            this.btn_AddVehicle = new System.Windows.Forms.Button();
-            this.btn_SaveVehicle = new System.Windows.Forms.Button();
-            this.tab_Help = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
-            this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
-            this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
-            this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_CUSTFLNAMEBOX = new System.Windows.Forms.ComboBox();
             this.CUST_FLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEHICLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -222,6 +197,31 @@
             this.oRDERSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDER_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tab_Home = new System.Windows.Forms.TabPage();
+            this.lbl_Home = new System.Windows.Forms.Label();
+            this.tab_Container = new System.Windows.Forms.TabControl();
+            this.VehicleManager = new System.Windows.Forms.TabPage();
+            this.panel_VehicleTab = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtbox_VehicleName = new System.Windows.Forms.TextBox();
+            this.txtboxrch_VehicleNotes = new System.Windows.Forms.RichTextBox();
+            this.btn_EditVehicle = new System.Windows.Forms.Button();
+            this.dataGridViewVehicle = new System.Windows.Forms.DataGridView();
+            this.btn_CancelVehicle = new System.Windows.Forms.Button();
+            this.btn_AddVehicle = new System.Windows.Forms.Button();
+            this.btn_SaveVehicle = new System.Windows.Forms.Button();
+            this.tab_Help = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
+            this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
+            this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
+            this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
+            this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLENOTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -1619,6 +1619,36 @@
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightGray;
+            this.label5.Location = new System.Drawing.Point(275, 116);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 19);
+            this.label5.TabIndex = 75;
+            this.label5.Text = "Customer:";
+            // 
+            // comboBox_CUSTFLNAMEBOX
+            // 
+            this.comboBox_CUSTFLNAMEBOX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox_CUSTFLNAMEBOX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_CUSTFLNAMEBOX.BackColor = System.Drawing.Color.DimGray;
+            this.comboBox_CUSTFLNAMEBOX.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cUSTOMERBindingSource, "CUST_ID", true));
+            this.comboBox_CUSTFLNAMEBOX.DataSource = this.cUSTOMERBindingSource;
+            this.comboBox_CUSTFLNAMEBOX.DisplayMember = "FLNAME";
+            this.comboBox_CUSTFLNAMEBOX.Enabled = false;
+            this.comboBox_CUSTFLNAMEBOX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_CUSTFLNAMEBOX.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_CUSTFLNAMEBOX.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox_CUSTFLNAMEBOX.FormattingEnabled = true;
+            this.comboBox_CUSTFLNAMEBOX.Location = new System.Drawing.Point(364, 112);
+            this.comboBox_CUSTFLNAMEBOX.Name = "comboBox_CUSTFLNAMEBOX";
+            this.comboBox_CUSTFLNAMEBOX.Size = new System.Drawing.Size(132, 27);
+            this.comboBox_CUSTFLNAMEBOX.TabIndex = 74;
+            this.comboBox_CUSTFLNAMEBOX.ValueMember = "CUST_ID";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
@@ -2144,6 +2174,162 @@
             this.dataGridView2.Size = new System.Drawing.Size(1089, 293);
             this.dataGridView2.TabIndex = 0;
             // 
+            // CUST_FLNAME
+            // 
+            this.CUST_FLNAME.DataPropertyName = "CUST_FLNAME";
+            this.CUST_FLNAME.HeaderText = "Customer";
+            this.CUST_FLNAME.Name = "CUST_FLNAME";
+            this.CUST_FLNAME.ReadOnly = true;
+            this.CUST_FLNAME.Width = 90;
+            // 
+            // VEHICLE
+            // 
+            this.VEHICLE.DataPropertyName = "VEHICLE";
+            this.VEHICLE.HeaderText = "Vehicle";
+            this.VEHICLE.MinimumWidth = 8;
+            this.VEHICLE.Name = "VEHICLE";
+            this.VEHICLE.ReadOnly = true;
+            // 
+            // PICKUP_ADDRESS
+            // 
+            this.PICKUP_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_ADDRESS.DataPropertyName = "PICKUP_ADDRESS";
+            this.PICKUP_ADDRESS.HeaderText = "Pickup Address";
+            this.PICKUP_ADDRESS.MinimumWidth = 8;
+            this.PICKUP_ADDRESS.Name = "PICKUP_ADDRESS";
+            this.PICKUP_ADDRESS.ReadOnly = true;
+            this.PICKUP_ADDRESS.Width = 121;
+            // 
+            // PICKUP_CITY
+            // 
+            this.PICKUP_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_CITY.DataPropertyName = "PICKUP_CITY";
+            this.PICKUP_CITY.HeaderText = "Pickup City";
+            this.PICKUP_CITY.MinimumWidth = 8;
+            this.PICKUP_CITY.Name = "PICKUP_CITY";
+            this.PICKUP_CITY.ReadOnly = true;
+            this.PICKUP_CITY.Width = 96;
+            // 
+            // PICKUP_STATE
+            // 
+            this.PICKUP_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_STATE.DataPropertyName = "PICKUP_STATE";
+            this.PICKUP_STATE.HeaderText = "Pickup State";
+            this.PICKUP_STATE.MinimumWidth = 8;
+            this.PICKUP_STATE.Name = "PICKUP_STATE";
+            this.PICKUP_STATE.ReadOnly = true;
+            this.PICKUP_STATE.Width = 104;
+            // 
+            // PICKUP_ZIP
+            // 
+            this.PICKUP_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_ZIP.DataPropertyName = "PICKUP_ZIP";
+            this.PICKUP_ZIP.HeaderText = "Pickup Zip Code";
+            this.PICKUP_ZIP.MinimumWidth = 8;
+            this.PICKUP_ZIP.Name = "PICKUP_ZIP";
+            this.PICKUP_ZIP.ReadOnly = true;
+            this.PICKUP_ZIP.Width = 96;
+            // 
+            // DELIVERY_ADDRESS
+            // 
+            this.DELIVERY_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_ADDRESS.DataPropertyName = "DELIVERY_ADDRESS";
+            this.DELIVERY_ADDRESS.HeaderText = "Delivery Address";
+            this.DELIVERY_ADDRESS.MinimumWidth = 8;
+            this.DELIVERY_ADDRESS.Name = "DELIVERY_ADDRESS";
+            this.DELIVERY_ADDRESS.ReadOnly = true;
+            this.DELIVERY_ADDRESS.Width = 131;
+            // 
+            // DELIVERY_CITY
+            // 
+            this.DELIVERY_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_CITY.DataPropertyName = "DELIVERY_CITY";
+            this.DELIVERY_CITY.HeaderText = "Delivery City";
+            this.DELIVERY_CITY.MinimumWidth = 8;
+            this.DELIVERY_CITY.Name = "DELIVERY_CITY";
+            this.DELIVERY_CITY.ReadOnly = true;
+            this.DELIVERY_CITY.Width = 106;
+            // 
+            // DELIVERY_STATE
+            // 
+            this.DELIVERY_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_STATE.DataPropertyName = "DELIVERY_STATE";
+            this.DELIVERY_STATE.HeaderText = "Delivery State";
+            this.DELIVERY_STATE.MinimumWidth = 8;
+            this.DELIVERY_STATE.Name = "DELIVERY_STATE";
+            this.DELIVERY_STATE.ReadOnly = true;
+            this.DELIVERY_STATE.Width = 114;
+            // 
+            // DELIVERY_ZIP
+            // 
+            this.DELIVERY_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_ZIP.DataPropertyName = "DELIVERY_ZIP";
+            this.DELIVERY_ZIP.HeaderText = "Delivery Zip";
+            this.DELIVERY_ZIP.MinimumWidth = 8;
+            this.DELIVERY_ZIP.Name = "DELIVERY_ZIP";
+            this.DELIVERY_ZIP.ReadOnly = true;
+            this.DELIVERY_ZIP.Width = 102;
+            // 
+            // bOOKDATEDataGridViewTextBoxColumn
+            // 
+            this.bOOKDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.bOOKDATEDataGridViewTextBoxColumn.DataPropertyName = "BOOK_DATE";
+            this.bOOKDATEDataGridViewTextBoxColumn.HeaderText = "Book Date";
+            this.bOOKDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.bOOKDATEDataGridViewTextBoxColumn.Name = "bOOKDATEDataGridViewTextBoxColumn";
+            this.bOOKDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bOOKDATEDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // pICKUPDATEDataGridViewTextBoxColumn
+            // 
+            this.pICKUPDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.pICKUPDATEDataGridViewTextBoxColumn.DataPropertyName = "PICKUP_DATE";
+            this.pICKUPDATEDataGridViewTextBoxColumn.HeaderText = "Pickup Date";
+            this.pICKUPDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.pICKUPDATEDataGridViewTextBoxColumn.Name = "pICKUPDATEDataGridViewTextBoxColumn";
+            this.pICKUPDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pICKUPDATEDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // dROPOFFDATEDataGridViewTextBoxColumn
+            // 
+            this.dROPOFFDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dROPOFFDATEDataGridViewTextBoxColumn.DataPropertyName = "DROPOFF_DATE";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.HeaderText = "Dropoff Date";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dROPOFFDATEDataGridViewTextBoxColumn.Name = "dROPOFFDATEDataGridViewTextBoxColumn";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dROPOFFDATEDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // oRDERSTATUSDataGridViewTextBoxColumn
+            // 
+            this.oRDERSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.oRDERSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORDER_STATUS";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.oRDERSTATUSDataGridViewTextBoxColumn.Name = "oRDERSTATUSDataGridViewTextBoxColumn";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oRDERSTATUSDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // ORDER_NUM
+            // 
+            this.ORDER_NUM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ORDER_NUM.DataPropertyName = "ORDER_NUM";
+            this.ORDER_NUM.HeaderText = "ORDER #";
+            this.ORDER_NUM.MinimumWidth = 8;
+            this.ORDER_NUM.Name = "ORDER_NUM";
+            this.ORDER_NUM.ReadOnly = true;
+            this.ORDER_NUM.Width = 86;
+            // 
+            // iNVIDDataGridViewTextBoxColumn
+            // 
+            this.iNVIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
+            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iNVIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
+            this.iNVIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iNVIDDataGridViewTextBoxColumn.Width = 48;
+            // 
             // tab_Home
             // 
             this.tab_Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tab_Home.BackgroundImage")));
@@ -2282,33 +2468,6 @@
             this.dataGridViewVehicle.Size = new System.Drawing.Size(658, 253);
             this.dataGridViewVehicle.TabIndex = 7;
             // 
-            // vEHICLEIDDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLEIDDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.HeaderText = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.Name = "vEHICLEIDDataGridViewTextBoxColumn";
-            this.vEHICLEIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // vEHICLENAMEDataGridViewTextBoxColumn
-            // 
-            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
-            // 
-            // vEHICLENOTESDataGridViewTextBoxColumn
-            // 
-            this.vEHICLENOTESDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENOTESDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NOTES";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NOTES";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.Name = "vEHICLENOTESDataGridViewTextBoxColumn";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENOTESDataGridViewTextBoxColumn.Visible = false;
-            // 
             // btn_CancelVehicle
             // 
             this.btn_CancelVehicle.Enabled = false;
@@ -2392,190 +2551,34 @@
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
-            // label5
+            // vEHICLEIDDataGridViewTextBoxColumn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(275, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 19);
-            this.label5.TabIndex = 75;
-            this.label5.Text = "Customer:";
+            this.vEHICLEIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLEIDDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_ID";
+            this.vEHICLEIDDataGridViewTextBoxColumn.HeaderText = "VEHICLE_ID";
+            this.vEHICLEIDDataGridViewTextBoxColumn.Name = "vEHICLEIDDataGridViewTextBoxColumn";
+            this.vEHICLEIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEIDDataGridViewTextBoxColumn.Visible = false;
+            this.vEHICLEIDDataGridViewTextBoxColumn.Width = 111;
             // 
-            // comboBox_CUSTFLNAMEBOX
+            // vEHICLENAMEDataGridViewTextBoxColumn
             // 
-            this.comboBox_CUSTFLNAMEBOX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_CUSTFLNAMEBOX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_CUSTFLNAMEBOX.BackColor = System.Drawing.Color.DimGray;
-            this.comboBox_CUSTFLNAMEBOX.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cUSTOMERBindingSource, "CUST_ID", true));
-            this.comboBox_CUSTFLNAMEBOX.DataSource = this.cUSTOMERBindingSource;
-            this.comboBox_CUSTFLNAMEBOX.DisplayMember = "FLNAME";
-            this.comboBox_CUSTFLNAMEBOX.Enabled = false;
-            this.comboBox_CUSTFLNAMEBOX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_CUSTFLNAMEBOX.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_CUSTFLNAMEBOX.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox_CUSTFLNAMEBOX.FormattingEnabled = true;
-            this.comboBox_CUSTFLNAMEBOX.Location = new System.Drawing.Point(364, 112);
-            this.comboBox_CUSTFLNAMEBOX.Name = "comboBox_CUSTFLNAMEBOX";
-            this.comboBox_CUSTFLNAMEBOX.Size = new System.Drawing.Size(132, 27);
-            this.comboBox_CUSTFLNAMEBOX.TabIndex = 74;
-            this.comboBox_CUSTFLNAMEBOX.ValueMember = "CUST_ID";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
             // 
-            // CUST_FLNAME
+            // vEHICLENOTESDataGridViewTextBoxColumn
             // 
-            this.CUST_FLNAME.DataPropertyName = "CUST_FLNAME";
-            this.CUST_FLNAME.HeaderText = "Customer";
-            this.CUST_FLNAME.Name = "CUST_FLNAME";
-            this.CUST_FLNAME.ReadOnly = true;
-            this.CUST_FLNAME.Width = 90;
-            // 
-            // VEHICLE
-            // 
-            this.VEHICLE.DataPropertyName = "VEHICLE";
-            this.VEHICLE.HeaderText = "Vehicle";
-            this.VEHICLE.MinimumWidth = 8;
-            this.VEHICLE.Name = "VEHICLE";
-            this.VEHICLE.ReadOnly = true;
-            // 
-            // PICKUP_ADDRESS
-            // 
-            this.PICKUP_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_ADDRESS.DataPropertyName = "PICKUP_ADDRESS";
-            this.PICKUP_ADDRESS.HeaderText = "Pickup Address";
-            this.PICKUP_ADDRESS.MinimumWidth = 8;
-            this.PICKUP_ADDRESS.Name = "PICKUP_ADDRESS";
-            this.PICKUP_ADDRESS.ReadOnly = true;
-            this.PICKUP_ADDRESS.Width = 132;
-            // 
-            // PICKUP_CITY
-            // 
-            this.PICKUP_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_CITY.DataPropertyName = "PICKUP_CITY";
-            this.PICKUP_CITY.HeaderText = "Pickup City";
-            this.PICKUP_CITY.MinimumWidth = 8;
-            this.PICKUP_CITY.Name = "PICKUP_CITY";
-            this.PICKUP_CITY.ReadOnly = true;
-            this.PICKUP_CITY.Width = 105;
-            // 
-            // PICKUP_STATE
-            // 
-            this.PICKUP_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_STATE.DataPropertyName = "PICKUP_STATE";
-            this.PICKUP_STATE.HeaderText = "Pickup State";
-            this.PICKUP_STATE.MinimumWidth = 8;
-            this.PICKUP_STATE.Name = "PICKUP_STATE";
-            this.PICKUP_STATE.ReadOnly = true;
-            this.PICKUP_STATE.Width = 113;
-            // 
-            // PICKUP_ZIP
-            // 
-            this.PICKUP_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_ZIP.DataPropertyName = "PICKUP_ZIP";
-            this.PICKUP_ZIP.HeaderText = "Pickup Zip Code";
-            this.PICKUP_ZIP.MinimumWidth = 8;
-            this.PICKUP_ZIP.Name = "PICKUP_ZIP";
-            this.PICKUP_ZIP.ReadOnly = true;
-            this.PICKUP_ZIP.Width = 137;
-            // 
-            // DELIVERY_ADDRESS
-            // 
-            this.DELIVERY_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_ADDRESS.DataPropertyName = "DELIVERY_ADDRESS";
-            this.DELIVERY_ADDRESS.HeaderText = "Delivery Address";
-            this.DELIVERY_ADDRESS.MinimumWidth = 8;
-            this.DELIVERY_ADDRESS.Name = "DELIVERY_ADDRESS";
-            this.DELIVERY_ADDRESS.ReadOnly = true;
-            this.DELIVERY_ADDRESS.Width = 131;
-            // 
-            // DELIVERY_CITY
-            // 
-            this.DELIVERY_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_CITY.DataPropertyName = "DELIVERY_CITY";
-            this.DELIVERY_CITY.HeaderText = "Delivery City";
-            this.DELIVERY_CITY.MinimumWidth = 8;
-            this.DELIVERY_CITY.Name = "DELIVERY_CITY";
-            this.DELIVERY_CITY.ReadOnly = true;
-            this.DELIVERY_CITY.Width = 106;
-            // 
-            // DELIVERY_STATE
-            // 
-            this.DELIVERY_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_STATE.DataPropertyName = "DELIVERY_STATE";
-            this.DELIVERY_STATE.HeaderText = "Delivery State";
-            this.DELIVERY_STATE.MinimumWidth = 8;
-            this.DELIVERY_STATE.Name = "DELIVERY_STATE";
-            this.DELIVERY_STATE.ReadOnly = true;
-            this.DELIVERY_STATE.Width = 114;
-            // 
-            // DELIVERY_ZIP
-            // 
-            this.DELIVERY_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_ZIP.DataPropertyName = "DELIVERY_ZIP";
-            this.DELIVERY_ZIP.HeaderText = "Delivery Zip";
-            this.DELIVERY_ZIP.MinimumWidth = 8;
-            this.DELIVERY_ZIP.Name = "DELIVERY_ZIP";
-            this.DELIVERY_ZIP.ReadOnly = true;
-            this.DELIVERY_ZIP.Width = 102;
-            // 
-            // bOOKDATEDataGridViewTextBoxColumn
-            // 
-            this.bOOKDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.bOOKDATEDataGridViewTextBoxColumn.DataPropertyName = "BOOK_DATE";
-            this.bOOKDATEDataGridViewTextBoxColumn.HeaderText = "Book Date";
-            this.bOOKDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.bOOKDATEDataGridViewTextBoxColumn.Name = "bOOKDATEDataGridViewTextBoxColumn";
-            this.bOOKDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bOOKDATEDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // pICKUPDATEDataGridViewTextBoxColumn
-            // 
-            this.pICKUPDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.pICKUPDATEDataGridViewTextBoxColumn.DataPropertyName = "PICKUP_DATE";
-            this.pICKUPDATEDataGridViewTextBoxColumn.HeaderText = "Pickup Date";
-            this.pICKUPDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.pICKUPDATEDataGridViewTextBoxColumn.Name = "pICKUPDATEDataGridViewTextBoxColumn";
-            this.pICKUPDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pICKUPDATEDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // dROPOFFDATEDataGridViewTextBoxColumn
-            // 
-            this.dROPOFFDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dROPOFFDATEDataGridViewTextBoxColumn.DataPropertyName = "DROPOFF_DATE";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.HeaderText = "Dropoff Date";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dROPOFFDATEDataGridViewTextBoxColumn.Name = "dROPOFFDATEDataGridViewTextBoxColumn";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dROPOFFDATEDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // oRDERSTATUSDataGridViewTextBoxColumn
-            // 
-            this.oRDERSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.oRDERSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORDER_STATUS";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.oRDERSTATUSDataGridViewTextBoxColumn.Name = "oRDERSTATUSDataGridViewTextBoxColumn";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oRDERSTATUSDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // ORDER_NUM
-            // 
-            this.ORDER_NUM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ORDER_NUM.DataPropertyName = "ORDER_NUM";
-            this.ORDER_NUM.HeaderText = "ORDER #";
-            this.ORDER_NUM.MinimumWidth = 8;
-            this.ORDER_NUM.Name = "ORDER_NUM";
-            this.ORDER_NUM.ReadOnly = true;
-            this.ORDER_NUM.Width = 86;
-            // 
-            // iNVIDDataGridViewTextBoxColumn
-            // 
-            this.iNVIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
-            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iNVIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
-            this.iNVIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iNVIDDataGridViewTextBoxColumn.Width = 48;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NOTES";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NOTES";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Name = "vEHICLENOTESDataGridViewTextBoxColumn";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Visible = false;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Width = 141;
             // 
             // MainPage
             // 
@@ -2794,9 +2797,6 @@
         private System.Windows.Forms.BindingSource vEHICLEBindingSource;
         private AppDataTableAdapters.VEHICLETableAdapter vEHICLETableAdapter;
         private System.Windows.Forms.Button btn_EditVehicle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENOTESDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage tab_Help;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.DateTimePicker DropOffDatePicker;
@@ -2820,5 +2820,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_NUM;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENOTESDataGridViewTextBoxColumn;
     }
 }

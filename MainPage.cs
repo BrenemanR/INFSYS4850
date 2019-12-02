@@ -1002,7 +1002,7 @@ namespace WindowsFormsApp3
                                 r.VEHICLE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.ORDER_NUM.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.CUST_FLNAME.Contains(txtbox_OrderSearchBox.Text) ||
-                                r.CUST_FLNAME.Equals(txtbox_OrderSearchBox.Text)
+                                r.CUST_FLNAME.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase)
                                 select r;
                     iNVOICEBindingSource.DataSource = query.ToList();
                 }

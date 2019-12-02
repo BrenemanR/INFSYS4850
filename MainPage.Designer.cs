@@ -2560,12 +2560,12 @@
             // ORDER_NUM
             // 
             this.ORDER_NUM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ORDER_NUM.DataPropertyName = "Order #";
-            this.ORDER_NUM.HeaderText = "ORDER_NUM";
+            this.ORDER_NUM.DataPropertyName = "ORDER_NUM";
+            this.ORDER_NUM.HeaderText = "ORDER #";
             this.ORDER_NUM.MinimumWidth = 8;
             this.ORDER_NUM.Name = "ORDER_NUM";
             this.ORDER_NUM.ReadOnly = true;
-            this.ORDER_NUM.Width = 122;
+            this.ORDER_NUM.Width = 86;
             // 
             // iNVIDDataGridViewTextBoxColumn
             // 

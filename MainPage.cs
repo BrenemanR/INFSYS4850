@@ -20,14 +20,7 @@ namespace WindowsFormsApp3
             InitializeComponent();
             
         }
-        /*private MainPage mainPage;
-        public ManageCustomers(MainPage mainPage)
-        {
-            InitializeComponent();
-            this.mainPage = mainPage;
-        }*/
-
-
+        
         private void SearchBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
@@ -68,15 +61,7 @@ namespace WindowsFormsApp3
             }
         }
 
-            /*private void dataGridView_KeyDown(object sender, KeyEventArgs e)
-            {
-                if (e.KeyCode == Keys.Delete)
-                {
-                    if (MessageBox.Show("Are you sure you want to delete this record? Record will not be deleted unitl the save button is pressed.", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        cUSTOMERBindingSource.RemoveCurrent();
-                }
-            }*/
-
+           
         private void btnNew_Click(object sender, EventArgs e)
         {
 
@@ -330,8 +315,7 @@ namespace WindowsFormsApp3
                     cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
                                                 StateBox.Text, EmailBox.Text, PhoneNumberBox.Text, ZipBox.Text, comboBox_Broker.Text,
                                                 txtbox_FLNAME.Text);
-                    //cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
-
+                   
                     lbl_RequiredField.Visible = false;
                     btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
                     btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
@@ -615,13 +599,7 @@ namespace WindowsFormsApp3
 
         private void btn_CreateOrder_Click(object sender, EventArgs e)
         {
-            /*this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
-            cUSTOMERBindingSource.RemoveSort(); //Resorts The table so that the new record is properly added.
-            cUSTOMERBindingSource.MoveLast();
-            isSaved = false;
-            */
-
-
+            
             this.appData.INVOICE.AddINVOICERow(this.appData.INVOICE.NewINVOICERow());
             iNVOICEBindingSource.RemoveSort();
             iNVOICEBindingSource.MoveLast();
@@ -931,22 +909,12 @@ namespace WindowsFormsApp3
 
         private void btn_CopyDropOffAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
-            /*
-            txtbox_DeliveryAddress.Text = txtbox_Address.Text;
-            txtbox_DeliveryCity.Text = txtbox_City.Text;
-            txtbox_DeliveryState.Text = txtbox_State.Text;
-            txtbox_DeliveryZip.Text = txtbox_Zip.Text;
-            */
+            
         }
 
         private void btn_CopyDropOffAddress_CheckedChanged(object sender, EventArgs e)
         {
-            /*
-            txtbox_DeliveryAddress.Text = txtbox_Address.Text;
-            txtbox_DeliveryCity.Text = txtbox_City.Text;
-            txtbox_DeliveryState.Text = txtbox_State.Text;
-            txtbox_DeliveryZip.Text = txtbox_Zip.Text;
-            */
+            
         }
 
         private void btn_CopyDropOffAddress_Click(object sender, EventArgs e)
@@ -1104,9 +1072,6 @@ namespace WindowsFormsApp3
 
         private void btn_SaveOrderEdit_Click(object sender, EventArgs e)
         {
-            //iNVOICEBindingSource.EndEdit();
-            //iNVOICETableAdapter.Update(this.appData.INVOICE);
-
             //Changes labels back to White
             lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightGray;
@@ -1214,19 +1179,10 @@ namespace WindowsFormsApp3
             //successfull entry to the database
             if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickAdd && !noDropDate)
             {
-                //adds to the database
-                /* iNVOICETableAdapter.Insert(dateTimePicker_BookingDateEdit.Value, dateTimePicker_PickUpDateEdit.Value, dateTimePicker_DeliveryDateEdit.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_OrderStatusEdit.Text,
-                 txtbox_PickupAddressEdit.Text, txtbox_PickupCityEdit.Text, txtbox_PickupStateEdit.Text, txtbox_PickupZipEdit.Text,
-                 txtbox_DeliveryAddressEdit.Text, txtbox_DeliveryCityEdit.Text, txtbox_DeliveryStateEdit.Text, txtbox_DeliveryZipEdit.Text, txtboxrch_SpecialInstructionsEdit.Text, txtboxrch_DescriptionEdit.Text, txtbox_OrderNumberEdit.Text, comboBox_VehicleEdit.Text);
-                 */
-                
+                                
                 iNVOICEBindingSource.EndEdit();        
                 iNVOICETableAdapter.Update(appData.INVOICE);
              
-                //this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
-
-                //default values after order is saved and prevents the user from changing data
-
             }
             else
             {
@@ -1416,43 +1372,7 @@ namespace WindowsFormsApp3
 
                 dataGridViewVehicle.Enabled = true;
             }
-            /*
             
-            if (btnEdit.Enabled == false)
-            {
-                btnEdit.Enabled = false; //Reenables the Edit Button After a new record is cancelled.
-                btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
-                btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
-                btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
-                //panel1.Enabled = false;
-                FirstNameBox.ReadOnly = true;
-                LastNameBox.ReadOnly = true;
-                EmailBox.ReadOnly = true;
-                PhoneNumberBox.ReadOnly = true;
-                CompanyBox.ReadOnly = true;
-                AddressBox.ReadOnly = true;
-                CityBox.ReadOnly = true;
-                StateBox.ReadOnly = true;
-                ZipBox.ReadOnly = true;
-
-                dataGridView1.Enabled = true;
-
-                cUSTOMERBindingSource.CancelEdit();
-                cUSTOMERBindingSource.RemoveCurrent();
-
-
-                //Resets all of the text to black in case the user originally entered in mistakes.
-                FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
-                LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
-                PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
-                EmailLabel.ForeColor = System.Drawing.Color.LightGray;
-                CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
-                AddressLabel.ForeColor = System.Drawing.Color.LightGray;
-                CityLabel.ForeColor = System.Drawing.Color.LightGray;
-                StateLabel.ForeColor = System.Drawing.Color.LightGray;
-                ZipLabel.ForeColor = System.Drawing.Color.LightGray;
-            }
-             */
         }
 
         

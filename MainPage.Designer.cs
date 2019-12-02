@@ -1190,7 +1190,7 @@
             this.SearchBox.ForeColor = System.Drawing.SystemColors.Window;
             this.SearchBox.Location = new System.Drawing.Point(346, 7);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(279, 27);
+            this.SearchBox.Size = new System.Drawing.Size(414, 27);
             this.SearchBox.TabIndex = 18;
             this.SearchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchBox_KeyPress);
             // 

@@ -137,7 +137,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtbox_FLNAME = new System.Windows.Forms.TextBox();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_CustomerEdit = new System.Windows.Forms.Label();
             this.comboBox_CUSTFLNAMEBOX = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
@@ -1572,7 +1572,7 @@
             // tab_SearchOrders
             // 
             this.tab_SearchOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tab_SearchOrders.Controls.Add(this.label5);
+            this.tab_SearchOrders.Controls.Add(this.lbl_CustomerEdit);
             this.tab_SearchOrders.Controls.Add(this.comboBox_CUSTFLNAMEBOX);
             this.tab_SearchOrders.Controls.Add(this.panel4);
             this.tab_SearchOrders.Controls.Add(this.comboBox_VehicleEdit);
@@ -1619,16 +1619,16 @@
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
             // 
-            // label5
+            // lbl_CustomerEdit
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(275, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 19);
-            this.label5.TabIndex = 75;
-            this.label5.Text = "Customer:";
+            this.lbl_CustomerEdit.AutoSize = true;
+            this.lbl_CustomerEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_CustomerEdit.Location = new System.Drawing.Point(275, 116);
+            this.lbl_CustomerEdit.Name = "lbl_CustomerEdit";
+            this.lbl_CustomerEdit.Size = new System.Drawing.Size(78, 19);
+            this.lbl_CustomerEdit.TabIndex = 75;
+            this.lbl_CustomerEdit.Text = "Customer:";
             // 
             // comboBox_CUSTFLNAMEBOX
             // 
@@ -2802,7 +2802,7 @@
         private System.Windows.Forms.DateTimePicker DropOffDatePicker;
         private System.Windows.Forms.DateTimePicker PickUpDatePicker;
         private System.Windows.Forms.Panel panel_VehicleTab;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_CustomerEdit;
         private System.Windows.Forms.ComboBox comboBox_CUSTFLNAMEBOX;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUST_FLNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE;

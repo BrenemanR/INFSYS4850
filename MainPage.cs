@@ -1088,6 +1088,9 @@ namespace WindowsFormsApp3
             lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_OrderStatusEdit.ForeColor = System.Drawing.Color.LightGray;
+
 
             dateTimePicker_BookingDateEdit.Enabled = false;
             dateTimePicker_PickUpDateEdit.Enabled = false;
@@ -1104,35 +1107,35 @@ namespace WindowsFormsApp3
             txtbox_DeliveryZipEdit.ReadOnly = true;
             txtboxrch_DescriptionEdit.ReadOnly = true;
             txtboxrch_SpecialInstructionsEdit.ReadOnly = true;
-            btn_SaveOrderEdit.Visible = false;
             comboBox_VehicleEdit.Enabled = false;
             txtbox_OrderSearchBox.Enabled = true;
-            btn_EditOrder.Visible = true;
             txtboxrch_SpecialInstructions.ReadOnly = true;
             txtboxrch_Description.ReadOnly = true;
             comboBox_CUSTFLNAMEBOX.Enabled = false;
 
+            
 
-            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false;
+
+            bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false;
 
             if (string.IsNullOrEmpty(txtbox_PickupAddressEdit.Text))
             {
-                noAddress = true;
+                noPickAdd = true;
                 lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             if (string.IsNullOrEmpty(txtbox_PickupCityEdit.Text))
             {
-                noCity = true;
+                noPickCity = true;
                 lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             if (string.IsNullOrEmpty(txtbox_PickupStateEdit.Text))
             {
-                noState = true;
+                noPickState = true;
                 lbl_PickupStateEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             if (string.IsNullOrEmpty(txtbox_PickupZipEdit.Text))
             {
-                noZip = true;
+                noPickZip = true;
                 lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryAddressEdit.Text))
@@ -1147,24 +1150,35 @@ namespace WindowsFormsApp3
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryStateEdit.Text))
             {
-                noPickState = true;
+                noDelState = true;
                 lbl_DeliveryStateEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryZipEdit.Text))
             {
-                noPickZip = true;
+                noDelZip = true;
                 lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             if (string.IsNullOrEmpty(comboBox_OrderStatusEdit.Text))
             {
                 noStatus = true;
-                lbl_Order.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_OrderStatusEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             if (string.IsNullOrEmpty(comboBox_VehicleEdit.Text))
             {
-                noOrder = true;
+                noVehicle = true;
                 lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
+            if (string.IsNullOrEmpty(comboBox_CUSTFLNAMEBOX.Text))
+            {
+                noCust = true;
+                lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            if (string.IsNullOrEmpty(txtbox_OrderNumberEdit.Text))
+            {
+                noOrder = true;
+                lbl_OrderNumberEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+
             //date validation
             if (dateTimePicker_BookingDateEdit.Value > dateTimePicker_PickUpDateEdit.Value)
             {
@@ -1177,15 +1191,18 @@ namespace WindowsFormsApp3
                 lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightCoral;
                 lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
+            
 
-
+             
             //successfull entry to the database
-            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickAdd && !noDropDate)
+            if (!noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickAdd && !noDropDate && !noCust)
             {
                                 
                 iNVOICEBindingSource.EndEdit();        
                 iNVOICETableAdapter.Update(appData.INVOICE);
-             
+                btn_EditOrder.Visible = true;
+                btn_SaveOrderEdit.Visible = false;
+
             }
             else
             {
@@ -1193,7 +1210,7 @@ namespace WindowsFormsApp3
                 {
                     MessageBox.Show("The pickup date cannot be before the booking date.", "Invalid Date Entry");
                 }
-                if (noDropDate)
+                else if (noDropDate)
                 {
                     MessageBox.Show("The delivery date cannot be before the pickup date.", "Invalid Date Entry");
                 }

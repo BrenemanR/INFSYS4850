@@ -1198,12 +1198,12 @@ namespace WindowsFormsApp3
                 lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
             //date validation
-            if (dateTimePicker_BookingDateEdit.Value >= dateTimePicker_PickUpDateEdit.Value)
+            if (dateTimePicker_BookingDateEdit.Value > dateTimePicker_PickUpDateEdit.Value)
             {
                 noPickDate = true;
                 lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
-            if (dateTimePicker_PickUpDateEdit.Value >= dateTimePicker_DeliveryDateEdit.Value)
+            if (dateTimePicker_PickUpDateEdit.Value > dateTimePicker_DeliveryDateEdit.Value)
             {
                 noDropDate = true;
                 lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightCoral;

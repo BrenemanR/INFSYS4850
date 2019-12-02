@@ -821,7 +821,7 @@ namespace WindowsFormsApp3
                 //adds to the database
                 iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
                 txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text,
-                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text, txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text, txtbox_OrderNum.Text, comboBox_Vehicle.Text);
+                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text, txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text, txtbox_OrderNum.Text, comboBox_Vehicle.Text, combobox_CustomerIDZ.Text);
                 this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
                 iNVOICETableAdapter.Update(this.appData.INVOICE);
 
@@ -975,7 +975,7 @@ namespace WindowsFormsApp3
                 else
                 {
                     var query = from r in this.appData.INVOICE
-                                where 
+                                where
                                 r.INV_ID.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.BOOK_DATE.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_DATE.Equals(txtbox_OrderSearchBox.Text) ||
@@ -984,23 +984,25 @@ namespace WindowsFormsApp3
                                 r.ORDER_STATUS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.ORDER_STATUS.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_ADDRESS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_CITY.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.PICKUP_CITY.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.PICKUP_CITY.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_STATE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.PICKUP_STATE.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.PICKUP_STATE.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.DELIVERY_ADDRESS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.DELIVERY_ADDRESS.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.DELIVERY_ADDRESS.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.DELIVERY_CITY.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.DELIVERY_STATE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) || 
+                                r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.VEHICLE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.ORDER_NUM.Equals(txtbox_OrderSearchBox.Text)
+                                r.ORDER_NUM.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.CUST_FLNAME.Contains(txtbox_OrderSearchBox.Text) ||
+                                r.CUST_FLNAME.Equals(txtbox_OrderSearchBox.Text)
                                 select r;
                     iNVOICEBindingSource.DataSource = query.ToList();
                 }
@@ -1064,7 +1066,7 @@ namespace WindowsFormsApp3
             txtbox_DeliveryZipEdit.ReadOnly = false;
             txtboxrch_DescriptionEdit.ReadOnly = false;
             txtboxrch_SpecialInstructionsEdit.ReadOnly = false;
-
+            comboBox_CUSTFLNAMEBOX.Enabled = true;
             txtbox_OrderSearchBox.ReadOnly = false;
             btn_SaveOrderEdit.Visible = true;
             btn_EditOrder.Visible = false;
@@ -1108,7 +1110,8 @@ namespace WindowsFormsApp3
             btn_EditOrder.Visible = true;
             txtboxrch_SpecialInstructions.ReadOnly = true;
             txtboxrch_Description.ReadOnly = true;
-            
+            comboBox_CUSTFLNAMEBOX.Enabled = false;
+
 
             bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false;
 

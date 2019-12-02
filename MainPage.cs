@@ -163,6 +163,7 @@ namespace WindowsFormsApp3
                 StateBox.ReadOnly = true;
                 ZipBox.ReadOnly = true;
                 dataGridView1.Enabled = true;
+                SearchBox.Enabled = true;
                 //cUSTOMERBindingSource.RemoveCurrent();
                 cUSTOMERBindingSource.CancelEdit();
 
@@ -179,7 +180,7 @@ namespace WindowsFormsApp3
             }
             if (btnEdit.Enabled == false)
             {
-                btnEdit.Enabled = false; //Reenables the Edit Button After a new record is cancelled.
+                btnEdit.Enabled = true; //Reenables the Edit Button After a new record is cancelled.
                 btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
                 btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
                 btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
@@ -193,9 +194,8 @@ namespace WindowsFormsApp3
                 CityBox.ReadOnly = true;
                 StateBox.ReadOnly = true;
                 ZipBox.ReadOnly = true;
-
                 dataGridView1.Enabled = true;
-
+                SearchBox.Enabled = true;
                 cUSTOMERBindingSource.CancelEdit();
                 cUSTOMERBindingSource.RemoveCurrent();
 

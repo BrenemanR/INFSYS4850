@@ -222,6 +222,10 @@
             this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vEHICLENOTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Help1 = new System.Windows.Forms.Button();
+            this.btn_Help3 = new System.Windows.Forms.Button();
+            this.btn_Help2 = new System.Windows.Forms.Button();
+            this.btn_Help4 = new System.Windows.Forms.Button();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -250,6 +254,7 @@
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            tab_CreateOrder.Controls.Add(this.btn_Help2);
             tab_CreateOrder.Controls.Add(this.DropOffDatePicker);
             tab_CreateOrder.Controls.Add(this.PickUpDatePicker);
             tab_CreateOrder.Controls.Add(this.btn_CancelOrder);
@@ -386,10 +391,10 @@
             this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_InvoiceNumber.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(951, 9);
+            this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(941, 9);
             this.txtBox_InvoiceNumber.Name = "txtBox_InvoiceNumber";
             this.txtBox_InvoiceNumber.ReadOnly = true;
-            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(140, 27);
+            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(53, 27);
             this.txtBox_InvoiceNumber.TabIndex = 66;
             this.txtBox_InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -397,7 +402,7 @@
             // 
             this.lbl_Invoice.AutoSize = true;
             this.lbl_Invoice.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Invoice.Location = new System.Drawing.Point(871, 9);
+            this.lbl_Invoice.Location = new System.Drawing.Point(861, 45);
             this.lbl_Invoice.Name = "lbl_Invoice";
             this.lbl_Invoice.Size = new System.Drawing.Size(74, 19);
             this.lbl_Invoice.TabIndex = 67;
@@ -695,7 +700,7 @@
             this.txtbox_OrderNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_OrderNum.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_OrderNum.Location = new System.Drawing.Point(951, 42);
+            this.txtbox_OrderNum.Location = new System.Drawing.Point(941, 42);
             this.txtbox_OrderNum.Name = "txtbox_OrderNum";
             this.txtbox_OrderNum.ReadOnly = true;
             this.txtbox_OrderNum.Size = new System.Drawing.Size(140, 27);
@@ -727,7 +732,7 @@
             this.txtbox_Email.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_EMAIL", true));
             this.txtbox_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Email.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_Email.Location = new System.Drawing.Point(697, 6);
+            this.txtbox_Email.Location = new System.Drawing.Point(687, 6);
             this.txtbox_Email.Name = "txtbox_Email";
             this.txtbox_Email.ReadOnly = true;
             this.txtbox_Email.Size = new System.Drawing.Size(161, 27);
@@ -754,7 +759,7 @@
             this.txtbox_Zip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ZIP", true));
             this.txtbox_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_Zip.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_Zip.Location = new System.Drawing.Point(681, 42);
+            this.txtbox_Zip.Location = new System.Drawing.Point(671, 42);
             this.txtbox_Zip.Name = "txtbox_Zip";
             this.txtbox_Zip.ReadOnly = true;
             this.txtbox_Zip.Size = new System.Drawing.Size(177, 27);
@@ -803,7 +808,7 @@
             // 
             this.lbl_Order.AutoSize = true;
             this.lbl_Order.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Order.Location = new System.Drawing.Point(871, 45);
+            this.lbl_Order.Location = new System.Drawing.Point(861, 9);
             this.lbl_Order.Name = "lbl_Order";
             this.lbl_Order.Size = new System.Drawing.Size(65, 19);
             this.lbl_Order.TabIndex = 17;
@@ -823,7 +828,7 @@
             // 
             this.lbl_Email.AutoSize = true;
             this.lbl_Email.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Email.Location = new System.Drawing.Point(641, 9);
+            this.lbl_Email.Location = new System.Drawing.Point(631, 9);
             this.lbl_Email.Name = "lbl_Email";
             this.lbl_Email.Size = new System.Drawing.Size(50, 19);
             this.lbl_Email.TabIndex = 13;
@@ -843,7 +848,7 @@
             // 
             this.lbl_Zip.AutoSize = true;
             this.lbl_Zip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Zip.Location = new System.Drawing.Point(641, 45);
+            this.lbl_Zip.Location = new System.Drawing.Point(631, 45);
             this.lbl_Zip.Name = "lbl_Zip";
             this.lbl_Zip.Size = new System.Drawing.Size(34, 19);
             this.lbl_Zip.TabIndex = 9;
@@ -1038,6 +1043,7 @@
             // tab_ManageCustomers
             // 
             this.tab_ManageCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tab_ManageCustomers.Controls.Add(this.btn_Help1);
             this.tab_ManageCustomers.Controls.Add(this.dataGridView1);
             this.tab_ManageCustomers.Controls.Add(this.SearchBox);
             this.tab_ManageCustomers.Controls.Add(this.panel1);
@@ -1494,11 +1500,11 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnEdit.FlatAppearance.BorderSize = 2;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEdit.Location = new System.Drawing.Point(45, 388);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(184, 46);
@@ -1510,11 +1516,11 @@
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnNew.FlatAppearance.BorderSize = 2;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.ForeColor = System.Drawing.Color.White;
+            this.btnNew.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnNew.Location = new System.Drawing.Point(45, 335);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(184, 46);
@@ -1527,11 +1533,11 @@
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSave.Enabled = false;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnSave.FlatAppearance.BorderSize = 2;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.Location = new System.Drawing.Point(45, 440);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(184, 46);
@@ -1544,11 +1550,11 @@
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCancel.Enabled = false;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnCancel.FlatAppearance.BorderSize = 2;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.Location = new System.Drawing.Point(45, 492);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 44);
@@ -1572,6 +1578,7 @@
             // tab_SearchOrders
             // 
             this.tab_SearchOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tab_SearchOrders.Controls.Add(this.btn_Help3);
             this.tab_SearchOrders.Controls.Add(this.lbl_CustomerEdit);
             this.tab_SearchOrders.Controls.Add(this.comboBox_CUSTFLNAMEBOX);
             this.tab_SearchOrders.Controls.Add(this.panel4);
@@ -1789,11 +1796,11 @@
             this.dateTimePicker_DeliveryDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DROPOFF_DATE", true));
             this.dateTimePicker_DeliveryDateEdit.Enabled = false;
             this.dateTimePicker_DeliveryDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(821, 6);
+            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(742, 6);
             this.dateTimePicker_DeliveryDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_DeliveryDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_DeliveryDateEdit.Name = "dateTimePicker_DeliveryDateEdit";
-            this.dateTimePicker_DeliveryDateEdit.Size = new System.Drawing.Size(236, 27);
+            this.dateTimePicker_DeliveryDateEdit.Size = new System.Drawing.Size(190, 27);
             this.dateTimePicker_DeliveryDateEdit.TabIndex = 37;
             // 
             // dateTimePicker_PickUpDateEdit
@@ -1801,11 +1808,11 @@
             this.dateTimePicker_PickUpDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_DATE", true));
             this.dateTimePicker_PickUpDateEdit.Enabled = false;
             this.dateTimePicker_PickUpDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_PickUpDateEdit.Location = new System.Drawing.Point(464, 3);
+            this.dateTimePicker_PickUpDateEdit.Location = new System.Drawing.Point(423, 3);
             this.dateTimePicker_PickUpDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_PickUpDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_PickUpDateEdit.Name = "dateTimePicker_PickUpDateEdit";
-            this.dateTimePicker_PickUpDateEdit.Size = new System.Drawing.Size(236, 27);
+            this.dateTimePicker_PickUpDateEdit.Size = new System.Drawing.Size(190, 27);
             this.dateTimePicker_PickUpDateEdit.TabIndex = 36;
             // 
             // dateTimePicker_BookingDateEdit
@@ -1817,7 +1824,7 @@
             this.dateTimePicker_BookingDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_BookingDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_BookingDateEdit.Name = "dateTimePicker_BookingDateEdit";
-            this.dateTimePicker_BookingDateEdit.Size = new System.Drawing.Size(236, 27);
+            this.dateTimePicker_BookingDateEdit.Size = new System.Drawing.Size(190, 27);
             this.dateTimePicker_BookingDateEdit.TabIndex = 35;
             // 
             // lbl_SpecialInstructionsEdit
@@ -2091,7 +2098,7 @@
             this.lbl_DeliveryDateEdit.AutoSize = true;
             this.lbl_DeliveryDateEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_DeliveryDateEdit.Location = new System.Drawing.Point(710, 9);
+            this.lbl_DeliveryDateEdit.Location = new System.Drawing.Point(631, 9);
             this.lbl_DeliveryDateEdit.Name = "lbl_DeliveryDateEdit";
             this.lbl_DeliveryDateEdit.Size = new System.Drawing.Size(105, 19);
             this.lbl_DeliveryDateEdit.TabIndex = 9;
@@ -2113,7 +2120,7 @@
             this.lbl_PickupDateEdit.AutoSize = true;
             this.lbl_PickupDateEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_PickupDateEdit.Location = new System.Drawing.Point(363, 9);
+            this.lbl_PickupDateEdit.Location = new System.Drawing.Point(322, 9);
             this.lbl_PickupDateEdit.Name = "lbl_PickupDateEdit";
             this.lbl_PickupDateEdit.Size = new System.Drawing.Size(95, 19);
             this.lbl_PickupDateEdit.TabIndex = 5;
@@ -2372,6 +2379,7 @@
             // VehicleManager
             // 
             this.VehicleManager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.VehicleManager.Controls.Add(this.btn_Help4);
             this.VehicleManager.Controls.Add(this.panel_VehicleTab);
             this.VehicleManager.Controls.Add(this.btn_EditVehicle);
             this.VehicleManager.Controls.Add(this.dataGridViewVehicle);
@@ -2578,6 +2586,70 @@
             this.vEHICLENOTESDataGridViewTextBoxColumn.ReadOnly = true;
             this.vEHICLENOTESDataGridViewTextBoxColumn.Visible = false;
             this.vEHICLENOTESDataGridViewTextBoxColumn.Width = 141;
+            // 
+            // btn_Help1
+            // 
+            this.btn_Help1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help1.FlatAppearance.BorderSize = 2;
+            this.btn_Help1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help1.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help1.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help1.Name = "btn_Help1";
+            this.btn_Help1.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help1.TabIndex = 20;
+            this.btn_Help1.Text = "Help";
+            this.btn_Help1.UseVisualStyleBackColor = false;
+            this.btn_Help1.Click += new System.EventHandler(this.btn_Help1_Click);
+            // 
+            // btn_Help3
+            // 
+            this.btn_Help3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help3.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help3.FlatAppearance.BorderSize = 2;
+            this.btn_Help3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help3.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help3.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help3.Name = "btn_Help3";
+            this.btn_Help3.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help3.TabIndex = 76;
+            this.btn_Help3.Text = "Help";
+            this.btn_Help3.UseVisualStyleBackColor = false;
+            this.btn_Help3.Click += new System.EventHandler(this.btn_Help3_Click);
+            // 
+            // btn_Help2
+            // 
+            this.btn_Help2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help2.FlatAppearance.BorderSize = 2;
+            this.btn_Help2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help2.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help2.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help2.Name = "btn_Help2";
+            this.btn_Help2.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help2.TabIndex = 77;
+            this.btn_Help2.Text = "Help";
+            this.btn_Help2.UseVisualStyleBackColor = false;
+            this.btn_Help2.Click += new System.EventHandler(this.btn_Help2_Click);
+            // 
+            // btn_Help4
+            // 
+            this.btn_Help4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help4.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help4.FlatAppearance.BorderSize = 2;
+            this.btn_Help4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help4.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help4.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help4.Name = "btn_Help4";
+            this.btn_Help4.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help4.TabIndex = 77;
+            this.btn_Help4.Text = "Help";
+            this.btn_Help4.UseVisualStyleBackColor = false;
+            this.btn_Help4.Click += new System.EventHandler(this.btn_Help4_Click);
             // 
             // MainPage
             // 
@@ -2822,5 +2894,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENOTESDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_Help1;
+        private System.Windows.Forms.Button btn_Help3;
+        private System.Windows.Forms.Button btn_Help2;
+        private System.Windows.Forms.Button btn_Help4;
     }
 }

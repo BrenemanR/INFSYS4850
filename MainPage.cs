@@ -656,7 +656,7 @@ namespace WindowsFormsApp3
             lbl_State.ForeColor = System.Drawing.Color.LightGray;
             lbl_Email.ForeColor = System.Drawing.Color.LightGray;
             lbl_Zip.ForeColor = System.Drawing.Color.LightGray;
-            lbl_Order.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Invoice.ForeColor = System.Drawing.Color.LightGray;
             lbl_PickupAddress.ForeColor = System.Drawing.Color.LightGray;
             lbl_PickupCity.ForeColor = System.Drawing.Color.LightGray;
             lbl_PickupState.ForeColor = System.Drawing.Color.LightGray;
@@ -718,7 +718,7 @@ namespace WindowsFormsApp3
             if (string.IsNullOrEmpty(txtbox_OrderNum.Text))
             {
                 noOrder = true;
-                lbl_Order.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_Invoice.ForeColor = System.Drawing.Color.LightCoral;
                 btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupAddress.Text))
@@ -1396,6 +1396,24 @@ namespace WindowsFormsApp3
             
         }
 
-        
+        private void btn_Help1_Click(object sender, EventArgs e)
+        {
+            tab_Container.SelectedTab = tab_Help;
+        }
+
+        private void btn_Help2_Click(object sender, EventArgs e)
+        {
+            tab_Container.SelectedTab = tab_Help;
+        }
+
+        private void btn_Help3_Click(object sender, EventArgs e)
+        {
+            tab_Container.SelectedTab = tab_Help;
+        }
+
+        private void btn_Help4_Click(object sender, EventArgs e)
+        {
+            tab_Container.SelectedTab = tab_Help;
+        }
     }
 }

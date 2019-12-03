@@ -1653,5 +1653,17 @@ namespace WindowsFormsApp3
                 z.Handled = true;
             }
         }
+
+        private void btn_ClearSearch1_Click(object sender, EventArgs e)
+        {
+            SearchBox.Text = "";
+            
+        }
+
+        private void ClearSearch2_Click(object sender, EventArgs e)
+        {
+            txtbox_OrderSearchBox.Text = "";
+ 
+        }
     }
 }

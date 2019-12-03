@@ -299,7 +299,13 @@ namespace WindowsFormsApp3
                         lbl_RequiredField.Visible = true;
                         noEmail = true;
                     }
-                    if (!noPhone && !noEmail)
+                    if (ZipBox.TextLength != 5) //Check to see if the zip code is 5 digits.
+                    {
+                        ZipLabel.ForeColor = System.Drawing.Color.LightCoral;
+                        lbl_RequiredField.Visible = true;
+                        noZip = true;
+                    }
+                    if (!noPhone && !noEmail && !noZip)
                     {
                         cUSTOMERBindingSource.EndEdit();
                         cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
@@ -346,6 +352,10 @@ namespace WindowsFormsApp3
                     {
                         MessageBox.Show(EmailBox.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else if (noZip)
+                    {
+                        MessageBox.Show(ZipBox.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -381,13 +391,24 @@ namespace WindowsFormsApp3
         private void ZipBox_KeyPress(object sender, KeyPressEventArgs z)
         {
             //This is the method that makes it so that only digits can be entered in the Zip Code Field
-            if (!char.IsControl(z.KeyChar) && !char.IsDigit(z.KeyChar) && (z.KeyChar != '.'))
+            /*if (!char.IsControl(z.KeyChar) && !char.IsDigit(z.KeyChar) && (z.KeyChar != '.'))
             {
                 z.Handled = true;
             }
 
             if (ZipBox.Text.Length >= 5)
             {
+                z.Handled = true;
+            }*/
+            if (ZipBox.Text.Length < 5)
+            {
+                if (Char.IsDigit(z.KeyChar)) return;
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(z.KeyChar)) return;
                 z.Handled = true;
             }
 
@@ -516,8 +537,20 @@ namespace WindowsFormsApp3
             
         }
 
-        private void PhoneNumberBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in 10 digits for the phonen number field.
+        private void PhoneNumberBox_KeyPress(object sender, KeyPressEventArgs p) //Ensures that the user is only able to enter in 10 digits for the phonen number field.
         {
+            if (PhoneNumberBox.Text.Length < 11)
+            {
+                if (Char.IsDigit(p.KeyChar)) return;
+                if (Char.IsControl(p.KeyChar)) return;
+                p.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(p.KeyChar)) return;
+                p.Handled = true;
+            }
+/*
             if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
             {
                 e.Handled = true;
@@ -532,7 +565,7 @@ namespace WindowsFormsApp3
                         e.Handled = true;
                     }
                 }
-            }
+            }*/
         }
 
         private void FirstNameBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in Letters for the first name field.
@@ -686,217 +719,258 @@ namespace WindowsFormsApp3
             {
                 noComp = true;
                 lbl_Company.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Address.Text))
             {
                 noAddress = true;
                 lbl_Address.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
-
             }
             if (string.IsNullOrEmpty(txtbox_City.Text))
             {
                 noCity = true;
                 lbl_City.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Phone.Text))
             {
                 noPhone = true;
                 lbl_Phone.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_State.Text))
             {
                 noState = true;
                 lbl_State.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Email.Text))
             {
                 noEmail = true;
                 lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_Zip.Text))
             {
                 noZip = true;
                 lbl_Zip.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_OrderNum.Text))
             {
                 noOrder = true;
                 lbl_Invoice.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupAddress.Text))
             {
                 noPickAdd = true;
                 lbl_PickupAddress.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupCity.Text))
             {
                 noPickCity = true;
                 lbl_PickupCity.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupState.Text))
             {
                 noPickState = true;
                 lbl_PickupState.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_PickupZip.Text))
             {
                 noPickZip = true;
                 lbl_PickupZip.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryAddress.Text))
             {
                 noDelAdd = true;
                 lbl_DeliveryAddress.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryCity.Text))
             {
                 noDelCity = true;
                 lbl_DeliveryCity.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryState.Text))
             {
                 noDelState = true;
                 lbl_DeliveryState.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(txtbox_DeliveryZip.Text))
             {
                 noDelZip = true;
                 lbl_DeliveryZip.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(comboBox_Vehicle.Text))
             {
                 noVehicle = true;
                 lbl_Vehicle.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
-            }
-            
-            //date validation
-            if (BookDatePicker.Value > PickUpDatePicker.Value)
-            {
-                noPickDate = true;
-                lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
-            }
-            if (PickUpDatePicker.Value > DropOffDatePicker.Value)
-            {
-                noDropDate = true;
-                lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightCoral;
-                lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (string.IsNullOrEmpty(comboBox_Status.Text))
             {
                 noStatus = true;
                 lbl_OrderStatus.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
             }
             if (!noPhone && !Regex.IsMatch(txtbox_Phone.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
             {
-                MessageBox.Show(txtbox_Phone.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lbl_Phone.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
-                noPhone = true;
             }
             if (!noEmail && !Regex.IsMatch(txtbox_Email.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
             {
-                MessageBox.Show(txtbox_Email.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
-                btn_CreateOrder.Enabled = false;
-                noEmail = true;
+                
+            }
+            if (BookDatePicker.Value > PickUpDatePicker.Value)
+            {
+                lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;               
+            }
+            if (PickUpDatePicker.Value > DropOffDatePicker.Value)
+            {
+                lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
             }
 
             //successfull entry to the database
+
             if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle &&!noStatus && !noPickAdd && !noDropDate)
             {
-                //adds to the database
-                iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
-                txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text,
-                txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text, txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text, txtbox_OrderNum.Text, comboBox_Vehicle.Text, combobox_CustomerIDZ.Text);
-                this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
-                iNVOICETableAdapter.Update(this.appData.INVOICE);
-
-                //default values after order is saved and prevents the user from changing data
-                btn_CreateOrder.Enabled = true;
-                combobox_CustomerIDZ.Enabled = false;
-                BookDatePicker.Enabled = false;
-                PickUpDatePicker.Enabled = false;
-                DropOffDatePicker.Enabled = false;
-                picBox_Status.Enabled = false;
-                checkBox_CopyPickupInformation.Visible = false;
-                checkBox_CopyDropoffInformation.Visible = false;
-                txtboxrch_Description.Text = ""; //Wipes the data from the Description text box after a save.
-                txtboxrch_SpecialInstructions.Text = ""; //Wipes the data from the Description text box after a save.
-                checkBox_CopyPickupInformation.Visible = false; //dechecks the pickup check box.
-                checkBox_CopyDropoffInformation.Visible = false; //dechecks the dropoff check box.
-                btn_CancelOrder.Enabled = false;
-                BookDatePicker.Value = DateTime.Today;
-                PickUpDatePicker.Value = DateTime.Today;
-                DropOffDatePicker.Value = DateTime.Today;
-                txtbox_PickupAddress.Text = "";
-                txtbox_PickupCity.Text = "";
-                txtbox_PickupState.Text = "";
-                txtbox_PickupZip.Text = "";
-                txtbox_DeliveryAddress.Text = "";
-                txtbox_DeliveryCity.Text = "";
-                txtbox_DeliveryState.Text = "";
-                txtbox_DeliveryZip.Text = "";
-                comboBox_Status.Text = "";
-                //txtbox_OrderNum.Text = "";
-                comboBox_Vehicle.Text = "";
-                picBox_Status.Image = null;
-                txtbox_Company.ReadOnly = true;
-                txtbox_Phone.ReadOnly = true;
-                txtbox_Email.ReadOnly = true;
-                txtbox_Address.ReadOnly = true;
-                txtbox_City.ReadOnly = true;
-                txtbox_State.ReadOnly = true;
-                txtbox_Zip.ReadOnly = true;
-                txtbox_PickupAddress.ReadOnly = true;
-                txtbox_PickupCity.ReadOnly = true;
-                txtbox_PickupState.ReadOnly = true;
-                txtbox_PickupZip.ReadOnly = true;
-                txtbox_DeliveryAddress.ReadOnly = true;
-                txtbox_DeliveryCity.ReadOnly = true;
-                txtbox_DeliveryState.ReadOnly = true;
-                txtbox_DeliveryZip.ReadOnly = true;
-                btn_SaveOrder.Enabled = false;
-                picBox_Status.Enabled = false;
-                comboBox_Status.Enabled = false;
-                txtboxrch_Description.ReadOnly = true;
-                txtboxrch_SpecialInstructions.ReadOnly = true;
-                btn_SaveOrder.Enabled = false;
-                txtbox_OrderNum.ReadOnly = true;
-                comboBox_Vehicle.Enabled = false;
-                combobox_CustomerIDZ.Enabled = false;
-
-            }
-            else
-            {
-                if (noPickDate)
+                if (!noPhone && !Regex.IsMatch(txtbox_Phone.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
                 {
-                    MessageBox.Show("The pickup date cannot be before the booking date.", "Invalid Date Entry");
+                    lbl_Phone.ForeColor = System.Drawing.Color.LightCoral;
+                    btn_CreateOrder.Enabled = false;
+                    noPhone = true;
                 }
-                if (noDropDate)
+                if (!noEmail && !Regex.IsMatch(txtbox_Email.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
                 {
-                    MessageBox.Show("The delivery date cannot be before the pickup date.", "Invalid Date Entry");
+                    lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
+                    btn_CreateOrder.Enabled = false;
+                    noEmail = true;
+                }
+                if (txtbox_DeliveryZip.TextLength != 5) //Check to see if the zip code is 5 digits.
+                {
+                    lbl_DeliveryZip.ForeColor = System.Drawing.Color.LightCoral;
+                    lbl_RequiredField.Visible = true;
+                    noDelZip = true;
+                }
+                if (txtbox_PickupZip.TextLength != 5) //Check to see if the zip code is 5 digits.
+                {
+                    lbl_PickupZip.ForeColor = System.Drawing.Color.LightCoral;
+                    lbl_RequiredField.Visible = true;
+                    noPickZip = true;
+                }
+                if (txtbox_Zip.TextLength != 5) //Check to see if the zip code is 5 digits.
+                {
+                    lbl_Zip.ForeColor = System.Drawing.Color.LightCoral;
+                    lbl_RequiredField.Visible = true;
+                    noZip = true;
+                }
+                //date validation
+                if (BookDatePicker.Value > PickUpDatePicker.Value)
+                {
+                    noPickDate = true;
+                    lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
+                    btn_CreateOrder.Enabled = false;
+                }
+                if (PickUpDatePicker.Value > DropOffDatePicker.Value)
+                {
+                    noDropDate = true;
+                    lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightCoral;
+                    lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
+                    btn_CreateOrder.Enabled = false;
+                }
+                if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip)
+                {
+                    //adds to the database
+                    iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
+                    txtbox_PickupAddress.Text, txtbox_PickupCity.Text, txtbox_PickupState.Text, txtbox_PickupZip.Text,
+                    txtbox_DeliveryAddress.Text, txtbox_DeliveryCity.Text, txtbox_DeliveryState.Text, txtbox_DeliveryZip.Text, txtboxrch_SpecialInstructions.Text, txtboxrch_Description.Text, txtbox_OrderNum.Text, comboBox_Vehicle.Text, combobox_CustomerIDZ.Text);
+                    this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
+                    iNVOICETableAdapter.Update(this.appData.INVOICE);
+
+                    //default values after order is saved and prevents the user from changing data
+                    btn_CreateOrder.Enabled = true;
+                    combobox_CustomerIDZ.Enabled = false;
+                    BookDatePicker.Enabled = false;
+                    PickUpDatePicker.Enabled = false;
+                    DropOffDatePicker.Enabled = false;
+                    picBox_Status.Enabled = false;
+                    checkBox_CopyPickupInformation.Visible = false;
+                    checkBox_CopyDropoffInformation.Visible = false;
+                    txtboxrch_Description.Text = ""; //Wipes the data from the Description text box after a save.
+                    txtboxrch_SpecialInstructions.Text = ""; //Wipes the data from the Description text box after a save.
+                    checkBox_CopyPickupInformation.Visible = false; //dechecks the pickup check box.
+                    checkBox_CopyDropoffInformation.Visible = false; //dechecks the dropoff check box.
+                    btn_CancelOrder.Enabled = false;
+                    BookDatePicker.Value = DateTime.Today;
+                    PickUpDatePicker.Value = DateTime.Today;
+                    DropOffDatePicker.Value = DateTime.Today;
+                    txtbox_PickupAddress.Text = "";
+                    txtbox_PickupCity.Text = "";
+                    txtbox_PickupState.Text = "";
+                    txtbox_PickupZip.Text = "";
+                    txtbox_DeliveryAddress.Text = "";
+                    txtbox_DeliveryCity.Text = "";
+                    txtbox_DeliveryState.Text = "";
+                    txtbox_DeliveryZip.Text = "";
+                    comboBox_Status.Text = "";
+                    //txtbox_OrderNum.Text = "";
+                    comboBox_Vehicle.Text = "";
+                    picBox_Status.Image = null;
+                    txtbox_Company.ReadOnly = true;
+                    txtbox_Phone.ReadOnly = true;
+                    txtbox_Email.ReadOnly = true;
+                    txtbox_Address.ReadOnly = true;
+                    txtbox_City.ReadOnly = true;
+                    txtbox_State.ReadOnly = true;
+                    txtbox_Zip.ReadOnly = true;
+                    txtbox_PickupAddress.ReadOnly = true;
+                    txtbox_PickupCity.ReadOnly = true;
+                    txtbox_PickupState.ReadOnly = true;
+                    txtbox_PickupZip.ReadOnly = true;
+                    txtbox_DeliveryAddress.ReadOnly = true;
+                    txtbox_DeliveryCity.ReadOnly = true;
+                    txtbox_DeliveryState.ReadOnly = true;
+                    txtbox_DeliveryZip.ReadOnly = true;
+                    btn_SaveOrder.Enabled = false;
+                    picBox_Status.Enabled = false;
+                    comboBox_Status.Enabled = false;
+                    txtboxrch_Description.ReadOnly = true;
+                    txtboxrch_SpecialInstructions.ReadOnly = true;
+                    txtbox_OrderNum.ReadOnly = true;
+                    comboBox_Vehicle.Enabled = false;
+                    combobox_CustomerIDZ.Enabled = false;
                 }
                 else
+                {
+                    if (noPhone)
+                    {
+                        MessageBox.Show(txtbox_Phone.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID PHONE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noEmail)
+                    {
+                        MessageBox.Show(txtbox_Email.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noZip)
+                    {
+                        MessageBox.Show(txtbox_Zip.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noPickZip)
+                    {
+                        MessageBox.Show(txtbox_PickupZip.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noDelZip)
+                    {
+                        MessageBox.Show(txtbox_DeliveryZip.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noPickDate)
+                    {
+                        MessageBox.Show("The pickup date cannot be before the booking date.", "INVALID DATE");
+                    }
+                    else if (noDropDate)
+                    {
+                        MessageBox.Show("The delivery date cannot be before the pickup date.", "Invalid Date Entry");
+                    }
+                }
+                
+
+            }
+            //one of the required fields is blank, so let the user know.
+            else
+            {                   
                 {
                     MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
                 }
@@ -1101,6 +1175,10 @@ namespace WindowsFormsApp3
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_OrderStatusEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_BookingDateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
 
 
             bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false;
@@ -1178,9 +1256,21 @@ namespace WindowsFormsApp3
                 lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightCoral;
                 lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
-            
 
-             
+            //Zip Validation
+            if (txtbox_DeliveryZipEdit.TextLength != 5) //Check to see if the zip code is 5 digits.
+            {
+                lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_RequiredField.Visible = true;
+                noDelZip = true;
+            }
+            if (txtbox_PickupZipEdit.TextLength != 5) //Check to see if the zip code is 5 digits.
+            {
+                lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_RequiredField.Visible = true;
+                noPickZip = true;
+            }
+
             //successfull entry to the database
             if (!noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickAdd && !noDropDate && !noCust)
             {
@@ -1213,7 +1303,15 @@ namespace WindowsFormsApp3
             }
             else
             {
-                if (noPickDate)
+                if (noPickZip)
+                {
+                    MessageBox.Show(txtbox_PickupZipEdit.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (noDelZip)
+                {
+                    MessageBox.Show(txtbox_DeliveryZipEdit.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (noPickDate)
                 {
                     MessageBox.Show("The pickup date cannot be before the booking date.", "Invalid Date Entry");
                 }
@@ -1225,29 +1323,43 @@ namespace WindowsFormsApp3
                 {
                     MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
                 }
+                
+
 
             }
 
         }
 
         //HELP
-        private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs p)
         {
-            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != (char)(Keys.Back)))
+            if (txtbox_Phone.Text.Length < 11)
             {
-                e.Handled = true;
+                if (Char.IsDigit(p.KeyChar)) return;
+                if (Char.IsControl(p.KeyChar)) return;
+                p.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(p.KeyChar)) return;
+                p.Handled = true;
+            }
+
+           /*if (!Char.IsDigit(p.KeyChar) && (p.KeyChar != (char)(Keys.Back)))
+            {
+                p.Handled = true;
             }
             else
             {
                 // is a digit or backspace - ignore digits if length is alreay 10 - allow backspace
-                if (Char.IsDigit(e.KeyChar))
+                if (Char.IsDigit(p.KeyChar))
                 {
-                    if (PhoneNumberBox.Text.Length > 9)
+                    if (txtbox_Phone.Text.Length > 9)
                     {
-                        e.Handled = true;
+                        p.Handled = true;
                     }
                 }
-            }
+            }*/
         }
 
         private void FirstNameBox_TextChanged(object sender, EventArgs e)
@@ -1341,17 +1453,25 @@ namespace WindowsFormsApp3
 
         private void btn_SaveVehicle_Click(object sender, EventArgs e)
         {
-            vEHICLEBindingSource.EndEdit();
-            vEHICLETableAdapter.Insert(txtbox_VehicleName.Text, txtboxrch_VehicleNotes.Text);
-
-            btn_AddVehicle.Enabled = true;
-            btn_SaveVehicle.Enabled = false;
-            btn_EditVehicle.Enabled = true;
-            btn_CancelVehicle.Enabled = false;
-            dataGridViewVehicle.Enabled = true;
-            txtbox_VehicleName.ReadOnly = true;
-            txtboxrch_VehicleNotes.ReadOnly = true;
-            panel_VehicleTab.Visible = false;
+            if (string.IsNullOrEmpty(txtbox_VehicleName.Text))
+            {
+                MessageBox.Show("Please enter the name of the vehicle.", "INVALID VEHICLE NAME");
+                lbl_VehicleName.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            else
+            {
+                vEHICLEBindingSource.EndEdit();
+                vEHICLETableAdapter.Insert(txtbox_VehicleName.Text, txtboxrch_VehicleNotes.Text);
+                btn_AddVehicle.Enabled = true;
+                btn_SaveVehicle.Enabled = false;
+                btn_EditVehicle.Enabled = true;
+                btn_CancelVehicle.Enabled = false;
+                dataGridViewVehicle.Enabled = true;
+                txtbox_VehicleName.ReadOnly = true;
+                txtboxrch_VehicleNotes.ReadOnly = true;
+                panel_VehicleTab.Visible = false;
+                lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
+            }     
         }
         private void btn_EditVehicle_Click(object sender, EventArgs e)
         {
@@ -1378,9 +1498,9 @@ namespace WindowsFormsApp3
                 txtboxrch_VehicleNotes.ReadOnly = true;
                 txtbox_VehicleName.ReadOnly = true;
                 vEHICLEBindingSource.CancelEdit();
-
                 dataGridViewVehicle.Enabled = true;
                 panel_VehicleTab.Visible = false;
+                lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
 
             }
 
@@ -1390,14 +1510,15 @@ namespace WindowsFormsApp3
                 btn_AddVehicle.Enabled = true;
                 btn_CancelVehicle.Enabled = false;
                 btn_SaveVehicle.Enabled = false;
-
-                txtboxrch_VehicleNotes.ReadOnly = true;
-                txtbox_VehicleName.ReadOnly = true;
+                panel_VehicleTab.Visible = false;
+                /*txtboxrch_VehicleNotes.ReadOnly = true;
+                txtbox_VehicleName.ReadOnly = true;*/
 
                 vEHICLEBindingSource.CancelEdit();
                 vEHICLEBindingSource.RemoveCurrent();
 
                 dataGridViewVehicle.Enabled = true;
+                lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
             }
             
         }
@@ -1425,6 +1546,97 @@ namespace WindowsFormsApp3
         {
             tab_Container.SelectedTab = tab_Help;
             webBrowser1.Url = new System.Uri(helpPath + "test.html#vehiclemanager", System.UriKind.Absolute);
+        }
+
+        private void txtbox_PickupZipEdit_KeyPress(object sender, KeyPressEventArgs z)
+        {
+            //This is the method that makes it so that only digits can be entered in the Zip Code Field
+            if (txtbox_PickupZipEdit.Text.Length < 5)
+            {
+                if (Char.IsDigit(z.KeyChar)) return;
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+        }
+
+        private void txtbox_DeliveryZipEdit_KeyPress(object sender, KeyPressEventArgs z)
+        {
+            //This is the method that makes it so that only digits can be entered in the Zip Code Field
+            if (txtbox_DeliveryZipEdit.Text.Length < 5)
+            {
+                if (Char.IsDigit(z.KeyChar)) return;
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+        }
+
+        private void txtbox_Zip_KeyPress(object sender, KeyPressEventArgs z)
+        {
+            //This is the method that makes it so that only digits can be entered in the Zip Code Field
+            if (txtbox_Zip.Text.Length < 5)
+            {
+                if (Char.IsDigit(z.KeyChar)) return;
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+        }
+
+        private void txtbox_PickupZip_KeyPress(object sender, KeyPressEventArgs z)
+        {
+            if (txtbox_PickupZip.Text.Length < 5)
+            {
+                if (Char.IsDigit(z.KeyChar)) return;
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+            /*
+            //This is the method that makes it so that only digits can be entered in the Zip Code Field
+            if (!char.IsControl(z.KeyChar) && !char.IsDigit(z.KeyChar) && (z.KeyChar != '.'))
+            {
+                z.Handled = true;
+            }
+
+            if (txtbox_PickupZip.Text.Length >= 5)
+            {
+                z.Handled = true;
+            }
+            */
+        }
+
+        private void txtbox_DeliveryZip_KeyPress(object sender, KeyPressEventArgs z)
+        {
+            //This is the method that makes it so that only digits can be entered in the Zip Code Field
+            if (txtbox_DeliveryZip.Text.Length < 5)
+            {
+                if (Char.IsDigit(z.KeyChar)) return;
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(z.KeyChar)) return;
+                z.Handled = true;
+            }
         }
     }
 }

@@ -209,7 +209,7 @@ namespace WindowsFormsApp3
             this.VehicleManager = new System.Windows.Forms.TabPage();
             this.btn_Help4 = new System.Windows.Forms.Button();
             this.panel_VehicleTab = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_VehicleName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbox_VehicleName = new System.Windows.Forms.TextBox();
             this.txtboxrch_VehicleNotes = new System.Windows.Forms.RichTextBox();
@@ -544,6 +544,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryZip.ReadOnly = true;
             this.txtbox_DeliveryZip.Size = new System.Drawing.Size(131, 27);
             this.txtbox_DeliveryZip.TabIndex = 56;
+            this.txtbox_DeliveryZip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryZip_KeyPress);
             // 
             // lbl_DeliveryCity
             // 
@@ -784,6 +785,7 @@ namespace WindowsFormsApp3
             this.txtbox_Zip.ReadOnly = true;
             this.txtbox_Zip.Size = new System.Drawing.Size(177, 27);
             this.txtbox_Zip.TabIndex = 7;
+            this.txtbox_Zip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Zip_KeyPress);
             // 
             // txtbox_State
             // 
@@ -1010,6 +1012,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupZip.ReadOnly = true;
             this.txtbox_PickupZip.Size = new System.Drawing.Size(141, 27);
             this.txtbox_PickupZip.TabIndex = 45;
+            this.txtbox_PickupZip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupZip_KeyPress);
             // 
             // lbl_PickupZip
             // 
@@ -1939,6 +1942,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryZipEdit.ReadOnly = true;
             this.txtbox_DeliveryZipEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_DeliveryZipEdit.TabIndex = 30;
+            this.txtbox_DeliveryZipEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryZipEdit_KeyPress);
             // 
             // lbl_DeliveryZipEdit
             // 
@@ -2031,6 +2035,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupZipEdit.ReadOnly = true;
             this.txtbox_PickupZipEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_PickupZipEdit.TabIndex = 22;
+            this.txtbox_PickupZipEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupZipEdit_KeyPress);
             // 
             // lbl_PickupZipEdit
             // 
@@ -2466,7 +2471,7 @@ namespace WindowsFormsApp3
             // 
             // panel_VehicleTab
             // 
-            this.panel_VehicleTab.Controls.Add(this.label4);
+            this.panel_VehicleTab.Controls.Add(this.lbl_VehicleName);
             this.panel_VehicleTab.Controls.Add(this.label2);
             this.panel_VehicleTab.Controls.Add(this.txtbox_VehicleName);
             this.panel_VehicleTab.Controls.Add(this.txtboxrch_VehicleNotes);
@@ -2476,16 +2481,16 @@ namespace WindowsFormsApp3
             this.panel_VehicleTab.TabIndex = 9;
             this.panel_VehicleTab.Visible = false;
             // 
-            // label4
+            // lbl_VehicleName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(9, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 26);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Vehicle Name:";
+            this.lbl_VehicleName.AutoSize = true;
+            this.lbl_VehicleName.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_VehicleName.Location = new System.Drawing.Point(9, 5);
+            this.lbl_VehicleName.Name = "lbl_VehicleName";
+            this.lbl_VehicleName.Size = new System.Drawing.Size(138, 26);
+            this.lbl_VehicleName.TabIndex = 2;
+            this.lbl_VehicleName.Text = "Vehicle Name:";
             // 
             // label2
             // 
@@ -2864,7 +2869,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.TabPage VehicleManager;
         private System.Windows.Forms.TextBox txtbox_VehicleName;
         private System.Windows.Forms.Button btn_SaveVehicle;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_VehicleName;
         private System.Windows.Forms.RichTextBox txtboxrch_VehicleNotes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_CancelVehicle;

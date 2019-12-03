@@ -191,6 +191,12 @@
     <Content Include="Resources\cancelled.png" />
     <Content Include="Resources\complete.png" />
     <Content Include="Resources\delayed.png" />
+    <Content Include="Resources\Help\createorder-visual.jpg" />
+    <Content Include="Resources\Help\home.jpg" />
+    <Content Include="Resources\Help\managecustomer-visual.jpg" />
+    <Content Include="Resources\Help\searchorders-visual.jpg" />
+    <Content Include="Resources\Help\test.css" />
+    <Content Include="Resources\Help\test.html" />
     <Content Include="Resources\in_transit.png" />
     <Content Include="Resources\pending.png" />
     <None Include="Resources\updated plus.png" />

@@ -157,6 +157,7 @@ namespace WindowsFormsApp3
                 SearchBox.Enabled = true;
                 //cUSTOMERBindingSource.RemoveCurrent();
                 cUSTOMERBindingSource.CancelEdit();
+                lbl_RequiredField.Visible = false;
 
                 //Resets all of the text to black in case the user originally entered in mistakes.
                 FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
@@ -168,6 +169,7 @@ namespace WindowsFormsApp3
                 CityLabel.ForeColor = System.Drawing.Color.LightGray;
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+                lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
             }
             else //(editCustomer == false)
             {
@@ -188,6 +190,7 @@ namespace WindowsFormsApp3
                 dataGridView1.Enabled = true;
                 SearchBox.Enabled = true;
                 editCustomer = false;
+                lbl_RequiredField.Visible = false;
                 //SearchBox.Text = "";
                 cUSTOMERBindingSource.CancelEdit();
                 cUSTOMERBindingSource.RemoveCurrent();
@@ -305,7 +308,13 @@ namespace WindowsFormsApp3
                         lbl_RequiredField.Visible = true;
                         noZip = true;
                     }
-                    if (!noPhone && !noEmail && !noZip)
+                    if (comboBox_Broker.Text != "YES" && comboBox_Broker.Text != "NO")
+                    {
+                        lbl_Broker.ForeColor = System.Drawing.Color.LightCoral;
+                        lbl_RequiredField.Visible = true;
+                        noBroke = true;
+                    }
+                        if (!noPhone && !noEmail && !noZip && !noBroke)
                     {
                         cUSTOMERBindingSource.EndEdit();
                         cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
@@ -342,6 +351,7 @@ namespace WindowsFormsApp3
                         CityLabel.ForeColor = System.Drawing.Color.LightGray;
                         StateLabel.ForeColor = System.Drawing.Color.LightGray;
                         ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+                        lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
                     }
                     //insert error messages here
                     if (noPhone)
@@ -354,7 +364,11 @@ namespace WindowsFormsApp3
                     }
                     else if (noZip)
                     {
-                        MessageBox.Show(ZipBox.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ZipBox.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits.", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noBroke)
+                    {
+                        MessageBox.Show("Broker must either be YES or NO.", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else

@@ -539,7 +539,7 @@ namespace WindowsFormsApp3
 
         private void PhoneNumberBox_KeyPress(object sender, KeyPressEventArgs p) //Ensures that the user is only able to enter in 10 digits for the phonen number field.
         {
-            if (PhoneNumberBox.Text.Length < 11)
+            if (PhoneNumberBox.Text.Length < 10)
             {
                 if (Char.IsDigit(p.KeyChar)) return;
                 if (Char.IsControl(p.KeyChar)) return;
@@ -1333,7 +1333,7 @@ namespace WindowsFormsApp3
         //HELP
         private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs p)
         {
-            if (txtbox_Phone.Text.Length < 11)
+            if (txtbox_Phone.Text.Length < 10)
             {
                 if (Char.IsDigit(p.KeyChar)) return;
                 if (Char.IsControl(p.KeyChar)) return;

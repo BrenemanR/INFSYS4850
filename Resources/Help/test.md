@@ -1,7 +1,8 @@
+<a id="top"></a>
 # Virtual Adil: Help
 
 ## Table of Contents:
-* <a href="#top">**Welcome to Virtual Adil**</a>
+* <a href="#welcome">**Welcome to Virtual Adil**</a>
 * <a href="#homepage">**Home Page**</a>
 * <a href="#managecustomers">**Manage Customers**</a>
     * <a href="#managecustomersvisual">Manage Customers - Visual Reference</a>
@@ -12,9 +13,11 @@
 * <a href="#vehiclemanager">**Vehicle Manager**</a>
     * <a href="#vehiclemanagervisual">Vehicle Manager - Visual Reference</a>
 
-<a id="top"></a>
+<a id="welcome"></a>
 ## Welcome to Virtual Adil!
 **Virtual Adil** is a software program created by DaphAdil Consulting for keeping track of a shipping company's clients and work orders. This help page will provide you with instructions on how to use the various components of the software and diagrams showing the function of certain components.
+
+<a href="#top">Return to Table of Contents</a>
 
 <a id="homepage"></a>
 ## Home Page
@@ -23,8 +26,12 @@ This is the first page the user will see when they launch the application, somet
 
 ![homepage](home.jpg)
 
+<a href="#top">Return to Table of Contents</a>
+
 <a id="managecustomers"></a>
 ## Manage Customers
+
+![managecustomer-visual](managecustomer.jpg)
 
 The **Manage Customers** tab is where new customers are added to the Customer table. The user can also use this window to make changes to existing customer records. The left side of the window allows the user to interact with each field of data, while the right side displays a list of existing records in the Virtual Adil database, along with controls that allow the user to sort and search the fields.
 
@@ -74,10 +81,15 @@ If the customer information is not immediately visible in the Table View, you ca
 | **12** | **Edit Customer button** | **Select a record before pressing this button.** This button will give the user access to edit the currently selected record in the Table View.  |
 | **13** | **Save Button** | The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.  |
 | **14** | **Cancel Button** | The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged. |
-| **15** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. |
+| **15** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. **You can also sort the Customers by field by clicking on the column headers.**|
+
+<!-- | **16** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+| **17** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. | -->
+
 <a href="#top">Return to Table of Contents</a>
 <a id="createorders"></a>
 ## Create Orders
+![managecustomer-visual](createorder.jpg)
 
 The **Create Orders** tab is where new orders are added to the Orders table. <br>Across the top is customer information, which can be pulled in by selecting a customer in the dropdown menu in the far upper left. <br>Pickup and Dropoff Information specify the address information for the work order's origin and destination, and can be quickly filled out by using the Copy Customer Data control. <br>Booking Date keeps track of the date the order was received, and Pickup/Delivery Date reflect the date of pickup and dropoff. All three dates must be in the proper order (dropoff date cannot be before pickup date, for example). <br>Description and Special Instructions in the lower right are for any notes the user would like to add to the order. <br>Finally, the Order Status allows the user to flag a job as Pending, In Transit, Delayed, Complete, or Cancelled. The user can then use the Search Orders tab to search for orders by this status (for example, list all jobs that are Complete).
 
@@ -132,42 +144,55 @@ At any time, you can hit Cancel to discard your changes and leave the database u
 
 <a href="#top">Return to Table of Contents</a>
 <a id="searchorders"></a>
-## Search Orders 
+## Search/Edit Orders 
 
-The Search Orders tab allows the user to search all created Work Orders and edit them if needed. To search an order, type any text into the **Search Orders** box and hit Enter. The matching records will be displayed below in the Table View. 
+![managecustomer-visual](searcheditorders.jpg)
+
+The Search/Edit Orders tab allows the user to search all created Work Orders and edit them if needed. To search an order, type any text into the **Search Orders** box and hit Enter. The matching records will be displayed below in the Table View. 
 ### To Edit a Record:
-1. Use Search to find the record you want to edit.
-2. Click on it in the Table View and hit Edit Order.
+1. Use **Search** to find the record you want to edit.
+2. Click on it in the Table View and hit **Edit Order**.
 3. Make the necessary edits.
 4. Hit the Save Order button (in the same spot the Edit Order button was).
 
 <a href="#top">Return to Table of Contents</a>
 <a id="searchordersvisual"></a>
-## Search Orders - Visual Reference
+## Search/Edit Orders - Visual Reference
 
 ![Home Page](searchorders-visual.jpg)
 
-<!-- | Number | Field Name | Purpose |
+| Number | Field Name | Purpose |
 | ----| ---------- | ------- |
-| **1** | **Booking Date** | Customer's first name |
-| **2** | **Pickup Date** | Customer's last name |
-| **3** | **Delivery Date** | **Must be 9 digits.** Stores a phone number for contact info.  |
-| **4** | **Email** | **Must have proper form.**  Stores the customer email. Email cannot be entered without an "@" sign and "." in the proper place.|
-| **5** | **Company** | Company the customer represents |
-| **6** | **Address** | Street Address of the customer, used for billing |
-| **7** | **City** | City where the customer is located |
-| **8** | **State** | State where the customer is located |
-| **9** | **Zip Code** | Customer's ZIP Code |
-| **10** | **Broker Yes/No?** | Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed. |
-| **11** | **Add New Customer button** | This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive. |
-| **12** | **Edit Customer button** | **Select a record before pressing this button.** This button will give the user access to edit the currently selected record in the Table View.  |
-| **13** | **Save Button** | The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.  |
-| **14** | **Cancel Button** | The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged. |
-| **15** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. | -->
+| **1** | **Booking Date** |  The date that the job or work order was accepted by the user's organization. |
+| **2** | **Pickup Date** |  The date that the shipment must be picked up. |
+| **3** | **Delivery Date** |  The date by which the shipment must be delivered.  |
+| **4** | **Order #** | ***Not Editable***. Database number that refers to the Order in the database and cannot be changed.  |
+| **5** | **Customer ID** | ***Not Editable***. Database number that refers to the Customer in the database and cannot be changed.  |
+| **6** | **Vehicle Used** | The vehicle used to carry out the Work Order. |
+| **7** | **Invoice #** | User-editable reference number for tracking each Work Order. |
+| **8** | **Order Status** | Current status of the Work Order - Pending, In Transit, Delayed, Complete, or Cancelled.  |
+| **9** | **Customer** | Customer's full name associated with the Work Order. |
+| **10** | **Pickup Address** | The address where the shipment will be picked up for the job.  |
+| **11** | **Pickup City** | The city where the shipment will be picked up.  |
+| **12** | **Pickup State** | The state in which the shipment will be picked up. |
+| **13** | **Pickup Zip** | The ZIP Code of the shipment origin.  |
+| **14** | **Delivery Address** | The address where the shipment will be dropped off for the job.  |
+| **15** | **Delivery City** | The address where the shipment will be dropped off.  |
+| **16** | **Delivery State** | The state in which the shipment will be dropped off.  |
+| **17** | **Delivery Zip** | The ZIP Code of the shipment destination.  |
+| **18** | **Description Box** | User-editable field for any additional info such as cargo description or number of pieces.  |
+| **19** | **Special Instructions** |  User-editable field for any special delivery instructions such as "park in back" or "ask for Karen". |
+| **20** | **Search Orders Box** | Type a word or phrase into this box to search the existing Work Orders for a match. **You can also sort the Work Orders by field by clicking on the column headers.** |
+| **21** | **Edit Order Button** | Click this button to unlock the fields to edit the currently selected record in the Table View.  |
+
+<!-- | **22** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+| **23** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. | -->
 
 <a href="#top">Return to Table of Contents</a>
 <a id="vehiclemanager"></a>
 ## Vehicle Manager
+
+![managecustomer-visual](vehiclemanager.jpg)
 
 The Vehicle Manager allows the user to create and store records of vehicles the company owns. They can then be associated with Work Orders as needed.
 
@@ -186,24 +211,16 @@ The Vehicle Manager allows the user to create and store records of vehicles the 
 <a id="vehiclemanagervisual"></a>
 ## Vehicle Manager - Visual Reference
 
-<!-- ![Home Page](managecustomer-visual.jpg) -->
+![Home Page](vehiclemanager-visual.jpg)
 
-<!-- | Number | Field Name | Purpose |
+| Number | Field Name | Purpose |
 | ----| ---------- | ------- |
-| **1** | **First Name** | Customer's first name |
-| **2** | **Last Name** | Customer's last name |
-| **3** | **Phone #** | **Must be 9 digits.** Stores a phone number for contact info.  |
-| **4** | **Email** | **Must have proper form.**  Stores the customer email. Email cannot be entered without an "@" sign and "." in the proper place.|
-| **5** | **Company** | Company the customer represents |
-| **6** | **Address** | Street Address of the customer, used for billing |
-| **7** | **City** | City where the customer is located |
-| **8** | **State** | State where the customer is located |
-| **9** | **Zip Code** | Customer's ZIP Code |
-| **10** | **Broker Yes/No?** | Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed. |
-| **11** | **Add New Customer button** | This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive. |
-| **12** | **Edit Customer button** | **Select a record before pressing this button.** This button will give the user access to edit the currently selected record in the Table View.  |
-| **13** | **Save Button** | The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.  |
-| **14** | **Cancel Button** | The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged. |
-| **15** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. | -->
+| **1** | **Add Vehicle Button** | Customer's first name |
+| **2** | **Save Button** | Customer's last name |
+| **3** | **Cancel Button** | **Must be 9 digits.** Stores a phone number for contact info.  |
+| **4** | **Edit Button** | **Must have proper form.**  Stores the customer email. Email cannot be entered without an "@" sign and "." in the proper place.|
+| **5** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+| **6** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. |
+
 
 <a href="#top">Return to Table of Contents</a>

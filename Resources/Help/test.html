@@ -4,356 +4,517 @@
 <link rel="stylesheet" href="test.css">
 </head>
 <body>
-<a id="top"></a>
-<h1 id="virtual-adil-help">Virtual Adil: Help</h1>
-<h2 id="table-of-contents-">Table of Contents:</h2>
-<ul>
-<li><a href="#welcome"><strong>Welcome to Virtual Adil</strong></a></li>
-<li><a href="#homepage"><strong>Home Page</strong></a></li>
-<li><a href="#managecustomers"><strong>Manage Customers</strong></a><ul>
-<li><a href="#managecustomersvisual">Manage Customers - Visual Reference</a></li>
-</ul>
-</li>
-<li><a href="#createorders"><strong>Create Orders</strong></a><ul>
-<li><a href="#createordersvisual">Create Orders - Visual Reference</a></li>
-</ul>
-</li>
-<li><a href="#searchorders"><strong>Search Orders</strong></a><ul>
-<li><a href="#searchordersvisual">Search Orders - Visual Reference</a></li>
-</ul>
-</li>
-<li><a href="#vehiclemanager"><strong>Vehicle Manager</strong></a><ul>
-<li><a href="#vehiclemanagervisual">Vehicle Manager - Visual Reference</a></li>
-</ul>
-</li>
-</ul>
-<p><a id="welcome"></a></p>
-<h2 id="welcome-to-virtual-adil-">Welcome to Virtual Adil!</h2>
-<p><strong>Virtual Adil</strong> is a software program created by DaphAdil Consulting for keeping track of a shipping company&#39;s clients and work orders. This help page will provide you with instructions on how to use the various components of the software and diagrams showing the function of certain components.</p>
-<p><a id="homepage"></a></p>
-<h2 id="home-page">Home Page</h2>
-<p>This is the first page the user will see when they launch the application, sometimes known as a <em>splash screen</em>. This page simply acts as a welcoming graphic for the user, and a notification that it is ready to use. To start using Virtual Adil, click on one of the other tabs at the top of the application window. </p>
-<p><img src="home.jpg" alt="home-page"></p>
-<p><a id="managecustomers"></a></p>
-<h2 id="manage-customers">Manage Customers</h2>
-<p>The <strong>Manage Customers</strong> tab is where new customers are added to the Customer table. The user can also use this window to make changes to existing customer records. The left side of the window allows the user to interact with each field of data, while the right side displays a list of existing records in the Virtual Adil database, along with controls that allow the user to sort and search the fields.</p>
-<blockquote>
-<p><strong>Note: Database Terms</strong> <br>A full customer entry (including name, address, phone number, etc.) is referred to as a <strong>record</strong> in this document. <br>A single bit of information (like Zip Code) is called a <strong>field</strong>. A full customer <strong>record</strong> is made up of ten <strong>fields</strong>. <br>All of the <strong>records</strong> combined make up the full Customer <strong>table</strong>, which, like the Orders <strong>table</strong>, is part of the Virtual Adil <strong>database</strong>.</p>
-</blockquote>
-<h3 id="to-add-a-new-customer-">To Add a New Customer:</h3>
-<ol>
-<li>Click the <strong>Add New Customer</strong> button to unlock the customer information fields for data entry.</li>
-<li>Fill in all of the fields.</li>
-<li>Hit the Save button to lock in your changes. Your new customer will immediately be entered into the database. </li>
-</ol>
-<p>If the customer information is not immediately visible in the Table View, you can use the Search feature at the top of the window to find it and confirm that it has been entered <em>(read more about Search below).</em></p>
-<h3 id="to-edit-an-existing-customer-">To Edit an Existing Customer:</h3>
-<ol>
-<li>Select the record (row) you wish to edit in the Table View on the right side of the window.</li>
-<li>Click the Edit Customer button to unlock the customer information fields for editing.</li>
-<li>Change any field you wish.</li>
-<li>Hit the Save button to lock in your changes. The customer record will be updated to reflect your changes.</li>
-</ol>
-<blockquote>
-<p><strong>Note</strong>: See the Visual Reference below for a description of each element in this tab.</p>
-</blockquote>
-<p><a href="#top">Return to Table of Contents</a></p>
-<p><a id="managecustomersvisual"></a></p>
-<h2 id="manage-customers-visual-reference">Manage Customers - Visual Reference</h2>
-<p><img src="managecustomer-visual.jpg" alt="manage-customers"></p>
-<table>
-<thead>
-<tr>
-<th>Number</th>
-<th>Field Name</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1</strong></td>
-<td><strong>First Name</strong></td>
-<td>Customer&#39;s first name</td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td><strong>Last Name</strong></td>
-<td>Customer&#39;s last name</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td><strong>Phone #</strong></td>
-<td><strong>Must be 9 digits.</strong> Stores a phone number for contact info.</td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td><strong>Email</strong></td>
-<td><strong>Must have proper form.</strong>  Stores the customer email. Email cannot be entered without an &quot;@&quot; sign and &quot;.&quot; in the proper place.</td>
-</tr>
-<tr>
-<td><strong>5</strong></td>
-<td><strong>Company</strong></td>
-<td>Company the customer represents</td>
-</tr>
-<tr>
-<td><strong>6</strong></td>
-<td><strong>Address</strong></td>
-<td>Street Address of the customer, used for billing</td>
-</tr>
-<tr>
-<td><strong>7</strong></td>
-<td><strong>City</strong></td>
-<td>City where the customer is located</td>
-</tr>
-<tr>
-<td><strong>8</strong></td>
-<td><strong>State</strong></td>
-<td>State where the customer is located</td>
-</tr>
-<tr>
-<td><strong>9</strong></td>
-<td><strong>Zip Code</strong></td>
-<td>Customer&#39;s ZIP Code</td>
-</tr>
-<tr>
-<td><strong>10</strong></td>
-<td><strong>Broker Yes/No?</strong></td>
-<td>Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed.</td>
-</tr>
-<tr>
-<td><strong>11</strong></td>
-<td><strong>Add New Customer button</strong></td>
-<td>This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive.</td>
-</tr>
-<tr>
-<td><strong>12</strong></td>
-<td><strong>Edit Customer button</strong></td>
-<td><strong>Select a record before pressing this button.</strong> This button will give the user access to edit the currently selected record in the Table View.</td>
-</tr>
-<tr>
-<td><strong>13</strong></td>
-<td><strong>Save Button</strong></td>
-<td>The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.</td>
-</tr>
-<tr>
-<td><strong>14</strong></td>
-<td><strong>Cancel Button</strong></td>
-<td>The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged.</td>
-</tr>
-<tr>
-<td><strong>15</strong></td>
-<td><strong>Search Box</strong></td>
-<td>Use the Search box to find customers. You can search by a word in any field.</td>
-</tr>
-</tbody>
-</table>
-<p><a href="#top">Return to Table of Contents</a>
-<a id="createorders"></a></p>
-<h2 id="create-orders">Create Orders</h2>
-<p>The <strong>Create Orders</strong> tab is where new orders are added to the Orders table. <br>Across the top is customer information, which can be pulled in by selecting a customer in the dropdown menu in the far upper left. <br>Pickup and Dropoff Information specify the address information for the work order&#39;s origin and destination, and can be quickly filled out by using the Copy Customer Data control. <br>Booking Date keeps track of the date the order was received, and Pickup/Delivery Date reflect the date of pickup and dropoff. All three dates must be in the proper order (dropoff date cannot be before pickup date, for example). <br>Description and Special Instructions in the lower right are for any notes the user would like to add to the order. <br>Finally, the Order Status allows the user to flag a job as Pending, In Transit, Delayed, Complete, or Cancelled. The user can then use the Search Orders tab to search for orders by this status (for example, list all jobs that are Complete).</p>
-<blockquote>
-<p><strong>Note: Database Terms</strong> <br>A full work order entry (including pickup, dropoff, status, etc.) is referred to as a <strong>record</strong> in this document. <br>A single bit of information (like Booking Date) is called a <strong>field</strong>. A full work order <strong>record</strong> is made up of fifteen <strong>fields</strong>. <br>All of the <strong>records</strong> combined make up the full Orders <strong>table</strong>, which, like the Customers <strong>table</strong>, is part of the Virtual Adil <strong>database</strong>.</p>
-</blockquote>
-<h3 id="to-create-a-new-order">To Create a New Order</h3>
-<p>Once the customer information has been pulled in, it fills the top two rows of fields. This information can be edited here for use in the next step. </p>
-<ol>
-<li>Use the customer dropdown menu in the upper left to select a customer. <strong>Customers must be created in the Manage Customers tab before their information can be pulled into a Work Order.</strong></li>
-<li>Make any necessary edits to the fields if there are changes specific to this work order. (Permanent edits to customer records can be performed in the <strong>Manage Customer</strong> tab.)</li>
-<li>Fill out the Pickup Information section with the address of the pickup location. Clicking &quot;Copy Customer Data&quot; will pull the information in the fields at the top into these fields.</li>
-<li>Repeat Step 3 for the Dropoff Information section. You can change the customer listed at the top between Steps 3 and 4 to pull in different information.</li>
-<li>Specify the Booking, Pickup, and Delivery dates. Dates are checked to make sure they are in chronological order.</li>
-<li>Fill out Description and Special Instructions if desired; then choose an Order Status.</li>
-<li>Hit Save Order to save the order into the database.</li>
-</ol>
-<p>At any time, you can hit Cancel to discard your changes and leave the database unchanged.</p>
-<p><a href="#top">Return to Table of Contents</a>
-<a id="createordersvisual"></a></p>
-<h2 id="create-orders-visual-reference">Create Orders - Visual Reference</h2>
-<p><img src="createorder-visual.jpg" alt="create-orders-visual-reference"></p>
-<table>
-<thead>
-<tr>
-<th>Number</th>
-<th>Field Name</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1</strong></td>
-<td><strong>Customer</strong></td>
-<td>Customer&#39;s name. Also pulls in corresponding data from the Customer table.</td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td><strong>Company</strong></td>
-<td>Customer&#39;s company name.</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td><strong>Phone</strong></td>
-<td><strong>Must be 9 digits.</strong> Stores a phone number for contact info.</td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td><strong>Email</strong></td>
-<td><strong>Must have proper form.</strong>  Stores the customer email. Email cannot be entered without an &quot;@&quot; sign and &quot;.&quot; in the proper place.</td>
-</tr>
-<tr>
-<td><strong>5</strong></td>
-<td><strong>Invoice #</strong></td>
-<td>Invoice # is a user-editable field for entering order or invoice numbers for instant reference.</td>
-</tr>
-<tr>
-<td><strong>6</strong></td>
-<td><strong>Address</strong></td>
-<td>Street Address of the customer, used for billing</td>
-</tr>
-<tr>
-<td><strong>7</strong></td>
-<td><strong>City</strong></td>
-<td>City where the customer is located</td>
-</tr>
-<tr>
-<td><strong>8</strong></td>
-<td><strong>State</strong></td>
-<td>State where the customer is located</td>
-</tr>
-<tr>
-<td><strong>9</strong></td>
-<td><strong>Zip</strong></td>
-<td>Customer&#39;s ZIP code</td>
-</tr>
-<tr>
-<td><strong>10</strong></td>
-<td><strong>Order #</strong></td>
-<td>For database use only; do not edit</td>
-</tr>
-<tr>
-<td><strong>11</strong></td>
-<td><strong>Vehicle Used</strong></td>
-<td>Specifies the vehicle used to complete the order.</td>
-</tr>
-<tr>
-<td><strong>12-13</strong></td>
-<td><strong>Copy Customer Data</strong></td>
-<td><strong>Select a record before pressing this button.</strong> When clicked, this copies the address information from the top fields into either Pickup or Dropoff Information.</td>
-</tr>
-<tr>
-<td><strong>14-15</strong></td>
-<td><strong>Pickup/Delivery Address</strong></td>
-<td>Origin and destination street addresses for the work order</td>
-</tr>
-<tr>
-<td><strong>16-17</strong></td>
-<td><strong>Pickup/Delivery City</strong></td>
-<td>Origin and destination cities</td>
-</tr>
-<tr>
-<td><strong>18-19</strong></td>
-<td><strong>Pickup/Delivery State</strong></td>
-<td>Origin and destination state</td>
-</tr>
-<tr>
-<td><strong>20-21</strong></td>
-<td><strong>Pickup/Delivery Zip</strong></td>
-<td>Origin and destination ZIP</td>
-</tr>
-<tr>
-<td><strong>22</strong></td>
-<td><strong>Booking Date</strong></td>
-<td>The date upon which the job was accepted</td>
-</tr>
-<tr>
-<td><strong>23</strong></td>
-<td><strong>Pickup Date</strong></td>
-<td>The date when the shipment needs to be picked up</td>
-</tr>
-<tr>
-<td><strong>24</strong></td>
-<td><strong>Delivery Date</strong></td>
-<td>The due date for shipment dropoff</td>
-</tr>
-<tr>
-<td><strong>25</strong></td>
-<td><strong>Order Status</strong></td>
-<td>Allows the user to mark the work order as Pending, In Transit, Delayed, Complete, or Cancelled</td>
-</tr>
-<tr>
-<td><strong>26</strong></td>
-<td><strong>Create Order Button</strong></td>
-<td>Initiates order creation and unlocks the Customer dropdown in the upper left to create a new order</td>
-</tr>
-<tr>
-<td><strong>27</strong></td>
-<td><strong>Save Order Button</strong></td>
-<td>Saves the new work order to the database. Incomplete fields may stop this button from saving until the fields are filled out.</td>
-</tr>
-<tr>
-<td><strong>28</strong></td>
-<td><strong>Cancel Button</strong></td>
-<td>Cancels order creation, making no changes to the database.</td>
-</tr>
-<tr>
-<td><strong>29</strong></td>
-<td><strong>Description Box</strong></td>
-<td>Box for user-readable info about the cargo, or anything else.</td>
-</tr>
-<tr>
-<td><strong>30</strong></td>
-<td><strong>Special Instructions Box</strong></td>
-<td>Box for user-readable special instructions concerning scheduling and directions for the work order.</td>
-</tr>
-</tbody>
-</table>
-<p><a href="#top">Return to Table of Contents</a>
-<a id="searchorders"></a></p>
-<h2 id="search-orders">Search Orders</h2>
-<p><a href="#top">Return to Table of Contents</a>
-<a id="searchordersvisual"></a></p>
-<h2 id="search-orders-visual-reference">Search Orders - Visual Reference</h2>
-<!-- ![Home Page](searchorders-visual.jpg) -->
-<!-- | Number | Field Name | Purpose |
-| ----| ---------- | ------- |
-| **1** | **First Name** | Customer's first name |
-| **2** | **Last Name** | Customer's last name |
-| **3** | **Phone #** | **Must be 9 digits.** Stores a phone number for contact info.  |
-| **4** | **Email** | **Must have proper form.**  Stores the customer email. Email cannot be entered without an "@" sign and "." in the proper place.|
-| **5** | **Company** | Company the customer represents |
-| **6** | **Address** | Street Address of the customer, used for billing |
-| **7** | **City** | City where the customer is located |
-| **8** | **State** | State where the customer is located |
-| **9** | **Zip Code** | Customer's ZIP Code |
-| **10** | **Broker Yes/No?** | Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed. |
-| **11** | **Add New Customer button** | This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive. |
-| **12** | **Edit Customer button** | **Select a record before pressing this button.** This button will give the user access to edit the currently selected record in the Table View.  |
-| **13** | **Save Button** | The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.  |
-| **14** | **Cancel Button** | The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged. |
-| **15** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. | -->
-<p><a href="#top">Return to Table of Contents</a>
-<a id="vehiclemanager"></a></p>
-<h2 id="vehicle-manager">Vehicle Manager</h2>
-<p><a href="#top">Return to Table of Contents</a>
-<a id="vehiclemanagervisual"></a></p>
-<h2 id="vehicle-manager-visual-reference">Vehicle Manager - Visual Reference</h2>
-<!-- ![Home Page](managecustomer-visual.jpg) -->
-<!-- | Number | Field Name | Purpose |
-| ----| ---------- | ------- |
-| **1** | **First Name** | Customer's first name |
-| **2** | **Last Name** | Customer's last name |
-| **3** | **Phone #** | **Must be 9 digits.** Stores a phone number for contact info.  |
-| **4** | **Email** | **Must have proper form.**  Stores the customer email. Email cannot be entered without an "@" sign and "." in the proper place.|
-| **5** | **Company** | Company the customer represents |
-| **6** | **Address** | Street Address of the customer, used for billing |
-| **7** | **City** | City where the customer is located |
-| **8** | **State** | State where the customer is located |
-| **9** | **Zip Code** | Customer's ZIP Code |
-| **10** | **Broker Yes/No?** | Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed. |
-| **11** | **Add New Customer button** | This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive. |
-| **12** | **Edit Customer button** | **Select a record before pressing this button.** This button will give the user access to edit the currently selected record in the Table View.  |
-| **13** | **Save Button** | The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.  |
-| **14** | **Cancel Button** | The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged. |
-| **15** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. | -->
-<p><a href="#top">Return to Table of Contents</a></p>
+    <p><a id="top"></a></p>
+    <h1 id="virtual-adil-help">Virtual Adil: Help</h1>
+    <h2 id="table-of-contents-">Table of Contents:</h2>
+    <ul>
+    <li><a href="#welcome"><strong>Welcome to Virtual Adil</strong></a></li>
+    <li><a href="#homepage"><strong>Home Page</strong></a></li>
+    <li><a href="#managecustomers"><strong>Manage Customers</strong></a><ul>
+    <li><a href="#managecustomersvisual">Manage Customers - Visual Reference</a></li>
+    </ul>
+    </li>
+    <li><a href="#createorders"><strong>Create Orders</strong></a><ul>
+    <li><a href="#createordersvisual">Create Orders - Visual Reference</a></li>
+    </ul>
+    </li>
+    <li><a href="#searchorders"><strong>Search Orders</strong></a><ul>
+    <li><a href="#searchordersvisual">Search Orders - Visual Reference</a></li>
+    </ul>
+    </li>
+    <li><a href="#vehiclemanager"><strong>Vehicle Manager</strong></a><ul>
+    <li><a href="#vehiclemanagervisual">Vehicle Manager - Visual Reference</a></li>
+    </ul>
+    </li>
+    </ul>
+    <p><a id="welcome"></a></p>
+    <h2 id="welcome-to-virtual-adil-">Welcome to Virtual Adil!</h2>
+    <p><strong>Virtual Adil</strong> is a software program created by DaphAdil Consulting for keeping track of a shipping company&#39;s clients and work orders. This help page will provide you with instructions on how to use the various components of the software and diagrams showing the function of certain components.</p>
+    <p><a href="#top">Return to Table of Contents</a></p>
+    <p><a id="homepage"></a></p>
+    <h2 id="home-page">Home Page</h2>
+    <p>This is the first page the user will see when they launch the application, sometimes known as a <em>splash screen</em>. This page simply acts as a welcoming graphic for the user, and a notification that it is ready to use. To start using Virtual Adil, click on one of the other tabs at the top of the application window. </p>
+    <p><img src="home.jpg" alt="homepage"></p>
+    <p><a href="#top">Return to Table of Contents</a></p>
+    <p><a id="managecustomers"></a></p>
+    <h2 id="manage-customers">Manage Customers</h2>
+    <p><img src="managecustomer.jpg" alt="managecustomer-visual"></p>
+    <p>The <strong>Manage Customers</strong> tab is where new customers are added to the Customer table. The user can also use this window to make changes to existing customer records. The left side of the window allows the user to interact with each field of data, while the right side displays a list of existing records in the Virtual Adil database, along with controls that allow the user to sort and search the fields.</p>
+    <blockquote>
+    <p><strong>Note: Database Terms</strong> <br>A full customer entry (including name, address, phone number, etc.) is referred to as a <strong>record</strong> in this document. <br>A single bit of information (like Zip Code) is called a <strong>field</strong>. A full customer <strong>record</strong> is made up of ten <strong>fields</strong>. <br>All of the <strong>records</strong> combined make up the full Customer <strong>table</strong>, which, like the Orders <strong>table</strong>, is part of the Virtual Adil <strong>database</strong>.</p>
+    </blockquote>
+    <h3 id="to-add-a-new-customer-">To Add a New Customer:</h3>
+    <ol>
+    <li>Click the <strong>Add New Customer</strong> button to unlock the customer information fields for data entry.</li>
+    <li>Fill in all of the fields.</li>
+    <li>Hit the Save button to lock in your changes. Your new customer will immediately be entered into the database. </li>
+    </ol>
+    <p>If the customer information is not immediately visible in the Table View, you can use the Search feature at the top of the window to find it and confirm that it has been entered <em>(read more about Search <a href="#searchingcustomers">below</a>).</em></p>
+    <h3 id="to-edit-an-existing-customer-">To Edit an Existing Customer:</h3>
+    <ol>
+    <li>Select the record (row) you wish to edit in the Table View on the right side of the window.</li>
+    <li>Click the Edit Customer button to unlock the customer information fields for editing.</li>
+    <li>Change any field you wish.</li>
+    <li>Hit the Save button to lock in your changes. The customer record will be updated to reflect your changes.</li>
+    </ol>
+    <p><a id="searchingcustomers"></a></p>
+    <h3 id="to-search-for-an-existing-customer-">To Search for an Existing Customer:</h3>
+    <ol>
+    <li>Simply type in the <strong>Search</strong> box. You will search in all fields for the information typed. Matches will be displayed in the Table View in the lower right.</li>
+    </ol>
+    <blockquote>
+    <p><strong>Note</strong>: See the Visual Reference below for a description of each element in this tab.</p>
+    </blockquote>
+    <p><a href="#top">Return to Table of Contents</a></p>
+    <p><a id="managecustomersvisual"></a></p>
+    <h2 id="manage-customers-visual-reference">Manage Customers - Visual Reference</h2>
+    <p><img src="managecustomer-visual.jpg" alt="managecustomer-visual"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Number</th>
+    <th>Field Name</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>1</strong></td>
+    <td><strong>First Name</strong></td>
+    <td>Customer&#39;s first name</td>
+    </tr>
+    <tr>
+    <td><strong>2</strong></td>
+    <td><strong>Last Name</strong></td>
+    <td>Customer&#39;s last name</td>
+    </tr>
+    <tr>
+    <td><strong>3</strong></td>
+    <td><strong>Phone #</strong></td>
+    <td><strong>Must be 10 digits.</strong> Stores a phone number for contact info.</td>
+    </tr>
+    <tr>
+    <td><strong>4</strong></td>
+    <td><strong>Email</strong></td>
+    <td><strong>Must have proper form.</strong>  Stores the customer email. Email cannot be entered without an &quot;@&quot; sign and &quot;.&quot; in the proper place.</td>
+    </tr>
+    <tr>
+    <td><strong>5</strong></td>
+    <td><strong>Company</strong></td>
+    <td>Company the customer represents</td>
+    </tr>
+    <tr>
+    <td><strong>6</strong></td>
+    <td><strong>Address</strong></td>
+    <td>Street Address of the customer, used for billing</td>
+    </tr>
+    <tr>
+    <td><strong>7</strong></td>
+    <td><strong>City</strong></td>
+    <td>City where the customer is located</td>
+    </tr>
+    <tr>
+    <td><strong>8</strong></td>
+    <td><strong>State</strong></td>
+    <td>State where the customer is located</td>
+    </tr>
+    <tr>
+    <td><strong>9</strong></td>
+    <td><strong>Zip Code</strong></td>
+    <td>Customer&#39;s ZIP Code</td>
+    </tr>
+    <tr>
+    <td><strong>10</strong></td>
+    <td><strong>Broker Yes/No?</strong></td>
+    <td>Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed.</td>
+    </tr>
+    <tr>
+    <td><strong>11</strong></td>
+    <td><strong>Add New Customer button</strong></td>
+    <td>This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive.</td>
+    </tr>
+    <tr>
+    <td><strong>12</strong></td>
+    <td><strong>Edit Customer button</strong></td>
+    <td><strong>Select a record before pressing this button.</strong> This button will give the user access to edit the currently selected record in the Table View.</td>
+    </tr>
+    <tr>
+    <td><strong>13</strong></td>
+    <td><strong>Save Button</strong></td>
+    <td>The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.</td>
+    </tr>
+    <tr>
+    <td><strong>14</strong></td>
+    <td><strong>Cancel Button</strong></td>
+    <td>The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged.</td>
+    </tr>
+    <tr>
+    <td><strong>15</strong></td>
+    <td><strong>Search Box</strong></td>
+    <td>Use the Search box to find customers. You can search by a word in any field. <strong>You can also sort the Customers by field by clicking on the column headers.</strong></td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- | **16** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+    | **17** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. | -->
+    <p><a href="#top">Return to Table of Contents</a>
+    <a id="createorders"></a></p>
+    <h2 id="create-orders">Create Orders</h2>
+    <p><img src="createorder.jpg" alt="managecustomer-visual"></p>
+    <p>The <strong>Create Orders</strong> tab is where new orders are added to the Orders table. <br>Across the top is customer information, which can be pulled in by selecting a customer in the dropdown menu in the far upper left. <br>Pickup and Dropoff Information specify the address information for the work order&#39;s origin and destination, and can be quickly filled out by using the Copy Customer Data control. <br>Booking Date keeps track of the date the order was received, and Pickup/Delivery Date reflect the date of pickup and dropoff. All three dates must be in the proper order (dropoff date cannot be before pickup date, for example). <br>Description and Special Instructions in the lower right are for any notes the user would like to add to the order. <br>Finally, the Order Status allows the user to flag a job as Pending, In Transit, Delayed, Complete, or Cancelled. The user can then use the Search Orders tab to search for orders by this status (for example, list all jobs that are Complete).</p>
+    <blockquote>
+    <p><strong>Note: Database Terms</strong> <br>A full work order entry (including pickup, dropoff, status, etc.) is referred to as a <strong>record</strong> in this document. <br>A single bit of information (like Booking Date) is called a <strong>field</strong>. A full work order <strong>record</strong> is made up of fifteen <strong>fields</strong>. <br>All of the <strong>records</strong> combined make up the full Orders <strong>table</strong>, which, like the Customers <strong>table</strong>, is part of the Virtual Adil <strong>database</strong>.</p>
+    </blockquote>
+    <h3 id="to-create-a-new-order">To Create a New Order</h3>
+    <p>Once the customer information has been pulled in, it fills the top two rows of fields. This information can be edited here for use in the next step. </p>
+    <ol>
+    <li>Use the customer dropdown menu in the upper left to select a customer. <strong>Customers must be created in the Manage Customers tab before their information can be pulled into a Work Order.</strong></li>
+    <li>Make any necessary edits to the fields if there are changes specific to this work order. (Permanent edits to customer records can be performed in the <strong>Manage Customer</strong> tab.)</li>
+    <li>Fill out the Pickup Information section with the address of the pickup location. Clicking &quot;Copy Customer Data&quot; will pull the information in the fields at the top into these fields.</li>
+    <li>Repeat Step 3 for the Dropoff Information section. You can change the customer listed at the top between Steps 3 and 4 to pull in different information.</li>
+    <li>Specify the Booking, Pickup, and Delivery dates. Dates are checked to make sure they are in chronological order.</li>
+    <li>Fill out Description and Special Instructions if desired; then choose an Order Status.</li>
+    <li>Hit Save Order to save the order into the database.</li>
+    </ol>
+    <p>At any time, you can hit Cancel to discard your changes and leave the database unchanged.</p>
+    <p><a href="#top">Return to Table of Contents</a>
+    <a id="createordersvisual"></a></p>
+    <h2 id="create-orders-visual-reference">Create Orders - Visual Reference</h2>
+    <p><img src="createorder-visual.jpg" alt="createorder-visual"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Number</th>
+    <th>Field Name</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>1</strong></td>
+    <td><strong>Customer</strong></td>
+    <td>Customer&#39;s name. Also pulls in corresponding data from the Customer table.</td>
+    </tr>
+    <tr>
+    <td><strong>2</strong></td>
+    <td><strong>Company</strong></td>
+    <td>Customer&#39;s company name.</td>
+    </tr>
+    <tr>
+    <td><strong>3</strong></td>
+    <td><strong>Phone</strong></td>
+    <td><strong>Must be 10 digits.</strong> Stores a phone number for contact info.</td>
+    </tr>
+    <tr>
+    <td><strong>4</strong></td>
+    <td><strong>Email</strong></td>
+    <td><strong>Must have proper form.</strong>  Stores the customer email. Email cannot be entered without an &quot;@&quot; sign and &quot;.&quot; in the proper place.</td>
+    </tr>
+    <tr>
+    <td><strong>5</strong></td>
+    <td><strong>Invoice #</strong></td>
+    <td>Invoice # is a user-editable field for entering order or invoice numbers for instant reference.</td>
+    </tr>
+    <tr>
+    <td><strong>6</strong></td>
+    <td><strong>Address</strong></td>
+    <td>Street Address of the customer, used for billing</td>
+    </tr>
+    <tr>
+    <td><strong>7</strong></td>
+    <td><strong>City</strong></td>
+    <td>City where the customer is located</td>
+    </tr>
+    <tr>
+    <td><strong>8</strong></td>
+    <td><strong>State</strong></td>
+    <td>State where the customer is located</td>
+    </tr>
+    <tr>
+    <td><strong>9</strong></td>
+    <td><strong>Zip</strong></td>
+    <td>Customer&#39;s ZIP code</td>
+    </tr>
+    <tr>
+    <td><strong>10</strong></td>
+    <td><strong>Order #</strong></td>
+    <td>For database use only; do not edit</td>
+    </tr>
+    <tr>
+    <td><strong>11</strong></td>
+    <td><strong>Vehicle Used</strong></td>
+    <td>Specifies the vehicle used to complete the order.</td>
+    </tr>
+    <tr>
+    <td><strong>12-13</strong></td>
+    <td><strong>Copy Customer Data</strong></td>
+    <td><strong>Select a record before pressing this button.</strong> When clicked, this copies the address information from the top fields into either Pickup or Dropoff Information.</td>
+    </tr>
+    <tr>
+    <td><strong>14-15</strong></td>
+    <td><strong>Pickup/Delivery Address</strong></td>
+    <td>Origin and destination street addresses for the work order</td>
+    </tr>
+    <tr>
+    <td><strong>16-17</strong></td>
+    <td><strong>Pickup/Delivery City</strong></td>
+    <td>Origin and destination cities</td>
+    </tr>
+    <tr>
+    <td><strong>18-19</strong></td>
+    <td><strong>Pickup/Delivery State</strong></td>
+    <td>Origin and destination state</td>
+    </tr>
+    <tr>
+    <td><strong>20-21</strong></td>
+    <td><strong>Pickup/Delivery Zip</strong></td>
+    <td>Origin and destination ZIP</td>
+    </tr>
+    <tr>
+    <td><strong>22</strong></td>
+    <td><strong>Booking Date</strong></td>
+    <td>The date upon which the job was accepted</td>
+    </tr>
+    <tr>
+    <td><strong>23</strong></td>
+    <td><strong>Pickup Date</strong></td>
+    <td>The date when the shipment needs to be picked up</td>
+    </tr>
+    <tr>
+    <td><strong>24</strong></td>
+    <td><strong>Delivery Date</strong></td>
+    <td>The due date for shipment dropoff</td>
+    </tr>
+    <tr>
+    <td><strong>25</strong></td>
+    <td><strong>Order Status</strong></td>
+    <td>Allows the user to mark the work order as Pending, In Transit, Delayed, Complete, or Cancelled</td>
+    </tr>
+    <tr>
+    <td><strong>26</strong></td>
+    <td><strong>Create Order Button</strong></td>
+    <td>Initiates order creation and unlocks the Customer dropdown in the upper left to create a new order</td>
+    </tr>
+    <tr>
+    <td><strong>27</strong></td>
+    <td><strong>Save Order Button</strong></td>
+    <td>Saves the new work order to the database. Incomplete fields may stop this button from saving until the fields are filled out.</td>
+    </tr>
+    <tr>
+    <td><strong>28</strong></td>
+    <td><strong>Cancel Button</strong></td>
+    <td>Cancels order creation, making no changes to the database.</td>
+    </tr>
+    <tr>
+    <td><strong>29</strong></td>
+    <td><strong>Description Box</strong></td>
+    <td>Box for user-readable info about the cargo, or anything else.</td>
+    </tr>
+    <tr>
+    <td><strong>30</strong></td>
+    <td><strong>Special Instructions Box</strong></td>
+    <td>Box for user-readable special instructions concerning scheduling and directions for the work order.</td>
+    </tr>
+    </tbody>
+    </table>
+    <p><a href="#top">Return to Table of Contents</a>
+    <a id="searchorders"></a></p>
+    <h2 id="search-edit-orders">Search/Edit Orders</h2>
+    <p><img src="searcheditorders.jpg" alt="managecustomer-visual"></p>
+    <p>The Search/Edit Orders tab allows the user to search all created Work Orders and edit them if needed. To search an order, type any text into the <strong>Search Orders</strong> box and hit Enter. The matching records will be displayed below in the Table View. </p>
+    <h3 id="to-edit-a-record-">To Edit a Record:</h3>
+    <ol>
+    <li>Use <strong>Search</strong> to find the record you want to edit.</li>
+    <li>Click on it in the Table View and hit <strong>Edit Order</strong>.</li>
+    <li>Make the necessary edits.</li>
+    <li>Hit the Save Order button (in the same spot the Edit Order button was).</li>
+    </ol>
+    <p><a href="#top">Return to Table of Contents</a>
+    <a id="searchordersvisual"></a></p>
+    <h2 id="search-edit-orders-visual-reference">Search/Edit Orders - Visual Reference</h2>
+    <p><img src="searchorders-visual.jpg" alt="Home Page"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Number</th>
+    <th>Field Name</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>1</strong></td>
+    <td><strong>Booking Date</strong></td>
+    <td>The date that the job or work order was accepted by the user&#39;s organization.</td>
+    </tr>
+    <tr>
+    <td><strong>2</strong></td>
+    <td><strong>Pickup Date</strong></td>
+    <td>The date that the shipment must be picked up.</td>
+    </tr>
+    <tr>
+    <td><strong>3</strong></td>
+    <td><strong>Delivery Date</strong></td>
+    <td>The date by which the shipment must be delivered.</td>
+    </tr>
+    <tr>
+    <td><strong>4</strong></td>
+    <td><strong>Order #</strong></td>
+    <td><strong><em>Not Editable</em></strong>. Database number that refers to the Order in the database and cannot be changed.</td>
+    </tr>
+    <tr>
+    <td><strong>5</strong></td>
+    <td><strong>Customer ID</strong></td>
+    <td><strong><em>Not Editable</em></strong>. Database number that refers to the Customer in the database and cannot be changed.</td>
+    </tr>
+    <tr>
+    <td><strong>6</strong></td>
+    <td><strong>Vehicle Used</strong></td>
+    <td>The vehicle used to carry out the Work Order.</td>
+    </tr>
+    <tr>
+    <td><strong>7</strong></td>
+    <td><strong>Invoice #</strong></td>
+    <td>User-editable reference number for tracking each Work Order.</td>
+    </tr>
+    <tr>
+    <td><strong>8</strong></td>
+    <td><strong>Order Status</strong></td>
+    <td>Current status of the Work Order - Pending, In Transit, Delayed, Complete, or Cancelled.</td>
+    </tr>
+    <tr>
+    <td><strong>9</strong></td>
+    <td><strong>Customer</strong></td>
+    <td>Customer&#39;s full name associated with the Work Order.</td>
+    </tr>
+    <tr>
+    <td><strong>10</strong></td>
+    <td><strong>Pickup Address</strong></td>
+    <td>The address where the shipment will be picked up for the job.</td>
+    </tr>
+    <tr>
+    <td><strong>11</strong></td>
+    <td><strong>Pickup City</strong></td>
+    <td>The city where the shipment will be picked up.</td>
+    </tr>
+    <tr>
+    <td><strong>12</strong></td>
+    <td><strong>Pickup State</strong></td>
+    <td>The state in which the shipment will be picked up.</td>
+    </tr>
+    <tr>
+    <td><strong>13</strong></td>
+    <td><strong>Pickup Zip</strong></td>
+    <td>The ZIP Code of the shipment origin.</td>
+    </tr>
+    <tr>
+    <td><strong>14</strong></td>
+    <td><strong>Delivery Address</strong></td>
+    <td>The address where the shipment will be dropped off for the job.</td>
+    </tr>
+    <tr>
+    <td><strong>15</strong></td>
+    <td><strong>Delivery City</strong></td>
+    <td>The address where the shipment will be dropped off.</td>
+    </tr>
+    <tr>
+    <td><strong>16</strong></td>
+    <td><strong>Delivery State</strong></td>
+    <td>The state in which the shipment will be dropped off.</td>
+    </tr>
+    <tr>
+    <td><strong>17</strong></td>
+    <td><strong>Delivery Zip</strong></td>
+    <td>The ZIP Code of the shipment destination.</td>
+    </tr>
+    <tr>
+    <td><strong>18</strong></td>
+    <td><strong>Description Box</strong></td>
+    <td>User-editable field for any additional info such as cargo description or number of pieces.</td>
+    </tr>
+    <tr>
+    <td><strong>19</strong></td>
+    <td><strong>Special Instructions</strong></td>
+    <td>User-editable field for any special delivery instructions such as &quot;park in back&quot; or &quot;ask for Karen&quot;.</td>
+    </tr>
+    <tr>
+    <td><strong>20</strong></td>
+    <td><strong>Search Orders Box</strong></td>
+    <td>Type a word or phrase into this box to search the existing Work Orders for a match. <strong>You can also sort the Work Orders by field by clicking on the column headers.</strong></td>
+    </tr>
+    <tr>
+    <td><strong>21</strong></td>
+    <td><strong>Edit Order Button</strong></td>
+    <td>Click this button to unlock the fields to edit the currently selected record in the Table View.</td>
+    </tr>
+    </tbody>
+    </table>
+    <!-- | **22** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+    | **23** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. | -->
+    <p><a href="#top">Return to Table of Contents</a>
+    <a id="vehiclemanager"></a></p>
+    <h2 id="vehicle-manager">Vehicle Manager</h2>
+    <p><img src="vehiclemanager.jpg" alt="managecustomer-visual"></p>
+    <p>The Vehicle Manager allows the user to create and store records of vehicles the company owns. They can then be associated with Work Orders as needed.</p>
+    <h3 id="to-add-a-vehicle-">To Add a Vehicle:</h3>
+    <ol>
+    <li>Click the Add Vehicle button.</li>
+    <li>Enter the Vehicle name. This is the name that will be displayed when selecting a vehicle in the Create Orders and Search Orders tabs.</li>
+    <li>Type any additional information in the Vehicle Notes field.</li>
+    <li>Hit the Save button when finished.</li>
+    </ol>
+    <h3 id="to-edit-a-vehicle-">To Edit a Vehicle:</h3>
+    <ol>
+    <li>Select the vehicle in the Table View on the left.</li>
+    <li>Hit the Edit button and make your changes.</li>
+    <li>Hit the Save button when finished.</li>
+    </ol>
+    <p><a href="#top">Return to Table of Contents</a>
+    <a id="vehiclemanagervisual"></a></p>
+    <h2 id="vehicle-manager-visual-reference">Vehicle Manager - Visual Reference</h2>
+    <p><img src="vehiclemanager-visual.jpg" alt="Home Page"></p>
+    <table>
+    <thead>
+    <tr>
+    <th>Number</th>
+    <th>Field Name</th>
+    <th>Purpose</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><strong>1</strong></td>
+    <td><strong>Add Vehicle Button</strong></td>
+    <td>Customer&#39;s first name</td>
+    </tr>
+    <tr>
+    <td><strong>2</strong></td>
+    <td><strong>Save Button</strong></td>
+    <td>Customer&#39;s last name</td>
+    </tr>
+    <tr>
+    <td><strong>3</strong></td>
+    <td><strong>Cancel Button</strong></td>
+    <td><strong>Must be 9 digits.</strong> Stores a phone number for contact info.</td>
+    </tr>
+    <tr>
+    <td><strong>4</strong></td>
+    <td><strong>Edit Button</strong></td>
+    <td><strong>Must have proper form.</strong>  Stores the customer email. Email cannot be entered without an &quot;@&quot; sign and &quot;.&quot; in the proper place.</td>
+    </tr>
+    <tr>
+    <td><strong>5</strong></td>
+    <td><strong>Table View</strong></td>
+    <td>List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results.</td>
+    </tr>
+    <tr>
+    <td><strong>6</strong></td>
+    <td><strong>Help Button</strong></td>
+    <td>Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked.</td>
+    </tr>
+    </tbody>
+    </table>
+    <p><a href="#top">Return to Table of Contents</a></p>
+    
 </body>
 </html>>

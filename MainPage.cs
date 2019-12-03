@@ -1133,7 +1133,7 @@ namespace WindowsFormsApp3
         private void btn_EditOrder_Click(object sender, EventArgs e)
         {
             txtbox_InvoiceIdEdit.ReadOnly = true;
-            dateTimePicker_BookingDateEdit.Enabled = true;
+            //dateTimePicker_BookingDateEdit.Enabled = true;
             dateTimePicker_PickUpDateEdit.Enabled = true;
             dateTimePicker_DeliveryDateEdit.Enabled = true;
             comboBox_OrderStatusEdit.Enabled = true;
@@ -1272,14 +1272,14 @@ namespace WindowsFormsApp3
             }
 
             //successfull entry to the database
-            if (!noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickAdd && !noDropDate && !noCust)
+            if (!noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickDate && !noDropDate && !noCust)
             {
                                 
                 iNVOICEBindingSource.EndEdit();        
                 iNVOICETableAdapter.Update(appData.INVOICE);
                 btn_EditOrder.Visible = true;
                 btn_SaveOrderEdit.Visible = false;
-                dateTimePicker_BookingDateEdit.Enabled = false;
+                //dateTimePicker_BookingDateEdit.Enabled = false;
                 dateTimePicker_PickUpDateEdit.Enabled = false;
                 dateTimePicker_DeliveryDateEdit.Enabled = false;
                 comboBox_OrderStatusEdit.Enabled = false;

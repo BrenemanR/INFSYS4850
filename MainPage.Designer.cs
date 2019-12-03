@@ -2135,7 +2135,7 @@ namespace WindowsFormsApp3
             this.txtboxCustomerIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "CUST_ID", true));
             this.txtboxCustomerIdEdit.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxCustomerIdEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(116, 77);
+            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(114, 79);
             this.txtboxCustomerIdEdit.Name = "txtboxCustomerIdEdit";
             this.txtboxCustomerIdEdit.ReadOnly = true;
             this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(57, 26);
@@ -2146,7 +2146,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerIdEdit.AutoSize = true;
             this.lbl_CustomerIdEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerIdEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(14, 79);
+            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(12, 82);
             this.lbl_CustomerIdEdit.Name = "lbl_CustomerIdEdit";
             this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(96, 19);
             this.lbl_CustomerIdEdit.TabIndex = 11;

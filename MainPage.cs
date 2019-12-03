@@ -15,6 +15,7 @@ namespace WindowsFormsApp3
     public partial class MainPage : Form
     {
         bool isSaved = true;
+        bool editCustomer = false;
                 
         public MainPage()
         {
@@ -70,6 +71,7 @@ namespace WindowsFormsApp3
             btnCancel.Enabled = true;
             SearchBox.Enabled = false;
             btnSave.Enabled = true;
+            editCustomer = false;
             
             //radButt_No.Checked = true;
             try
@@ -128,16 +130,19 @@ namespace WindowsFormsApp3
             dataGridView1.Enabled = false;
             FirstNameBox.Focus();
             isSaved = false;
+            btnEdit.Enabled = false;
+            editCustomer = true;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (btnEdit.Enabled == true)
+            if (editCustomer == true)
             {
                 btnEdit.Enabled = true; //Reenables the Edit Button After a new record is cancelled.
                 btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
                 btnSave.Enabled = false; //Disables the Save Button After an edit is cancelled.
                 btnCancel.Enabled = false; //Disables the Cancel Button After an edit is cancelled.
+                editCustomer = false;
                 //panel1.Enabled = false;
                 FirstNameBox.ReadOnly = true;
                 LastNameBox.ReadOnly = true;
@@ -164,7 +169,7 @@ namespace WindowsFormsApp3
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
             }
-            if (btnEdit.Enabled == false)
+            else //(editCustomer == false)
             {
                 btnEdit.Enabled = true; //Reenables the Edit Button After a new record is cancelled.
                 btnNew.Enabled = true;  //Reenables the New Button After an edit is cancelled.
@@ -182,6 +187,7 @@ namespace WindowsFormsApp3
                 ZipBox.ReadOnly = true;
                 dataGridView1.Enabled = true;
                 SearchBox.Enabled = true;
+                editCustomer = false;
                 //SearchBox.Text = "";
                 cUSTOMERBindingSource.CancelEdit();
                 cUSTOMERBindingSource.RemoveCurrent();

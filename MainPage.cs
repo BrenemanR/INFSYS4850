@@ -1277,6 +1277,7 @@ namespace WindowsFormsApp3
                                 
                 iNVOICEBindingSource.EndEdit();        
                 iNVOICETableAdapter.Update(appData.INVOICE);
+                
                 btn_EditOrder.Visible = true;
                 btn_SaveOrderEdit.Visible = false;
                 //dateTimePicker_BookingDateEdit.Enabled = false;

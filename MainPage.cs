@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace WindowsFormsApp3
 {
@@ -1395,25 +1396,36 @@ namespace WindowsFormsApp3
             }
             
         }
-
+        //String helpPath2 = ;
+        String helpPath = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents") + "\\GitHub\\INFSYS4850\\Resources\\Help\\";
+        //String helpPath = "C:\\Users\\magic_000\\Documents\\GitHub\\INFSYS4850\\Resources\\Help\\";
         private void btn_Help1_Click(object sender, EventArgs e)
         {
             tab_Container.SelectedTab = tab_Help;
+            webBrowser1.Url = new System.Uri(helpPath + "test.html#managecustomers", System.UriKind.Absolute);
+            
         }
 
         private void btn_Help2_Click(object sender, EventArgs e)
         {
             tab_Container.SelectedTab = tab_Help;
+            webBrowser1.Url = new System.Uri(helpPath + "test.html#createorders", System.UriKind.Absolute);
+
         }
 
         private void btn_Help3_Click(object sender, EventArgs e)
         {
             tab_Container.SelectedTab = tab_Help;
+            
+            webBrowser1.Url = new System.Uri(helpPath + "test.html#searchorders", System.UriKind.Absolute);
+            
         }
 
         private void btn_Help4_Click(object sender, EventArgs e)
         {
             tab_Container.SelectedTab = tab_Help;
+            webBrowser1.Url = new System.Uri(helpPath + "test.html#vehiclemanager", System.UriKind.Absolute);
+
         }
     }
 }

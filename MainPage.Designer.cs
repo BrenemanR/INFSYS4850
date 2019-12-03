@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.btn_Help2 = new System.Windows.Forms.Button();
             this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
             this.iNVOICEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appData = new WindowsFormsApp3.AppData();
@@ -96,6 +97,7 @@
             this.lbl_PickupAddress = new System.Windows.Forms.Label();
             this.lbl_PickupInfo = new System.Windows.Forms.Label();
             this.tab_ManageCustomers = new System.Windows.Forms.TabPage();
+            this.btn_Help1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +139,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtbox_FLNAME = new System.Windows.Forms.TextBox();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.btn_Help3 = new System.Windows.Forms.Button();
             this.lbl_CustomerEdit = new System.Windows.Forms.Label();
             this.comboBox_CUSTFLNAMEBOX = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -201,6 +204,7 @@
             this.lbl_Home = new System.Windows.Forms.Label();
             this.tab_Container = new System.Windows.Forms.TabControl();
             this.VehicleManager = new System.Windows.Forms.TabPage();
+            this.btn_Help4 = new System.Windows.Forms.Button();
             this.panel_VehicleTab = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -208,6 +212,9 @@
             this.txtboxrch_VehicleNotes = new System.Windows.Forms.RichTextBox();
             this.btn_EditVehicle = new System.Windows.Forms.Button();
             this.dataGridViewVehicle = new System.Windows.Forms.DataGridView();
+            this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLENOTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_CancelVehicle = new System.Windows.Forms.Button();
             this.btn_AddVehicle = new System.Windows.Forms.Button();
             this.btn_SaveVehicle = new System.Windows.Forms.Button();
@@ -219,13 +226,6 @@
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLENOTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Help1 = new System.Windows.Forms.Button();
-            this.btn_Help3 = new System.Windows.Forms.Button();
-            this.btn_Help2 = new System.Windows.Forms.Button();
-            this.btn_Help4 = new System.Windows.Forms.Button();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -303,6 +303,22 @@
             tab_CreateOrder.Size = new System.Drawing.Size(1107, 546);
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
+            // 
+            // btn_Help2
+            // 
+            this.btn_Help2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help2.FlatAppearance.BorderSize = 2;
+            this.btn_Help2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help2.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help2.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help2.Name = "btn_Help2";
+            this.btn_Help2.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help2.TabIndex = 77;
+            this.btn_Help2.Text = "Help";
+            this.btn_Help2.UseVisualStyleBackColor = false;
+            this.btn_Help2.Click += new System.EventHandler(this.btn_Help2_Click);
             // 
             // DropOffDatePicker
             // 
@@ -1061,6 +1077,22 @@
             this.tab_ManageCustomers.TabIndex = 1;
             this.tab_ManageCustomers.Text = "Manage Customers";
             // 
+            // btn_Help1
+            // 
+            this.btn_Help1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help1.FlatAppearance.BorderSize = 2;
+            this.btn_Help1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help1.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help1.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help1.Name = "btn_Help1";
+            this.btn_Help1.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help1.TabIndex = 20;
+            this.btn_Help1.Text = "Help";
+            this.btn_Help1.UseVisualStyleBackColor = false;
+            this.btn_Help1.Click += new System.EventHandler(this.btn_Help1_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -1625,6 +1657,22 @@
             this.tab_SearchOrders.Size = new System.Drawing.Size(1107, 546);
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search Orders";
+            // 
+            // btn_Help3
+            // 
+            this.btn_Help3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help3.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help3.FlatAppearance.BorderSize = 2;
+            this.btn_Help3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help3.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help3.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help3.Name = "btn_Help3";
+            this.btn_Help3.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help3.TabIndex = 76;
+            this.btn_Help3.Text = "Help";
+            this.btn_Help3.UseVisualStyleBackColor = false;
+            this.btn_Help3.Click += new System.EventHandler(this.btn_Help3_Click);
             // 
             // lbl_CustomerEdit
             // 
@@ -2393,6 +2441,22 @@
             this.VehicleManager.TabIndex = 6;
             this.VehicleManager.Text = "Vehicle Manager";
             // 
+            // btn_Help4
+            // 
+            this.btn_Help4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Help4.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_Help4.FlatAppearance.BorderSize = 2;
+            this.btn_Help4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Help4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Help4.ForeColor = System.Drawing.Color.LightCoral;
+            this.btn_Help4.Location = new System.Drawing.Point(1012, 4);
+            this.btn_Help4.Name = "btn_Help4";
+            this.btn_Help4.Size = new System.Drawing.Size(89, 31);
+            this.btn_Help4.TabIndex = 77;
+            this.btn_Help4.Text = "Help";
+            this.btn_Help4.UseVisualStyleBackColor = false;
+            this.btn_Help4.Click += new System.EventHandler(this.btn_Help4_Click);
+            // 
             // panel_VehicleTab
             // 
             this.panel_VehicleTab.Controls.Add(this.label4);
@@ -2475,6 +2539,33 @@
             this.dataGridViewVehicle.Size = new System.Drawing.Size(658, 253);
             this.dataGridViewVehicle.TabIndex = 7;
             // 
+            // vEHICLEIDDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLEIDDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_ID";
+            this.vEHICLEIDDataGridViewTextBoxColumn.HeaderText = "VEHICLE_ID";
+            this.vEHICLEIDDataGridViewTextBoxColumn.Name = "vEHICLEIDDataGridViewTextBoxColumn";
+            this.vEHICLEIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // vEHICLENAMEDataGridViewTextBoxColumn
+            // 
+            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
+            // 
+            // vEHICLENOTESDataGridViewTextBoxColumn
+            // 
+            this.vEHICLENOTESDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NOTES";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NOTES";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Name = "vEHICLENOTESDataGridViewTextBoxColumn";
+            this.vEHICLENOTESDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENOTESDataGridViewTextBoxColumn.Visible = false;
+            // 
             // btn_CancelVehicle
             // 
             this.btn_CancelVehicle.Enabled = false;
@@ -2530,7 +2621,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1101, 540);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("http://google.com", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("C:\\Users\\magic_000\\Documents\\GitHub\\INFSYS4850\\Resources\\Help\\test.html", System.UriKind.Absolute);
             // 
             // cUSTOMERTableAdapter
             // 
@@ -2557,99 +2648,6 @@
             // vEHICLETableAdapter
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
-            // 
-            // vEHICLEIDDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLEIDDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.HeaderText = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.Name = "vEHICLEIDDataGridViewTextBoxColumn";
-            this.vEHICLEIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEIDDataGridViewTextBoxColumn.Visible = false;
-            this.vEHICLEIDDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // vEHICLENAMEDataGridViewTextBoxColumn
-            // 
-            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
-            // 
-            // vEHICLENOTESDataGridViewTextBoxColumn
-            // 
-            this.vEHICLENOTESDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENOTESDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NOTES";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NOTES";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.Name = "vEHICLENOTESDataGridViewTextBoxColumn";
-            this.vEHICLENOTESDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENOTESDataGridViewTextBoxColumn.Visible = false;
-            this.vEHICLENOTESDataGridViewTextBoxColumn.Width = 141;
-            // 
-            // btn_Help1
-            // 
-            this.btn_Help1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Help1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btn_Help1.FlatAppearance.BorderSize = 2;
-            this.btn_Help1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Help1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Help1.ForeColor = System.Drawing.Color.LightCoral;
-            this.btn_Help1.Location = new System.Drawing.Point(1012, 4);
-            this.btn_Help1.Name = "btn_Help1";
-            this.btn_Help1.Size = new System.Drawing.Size(89, 31);
-            this.btn_Help1.TabIndex = 20;
-            this.btn_Help1.Text = "Help";
-            this.btn_Help1.UseVisualStyleBackColor = false;
-            this.btn_Help1.Click += new System.EventHandler(this.btn_Help1_Click);
-            // 
-            // btn_Help3
-            // 
-            this.btn_Help3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Help3.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btn_Help3.FlatAppearance.BorderSize = 2;
-            this.btn_Help3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Help3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Help3.ForeColor = System.Drawing.Color.LightCoral;
-            this.btn_Help3.Location = new System.Drawing.Point(1012, 4);
-            this.btn_Help3.Name = "btn_Help3";
-            this.btn_Help3.Size = new System.Drawing.Size(89, 31);
-            this.btn_Help3.TabIndex = 76;
-            this.btn_Help3.Text = "Help";
-            this.btn_Help3.UseVisualStyleBackColor = false;
-            this.btn_Help3.Click += new System.EventHandler(this.btn_Help3_Click);
-            // 
-            // btn_Help2
-            // 
-            this.btn_Help2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Help2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btn_Help2.FlatAppearance.BorderSize = 2;
-            this.btn_Help2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Help2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Help2.ForeColor = System.Drawing.Color.LightCoral;
-            this.btn_Help2.Location = new System.Drawing.Point(1012, 4);
-            this.btn_Help2.Name = "btn_Help2";
-            this.btn_Help2.Size = new System.Drawing.Size(89, 31);
-            this.btn_Help2.TabIndex = 77;
-            this.btn_Help2.Text = "Help";
-            this.btn_Help2.UseVisualStyleBackColor = false;
-            this.btn_Help2.Click += new System.EventHandler(this.btn_Help2_Click);
-            // 
-            // btn_Help4
-            // 
-            this.btn_Help4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Help4.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btn_Help4.FlatAppearance.BorderSize = 2;
-            this.btn_Help4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Help4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Help4.ForeColor = System.Drawing.Color.LightCoral;
-            this.btn_Help4.Location = new System.Drawing.Point(1012, 4);
-            this.btn_Help4.Name = "btn_Help4";
-            this.btn_Help4.Size = new System.Drawing.Size(89, 31);
-            this.btn_Help4.TabIndex = 77;
-            this.btn_Help4.Text = "Help";
-            this.btn_Help4.UseVisualStyleBackColor = false;
-            this.btn_Help4.Click += new System.EventHandler(this.btn_Help4_Click);
             // 
             // MainPage
             // 

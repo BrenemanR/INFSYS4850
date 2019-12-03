@@ -221,7 +221,6 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     FirstNameLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    
                     noFName = true;
                 }                              
                 if (string.IsNullOrEmpty(LastNameBox.Text))
@@ -229,7 +228,6 @@ namespace WindowsFormsApp3
                     lbl_RequiredField.Visible = true;
                     LastNameLabel.ForeColor = System.Drawing.Color.LightCoral;
                     btnNew.Enabled = false;
-                    
                     noLName = true;
                 }
                 if (string.IsNullOrEmpty(EmailBox.Text)) //Checks to see if the email address field is blank
@@ -983,7 +981,7 @@ namespace WindowsFormsApp3
                                 r.DROPOFF_DATE.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.CUST_ID.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.ORDER_STATUS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.ORDER_STATUS.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.ORDER_STATUS.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_ADDRESS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.PICKUP_ADDRESS.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_CITY.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
@@ -998,12 +996,16 @@ namespace WindowsFormsApp3
                                 r.DELIVERY_STATE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
-                                r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text) ||
-                                r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.SPECIAL_INSTRUCTIONS.Contains(txtbox_OrderSearchBox.Text) ||
+                                r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.DESCRIPTION.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.VEHICLE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.VEHICLE.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.ORDER_NUM.Equals(txtbox_OrderSearchBox.Text) ||
-                                r.CUST_FLNAME.Contains(txtbox_OrderSearchBox.Text) ||
-                                r.CUST_FLNAME.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase)
+                                r.CUST_FLNAME.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.CUST_FLNAME.Contains(txtbox_OrderSearchBox.Text)
+                                
                                 select r;
                     iNVOICEBindingSource.DataSource = query.ToList();
                 }

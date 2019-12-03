@@ -2480,7 +2480,7 @@ namespace WindowsFormsApp3
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1101, 540);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("C:\\Users\\magic_000\\Documents\\GitHub\\INFSYS4850\\Resources\\Help\\test.html", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri(Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents") + "\\GitHub\\INFSYS4850\\Resources\\Help\\test.html", System.UriKind.Absolute);
             // 
             // cUSTOMERTableAdapter
             // 

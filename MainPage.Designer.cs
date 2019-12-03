@@ -110,7 +110,7 @@
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox_Broker = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_Broker = new System.Windows.Forms.Label();
             this.lbl_RequiredField = new System.Windows.Forms.Label();
             this.ZipLabel = new System.Windows.Forms.Label();
             this.ZipBox = new System.Windows.Forms.TextBox();
@@ -1197,7 +1197,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.comboBox_Broker);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lbl_Broker);
             this.panel1.Controls.Add(this.lbl_RequiredField);
             this.panel1.Controls.Add(this.ZipLabel);
             this.panel1.Controls.Add(this.ZipBox);
@@ -1235,27 +1235,27 @@
             this.comboBox_Broker.Size = new System.Drawing.Size(121, 27);
             this.comboBox_Broker.TabIndex = 25;
             // 
-            // label3
+            // lbl_Broker
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(13, 268);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 19);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Is this a Broker?";
+            this.lbl_Broker.AutoSize = true;
+            this.lbl_Broker.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_Broker.Location = new System.Drawing.Point(13, 268);
+            this.lbl_Broker.Name = "lbl_Broker";
+            this.lbl_Broker.Size = new System.Drawing.Size(117, 19);
+            this.lbl_Broker.TabIndex = 24;
+            this.lbl_Broker.Text = "Is this a Broker?";
             // 
             // lbl_RequiredField
             // 
             this.lbl_RequiredField.AutoSize = true;
             this.lbl_RequiredField.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RequiredField.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 296);
+            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 299);
             this.lbl_RequiredField.Name = "lbl_RequiredField";
-            this.lbl_RequiredField.Size = new System.Drawing.Size(216, 19);
+            this.lbl_RequiredField.Size = new System.Drawing.Size(113, 19);
             this.lbl_RequiredField.TabIndex = 20;
-            this.lbl_RequiredField.Text = "*Please fill in the required fields";
+            this.lbl_RequiredField.Text = "*Required fields";
             this.lbl_RequiredField.Visible = false;
             // 
             // ZipLabel
@@ -2440,7 +2440,6 @@
             // 
             // btn_EditVehicle
             // 
-            this.btn_EditVehicle.Enabled = false;
             this.btn_EditVehicle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditVehicle.Location = new System.Drawing.Point(517, 16);
             this.btn_EditVehicle.Name = "btn_EditVehicle";
@@ -2760,7 +2759,7 @@
         private System.Windows.Forms.ComboBox comboBox_Status;
         private System.Windows.Forms.TextBox txtBox_InvoiceNumber;
         private System.Windows.Forms.Label lbl_Invoice;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_Broker;
         private System.Windows.Forms.ComboBox comboBox_Vehicle;
         private System.Windows.Forms.Label lbl_Vehicle;
         private System.Windows.Forms.ComboBox comboBox_OrderStatusEdit;

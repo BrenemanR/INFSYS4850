@@ -201,7 +201,7 @@ namespace WindowsFormsApp3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false;
+            bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false, noBroke = false;
             try
             {
                 FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
@@ -213,139 +213,136 @@ namespace WindowsFormsApp3
                 CityLabel.ForeColor = System.Drawing.Color.LightGray;
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
-                
-                
+                lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
+                btnNew.Enabled = false;
+
+
                 if (string.IsNullOrEmpty(FirstNameBox.Text))
                 {
-                    //MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lbl_RequiredField.Visible = true;
                     FirstNameLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
                     noFName = true;
                 }                              
                 if (string.IsNullOrEmpty(LastNameBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
                     LastNameLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
                     noLName = true;
                 }
                 if (string.IsNullOrEmpty(EmailBox.Text)) //Checks to see if the email address field is blank
                 {
-                    //MessageBox.Show(EmailBox.Text, "Email Address cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     lbl_RequiredField.Visible = true;
                     EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
-                    
                     noEmail = true;
                 }
                 if (string.IsNullOrEmpty(PhoneNumberBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
                     PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
-                    
                     noPhone = true;
                 }
                 if (string.IsNullOrEmpty(CompanyBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
-                    CompanyLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
-                    
+                    CompanyLabel.ForeColor = System.Drawing.Color.LightCoral; 
                     noCompany = true;
                 }
                 if (string.IsNullOrEmpty(AddressBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
                     AddressLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
-                    
                     noAddress = true;
                 }
                 if (string.IsNullOrEmpty(CityBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
                     CityLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
-                    
                     noCity = true;
                 }
                 if (string.IsNullOrEmpty(StateBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
                     StateLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
-                    
                     noState = true;
                 }
                 if (string.IsNullOrEmpty(ZipBox.Text))
                 {
                     lbl_RequiredField.Visible = true;
                     ZipLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    btnNew.Enabled = false;
-                    
                     noZip = true;
                 }
-                if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
+                if (string.IsNullOrEmpty(comboBox_Broker.Text))
                 {
-                    MessageBox.Show(PhoneNumberBox.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
-                    btnNew.Enabled = false;
-                    
-                    noPhone = true;
-
+                    lbl_Broker.ForeColor = System.Drawing.Color.LightCoral;
+                    noBroke = true;
                 }
-                if (!Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
+                if (!noFName && !noLName && !noPhone && !noEmail && !noCompany && !noAddress && !noCity && !noState && !noZip &&!noBroke)
                 {
-                    MessageBox.Show(EmailBox.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
-                    lbl_RequiredField.Visible = true;
-                    btnNew.Enabled = false;
-                    noEmail = true;
+                    if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
+                    {
+                        PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
+                        lbl_RequiredField.Visible = true;
+                        noPhone = true;
+
+                    }
+                    if (!Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
+                    {
+                        EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
+                        lbl_RequiredField.Visible = true;
+                        noEmail = true;
+                    }
+                    if (!noPhone && !noEmail)
+                    {
+                        cUSTOMERBindingSource.EndEdit();
+                        cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
+                                                    StateBox.Text, EmailBox.Text, PhoneNumberBox.Text, ZipBox.Text, comboBox_Broker.Text,
+                                                    txtbox_FLNAME.Text);
+
+                        lbl_RequiredField.Visible = false;
+                        btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
+                        btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
+                                                //panel1.Enabled = false;
+                        FirstNameBox.ReadOnly = true;
+                        LastNameBox.ReadOnly = true;
+                        EmailBox.ReadOnly = true;
+                        PhoneNumberBox.ReadOnly = true;
+                        CompanyBox.ReadOnly = true;
+                        AddressBox.ReadOnly = true;
+                        CityBox.ReadOnly = true;
+                        StateBox.ReadOnly = true;
+                        ZipBox.ReadOnly = true;
+                        dataGridView1.Enabled = true;
+                        SearchBox.Enabled = true;
+                        isSaved = true;
+                        btnSave.Enabled = false;
+                        btnCancel.Enabled = false;
+
+
+                        //Turns all of the text back to LightGray after a successful submission.
+                        FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                        LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
+                        PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
+                        EmailLabel.ForeColor = System.Drawing.Color.LightGray;
+                        CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
+                        AddressLabel.ForeColor = System.Drawing.Color.LightGray;
+                        CityLabel.ForeColor = System.Drawing.Color.LightGray;
+                        StateLabel.ForeColor = System.Drawing.Color.LightGray;
+                        ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+                    }
+                    //insert error messages here
+                    if (noPhone)
+                    {
+                        MessageBox.Show(PhoneNumberBox.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noEmail)
+                    {
+                        MessageBox.Show(EmailBox.Text + " is not a valid email address. Email addresses must take the form xxxx@xxxx.xxx", "INVALID EMAIL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-
-                if (!noFName && !noLName && !noPhone && !noEmail && !noCompany && !noAddress && !noCity && !noState && !noZip)
+                else
                 {
-
-                   
-                    cUSTOMERBindingSource.EndEdit();
-                    cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
-                                                StateBox.Text, EmailBox.Text, PhoneNumberBox.Text, ZipBox.Text, comboBox_Broker.Text,
-                                                txtbox_FLNAME.Text);
-                   
-                    lbl_RequiredField.Visible = false;
-                    btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
-                    btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                    //panel1.Enabled = false;
-                    FirstNameBox.ReadOnly = true;
-                    LastNameBox.ReadOnly = true;
-                    EmailBox.ReadOnly = true;
-                    PhoneNumberBox.ReadOnly = true;
-                    CompanyBox.ReadOnly = true;
-                    AddressBox.ReadOnly = true;
-                    CityBox.ReadOnly = true;
-                    StateBox.ReadOnly = true;
-                    ZipBox.ReadOnly = true;
-                    dataGridView1.Enabled = true;
-                    SearchBox.Enabled = true;
-                    isSaved = true;
-                    btnSave.Enabled = false;
-                    btnCancel.Enabled = false;
-                    
-                        
-                    //Turns all of the text back to LightGray after a successful submission.
-                    FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
-                    LastNameLabel.ForeColor = System.Drawing.Color.LightGray;
-                    PhoneLabel.ForeColor = System.Drawing.Color.LightGray;
-                    EmailLabel.ForeColor = System.Drawing.Color.LightGray;
-                    CompanyLabel.ForeColor = System.Drawing.Color.LightGray;
-                    AddressLabel.ForeColor = System.Drawing.Color.LightGray;
-                    CityLabel.ForeColor = System.Drawing.Color.LightGray;
-                    StateLabel.ForeColor = System.Drawing.Color.LightGray;
-                    ZipLabel.ForeColor = System.Drawing.Color.LightGray;
-                    
+                    MessageBox.Show("Please enter in the required fields.", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -995,7 +992,7 @@ namespace WindowsFormsApp3
                                 r.DELIVERY_CITY.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.DELIVERY_STATE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.DELIVERY_STATE.Contains(txtbox_OrderSearchBox.Text) ||
-                                r.PICKUP_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
+                                r.DELIVERY_ZIP.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.SPECIAL_INSTRUCTIONS.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.SPECIAL_INSTRUCTIONS.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||

@@ -495,6 +495,7 @@ namespace WindowsFormsApp3
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.panel3.Controls.Add(this.checkBox_CopyDropoffInformation);
             this.panel3.Controls.Add(this.lbl_DeliveryZip);
             this.panel3.Controls.Add(this.txtbox_DeliveryZip);
@@ -513,13 +514,13 @@ namespace WindowsFormsApp3
             // checkBox_CopyDropoffInformation
             // 
             this.checkBox_CopyDropoffInformation.AutoSize = true;
-            this.checkBox_CopyDropoffInformation.Enabled = false;
             this.checkBox_CopyDropoffInformation.Location = new System.Drawing.Point(10, 37);
             this.checkBox_CopyDropoffInformation.Name = "checkBox_CopyDropoffInformation";
             this.checkBox_CopyDropoffInformation.Size = new System.Drawing.Size(137, 19);
             this.checkBox_CopyDropoffInformation.TabIndex = 9;
             this.checkBox_CopyDropoffInformation.Text = "Copy Customer Data";
             this.checkBox_CopyDropoffInformation.UseVisualStyleBackColor = true;
+            this.checkBox_CopyDropoffInformation.Visible = false;
             this.checkBox_CopyDropoffInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyDropoffInformation_CheckedChanged);
             // 
             // lbl_DeliveryZip
@@ -934,6 +935,7 @@ namespace WindowsFormsApp3
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.panel2.Controls.Add(this.checkBox_CopyPickupInformation);
             this.panel2.Controls.Add(this.txtbox_PickupAddress);
             this.panel2.Controls.Add(this.txtbox_PickupCity);
@@ -952,13 +954,13 @@ namespace WindowsFormsApp3
             // checkBox_CopyPickupInformation
             // 
             this.checkBox_CopyPickupInformation.AutoSize = true;
-            this.checkBox_CopyPickupInformation.Enabled = false;
             this.checkBox_CopyPickupInformation.Location = new System.Drawing.Point(10, 37);
             this.checkBox_CopyPickupInformation.Name = "checkBox_CopyPickupInformation";
             this.checkBox_CopyPickupInformation.Size = new System.Drawing.Size(137, 19);
             this.checkBox_CopyPickupInformation.TabIndex = 8;
             this.checkBox_CopyPickupInformation.Text = "Copy Customer Data";
             this.checkBox_CopyPickupInformation.UseVisualStyleBackColor = true;
+            this.checkBox_CopyPickupInformation.Visible = false;
             this.checkBox_CopyPickupInformation.CheckedChanged += new System.EventHandler(this.checkBox_CopyPickupInformation_CheckedChanged);
             // 
             // txtbox_PickupAddress
@@ -1682,7 +1684,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerEdit.AutoSize = true;
             this.lbl_CustomerEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_CustomerEdit.Location = new System.Drawing.Point(275, 116);
+            this.lbl_CustomerEdit.Location = new System.Drawing.Point(257, 120);
             this.lbl_CustomerEdit.Name = "lbl_CustomerEdit";
             this.lbl_CustomerEdit.Size = new System.Drawing.Size(78, 19);
             this.lbl_CustomerEdit.TabIndex = 75;
@@ -1701,9 +1703,9 @@ namespace WindowsFormsApp3
             this.comboBox_CUSTFLNAMEBOX.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_CUSTFLNAMEBOX.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox_CUSTFLNAMEBOX.FormattingEnabled = true;
-            this.comboBox_CUSTFLNAMEBOX.Location = new System.Drawing.Point(364, 112);
+            this.comboBox_CUSTFLNAMEBOX.Location = new System.Drawing.Point(341, 117);
             this.comboBox_CUSTFLNAMEBOX.Name = "comboBox_CUSTFLNAMEBOX";
-            this.comboBox_CUSTFLNAMEBOX.Size = new System.Drawing.Size(132, 27);
+            this.comboBox_CUSTFLNAMEBOX.Size = new System.Drawing.Size(155, 27);
             this.comboBox_CUSTFLNAMEBOX.TabIndex = 74;
             this.comboBox_CUSTFLNAMEBOX.ValueMember = "CUST_ID";
             // 
@@ -1806,7 +1808,7 @@ namespace WindowsFormsApp3
             this.txtbox_OrderNumberEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_OrderNumberEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "ORDER_NUM", true));
             this.txtbox_OrderNumberEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(90, 80);
+            this.txtbox_OrderNumberEdit.Location = new System.Drawing.Point(343, 42);
             this.txtbox_OrderNumberEdit.Name = "txtbox_OrderNumberEdit";
             this.txtbox_OrderNumberEdit.ReadOnly = true;
             this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(153, 27);
@@ -1817,7 +1819,7 @@ namespace WindowsFormsApp3
             this.lbl_OrderNumberEdit.AutoSize = true;
             this.lbl_OrderNumberEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_OrderNumberEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(19, 45);
+            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(12, 45);
             this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
             this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(65, 19);
             this.lbl_OrderNumberEdit.TabIndex = 41;
@@ -1847,7 +1849,7 @@ namespace WindowsFormsApp3
             this.dateTimePicker_DeliveryDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "DROPOFF_DATE", true));
             this.dateTimePicker_DeliveryDateEdit.Enabled = false;
             this.dateTimePicker_DeliveryDateEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(742, 6);
+            this.dateTimePicker_DeliveryDateEdit.Location = new System.Drawing.Point(742, 3);
             this.dateTimePicker_DeliveryDateEdit.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_DeliveryDateEdit.MinDate = new System.DateTime(2019, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker_DeliveryDateEdit.Name = "dateTimePicker_DeliveryDateEdit";
@@ -1943,7 +1945,7 @@ namespace WindowsFormsApp3
             this.lbl_DeliveryZipEdit.AutoSize = true;
             this.lbl_DeliveryZipEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_DeliveryZipEdit.Location = new System.Drawing.Point(805, 144);
+            this.lbl_DeliveryZipEdit.Location = new System.Drawing.Point(805, 141);
             this.lbl_DeliveryZipEdit.Name = "lbl_DeliveryZipEdit";
             this.lbl_DeliveryZipEdit.Size = new System.Drawing.Size(94, 19);
             this.lbl_DeliveryZipEdit.TabIndex = 29;
@@ -1966,7 +1968,7 @@ namespace WindowsFormsApp3
             this.lbl_DeliveryStateEdit.AutoSize = true;
             this.lbl_DeliveryStateEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DeliveryStateEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_DeliveryStateEdit.Location = new System.Drawing.Point(805, 111);
+            this.lbl_DeliveryStateEdit.Location = new System.Drawing.Point(805, 109);
             this.lbl_DeliveryStateEdit.Name = "lbl_DeliveryStateEdit";
             this.lbl_DeliveryStateEdit.Size = new System.Drawing.Size(113, 19);
             this.lbl_DeliveryStateEdit.TabIndex = 27;
@@ -1989,7 +1991,7 @@ namespace WindowsFormsApp3
             this.lbl_DeliveryCityEdit.AutoSize = true;
             this.lbl_DeliveryCityEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DeliveryCityEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_DeliveryCityEdit.Location = new System.Drawing.Point(805, 82);
+            this.lbl_DeliveryCityEdit.Location = new System.Drawing.Point(805, 77);
             this.lbl_DeliveryCityEdit.Name = "lbl_DeliveryCityEdit";
             this.lbl_DeliveryCityEdit.Size = new System.Drawing.Size(103, 19);
             this.lbl_DeliveryCityEdit.TabIndex = 25;
@@ -2012,7 +2014,7 @@ namespace WindowsFormsApp3
             this.lbl_DeliveryAddressEdit.AutoSize = true;
             this.lbl_DeliveryAddressEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DeliveryAddressEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_DeliveryAddressEdit.Location = new System.Drawing.Point(805, 47);
+            this.lbl_DeliveryAddressEdit.Location = new System.Drawing.Point(805, 45);
             this.lbl_DeliveryAddressEdit.Name = "lbl_DeliveryAddressEdit";
             this.lbl_DeliveryAddressEdit.Size = new System.Drawing.Size(127, 19);
             this.lbl_DeliveryAddressEdit.TabIndex = 23;
@@ -2024,7 +2026,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupZipEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupZipEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_ZIP", true));
             this.txtbox_PickupZipEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_PickupZipEdit.Location = new System.Drawing.Point(636, 140);
+            this.txtbox_PickupZipEdit.Location = new System.Drawing.Point(636, 138);
             this.txtbox_PickupZipEdit.Name = "txtbox_PickupZipEdit";
             this.txtbox_PickupZipEdit.ReadOnly = true;
             this.txtbox_PickupZipEdit.Size = new System.Drawing.Size(160, 27);
@@ -2035,7 +2037,7 @@ namespace WindowsFormsApp3
             this.lbl_PickupZipEdit.AutoSize = true;
             this.lbl_PickupZipEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_PickupZipEdit.Location = new System.Drawing.Point(513, 144);
+            this.lbl_PickupZipEdit.Location = new System.Drawing.Point(513, 141);
             this.lbl_PickupZipEdit.Name = "lbl_PickupZipEdit";
             this.lbl_PickupZipEdit.Size = new System.Drawing.Size(84, 19);
             this.lbl_PickupZipEdit.TabIndex = 21;
@@ -2047,7 +2049,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupStateEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox_PickupStateEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "PICKUP_STATE", true));
             this.txtbox_PickupStateEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_PickupStateEdit.Location = new System.Drawing.Point(636, 107);
+            this.txtbox_PickupStateEdit.Location = new System.Drawing.Point(636, 106);
             this.txtbox_PickupStateEdit.Name = "txtbox_PickupStateEdit";
             this.txtbox_PickupStateEdit.ReadOnly = true;
             this.txtbox_PickupStateEdit.Size = new System.Drawing.Size(160, 27);
@@ -2058,7 +2060,7 @@ namespace WindowsFormsApp3
             this.lbl_PickupStateEdit.AutoSize = true;
             this.lbl_PickupStateEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PickupStateEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_PickupStateEdit.Location = new System.Drawing.Point(513, 111);
+            this.lbl_PickupStateEdit.Location = new System.Drawing.Point(513, 109);
             this.lbl_PickupStateEdit.Name = "lbl_PickupStateEdit";
             this.lbl_PickupStateEdit.Size = new System.Drawing.Size(99, 19);
             this.lbl_PickupStateEdit.TabIndex = 19;
@@ -2081,7 +2083,7 @@ namespace WindowsFormsApp3
             this.lbl_PickupCityEdit.AutoSize = true;
             this.lbl_PickupCityEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_PickupCityEdit.Location = new System.Drawing.Point(513, 82);
+            this.lbl_PickupCityEdit.Location = new System.Drawing.Point(513, 77);
             this.lbl_PickupCityEdit.Name = "lbl_PickupCityEdit";
             this.lbl_PickupCityEdit.Size = new System.Drawing.Size(89, 19);
             this.lbl_PickupCityEdit.TabIndex = 17;
@@ -2104,7 +2106,7 @@ namespace WindowsFormsApp3
             this.lbl_PickupAddressEdit.AutoSize = true;
             this.lbl_PickupAddressEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_PickupAddressEdit.Location = new System.Drawing.Point(513, 47);
+            this.lbl_PickupAddressEdit.Location = new System.Drawing.Point(513, 45);
             this.lbl_PickupAddressEdit.Name = "lbl_PickupAddressEdit";
             this.lbl_PickupAddressEdit.Size = new System.Drawing.Size(117, 19);
             this.lbl_PickupAddressEdit.TabIndex = 15;
@@ -2126,11 +2128,12 @@ namespace WindowsFormsApp3
             this.txtboxCustomerIdEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtboxCustomerIdEdit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtboxCustomerIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "CUST_ID", true));
+            this.txtboxCustomerIdEdit.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxCustomerIdEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(364, 44);
+            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(116, 77);
             this.txtboxCustomerIdEdit.Name = "txtboxCustomerIdEdit";
             this.txtboxCustomerIdEdit.ReadOnly = true;
-            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(132, 20);
+            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(122, 26);
             this.txtboxCustomerIdEdit.TabIndex = 12;
             // 
             // lbl_CustomerIdEdit
@@ -2138,7 +2141,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerIdEdit.AutoSize = true;
             this.lbl_CustomerIdEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerIdEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(257, 45);
+            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(14, 79);
             this.lbl_CustomerIdEdit.Name = "lbl_CustomerIdEdit";
             this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(96, 19);
             this.lbl_CustomerIdEdit.TabIndex = 11;
@@ -2182,11 +2185,12 @@ namespace WindowsFormsApp3
             this.txtbox_InvoiceIdEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbox_InvoiceIdEdit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
+            this.txtbox_InvoiceIdEdit.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_InvoiceIdEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(90, 45);
+            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(90, 43);
             this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
             this.txtbox_InvoiceIdEdit.ReadOnly = true;
-            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(153, 20);
+            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(153, 26);
             this.txtbox_InvoiceIdEdit.TabIndex = 4;
             // 
             // lbl_InvoiceIdEdit
@@ -2194,7 +2198,7 @@ namespace WindowsFormsApp3
             this.lbl_InvoiceIdEdit.AutoSize = true;
             this.lbl_InvoiceIdEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(12, 82);
+            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(257, 45);
             this.lbl_InvoiceIdEdit.Name = "lbl_InvoiceIdEdit";
             this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(74, 19);
             this.lbl_InvoiceIdEdit.TabIndex = 3;

@@ -1097,11 +1097,7 @@ namespace WindowsFormsApp3
             lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_OrderStatusEdit.ForeColor = System.Drawing.Color.LightGray;
-
-
-            
-
-            
+            lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightGray;
 
 
             bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false;
@@ -1164,7 +1160,7 @@ namespace WindowsFormsApp3
             if (string.IsNullOrEmpty(txtbox_OrderNumberEdit.Text))
             {
                 noOrder = true;
-                lbl_OrderNumberEdit.ForeColor = System.Drawing.Color.LightCoral;
+                lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
 
             //date validation

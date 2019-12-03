@@ -405,15 +405,15 @@ namespace WindowsFormsApp3
             // 
             // txtBox_InvoiceNumber
             // 
-            this.txtBox_InvoiceNumber.BackColor = System.Drawing.Color.DimGray;
-            this.txtBox_InvoiceNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBox_InvoiceNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBox_InvoiceNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBox_InvoiceNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtBox_InvoiceNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_InvoiceNumber.ForeColor = System.Drawing.SystemColors.Window;
             this.txtBox_InvoiceNumber.Location = new System.Drawing.Point(941, 9);
             this.txtBox_InvoiceNumber.Name = "txtBox_InvoiceNumber";
             this.txtBox_InvoiceNumber.ReadOnly = true;
-            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(53, 27);
+            this.txtBox_InvoiceNumber.Size = new System.Drawing.Size(53, 20);
             this.txtBox_InvoiceNumber.TabIndex = 66;
             this.txtBox_InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1659,7 +1659,7 @@ namespace WindowsFormsApp3
             this.tab_SearchOrders.Padding = new System.Windows.Forms.Padding(3);
             this.tab_SearchOrders.Size = new System.Drawing.Size(1107, 546);
             this.tab_SearchOrders.TabIndex = 3;
-            this.tab_SearchOrders.Text = "Search Orders";
+            this.tab_SearchOrders.Text = "Search/Edit Orders";
             // 
             // btn_Help3
             // 
@@ -1817,7 +1817,7 @@ namespace WindowsFormsApp3
             this.lbl_OrderNumberEdit.AutoSize = true;
             this.lbl_OrderNumberEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_OrderNumberEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(12, 78);
+            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(19, 45);
             this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
             this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(65, 19);
             this.lbl_OrderNumberEdit.TabIndex = 41;
@@ -2123,14 +2123,14 @@ namespace WindowsFormsApp3
             // 
             // txtboxCustomerIdEdit
             // 
-            this.txtboxCustomerIdEdit.BackColor = System.Drawing.Color.DimGray;
-            this.txtboxCustomerIdEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtboxCustomerIdEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtboxCustomerIdEdit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtboxCustomerIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "CUST_ID", true));
             this.txtboxCustomerIdEdit.ForeColor = System.Drawing.SystemColors.Window;
             this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(364, 44);
             this.txtboxCustomerIdEdit.Name = "txtboxCustomerIdEdit";
             this.txtboxCustomerIdEdit.ReadOnly = true;
-            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(132, 27);
+            this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(132, 20);
             this.txtboxCustomerIdEdit.TabIndex = 12;
             // 
             // lbl_CustomerIdEdit
@@ -2138,7 +2138,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerIdEdit.AutoSize = true;
             this.lbl_CustomerIdEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerIdEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(257, 47);
+            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(257, 45);
             this.lbl_CustomerIdEdit.Name = "lbl_CustomerIdEdit";
             this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(96, 19);
             this.lbl_CustomerIdEdit.TabIndex = 11;
@@ -2179,14 +2179,14 @@ namespace WindowsFormsApp3
             // 
             // txtbox_InvoiceIdEdit
             // 
-            this.txtbox_InvoiceIdEdit.BackColor = System.Drawing.Color.DimGray;
-            this.txtbox_InvoiceIdEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbox_InvoiceIdEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtbox_InvoiceIdEdit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_InvoiceIdEdit.ForeColor = System.Drawing.SystemColors.Window;
             this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(90, 45);
             this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
             this.txtbox_InvoiceIdEdit.ReadOnly = true;
-            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(153, 27);
+            this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(153, 20);
             this.txtbox_InvoiceIdEdit.TabIndex = 4;
             // 
             // lbl_InvoiceIdEdit
@@ -2194,7 +2194,7 @@ namespace WindowsFormsApp3
             this.lbl_InvoiceIdEdit.AutoSize = true;
             this.lbl_InvoiceIdEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(12, 45);
+            this.lbl_InvoiceIdEdit.Location = new System.Drawing.Point(12, 82);
             this.lbl_InvoiceIdEdit.Name = "lbl_InvoiceIdEdit";
             this.lbl_InvoiceIdEdit.Size = new System.Drawing.Size(74, 19);
             this.lbl_InvoiceIdEdit.TabIndex = 3;

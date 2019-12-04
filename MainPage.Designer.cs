@@ -100,6 +100,7 @@ namespace WindowsFormsApp3
             this.lbl_PickupAddress = new System.Windows.Forms.Label();
             this.lbl_PickupInfo = new System.Windows.Forms.Label();
             this.tab_ManageCustomers = new System.Windows.Forms.TabPage();
+            this.btn_ClearSearch1 = new System.Windows.Forms.Button();
             this.btn_Help1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,6 +147,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerEdit = new System.Windows.Forms.Label();
             this.comboBox_CUSTFLNAMEBOX = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_ClearSearch2 = new System.Windows.Forms.Button();
             this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
             this.btn_EditOrder = new System.Windows.Forms.Button();
             this.lbl_OrderSearch = new System.Windows.Forms.Label();
@@ -215,9 +217,6 @@ namespace WindowsFormsApp3
             this.txtboxrch_VehicleNotes = new System.Windows.Forms.RichTextBox();
             this.btn_EditVehicle = new System.Windows.Forms.Button();
             this.dataGridViewVehicle = new System.Windows.Forms.DataGridView();
-            this.vEHICLEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VEHICLE_NOTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_CancelVehicle = new System.Windows.Forms.Button();
             this.btn_AddVehicle = new System.Windows.Forms.Button();
             this.btn_SaveVehicle = new System.Windows.Forms.Button();
@@ -229,8 +228,8 @@ namespace WindowsFormsApp3
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.btn_ClearSearch1 = new System.Windows.Forms.Button();
-            this.btn_ClearSearch2 = new System.Windows.Forms.Button();
+            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICLE_NOTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -1088,6 +1087,22 @@ namespace WindowsFormsApp3
             this.tab_ManageCustomers.TabIndex = 1;
             this.tab_ManageCustomers.Text = "Manage Customers";
             // 
+            // btn_ClearSearch1
+            // 
+            this.btn_ClearSearch1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_ClearSearch1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_ClearSearch1.FlatAppearance.BorderSize = 2;
+            this.btn_ClearSearch1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ClearSearch1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearSearch1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_ClearSearch1.Location = new System.Drawing.Point(766, 6);
+            this.btn_ClearSearch1.Name = "btn_ClearSearch1";
+            this.btn_ClearSearch1.Size = new System.Drawing.Size(113, 29);
+            this.btn_ClearSearch1.TabIndex = 21;
+            this.btn_ClearSearch1.Text = "Clear Search";
+            this.btn_ClearSearch1.UseVisualStyleBackColor = false;
+            this.btn_ClearSearch1.Click += new System.EventHandler(this.btn_ClearSearch1_Click);
+            // 
             // btn_Help1
             // 
             this.btn_Help1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -1728,6 +1743,22 @@ namespace WindowsFormsApp3
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(581, 74);
             this.panel4.TabIndex = 73;
+            // 
+            // btn_ClearSearch2
+            // 
+            this.btn_ClearSearch2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_ClearSearch2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_ClearSearch2.FlatAppearance.BorderSize = 2;
+            this.btn_ClearSearch2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ClearSearch2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearSearch2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_ClearSearch2.Location = new System.Drawing.Point(441, 39);
+            this.btn_ClearSearch2.Name = "btn_ClearSearch2";
+            this.btn_ClearSearch2.Size = new System.Drawing.Size(110, 29);
+            this.btn_ClearSearch2.TabIndex = 40;
+            this.btn_ClearSearch2.Text = "Clear Search";
+            this.btn_ClearSearch2.UseVisualStyleBackColor = false;
+            this.btn_ClearSearch2.Click += new System.EventHandler(this.ClearSearch2_Click);
             // 
             // btn_SaveOrderEdit
             // 
@@ -2548,7 +2579,6 @@ namespace WindowsFormsApp3
             this.dataGridViewVehicle.AutoGenerateColumns = false;
             this.dataGridViewVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVehicle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.vEHICLEIDDataGridViewTextBoxColumn,
             this.vEHICLENAMEDataGridViewTextBoxColumn,
             this.VEHICLE_NOTES});
             this.dataGridViewVehicle.DataSource = this.vEHICLEBindingSource;
@@ -2557,33 +2587,6 @@ namespace WindowsFormsApp3
             this.dataGridViewVehicle.ReadOnly = true;
             this.dataGridViewVehicle.Size = new System.Drawing.Size(658, 253);
             this.dataGridViewVehicle.TabIndex = 7;
-            // 
-            // vEHICLEIDDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLEIDDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.HeaderText = "VEHICLE_ID";
-            this.vEHICLEIDDataGridViewTextBoxColumn.Name = "vEHICLEIDDataGridViewTextBoxColumn";
-            this.vEHICLEIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // vEHICLENAMEDataGridViewTextBoxColumn
-            // 
-            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
-            // 
-            // VEHICLE_NOTES
-            // 
-            this.VEHICLE_NOTES.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.VEHICLE_NOTES.DataPropertyName = "Vehicle Notes";
-            this.VEHICLE_NOTES.HeaderText = "VEHICLE_NOTES";
-            this.VEHICLE_NOTES.Name = "VEHICLE_NOTES";
-            this.VEHICLE_NOTES.ReadOnly = true;
-            this.VEHICLE_NOTES.Width = 141;
             // 
             // btn_CancelVehicle
             // 
@@ -2640,7 +2643,7 @@ namespace WindowsFormsApp3
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1101, 540);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri(Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents") + "\\GitHub\\INFSYS4850\\Resources\\Help\\test.html", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("C:\\Users\\Kimberly\\Documents\\GitHub\\INFSYS4850\\Resources\\Help\\test.html", System.UriKind.Absolute);
             // 
             // cUSTOMERTableAdapter
             // 
@@ -2668,37 +2671,23 @@ namespace WindowsFormsApp3
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
-            // btn_ClearSearch1
+            // vEHICLENAMEDataGridViewTextBoxColumn
             // 
-            this.btn_ClearSearch1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_ClearSearch1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btn_ClearSearch1.FlatAppearance.BorderSize = 2;
-            this.btn_ClearSearch1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ClearSearch1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ClearSearch1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_ClearSearch1.Location = new System.Drawing.Point(766, 6);
-            this.btn_ClearSearch1.Name = "btn_ClearSearch1";
-            this.btn_ClearSearch1.Size = new System.Drawing.Size(113, 29);
-            this.btn_ClearSearch1.TabIndex = 21;
-            this.btn_ClearSearch1.Text = "Clear Search";
-            this.btn_ClearSearch1.UseVisualStyleBackColor = false;
-            this.btn_ClearSearch1.Click += new System.EventHandler(this.btn_ClearSearch1_Click);
+            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
             // 
-            // btn_ClearSearch2
+            // VEHICLE_NOTES
             // 
-            this.btn_ClearSearch2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_ClearSearch2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btn_ClearSearch2.FlatAppearance.BorderSize = 2;
-            this.btn_ClearSearch2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ClearSearch2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ClearSearch2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_ClearSearch2.Location = new System.Drawing.Point(441, 39);
-            this.btn_ClearSearch2.Name = "btn_ClearSearch2";
-            this.btn_ClearSearch2.Size = new System.Drawing.Size(110, 29);
-            this.btn_ClearSearch2.TabIndex = 40;
-            this.btn_ClearSearch2.Text = "Clear Search";
-            this.btn_ClearSearch2.UseVisualStyleBackColor = false;
-            this.btn_ClearSearch2.Click += new System.EventHandler(this.ClearSearch2_Click);
+            this.VEHICLE_NOTES.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VEHICLE_NOTES.DataPropertyName = "VEHICLE_NOTES";
+            this.VEHICLE_NOTES.HeaderText = "VEHICLE_NOTES";
+            this.VEHICLE_NOTES.Name = "VEHICLE_NOTES";
+            this.VEHICLE_NOTES.ReadOnly = true;
+            this.VEHICLE_NOTES.Width = 141;
             // 
             // MainPage
             // 
@@ -2944,10 +2933,9 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_NUM;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE_NOTES;
         private System.Windows.Forms.Button btn_ClearSearch1;
         private System.Windows.Forms.Button btn_ClearSearch2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE_NOTES;
     }
 }

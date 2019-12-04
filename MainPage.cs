@@ -317,9 +317,7 @@ namespace WindowsFormsApp3
                         if (!noPhone && !noEmail && !noZip && !noBroke)
                     {
                         cUSTOMERBindingSource.EndEdit();
-                        cUSTOMERTableAdapter.Insert(FirstNameBox.Text, LastNameBox.Text, CompanyBox.Text, AddressBox.Text, CityBox.Text,
-                                                    StateBox.Text, EmailBox.Text, PhoneNumberBox.Text, ZipBox.Text, comboBox_Broker.Text,
-                                                    txtbox_FLNAME.Text);
+                        cUSTOMERTableAdapter.Update(appData.CUSTOMER);
 
                         lbl_RequiredField.Visible = false;
                         btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
@@ -1476,7 +1474,7 @@ namespace WindowsFormsApp3
             else
             {
                 vEHICLEBindingSource.EndEdit();
-                vEHICLETableAdapter.Insert(txtbox_VehicleName.Text, txtboxrch_VehicleNotes.Text);
+                vEHICLETableAdapter.Update(appData.VEHICLE);
                 btn_AddVehicle.Enabled = true;
                 btn_SaveVehicle.Enabled = false;
                 btn_EditVehicle.Enabled = true;

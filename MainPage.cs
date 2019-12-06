@@ -113,25 +113,36 @@ namespace WindowsFormsApp3
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //panel1.Enabled = true;
-            FirstNameBox.ReadOnly = false;
-            LastNameBox.ReadOnly = false;
-            EmailBox.ReadOnly = false;
-            PhoneNumberBox.ReadOnly = false;
-            CompanyBox.ReadOnly = false;
-            AddressBox.ReadOnly = false;
-            CityBox.ReadOnly = false;
-            StateBox.ReadOnly = false;
-            ZipBox.ReadOnly = false;
-            btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while editing a previous one.
-            btnEdit.Enabled = true;
-            btnCancel.Enabled = true;
-            btnSave.Enabled = true;
-            dataGridView1.Enabled = false;
-            FirstNameBox.Focus();
-            isSaved = false;
-            btnEdit.Enabled = false;
-            editCustomer = true;
+            if (FirstNameBox.Text == "")
+            {
+                MessageBox.Show("Please select a customer to edit.", "NO CUSTOMER SELECTED");
+                SearchBox.Text = "";
+                SendKeys.Send("{ENTER}");
+                SearchBox.Focus();
+            }
+            else
+            {
+                //panel1.Enabled = true;
+                FirstNameBox.ReadOnly = false;
+                LastNameBox.ReadOnly = false;
+                EmailBox.ReadOnly = false;
+                PhoneNumberBox.ReadOnly = false;
+                CompanyBox.ReadOnly = false;
+                AddressBox.ReadOnly = false;
+                CityBox.ReadOnly = false;
+                StateBox.ReadOnly = false;
+                ZipBox.ReadOnly = false;
+                btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while editing a previous one.
+                btnEdit.Enabled = true;
+                btnCancel.Enabled = true;
+                btnSave.Enabled = true;
+                dataGridView1.Enabled = false;
+                FirstNameBox.Focus();
+                isSaved = false;
+                btnEdit.Enabled = false;
+                editCustomer = true;
+            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -1158,29 +1169,40 @@ namespace WindowsFormsApp3
 
         private void btn_EditOrder_Click(object sender, EventArgs e)
         {
-            txtbox_InvoiceIdEdit.ReadOnly = true;
-            //dateTimePicker_BookingDateEdit.Enabled = true;
-            dateTimePicker_PickUpDateEdit.Enabled = true;
-            dateTimePicker_DeliveryDateEdit.Enabled = true;
-            comboBox_OrderStatusEdit.Enabled = true;
-            txtbox_OrderNumberEdit.Enabled = true;
-            comboBox_VehicleEdit.Enabled = true;
-            txtbox_OrderNumberEdit.ReadOnly = false;
-            txtbox_PickupAddressEdit.ReadOnly = false;
-            txtbox_PickupCityEdit.ReadOnly = false;
-            txtbox_PickupStateEdit.ReadOnly = false;
-            txtbox_PickupZipEdit.ReadOnly = false;
-            txtbox_DeliveryAddressEdit.ReadOnly = false;
-            txtbox_DeliveryCityEdit.ReadOnly = false;
-            txtbox_DeliveryStateEdit.ReadOnly = false;
-            txtbox_DeliveryZipEdit.ReadOnly = false;
-            txtboxrch_DescriptionEdit.ReadOnly = false;
-            txtboxrch_SpecialInstructionsEdit.ReadOnly = false;
-            comboBox_CUSTFLNAMEBOX.Enabled = true;
-            txtbox_OrderSearchBox.ReadOnly = false;
-            btn_SaveOrderEdit.Visible = true;
-            btn_EditOrder.Visible = false;
-            comboBox_ReturnTripEdit.Enabled = true;
+            if (txtbox_InvoiceIdEdit.Text == "")
+            {
+                MessageBox.Show("Please select an order to edit.", "NO ORDER SELECTED");
+                txtbox_OrderSearchBox.Text = "";
+                SendKeys.Send("{ENTER}");
+                txtbox_OrderSearchBox.Focus();
+            }
+            else
+            {
+                txtbox_InvoiceIdEdit.ReadOnly = true;
+                //dateTimePicker_BookingDateEdit.Enabled = true;
+                dateTimePicker_PickUpDateEdit.Enabled = true;
+                dateTimePicker_DeliveryDateEdit.Enabled = true;
+                comboBox_OrderStatusEdit.Enabled = true;
+                txtbox_OrderNumberEdit.Enabled = true;
+                comboBox_VehicleEdit.Enabled = true;
+                txtbox_OrderNumberEdit.ReadOnly = false;
+                txtbox_PickupAddressEdit.ReadOnly = false;
+                txtbox_PickupCityEdit.ReadOnly = false;
+                txtbox_PickupStateEdit.ReadOnly = false;
+                txtbox_PickupZipEdit.ReadOnly = false;
+                txtbox_DeliveryAddressEdit.ReadOnly = false;
+                txtbox_DeliveryCityEdit.ReadOnly = false;
+                txtbox_DeliveryStateEdit.ReadOnly = false;
+                txtbox_DeliveryZipEdit.ReadOnly = false;
+                txtboxrch_DescriptionEdit.ReadOnly = false;
+                txtboxrch_SpecialInstructionsEdit.ReadOnly = false;
+                comboBox_CUSTFLNAMEBOX.Enabled = true;
+                txtbox_OrderSearchBox.ReadOnly = false;
+                btn_SaveOrderEdit.Visible = true;
+                btn_EditOrder.Visible = false;
+                comboBox_ReturnTripEdit.Enabled = true;
+                btn_CancelOrderEdit.Visible = true;
+            }
         }
 
         private void btn_SaveOrderEdit_Click(object sender, EventArgs e)
@@ -1314,6 +1336,7 @@ namespace WindowsFormsApp3
                 
                 btn_EditOrder.Visible = true;
                 btn_SaveOrderEdit.Visible = false;
+                btn_CancelOrderEdit.Visible = false;
                 //dateTimePicker_BookingDateEdit.Enabled = false;
                 dateTimePicker_PickUpDateEdit.Enabled = false;
                 dateTimePicker_DeliveryDateEdit.Enabled = false;
@@ -1681,13 +1704,70 @@ namespace WindowsFormsApp3
         private void btn_ClearSearch1_Click(object sender, EventArgs e)
         {
             SearchBox.Text = "";
-            
+            SendKeys.Send("{ENTER}");
+            SearchBox.Focus();
         }
 
         private void ClearSearch2_Click(object sender, EventArgs e)
         {
             txtbox_OrderSearchBox.Text = "";
- 
+            SendKeys.Send("{ENTER}");
+            txtbox_OrderSearchBox.Focus();
+        }
+
+        private void btn_CancelOrderEdit_Click(object sender, EventArgs e)
+        {
+            //Changes labels back to White
+            lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupStateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryAddressEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryCityEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryStateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_OrderStatusEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_BookingDateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
+
+            btn_EditOrder.Visible = true;
+            btn_SaveOrderEdit.Visible = false;
+            btn_CancelOrderEdit.Visible = false;
+            dateTimePicker_PickUpDateEdit.Enabled = false;
+            dateTimePicker_DeliveryDateEdit.Enabled = false;
+            comboBox_OrderStatusEdit.Enabled = false;
+            txtbox_OrderNumberEdit.ReadOnly = true;
+            txtbox_PickupAddressEdit.ReadOnly = true;
+            txtbox_PickupCityEdit.ReadOnly = true;
+            txtbox_PickupStateEdit.ReadOnly = true;
+            txtbox_PickupZipEdit.ReadOnly = true;
+            txtbox_DeliveryAddressEdit.ReadOnly = true;
+            txtbox_DeliveryCityEdit.ReadOnly = true;
+            txtbox_DeliveryStateEdit.ReadOnly = true;
+            txtbox_DeliveryZipEdit.ReadOnly = true;
+            txtboxrch_DescriptionEdit.ReadOnly = true;
+            txtboxrch_SpecialInstructionsEdit.ReadOnly = true;
+            comboBox_VehicleEdit.Enabled = false;
+            txtbox_OrderSearchBox.Enabled = true;
+            txtboxrch_SpecialInstructions.ReadOnly = true;
+            txtboxrch_Description.ReadOnly = true;
+            comboBox_CUSTFLNAMEBOX.Enabled = false;
+            comboBox_ReturnTripEdit.Enabled = false;
+
+            iNVOICEBindingSource.CancelEdit();
+            
+            
+           
         }
     }
 }

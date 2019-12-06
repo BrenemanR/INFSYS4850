@@ -34,10 +34,13 @@ namespace WindowsFormsApp3
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tab_CreateOrder;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.comboBox_ReturnTrip = new System.Windows.Forms.ComboBox();
+            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new WindowsFormsApp3.AppData();
+            this.lbl_ReturnTrip = new System.Windows.Forms.Label();
             this.btn_Help2 = new System.Windows.Forms.Button();
             this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
             this.iNVOICEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new WindowsFormsApp3.AppData();
             this.PickUpDatePicker = new System.Windows.Forms.DateTimePicker();
             this.btn_CancelOrder = new System.Windows.Forms.Button();
             this.comboBox_Vehicle = new System.Windows.Forms.ComboBox();
@@ -71,7 +74,6 @@ namespace WindowsFormsApp3
             this.txtboxrch_SpecialInstructions = new System.Windows.Forms.RichTextBox();
             this.txtbox_OrderNum = new System.Windows.Forms.TextBox();
             this.txtbox_Company = new System.Windows.Forms.TextBox();
-            this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtbox_Email = new System.Windows.Forms.TextBox();
             this.txtbox_Phone = new System.Windows.Forms.TextBox();
             this.txtbox_Zip = new System.Windows.Forms.TextBox();
@@ -143,6 +145,8 @@ namespace WindowsFormsApp3
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtbox_FLNAME = new System.Windows.Forms.TextBox();
             this.tab_SearchOrders = new System.Windows.Forms.TabPage();
+            this.comboBox_ReturnTripEdit = new System.Windows.Forms.ComboBox();
+            this.lbl_ReturnTripEdit = new System.Windows.Forms.Label();
             this.btn_Help3 = new System.Windows.Forms.Button();
             this.lbl_CustomerEdit = new System.Windows.Forms.Label();
             this.comboBox_CUSTFLNAMEBOX = new System.Windows.Forms.ComboBox();
@@ -189,22 +193,6 @@ namespace WindowsFormsApp3
             this.txtbox_InvoiceIdEdit = new System.Windows.Forms.TextBox();
             this.lbl_InvoiceIdEdit = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.CUST_FLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VEHICLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PICKUP_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PICKUP_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PICKUP_ZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DELIVERY_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DELIVERY_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DELIVERY_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DELIVERY_ZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bOOKDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pICKUPDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dROPOFFDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oRDERSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ORDER_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_Home = new System.Windows.Forms.TabPage();
             this.lbl_Home = new System.Windows.Forms.Label();
             this.tab_Container = new System.Windows.Forms.TabControl();
@@ -230,18 +218,31 @@ namespace WindowsFormsApp3
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.lbl_ReturnTrip = new System.Windows.Forms.Label();
-            this.comboBox_ReturnTrip = new System.Windows.Forms.ComboBox();
-            this.lbl_ReturnTripEdit = new System.Windows.Forms.Label();
-            this.comboBox_ReturnTripEdit = new System.Windows.Forms.ComboBox();
+            this.CUST_FLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PICKUP_ZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_CITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELIVERY_ZIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bOOKDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pICKUPDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dROPOFFDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDERSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RETURN_TRIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ORDER_NUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNVIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.tab_ManageCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -314,6 +315,40 @@ namespace WindowsFormsApp3
             tab_CreateOrder.TabIndex = 5;
             tab_CreateOrder.Text = "Create Order";
             // 
+            // comboBox_ReturnTrip
+            // 
+            this.comboBox_ReturnTrip.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.cUSTOMERBindingSource, "BROKER", true));
+            this.comboBox_ReturnTrip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_ReturnTrip.FormattingEnabled = true;
+            this.comboBox_ReturnTrip.Items.AddRange(new object[] {
+            "YES",
+            "NO"});
+            this.comboBox_ReturnTrip.Location = new System.Drawing.Point(142, 421);
+            this.comboBox_ReturnTrip.Name = "comboBox_ReturnTrip";
+            this.comboBox_ReturnTrip.Size = new System.Drawing.Size(93, 27);
+            this.comboBox_ReturnTrip.TabIndex = 79;
+            this.comboBox_ReturnTrip.Text = "NO";
+            // 
+            // cUSTOMERBindingSource
+            // 
+            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
+            this.cUSTOMERBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lbl_ReturnTrip
+            // 
+            this.lbl_ReturnTrip.AutoSize = true;
+            this.lbl_ReturnTrip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ReturnTrip.Location = new System.Drawing.Point(19, 424);
+            this.lbl_ReturnTrip.Name = "lbl_ReturnTrip";
+            this.lbl_ReturnTrip.Size = new System.Drawing.Size(110, 19);
+            this.lbl_ReturnTrip.TabIndex = 78;
+            this.lbl_ReturnTrip.Text = "Has return trip?";
+            // 
             // btn_Help2
             // 
             this.btn_Help2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -347,11 +382,6 @@ namespace WindowsFormsApp3
             // 
             this.iNVOICEBindingSource.DataMember = "INVOICE";
             this.iNVOICEBindingSource.DataSource = this.appData;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // PickUpDatePicker
             // 
@@ -747,11 +777,6 @@ namespace WindowsFormsApp3
             this.txtbox_Company.ReadOnly = true;
             this.txtbox_Company.Size = new System.Drawing.Size(130, 27);
             this.txtbox_Company.TabIndex = 1;
-            // 
-            // cUSTOMERBindingSource
-            // 
-            this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
-            this.cUSTOMERBindingSource.DataSource = this.appData;
             // 
             // txtbox_Email
             // 
@@ -1692,6 +1717,34 @@ namespace WindowsFormsApp3
             this.tab_SearchOrders.TabIndex = 3;
             this.tab_SearchOrders.Text = "Search/Edit Orders";
             // 
+            // comboBox_ReturnTripEdit
+            // 
+            this.comboBox_ReturnTripEdit.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.comboBox_ReturnTripEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "RETURN_TRIP", true));
+            this.comboBox_ReturnTripEdit.Enabled = false;
+            this.comboBox_ReturnTripEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_ReturnTripEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_ReturnTripEdit.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox_ReturnTripEdit.FormattingEnabled = true;
+            this.comboBox_ReturnTripEdit.Items.AddRange(new object[] {
+            "YES",
+            "NO"});
+            this.comboBox_ReturnTripEdit.Location = new System.Drawing.Point(141, 93);
+            this.comboBox_ReturnTripEdit.Name = "comboBox_ReturnTripEdit";
+            this.comboBox_ReturnTripEdit.Size = new System.Drawing.Size(102, 27);
+            this.comboBox_ReturnTripEdit.TabIndex = 78;
+            // 
+            // lbl_ReturnTripEdit
+            // 
+            this.lbl_ReturnTripEdit.AutoSize = true;
+            this.lbl_ReturnTripEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_ReturnTripEdit.Location = new System.Drawing.Point(14, 96);
+            this.lbl_ReturnTripEdit.Name = "lbl_ReturnTripEdit";
+            this.lbl_ReturnTripEdit.Size = new System.Drawing.Size(121, 19);
+            this.lbl_ReturnTripEdit.TabIndex = 77;
+            this.lbl_ReturnTripEdit.Text = "Has Return Trip?";
+            // 
             // btn_Help3
             // 
             this.btn_Help3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -2277,6 +2330,7 @@ namespace WindowsFormsApp3
             this.pICKUPDATEDataGridViewTextBoxColumn,
             this.dROPOFFDATEDataGridViewTextBoxColumn,
             this.oRDERSTATUSDataGridViewTextBoxColumn,
+            this.RETURN_TRIP,
             this.ORDER_NUM,
             this.iNVIDDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.iNVOICEBindingSource;
@@ -2286,162 +2340,6 @@ namespace WindowsFormsApp3
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.Size = new System.Drawing.Size(1089, 293);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // CUST_FLNAME
-            // 
-            this.CUST_FLNAME.DataPropertyName = "CUST_FLNAME";
-            this.CUST_FLNAME.HeaderText = "Customer";
-            this.CUST_FLNAME.Name = "CUST_FLNAME";
-            this.CUST_FLNAME.ReadOnly = true;
-            this.CUST_FLNAME.Width = 90;
-            // 
-            // VEHICLE
-            // 
-            this.VEHICLE.DataPropertyName = "VEHICLE";
-            this.VEHICLE.HeaderText = "Vehicle";
-            this.VEHICLE.MinimumWidth = 8;
-            this.VEHICLE.Name = "VEHICLE";
-            this.VEHICLE.ReadOnly = true;
-            // 
-            // PICKUP_ADDRESS
-            // 
-            this.PICKUP_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_ADDRESS.DataPropertyName = "PICKUP_ADDRESS";
-            this.PICKUP_ADDRESS.HeaderText = "Pickup Address";
-            this.PICKUP_ADDRESS.MinimumWidth = 8;
-            this.PICKUP_ADDRESS.Name = "PICKUP_ADDRESS";
-            this.PICKUP_ADDRESS.ReadOnly = true;
-            this.PICKUP_ADDRESS.Width = 121;
-            // 
-            // PICKUP_CITY
-            // 
-            this.PICKUP_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_CITY.DataPropertyName = "PICKUP_CITY";
-            this.PICKUP_CITY.HeaderText = "Pickup City";
-            this.PICKUP_CITY.MinimumWidth = 8;
-            this.PICKUP_CITY.Name = "PICKUP_CITY";
-            this.PICKUP_CITY.ReadOnly = true;
-            this.PICKUP_CITY.Width = 96;
-            // 
-            // PICKUP_STATE
-            // 
-            this.PICKUP_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_STATE.DataPropertyName = "PICKUP_STATE";
-            this.PICKUP_STATE.HeaderText = "Pickup State";
-            this.PICKUP_STATE.MinimumWidth = 8;
-            this.PICKUP_STATE.Name = "PICKUP_STATE";
-            this.PICKUP_STATE.ReadOnly = true;
-            this.PICKUP_STATE.Width = 104;
-            // 
-            // PICKUP_ZIP
-            // 
-            this.PICKUP_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PICKUP_ZIP.DataPropertyName = "PICKUP_ZIP";
-            this.PICKUP_ZIP.HeaderText = "Pickup Zip Code";
-            this.PICKUP_ZIP.MinimumWidth = 8;
-            this.PICKUP_ZIP.Name = "PICKUP_ZIP";
-            this.PICKUP_ZIP.ReadOnly = true;
-            this.PICKUP_ZIP.Width = 96;
-            // 
-            // DELIVERY_ADDRESS
-            // 
-            this.DELIVERY_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_ADDRESS.DataPropertyName = "DELIVERY_ADDRESS";
-            this.DELIVERY_ADDRESS.HeaderText = "Delivery Address";
-            this.DELIVERY_ADDRESS.MinimumWidth = 8;
-            this.DELIVERY_ADDRESS.Name = "DELIVERY_ADDRESS";
-            this.DELIVERY_ADDRESS.ReadOnly = true;
-            this.DELIVERY_ADDRESS.Width = 131;
-            // 
-            // DELIVERY_CITY
-            // 
-            this.DELIVERY_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_CITY.DataPropertyName = "DELIVERY_CITY";
-            this.DELIVERY_CITY.HeaderText = "Delivery City";
-            this.DELIVERY_CITY.MinimumWidth = 8;
-            this.DELIVERY_CITY.Name = "DELIVERY_CITY";
-            this.DELIVERY_CITY.ReadOnly = true;
-            this.DELIVERY_CITY.Width = 106;
-            // 
-            // DELIVERY_STATE
-            // 
-            this.DELIVERY_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_STATE.DataPropertyName = "DELIVERY_STATE";
-            this.DELIVERY_STATE.HeaderText = "Delivery State";
-            this.DELIVERY_STATE.MinimumWidth = 8;
-            this.DELIVERY_STATE.Name = "DELIVERY_STATE";
-            this.DELIVERY_STATE.ReadOnly = true;
-            this.DELIVERY_STATE.Width = 114;
-            // 
-            // DELIVERY_ZIP
-            // 
-            this.DELIVERY_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DELIVERY_ZIP.DataPropertyName = "DELIVERY_ZIP";
-            this.DELIVERY_ZIP.HeaderText = "Delivery Zip";
-            this.DELIVERY_ZIP.MinimumWidth = 8;
-            this.DELIVERY_ZIP.Name = "DELIVERY_ZIP";
-            this.DELIVERY_ZIP.ReadOnly = true;
-            this.DELIVERY_ZIP.Width = 102;
-            // 
-            // bOOKDATEDataGridViewTextBoxColumn
-            // 
-            this.bOOKDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.bOOKDATEDataGridViewTextBoxColumn.DataPropertyName = "BOOK_DATE";
-            this.bOOKDATEDataGridViewTextBoxColumn.HeaderText = "Book Date";
-            this.bOOKDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.bOOKDATEDataGridViewTextBoxColumn.Name = "bOOKDATEDataGridViewTextBoxColumn";
-            this.bOOKDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bOOKDATEDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // pICKUPDATEDataGridViewTextBoxColumn
-            // 
-            this.pICKUPDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.pICKUPDATEDataGridViewTextBoxColumn.DataPropertyName = "PICKUP_DATE";
-            this.pICKUPDATEDataGridViewTextBoxColumn.HeaderText = "Pickup Date";
-            this.pICKUPDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.pICKUPDATEDataGridViewTextBoxColumn.Name = "pICKUPDATEDataGridViewTextBoxColumn";
-            this.pICKUPDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pICKUPDATEDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // dROPOFFDATEDataGridViewTextBoxColumn
-            // 
-            this.dROPOFFDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dROPOFFDATEDataGridViewTextBoxColumn.DataPropertyName = "DROPOFF_DATE";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.HeaderText = "Dropoff Date";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dROPOFFDATEDataGridViewTextBoxColumn.Name = "dROPOFFDATEDataGridViewTextBoxColumn";
-            this.dROPOFFDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dROPOFFDATEDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // oRDERSTATUSDataGridViewTextBoxColumn
-            // 
-            this.oRDERSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.oRDERSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORDER_STATUS";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.oRDERSTATUSDataGridViewTextBoxColumn.Name = "oRDERSTATUSDataGridViewTextBoxColumn";
-            this.oRDERSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oRDERSTATUSDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // ORDER_NUM
-            // 
-            this.ORDER_NUM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ORDER_NUM.DataPropertyName = "ORDER_NUM";
-            this.ORDER_NUM.HeaderText = "ORDER #";
-            this.ORDER_NUM.MinimumWidth = 8;
-            this.ORDER_NUM.Name = "ORDER_NUM";
-            this.ORDER_NUM.ReadOnly = true;
-            this.ORDER_NUM.Width = 86;
-            // 
-            // iNVIDDataGridViewTextBoxColumn
-            // 
-            this.iNVIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
-            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iNVIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
-            this.iNVIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iNVIDDataGridViewTextBoxColumn.Width = 48;
             // 
             // tab_Home
             // 
@@ -2697,56 +2595,168 @@ namespace WindowsFormsApp3
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
-            // lbl_ReturnTrip
+            // CUST_FLNAME
             // 
-            this.lbl_ReturnTrip.AutoSize = true;
-            this.lbl_ReturnTrip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ReturnTrip.Location = new System.Drawing.Point(19, 424);
-            this.lbl_ReturnTrip.Name = "lbl_ReturnTrip";
-            this.lbl_ReturnTrip.Size = new System.Drawing.Size(110, 19);
-            this.lbl_ReturnTrip.TabIndex = 78;
-            this.lbl_ReturnTrip.Text = "Has return trip?";
+            this.CUST_FLNAME.DataPropertyName = "CUST_FLNAME";
+            this.CUST_FLNAME.HeaderText = "Customer";
+            this.CUST_FLNAME.Name = "CUST_FLNAME";
+            this.CUST_FLNAME.ReadOnly = true;
+            this.CUST_FLNAME.Width = 90;
             // 
-            // comboBox_ReturnTrip
+            // VEHICLE
             // 
-            this.comboBox_ReturnTrip.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.cUSTOMERBindingSource, "BROKER", true));
-            this.comboBox_ReturnTrip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_ReturnTrip.FormattingEnabled = true;
-            this.comboBox_ReturnTrip.Items.AddRange(new object[] {
-            "YES",
-            "NO"});
-            this.comboBox_ReturnTrip.Location = new System.Drawing.Point(142, 421);
-            this.comboBox_ReturnTrip.Name = "comboBox_ReturnTrip";
-            this.comboBox_ReturnTrip.Size = new System.Drawing.Size(93, 27);
-            this.comboBox_ReturnTrip.TabIndex = 79;
-            this.comboBox_ReturnTrip.Text = "NO";
+            this.VEHICLE.DataPropertyName = "VEHICLE";
+            this.VEHICLE.HeaderText = "Vehicle";
+            this.VEHICLE.MinimumWidth = 8;
+            this.VEHICLE.Name = "VEHICLE";
+            this.VEHICLE.ReadOnly = true;
             // 
-            // lbl_ReturnTripEdit
+            // PICKUP_ADDRESS
             // 
-            this.lbl_ReturnTripEdit.AutoSize = true;
-            this.lbl_ReturnTripEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_ReturnTripEdit.Location = new System.Drawing.Point(14, 96);
-            this.lbl_ReturnTripEdit.Name = "lbl_ReturnTripEdit";
-            this.lbl_ReturnTripEdit.Size = new System.Drawing.Size(121, 19);
-            this.lbl_ReturnTripEdit.TabIndex = 77;
-            this.lbl_ReturnTripEdit.Text = "Has Return Trip?";
+            this.PICKUP_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_ADDRESS.DataPropertyName = "PICKUP_ADDRESS";
+            this.PICKUP_ADDRESS.HeaderText = "Pickup Address";
+            this.PICKUP_ADDRESS.MinimumWidth = 8;
+            this.PICKUP_ADDRESS.Name = "PICKUP_ADDRESS";
+            this.PICKUP_ADDRESS.ReadOnly = true;
+            this.PICKUP_ADDRESS.Width = 132;
             // 
-            // comboBox_ReturnTripEdit
+            // PICKUP_CITY
             // 
-            this.comboBox_ReturnTripEdit.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.comboBox_ReturnTripEdit.Enabled = false;
-            this.comboBox_ReturnTripEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_ReturnTripEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_ReturnTripEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBox_ReturnTripEdit.FormattingEnabled = true;
-            this.comboBox_ReturnTripEdit.Items.AddRange(new object[] {
-            "YES",
-            "NO"});
-            this.comboBox_ReturnTripEdit.Location = new System.Drawing.Point(141, 93);
-            this.comboBox_ReturnTripEdit.Name = "comboBox_ReturnTripEdit";
-            this.comboBox_ReturnTripEdit.Size = new System.Drawing.Size(102, 27);
-            this.comboBox_ReturnTripEdit.TabIndex = 78;
+            this.PICKUP_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_CITY.DataPropertyName = "PICKUP_CITY";
+            this.PICKUP_CITY.HeaderText = "Pickup City";
+            this.PICKUP_CITY.MinimumWidth = 8;
+            this.PICKUP_CITY.Name = "PICKUP_CITY";
+            this.PICKUP_CITY.ReadOnly = true;
+            this.PICKUP_CITY.Width = 105;
+            // 
+            // PICKUP_STATE
+            // 
+            this.PICKUP_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_STATE.DataPropertyName = "PICKUP_STATE";
+            this.PICKUP_STATE.HeaderText = "Pickup State";
+            this.PICKUP_STATE.MinimumWidth = 8;
+            this.PICKUP_STATE.Name = "PICKUP_STATE";
+            this.PICKUP_STATE.ReadOnly = true;
+            this.PICKUP_STATE.Width = 113;
+            // 
+            // PICKUP_ZIP
+            // 
+            this.PICKUP_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PICKUP_ZIP.DataPropertyName = "PICKUP_ZIP";
+            this.PICKUP_ZIP.HeaderText = "Pickup Zip Code";
+            this.PICKUP_ZIP.MinimumWidth = 8;
+            this.PICKUP_ZIP.Name = "PICKUP_ZIP";
+            this.PICKUP_ZIP.ReadOnly = true;
+            this.PICKUP_ZIP.Width = 137;
+            // 
+            // DELIVERY_ADDRESS
+            // 
+            this.DELIVERY_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_ADDRESS.DataPropertyName = "DELIVERY_ADDRESS";
+            this.DELIVERY_ADDRESS.HeaderText = "Delivery Address";
+            this.DELIVERY_ADDRESS.MinimumWidth = 8;
+            this.DELIVERY_ADDRESS.Name = "DELIVERY_ADDRESS";
+            this.DELIVERY_ADDRESS.ReadOnly = true;
+            this.DELIVERY_ADDRESS.Width = 131;
+            // 
+            // DELIVERY_CITY
+            // 
+            this.DELIVERY_CITY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_CITY.DataPropertyName = "DELIVERY_CITY";
+            this.DELIVERY_CITY.HeaderText = "Delivery City";
+            this.DELIVERY_CITY.MinimumWidth = 8;
+            this.DELIVERY_CITY.Name = "DELIVERY_CITY";
+            this.DELIVERY_CITY.ReadOnly = true;
+            this.DELIVERY_CITY.Width = 106;
+            // 
+            // DELIVERY_STATE
+            // 
+            this.DELIVERY_STATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_STATE.DataPropertyName = "DELIVERY_STATE";
+            this.DELIVERY_STATE.HeaderText = "Delivery State";
+            this.DELIVERY_STATE.MinimumWidth = 8;
+            this.DELIVERY_STATE.Name = "DELIVERY_STATE";
+            this.DELIVERY_STATE.ReadOnly = true;
+            this.DELIVERY_STATE.Width = 114;
+            // 
+            // DELIVERY_ZIP
+            // 
+            this.DELIVERY_ZIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DELIVERY_ZIP.DataPropertyName = "DELIVERY_ZIP";
+            this.DELIVERY_ZIP.HeaderText = "Delivery Zip";
+            this.DELIVERY_ZIP.MinimumWidth = 8;
+            this.DELIVERY_ZIP.Name = "DELIVERY_ZIP";
+            this.DELIVERY_ZIP.ReadOnly = true;
+            this.DELIVERY_ZIP.Width = 102;
+            // 
+            // bOOKDATEDataGridViewTextBoxColumn
+            // 
+            this.bOOKDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.bOOKDATEDataGridViewTextBoxColumn.DataPropertyName = "BOOK_DATE";
+            this.bOOKDATEDataGridViewTextBoxColumn.HeaderText = "Book Date";
+            this.bOOKDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.bOOKDATEDataGridViewTextBoxColumn.Name = "bOOKDATEDataGridViewTextBoxColumn";
+            this.bOOKDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bOOKDATEDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // pICKUPDATEDataGridViewTextBoxColumn
+            // 
+            this.pICKUPDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.pICKUPDATEDataGridViewTextBoxColumn.DataPropertyName = "PICKUP_DATE";
+            this.pICKUPDATEDataGridViewTextBoxColumn.HeaderText = "Pickup Date";
+            this.pICKUPDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.pICKUPDATEDataGridViewTextBoxColumn.Name = "pICKUPDATEDataGridViewTextBoxColumn";
+            this.pICKUPDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pICKUPDATEDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // dROPOFFDATEDataGridViewTextBoxColumn
+            // 
+            this.dROPOFFDATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dROPOFFDATEDataGridViewTextBoxColumn.DataPropertyName = "DROPOFF_DATE";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.HeaderText = "Dropoff Date";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dROPOFFDATEDataGridViewTextBoxColumn.Name = "dROPOFFDATEDataGridViewTextBoxColumn";
+            this.dROPOFFDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dROPOFFDATEDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // oRDERSTATUSDataGridViewTextBoxColumn
+            // 
+            this.oRDERSTATUSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.oRDERSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORDER_STATUS";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.oRDERSTATUSDataGridViewTextBoxColumn.Name = "oRDERSTATUSDataGridViewTextBoxColumn";
+            this.oRDERSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oRDERSTATUSDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // RETURN_TRIP
+            // 
+            this.RETURN_TRIP.DataPropertyName = "RETURN_TRIP";
+            this.RETURN_TRIP.HeaderText = "Return Trip";
+            this.RETURN_TRIP.Name = "RETURN_TRIP";
+            this.RETURN_TRIP.ReadOnly = true;
+            // 
+            // ORDER_NUM
+            // 
+            this.ORDER_NUM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ORDER_NUM.DataPropertyName = "ORDER_NUM";
+            this.ORDER_NUM.HeaderText = "ORDER #";
+            this.ORDER_NUM.MinimumWidth = 8;
+            this.ORDER_NUM.Name = "ORDER_NUM";
+            this.ORDER_NUM.ReadOnly = true;
+            this.ORDER_NUM.Width = 86;
+            // 
+            // iNVIDDataGridViewTextBoxColumn
+            // 
+            this.iNVIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.iNVIDDataGridViewTextBoxColumn.DataPropertyName = "INV_ID";
+            this.iNVIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iNVIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.iNVIDDataGridViewTextBoxColumn.Name = "iNVIDDataGridViewTextBoxColumn";
+            this.iNVIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iNVIDDataGridViewTextBoxColumn.Width = 48;
             // 
             // MainPage
             // 
@@ -2765,13 +2775,13 @@ namespace WindowsFormsApp3
             this.Load += new System.EventHandler(this.AddCustomer_Load);
             tab_CreateOrder.ResumeLayout(false);
             tab_CreateOrder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vEHICLEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Status)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tab_ManageCustomers.ResumeLayout(false);
@@ -2976,6 +2986,14 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btn_Help3;
         private System.Windows.Forms.Button btn_Help2;
         private System.Windows.Forms.Button btn_Help4;
+        private System.Windows.Forms.Button btn_ClearSearch1;
+        private System.Windows.Forms.Button btn_ClearSearch2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE_NOTES;
+        private System.Windows.Forms.ComboBox comboBox_ReturnTrip;
+        private System.Windows.Forms.Label lbl_ReturnTrip;
+        private System.Windows.Forms.ComboBox comboBox_ReturnTripEdit;
+        private System.Windows.Forms.Label lbl_ReturnTripEdit;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUST_FLNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE;
         private System.Windows.Forms.DataGridViewTextBoxColumn PICKUP_ADDRESS;
@@ -2990,15 +3008,8 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.DataGridViewTextBoxColumn pICKUPDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dROPOFFDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSTATUSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RETURN_TRIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_NUM;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btn_ClearSearch1;
-        private System.Windows.Forms.Button btn_ClearSearch2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE_NOTES;
-        private System.Windows.Forms.ComboBox comboBox_ReturnTrip;
-        private System.Windows.Forms.Label lbl_ReturnTrip;
-        private System.Windows.Forms.ComboBox comboBox_ReturnTripEdit;
-        private System.Windows.Forms.Label lbl_ReturnTripEdit;
     }
 }

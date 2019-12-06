@@ -1180,6 +1180,7 @@ namespace WindowsFormsApp3
             txtbox_OrderSearchBox.ReadOnly = false;
             btn_SaveOrderEdit.Visible = true;
             btn_EditOrder.Visible = false;
+            comboBox_ReturnTripEdit.Enabled = true;
         }
 
         private void btn_SaveOrderEdit_Click(object sender, EventArgs e)
@@ -1205,9 +1206,11 @@ namespace WindowsFormsApp3
             lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
 
 
-            bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false;
+
+            bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false, noReturn = false;
 
             if (string.IsNullOrEmpty(txtbox_PickupAddressEdit.Text))
             {
@@ -1269,6 +1272,11 @@ namespace WindowsFormsApp3
                 noOrder = true;
                 lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
+            if (comboBox_ReturnTripEdit.Text != "YES" && comboBox_ReturnTripEdit.Text != "NO")
+            {
+                noReturn = true;
+                lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
 
             //date validation
             if (dateTimePicker_BookingDateEdit.Value > dateTimePicker_PickUpDateEdit.Value)
@@ -1298,7 +1306,7 @@ namespace WindowsFormsApp3
             }
 
             //successfull entry to the database
-            if (!noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickDate && !noDropDate && !noCust)
+            if (!noOrder && !noReturn && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickDate && !noDropDate && !noCust)
             {
                                 
                 iNVOICEBindingSource.EndEdit();        
@@ -1326,6 +1334,7 @@ namespace WindowsFormsApp3
                 txtboxrch_SpecialInstructions.ReadOnly = true;
                 txtboxrch_Description.ReadOnly = true;
                 comboBox_CUSTFLNAMEBOX.Enabled = false;
+                comboBox_ReturnTripEdit.Enabled = false;
 
             }
             else
@@ -1345,6 +1354,10 @@ namespace WindowsFormsApp3
                 else if (noDropDate)
                 {
                     MessageBox.Show("The delivery date cannot be before the pickup date.", "Invalid Date Entry");
+                }
+                else if (noReturn)
+                {
+                    MessageBox.Show("The Return Trip must be either YES or NO.", "Invalid Entry");
                 }
                 else
                 {

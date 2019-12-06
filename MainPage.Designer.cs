@@ -232,6 +232,8 @@ namespace WindowsFormsApp3
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
             this.lbl_ReturnTrip = new System.Windows.Forms.Label();
             this.comboBox_ReturnTrip = new System.Windows.Forms.ComboBox();
+            this.lbl_ReturnTripEdit = new System.Windows.Forms.Label();
+            this.comboBox_ReturnTripEdit = new System.Windows.Forms.ComboBox();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -1640,6 +1642,8 @@ namespace WindowsFormsApp3
             // tab_SearchOrders
             // 
             this.tab_SearchOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tab_SearchOrders.Controls.Add(this.comboBox_ReturnTripEdit);
+            this.tab_SearchOrders.Controls.Add(this.lbl_ReturnTripEdit);
             this.tab_SearchOrders.Controls.Add(this.btn_Help3);
             this.tab_SearchOrders.Controls.Add(this.lbl_CustomerEdit);
             this.tab_SearchOrders.Controls.Add(this.comboBox_CUSTFLNAMEBOX);
@@ -1709,7 +1713,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerEdit.AutoSize = true;
             this.lbl_CustomerEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_CustomerEdit.Location = new System.Drawing.Point(257, 120);
+            this.lbl_CustomerEdit.Location = new System.Drawing.Point(257, 125);
             this.lbl_CustomerEdit.Name = "lbl_CustomerEdit";
             this.lbl_CustomerEdit.Size = new System.Drawing.Size(78, 19);
             this.lbl_CustomerEdit.TabIndex = 75;
@@ -1729,7 +1733,7 @@ namespace WindowsFormsApp3
             this.comboBox_CUSTFLNAMEBOX.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_CUSTFLNAMEBOX.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox_CUSTFLNAMEBOX.FormattingEnabled = true;
-            this.comboBox_CUSTFLNAMEBOX.Location = new System.Drawing.Point(341, 117);
+            this.comboBox_CUSTFLNAMEBOX.Location = new System.Drawing.Point(341, 123);
             this.comboBox_CUSTFLNAMEBOX.Name = "comboBox_CUSTFLNAMEBOX";
             this.comboBox_CUSTFLNAMEBOX.Size = new System.Drawing.Size(155, 27);
             this.comboBox_CUSTFLNAMEBOX.TabIndex = 74;
@@ -1828,7 +1832,7 @@ namespace WindowsFormsApp3
             this.comboBox_VehicleEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_VehicleEdit.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox_VehicleEdit.FormattingEnabled = true;
-            this.comboBox_VehicleEdit.Location = new System.Drawing.Point(116, 117);
+            this.comboBox_VehicleEdit.Location = new System.Drawing.Point(116, 123);
             this.comboBox_VehicleEdit.Name = "comboBox_VehicleEdit";
             this.comboBox_VehicleEdit.Size = new System.Drawing.Size(127, 27);
             this.comboBox_VehicleEdit.TabIndex = 72;
@@ -1839,7 +1843,7 @@ namespace WindowsFormsApp3
             this.lbl_VehicleEdit.AutoSize = true;
             this.lbl_VehicleEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_VehicleEdit.Location = new System.Drawing.Point(12, 120);
+            this.lbl_VehicleEdit.Location = new System.Drawing.Point(12, 125);
             this.lbl_VehicleEdit.Name = "lbl_VehicleEdit";
             this.lbl_VehicleEdit.Size = new System.Drawing.Size(98, 19);
             this.lbl_VehicleEdit.TabIndex = 71;
@@ -1862,7 +1866,7 @@ namespace WindowsFormsApp3
             this.lbl_OrderNumberEdit.AutoSize = true;
             this.lbl_OrderNumberEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_OrderNumberEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(12, 46);
+            this.lbl_OrderNumberEdit.Location = new System.Drawing.Point(12, 38);
             this.lbl_OrderNumberEdit.Name = "lbl_OrderNumberEdit";
             this.lbl_OrderNumberEdit.Size = new System.Drawing.Size(65, 19);
             this.lbl_OrderNumberEdit.TabIndex = 41;
@@ -1882,7 +1886,7 @@ namespace WindowsFormsApp3
             "Delayed",
             "Complete",
             "Cancelled"});
-            this.comboBox_OrderStatusEdit.Location = new System.Drawing.Point(364, 79);
+            this.comboBox_OrderStatusEdit.Location = new System.Drawing.Point(364, 83);
             this.comboBox_OrderStatusEdit.Name = "comboBox_OrderStatusEdit";
             this.comboBox_OrderStatusEdit.Size = new System.Drawing.Size(132, 27);
             this.comboBox_OrderStatusEdit.TabIndex = 40;
@@ -2162,7 +2166,7 @@ namespace WindowsFormsApp3
             this.lbl_OrderStatusEdit.AutoSize = true;
             this.lbl_OrderStatusEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_OrderStatusEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_OrderStatusEdit.Location = new System.Drawing.Point(257, 82);
+            this.lbl_OrderStatusEdit.Location = new System.Drawing.Point(257, 85);
             this.lbl_OrderStatusEdit.Name = "lbl_OrderStatusEdit";
             this.lbl_OrderStatusEdit.Size = new System.Drawing.Size(100, 19);
             this.lbl_OrderStatusEdit.TabIndex = 13;
@@ -2176,7 +2180,7 @@ namespace WindowsFormsApp3
             this.txtboxCustomerIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUST_ID", true));
             this.txtboxCustomerIdEdit.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxCustomerIdEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(114, 79);
+            this.txtboxCustomerIdEdit.Location = new System.Drawing.Point(114, 63);
             this.txtboxCustomerIdEdit.Name = "txtboxCustomerIdEdit";
             this.txtboxCustomerIdEdit.ReadOnly = true;
             this.txtboxCustomerIdEdit.Size = new System.Drawing.Size(57, 26);
@@ -2187,7 +2191,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerIdEdit.AutoSize = true;
             this.lbl_CustomerIdEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerIdEdit.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(12, 82);
+            this.lbl_CustomerIdEdit.Location = new System.Drawing.Point(12, 67);
             this.lbl_CustomerIdEdit.Name = "lbl_CustomerIdEdit";
             this.lbl_CustomerIdEdit.Size = new System.Drawing.Size(96, 19);
             this.lbl_CustomerIdEdit.TabIndex = 11;
@@ -2233,7 +2237,7 @@ namespace WindowsFormsApp3
             this.txtbox_InvoiceIdEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iNVOICEBindingSource, "INV_ID", true));
             this.txtbox_InvoiceIdEdit.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_InvoiceIdEdit.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(90, 43);
+            this.txtbox_InvoiceIdEdit.Location = new System.Drawing.Point(90, 35);
             this.txtbox_InvoiceIdEdit.Name = "txtbox_InvoiceIdEdit";
             this.txtbox_InvoiceIdEdit.ReadOnly = true;
             this.txtbox_InvoiceIdEdit.Size = new System.Drawing.Size(72, 26);
@@ -2717,6 +2721,33 @@ namespace WindowsFormsApp3
             this.comboBox_ReturnTrip.TabIndex = 79;
             this.comboBox_ReturnTrip.Text = "NO";
             // 
+            // lbl_ReturnTripEdit
+            // 
+            this.lbl_ReturnTripEdit.AutoSize = true;
+            this.lbl_ReturnTripEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_ReturnTripEdit.Location = new System.Drawing.Point(14, 96);
+            this.lbl_ReturnTripEdit.Name = "lbl_ReturnTripEdit";
+            this.lbl_ReturnTripEdit.Size = new System.Drawing.Size(121, 19);
+            this.lbl_ReturnTripEdit.TabIndex = 77;
+            this.lbl_ReturnTripEdit.Text = "Has Return Trip?";
+            // 
+            // comboBox_ReturnTripEdit
+            // 
+            this.comboBox_ReturnTripEdit.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.comboBox_ReturnTripEdit.Enabled = false;
+            this.comboBox_ReturnTripEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_ReturnTripEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_ReturnTripEdit.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox_ReturnTripEdit.FormattingEnabled = true;
+            this.comboBox_ReturnTripEdit.Items.AddRange(new object[] {
+            "YES",
+            "NO"});
+            this.comboBox_ReturnTripEdit.Location = new System.Drawing.Point(141, 93);
+            this.comboBox_ReturnTripEdit.Name = "comboBox_ReturnTripEdit";
+            this.comboBox_ReturnTripEdit.Size = new System.Drawing.Size(102, 27);
+            this.comboBox_ReturnTripEdit.TabIndex = 78;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2967,5 +2998,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE_NOTES;
         private System.Windows.Forms.ComboBox comboBox_ReturnTrip;
         private System.Windows.Forms.Label lbl_ReturnTrip;
+        private System.Windows.Forms.ComboBox comboBox_ReturnTripEdit;
+        private System.Windows.Forms.Label lbl_ReturnTripEdit;
     }
 }

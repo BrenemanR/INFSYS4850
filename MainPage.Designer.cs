@@ -217,6 +217,8 @@ namespace WindowsFormsApp3
             this.txtboxrch_VehicleNotes = new System.Windows.Forms.RichTextBox();
             this.btn_EditVehicle = new System.Windows.Forms.Button();
             this.dataGridViewVehicle = new System.Windows.Forms.DataGridView();
+            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VEHICLE_NOTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_CancelVehicle = new System.Windows.Forms.Button();
             this.btn_AddVehicle = new System.Windows.Forms.Button();
             this.btn_SaveVehicle = new System.Windows.Forms.Button();
@@ -228,8 +230,8 @@ namespace WindowsFormsApp3
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.vEHICLENAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VEHICLE_NOTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_ReturnTrip = new System.Windows.Forms.Label();
+            this.comboBox_ReturnTrip = new System.Windows.Forms.ComboBox();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iNVOICEBindingSource)).BeginInit();
@@ -258,6 +260,8 @@ namespace WindowsFormsApp3
             // tab_CreateOrder
             // 
             tab_CreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            tab_CreateOrder.Controls.Add(this.comboBox_ReturnTrip);
+            tab_CreateOrder.Controls.Add(this.lbl_ReturnTrip);
             tab_CreateOrder.Controls.Add(this.btn_Help2);
             tab_CreateOrder.Controls.Add(this.DropOffDatePicker);
             tab_CreateOrder.Controls.Add(this.PickUpDatePicker);
@@ -362,15 +366,15 @@ namespace WindowsFormsApp3
             // 
             // btn_CancelOrder
             // 
-            this.btn_CancelOrder.Enabled = false;
             this.btn_CancelOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_CancelOrder.Location = new System.Drawing.Point(126, 488);
+            this.btn_CancelOrder.Location = new System.Drawing.Point(215, 464);
             this.btn_CancelOrder.Name = "btn_CancelOrder";
-            this.btn_CancelOrder.Size = new System.Drawing.Size(137, 40);
+            this.btn_CancelOrder.Size = new System.Drawing.Size(137, 68);
             this.btn_CancelOrder.TabIndex = 71;
             this.btn_CancelOrder.Text = "Cancel";
             this.btn_CancelOrder.UseVisualStyleBackColor = true;
+            this.btn_CancelOrder.Visible = false;
             this.btn_CancelOrder.Click += new System.EventHandler(this.btn_CancelOrder_Click);
             // 
             // comboBox_Vehicle
@@ -383,9 +387,9 @@ namespace WindowsFormsApp3
             this.comboBox_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Vehicle.ForeColor = System.Drawing.SystemColors.Window;
             this.comboBox_Vehicle.FormattingEnabled = true;
-            this.comboBox_Vehicle.Location = new System.Drawing.Point(918, 83);
+            this.comboBox_Vehicle.Location = new System.Drawing.Point(941, 83);
             this.comboBox_Vehicle.Name = "comboBox_Vehicle";
-            this.comboBox_Vehicle.Size = new System.Drawing.Size(173, 27);
+            this.comboBox_Vehicle.Size = new System.Drawing.Size(150, 27);
             this.comboBox_Vehicle.TabIndex = 70;
             this.comboBox_Vehicle.ValueMember = "VEHICLE_ID";
             // 
@@ -398,7 +402,7 @@ namespace WindowsFormsApp3
             // 
             this.lbl_Vehicle.AutoSize = true;
             this.lbl_Vehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Vehicle.Location = new System.Drawing.Point(814, 86);
+            this.lbl_Vehicle.Location = new System.Drawing.Point(828, 86);
             this.lbl_Vehicle.Name = "lbl_Vehicle";
             this.lbl_Vehicle.Size = new System.Drawing.Size(98, 19);
             this.lbl_Vehicle.TabIndex = 69;
@@ -669,24 +673,24 @@ namespace WindowsFormsApp3
             // 
             // btn_SaveOrder
             // 
-            this.btn_SaveOrder.Enabled = false;
             this.btn_SaveOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SaveOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_SaveOrder.Location = new System.Drawing.Point(198, 423);
+            this.btn_SaveOrder.Location = new System.Drawing.Point(47, 464);
             this.btn_SaveOrder.Name = "btn_SaveOrder";
-            this.btn_SaveOrder.Size = new System.Drawing.Size(137, 59);
+            this.btn_SaveOrder.Size = new System.Drawing.Size(137, 68);
             this.btn_SaveOrder.TabIndex = 17;
             this.btn_SaveOrder.Text = "Save Order";
             this.btn_SaveOrder.UseVisualStyleBackColor = true;
+            this.btn_SaveOrder.Visible = false;
             this.btn_SaveOrder.Click += new System.EventHandler(this.btn_SaveOrder_Click);
             // 
             // btn_CreateOrder
             // 
             this.btn_CreateOrder.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_CreateOrder.Location = new System.Drawing.Point(55, 423);
+            this.btn_CreateOrder.Location = new System.Drawing.Point(47, 464);
             this.btn_CreateOrder.Name = "btn_CreateOrder";
-            this.btn_CreateOrder.Size = new System.Drawing.Size(137, 59);
+            this.btn_CreateOrder.Size = new System.Drawing.Size(305, 68);
             this.btn_CreateOrder.TabIndex = 18;
             this.btn_CreateOrder.Text = "Create Order";
             this.btn_CreateOrder.UseVisualStyleBackColor = true;
@@ -2588,6 +2592,24 @@ namespace WindowsFormsApp3
             this.dataGridViewVehicle.Size = new System.Drawing.Size(658, 253);
             this.dataGridViewVehicle.TabIndex = 7;
             // 
+            // vEHICLENAMEDataGridViewTextBoxColumn
+            // 
+            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
+            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
+            // 
+            // VEHICLE_NOTES
+            // 
+            this.VEHICLE_NOTES.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.VEHICLE_NOTES.DataPropertyName = "VEHICLE_NOTES";
+            this.VEHICLE_NOTES.HeaderText = "VEHICLE_NOTES";
+            this.VEHICLE_NOTES.Name = "VEHICLE_NOTES";
+            this.VEHICLE_NOTES.ReadOnly = true;
+            this.VEHICLE_NOTES.Width = 141;
+            // 
             // btn_CancelVehicle
             // 
             this.btn_CancelVehicle.Enabled = false;
@@ -2671,23 +2693,29 @@ namespace WindowsFormsApp3
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
-            // vEHICLENAMEDataGridViewTextBoxColumn
+            // lbl_ReturnTrip
             // 
-            this.vEHICLENAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.HeaderText = "VEHICLE_NAME";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Name = "vEHICLENAMEDataGridViewTextBoxColumn";
-            this.vEHICLENAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLENAMEDataGridViewTextBoxColumn.Width = 137;
+            this.lbl_ReturnTrip.AutoSize = true;
+            this.lbl_ReturnTrip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ReturnTrip.Location = new System.Drawing.Point(19, 424);
+            this.lbl_ReturnTrip.Name = "lbl_ReturnTrip";
+            this.lbl_ReturnTrip.Size = new System.Drawing.Size(110, 19);
+            this.lbl_ReturnTrip.TabIndex = 78;
+            this.lbl_ReturnTrip.Text = "Has return trip?";
             // 
-            // VEHICLE_NOTES
+            // comboBox_ReturnTrip
             // 
-            this.VEHICLE_NOTES.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.VEHICLE_NOTES.DataPropertyName = "VEHICLE_NOTES";
-            this.VEHICLE_NOTES.HeaderText = "VEHICLE_NOTES";
-            this.VEHICLE_NOTES.Name = "VEHICLE_NOTES";
-            this.VEHICLE_NOTES.ReadOnly = true;
-            this.VEHICLE_NOTES.Width = 141;
+            this.comboBox_ReturnTrip.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.cUSTOMERBindingSource, "BROKER", true));
+            this.comboBox_ReturnTrip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_ReturnTrip.FormattingEnabled = true;
+            this.comboBox_ReturnTrip.Items.AddRange(new object[] {
+            "YES",
+            "NO"});
+            this.comboBox_ReturnTrip.Location = new System.Drawing.Point(142, 421);
+            this.comboBox_ReturnTrip.Name = "comboBox_ReturnTrip";
+            this.comboBox_ReturnTrip.Size = new System.Drawing.Size(93, 27);
+            this.comboBox_ReturnTrip.TabIndex = 79;
+            this.comboBox_ReturnTrip.Text = "NO";
             // 
             // MainPage
             // 
@@ -2937,5 +2965,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btn_ClearSearch2;
         private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLENAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn VEHICLE_NOTES;
+        private System.Windows.Forms.ComboBox comboBox_ReturnTrip;
+        private System.Windows.Forms.Label lbl_ReturnTrip;
     }
 }

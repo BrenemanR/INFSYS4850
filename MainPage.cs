@@ -652,8 +652,8 @@ namespace WindowsFormsApp3
             iNVOICEBindingSource.RemoveSort();
             iNVOICEBindingSource.MoveLast();
 
-            btn_SaveOrder.Enabled = true;
-            btn_CreateOrder.Enabled = false;
+            btn_SaveOrder.Visible = false;
+            btn_CreateOrder.Visible = true;
             combobox_CustomerIDZ.Enabled = true;
             BookDatePicker.Enabled = false;
             PickUpDatePicker.Enabled = true;
@@ -689,7 +689,7 @@ namespace WindowsFormsApp3
             checkBox_CopyPickupInformation.Visible = true;
            txtbox_OrderNum.ReadOnly = false;
             comboBox_Vehicle.Enabled = true;
-            btn_CancelOrder.Enabled = true;
+            btn_CancelOrder.Visible = false;
             combobox_CustomerIDZ.Enabled = true;
             txtbox_OrderNum.Text = "";
             BookDatePicker.Value = DateTime.Today;
@@ -697,13 +697,14 @@ namespace WindowsFormsApp3
             DropOffDatePicker.Value = DateTime.Today;
 
 
-            btn_SaveOrder.Enabled = true;
-
+            btn_SaveOrder.Visible = true;
+            btn_CancelOrder.Visible = true;
+            btn_CreateOrder.Visible = false;
         }
 
         private void btn_SaveOrder_Click(object sender, EventArgs e)
         {
-            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false;
+            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noReturn = false;
 
             lbl_Address.ForeColor = System.Drawing.Color.LightGray;
             lbl_City.ForeColor = System.Drawing.Color.LightGray;
@@ -725,6 +726,7 @@ namespace WindowsFormsApp3
             lbl_PickupDate.ForeColor = System.Drawing.Color.LightGray;
             lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightGray;
             lbl_OrderStatus.ForeColor = System.Drawing.Color.LightGray;
+            lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightGray;
 
 
             if (string.IsNullOrEmpty(txtbox_Company.Text))
@@ -835,21 +837,24 @@ namespace WindowsFormsApp3
                 lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightCoral;
                 lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
             }
+            if (string.IsNullOrEmpty(comboBox_ReturnTrip.Text))
+            {
+                noReturn = true;
+                lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightCoral;
+            }
 
             //successfull entry to the database
 
-            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle &&!noStatus && !noPickAdd && !noDropDate)
+            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle &&!noStatus && !noPickAdd && !noDropDate && !noReturn)
             {
                 if (!noPhone && !Regex.IsMatch(txtbox_Phone.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
                 {
                     lbl_Phone.ForeColor = System.Drawing.Color.LightCoral;
-                    btn_CreateOrder.Enabled = false;
                     noPhone = true;
                 }
                 if (!noEmail && !Regex.IsMatch(txtbox_Email.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
                 {
                     lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
-                    btn_CreateOrder.Enabled = false;
                     noEmail = true;
                 }
                 if (txtbox_DeliveryZip.TextLength != 5) //Check to see if the zip code is 5 digits.
@@ -875,16 +880,21 @@ namespace WindowsFormsApp3
                 {
                     noPickDate = true;
                     lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
-                    btn_CreateOrder.Enabled = false;
+                    
                 }
                 if (PickUpDatePicker.Value > DropOffDatePicker.Value)
                 {
                     noDropDate = true;
                     lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_PickupDate.ForeColor = System.Drawing.Color.LightCoral;
-                    btn_CreateOrder.Enabled = false;
+                    
                 }
-                if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip)
+                if (comboBox_ReturnTrip.Text != "YES" && comboBox_ReturnTrip.Text != "NO")
+                {
+                    noReturn = true;
+                    lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightCoral;
+                }
+                if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip &&!noReturn)
                 {
                     //adds to the database
                     iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
@@ -894,7 +904,7 @@ namespace WindowsFormsApp3
                     iNVOICETableAdapter.Update(this.appData.INVOICE);
 
                     //default values after order is saved and prevents the user from changing data
-                    btn_CreateOrder.Enabled = true;
+                    btn_CreateOrder.Visible = true;
                     combobox_CustomerIDZ.Enabled = false;
                     BookDatePicker.Enabled = false;
                     PickUpDatePicker.Enabled = false;
@@ -906,7 +916,7 @@ namespace WindowsFormsApp3
                     txtboxrch_SpecialInstructions.Text = ""; //Wipes the data from the Description text box after a save.
                     checkBox_CopyPickupInformation.Visible = false; //dechecks the pickup check box.
                     checkBox_CopyDropoffInformation.Visible = false; //dechecks the dropoff check box.
-                    btn_CancelOrder.Enabled = false;
+                    btn_CancelOrder.Visible = false;
                     BookDatePicker.Value = DateTime.Today;
                     PickUpDatePicker.Value = DateTime.Today;
                     DropOffDatePicker.Value = DateTime.Today;
@@ -937,7 +947,7 @@ namespace WindowsFormsApp3
                     txtbox_DeliveryCity.ReadOnly = true;
                     txtbox_DeliveryState.ReadOnly = true;
                     txtbox_DeliveryZip.ReadOnly = true;
-                    btn_SaveOrder.Enabled = false;
+                    btn_SaveOrder.Visible = false;
                     picBox_Status.Enabled = false;
                     comboBox_Status.Enabled = false;
                     txtboxrch_Description.ReadOnly = true;
@@ -975,6 +985,10 @@ namespace WindowsFormsApp3
                     else if (noDropDate)
                     {
                         MessageBox.Show("The delivery date cannot be before the pickup date.", "Invalid Date Entry");
+                    }
+                    else if(noReturn)
+                    {
+                        MessageBox.Show("The return trip must either be YES or NO", "Invalid Entry");
                     }
                 }
                 
@@ -1429,12 +1443,12 @@ namespace WindowsFormsApp3
             txtbox_DeliveryCity.ReadOnly = true;
             txtbox_DeliveryState.ReadOnly = true;
             txtbox_DeliveryZip.ReadOnly = true;
-            btn_SaveOrder.Enabled = false;
+            btn_SaveOrder.Visible = false;
             picBox_Status.Enabled = false;
             comboBox_Status.Enabled = false;
             txtboxrch_Description.ReadOnly = true;
             txtboxrch_SpecialInstructions.ReadOnly = true;
-            btn_SaveOrder.Enabled = false;
+            btn_CancelOrder.Visible = false;
             txtbox_OrderNum.ReadOnly = true;
             comboBox_Vehicle.Enabled = false;
             combobox_CustomerIDZ.Enabled = false;
@@ -1442,8 +1456,7 @@ namespace WindowsFormsApp3
             iNVOICEBindingSource.CancelEdit();
             iNVOICEBindingSource.RemoveCurrent();
 
-            btn_CancelOrder.Enabled = false;
-            btn_CreateOrder.Enabled = true;
+            btn_CreateOrder.Visible = true;
         }
 
         private void btn_AddVehicle_Click(object sender, EventArgs e)

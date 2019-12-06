@@ -14,7 +14,10 @@ namespace WindowsFormsApp3
 {
     public partial class MainPage : Form
     {
-        bool isSaved = true;
+        bool CustomerisSaved = true;
+        bool CreateOrderisSaved = true;
+        bool EditOrderisSaved = true;
+        bool VehicleisSaved = true;
         bool editCustomer = false;
                 
         public MainPage()
@@ -96,7 +99,7 @@ namespace WindowsFormsApp3
                     cUSTOMERBindingSource.MoveLast();
                     comboBox_Broker.SelectedItem = "NO";
                     //comboBox_Broker.SelectedIndex = 1;
-                    isSaved = false;
+                    CustomerisSaved = false;
                     
                 }
 
@@ -138,7 +141,7 @@ namespace WindowsFormsApp3
                 btnSave.Enabled = true;
                 dataGridView1.Enabled = false;
                 FirstNameBox.Focus();
-                isSaved = false;
+                CustomerisSaved = false;
                 btnEdit.Enabled = false;
                 editCustomer = true;
             }
@@ -181,6 +184,7 @@ namespace WindowsFormsApp3
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
                 lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
+                CustomerisSaved = true;
             }
             else //(editCustomer == false)
             {
@@ -217,6 +221,7 @@ namespace WindowsFormsApp3
                 CityLabel.ForeColor = System.Drawing.Color.LightGray;
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
+                CustomerisSaved = true;
             }
         }
 
@@ -345,7 +350,7 @@ namespace WindowsFormsApp3
                         ZipBox.ReadOnly = true;
                         dataGridView1.Enabled = true;
                         SearchBox.Enabled = true;
-                        isSaved = true;
+                        CustomerisSaved = true;
                         btnSave.Enabled = false;
                         btnCancel.Enabled = false;
 
@@ -437,128 +442,6 @@ namespace WindowsFormsApp3
 
         }
 
-        
-        private void ManageCustomers_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //Allows the user to re-open the form once it's closed.
-            //mainPage.Controls["btn_ManageCustomersOpened"].Visible = false;
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cUSTOMERBindingSource.EndEdit();
-                if (string.IsNullOrEmpty(FirstNameBox.Text))
-                {
-
-                    MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    btnNew.Enabled = false;
-                    
-
-                }
-                else
-                {
-                    cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
-                    btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
-                    btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                    //panel1.Enabled = false;
-                    FirstNameBox.ReadOnly = true;
-                    LastNameBox.ReadOnly = true;
-                    EmailBox.ReadOnly = true;
-                    PhoneNumberBox.ReadOnly = true;
-                    CompanyBox.ReadOnly = true;
-                    AddressBox.ReadOnly = true;
-                    CityBox.ReadOnly = true;
-                    StateBox.ReadOnly = true;
-                    ZipBox.ReadOnly = true;
-                    isSaved = true;
-                }
-
-                btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
-                                
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cUSTOMERBindingSource.ResetBindings(false);
-            }
-
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (isSaved)
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit Manage Customers?", "Warning", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    //do something
-                    this.Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("There might be unsaved changes. Would you like to save?", "Warning", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    //saves then closes the form
-                    try
-                    {
-                        cUSTOMERBindingSource.EndEdit();
-                        if (string.IsNullOrEmpty(FirstNameBox.Text))
-                        {
-
-                            MessageBox.Show(FirstNameBox.Text, "First name cannot be blank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            btnNew.Enabled = false;
-                            
-
-                        }
-                        else
-                        {
-                            cUSTOMERTableAdapter.Update(this.appData.CUSTOMER);
-                            btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
-                            btnNew.Enabled = true;  //Reenables the New Button After an edit is saved.
-                            //panel1.Enabled = false;
-                            FirstNameBox.ReadOnly = true;
-                            LastNameBox.ReadOnly = true;
-                            EmailBox.ReadOnly = true;
-                            PhoneNumberBox.ReadOnly = true;
-                            CompanyBox.ReadOnly = true;
-                            AddressBox.ReadOnly = true;
-                            CityBox.ReadOnly = true;
-                            StateBox.ReadOnly = true;
-                            ZipBox.ReadOnly = true;
-                            isSaved = true;
-                            MessageBox.Show("Your data has been saved.");
-                            this.Close();
-                        }
-
-                        btnEdit.Enabled = true; //Reenables the Edit Button After a new record is saved.
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        cUSTOMERBindingSource.ResetBindings(false);
-                    }
-                    
-                    
-                }
-                
-                else if (dialogResult == DialogResult.No)
-                {
-                    //closes the form without saving
-                    this.Close();
-                }
-            }
-            
-            
-        }
 
         private void PhoneNumberBox_KeyPress(object sender, KeyPressEventArgs p) //Ensures that the user is only able to enter in 10 digits for the phonen number field.
         {
@@ -612,25 +495,71 @@ namespace WindowsFormsApp3
 
         private void ManageCustomers_FormClosing(object sender, FormClosingEventArgs e)
         {
+    
+            String unsaved1 = "";
+            String unsaved2 = "";
+            String unsaved3 = "";
+            String unsaved4 = "";
+
             if (closeApp) //closeApp prevents getting stuck in a close loop.
-            {
-                //Checks to make sure that the user doesn't accidentally close the application.
-                var res = MessageBox.Show(this, "Are you sure that you want to quit?", "Exit",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                if (res != DialogResult.Yes)
+            {     
+                if (!CustomerisSaved) //unsaved1
                 {
-                    e.Cancel = true;
-                    return;
+                    unsaved1 = "\"Manage Customers\"\n";
+                }
+                if (!CreateOrderisSaved) //unsaved2
+                {
+                    unsaved2 = "\"Create Order\"\n";
+                }
+                if (!EditOrderisSaved) //unsaved3
+                {
+                    unsaved3 = "\"Search/Edit Orders\"\n";
+                }
+                if (!VehicleisSaved) //unsaved4
+                {
+                    unsaved4 = "\"Manage Vehicles\"\n";
+                }
+                if (!CustomerisSaved || !CreateOrderisSaved || !EditOrderisSaved || !VehicleisSaved)
+                {
+                    String warningMessage = "You have unsaved data on the following tabs: \n\n" + unsaved1 + unsaved2 + unsaved3 + unsaved4 + "\nAre you sure you want to quit?";
+                    var res = MessageBox.Show(this, warningMessage, "WARNING",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    if (res != DialogResult.Yes)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                        timer.Interval = 1600;
+                        timer.Tick += new EventHandler(Timer_Tick);
+                        timer.Start();
+                        //Says goodbye to the user.
+                        ExitForm exitForm = new ExitForm();
+                        exitForm.Show();
+                    }
                 }
                 else
                 {
-                    e.Cancel = true;
-                    timer.Interval = 1600;
-                    timer.Tick += new EventHandler(Timer_Tick);
-                    timer.Start();
-                    //Says goodbye to the user.
-                    ExitForm exitForm = new ExitForm();
-                    exitForm.Show();
+                    String warningMessage = "Are you sure you want to quit?";
+                    var res = MessageBox.Show(this, warningMessage, "WARNING",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    if (res != DialogResult.Yes)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                        timer.Interval = 1600;
+                        timer.Tick += new EventHandler(Timer_Tick);
+                        timer.Start();
+                        //Says goodbye to the user.
+                        ExitForm exitForm = new ExitForm();
+                        exitForm.Show();
+                    }
                 }
             }
             else
@@ -706,6 +635,7 @@ namespace WindowsFormsApp3
             BookDatePicker.Value = DateTime.Today;
             PickUpDatePicker.Value = DateTime.Today;
             DropOffDatePicker.Value = DateTime.Today;
+            CreateOrderisSaved = false;
 
 
             btn_SaveOrder.Visible = true;
@@ -966,6 +896,7 @@ namespace WindowsFormsApp3
                     txtbox_OrderNum.ReadOnly = true;
                     comboBox_Vehicle.Enabled = false;
                     combobox_CustomerIDZ.Enabled = false;
+                    CreateOrderisSaved = true;
                 }
                 else
                 {
@@ -1202,6 +1133,7 @@ namespace WindowsFormsApp3
                 btn_EditOrder.Visible = false;
                 comboBox_ReturnTripEdit.Enabled = true;
                 btn_CancelOrderEdit.Visible = true;
+                EditOrderisSaved = false;
             }
         }
 
@@ -1358,6 +1290,7 @@ namespace WindowsFormsApp3
                 txtboxrch_Description.ReadOnly = true;
                 comboBox_CUSTFLNAMEBOX.Enabled = false;
                 comboBox_ReturnTripEdit.Enabled = false;
+                EditOrderisSaved = true;
 
             }
             else
@@ -1488,6 +1421,7 @@ namespace WindowsFormsApp3
             txtbox_OrderNum.ReadOnly = true;
             comboBox_Vehicle.Enabled = false;
             combobox_CustomerIDZ.Enabled = false;
+            CreateOrderisSaved = true;
 
             iNVOICEBindingSource.CancelEdit();
             iNVOICEBindingSource.RemoveCurrent();
@@ -1510,6 +1444,7 @@ namespace WindowsFormsApp3
             txtboxrch_VehicleNotes.ReadOnly = false;
             txtbox_VehicleName.Focus();
             panel_VehicleTab.Visible = true;
+            VehicleisSaved = false;
                  
         }
 
@@ -1533,6 +1468,7 @@ namespace WindowsFormsApp3
                 txtboxrch_VehicleNotes.ReadOnly = true;
                 panel_VehicleTab.Visible = false;
                 lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
+                VehicleisSaved = true;
             }     
         }
         private void btn_EditVehicle_Click(object sender, EventArgs e)
@@ -1547,6 +1483,7 @@ namespace WindowsFormsApp3
 
             txtbox_VehicleName.Focus();
             panel_VehicleTab.Visible = true;
+            VehicleisSaved = false;
         }
 
         private void btn_CancelVehicle_Click(object sender, EventArgs e)
@@ -1563,6 +1500,7 @@ namespace WindowsFormsApp3
                 dataGridViewVehicle.Enabled = true;
                 panel_VehicleTab.Visible = false;
                 lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
+                VehicleisSaved = true;
 
             }
 
@@ -1763,6 +1701,7 @@ namespace WindowsFormsApp3
             txtboxrch_Description.ReadOnly = true;
             comboBox_CUSTFLNAMEBOX.Enabled = false;
             comboBox_ReturnTripEdit.Enabled = false;
+            EditOrderisSaved = true;
 
             iNVOICEBindingSource.CancelEdit();
             

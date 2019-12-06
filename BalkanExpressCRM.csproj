@@ -89,12 +89,6 @@
     <Compile Include="oldbaseDataSet.cs">
       <DependentUpon>oldbaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SearchCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SearchCustomer.Designer.cs">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="oldbaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,9 +117,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SearchCustomer.resx">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="AppData.xsc">
       <DependentUpon>AppData.xsd</DependentUpon>
     </None>

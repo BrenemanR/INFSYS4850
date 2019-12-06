@@ -625,7 +625,7 @@ namespace WindowsFormsApp3
                 else
                 {
                     e.Cancel = true;
-                    timer.Interval = 6000;
+                    timer.Interval = 1600;
                     timer.Tick += new EventHandler(Timer_Tick);
                     timer.Start();
                     //Says goodbye to the user.

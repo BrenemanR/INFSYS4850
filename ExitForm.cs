@@ -21,7 +21,7 @@ namespace WindowsFormsApp3
 
         private void ExitForm_Load(object sender, EventArgs e)
         {
-            timer.Interval = 6000;
+            timer.Interval = 1500;
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }

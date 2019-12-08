@@ -875,15 +875,13 @@ namespace WindowsFormsApp3
                     noReturn = true;
                     lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightCoral;
                 }
-
-                /*bool refCust = cUSTOMERBindingSource.Contains(combobox_CustomerIDZ.Text);
-                if (!refCust)
+                
+                DataRow[] foundCustomer = this.appData.CUSTOMER.Select("FLNAME = '" + combobox_CustomerIDZ.Text + "'");
+                if (foundCustomer.Length < 1)
                 {
                     noCustomer = true;
                     lbl_Customer.ForeColor = System.Drawing.Color.LightCoral;
-                }*/
-                      
-                
+                }
 
                 if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip &&!noReturn && !noCustomer)
                 {
@@ -1073,7 +1071,6 @@ namespace WindowsFormsApp3
                 {
                     this.iNVOICETableAdapter.Fill(this.appData.INVOICE);
                     iNVOICEBindingSource.DataSource = this.appData.INVOICE;
-
                 }
 
                 else
@@ -1219,13 +1216,13 @@ namespace WindowsFormsApp3
             lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
-            lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
+            lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
 
 
 
 
 
-            bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false, noReturn = false;
+            bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false, noReturn = false, noCustFL = false;
 
             if (string.IsNullOrEmpty(txtbox_PickupAddressEdit.Text))
             {
@@ -1320,8 +1317,15 @@ namespace WindowsFormsApp3
                 noPickZip = true;
             }
 
+            DataRow[] foundCustomerEdit = this.appData.CUSTOMER.Select("FLNAME = '" + comboBox_CUSTFLNAMEBOX.Text + "'");
+            if (foundCustomerEdit.Length < 1)
+            {
+                noCustFL = true;
+                lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightCoral;
+            }
+
             //successfull entry to the database
-            if (!noOrder && !noReturn && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickDate && !noDropDate && !noCust)
+            if (!noOrder && !noReturn && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickDate && !noDropDate && !noCust && !noCustFL)
             {
                                 
                 iNVOICEBindingSource.EndEdit();        
@@ -1382,7 +1386,15 @@ namespace WindowsFormsApp3
             }
             else
             {
-                if (noPickZip)
+                if (noCust)
+                {
+                    MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
+                }
+                else if (noCustFL)
+                {
+                    MessageBox.Show(comboBox_CUSTFLNAMEBOX.Text + " is not a known customer. Please select an existing customer.", "INVALID CUSTOMER", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (noPickZip)
                 {
                     MessageBox.Show(txtbox_PickupZipEdit.Text + " is not a valid Zip Code. Zip Codes must contain 5 digits", "INVALID ZIP", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -1407,7 +1419,6 @@ namespace WindowsFormsApp3
                     MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
                 }
                 
-
 
             }
 

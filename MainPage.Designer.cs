@@ -105,18 +105,10 @@ namespace WindowsFormsApp3
             this.btn_ClearSearch1 = new System.Windows.Forms.Button();
             this.btn_Help1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BROKER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_AccountStatus = new System.Windows.Forms.ComboBox();
+            this.lbl_Status = new System.Windows.Forms.Label();
             this.comboBox_Broker = new System.Windows.Forms.ComboBox();
             this.lbl_Broker = new System.Windows.Forms.Label();
             this.lbl_RequiredField = new System.Windows.Forms.Label();
@@ -236,8 +228,17 @@ namespace WindowsFormsApp3
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.comboBox_AccountStatus = new System.Windows.Forms.ComboBox();
-            this.lbl_Status = new System.Windows.Forms.Label();
+            this.cUSTFNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTLNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTPHONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTZIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BROKER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUST_STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
@@ -1171,7 +1172,8 @@ namespace WindowsFormsApp3
             this.cUSTCITYDataGridViewTextBoxColumn,
             this.cUSTSTATEDataGridViewTextBoxColumn,
             this.cUSTZIPDataGridViewTextBoxColumn,
-            this.BROKER});
+            this.BROKER,
+            this.CUST_STATUS});
             this.dataGridView1.DataSource = this.cUSTOMERBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(288, 47);
             this.dataGridView1.Name = "dataGridView1";
@@ -1179,106 +1181,6 @@ namespace WindowsFormsApp3
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(820, 496);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // cUSTFNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
-            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // cUSTLNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
-            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // cUSTEMAILDataGridViewTextBoxColumn
-            // 
-            this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
-            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.cUSTEMAILDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
-            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // cUSTPHONEDataGridViewTextBoxColumn
-            // 
-            this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
-            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.cUSTPHONEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
-            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // cUSTCOMPANYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // cUSTADDRESSDataGridViewTextBoxColumn
-            // 
-            this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
-            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // cUSTCITYDataGridViewTextBoxColumn
-            // 
-            this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
-            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cUSTCITYDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
-            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
-            // 
-            // cUSTSTATEDataGridViewTextBoxColumn
-            // 
-            this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
-            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
-            this.cUSTSTATEDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
-            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // cUSTZIPDataGridViewTextBoxColumn
-            // 
-            this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
-            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
-            this.cUSTZIPDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
-            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // BROKER
-            // 
-            this.BROKER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.BROKER.DataPropertyName = "BROKER";
-            this.BROKER.HeaderText = "BROKER";
-            this.BROKER.MinimumWidth = 8;
-            this.BROKER.Name = "BROKER";
-            this.BROKER.ReadOnly = true;
-            this.BROKER.Width = 88;
             // 
             // SearchBox
             // 
@@ -1322,6 +1224,31 @@ namespace WindowsFormsApp3
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(278, 370);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBox_AccountStatus
+            // 
+            this.comboBox_AccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.cUSTOMERBindingSource, "CUST_STATUS", true));
+            this.comboBox_AccountStatus.Enabled = false;
+            this.comboBox_AccountStatus.FormattingEnabled = true;
+            this.comboBox_AccountStatus.Items.AddRange(new object[] {
+            "ACTIVE",
+            "INACTIVE"});
+            this.comboBox_AccountStatus.Location = new System.Drawing.Point(137, 307);
+            this.comboBox_AccountStatus.Name = "comboBox_AccountStatus";
+            this.comboBox_AccountStatus.Size = new System.Drawing.Size(121, 27);
+            this.comboBox_AccountStatus.TabIndex = 27;
+            this.comboBox_AccountStatus.Text = "ACTIVE";
+            // 
+            // lbl_Status
+            // 
+            this.lbl_Status.AutoSize = true;
+            this.lbl_Status.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Status.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_Status.Location = new System.Drawing.Point(13, 307);
+            this.lbl_Status.Name = "lbl_Status";
+            this.lbl_Status.Size = new System.Drawing.Size(113, 19);
+            this.lbl_Status.TabIndex = 26;
+            this.lbl_Status.Text = "Account Status";
             // 
             // comboBox_Broker
             // 
@@ -2782,29 +2709,112 @@ namespace WindowsFormsApp3
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox_AccountStatus
+            // cUSTFNAMEDataGridViewTextBoxColumn
             // 
-            this.comboBox_AccountStatus.Enabled = false;
-            this.comboBox_AccountStatus.FormattingEnabled = true;
-            this.comboBox_AccountStatus.Items.AddRange(new object[] {
-            "ACTIVE",
-            "INACTIVE"});
-            this.comboBox_AccountStatus.Location = new System.Drawing.Point(137, 307);
-            this.comboBox_AccountStatus.Name = "comboBox_AccountStatus";
-            this.comboBox_AccountStatus.Size = new System.Drawing.Size(121, 27);
-            this.comboBox_AccountStatus.TabIndex = 27;
-            this.comboBox_AccountStatus.Text = "ACTIVE";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_FNAME";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Name = "cUSTFNAMEDataGridViewTextBoxColumn";
+            this.cUSTFNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTFNAMEDataGridViewTextBoxColumn.Width = 104;
             // 
-            // lbl_Status
+            // cUSTLNAMEDataGridViewTextBoxColumn
             // 
-            this.lbl_Status.AutoSize = true;
-            this.lbl_Status.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Status.ForeColor = System.Drawing.Color.LightGray;
-            this.lbl_Status.Location = new System.Drawing.Point(13, 307);
-            this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(113, 19);
-            this.lbl_Status.TabIndex = 26;
-            this.lbl_Status.Text = "Account Status";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUST_LNAME";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Name = "cUSTLNAMEDataGridViewTextBoxColumn";
+            this.cUSTLNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTLNAMEDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // cUSTEMAILDataGridViewTextBoxColumn
+            // 
+            this.cUSTEMAILDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTEMAILDataGridViewTextBoxColumn.DataPropertyName = "CUST_EMAIL";
+            this.cUSTEMAILDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.cUSTEMAILDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTEMAILDataGridViewTextBoxColumn.Name = "cUSTEMAILDataGridViewTextBoxColumn";
+            this.cUSTEMAILDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTEMAILDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // cUSTPHONEDataGridViewTextBoxColumn
+            // 
+            this.cUSTPHONEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTPHONEDataGridViewTextBoxColumn.DataPropertyName = "CUST_PHONE";
+            this.cUSTPHONEDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.cUSTPHONEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTPHONEDataGridViewTextBoxColumn.Name = "cUSTPHONEDataGridViewTextBoxColumn";
+            this.cUSTPHONEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTPHONEDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // cUSTCOMPANYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "CUST_COMPANY";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.HeaderText = "Company";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Name = "cUSTCOMPANYDataGridViewTextBoxColumn";
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCOMPANYDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // cUSTADDRESSDataGridViewTextBoxColumn
+            // 
+            this.cUSTADDRESSDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.DataPropertyName = "CUST_ADDRESS";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Name = "cUSTADDRESSDataGridViewTextBoxColumn";
+            this.cUSTADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTADDRESSDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // cUSTCITYDataGridViewTextBoxColumn
+            // 
+            this.cUSTCITYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTCITYDataGridViewTextBoxColumn.DataPropertyName = "CUST_CITY";
+            this.cUSTCITYDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cUSTCITYDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTCITYDataGridViewTextBoxColumn.Name = "cUSTCITYDataGridViewTextBoxColumn";
+            this.cUSTCITYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTCITYDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // cUSTSTATEDataGridViewTextBoxColumn
+            // 
+            this.cUSTSTATEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUST_STATE";
+            this.cUSTSTATEDataGridViewTextBoxColumn.HeaderText = "State";
+            this.cUSTSTATEDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTSTATEDataGridViewTextBoxColumn.Name = "cUSTSTATEDataGridViewTextBoxColumn";
+            this.cUSTSTATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTSTATEDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // cUSTZIPDataGridViewTextBoxColumn
+            // 
+            this.cUSTZIPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUSTZIPDataGridViewTextBoxColumn.DataPropertyName = "CUST_ZIP";
+            this.cUSTZIPDataGridViewTextBoxColumn.HeaderText = "Zip";
+            this.cUSTZIPDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cUSTZIPDataGridViewTextBoxColumn.Name = "cUSTZIPDataGridViewTextBoxColumn";
+            this.cUSTZIPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTZIPDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // BROKER
+            // 
+            this.BROKER.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.BROKER.DataPropertyName = "BROKER";
+            this.BROKER.HeaderText = "Broker";
+            this.BROKER.MinimumWidth = 8;
+            this.BROKER.Name = "BROKER";
+            this.BROKER.ReadOnly = true;
+            this.BROKER.Width = 75;
+            // 
+            // CUST_STATUS
+            // 
+            this.CUST_STATUS.DataPropertyName = "CUST_STATUS";
+            this.CUST_STATUS.HeaderText = "Status";
+            this.CUST_STATUS.Name = "CUST_STATUS";
+            this.CUST_STATUS.ReadOnly = true;
             // 
             // MainPage
             // 
@@ -2998,16 +3008,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label lbl_VehicleEdit;
         private System.Windows.Forms.BindingSource iNVOICEBindingSource1;
         private System.Windows.Forms.TextBox txtbox_FLNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTFNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTLNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTEMAILDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTPHONEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCOMPANYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTADDRESSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BROKER;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_CancelOrder;
         private System.Windows.Forms.TabPage VehicleManager;
@@ -3061,5 +3061,16 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button btn_CancelOrderEdit;
         private System.Windows.Forms.ComboBox comboBox_AccountStatus;
         private System.Windows.Forms.Label lbl_Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTFNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTLNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTEMAILDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTPHONEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCOMPANYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTADDRESSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTCITYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTSTATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BROKER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUST_STATUS;
     }
 }

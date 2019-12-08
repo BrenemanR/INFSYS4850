@@ -853,6 +853,8 @@ namespace WindowsFormsApp3
 
             private global::System.Data.DataColumn columnFLNAME;
 
+            private global::System.Data.DataColumn columnCUST_STATUS;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CUSTOMERDataTable()
@@ -1014,6 +1016,16 @@ namespace WindowsFormsApp3
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CUST_STATUSColumn
+            {
+                get
+                {
+                    return this.columnCUST_STATUS;
+                }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count
             {
@@ -1054,7 +1066,7 @@ namespace WindowsFormsApp3
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CUSTOMERRow AddCUSTOMERRow(string CUST_FNAME, string CUST_LNAME, string CUST_COMPANY, string CUST_ADDRESS, string CUST_CITY, string CUST_STATE, string CUST_EMAIL, string CUST_PHONE, string BROKER, string CUST_ZIP, string FLNAME)
+            public CUSTOMERRow AddCUSTOMERRow(string CUST_FNAME, string CUST_LNAME, string CUST_COMPANY, string CUST_ADDRESS, string CUST_CITY, string CUST_STATE, string CUST_EMAIL, string CUST_PHONE, string BROKER, string CUST_ZIP, string FLNAME, string CUST_STATUS)
             {
                 CUSTOMERRow rowCUSTOMERRow = ((CUSTOMERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -1069,7 +1081,8 @@ namespace WindowsFormsApp3
                         CUST_PHONE,
                         BROKER,
                         CUST_ZIP,
-                        FLNAME};
+                        FLNAME,
+                        CUST_STATUS};
                 rowCUSTOMERRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCUSTOMERRow);
                 return rowCUSTOMERRow;
@@ -1115,6 +1128,7 @@ namespace WindowsFormsApp3
                 this.columnBROKER = base.Columns["BROKER"];
                 this.columnCUST_ZIP = base.Columns["CUST_ZIP"];
                 this.columnFLNAME = base.Columns["FLNAME"];
+                this.columnCUST_STATUS = base.Columns["CUST_STATUS"];
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1145,6 +1159,8 @@ namespace WindowsFormsApp3
                 base.Columns.Add(this.columnCUST_ZIP);
                 this.columnFLNAME = new global::System.Data.DataColumn("FLNAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFLNAME);
+                this.columnCUST_STATUS = new global::System.Data.DataColumn("CUST_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUST_STATUS);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCUST_ID}, true));
                 this.columnCUST_ID.AutoIncrement = true;
@@ -1162,6 +1178,7 @@ namespace WindowsFormsApp3
                 this.columnBROKER.MaxLength = 255;
                 this.columnCUST_ZIP.MaxLength = 255;
                 this.columnFLNAME.MaxLength = 255;
+                this.columnCUST_STATUS.MaxLength = 255;
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2970,6 +2987,27 @@ namespace WindowsFormsApp3
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CUST_STATUS
+            {
+                get
+                {
+                    try
+                    {
+                        return ((string)(this[this.tableCUSTOMER.CUST_STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e)
+                    {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CUST_STATUS\' in table \'CUSTOMER\' is DBNull.", e);
+                    }
+                }
+                set
+                {
+                    this[this.tableCUSTOMER.CUST_STATUSColumn] = value;
+                }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCUST_FNAMENull()
             {
                 return this.IsNull(this.tableCUSTOMER.CUST_FNAMEColumn);
@@ -3120,6 +3158,20 @@ namespace WindowsFormsApp3
             public void SetFLNAMENull()
             {
                 this[this.tableCUSTOMER.FLNAMEColumn] = global::System.Convert.DBNull;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCUST_STATUSNull()
+            {
+                return this.IsNull(this.tableCUSTOMER.CUST_STATUSColumn);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCUST_STATUSNull()
+            {
+                this[this.tableCUSTOMER.CUST_STATUSColumn] = global::System.Convert.DBNull;
             }
         }
 
@@ -4717,10 +4769,11 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             tableMapping.ColumnMappings.Add("BROKER", "BROKER");
             tableMapping.ColumnMappings.Add("CUST_ZIP", "CUST_ZIP");
             tableMapping.ColumnMappings.Add("FLNAME", "FLNAME");
+            tableMapping.ColumnMappings.Add("CUST_STATUS", "CUST_STATUS");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `CUSTOMER` WHERE ((`CUST_ID` = ?) AND ((? = 1 AND `CUST_ADDRESS` IS NULL) OR (`CUST_ADDRESS` = ?)) AND ((? = 1 AND `CUST_CITY` IS NULL) OR (`CUST_CITY` = ?)) AND ((? = 1 AND `CUST_STATE` IS NULL) OR (`CUST_STATE` = ?)) AND ((? = 1 AND `CUST_EMAIL` IS NULL) OR (`CUST_EMAIL` = ?)) AND ((? = 1 AND `CUST_PHONE` IS NULL) OR (`CUST_PHONE` = ?)) AND ((? = 1 AND `CUST_ZIP` IS NULL) OR (`CUST_ZIP` = ?)) AND ((? = 1 AND `BROKER` IS NULL) OR (`BROKER` = ?)) AND ((? = 1 AND `FLNAME` IS NULL) OR (`FLNAME` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `CUSTOMER` WHERE ((`CUST_ID` = ?) AND ((? = 1 AND `CUST_ADDRESS` IS NULL) OR (`CUST_ADDRESS` = ?)) AND ((? = 1 AND `CUST_CITY` IS NULL) OR (`CUST_CITY` = ?)) AND ((? = 1 AND `CUST_STATE` IS NULL) OR (`CUST_STATE` = ?)) AND ((? = 1 AND `CUST_EMAIL` IS NULL) OR (`CUST_EMAIL` = ?)) AND ((? = 1 AND `CUST_PHONE` IS NULL) OR (`CUST_PHONE` = ?)) AND ((? = 1 AND `CUST_ZIP` IS NULL) OR (`CUST_ZIP` = ?)) AND ((? = 1 AND `BROKER` IS NULL) OR (`BROKER` = ?)) AND ((? = 1 AND `FLNAME` IS NULL) OR (`FLNAME` = ?)) AND ((? = 1 AND `CUST_STATUS` IS NULL) OR (`CUST_STATUS` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_ADDRESS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ADDRESS", global::System.Data.DataRowVersion.Original, true, null));
@@ -4739,11 +4792,13 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BROKER", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BROKER", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_FLNAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLNAME", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLNAME", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_STATUS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_STATUS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_STATUS", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `CUSTOMER` (`CUST_FNAME`, `CUST_LNAME`, `CUST_COMPANY`, `CUST_ADDRESS" +
                 "`, `CUST_CITY`, `CUST_STATE`, `CUST_EMAIL`, `CUST_PHONE`, `CUST_ZIP`, `BROKER`, " +
-                "`FLNAME`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "`FLNAME`, `CUST_STATUS`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_FNAME", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FNAME", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_LNAME", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_LNAME", global::System.Data.DataRowVersion.Current, false, null));
@@ -4756,9 +4811,10 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ZIP", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BROKER", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BROKER", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLNAME", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_STATUS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `CUSTOMER` SET `CUST_FNAME` = ?, `CUST_LNAME` = ?, `CUST_COMPANY` = ?, `CUST_ADDRESS` = ?, `CUST_CITY` = ?, `CUST_STATE` = ?, `CUST_EMAIL` = ?, `CUST_PHONE` = ?, `CUST_ZIP` = ?, `BROKER` = ?, `FLNAME` = ? WHERE ((`CUST_ID` = ?) AND ((? = 1 AND `CUST_ADDRESS` IS NULL) OR (`CUST_ADDRESS` = ?)) AND ((? = 1 AND `CUST_CITY` IS NULL) OR (`CUST_CITY` = ?)) AND ((? = 1 AND `CUST_STATE` IS NULL) OR (`CUST_STATE` = ?)) AND ((? = 1 AND `CUST_EMAIL` IS NULL) OR (`CUST_EMAIL` = ?)) AND ((? = 1 AND `CUST_PHONE` IS NULL) OR (`CUST_PHONE` = ?)) AND ((? = 1 AND `CUST_ZIP` IS NULL) OR (`CUST_ZIP` = ?)) AND ((? = 1 AND `BROKER` IS NULL) OR (`BROKER` = ?)) AND ((? = 1 AND `FLNAME` IS NULL) OR (`FLNAME` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `CUSTOMER` SET `CUST_FNAME` = ?, `CUST_LNAME` = ?, `CUST_COMPANY` = ?, `CUST_ADDRESS` = ?, `CUST_CITY` = ?, `CUST_STATE` = ?, `CUST_EMAIL` = ?, `CUST_PHONE` = ?, `CUST_ZIP` = ?, `BROKER` = ?, `FLNAME` = ?, `CUST_STATUS` = ? WHERE ((`CUST_ID` = ?) AND ((? = 1 AND `CUST_ADDRESS` IS NULL) OR (`CUST_ADDRESS` = ?)) AND ((? = 1 AND `CUST_CITY` IS NULL) OR (`CUST_CITY` = ?)) AND ((? = 1 AND `CUST_STATE` IS NULL) OR (`CUST_STATE` = ?)) AND ((? = 1 AND `CUST_EMAIL` IS NULL) OR (`CUST_EMAIL` = ?)) AND ((? = 1 AND `CUST_PHONE` IS NULL) OR (`CUST_PHONE` = ?)) AND ((? = 1 AND `CUST_ZIP` IS NULL) OR (`CUST_ZIP` = ?)) AND ((? = 1 AND `BROKER` IS NULL) OR (`BROKER` = ?)) AND ((? = 1 AND `FLNAME` IS NULL) OR (`FLNAME` = ?)) AND ((? = 1 AND `CUST_STATUS` IS NULL) OR (`CUST_STATUS` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_FNAME", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FNAME", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_LNAME", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_LNAME", global::System.Data.DataRowVersion.Current, false, null));
@@ -4771,6 +4827,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ZIP", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BROKER", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BROKER", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLNAME", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_STATUS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_ADDRESS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ADDRESS", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_ADDRESS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_ADDRESS", global::System.Data.DataRowVersion.Original, false, null));
@@ -4788,6 +4845,8 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BROKER", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BROKER", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_FLNAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLNAME", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FLNAME", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_STATUS", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_STATUS", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_STATUS", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_STATUS", global::System.Data.DataRowVersion.Original, false, null));
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4806,7 +4865,8 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT CUST_ID, CUST_FNAME, CUST_LNAME, CUST_COMPANY, CUST_ADDRESS, CUST_CITY, CU" +
-                "ST_STATE, CUST_EMAIL, CUST_PHONE, CUST_ZIP, BROKER, FLNAME FROM CUSTOMER";
+                "ST_STATE, CUST_EMAIL, CUST_PHONE, CUST_ZIP, BROKER, FLNAME, CUST_STATUS FROM CUS" +
+                "TOMER";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
 
@@ -4874,7 +4934,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_CUST_ID, string Original_CUST_ADDRESS, string Original_CUST_CITY, string Original_CUST_STATE, string Original_CUST_EMAIL, string Original_CUST_PHONE, string Original_CUST_ZIP, string Original_BROKER, string Original_FLNAME)
+        public virtual int Delete(int Original_CUST_ID, string Original_CUST_ADDRESS, string Original_CUST_CITY, string Original_CUST_STATE, string Original_CUST_EMAIL, string Original_CUST_PHONE, string Original_CUST_ZIP, string Original_BROKER, string Original_FLNAME, string Original_CUST_STATUS)
         {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CUST_ID));
             if ((Original_CUST_ADDRESS == null))
@@ -4957,6 +5017,16 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_FLNAME));
             }
+            if ((Original_CUST_STATUS == null))
+            {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else
+            {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_CUST_STATUS));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open)
                         != global::System.Data.ConnectionState.Open))
@@ -4981,7 +5051,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string CUST_FNAME, string CUST_LNAME, string CUST_COMPANY, string CUST_ADDRESS, string CUST_CITY, string CUST_STATE, string CUST_EMAIL, string CUST_PHONE, string CUST_ZIP, string BROKER, string FLNAME)
+        public virtual int Insert(string CUST_FNAME, string CUST_LNAME, string CUST_COMPANY, string CUST_ADDRESS, string CUST_CITY, string CUST_STATE, string CUST_EMAIL, string CUST_PHONE, string CUST_ZIP, string BROKER, string FLNAME, string CUST_STATUS)
         {
             if ((CUST_FNAME == null))
             {
@@ -5071,6 +5141,14 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             {
                 this.Adapter.InsertCommand.Parameters[10].Value = ((string)(FLNAME));
             }
+            if ((CUST_STATUS == null))
+            {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else
+            {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(CUST_STATUS));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open)
                         != global::System.Data.ConnectionState.Open))
@@ -5107,6 +5185,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                     string CUST_ZIP,
                     string BROKER,
                     string FLNAME,
+                    string CUST_STATUS,
                     int Original_CUST_ID,
                     string Original_CUST_ADDRESS,
                     string Original_CUST_CITY,
@@ -5115,7 +5194,8 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                     string Original_CUST_PHONE,
                     string Original_CUST_ZIP,
                     string Original_BROKER,
-                    string Original_FLNAME)
+                    string Original_FLNAME,
+                    string Original_CUST_STATUS)
         {
             if ((CUST_FNAME == null))
             {
@@ -5205,86 +5285,104 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(FLNAME));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_CUST_ID));
-            if ((Original_CUST_ADDRESS == null))
+            if ((CUST_STATUS == null))
             {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_CUST_ADDRESS));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(CUST_STATUS));
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_CUST_ID));
+            if ((Original_CUST_ADDRESS == null))
+            {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_CUST_ADDRESS));
             }
             if ((Original_CUST_CITY == null))
             {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_CUST_CITY));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_CUST_CITY));
             }
             if ((Original_CUST_STATE == null))
             {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_CUST_STATE));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_CUST_STATE));
             }
             if ((Original_CUST_EMAIL == null))
             {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_CUST_EMAIL));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_CUST_EMAIL));
             }
             if ((Original_CUST_PHONE == null))
             {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_CUST_PHONE));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_CUST_PHONE));
             }
             if ((Original_CUST_ZIP == null))
             {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_CUST_ZIP));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_CUST_ZIP));
             }
             if ((Original_BROKER == null))
             {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_BROKER));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_BROKER));
             }
             if ((Original_FLNAME == null))
             {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_FLNAME));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_FLNAME));
+            }
+            if ((Original_CUST_STATUS == null))
+            {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else
+            {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_CUST_STATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open)

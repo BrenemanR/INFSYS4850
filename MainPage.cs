@@ -1162,14 +1162,13 @@ namespace BalkanExpress
                 txtboxrch_DescriptionEdit.ReadOnly = false;
                 txtboxrch_SpecialInstructionsEdit.ReadOnly = false;
                 comboBox_CUSTFLNAMEBOX.Enabled = true;
-                txtbox_OrderSearchBox.Enabled = false;
+                txtbox_OrderSearchBox.ReadOnly = false;
                 btn_SaveOrderEdit.Visible = true;
                 btn_EditOrder.Visible = false;
                 comboBox_ReturnTripEdit.Enabled = true;
                 btn_CancelOrderEdit.Visible = true;
                 EditOrderisSaved = false;
                 dataGridView2.Enabled = false;
-                
             }
         }
 
@@ -1197,7 +1196,6 @@ namespace BalkanExpress
             lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
-           
 
 
 
@@ -1329,7 +1327,6 @@ namespace BalkanExpress
                 comboBox_ReturnTripEdit.Enabled = false;
                 dataGridView2.Enabled = true;
                 EditOrderisSaved = true;
-                
 
             }
             else
@@ -1717,7 +1714,6 @@ namespace BalkanExpress
             lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
-            
 
             btn_EditOrder.Visible = true;
             btn_SaveOrderEdit.Visible = false;

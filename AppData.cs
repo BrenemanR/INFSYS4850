@@ -1,4 +1,4 @@
-﻿namespace BalkanExpress
+﻿namespace WindowsFormsApp3
 {
 
 
@@ -10,7 +10,7 @@
     }
 }
 
-namespace BalkanExpress.AppDataTableAdapters
+namespace WindowsFormsApp3.AppDataTableAdapters
 {
     partial class CUSTOMERTableAdapter
     {

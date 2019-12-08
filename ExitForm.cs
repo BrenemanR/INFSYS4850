@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BalkanExpress
+namespace WindowsFormsApp3
 {
     public partial class ExitForm : Form
     {

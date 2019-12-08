@@ -1,4 +1,4 @@
-﻿namespace BalkanExpress
+﻿namespace WindowsFormsApp3
 {
     partial class ExitForm
     {

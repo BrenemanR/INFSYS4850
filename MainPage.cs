@@ -96,7 +96,11 @@ namespace WindowsFormsApp3
 
                     btnEdit.Enabled = false; //Disables the edit button so the user is unable to edit a record while one is already open.
                     btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while already adding one.
+
+                    this.cUSTOMERTableAdapter.Fill(this.appData.CUSTOMER);
+                    cUSTOMERBindingSource.DataSource = this.appData.CUSTOMER;
                     FirstNameBox.Focus();
+                    
                     this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
                     cUSTOMERBindingSource.RemoveSort(); //Resorts The table so that the new record is properly added.
                     cUSTOMERBindingSource.MoveLast();
@@ -1164,6 +1168,7 @@ namespace WindowsFormsApp3
                 comboBox_ReturnTripEdit.Enabled = true;
                 btn_CancelOrderEdit.Visible = true;
                 EditOrderisSaved = false;
+                dataGridView2.Enabled = false;
             }
         }
 
@@ -1320,6 +1325,7 @@ namespace WindowsFormsApp3
                 txtboxrch_Description.ReadOnly = true;
                 comboBox_CUSTFLNAMEBOX.Enabled = false;
                 comboBox_ReturnTripEdit.Enabled = false;
+                dataGridView2.Enabled = true;
                 EditOrderisSaved = true;
 
             }
@@ -1452,6 +1458,7 @@ namespace WindowsFormsApp3
             comboBox_Vehicle.Enabled = false;
             combobox_CustomerIDZ.Enabled = false;
             CreateOrderisSaved = true;
+
 
             iNVOICEBindingSource.CancelEdit();
             iNVOICEBindingSource.RemoveCurrent();
@@ -1731,6 +1738,7 @@ namespace WindowsFormsApp3
             txtboxrch_Description.ReadOnly = true;
             comboBox_CUSTFLNAMEBOX.Enabled = false;
             comboBox_ReturnTripEdit.Enabled = false;
+            dataGridView2.Enabled = true;
             EditOrderisSaved = true;
 
             iNVOICEBindingSource.CancelEdit();

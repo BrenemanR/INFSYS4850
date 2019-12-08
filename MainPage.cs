@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace WindowsFormsApp3
+namespace BalkanExpress
 {
     public partial class MainPage : Form
     {
@@ -1097,11 +1097,11 @@ namespace WindowsFormsApp3
 
         private void comboBox_Status_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Image picCancelled = WindowsFormsApp3.Properties.Resources.cancelled;
-            Image picPending = WindowsFormsApp3.Properties.Resources.pending;
-            Image picDelayed = WindowsFormsApp3.Properties.Resources.delayed;
-            Image picInTransit = WindowsFormsApp3.Properties.Resources.in_transit;
-            Image picComplete = WindowsFormsApp3.Properties.Resources.complete;
+            Image picCancelled = BalkanExpress.Properties.Resources.cancelled;
+            Image picPending = BalkanExpress.Properties.Resources.pending;
+            Image picDelayed = BalkanExpress.Properties.Resources.delayed;
+            Image picInTransit = BalkanExpress.Properties.Resources.in_transit;
+            Image picComplete = BalkanExpress.Properties.Resources.complete;
 
 
             if (comboBox_Status.SelectedIndex == 0) //0 is Pending

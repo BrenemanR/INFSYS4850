@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WindowsFormsApp3
+namespace BalkanExpress
 {
 
 
@@ -4239,7 +4239,7 @@ namespace WindowsFormsApp3
         }
     }
 }
-namespace WindowsFormsApp3.AppDataTableAdapters
+namespace BalkanExpress.AppDataTableAdapters
 {
 
 
@@ -4421,7 +4421,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
         private void InitConnection()
         {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4854,7 +4854,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
         private void InitConnection()
         {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5702,7 +5702,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
         private void InitConnection()
         {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6756,7 +6756,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
         private void InitConnection()
         {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7137,7 +7137,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
         private void InitConnection()
         {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

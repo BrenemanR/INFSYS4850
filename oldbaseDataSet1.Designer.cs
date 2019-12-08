@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WindowsFormsApp3 {
+namespace BalkanExpress {
     
     
     /// <summary>
@@ -2471,7 +2471,7 @@ namespace WindowsFormsApp3 {
         }
     }
 }
-namespace WindowsFormsApp3.oldbaseDataSet1TableAdapters {
+namespace BalkanExpress.oldbaseDataSet1TableAdapters {
     
     
     /// <summary>
@@ -2623,7 +2623,7 @@ namespace WindowsFormsApp3.oldbaseDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2975,7 +2975,7 @@ namespace WindowsFormsApp3.oldbaseDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3514,7 +3514,7 @@ namespace WindowsFormsApp3.oldbaseDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3967,7 +3967,7 @@ namespace WindowsFormsApp3.oldbaseDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp3.Properties.Settings.Default.oldbaseConnectionString;
+            this._connection.ConnectionString = global::BalkanExpress.Properties.Settings.Default.oldbaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

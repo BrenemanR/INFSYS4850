@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace WindowsFormsApp3
+namespace BalkanExpress
 {
     partial class MainPage
     {
@@ -36,7 +36,7 @@ namespace WindowsFormsApp3
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.comboBox_ReturnTrip = new System.Windows.Forms.ComboBox();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new WindowsFormsApp3.AppData();
+            this.appData = new BalkanExpress.AppData();
             this.lbl_ReturnTrip = new System.Windows.Forms.Label();
             this.btn_Help2 = new System.Windows.Forms.Button();
             this.DropOffDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -203,12 +203,12 @@ namespace WindowsFormsApp3
             this.btn_SaveVehicle = new System.Windows.Forms.Button();
             this.tab_Help = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.cUSTOMERTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.CUSTOMERTableAdapter();
-            this.iNVOICETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.INVOICETableAdapter();
+            this.cUSTOMERTableAdapter = new BalkanExpress.AppDataTableAdapters.CUSTOMERTableAdapter();
+            this.iNVOICETableAdapter = new BalkanExpress.AppDataTableAdapters.INVOICETableAdapter();
             this.oRDERSTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
+            this.oRDERSTATUSTableAdapter = new BalkanExpress.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
+            this.vEHICLETableAdapter = new BalkanExpress.AppDataTableAdapters.VEHICLETableAdapter();
             this.CUST_FLNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VEHICLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PICKUP_ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();

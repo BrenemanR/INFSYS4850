@@ -75,7 +75,9 @@ namespace WindowsFormsApp3
             SearchBox.Enabled = false;
             btnSave.Enabled = true;
             editCustomer = false;
-            
+            comboBox_AccountStatus.Enabled = true;
+            comboBox_Broker.Enabled = true;
+
             //radButt_No.Checked = true;
             try
             {
@@ -90,6 +92,7 @@ namespace WindowsFormsApp3
                     CityBox.ReadOnly = false;
                     StateBox.ReadOnly = false;
                     ZipBox.ReadOnly = false;
+                   
 
                     btnEdit.Enabled = false; //Disables the edit button so the user is unable to edit a record while one is already open.
                     btnNew.Enabled = false; //Disables the new button so the user is unable to create a new record while already adding one.
@@ -97,7 +100,8 @@ namespace WindowsFormsApp3
                     this.appData.CUSTOMER.AddCUSTOMERRow(this.appData.CUSTOMER.NewCUSTOMERRow());
                     cUSTOMERBindingSource.RemoveSort(); //Resorts The table so that the new record is properly added.
                     cUSTOMERBindingSource.MoveLast();
-                    comboBox_Broker.SelectedItem = "NO";
+                    comboBox_Broker.Text = "NO";
+                    comboBox_AccountStatus.Text = "ACTIVE";
                     //comboBox_Broker.SelectedIndex = 1;
                     CustomerisSaved = false;
                     
@@ -144,6 +148,8 @@ namespace WindowsFormsApp3
                 CustomerisSaved = false;
                 btnEdit.Enabled = false;
                 editCustomer = true;
+                comboBox_AccountStatus.Enabled = true;
+                comboBox_Broker.Enabled = true;
             }
             
         }
@@ -185,6 +191,8 @@ namespace WindowsFormsApp3
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
                 lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
                 CustomerisSaved = true;
+                comboBox_Broker.Enabled = false;
+                comboBox_AccountStatus.Enabled = false;
             }
             else //(editCustomer == false)
             {
@@ -222,12 +230,14 @@ namespace WindowsFormsApp3
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
                 CustomerisSaved = true;
+                comboBox_Broker.Enabled = false;
+                comboBox_AccountStatus.Enabled = false;
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false, noBroke = false;
+            bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false, noBroke = false, noAccountStatus = false; ;
             try
             {
                 FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
@@ -240,6 +250,7 @@ namespace WindowsFormsApp3
                 StateLabel.ForeColor = System.Drawing.Color.LightGray;
                 ZipLabel.ForeColor = System.Drawing.Color.LightGray;
                 lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
+                lbl_Status.ForeColor = System.Drawing.Color.LightGray;
                 btnNew.Enabled = false;
 
 
@@ -303,7 +314,13 @@ namespace WindowsFormsApp3
                     lbl_Broker.ForeColor = System.Drawing.Color.LightCoral;
                     noBroke = true;
                 }
-                if (!noFName && !noLName && !noPhone && !noEmail && !noCompany && !noAddress && !noCity && !noState && !noZip &&!noBroke)
+                if (string.IsNullOrEmpty(comboBox_AccountStatus.Text))
+                {
+                    lbl_RequiredField.Visible = true;
+                    lbl_Status.ForeColor = System.Drawing.Color.LightCoral;
+                    noAccountStatus = true;
+                }
+                if (!noFName && !noLName && !noPhone && !noEmail && !noCompany && !noAddress && !noCity && !noState && !noZip &&!noBroke &&!noAccountStatus)
                 {
                     if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
                     {
@@ -330,7 +347,13 @@ namespace WindowsFormsApp3
                         lbl_RequiredField.Visible = true;
                         noBroke = true;
                     }
-                        if (!noPhone && !noEmail && !noZip && !noBroke)
+                    if (comboBox_AccountStatus.Text != "ACTIVE" && comboBox_AccountStatus.Text != "INACTIVE")
+                    {
+                        lbl_Status.ForeColor = System.Drawing.Color.LightCoral;
+                        lbl_RequiredField.Visible = true;
+                        noAccountStatus = true;
+                    }
+                    if (!noPhone && !noEmail && !noZip && !noBroke && !noAccountStatus)
                     {
                         cUSTOMERBindingSource.EndEdit();
                         cUSTOMERTableAdapter.Update(appData.CUSTOMER);
@@ -353,6 +376,8 @@ namespace WindowsFormsApp3
                         CustomerisSaved = true;
                         btnSave.Enabled = false;
                         btnCancel.Enabled = false;
+                        comboBox_Broker.Enabled = false;
+                        comboBox_AccountStatus.Enabled = false;
 
 
                         //Turns all of the text back to LightGray after a successful submission.
@@ -366,6 +391,7 @@ namespace WindowsFormsApp3
                         StateLabel.ForeColor = System.Drawing.Color.LightGray;
                         ZipLabel.ForeColor = System.Drawing.Color.LightGray;
                         lbl_Broker.ForeColor = System.Drawing.Color.LightGray;
+                        lbl_Status.ForeColor = System.Drawing.Color.LightGray;
                     }
                     //insert error messages here
                     if (noPhone)
@@ -383,6 +409,10 @@ namespace WindowsFormsApp3
                     else if (noBroke)
                     {
                         MessageBox.Show("Broker must either be YES or NO.", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noAccountStatus)
+                    {
+                        MessageBox.Show("Account Status must either be ACTIVE or INACTIVE.", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else

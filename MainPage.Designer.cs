@@ -151,6 +151,7 @@ namespace WindowsFormsApp3
             this.lbl_CustomerEdit = new System.Windows.Forms.Label();
             this.comboBox_CUSTFLNAMEBOX = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_CancelOrderEdit = new System.Windows.Forms.Button();
             this.btn_ClearSearch2 = new System.Windows.Forms.Button();
             this.btn_SaveOrderEdit = new System.Windows.Forms.Button();
             this.btn_EditOrder = new System.Windows.Forms.Button();
@@ -235,7 +236,8 @@ namespace WindowsFormsApp3
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
-            this.btn_CancelOrderEdit = new System.Windows.Forms.Button();
+            this.comboBox_AccountStatus = new System.Windows.Forms.ComboBox();
+            this.lbl_Status = new System.Windows.Forms.Label();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
@@ -1292,6 +1294,8 @@ namespace WindowsFormsApp3
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox_AccountStatus);
+            this.panel1.Controls.Add(this.lbl_Status);
             this.panel1.Controls.Add(this.comboBox_Broker);
             this.panel1.Controls.Add(this.lbl_Broker);
             this.panel1.Controls.Add(this.lbl_RequiredField);
@@ -1316,12 +1320,13 @@ namespace WindowsFormsApp3
             this.panel1.ForeColor = System.Drawing.Color.LightGray;
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 328);
+            this.panel1.Size = new System.Drawing.Size(278, 370);
             this.panel1.TabIndex = 0;
             // 
             // comboBox_Broker
             // 
             this.comboBox_Broker.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.cUSTOMERBindingSource, "BROKER", true));
+            this.comboBox_Broker.Enabled = false;
             this.comboBox_Broker.FormattingEnabled = true;
             this.comboBox_Broker.Items.AddRange(new object[] {
             "YES",
@@ -1330,6 +1335,7 @@ namespace WindowsFormsApp3
             this.comboBox_Broker.Name = "comboBox_Broker";
             this.comboBox_Broker.Size = new System.Drawing.Size(121, 27);
             this.comboBox_Broker.TabIndex = 25;
+            this.comboBox_Broker.Text = "NO";
             // 
             // lbl_Broker
             // 
@@ -1347,7 +1353,7 @@ namespace WindowsFormsApp3
             this.lbl_RequiredField.AutoSize = true;
             this.lbl_RequiredField.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RequiredField.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 299);
+            this.lbl_RequiredField.Location = new System.Drawing.Point(13, 341);
             this.lbl_RequiredField.Name = "lbl_RequiredField";
             this.lbl_RequiredField.Size = new System.Drawing.Size(113, 19);
             this.lbl_RequiredField.TabIndex = 20;
@@ -1595,9 +1601,9 @@ namespace WindowsFormsApp3
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEdit.Location = new System.Drawing.Point(45, 388);
+            this.btnEdit.Location = new System.Drawing.Point(45, 420);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(184, 46);
+            this.btnEdit.Size = new System.Drawing.Size(184, 31);
             this.btnEdit.TabIndex = 16;
             this.btnEdit.Text = "Edit Customer";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -1611,9 +1617,9 @@ namespace WindowsFormsApp3
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnNew.Location = new System.Drawing.Point(45, 335);
+            this.btnNew.Location = new System.Drawing.Point(45, 377);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(184, 46);
+            this.btnNew.Size = new System.Drawing.Size(184, 31);
             this.btnNew.TabIndex = 15;
             this.btnNew.Text = "Add New Customer";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -1628,9 +1634,9 @@ namespace WindowsFormsApp3
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Location = new System.Drawing.Point(45, 440);
+            this.btnSave.Location = new System.Drawing.Point(45, 462);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(184, 46);
+            this.btnSave.Size = new System.Drawing.Size(184, 31);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -1645,9 +1651,9 @@ namespace WindowsFormsApp3
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancel.Location = new System.Drawing.Point(45, 492);
+            this.btnCancel.Location = new System.Drawing.Point(45, 504);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(184, 44);
+            this.btnCancel.Size = new System.Drawing.Size(184, 29);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -1806,6 +1812,22 @@ namespace WindowsFormsApp3
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(581, 74);
             this.panel4.TabIndex = 73;
+            // 
+            // btn_CancelOrderEdit
+            // 
+            this.btn_CancelOrderEdit.BackColor = System.Drawing.Color.Gray;
+            this.btn_CancelOrderEdit.FlatAppearance.BorderSize = 0;
+            this.btn_CancelOrderEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_CancelOrderEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelOrderEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_CancelOrderEdit.Location = new System.Drawing.Point(441, 38);
+            this.btn_CancelOrderEdit.Name = "btn_CancelOrderEdit";
+            this.btn_CancelOrderEdit.Size = new System.Drawing.Size(110, 30);
+            this.btn_CancelOrderEdit.TabIndex = 41;
+            this.btn_CancelOrderEdit.Text = "Cancel";
+            this.btn_CancelOrderEdit.UseVisualStyleBackColor = false;
+            this.btn_CancelOrderEdit.Visible = false;
+            this.btn_CancelOrderEdit.Click += new System.EventHandler(this.btn_CancelOrderEdit_Click);
             // 
             // btn_ClearSearch2
             // 
@@ -2760,21 +2782,29 @@ namespace WindowsFormsApp3
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
-            // btn_CancelOrderEdit
+            // comboBox_AccountStatus
             // 
-            this.btn_CancelOrderEdit.BackColor = System.Drawing.Color.Gray;
-            this.btn_CancelOrderEdit.FlatAppearance.BorderSize = 0;
-            this.btn_CancelOrderEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_CancelOrderEdit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CancelOrderEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_CancelOrderEdit.Location = new System.Drawing.Point(441, 38);
-            this.btn_CancelOrderEdit.Name = "btn_CancelOrderEdit";
-            this.btn_CancelOrderEdit.Size = new System.Drawing.Size(110, 30);
-            this.btn_CancelOrderEdit.TabIndex = 41;
-            this.btn_CancelOrderEdit.Text = "Cancel";
-            this.btn_CancelOrderEdit.UseVisualStyleBackColor = false;
-            this.btn_CancelOrderEdit.Visible = false;
-            this.btn_CancelOrderEdit.Click += new System.EventHandler(this.btn_CancelOrderEdit_Click);
+            this.comboBox_AccountStatus.Enabled = false;
+            this.comboBox_AccountStatus.FormattingEnabled = true;
+            this.comboBox_AccountStatus.Items.AddRange(new object[] {
+            "ACTIVE",
+            "INACTIVE"});
+            this.comboBox_AccountStatus.Location = new System.Drawing.Point(137, 307);
+            this.comboBox_AccountStatus.Name = "comboBox_AccountStatus";
+            this.comboBox_AccountStatus.Size = new System.Drawing.Size(121, 27);
+            this.comboBox_AccountStatus.TabIndex = 27;
+            this.comboBox_AccountStatus.Text = "ACTIVE";
+            // 
+            // lbl_Status
+            // 
+            this.lbl_Status.AutoSize = true;
+            this.lbl_Status.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Status.ForeColor = System.Drawing.Color.LightGray;
+            this.lbl_Status.Location = new System.Drawing.Point(13, 307);
+            this.lbl_Status.Name = "lbl_Status";
+            this.lbl_Status.Size = new System.Drawing.Size(113, 19);
+            this.lbl_Status.TabIndex = 26;
+            this.lbl_Status.Text = "Account Status";
             // 
             // MainPage
             // 
@@ -3029,5 +3059,7 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_NUM;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNVIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_CancelOrderEdit;
+        private System.Windows.Forms.ComboBox comboBox_AccountStatus;
+        private System.Windows.Forms.Label lbl_Status;
     }
 }

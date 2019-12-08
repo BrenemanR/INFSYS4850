@@ -239,6 +239,7 @@ namespace WindowsFormsApp3
             this.oRDERSTATUSTableAdapter = new WindowsFormsApp3.AppDataTableAdapters.ORDERSTATUSTableAdapter();
             this.iNVOICEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.vEHICLETableAdapter = new WindowsFormsApp3.AppDataTableAdapters.VEHICLETableAdapter();
+            this.customerTableAdapter1 = new WindowsFormsApp3.oldbaseDataSet1TableAdapters.CUSTOMERTableAdapter();
             tab_CreateOrder = new System.Windows.Forms.TabPage();
             tab_CreateOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
@@ -969,7 +970,7 @@ namespace WindowsFormsApp3
             this.combobox_CustomerIDZ.Name = "combobox_CustomerIDZ";
             this.combobox_CustomerIDZ.Size = new System.Drawing.Size(121, 27);
             this.combobox_CustomerIDZ.TabIndex = 0;
-            this.combobox_CustomerIDZ.ValueMember = "CUST_ID";
+            this.combobox_CustomerIDZ.ValueMember = "FLNAME";
             // 
             // panel2
             // 
@@ -2823,6 +2824,10 @@ namespace WindowsFormsApp3
             // 
             this.vEHICLETableAdapter.ClearBeforeFill = true;
             // 
+            // customerTableAdapter1
+            // 
+            this.customerTableAdapter1.ClearBeforeFill = true;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3079,5 +3084,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTZIPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn BROKER;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUST_STATUS;
+        private oldbaseDataSet1TableAdapters.CUSTOMERTableAdapter customerTableAdapter1;
     }
 }

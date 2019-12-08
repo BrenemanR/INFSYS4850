@@ -679,7 +679,7 @@ namespace WindowsFormsApp3
 
         private void btn_SaveOrder_Click(object sender, EventArgs e)
         {
-            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noReturn = false;
+            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noReturn = false, noCustomer = false ;
 
             lbl_Address.ForeColor = System.Drawing.Color.LightGray;
             lbl_City.ForeColor = System.Drawing.Color.LightGray;
@@ -702,6 +702,7 @@ namespace WindowsFormsApp3
             lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightGray;
             lbl_OrderStatus.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
 
 
             if (string.IsNullOrEmpty(txtbox_Company.Text))
@@ -817,10 +818,15 @@ namespace WindowsFormsApp3
                 noReturn = true;
                 lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightCoral;
             }
+            if (string.IsNullOrEmpty(combobox_CustomerIDZ.Text))
+            {
+                noCustomer = true;
+                lbl_Customer.ForeColor = System.Drawing.Color.LightCoral;
+            }
 
             //successfull entry to the database
 
-            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle &&!noStatus && !noPickAdd && !noDropDate && !noReturn)
+            if (!noComp && !noAddress && !noCity && !noPhone && !noState && !noEmail && !noZip && !noOrder && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle &&!noStatus && !noPickAdd && !noDropDate && !noReturn && !noCustomer)
             {
                 if (!noPhone && !Regex.IsMatch(txtbox_Phone.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
                 {
@@ -869,7 +875,17 @@ namespace WindowsFormsApp3
                     noReturn = true;
                     lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightCoral;
                 }
-                if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip &&!noReturn)
+
+                /*bool refCust = cUSTOMERBindingSource.Contains(combobox_CustomerIDZ.Text);
+                if (!refCust)
+                {
+                    noCustomer = true;
+                    lbl_Customer.ForeColor = System.Drawing.Color.LightCoral;
+                }*/
+                      
+                
+
+                if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip &&!noReturn && !noCustomer)
                 {
                     //adds to the database
                     iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
@@ -931,10 +947,16 @@ namespace WindowsFormsApp3
                     comboBox_Vehicle.Enabled = false;
                     combobox_CustomerIDZ.Enabled = false;
                     CreateOrderisSaved = true;
+
                 }
                 else
                 {
-                    if (noPhone)
+                    if (noCustomer)
+                    {
+                        MessageBox.Show(combobox_CustomerIDZ.Text + " is not a known customer. Please select an existing customer.", "INVALID CUSTOMER", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else if (noPhone)
                     {
                         MessageBox.Show(txtbox_Phone.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID PHONE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -1197,7 +1219,9 @@ namespace WindowsFormsApp3
             lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
-           
+            lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
+
+
 
 
 
@@ -1329,7 +1353,31 @@ namespace WindowsFormsApp3
                 comboBox_ReturnTripEdit.Enabled = false;
                 dataGridView2.Enabled = true;
                 EditOrderisSaved = true;
-                
+
+                //Changes labels back to White
+                lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_PickupStateEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_DeliveryAddressEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_DeliveryCityEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_DeliveryStateEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_VehicleEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_OrderStatusEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_BookingDateEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_PickupDateEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
+                lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
+
 
             }
             else
@@ -1461,6 +1509,30 @@ namespace WindowsFormsApp3
             comboBox_Vehicle.Enabled = false;
             combobox_CustomerIDZ.Enabled = false;
             CreateOrderisSaved = true;
+
+            //Changes labels back to White
+            lbl_PickupAddress.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupCity.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupState.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupZip.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryAddress.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryCity.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryState.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryZip.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Description.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructions.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Vehicle.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructions.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Description.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
+            lbl_OrderStatus.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Invoice.ForeColor = System.Drawing.Color.LightGray;
+            lbl_BookDate.ForeColor = System.Drawing.Color.LightGray;
+            lbl_PickupDate.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DeliveryDate.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
+            lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
 
 
             iNVOICEBindingSource.CancelEdit();

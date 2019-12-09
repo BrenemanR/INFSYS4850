@@ -1166,8 +1166,8 @@ namespace WindowsFormsApp3
                                 r.SPECIAL_INSTRUCTIONS.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.DESCRIPTION.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.DESCRIPTION.Contains(txtbox_OrderSearchBox.Text) ||
-                                r.VEHICLE.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
-                                r.VEHICLE.Contains(txtbox_OrderSearchBox.Text) ||
+                                r.VEHICLE_NAME.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
+                                r.VEHICLE_NAME.Contains(txtbox_OrderSearchBox.Text) ||
                                 r.ORDER_NUM.Equals(txtbox_OrderSearchBox.Text) ||
                                 r.CUST_FLNAME.Equals(txtbox_OrderSearchBox.Text, StringComparison.OrdinalIgnoreCase) ||
                                 r.CUST_FLNAME.Contains(txtbox_OrderSearchBox.Text)

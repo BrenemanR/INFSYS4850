@@ -1369,11 +1369,11 @@ namespace WindowsFormsApp3
 
             private global::System.Data.DataColumn columnORDER_NUM;
 
-            private global::System.Data.DataColumn columnVEHICLE;
-
             private global::System.Data.DataColumn columnCUST_FLNAME;
 
             private global::System.Data.DataColumn columnRETURN_TRIP;
+
+            private global::System.Data.DataColumn columnVEHICLE_NAME;
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1586,16 +1586,6 @@ namespace WindowsFormsApp3
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn VEHICLEColumn
-            {
-                get
-                {
-                    return this.columnVEHICLE;
-                }
-            }
-
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn CUST_FLNAMEColumn
             {
                 get
@@ -1611,6 +1601,16 @@ namespace WindowsFormsApp3
                 get
                 {
                     return this.columnRETURN_TRIP;
+                }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn VEHICLE_NAMEColumn
+            {
+                get
+                {
+                    return this.columnVEHICLE_NAME;
                 }
             }
 
@@ -1673,9 +1673,9 @@ namespace WindowsFormsApp3
                         string SPECIAL_INSTRUCTIONS,
                         string DESCRIPTION,
                         string ORDER_NUM,
-                        string VEHICLE,
                         string CUST_FLNAME,
-                        string RETURN_TRIP)
+                        string RETURN_TRIP,
+                        string VEHICLE_NAME)
             {
                 INVOICERow rowINVOICERow = ((INVOICERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -1696,9 +1696,9 @@ namespace WindowsFormsApp3
                         SPECIAL_INSTRUCTIONS,
                         DESCRIPTION,
                         ORDER_NUM,
-                        VEHICLE,
                         CUST_FLNAME,
-                        RETURN_TRIP};
+                        RETURN_TRIP,
+                        VEHICLE_NAME};
                 rowINVOICERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowINVOICERow);
                 return rowINVOICERow;
@@ -1749,9 +1749,9 @@ namespace WindowsFormsApp3
                 this.columnSPECIAL_INSTRUCTIONS = base.Columns["SPECIAL_INSTRUCTIONS"];
                 this.columnDESCRIPTION = base.Columns["DESCRIPTION"];
                 this.columnORDER_NUM = base.Columns["ORDER_NUM"];
-                this.columnVEHICLE = base.Columns["VEHICLE"];
                 this.columnCUST_FLNAME = base.Columns["CUST_FLNAME"];
                 this.columnRETURN_TRIP = base.Columns["RETURN_TRIP"];
+                this.columnVEHICLE_NAME = base.Columns["VEHICLE_NAME"];
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1792,12 +1792,12 @@ namespace WindowsFormsApp3
                 base.Columns.Add(this.columnDESCRIPTION);
                 this.columnORDER_NUM = new global::System.Data.DataColumn("ORDER_NUM", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORDER_NUM);
-                this.columnVEHICLE = new global::System.Data.DataColumn("VEHICLE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVEHICLE);
                 this.columnCUST_FLNAME = new global::System.Data.DataColumn("CUST_FLNAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCUST_FLNAME);
                 this.columnRETURN_TRIP = new global::System.Data.DataColumn("RETURN_TRIP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRETURN_TRIP);
+                this.columnVEHICLE_NAME = new global::System.Data.DataColumn("VEHICLE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVEHICLE_NAME);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnINV_ID}, true));
                 this.columnINV_ID.AutoIncrement = true;
@@ -1816,9 +1816,9 @@ namespace WindowsFormsApp3
                 this.columnSPECIAL_INSTRUCTIONS.MaxLength = 536870910;
                 this.columnDESCRIPTION.MaxLength = 536870910;
                 this.columnORDER_NUM.MaxLength = 255;
-                this.columnVEHICLE.MaxLength = 255;
                 this.columnCUST_FLNAME.MaxLength = 255;
                 this.columnRETURN_TRIP.MaxLength = 255;
+                this.columnVEHICLE_NAME.MaxLength = 255;
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3543,27 +3543,6 @@ namespace WindowsFormsApp3
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string VEHICLE
-            {
-                get
-                {
-                    try
-                    {
-                        return ((string)(this[this.tableINVOICE.VEHICLEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e)
-                    {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VEHICLE\' in table \'INVOICE\' is DBNull.", e);
-                    }
-                }
-                set
-                {
-                    this[this.tableINVOICE.VEHICLEColumn] = value;
-                }
-            }
-
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string CUST_FLNAME
             {
                 get
@@ -3601,6 +3580,27 @@ namespace WindowsFormsApp3
                 set
                 {
                     this[this.tableINVOICE.RETURN_TRIPColumn] = value;
+                }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string VEHICLE_NAME
+            {
+                get
+                {
+                    try
+                    {
+                        return ((string)(this[this.tableINVOICE.VEHICLE_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e)
+                    {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VEHICLE_NAME\' in table \'INVOICE\' is DBNull.", e);
+                    }
+                }
+                set
+                {
+                    this[this.tableINVOICE.VEHICLE_NAMEColumn] = value;
                 }
             }
 
@@ -3830,20 +3830,6 @@ namespace WindowsFormsApp3
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsVEHICLENull()
-            {
-                return this.IsNull(this.tableINVOICE.VEHICLEColumn);
-            }
-
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetVEHICLENull()
-            {
-                this[this.tableINVOICE.VEHICLEColumn] = global::System.Convert.DBNull;
-            }
-
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCUST_FLNAMENull()
             {
                 return this.IsNull(this.tableINVOICE.CUST_FLNAMEColumn);
@@ -3868,6 +3854,20 @@ namespace WindowsFormsApp3
             public void SetRETURN_TRIPNull()
             {
                 this[this.tableINVOICE.RETURN_TRIPColumn] = global::System.Convert.DBNull;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsVEHICLE_NAMENull()
+            {
+                return this.IsNull(this.tableINVOICE.VEHICLE_NAMEColumn);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetVEHICLE_NAMENull()
+            {
+                this[this.tableINVOICE.VEHICLE_NAMEColumn] = global::System.Convert.DBNull;
             }
         }
 
@@ -5571,13 +5571,13 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             tableMapping.ColumnMappings.Add("SPECIAL_INSTRUCTIONS", "SPECIAL_INSTRUCTIONS");
             tableMapping.ColumnMappings.Add("DESCRIPTION", "DESCRIPTION");
             tableMapping.ColumnMappings.Add("ORDER_NUM", "ORDER_NUM");
-            tableMapping.ColumnMappings.Add("VEHICLE", "VEHICLE");
             tableMapping.ColumnMappings.Add("CUST_FLNAME", "CUST_FLNAME");
             tableMapping.ColumnMappings.Add("RETURN_TRIP", "RETURN_TRIP");
+            tableMapping.ColumnMappings.Add("VEHICLE_NAME", "VEHICLE_NAME");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `INVOICE` WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)) AND ((? = 1 AND `PICKUP_ADDRESS` IS NULL) OR (`PICKUP_ADDRESS` = ?)) AND ((? = 1 AND `PICKUP_CITY` IS NULL) OR (`PICKUP_CITY` = ?)) AND ((? = 1 AND `PICKUP_STATE` IS NULL) OR (`PICKUP_STATE` = ?)) AND ((? = 1 AND `PICKUP_ZIP` IS NULL) OR (`PICKUP_ZIP` = ?)) AND ((? = 1 AND `DELIVERY_ADDRESS` IS NULL) OR (`DELIVERY_ADDRESS` = ?)) AND ((? = 1 AND `DELIVERY_CITY` IS NULL) OR (`DELIVERY_CITY` = ?)) AND ((? = 1 AND `DELIVERY_STATE` IS NULL) OR (`DELIVERY_STATE` = ?)) AND ((? = 1 AND `DELIVERY_ZIP` IS NULL) OR (`DELIVERY_ZIP` = ?)) AND ((? = 1 AND `ORDER_NUM` IS NULL) OR (`ORDER_NUM` = ?)) AND ((? = 1 AND `VEHICLE` IS NULL) OR (`VEHICLE` = ?)) AND ((? = 1 AND `CUST_FLNAME` IS NULL) OR (`CUST_FLNAME` = ?)) AND ((? = 1 AND `RETURN_TRIP` IS NULL) OR (`RETURN_TRIP` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `INVOICE` WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)) AND ((? = 1 AND `PICKUP_ADDRESS` IS NULL) OR (`PICKUP_ADDRESS` = ?)) AND ((? = 1 AND `PICKUP_CITY` IS NULL) OR (`PICKUP_CITY` = ?)) AND ((? = 1 AND `PICKUP_STATE` IS NULL) OR (`PICKUP_STATE` = ?)) AND ((? = 1 AND `PICKUP_ZIP` IS NULL) OR (`PICKUP_ZIP` = ?)) AND ((? = 1 AND `DELIVERY_ADDRESS` IS NULL) OR (`DELIVERY_ADDRESS` = ?)) AND ((? = 1 AND `DELIVERY_CITY` IS NULL) OR (`DELIVERY_CITY` = ?)) AND ((? = 1 AND `DELIVERY_STATE` IS NULL) OR (`DELIVERY_STATE` = ?)) AND ((? = 1 AND `DELIVERY_ZIP` IS NULL) OR (`DELIVERY_ZIP` = ?)) AND ((? = 1 AND `ORDER_NUM` IS NULL) OR (`ORDER_NUM` = ?)) AND ((? = 1 AND `VEHICLE_NAME` IS NULL) OR (`VEHICLE_NAME` = ?)) AND ((? = 1 AND `CUST_FLNAME` IS NULL) OR (`CUST_FLNAME` = ?)) AND ((? = 1 AND `RETURN_TRIP` IS NULL) OR (`RETURN_TRIP` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INV_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INV_ID", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_BOOK_DATE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Original, true, null));
@@ -5608,15 +5608,15 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDER_NUM", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_NUM", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDER_NUM", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_NUM", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_VEHICLE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_VEHICLE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_VEHICLE_NAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE_NAME", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_VEHICLE_NAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE_NAME", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_FLNAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FLNAME", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FLNAME", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_RETURN_TRIP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RETURN_TRIP", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_RETURN_TRIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RETURN_TRIP", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `INVOICE` (`BOOK_DATE`, `PICKUP_DATE`, `DROPOFF_DATE`, `CUST_ID`, `ORDER_STATUS`, `PICKUP_ADDRESS`, `PICKUP_CITY`, `PICKUP_STATE`, `PICKUP_ZIP`, `DELIVERY_ADDRESS`, `DELIVERY_CITY`, `DELIVERY_STATE`, `DELIVERY_ZIP`, `SPECIAL_INSTRUCTIONS`, `DESCRIPTION`, `ORDER_NUM`, `VEHICLE`, `CUST_FLNAME`, `RETURN_TRIP`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `INVOICE` (`BOOK_DATE`, `PICKUP_DATE`, `DROPOFF_DATE`, `CUST_ID`, `ORDER_STATUS`, `PICKUP_ADDRESS`, `PICKUP_CITY`, `PICKUP_STATE`, `PICKUP_ZIP`, `DELIVERY_ADDRESS`, `DELIVERY_CITY`, `DELIVERY_STATE`, `DELIVERY_ZIP`, `SPECIAL_INSTRUCTIONS`, `DESCRIPTION`, `ORDER_NUM`, `VEHICLE_NAME`, `CUST_FLNAME`, `RETURN_TRIP`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Current, false, null));
@@ -5634,12 +5634,30 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SPECIAL_INSTRUCTIONS", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIAL_INSTRUCTIONS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DESCRIPTION", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDER_NUM", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_NUM", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("VEHICLE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("VEHICLE_NAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE_NAME", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FLNAME", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RETURN_TRIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RETURN_TRIP", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `INVOICE` SET `BOOK_DATE` = ?, `PICKUP_DATE` = ?, `DROPOFF_DATE` = ?, `CUST_ID` = ?, `ORDER_STATUS` = ?, `PICKUP_ADDRESS` = ?, `PICKUP_CITY` = ?, `PICKUP_STATE` = ?, `PICKUP_ZIP` = ?, `DELIVERY_ADDRESS` = ?, `DELIVERY_CITY` = ?, `DELIVERY_STATE` = ?, `DELIVERY_ZIP` = ?, `SPECIAL_INSTRUCTIONS` = ?, `DESCRIPTION` = ?, `ORDER_NUM` = ?, `VEHICLE` = ?, `CUST_FLNAME` = ?, `RETURN_TRIP` = ? WHERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) AND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `DROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL) OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS` = ?)) AND ((? = 1 AND `PICKUP_ADDRESS` IS NULL) OR (`PICKUP_ADDRESS` = ?)) AND ((? = 1 AND `PICKUP_CITY` IS NULL) OR (`PICKUP_CITY` = ?)) AND ((? = 1 AND `PICKUP_STATE` IS NULL) OR (`PICKUP_STATE` = ?)) AND ((? = 1 AND `PICKUP_ZIP` IS NULL) OR (`PICKUP_ZIP` = ?)) AND ((? = 1 AND `DELIVERY_ADDRESS` IS NULL) OR (`DELIVERY_ADDRESS` = ?)) AND ((? = 1 AND `DELIVERY_CITY` IS NULL) OR (`DELIVERY_CITY` = ?)) AND ((? = 1 AND `DELIVERY_STATE` IS NULL) OR (`DELIVERY_STATE` = ?)) AND ((? = 1 AND `DELIVERY_ZIP` IS NULL) OR (`DELIVERY_ZIP` = ?)) AND ((? = 1 AND `ORDER_NUM` IS NULL) OR (`ORDER_NUM` = ?)) AND ((? = 1 AND `VEHICLE` IS NULL) OR (`VEHICLE` = ?)) AND ((? = 1 AND `CUST_FLNAME` IS NULL) OR (`CUST_FLNAME` = ?)) AND ((? = 1 AND `RETURN_TRIP` IS NULL) OR (`RETURN_TRIP` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `INVOICE` SET `BOOK_DATE` = ?, `PICKUP_DATE` = ?, `DROPOFF_DATE` = ?, `CUS" +
+                "T_ID` = ?, `ORDER_STATUS` = ?, `PICKUP_ADDRESS` = ?, `PICKUP_CITY` = ?, `PICKUP_" +
+                "STATE` = ?, `PICKUP_ZIP` = ?, `DELIVERY_ADDRESS` = ?, `DELIVERY_CITY` = ?, `DELI" +
+                "VERY_STATE` = ?, `DELIVERY_ZIP` = ?, `SPECIAL_INSTRUCTIONS` = ?, `DESCRIPTION` =" +
+                " ?, `ORDER_NUM` = ?, `VEHICLE_NAME` = ?, `CUST_FLNAME` = ?, `RETURN_TRIP` = ? WH" +
+                "ERE ((`INV_ID` = ?) AND ((? = 1 AND `BOOK_DATE` IS NULL) OR (`BOOK_DATE` = ?)) A" +
+                "ND ((? = 1 AND `PICKUP_DATE` IS NULL) OR (`PICKUP_DATE` = ?)) AND ((? = 1 AND `D" +
+                "ROPOFF_DATE` IS NULL) OR (`DROPOFF_DATE` = ?)) AND ((? = 1 AND `CUST_ID` IS NULL" +
+                ") OR (`CUST_ID` = ?)) AND ((? = 1 AND `ORDER_STATUS` IS NULL) OR (`ORDER_STATUS`" +
+                " = ?)) AND ((? = 1 AND `PICKUP_ADDRESS` IS NULL) OR (`PICKUP_ADDRESS` = ?)) AND " +
+                "((? = 1 AND `PICKUP_CITY` IS NULL) OR (`PICKUP_CITY` = ?)) AND ((? = 1 AND `PICK" +
+                "UP_STATE` IS NULL) OR (`PICKUP_STATE` = ?)) AND ((? = 1 AND `PICKUP_ZIP` IS NULL" +
+                ") OR (`PICKUP_ZIP` = ?)) AND ((? = 1 AND `DELIVERY_ADDRESS` IS NULL) OR (`DELIVE" +
+                "RY_ADDRESS` = ?)) AND ((? = 1 AND `DELIVERY_CITY` IS NULL) OR (`DELIVERY_CITY` =" +
+                " ?)) AND ((? = 1 AND `DELIVERY_STATE` IS NULL) OR (`DELIVERY_STATE` = ?)) AND ((" +
+                "? = 1 AND `DELIVERY_ZIP` IS NULL) OR (`DELIVERY_ZIP` = ?)) AND ((? = 1 AND `ORDE" +
+                "R_NUM` IS NULL) OR (`ORDER_NUM` = ?)) AND ((? = 1 AND `VEHICLE_NAME` IS NULL) OR" +
+                " (`VEHICLE_NAME` = ?)) AND ((? = 1 AND `CUST_FLNAME` IS NULL) OR (`CUST_FLNAME` " +
+                "= ?)) AND ((? = 1 AND `RETURN_TRIP` IS NULL) OR (`RETURN_TRIP` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("BOOK_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BOOK_DATE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICKUP_DATE", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICKUP_DATE", global::System.Data.DataRowVersion.Current, false, null));
@@ -5657,7 +5675,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("SPECIAL_INSTRUCTIONS", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "SPECIAL_INSTRUCTIONS", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DESCRIPTION", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ORDER_NUM", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_NUM", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("VEHICLE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("VEHICLE_NAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE_NAME", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("CUST_FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FLNAME", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("RETURN_TRIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RETURN_TRIP", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_INV_ID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INV_ID", global::System.Data.DataRowVersion.Original, false, null));
@@ -5689,8 +5707,8 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DELIVERY_ZIP", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DELIVERY_ZIP", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ORDER_NUM", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_NUM", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ORDER_NUM", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ORDER_NUM", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_VEHICLE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_VEHICLE", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_VEHICLE_NAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE_NAME", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_VEHICLE_NAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "VEHICLE_NAME", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_CUST_FLNAME", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FLNAME", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_CUST_FLNAME", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "CUST_FLNAME", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_RETURN_TRIP", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "RETURN_TRIP", global::System.Data.DataRowVersion.Original, true, null));
@@ -5712,7 +5730,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT INV_ID, BOOK_DATE, PICKUP_DATE, DROPOFF_DATE, CUST_ID, ORDER_STATUS, PICKUP_ADDRESS, PICKUP_CITY, PICKUP_STATE, PICKUP_ZIP, DELIVERY_ADDRESS, DELIVERY_CITY, DELIVERY_STATE, DELIVERY_ZIP, SPECIAL_INSTRUCTIONS, DESCRIPTION, ORDER_NUM, VEHICLE, CUST_FLNAME, RETURN_TRIP FROM INVOICE";
+            this._commandCollection[0].CommandText = @"SELECT INV_ID, BOOK_DATE, PICKUP_DATE, DROPOFF_DATE, CUST_ID, ORDER_STATUS, PICKUP_ADDRESS, PICKUP_CITY, PICKUP_STATE, PICKUP_ZIP, DELIVERY_ADDRESS, DELIVERY_CITY, DELIVERY_STATE, DELIVERY_ZIP, SPECIAL_INSTRUCTIONS, DESCRIPTION, ORDER_NUM, VEHICLE_NAME, CUST_FLNAME, RETURN_TRIP FROM INVOICE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
 
@@ -5796,7 +5814,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                     string Original_DELIVERY_STATE,
                     string Original_DELIVERY_ZIP,
                     string Original_ORDER_NUM,
-                    string Original_VEHICLE,
+                    string Original_VEHICLE_NAME,
                     string Original_CUST_FLNAME,
                     string Original_RETURN_TRIP)
         {
@@ -5941,7 +5959,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_ORDER_NUM));
             }
-            if ((Original_VEHICLE == null))
+            if ((Original_VEHICLE_NAME == null))
             {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
@@ -5949,7 +5967,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             else
             {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_VEHICLE));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_VEHICLE_NAME));
             }
             if ((Original_CUST_FLNAME == null))
             {
@@ -6012,7 +6030,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                     string SPECIAL_INSTRUCTIONS,
                     string DESCRIPTION,
                     string ORDER_NUM,
-                    string VEHICLE,
+                    string VEHICLE_NAME,
                     string CUST_FLNAME,
                     string RETURN_TRIP)
         {
@@ -6144,13 +6162,13 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             {
                 this.Adapter.InsertCommand.Parameters[15].Value = ((string)(ORDER_NUM));
             }
-            if ((VEHICLE == null))
+            if ((VEHICLE_NAME == null))
             {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(VEHICLE));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(VEHICLE_NAME));
             }
             if ((CUST_FLNAME == null))
             {
@@ -6209,7 +6227,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                     string SPECIAL_INSTRUCTIONS,
                     string DESCRIPTION,
                     string ORDER_NUM,
-                    string VEHICLE,
+                    string VEHICLE_NAME,
                     string CUST_FLNAME,
                     string RETURN_TRIP,
                     int Original_INV_ID,
@@ -6227,7 +6245,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                     string Original_DELIVERY_STATE,
                     string Original_DELIVERY_ZIP,
                     string Original_ORDER_NUM,
-                    string Original_VEHICLE,
+                    string Original_VEHICLE_NAME,
                     string Original_CUST_FLNAME,
                     string Original_RETURN_TRIP)
         {
@@ -6359,13 +6377,13 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(ORDER_NUM));
             }
-            if ((VEHICLE == null))
+            if ((VEHICLE_NAME == null))
             {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else
             {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(VEHICLE));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(VEHICLE_NAME));
             }
             if ((CUST_FLNAME == null))
             {
@@ -6524,7 +6542,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_ORDER_NUM));
             }
-            if ((Original_VEHICLE == null))
+            if ((Original_VEHICLE_NAME == null))
             {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
@@ -6532,7 +6550,7 @@ namespace WindowsFormsApp3.AppDataTableAdapters
             else
             {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_VEHICLE));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_VEHICLE_NAME));
             }
             if ((Original_CUST_FLNAME == null))
             {

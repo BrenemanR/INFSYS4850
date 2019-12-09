@@ -1367,9 +1367,11 @@ namespace WindowsFormsApp3
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightGray;
 
 
-            bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false, noReturn = false, noCustFL = false;
+            bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false, noReturn = false, noCustFL = false, less20 = false, less50 = false, less200=false;
 
             if (string.IsNullOrEmpty(txtbox_PickupAddressEdit.Text))
             {
@@ -1470,9 +1472,57 @@ namespace WindowsFormsApp3
                 noCustFL = true;
                 lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightCoral;
             }
+            //LOOK HERE
+         
+            if (txtbox_OrderNumberEdit.TextLength > 20)
+            {
+                lbl_InvoiceIdEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtboxrch_DescriptionEdit.TextLength > 200)
+            {
+                lbl_DescriptionEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less200 = true;
+            }
+            if (txtboxrch_SpecialInstructionsEdit.TextLength > 200)
+            {
+                lbl_SpecialInstructionsEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less200 = true;
+            }
+            if (txtbox_PickupAddressEdit.TextLength > 50)
+            {
+                lbl_PickupAddressEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less50 = true;
+            }
+            if (txtbox_PickupCityEdit.TextLength > 20)
+            {
+                lbl_PickupCityEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_PickupStateEdit.TextLength > 20)
+            {
+                lbl_PickupStateEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_DeliveryAddressEdit.TextLength > 50)
+            {
+                lbl_DeliveryAddressEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less50 = true;
+            }
+            if (txtbox_DeliveryCityEdit.TextLength > 20)
+            {
+                lbl_DeliveryCityEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_DeliveryStateEdit.TextLength > 20)
+            {
+                lbl_DeliveryStateEdit.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+
 
             //successfull entry to the database
-            if (!noOrder && !noReturn && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickDate && !noDropDate && !noCust && !noCustFL)
+            if (!noOrder && !noReturn && !noPickAdd && !noPickCity && !noPickState && !noPickZip && !noDelAdd && !noDelCity && !noDelState && !noDelZip && !noVehicle && !noStatus && !noPickDate && !noDropDate && !noCust && !noCustFL &&!less20 &&!less50 &&!less200)
             {
                                 
                 iNVOICEBindingSource.EndEdit();        
@@ -1533,7 +1583,19 @@ namespace WindowsFormsApp3
             }
             else
             {
-                if (noCust)
+                if (less20)
+                {
+                    MessageBox.Show("The following fields cannot exceed 20 characters.\n\nCities\nStates\nInvoice #", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (less50)
+                {
+                    MessageBox.Show("Email cannot exceed 50 characters.", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (less200)
+                {
+                    MessageBox.Show("The following fields cannot exceed 200 characters.\n\nDescription\nSpecial Instructions", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (noCust)
                 {
                     MessageBox.Show("Please fill in the required fields.", "Invalid Entry");
                 }

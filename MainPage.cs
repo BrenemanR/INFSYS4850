@@ -743,7 +743,7 @@ namespace WindowsFormsApp3
 
         private void btn_SaveOrder_Click(object sender, EventArgs e)
         {
-            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noReturn = false, noCustomer = false ;
+            bool noComp = false, noAddress = false, noCity = false, noPhone = false, noState = false, noEmail = false, noZip = false, noOrder = false, noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noReturn = false, noCustomer = false, less20 = false, less50 = false , less200 = false;
 
             lbl_Address.ForeColor = System.Drawing.Color.LightGray;
             lbl_City.ForeColor = System.Drawing.Color.LightGray;
@@ -767,6 +767,9 @@ namespace WindowsFormsApp3
             lbl_OrderStatus.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTrip.ForeColor = System.Drawing.Color.LightGray;
             lbl_Customer.ForeColor = System.Drawing.Color.LightGray;
+            lbl_Description.ForeColor = System.Drawing.Color.LightGray;
+            lbl_SpecialInstructions.ForeColor = System.Drawing.Color.LightGray;
+
 
 
             if (string.IsNullOrEmpty(txtbox_Company.Text))
@@ -887,6 +890,77 @@ namespace WindowsFormsApp3
                 noCustomer = true;
                 lbl_Customer.ForeColor = System.Drawing.Color.LightCoral;
             }
+            if (txtbox_Company.TextLength > 20)
+            {
+                lbl_Company.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true; 
+            }
+            if (txtbox_Email.TextLength > 50)
+            {
+                lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
+                less50 = true;
+            }
+            if (txtbox_Address.TextLength > 50)
+            {
+                lbl_Address.ForeColor = System.Drawing.Color.LightCoral;
+                less50 = true;
+            }
+            if (txtbox_City.TextLength > 20)
+            {
+                lbl_City.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_State.TextLength > 20)
+            {
+                lbl_State.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_OrderNum.TextLength > 20)
+            {
+                lbl_Invoice.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtboxrch_Description.TextLength > 200)
+            {
+                lbl_Description.ForeColor = System.Drawing.Color.LightCoral;
+                less200 = true;
+            }
+            if (txtboxrch_SpecialInstructions.TextLength > 200)
+            {
+                lbl_SpecialInstructions.ForeColor = System.Drawing.Color.LightCoral;
+                less200 = true;
+            }
+            if (txtbox_PickupAddress.TextLength > 50)
+            {
+                lbl_PickupAddress.ForeColor = System.Drawing.Color.LightCoral;
+                less50 = true;
+            }
+            if (txtbox_PickupCity.TextLength > 20)
+            {
+                lbl_PickupCity.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_PickupState.TextLength > 20)
+            {
+                lbl_PickupState.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_DeliveryAddress.TextLength > 50)
+            {
+                lbl_DeliveryAddress.ForeColor = System.Drawing.Color.LightCoral;
+                less50 = true;
+            }
+            if (txtbox_DeliveryCity.TextLength > 20)
+            {
+                lbl_DeliveryCity.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+            if (txtbox_DeliveryState.TextLength > 20)
+            {
+                lbl_DeliveryState.ForeColor = System.Drawing.Color.LightCoral;
+                less20 = true;
+            }
+
 
             //successfull entry to the database
 
@@ -947,7 +1021,7 @@ namespace WindowsFormsApp3
                     lbl_Customer.ForeColor = System.Drawing.Color.LightCoral;
                 }
 
-                if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip &&!noReturn && !noCustomer)
+                if (!noPhone && !noEmail && !noPickDate && !noDropDate && !noPickZip && !noDelZip && !noZip &&!noReturn && !noCustomer &&!less20 && !less50 && !less200)
                 {
                     //adds to the database
                     iNVOICETableAdapter.Insert(BookDatePicker.Value, PickUpDatePicker.Value, DropOffDatePicker.Value, combobox_CustomerIDZ.SelectedIndex + 1, comboBox_Status.Text,
@@ -1013,7 +1087,19 @@ namespace WindowsFormsApp3
                 }
                 else
                 {
-                    if (noCustomer)
+                    if (less20)
+                    {
+                        MessageBox.Show("The following fields cannot exceed 20 characters.\n\nCities\nStates\nInvoice #", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (less50)
+                    {
+                        MessageBox.Show("The following fields cannot exceed 50 characters.\n\nCompany\nAddresses\nEmail", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (less200)
+                    {
+                        MessageBox.Show("The following fields cannot exceed 200 characters.\n\nDescription\nSpecial Instructions", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noCustomer)
                     {
                         MessageBox.Show(combobox_CustomerIDZ.Text + " is not a known customer. Please select an existing customer.", "INVALID CUSTOMER", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -1861,7 +1947,6 @@ namespace WindowsFormsApp3
             lbl_DeliveryDateEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
             lbl_ReturnTripEdit.ForeColor = System.Drawing.Color.LightGray;
-            
 
             btn_EditOrder.Visible = true;
             btn_SaveOrderEdit.Visible = false;

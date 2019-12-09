@@ -241,7 +241,7 @@ namespace WindowsFormsApp3
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false, noBroke = false, noAccountStatus = false; ;
+            bool noFName = false, noLName = false, noPhone = false, noEmail = false, noCompany = false, noAddress = false, noCity = false, noState = false, noZip = false, noBroke = false, noAccountStatus = false, less20 = false, less50=false;
             try
             {
                 FirstNameLabel.ForeColor = System.Drawing.Color.LightGray;
@@ -324,6 +324,44 @@ namespace WindowsFormsApp3
                     lbl_Status.ForeColor = System.Drawing.Color.LightCoral;
                     noAccountStatus = true;
                 }
+                
+                if (FirstNameBox.TextLength > 20)
+                {
+                    FirstNameLabel.ForeColor = System.Drawing.Color.LightCoral;
+                    less20 = true;
+                }
+                if (LastNameBox.TextLength > 20)
+                {
+                    LastNameLabel.ForeColor = System.Drawing.Color.LightCoral;
+                    less20 = true;
+                }
+                if (EmailBox.TextLength > 50)
+                {
+                    EmailLabel.ForeColor = System.Drawing.Color.LightCoral;
+                    less50 = true;
+                }
+                if (CompanyBox.TextLength > 50)
+                {
+                    CompanyLabel.ForeColor = System.Drawing.Color.LightCoral;
+                    less50 = true;
+                }
+                if (AddressBox.TextLength > 50)
+                {
+                    AddressLabel.ForeColor = System.Drawing.Color.LightCoral;
+                    less50 = true;
+                }
+                if (CityBox.TextLength > 20)
+                {
+                    CityLabel.ForeColor = System.Drawing.Color.LightCoral;
+                    less20 = true;
+                }
+                if (StateBox.TextLength > 20)
+                {
+                    StateLabel.ForeColor = System.Drawing.Color.LightCoral;
+                    less20 = true;
+                }
+
+
                 if (!noFName && !noLName && !noPhone && !noEmail && !noCompany && !noAddress && !noCity && !noState && !noZip &&!noBroke &&!noAccountStatus)
                 {
                     if (!Regex.IsMatch(PhoneNumberBox.Text, "[0-9]{3}[0-9]{3}[0-9]{4}")) //Check to see if the phone number is properly formatted.
@@ -331,7 +369,6 @@ namespace WindowsFormsApp3
                         PhoneLabel.ForeColor = System.Drawing.Color.LightCoral;
                         lbl_RequiredField.Visible = true;
                         noPhone = true;
-
                     }
                     if (!Regex.IsMatch(EmailBox.Text, ".+@.+\\..+")) //Check to see if the email address is properly formatted.
                     {
@@ -339,7 +376,7 @@ namespace WindowsFormsApp3
                         lbl_RequiredField.Visible = true;
                         noEmail = true;
                     }
-                    if (ZipBox.TextLength != 5) //Check to see if the zip code is 5 digits.
+                    if (!Regex.IsMatch(ZipBox.Text, "[0-9]{5}")) //Check to see if the phone number is properly formatted.
                     {
                         ZipLabel.ForeColor = System.Drawing.Color.LightCoral;
                         lbl_RequiredField.Visible = true;
@@ -357,7 +394,8 @@ namespace WindowsFormsApp3
                         lbl_RequiredField.Visible = true;
                         noAccountStatus = true;
                     }
-                    if (!noPhone && !noEmail && !noZip && !noBroke && !noAccountStatus)
+                    
+                    if (!noPhone && !noEmail && !noZip && !noBroke && !noAccountStatus &&!less20 &&!less50)
                     {
                         cUSTOMERBindingSource.EndEdit();
                         cUSTOMERTableAdapter.Update(appData.CUSTOMER);
@@ -398,7 +436,15 @@ namespace WindowsFormsApp3
                         lbl_Status.ForeColor = System.Drawing.Color.LightGray;
                     }
                     //insert error messages here
-                    if (noPhone)
+                    if (less20)
+                    {
+                        MessageBox.Show("The following fields cannot exceed 20 characters.\n\nFirst Name\nLast Name\nCity\nState", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (less50)
+                    {
+                        MessageBox.Show("The following fields cannot exceed 50 characters.\n\nEmail\nCompany\nAddress", "INVALID ENTRY", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (noPhone)
                     {
                         MessageBox.Show(PhoneNumberBox.Text + " is not a valid phone number. Please enter in 10 digits.", "INVALID Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -511,18 +557,36 @@ namespace WindowsFormsApp3
         private void FirstNameBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in Letters for the first name field.
         {
            
-            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != (int)(Keys.Back)))
+            /*if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != (int)(Keys.Back)))
             {
                 e.Handled = true;
+            }*/
+            //Cannot be more than 20 characters
+            if (FirstNameBox.Text.Length < 20)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
             }
-
-            
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
         }
 
         private void LastNameBox_KeyPress(object sender, KeyPressEventArgs e) //Ensures that the user is only able to enter in Letters for the first name field.
         {
-            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != (int)(Keys.Back)))
+            //Cannot be more than 20 characters
+            if (LastNameBox.Text.Length < 20)
             {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
                 e.Handled = true;
             }
         }
@@ -838,19 +902,19 @@ namespace WindowsFormsApp3
                     lbl_Email.ForeColor = System.Drawing.Color.LightCoral;
                     noEmail = true;
                 }
-                if (txtbox_DeliveryZip.TextLength != 5) //Check to see if the zip code is 5 digits.
+                if (!Regex.IsMatch(txtbox_DeliveryZip.Text, "[0-9]{5}")) //Check to see if the zip is properly formatted.
                 {
                     lbl_DeliveryZip.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
                     noDelZip = true;
                 }
-                if (txtbox_PickupZip.TextLength != 5) //Check to see if the zip code is 5 digits.
+                if (!Regex.IsMatch(txtbox_PickupZip.Text, "[0-9]{5}")) //Check to see if the zip is properly formatted.
                 {
                     lbl_PickupZip.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
                     noPickZip = true;
-                }
-                if (txtbox_Zip.TextLength != 5) //Check to see if the zip code is 5 digits.
+                }           
+                if (!Regex.IsMatch(txtbox_Zip.Text, "[0-9]{5}")) //Check to see if the zip is properly formatted.
                 {
                     lbl_Zip.ForeColor = System.Drawing.Color.LightCoral;
                     lbl_RequiredField.Visible = true;
@@ -1219,9 +1283,6 @@ namespace WindowsFormsApp3
             lbl_CustomerEdit.ForeColor = System.Drawing.Color.LightGray;
 
 
-
-
-
             bool noPickAdd = false, noPickCity = false, noPickState = false, noPickZip = false, noDelAdd = false, noDelCity = false, noDelState = false, noDelZip = false, noVehicle = false, noPickDate = false, noDropDate = false, noStatus = false, noCust = false, noOrder = false, noReturn = false, noCustFL = false;
 
             if (string.IsNullOrEmpty(txtbox_PickupAddressEdit.Text))
@@ -1304,13 +1365,13 @@ namespace WindowsFormsApp3
             }
 
             //Zip Validation
-            if (txtbox_DeliveryZipEdit.TextLength != 5) //Check to see if the zip code is 5 digits.
+            if (!Regex.IsMatch(txtbox_DeliveryZipEdit.Text, "[0-9]{5}")) //Check to see if the zip is properly formatted.
             {
                 lbl_DeliveryZipEdit.ForeColor = System.Drawing.Color.LightCoral;
                 lbl_RequiredField.Visible = true;
                 noDelZip = true;
             }
-            if (txtbox_PickupZipEdit.TextLength != 5) //Check to see if the zip code is 5 digits.
+            if (!Regex.IsMatch(txtbox_PickupZipEdit.Text, "[0-9]{5}")) //Check to see if the zip is properly formatted.
             {
                 lbl_PickupZipEdit.ForeColor = System.Drawing.Color.LightCoral;
                 lbl_RequiredField.Visible = true;
@@ -1832,6 +1893,405 @@ namespace WindowsFormsApp3
             
             
            
+        }
+
+        private void EmailBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (EmailBox.Text.Length > 50)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void CompanyBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (CompanyBox.Text.Length > 50)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void AddressBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (AddressBox.Text.Length > 50)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void CityBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (CityBox.Text.Length > 20)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void StateBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (StateBox.Text.Length > 20)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void combobox_CustomerIDZ_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void txtbox_Company_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_Company.Text.Length > 50)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_Email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_Email.Text.Length > 50)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_Address_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_Address.Text.Length > 50)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_City_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_City.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_State_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_State.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_OrderNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 10 characters
+            if (txtbox_OrderNum.Text.Length > 10)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox_Vehicle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (comboBox_Vehicle.Text.Length > 20)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_PickupAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_PickupAddress.Text.Length < 51)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_PickupCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_PickupCity.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_PickupState_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_PickupState.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_DeliveryAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_DeliveryAddress.Text.Length < 51)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_DeliveryCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_DeliveryCity.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_DeliveryState_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_DeliveryState.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtboxrch_Description_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 200 characters
+            if (txtboxrch_Description.Text.Length > 200)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtboxrch_SpecialInstructions_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 200 characters
+            if (txtboxrch_SpecialInstructions.Text.Length > 200)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_OrderNumberEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 10 characters
+            if (txtbox_OrderNumberEdit.Text.Length > 10)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_PickupAddressEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_PickupAddressEdit.Text.Length < 51)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_PickupCityEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_PickupCityEdit.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_PickupStateEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_PickupStateEdit.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_DeliveryAddressEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_DeliveryStateEdit.Text.Length < 51)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_DeliveryCityEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_DeliveryStateEdit.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_DeliveryStateEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 20 characters
+            if (txtbox_DeliveryStateEdit.Text.Length < 21)
+            {
+                if (Char.IsLetter(e.KeyChar)) return;
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtboxrch_DescriptionEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 200 characters
+            if (txtboxrch_DescriptionEdit.Text.Length > 200)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtboxrch_SpecialInstructionsEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 200 characters
+            if (txtboxrch_SpecialInstructionsEdit.Text.Length > 200)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtbox_VehicleName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 50 characters
+            if (txtbox_VehicleName.Text.Length > 50)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
+        }
+
+        private void txtboxrch_VehicleNotes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Cannot be more than 200 characters
+            if (txtboxrch_VehicleNotes.Text.Length > 200)
+            {
+                if (Char.IsControl(e.KeyChar)) return;
+                e.Handled = true;
+            }
         }
     }
 }

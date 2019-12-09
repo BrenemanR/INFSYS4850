@@ -429,6 +429,7 @@ namespace WindowsFormsApp3
             this.comboBox_Vehicle.Size = new System.Drawing.Size(150, 27);
             this.comboBox_Vehicle.TabIndex = 70;
             this.comboBox_Vehicle.ValueMember = "VEHICLE_ID";
+            this.comboBox_Vehicle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox_Vehicle_KeyPress);
             // 
             // vEHICLEBindingSource
             // 
@@ -534,6 +535,7 @@ namespace WindowsFormsApp3
             this.txtboxrch_Description.Size = new System.Drawing.Size(525, 164);
             this.txtboxrch_Description.TabIndex = 15;
             this.txtboxrch_Description.Text = "";
+            this.txtboxrch_Description.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxrch_Description_KeyPress);
             // 
             // panel3
             // 
@@ -609,6 +611,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryState.ReadOnly = true;
             this.txtbox_DeliveryState.Size = new System.Drawing.Size(131, 27);
             this.txtbox_DeliveryState.TabIndex = 54;
+            this.txtbox_DeliveryState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryState_KeyPress);
             // 
             // lbl_DeliveryState
             // 
@@ -631,6 +634,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryCity.ReadOnly = true;
             this.txtbox_DeliveryCity.Size = new System.Drawing.Size(131, 27);
             this.txtbox_DeliveryCity.TabIndex = 52;
+            this.txtbox_DeliveryCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryCity_KeyPress);
             // 
             // lbl_DropoffInformatin
             // 
@@ -653,6 +657,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryAddress.ReadOnly = true;
             this.txtbox_DeliveryAddress.Size = new System.Drawing.Size(131, 27);
             this.txtbox_DeliveryAddress.TabIndex = 49;
+            this.txtbox_DeliveryAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryAddress_KeyPress);
             // 
             // lbl_DeliveryAddress
             // 
@@ -755,6 +760,7 @@ namespace WindowsFormsApp3
             this.txtboxrch_SpecialInstructions.Size = new System.Drawing.Size(525, 192);
             this.txtboxrch_SpecialInstructions.TabIndex = 16;
             this.txtboxrch_SpecialInstructions.Text = "";
+            this.txtboxrch_SpecialInstructions.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxrch_SpecialInstructions_KeyPress);
             // 
             // txtbox_OrderNum
             // 
@@ -769,6 +775,7 @@ namespace WindowsFormsApp3
             this.txtbox_OrderNum.Size = new System.Drawing.Size(140, 27);
             this.txtbox_OrderNum.TabIndex = 16;
             this.txtbox_OrderNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbox_OrderNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_OrderNum_KeyPress);
             // 
             // txtbox_Company
             // 
@@ -782,6 +789,7 @@ namespace WindowsFormsApp3
             this.txtbox_Company.ReadOnly = true;
             this.txtbox_Company.Size = new System.Drawing.Size(130, 27);
             this.txtbox_Company.TabIndex = 1;
+            this.txtbox_Company.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Company_KeyPress);
             // 
             // txtbox_Email
             // 
@@ -795,6 +803,7 @@ namespace WindowsFormsApp3
             this.txtbox_Email.ReadOnly = true;
             this.txtbox_Email.Size = new System.Drawing.Size(161, 27);
             this.txtbox_Email.TabIndex = 3;
+            this.txtbox_Email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Email_KeyPress);
             // 
             // txtbox_Phone
             // 
@@ -836,6 +845,7 @@ namespace WindowsFormsApp3
             this.txtbox_State.ReadOnly = true;
             this.txtbox_State.Size = new System.Drawing.Size(136, 27);
             this.txtbox_State.TabIndex = 6;
+            this.txtbox_State.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_State_KeyPress);
             // 
             // txtbox_City
             // 
@@ -849,6 +859,7 @@ namespace WindowsFormsApp3
             this.txtbox_City.ReadOnly = true;
             this.txtbox_City.Size = new System.Drawing.Size(170, 27);
             this.txtbox_City.TabIndex = 5;
+            this.txtbox_City.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_City_KeyPress);
             // 
             // txtbox_Address
             // 
@@ -862,6 +873,7 @@ namespace WindowsFormsApp3
             this.txtbox_Address.ReadOnly = true;
             this.txtbox_Address.Size = new System.Drawing.Size(133, 27);
             this.txtbox_Address.TabIndex = 4;
+            this.txtbox_Address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Address_KeyPress);
             // 
             // lbl_Order
             // 
@@ -960,6 +972,7 @@ namespace WindowsFormsApp3
             this.combobox_CustomerIDZ.BackColor = System.Drawing.Color.DimGray;
             this.combobox_CustomerIDZ.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.cUSTOMERBindingSource, "CUST_ID", true));
             this.combobox_CustomerIDZ.DataSource = this.cUSTOMERBindingSource;
+            this.combobox_CustomerIDZ.DisplayMember = "FLNAME";
             this.combobox_CustomerIDZ.Enabled = false;
             this.combobox_CustomerIDZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combobox_CustomerIDZ.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -970,6 +983,7 @@ namespace WindowsFormsApp3
             this.combobox_CustomerIDZ.Size = new System.Drawing.Size(121, 27);
             this.combobox_CustomerIDZ.TabIndex = 0;
             this.combobox_CustomerIDZ.ValueMember = "FLNAME";
+            this.combobox_CustomerIDZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.combobox_CustomerIDZ_KeyPress);
             // 
             // panel2
             // 
@@ -1012,6 +1026,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupAddress.ReadOnly = true;
             this.txtbox_PickupAddress.Size = new System.Drawing.Size(141, 27);
             this.txtbox_PickupAddress.TabIndex = 38;
+            this.txtbox_PickupAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupAddress_KeyPress);
             // 
             // txtbox_PickupCity
             // 
@@ -1024,6 +1039,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupCity.ReadOnly = true;
             this.txtbox_PickupCity.Size = new System.Drawing.Size(141, 27);
             this.txtbox_PickupCity.TabIndex = 41;
+            this.txtbox_PickupCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupCity_KeyPress);
             // 
             // txtbox_PickupState
             // 
@@ -1036,6 +1052,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupState.ReadOnly = true;
             this.txtbox_PickupState.Size = new System.Drawing.Size(141, 27);
             this.txtbox_PickupState.TabIndex = 43;
+            this.txtbox_PickupState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupState_KeyPress);
             // 
             // txtbox_PickupZip
             // 
@@ -1444,6 +1461,7 @@ namespace WindowsFormsApp3
             this.CompanyBox.ReadOnly = true;
             this.CompanyBox.Size = new System.Drawing.Size(163, 27);
             this.CompanyBox.TabIndex = 10;
+            this.CompanyBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CompanyBox_KeyPress);
             // 
             // StateLabel
             // 
@@ -1468,6 +1486,7 @@ namespace WindowsFormsApp3
             this.StateBox.ReadOnly = true;
             this.StateBox.Size = new System.Drawing.Size(163, 27);
             this.StateBox.TabIndex = 13;
+            this.StateBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.StateBox_KeyPress);
             // 
             // CityLabel
             // 
@@ -1492,6 +1511,7 @@ namespace WindowsFormsApp3
             this.CityBox.ReadOnly = true;
             this.CityBox.Size = new System.Drawing.Size(163, 27);
             this.CityBox.TabIndex = 12;
+            this.CityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CityBox_KeyPress);
             // 
             // AddressLabel
             // 
@@ -1516,6 +1536,7 @@ namespace WindowsFormsApp3
             this.AddressBox.ReadOnly = true;
             this.AddressBox.Size = new System.Drawing.Size(163, 27);
             this.AddressBox.TabIndex = 11;
+            this.AddressBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AddressBox_KeyPress);
             // 
             // FirstNameLabel
             // 
@@ -1566,6 +1587,7 @@ namespace WindowsFormsApp3
             this.EmailBox.ReadOnly = true;
             this.EmailBox.Size = new System.Drawing.Size(163, 27);
             this.EmailBox.TabIndex = 3;
+            this.EmailBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailBox_KeyPress);
             // 
             // PhoneLabel
             // 
@@ -1973,6 +1995,7 @@ namespace WindowsFormsApp3
             this.txtbox_OrderNumberEdit.ReadOnly = true;
             this.txtbox_OrderNumberEdit.Size = new System.Drawing.Size(153, 27);
             this.txtbox_OrderNumberEdit.TabIndex = 42;
+            this.txtbox_OrderNumberEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_OrderNumberEdit_KeyPress);
             // 
             // lbl_OrderNumberEdit
             // 
@@ -2063,6 +2086,7 @@ namespace WindowsFormsApp3
             this.txtboxrch_SpecialInstructionsEdit.Size = new System.Drawing.Size(235, 74);
             this.txtboxrch_SpecialInstructionsEdit.TabIndex = 33;
             this.txtboxrch_SpecialInstructionsEdit.Text = "";
+            this.txtboxrch_SpecialInstructionsEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxrch_SpecialInstructionsEdit_KeyPress);
             // 
             // lbl_DescriptionEdit
             // 
@@ -2087,6 +2111,7 @@ namespace WindowsFormsApp3
             this.txtboxrch_DescriptionEdit.Size = new System.Drawing.Size(235, 74);
             this.txtboxrch_DescriptionEdit.TabIndex = 31;
             this.txtboxrch_DescriptionEdit.Text = "";
+            this.txtboxrch_DescriptionEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxrch_DescriptionEdit_KeyPress);
             // 
             // txtbox_DeliveryZipEdit
             // 
@@ -2123,6 +2148,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryStateEdit.ReadOnly = true;
             this.txtbox_DeliveryStateEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_DeliveryStateEdit.TabIndex = 28;
+            this.txtbox_DeliveryStateEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryStateEdit_KeyPress);
             // 
             // lbl_DeliveryStateEdit
             // 
@@ -2146,6 +2172,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryCityEdit.ReadOnly = true;
             this.txtbox_DeliveryCityEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_DeliveryCityEdit.TabIndex = 26;
+            this.txtbox_DeliveryCityEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryCityEdit_KeyPress);
             // 
             // lbl_DeliveryCityEdit
             // 
@@ -2169,6 +2196,7 @@ namespace WindowsFormsApp3
             this.txtbox_DeliveryAddressEdit.ReadOnly = true;
             this.txtbox_DeliveryAddressEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_DeliveryAddressEdit.TabIndex = 24;
+            this.txtbox_DeliveryAddressEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_DeliveryAddressEdit_KeyPress);
             // 
             // lbl_DeliveryAddressEdit
             // 
@@ -2216,6 +2244,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupStateEdit.ReadOnly = true;
             this.txtbox_PickupStateEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_PickupStateEdit.TabIndex = 20;
+            this.txtbox_PickupStateEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupStateEdit_KeyPress);
             // 
             // lbl_PickupStateEdit
             // 
@@ -2239,6 +2268,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupCityEdit.ReadOnly = true;
             this.txtbox_PickupCityEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_PickupCityEdit.TabIndex = 18;
+            this.txtbox_PickupCityEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupCityEdit_KeyPress);
             // 
             // lbl_PickupCityEdit
             // 
@@ -2262,6 +2292,7 @@ namespace WindowsFormsApp3
             this.txtbox_PickupAddressEdit.ReadOnly = true;
             this.txtbox_PickupAddressEdit.Size = new System.Drawing.Size(160, 27);
             this.txtbox_PickupAddressEdit.TabIndex = 16;
+            this.txtbox_PickupAddressEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_PickupAddressEdit_KeyPress);
             // 
             // lbl_PickupAddressEdit
             // 
@@ -2683,6 +2714,7 @@ namespace WindowsFormsApp3
             this.txtbox_VehicleName.ReadOnly = true;
             this.txtbox_VehicleName.Size = new System.Drawing.Size(373, 27);
             this.txtbox_VehicleName.TabIndex = 1;
+            this.txtbox_VehicleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_VehicleName_KeyPress);
             // 
             // txtboxrch_VehicleNotes
             // 
@@ -2693,6 +2725,7 @@ namespace WindowsFormsApp3
             this.txtboxrch_VehicleNotes.Size = new System.Drawing.Size(373, 202);
             this.txtboxrch_VehicleNotes.TabIndex = 2;
             this.txtboxrch_VehicleNotes.Text = "";
+            this.txtboxrch_VehicleNotes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxrch_VehicleNotes_KeyPress);
             // 
             // btn_EditVehicle
             // 

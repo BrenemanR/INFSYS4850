@@ -1725,6 +1725,16 @@ namespace WindowsFormsApp3
                 MessageBox.Show("Please enter the name of the vehicle.", "INVALID VEHICLE NAME");
                 lbl_VehicleName.ForeColor = System.Drawing.Color.LightCoral;
             }
+            else if (txtbox_VehicleName.TextLength > 50)
+            {
+                MessageBox.Show("Vehicle Name cannot exceed 50 characters.", "INVALID VEHICLE NAME");
+                lbl_VehicleName.ForeColor = System.Drawing.Color.LightCoral;
+            }
+            else if (txtboxrch_VehicleNotes.TextLength > 200)
+            {
+                MessageBox.Show("Vehicle Notes cannot exceed 200 characters.", "INVALID VEHICLE NOTES");
+                lbl_VehicleNotes.ForeColor = System.Drawing.Color.LightCoral;
+            }
             else
             {
                 vEHICLEBindingSource.EndEdit();
@@ -1738,6 +1748,7 @@ namespace WindowsFormsApp3
                 txtboxrch_VehicleNotes.ReadOnly = true;
                 panel_VehicleTab.Visible = false;
                 lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
+                lbl_VehicleNotes.ForeColor = System.Drawing.Color.LightGray;
                 VehicleisSaved = true;
             }     
         }
@@ -1770,6 +1781,7 @@ namespace WindowsFormsApp3
                 dataGridViewVehicle.Enabled = true;
                 panel_VehicleTab.Visible = false;
                 lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
+                lbl_VehicleNotes.ForeColor = System.Drawing.Color.LightGray;
                 VehicleisSaved = true;
 
             }
@@ -1789,6 +1801,7 @@ namespace WindowsFormsApp3
 
                 dataGridViewVehicle.Enabled = true;
                 lbl_VehicleName.ForeColor = System.Drawing.Color.LightGray;
+                lbl_VehicleNotes.ForeColor = System.Drawing.Color.LightGray;
             }
             
         }

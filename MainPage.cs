@@ -2195,13 +2195,7 @@ namespace WindowsFormsApp3
         private void txtbox_PickupAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Cannot be more than 50 characters
-            if (txtbox_PickupAddress.Text.Length < 51)
-            {
-                if (Char.IsLetter(e.KeyChar)) return;
-                if (Char.IsControl(e.KeyChar)) return;
-                e.Handled = true;
-            }
-            else
+            if (txtbox_PickupAddress.Text.Length > 50)
             {
                 if (Char.IsControl(e.KeyChar)) return;
                 e.Handled = true;
@@ -2243,13 +2237,7 @@ namespace WindowsFormsApp3
         private void txtbox_DeliveryAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Cannot be more than 50 characters
-            if (txtbox_DeliveryAddress.Text.Length < 51)
-            {
-                if (Char.IsLetter(e.KeyChar)) return;
-                if (Char.IsControl(e.KeyChar)) return;
-                e.Handled = true;
-            }
-            else
+            if (txtbox_DeliveryAddress.Text.Length > 50)
             {
                 if (Char.IsControl(e.KeyChar)) return;
                 e.Handled = true;
@@ -2321,13 +2309,7 @@ namespace WindowsFormsApp3
         private void txtbox_PickupAddressEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Cannot be more than 50 characters
-            if (txtbox_PickupAddressEdit.Text.Length < 51)
-            {
-                if (Char.IsLetter(e.KeyChar)) return;
-                if (Char.IsControl(e.KeyChar)) return;
-                e.Handled = true;
-            }
-            else
+            if (txtbox_PickupAddressEdit.Text.Length > 50)
             {
                 if (Char.IsControl(e.KeyChar)) return;
                 e.Handled = true;
@@ -2369,13 +2351,7 @@ namespace WindowsFormsApp3
         private void txtbox_DeliveryAddressEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Cannot be more than 50 characters
-            if (txtbox_DeliveryStateEdit.Text.Length < 51)
-            {
-                if (Char.IsLetter(e.KeyChar)) return;
-                if (Char.IsControl(e.KeyChar)) return;
-                e.Handled = true;
-            }
-            else
+            if (txtbox_DeliveryAddressEdit.Text.Length > 50)
             {
                 if (Char.IsControl(e.KeyChar)) return;
                 e.Handled = true;

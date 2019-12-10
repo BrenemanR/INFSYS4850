@@ -76,15 +76,16 @@ If the customer information is not immediately visible in the Table View, you ca
 | **7** | **City** | City where the customer is located |
 | **8** | **State** | State where the customer is located |
 | **9** | **Zip Code** | Customer's ZIP Code |
-| **10** | **Broker Yes/No?** | Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed. |
-| **11** | **Add New Customer button** | This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive. |
-| **12** | **Edit Customer button** | **Select a record before pressing this button.** This button will give the user access to edit the currently selected record in the Table View.  |
-| **13** | **Save Button** | The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.  |
-| **14** | **Cancel Button** | The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged. |
-| **15** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. **You can also sort the Customers by field by clicking on the column headers.**|
-
-<!-- | **16** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
-| **17** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. | -->
+| **10** | **Is This a Broker?** | Designates this contact as a broker. Doing this will allow you to distinguish and sort brokers separately if needed. |
+| **11** | **Account Status** | Designates this contact as active or inactive. Inactive clients will not show in the Table View. |
+| **12** | **Add New Customer button** | This button is used to start the process of adding a new customer. Until this button is pressed, the customer information fields will remain inactive. |
+| **13** | **Edit Customer button** | **Select a record before pressing this button.** This button will give the user access to edit the currently selected record in the Table View.  |
+| **14** | **Save Button** | The Save button will save the current changes in the customer information fields. This button becomes active when Adding a new customer or when Editing an existing customer.  |
+| **15** | **Cancel Button** | The Cancel button cancels the Add or Edit operation, clearing out the customer information fields and leaving the database table unchanged. |
+| **16** | **Search Box** | Use the Search box to find customers. You can search by a word in any field. **You can also sort the Customers by field by clicking on the column headers.**|
+| **17** | **Clear Search Button** | Clear out a search and show all records. |
+| **18** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+| **19** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. |
 
 <a href="#top">Return to Table of Contents</a>
 <a id="createorders"></a>
@@ -136,11 +137,12 @@ At any time, you can hit Cancel to discard your changes and leave the database u
 | **23** | **Pickup Date** | The date when the shipment needs to be picked up |
 | **24** | **Delivery Date** | The due date for shipment dropoff |
 | **25** | **Order Status** | Allows the user to mark the work order as Pending, In Transit, Delayed, Complete, or Cancelled |
-| **26** | **Create Order Button** | Initiates order creation and unlocks the Customer dropdown in the upper left to create a new order |
+| **26** | **Has Return Trip** | Designates whether a return trip is available for this order. |
 | **27** | **Save Order Button** | Saves the new work order to the database. Incomplete fields may stop this button from saving until the fields are filled out. |
 | **28** | **Cancel Button** | Cancels order creation, making no changes to the database. |
 | **29** | **Description Box** | Box for user-readable info about the cargo, or anything else. |
 | **30** | **Special Instructions Box** | Box for user-readable special instructions concerning scheduling and directions for the work order. |
+| **31** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. |
 
 <a href="#top">Return to Table of Contents</a>
 <a id="searchorders"></a>
@@ -159,7 +161,7 @@ The Search/Edit Orders tab allows the user to search all created Work Orders and
 <a id="searchordersvisual"></a>
 ## Search/Edit Orders - Visual Reference
 
-![Home Page](searchorders-visual.jpg)
+![Search Orders](searcheditorders-visual.jpg)
 
 | Number | Field Name | Purpose |
 | ----| ---------- | ------- |
@@ -168,25 +170,26 @@ The Search/Edit Orders tab allows the user to search all created Work Orders and
 | **3** | **Delivery Date** |  The date by which the shipment must be delivered.  |
 | **4** | **Order #** | ***Not Editable***. Database number that refers to the Order in the database and cannot be changed.  |
 | **5** | **Customer ID** | ***Not Editable***. Database number that refers to the Customer in the database and cannot be changed.  |
-| **6** | **Vehicle Used** | The vehicle used to carry out the Work Order. |
-| **7** | **Invoice #** | User-editable reference number for tracking each Work Order. |
-| **8** | **Order Status** | Current status of the Work Order - Pending, In Transit, Delayed, Complete, or Cancelled.  |
-| **9** | **Customer** | Customer's full name associated with the Work Order. |
-| **10** | **Pickup Address** | The address where the shipment will be picked up for the job.  |
-| **11** | **Pickup City** | The city where the shipment will be picked up.  |
-| **12** | **Pickup State** | The state in which the shipment will be picked up. |
-| **13** | **Pickup Zip** | The ZIP Code of the shipment origin.  |
-| **14** | **Delivery Address** | The address where the shipment will be dropped off for the job.  |
-| **15** | **Delivery City** | The address where the shipment will be dropped off.  |
-| **16** | **Delivery State** | The state in which the shipment will be dropped off.  |
-| **17** | **Delivery Zip** | The ZIP Code of the shipment destination.  |
-| **18** | **Description Box** | User-editable field for any additional info such as cargo description or number of pieces.  |
-| **19** | **Special Instructions** |  User-editable field for any special delivery instructions such as "park in back" or "ask for Karen". |
-| **20** | **Search Orders Box** | Type a word or phrase into this box to search the existing Work Orders for a match. **You can also sort the Work Orders by field by clicking on the column headers.** |
-| **21** | **Edit Order Button** | Click this button to unlock the fields to edit the currently selected record in the Table View.  |
-
-<!-- | **22** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
-| **23** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. | -->
+| **6** | **Has Return Trip?** | Designates whether a return trip is associated with this order. |
+| **7** | **Vehicle Used** | The vehicle used to carry out the Work Order. |
+| **8** | **Invoice #** | User-editable reference number for tracking each Work Order. |
+| **9** | **Order Status** | Current status of the Work Order - Pending, In Transit, Delayed, Complete, or Cancelled.  |
+| **10** | **Customer** | Customer's full name associated with the Work Order. |
+| **11** | **Pickup Address** | The address where the shipment will be picked up for the job.  |
+| **12** | **Pickup City** | The city where the shipment will be picked up.  |
+| **13** | **Pickup State** | The state in which the shipment will be picked up. |
+| **14** | **Pickup Zip** | The ZIP Code of the shipment origin.  |
+| **15** | **Delivery Address** | The address where the shipment will be dropped off for the job.  |
+| **16** | **Delivery City** | The address where the shipment will be dropped off.  |
+| **17** | **Delivery State** | The state in which the shipment will be dropped off.  |
+| **18** | **Delivery Zip** | The ZIP Code of the shipment destination.  |
+| **19** | **Description Box** | User-editable field for any additional info such as cargo description or number of pieces.  |
+| **20** | **Special Instructions** |  User-editable field for any special delivery instructions such as "park in back" or "ask for Karen". |
+| **21** | **Clear Search Button** | Clear out a search and show all records. |
+| **22** | **Search Orders Box** | Type a word or phrase into this box to search the existing Work Orders for a match. **You can also sort the Work Orders by field by clicking on the column headers.** |
+| **23** | **Edit Order Button** | Click this button to unlock the fields to edit the currently selected record in the Table View.  |
+| **24** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+| **25** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. |
 
 <a href="#top">Return to Table of Contents</a>
 <a id="vehiclemanager"></a>
@@ -215,11 +218,11 @@ The Vehicle Manager allows the user to create and store records of vehicles the 
 
 | Number | Field Name | Purpose |
 | ----| ---------- | ------- |
-| **1** | **Add Vehicle Button** | Customer's first name |
-| **2** | **Save Button** | Customer's last name |
-| **3** | **Cancel Button** | **Must be 9 digits.** Stores a phone number for contact info.  |
-| **4** | **Edit Button** | **Must have proper form.**  Stores the customer email. Email cannot be entered without an "@" sign and "." in the proper place.|
-| **5** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. Records displayed here will change based on Search results. |
+| **1** | **Add Vehicle Button** | Adds a new vehicle. |
+| **2** | **Save Button** | Saves a vehicle you are creating or editing. |
+| **3** | **Cancel Button** | Cancels the current Add or Edit operation, leaving the records unchanged.  |
+| **4** | **Edit Button** | Edits the currently selected vehicle.|
+| **5** | **Table View** | List of existing records. You can sort it by any particular field by clicking on column headers. |
 | **6** | **Help Button** | Takes you to the relevant section of this Help Page, depending on where the Help Button was clicked. |
 
 
